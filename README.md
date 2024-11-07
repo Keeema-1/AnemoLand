@@ -1,6 +1,6 @@
 # AnemoLand Beta
 
-![logo_bosses](https://github.com/user-attachments/assets/79af1801-27a5-40c1-8e94-af24f680d581)
+![logo_bosses](https://github.com/user-attachments/assets/0e85b50d-2066-486a-a651-6d45a73e3528)
 
 ## 概要
 #### この配布マップのメイン要素
