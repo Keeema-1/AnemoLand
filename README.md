@@ -8,6 +8,8 @@
 - Minecraft Java Edition version 1.21.3 対象
 - シングルプレイ専用
 
+#### - 詳細・ダウンロード
+[[Wikiを見てね]](https://github.com/Keeema-1/AnemoLand/wiki)
 
 ## クレジット
 #### - 使用しているライブラリ
