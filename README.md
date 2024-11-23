@@ -12,8 +12,9 @@
 [[Wikiを見てね]](https://github.com/Keeema-1/AnemoLand/wiki)
 
 ## クレジット
-#### - 使用しているライブラリ
+#### - 使用しているライブラリ等
 - PlayerMotion / ひろばお様 (https://github.com/Hirobao1/CustomEnchant_PlayerMotion)
+- AnimatedJava (https://github.com/Animated-Java/animated-java)
 
 #### - 使用しているBGM
 - ポケットサウンド様 (https://pocket-se.info)
