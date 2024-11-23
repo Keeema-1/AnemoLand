@@ -6,7 +6,7 @@
 
 #### - プレイ環境
 - Minecraft Java Edition version 1.21.3 対象
-- シングルプレイ専用
+- シングルプレイ向け（マルチプレイは仮実装済）
 
 #### - 詳細・ダウンロード
 [[Wikiを見てね]](https://github.com/Keeema-1/AnemoLand/wiki)
