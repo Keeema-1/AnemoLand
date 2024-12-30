@@ -1,18 +1,17 @@
-# AnemoLand Beta
+# AnemoLand Beta-1.0 For 1.21.3
 
 ![logo_bosses](https://github.com/user-attachments/assets/0e85b50d-2066-486a-a651-6d45a73e3528)
 
 #### ボスモンスターと戦い、装備を強化し、ペットを育てよう！
 
 #### - プレイ環境
-- Minecraft Java Edition version 1.21.3 対象
-- シングルプレイ向け（マルチプレイは仮実装済）
+- Minecraft Java Edition version 1.21.3
 
 #### - 詳細・ダウンロード
 [[Wikiを見てね]](https://github.com/Keeema-1/AnemoLand/wiki)
 
 ## クレジット
-#### - 使用しているライブラリ等
+#### - 使用しているライブラリ
 - PlayerMotion / ひろばお様 (https://github.com/Hirobao1/CustomEnchant_PlayerMotion)
 - AnimatedJava (https://github.com/Animated-Java/animated-java)
 
@@ -28,10 +27,10 @@
   - ボクサーズロード
 
 #### - 開発に使用したツール
-- AnimatedJava (https://github.com/Animated-Java/animated-java)
+- BlockBench (https://www.blockbench.net)
+  - AnimatedJava (https://github.com/Animated-Java/animated-java)
 - Datapack Helper Plus (https://github.com/SpyglassMC/Spyglass)
 - Datapack Generators (https://misode.github.io)
-
 
 ## 各種URL
 - 作者X (https://x.com/keeema_1)
