@@ -4,3 +4,6 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"walking_m
 execute if data storage temp:_ data.field_display_data.event{event_id:"boars_5"} run function anemoland_contents:sys/event/display/boars_5 with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"boars_10"} run function anemoland_contents:sys/event/display/boars_10 with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"boars_15"} run function anemoland_contents:sys/event/display/boars_15 with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels_5"} run function anemoland_contents:sys/event/display/squirrels_5 with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels_10"} run function anemoland_contents:sys/event/display/squirrels_10 with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels_15"} run function anemoland_contents:sys/event/display/squirrels_15 with storage temp:_ data.field_display_macro

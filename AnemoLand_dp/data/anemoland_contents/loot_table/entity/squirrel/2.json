@@ -1,0 +1,34 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#drop_bonus"
+				},
+				"score": "temp",
+				"scale": 1
+			},
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/medal/squirrel/silver"
+				}
+			]
+		},
+		{
+			"rolls": {
+				"min": 1,
+				"max": 2
+			},
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/medal/squirrel/silver"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,116 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:carrot_on_a_stick",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:sequence",
+							"functions": [
+								{
+									"function": "minecraft:set_lore",
+									"entity": "this",
+									"lore": [
+										[
+											{
+												"text": "  Lv.39",
+												"italic": false,
+												"color": "yellow"
+											}
+										],
+										[
+											{
+												"text": "  HP ",
+												"italic": false,
+												"color": "blue"
+											},
+											{
+												"text": "98"
+											}
+										],
+										[
+											{
+												"text": "  ",
+												"italic": false,
+												"color": "blue"
+											},
+											{
+												"translate": "common.attack_damage"
+											},
+											{
+												"text": " "
+											},
+											{
+												"text": "18.6"
+											}
+										],
+										[
+											""
+										],
+										[
+											{
+												"translate": "pet.lore.mob.1",
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "pet.lore.mob.2",
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "pet.lore.mob.3",
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "pet.cooltime",
+												"color": "white",
+												"italic": false
+											},
+											{
+												"text": "：30"
+											},
+											{
+												"translate": "common.second"
+											}
+										]
+									],
+									"mode": "append"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"pet\",is_boss:0b,is_pet:1b,pet_id:\"squirrel\",display:{name:\"スクルス\"},loot_table:\"item/pet/squirrel\",power_up:{add_level:1,materials:[{id:\"squirrel_gold_medal\",loot_table:\"item/medal/squirrel/gold\",count:20}]},status:{health:{max:98},attack:{base:18.6},armor:{base:10},level:39,level_up:{health:2,attack:0.4},xp:{value:0,required:5376,required_mul:10}}}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 10030
+						},
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "mob.squirrel.default.name",
+								"color": "white",
+								"italic": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

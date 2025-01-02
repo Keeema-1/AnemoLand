@@ -1,0 +1,67 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:yellow_dye",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "  "
+									},
+									{
+										"translate": "item.medal.mob.lore.1",
+										"with": [
+											{
+												"text": "Lv.20-29"
+											},
+											{
+												"translate": "mob.squirrel.default.name"
+											}
+										],
+										"italic": false,
+										"color": "white"
+									}
+								]
+							],
+							"mode": "append"
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"material\",id:\"squirrel_silver_medal\"}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 301
+						},
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "item.medal.mob.name",
+								"with": [
+									{
+										"translate": "mob.squirrel.default.name"
+									},
+									{
+										"translate": "common.rank.silver"
+									}
+								],
+								"color": "gray",
+								"italic": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

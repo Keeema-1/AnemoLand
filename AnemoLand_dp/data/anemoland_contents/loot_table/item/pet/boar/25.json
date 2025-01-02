@@ -30,7 +30,7 @@
 												"color": "blue"
 											},
 											{
-												"text": "80"
+												"text": "70"
 											}
 										],
 										[
@@ -93,7 +93,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"pet\",is_boss:0b,is_pet:1b,pet_id:\"boar\",display:{name:\"ボア\"},loot_table:\"item/pet/boar\",power_up:{add_level:1,materials:[{id:\"boar_silver_medal\",loot_table:\"item/medal/boar/silver\",count:16}]},status:{health:{max:80},attack:{base:14.0},armor:{base:10},level:25,level_up:{health:2,attack:0.4},xp:{value:0,required:763,required_mul:10}}}"
+							"tag": "{item_type:\"pet\",is_boss:0b,is_pet:1b,pet_id:\"boar\",display:{name:\"ボア\"},loot_table:\"item/pet/boar\",power_up:{add_level:1,materials:[{id:\"boar_silver_medal\",loot_table:\"item/medal/boar/silver\",count:16}]},status:{health:{max:70},attack:{base:14.0},armor:{base:10},level:25,level_up:{health:2,attack:0.4},xp:{value:0,required:763,required_mul:10}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

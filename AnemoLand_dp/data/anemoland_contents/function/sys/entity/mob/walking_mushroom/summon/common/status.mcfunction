@@ -2,7 +2,7 @@ execute unless score #new_entity.level temp matches 0.. run scoreboard players s
 scoreboard players operation @s level = #new_entity.level temp
 scoreboard players set @s max_health 2
 scoreboard players operation @s max_health *= #new_entity.level temp
-scoreboard players add @s max_health 20
+scoreboard players add @s max_health 10
 scoreboard players operation @s health = @s max_health
 scoreboard players set @s attack.base 40
 scoreboard players operation @s attack.base *= #new_entity.level temp

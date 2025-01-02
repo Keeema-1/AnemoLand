@@ -141,8 +141,8 @@ for mob_name, mob_data in mob_database.items():
 	makedir(path)
 	output = []
 	if len(mob_data["parts"]) > 1:
-		output.append('execute if entity @s[tag=!mob_root] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/hitbox\n')
-	output.append('execute if entity @s[tag=mob_root] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/root\n')
+		output.append('execute if entity @s[tag=!mob_root] run return run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/hitbox\n')
+	output.append('execute if entity @s[tag=mob_root] run return run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/root\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -164,11 +164,21 @@ for mob_name, mob_data in mob_database.items():
 		makedir(path)
 		output = []
 		output.append('function ' + namespace_core + ':sys/entity/common/damage/dst/get_status\n')
+		# output.append('data modify storage temp:_ data.Motion set from entity @s Motion\n')
 		output.append('execute unless score #attack_skill_flag temp matches 1.. if score #health temp matches -9.. run return 1\n')
 		output.append('scoreboard players operation #entity_id temp = @s entity_id\n')
-		output.append('execute at @s anchored eyes facing entity @p eyes rotated ~ 0 positioned ^ ^ ^0.5 as @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,distance=..32] if score @s entity_id = #entity_id temp run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/common\n')
+		output.append('execute at @s anchored eyes facing entity @p eyes rotated ~ 0 positioned ^ ^ ^0.5 as @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,distance=..32] if score @s entity_id = #entity_id temp run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/root_from_hitbox\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
+
+	# damaged/root_from_hitbox
+	path = base_path + mob_name + '/damaged/root_from_hitbox.mcfunction'
+	makedir(path)
+	output = []
+	# output.append('data modify entity @s Motion set from storage temp:_ data.Motion\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/common\n')
+	with open(path, 'w', encoding='utf-8') as f:
+		f.writelines(output)
 
 	# damaged/common
 	path = base_path + mob_name + '/damaged/common.mcfunction'
@@ -183,8 +193,8 @@ for mob_name, mob_data in mob_database.items():
 	else:
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/variant/damaged\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/damage/dst/apply\n')
-	output.append('execute unless score @s health matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/0\n')
-	output.append('execute if score @s health matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/damaged\n')
+	output.append('execute unless score @s health matches 1.. run return run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/0\n')
+	output.append('execute if score @s health matches 1.. run return run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/damaged\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -727,19 +737,19 @@ for mob_name, mob_data in mob_database.items():
 	output.append('execute store result score #xp_bonus temp run data get storage temp:_ data.event_bonus.xp 50\n')
 	output.append('execute store result score @s drop_bonus run data get storage temp:_ data.event_bonus.drop 1\n')
 	# output.append('tellraw @a ["G ",{"score":{"name":"#gold_bonus","objective":"temp"}},", XP ",{"score":{"name":"#xp_bonus","objective":"temp"}},", DROP ",{"score":{"name":"#drop_bonus","objective":"temp"}}]\n')
-	output.append('scoreboard players set @s gold ' + str(mob_data["status"]["gold"]["mul"]) + '\n')
+	output.append('scoreboard players set @s gold ' + str(int(mob_data["status"]["gold"]["mul"]*10)) + '\n')
 	output.append('scoreboard players operation @s gold *= #new_entity.level temp\n')
-	output.append('scoreboard players add @s gold ' + str(mob_data["status"]["gold"]["base"]) + '\n')
+	output.append('scoreboard players add @s gold ' + str(int(mob_data["status"]["gold"]["base"]*10)) + '\n')
 	output.append('scoreboard players add #gold_bonus temp 100\n')
 	output.append('scoreboard players operation @s gold *= #gold_bonus temp\n')
-	output.append('scoreboard players set #const temp 100\n')
+	output.append('scoreboard players set #const temp 1000\n')
 	output.append('scoreboard players operation @s gold /= #const temp\n')
-	output.append('scoreboard players set @s xp ' + str(mob_data["status"]["xp"]["mul"]) + '\n')
+	output.append('scoreboard players set @s xp ' + str(int(mob_data["status"]["xp"]["mul"]*10)) + '\n')
 	output.append('scoreboard players operation @s xp *= #new_entity.level temp\n')
-	output.append('scoreboard players add @s xp ' + str(mob_data["status"]["xp"]["base"]) + '\n')
+	output.append('scoreboard players add @s xp ' + str(int(mob_data["status"]["xp"]["base"]*10)) + '\n')
 	output.append('scoreboard players add #xp_bonus temp 100\n')
 	output.append('scoreboard players operation @s xp *= #xp_bonus temp\n')
-	output.append('scoreboard players set #const temp 100\n')
+	output.append('scoreboard players set #const temp 1000\n')
 	output.append('scoreboard players operation @s xp /= #const temp\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -827,17 +837,20 @@ for mob_name, mob_data in mob_database.items():
 
 	# summon/hitbox/
 	if len(mob_data["parts"]) > 1:
-		path = base_path + mob_name + '/summon/hitbox/0.mcfunction'
+		path = base_path + mob_name + '/summon/common/hitbox.mcfunction'
 		makedir(path)
 		output = []
 		output.append('data merge entity @s {DeathLootTable:"empty",NoAI:1b,Silent:1b,ArmorItems:[{},{},{},{id:"black_dye",Count:1,components:{enchantments:{levels:{"' + namespace_storage + ':post_attack/victim2victim":1,"' + namespace_storage + ':mob_experience/0":1}}}}],ArmorDropChances:[0.0f,0.0f,0.0f,0.0f]}\n')
 		output.append('tag @s add mob\n')
 		output.append('tag @s add ' + mob_name + '\n')
 		output.append('tag @s add hitbox\n')
-		output.append('execute if score #new_entity.is_pet temp matches 1 run tag @s add pet\n')
-		output.append('execute if score #new_entity.is_pet temp matches 1 run team join player_side\n')
-		output.append('execute if score #new_entity.is_pet temp matches 1 run tag @s add player_side\n')
-		output.append('execute unless score #new_entity.is_pet temp matches 1 run tag @s add enemy\n')
+		output.append('execute if data storage temp:_ data.new_entity{summon_type:"pet"} run tag @s add pet\n')
+		output.append('execute if data storage temp:_ data.new_entity{summon_type:"player_side"} run tag @s add pet\n')
+		output.append('execute if data storage temp:_ data.new_entity{summon_type:"pet"} run team join player_side\n')
+		output.append('execute if data storage temp:_ data.new_entity{summon_type:"player_side"} run team join player_side\n')
+		output.append('execute if data storage temp:_ data.new_entity{summon_type:"pet"} run tag @s add player_side\n')
+		output.append('execute if data storage temp:_ data.new_entity{summon_type:"player_side"} run tag @s add player_side\n')
+		output.append('execute if data storage temp:_ data.new_entity{summon_type:"enemy"} run tag @s add enemy\n')
 		output.append('attribute @s max_health base set 1024.0\n')
 		output.append('data modify entity @s Health set value 1024.0f\n')
 		output.append('scoreboard players operation @s entity_id = #new_entity_id entity_id\n')

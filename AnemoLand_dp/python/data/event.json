@@ -44,6 +44,20 @@
                     "pos": [6, 2]
                 }
             ]
+        },
+        "squirrels": {
+            "enemies": [
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [-5, 1]
+                },
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [6, 2]
+                }
+            ]
         }
     },
     "events": {
@@ -64,6 +78,15 @@
         },
         "boars_15": {
             "waves":[{"boars":15}]
+        },
+        "squirrels_5": {
+            "waves":[{"squirrels":5}]
+        },
+        "squirrels_10": {
+            "waves":[{"squirrels":10}]
+        },
+        "squirrels_15": {
+            "waves":[{"squirrels":15}]
         }
     },
     "random_events": {
@@ -75,7 +98,10 @@
                 {"event": "walking_mushrooms_15", "weight": 1},
                 {"event": "boars_5", "weight": 1},
                 {"event": "boars_10", "weight": 1},
-                {"event": "boars_15", "weight": 1}
+                {"event": "boars_15", "weight": 1},
+                {"event": "squirrels_5", "weight": 10},
+                {"event": "squirrels_10", "weight": 10},
+                {"event": "squirrels_15", "weight": 10}
             ]
         }
     }
