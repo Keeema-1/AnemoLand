@@ -5,19 +5,15 @@ with open('data/menu.json' , encoding='utf-8') as f:
 	menu_database = json.load(f)
 
 with open('data/common.json' , encoding='utf-8') as f:
-	common_database = json.load(f)
+	common_data = json.load(f)
 
-namespace_core = common_database["namespace_core"]
-namespace_contents = common_database["namespace_contents"]
-namespace_storage = common_database["namespace_core"]
-
-resourcepack_path = common_database['resourcepack_path']
+resourcepack_path = common_data['resourcepack_path']
 
 def makedir(path):
 	if not os.path.isdir(os.path.dirname(path)):
 		os.makedirs(os.path.dirname(path))
 
-base_path = resourcepack_path + 'assets/' + namespace_storage + '/models/item/'
+base_path = resourcepack_path + 'assets/minecraft/models/item/'
 
 if not os.path.isdir(base_path):
 	print('dir not exist! (' + base_path + ')')
@@ -38,7 +34,7 @@ for icon_name, icon_data in menu_database["icons"].items():
 	overrides.append(
 		{
 			"predicate": { "custom_model_data": icon_data["custom_model_data"] },
-			"model": icon_data["model_path"] if "model_path" in icon_data else (namespace_storage + "item/gui/icon/" + icon_name)
+			"model": icon_data["model_path"] if "model_path" in icon_data else ("item/custom/gui/icon/" + icon_name)
 		}
 	)
 
@@ -61,13 +57,13 @@ for icon_name, icon_data in menu_database["icons"].items():
 	if "model_path" in icon_data:
 		continue
 
-	path = base_path + 'gui/icon/' + icon_name + '.json'
+	path = base_path + 'custom/gui/icon/' + icon_name + '.json'
 	makedir(path)
 
 	if "transformation" in icon_data:
 		textures = {
-			"0": (icon_data["path"] if "path" in icon_data else (namespace_storage + "item/gui/icon/" + icon_name)),
-			"particle": (icon_data["path"] if "path" in icon_data else (namespace_storage + "item/gui/icon/" + icon_name))
+			"0": (icon_data["path"] if "path" in icon_data else ("item/custom/gui/icon/" + icon_name)),
+			"particle": (icon_data["path"] if "path" in icon_data else ("item/custom/gui/icon/" + icon_name))
 		}
 		if "front_image" in icon_data:
 			textures["1"] = icon_data["front_image"]
@@ -109,9 +105,8 @@ for icon_name, icon_data in menu_database["icons"].items():
 		output = {
 			"parent": "minecraft:item/generated",
 			"textures": {
-			"layer0": (icon_data["path"] if "path" in icon_data else (namespace_storage + "item/gui/icon/" + icon_name))
+			"layer0": (icon_data["path"] if "path" in icon_data else ("item/custom/gui/icon/" + icon_name))
 			}
 		}
 	with open(path, 'w', encoding='utf-8') as f:
 		json.dump(output, f, indent='\t', ensure_ascii=False)
-
