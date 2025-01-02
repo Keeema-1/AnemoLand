@@ -1,0 +1,207 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:carrot_on_a_stick",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "weapon.iron_sword.name",
+								"color": "white",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "  Lv. 3 (MAX)",
+										"color": "yellow",
+										"italic": false
+									}
+								],
+								[
+									{
+										"text": "  ⏫ ",
+										"italic": false,
+										"color": "aqua"
+									},
+									{
+										"translate": "common.attack_damage"
+									},
+									{
+										"text": " +6"
+									}
+								],
+								[
+									{
+										"text": "  ",
+										"italic": false,
+										"color": "blue"
+									},
+									{
+										"translate": "common.weapon_damage_rate"
+									},
+									{
+										"text": " 100%"
+									}
+								],
+								[
+									{
+										"text": "  ",
+										"italic": false,
+										"color": "blue"
+									},
+									{
+										"translate": "common.attack_speed"
+									},
+									{
+										"text": " 1.6"
+									}
+								],
+								{
+									"text": ""
+								},
+								[
+									{
+										"text": " <",
+										"italic": false
+									},
+									{
+										"translate": "common.weapon_skill"
+									},
+									{
+										"text": "1> "
+									},
+									{
+										"translate": "weapon_skill.sweep_attack.name"
+									},
+									{
+										"text": " (",
+										"color": "gray"
+									},
+									{
+										"translate": "common.gauge_consumption",
+										"color": "gray"
+									},
+									{
+										"text": " 1.0)",
+										"color": "gray"
+									}
+								],
+								[
+									{
+										"text": "    ",
+										"color": "dark_gray",
+										"italic": false
+									},
+									{
+										"translate": "weapon_skill.sweep_attack.lore.1"
+									}
+								],
+								[
+									{
+										"text": "    ",
+										"color": "dark_gray",
+										"italic": false
+									},
+									{
+										"translate": "weapon_skill.sweep_attack.lore.2"
+									}
+								],
+								[
+									{
+										"text": "    ",
+										"color": "dark_gray",
+										"italic": false
+									},
+									{
+										"translate": "weapon_skill.sweep_attack.lore.3"
+									}
+								],
+								{
+									"text": "",
+									"italic": false,
+									"color": "dark_gray"
+								},
+								[
+									{
+										"text": "▶ ",
+										"italic": false,
+										"color": "dark_gray"
+									},
+									{
+										"translate": "common.sell_price"
+									},
+									{
+										"text": " 240G"
+									}
+								]
+							],
+							"mode": "replace_all"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"id": "weapon.attack_speed.remove.4",
+									"attribute": "minecraft:attack_speed",
+									"amount": -0.4,
+									"operation": "add_value",
+									"slot": "mainhand"
+								},
+								{
+									"id": "weapon.attack_damage.0",
+									"attribute": "minecraft:attack_damage",
+									"amount": 0,
+									"operation": "add_value",
+									"slot": "mainhand"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/iron_sword\",sell_price:240,power_up:{},status:{level:3,attack:{base:6,mul:10},attack_skills:[{id:\"sweep_attack\",gauge_consume:100,mul:50}],skill_gauge:{get:10}}}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 3
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:unbreakable": {
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantments": {
+									"levels": {
+										"anemoland:post_attack/playsound/sweep_attack": 1,
+										"anemoland:post_attack/spawn_particles/sweep_attack": 1
+									},
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantment_glint_override": false
+							}
+						},
+						{
+							"function": "minecraft:toggle_tooltips",
+							"toggles": {
+								"minecraft:enchantments": false,
+								"minecraft:attribute_modifiers": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

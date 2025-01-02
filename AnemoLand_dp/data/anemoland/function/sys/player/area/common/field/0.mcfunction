@@ -1,0 +1,1 @@
+scoreboard players add @s battle_timer 1

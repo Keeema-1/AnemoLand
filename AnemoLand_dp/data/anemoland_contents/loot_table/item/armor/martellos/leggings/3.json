@@ -1,0 +1,164 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:chainmail_leggings",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "armor.martellos.leggings.name",
+								"color": "white",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "  Lv. 3 (MAX)",
+										"color": "yellow",
+										"italic": false
+									}
+								],
+								[
+									{
+										"text": "  ⏫ ",
+										"color": "aqua",
+										"italic": false
+									},
+									{
+										"translate": "common.armor"
+									},
+									{
+										"text": " +7"
+									}
+								],
+								[
+									{
+										"text": "  ⏬ ",
+										"color": "red",
+										"italic": false
+									},
+									{
+										"translate": "common.damaged_rate.fire"
+									},
+									{
+										"text": " +10%"
+									}
+								],
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "<",
+										"italic": false
+									},
+									{
+										"translate": "common.skill"
+									},
+									{
+										"text": ">"
+									}
+								],
+								[
+									{
+										"text": "  ",
+										"italic": false
+									},
+									{
+										"translate": "skill.initial_gauge.name"
+									},
+									{
+										"text": " +0.5"
+									}
+								],
+								[
+									{
+										"text": "    "
+									},
+									{
+										"translate": "skill.initial_gauge.lore.1",
+										"italic": false,
+										"color": "gray"
+									}
+								],
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "▶ ",
+										"italic": false,
+										"color": "dark_gray"
+									},
+									{
+										"translate": "common.sell_price"
+									},
+									{
+										"text": ": 160G"
+									}
+								]
+							],
+							"mode": "replace_all"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"id": "leggings.armor.add.7",
+									"attribute": "minecraft:armor",
+									"amount": 0.7,
+									"operation": "add_value",
+									"slot": "legs"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"armor\",series:\"martellos\",part:\"leggings\",id:\"martellos_leggings\",sell_price:160,loot_table:\"item/armor/martellos/leggings\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{fire: -10},skills:[{id:\"initial_gauge\",level:50}]}}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 4
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:unbreakable": {
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantment_glint_override": false,
+								"minecraft:equippable": {
+									"slot": "legs",
+									"equip_sound": "item.armor.equip_chain",
+									"model": "martellos"
+								}
+							}
+						},
+						{
+							"function": "minecraft:toggle_tooltips",
+							"toggles": {
+								"minecraft:enchantments": false,
+								"minecraft:attribute_modifiers": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

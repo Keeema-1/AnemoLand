@@ -1,0 +1,71 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[""],
+			[
+				{
+					"text": "  ",
+					"color": "blue",
+					"italic": false
+				},
+				{
+					"translate": "common.armor"
+				},
+				{
+					"text": " "
+				},
+				{
+					"score": {
+						"name": "#armor",
+						"objective": "temp"
+					}
+				},
+				{
+					"text": " (",
+					"color": "gray"
+				},
+				{
+					"translate": "common.base_value",
+					"color": "gray"
+				},
+				{
+					"text": " ",
+					"color": "gray"
+				},
+				{
+					"score": {
+						"name": "#armor.base",
+						"objective": "temp"
+					},
+					"color": "gray"
+				},
+				{
+					"text": " / ",
+					"color": "gray"
+				},
+				{
+					"translate": "common.armor_value",
+					"color": "gray"
+				},
+				{
+					"text": " ",
+					"color": "gray"
+				},
+				{
+					"score": {
+						"name": "#armor.equipment",
+						"objective": "temp"
+					},
+					"color": "gray"
+				},
+				{
+					"text": ")",
+					"color": "gray"
+				}
+			]
+		],
+		"mode": "append"
+	}
+]

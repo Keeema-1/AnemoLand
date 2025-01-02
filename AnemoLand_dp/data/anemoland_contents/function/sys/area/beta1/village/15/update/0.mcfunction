@@ -1,0 +1,1 @@
+execute positioned 1024.0 0.0 -1024.0 run function anemoland:sys/player/area/common/village/update/0

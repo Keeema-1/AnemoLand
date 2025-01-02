@@ -1,0 +1,33 @@
+{
+  "pack": {
+    "pack_format": 57,
+    "supported_formats": {"min_inclusive": 57, "max_inclusive": 57},
+    "description": ""
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "minecraft",
+        "path": "recipe"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "structure"
+      }
+    ]
+  },
+  "overlays":{
+    "entries":[
+      {
+        "directory":"unsupported", "formats":{"min_inclusive": 16, "max_inclusive": 56}
+      },
+      {
+        "directory":"unsupported", "formats":{"min_inclusive": 58, "max_inclusive": 65535}
+      }
+    ]
+  }
+}

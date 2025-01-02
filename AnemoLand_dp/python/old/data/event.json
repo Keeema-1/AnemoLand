@@ -1,0 +1,898 @@
+{
+    "waves": {
+        "decoy1": {
+            "enemies": [
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [-8, 16]
+                },
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [8, 16]
+                },
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [0, 8]
+                },
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [-8, 0]
+                },
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [8, 0]
+                }
+            ]
+        },
+        "walking_mushrooms": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [0, 10]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-3, 13]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [4, 14]
+                }
+            ]
+        },
+        "boars": {
+            "enemies": [
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [-4, 10]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [4, 11]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [-6, 6]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [7, 6]
+                }
+            ]
+        },
+        "spiders": {
+            "enemies": [
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-6, 12]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [6, 13]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-4, 6]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [5, 7]
+                }
+            ]
+        },
+        "plain_small_a": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-4, 4]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [4, 3]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ]
+        },
+        "plain_a": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [12, 10]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [10, 4]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [-8, 8]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [-10, 5]
+                }
+            ]
+        },
+        "plain_b": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [12, 10]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [10, 4]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-8, 8]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-10, 5]
+                }
+            ]
+        },
+        "plain_c": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [12, 10]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [10, 4]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [-2, 0]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-8, 8]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-10, 6]
+                }
+            ]
+        },
+        "stone_a": {
+            "enemies": [
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [10, 4]
+                },
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [-2, 8]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-10, 5]
+                }
+            ]
+        },
+        "stone_b": {
+            "enemies": [
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [10, 4]
+                },
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [-2, 8]
+                },
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [-10, 5]
+                }
+            ]
+        },
+        "king_boar": {
+            "enemies": [
+                {
+                    "entity_id": "boar",
+                    "level": -5,
+                    "pos": [-3, 3]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": -5,
+                    "pos": [3, 3]
+                },
+                {
+                    "entity_id": "king_boar",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "squirrel_head": {
+            "enemies": [
+                {
+                    "entity_id": "squirrel_head",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "martellos": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "cherry_martellos": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "variant": "cherry",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "mushroom_martellos": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "variant": "mushroom",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "stone_martellos": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "variant": "stone",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "martellos_double": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "level": 0,
+                    "pos": [6, 0]
+                },
+                {
+                    "entity_id": "martellos",
+                    "level": 0,
+                    "pos": [-6, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "ojinushi": {
+            "enemies": [
+                {
+                    "entity_id": "ojinushi",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "ojinushi",
+            "boss_flag": 1
+        },
+        "muscleroom": {
+            "enemies": [
+                {
+                    "entity_id": "muscleroom",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "muscleroom",
+            "boss_flag": 1
+        },
+        "bagikeros": {
+            "enemies": [
+                {
+                    "entity_id": "bagikeros",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        }
+    },
+    "events": {
+        "decoy1": {
+            "waves":[{"decoy1": 0}]
+        },
+        "walking_mushrooms_5": {
+            "waves":[{"walking_mushrooms":5}]
+        },
+        "walking_mushrooms_10": {
+            "waves":[{"walking_mushrooms":10}]
+        },
+        "walking_mushrooms_15": {
+            "waves":[{"walking_mushrooms":15}]
+        },
+        "boars_5": {
+            "waves":[{"boars":5}]
+        },
+        "boars_10": {
+            "waves":[{"boars":10}]
+        },
+        "boars_15": {
+            "waves":[{"boars":15}]
+        },
+        "spiders_5": {
+            "waves":[{"spiders":5}]
+        },
+        "spiders_10": {
+            "waves":[{"spiders":10}]
+        },
+        "spiders_15": {
+            "waves":[{"spiders":15}]
+        },
+        "plain_small_a_5": {
+            "waves":[{"plain_small_a":5}]
+        },
+        "plain_small_a_10": {
+            "waves":[{"plain_small_a":10}]
+        },
+        "plain_small_a_15": {
+            "waves":[{"plain_small_a":15}]
+        },
+        "plain_a_5": {
+            "waves":[{"plain_a":5}]
+        },
+        "plain_a_10": {
+            "waves":[{"plain_a":10}]
+        },
+        "plain_a_15": {
+            "waves":[{"plain_a":15}]
+        },
+        "plain_b_5": {
+            "waves":[{"plain_b":5}]
+        },
+        "plain_b_10": {
+            "waves":[{"plain_b":10}]
+        },
+        "plain_b_15": {
+            "waves":[{"plain_b":15}]
+        },
+        "plain_c_5": {
+            "waves":[{"plain_c":5}]
+        },
+        "plain_c_10": {
+            "waves":[{"plain_c":10}]
+        },
+        "plain_c_15": {
+            "waves":[{"plain_c":15}]
+        },
+        "stone_a_15": {
+            "waves":[{"stone_a":15}]
+        },
+        "stone_a_20": {
+            "waves":[{"stone_a":20}]
+        },
+        "stone_b_15": {
+            "waves":[{"stone_b":15}]
+        },
+        "stone_b_20": {
+            "waves":[{"stone_b":20}]
+        },
+        "plain_waves_ab_5": {
+            "waves":[{"plain_a":5}, {"plain_b":5}]
+        },
+        "plain_waves_ab_10": {
+            "waves":[{"plain_a":10}, {"plain_b":10}]
+        },
+        "plain_waves_ab_15": {
+            "waves":[{"plain_a":15}, {"plain_b":15}]
+        },
+        "king_boar_15": {
+            "waves":[{"king_boar":15}],
+            "unlock": [
+                {"type": "armor", "id": "iron"}
+            ]
+        },
+        "king_boar_20": {
+            "waves":[{"king_boar":20}]
+        },
+        "king_boar_25": {
+            "waves":[{"king_boar":25}]
+        },
+        "king_boar_30": {
+            "waves":[{"king_boar":30}]
+        },
+        "king_boar_35": {
+            "waves":[{"king_boar":35}]
+        },
+        "king_boar_40": {
+            "waves":[{"king_boar":40}]
+        },
+        "movie_king_boar": {
+            "waves":[],
+            "movie":1,
+            "display_overwrite": {
+                "enemies": ["king_boar","boar"],
+                "waves": 1,
+                "levels": [10,15]
+            }
+        },
+        "squirrel_head_15": {
+            "waves":[{"squirrel_head":15}]
+        },
+        "squirrel_head_20": {
+            "waves":[{"squirrel_head":20}]
+        },
+        "squirrel_head_25": {
+            "waves":[{"squirrel_head":25}]
+        },
+        "squirrel_head_30": {
+            "waves":[{"squirrel_head":30}]
+        },
+        "squirrel_head_35": {
+            "waves":[{"squirrel_head":35}]
+        },
+        "squirrel_head_40": {
+            "waves":[{"squirrel_head":40}]
+        },
+        "martellos_15": {
+            "waves":[{"martellos":15}],
+            "unlock": [
+                {"type": "rank", "id": "silver"},
+                {"type": "field", "id": "cherry"}
+            ]
+        },
+        "martellos_20": {
+            "waves":[{"martellos":20}]
+        },
+        "martellos_25": {
+            "waves":[{"martellos":25}],
+            "unlock": [
+                {"type": "rank", "id": "gold", "requirements": [{"type":"event", "id": "ojinushi_25"}]}
+            ]
+        },
+        "martellos_30": {
+            "waves":[{"martellos":30}]
+        },
+        "martellos_35": {
+            "waves":[{"martellos":35}]
+        },
+        "martellos_40": {
+            "waves":[{"martellos":40}]
+        },
+        "mushroom_martellos_20": {
+            "waves":[{"mushroom_martellos":20}]
+        },
+        "mushroom_martellos_25": {
+            "waves":[{"mushroom_martellos":25}]
+        },
+        "mushroom_martellos_30": {
+            "waves":[{"mushroom_martellos":30}]
+        },
+        "mushroom_martellos_35": {
+            "waves":[{"mushroom_martellos":35}]
+        },
+        "mushroom_martellos_40": {
+            "waves":[{"mushroom_martellos":40}]
+        },
+        "cherry_martellos_20": {
+            "waves":[{"cherry_martellos":20}]
+        },
+        "cherry_martellos_25": {
+            "waves":[{"cherry_martellos":25}]
+        },
+        "cherry_martellos_30": {
+            "waves":[{"cherry_martellos":30}]
+        },
+        "cherry_martellos_35": {
+            "waves":[{"cherry_martellos":35}]
+        },
+        "cherry_martellos_40": {
+            "waves":[{"cherry_martellos":40}]
+        },
+        "stone_martellos_20": {
+            "waves":[{"stone_martellos":20}]
+        },
+        "stone_martellos_25": {
+            "waves":[{"stone_martellos":25}]
+        },
+        "stone_martellos_30": {
+            "waves":[{"stone_martellos":30}]
+        },
+        "stone_martellos_35": {
+            "waves":[{"stone_martellos":35}]
+        },
+        "stone_martellos_40": {
+            "waves":[{"stone_martellos":40}]
+        },
+        "movie_martellos": {
+            "waves":[],
+            "movie":1,
+            "display_overwrite": {
+                "enemies": ["martellos"],
+                "waves": 1,
+                "levels": [15]
+            }
+        },
+        "martellos_double_20": {
+            "waves":[{"martellos_double":20}]
+        },
+        "martellos_double_20_with_sally": {
+            "waves":[{"martellos_double":20}],
+            "npc": {"npc1": {"npc_id": 1}},
+            "random_event_enable": 0,
+            "triggers": {
+                "clear": [
+                    {
+                        "type": "talk",
+                        "npc_id": "girl2",
+                        "talk_id": "double_martellos_clear"
+                    }
+                ]
+            }
+        },
+        "ojinushi_20": {
+            "waves":[{"ojinushi":20}],
+            "unlock": [
+                {"type": "field", "id": "mushroom"}
+            ]
+        },
+        "ojinushi_25": {
+            "waves":[{"ojinushi":25}],
+            "unlock": [
+                {"type": "rank", "id": "gold", "requirements": [{"type":"event", "id": "martellos_25"}]}
+            ]
+        },
+        "ojinushi_30": {
+            "waves":[{"ojinushi":30}]
+        },
+        "ojinushi_35": {
+            "waves":[{"ojinushi":35}]
+        },
+        "ojinushi_40": {
+            "waves":[{"ojinushi":40}]
+        },
+        "movie_ojinushi": {
+            "waves":[],
+            "movie":1,
+            "display_overwrite": {
+                "enemies": ["ojinushi"],
+                "waves": 1,
+                "levels": [20]
+            }
+        },
+        "muscleroom_25": {
+            "waves":[{"muscleroom":25}],
+            "unlock": [
+                {"type": "rank", "id": "gold"}
+            ]
+        },
+        "muscleroom_30": {
+            "waves":[{"muscleroom":30}]
+        },
+        "muscleroom_35": {
+            "waves":[{"muscleroom":35}]
+        },
+        "muscleroom_40": {
+            "waves":[{"muscleroom":40}]
+        },
+        "movie_muscleroom": {
+            "waves":[],
+            "movie":1,
+            "display_overwrite": {
+                "enemies": ["muscleroom"],
+                "waves": 1,
+                "levels": [25]
+            }
+        },
+        "bagikeros_30": {
+            "waves":[{"bagikeros":30}],
+            "triggers": {
+                "first_clear": [
+                    {
+                        "type": "talk",
+                        "npc_id": "system",
+                        "talk_id": "demo_end"
+                    }
+                ]
+            }
+        },
+        "bagikeros_35": {
+            "waves":[{"bagikeros":35}]
+        },
+        "bagikeros_40": {
+            "waves":[{"bagikeros":40}]
+        },
+        "movie_bagikeros": {
+            "waves":[],
+            "movie":1,
+            "display_overwrite": {
+                "enemies": ["bagikeros"],
+                "waves": 1,
+                "levels": [30]
+            }
+        }
+    },
+    "random_events": {
+        "plain_small_a": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_small_a_5", "weight": 1},
+                {"event": "plain_small_a_10", "weight": 1},
+                {"event": "plain_small_a_15", "weight": 1}
+            ]
+        },
+        "plain_a_1": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a_5", "weight": 1},
+                {"event": "plain_a_10", "weight": 1},
+                {"event": "plain_a_15", "weight": 1},
+                {"event": "plain_b_5", "weight": 1},
+                {"event": "plain_b_10", "weight": 1},
+                {"event": "plain_b_15", "weight": 1},
+                {"event": "plain_c_5", "weight": 1},
+                {"event": "plain_c_10", "weight": 1},
+                {"event": "plain_c_15", "weight": 1},
+                {"event": "walking_mushrooms_5", "weight": 1},
+                {"event": "walking_mushrooms_10", "weight": 1},
+                {"event": "walking_mushrooms_15", "weight": 1},
+                {"event": "boars_5", "weight": 1},
+                {"event": "boars_10", "weight": 1},
+                {"event": "boars_15", "weight": 1},
+                {"event": "spiders_5", "weight": 1},
+                {"event": "spiders_10", "weight": 1},
+                {"event": "spiders_15", "weight": 1},
+                {"event": "king_boar_15", "weight": 5},
+                {"event": "king_boar_20", "weight": 3},
+                {"event": "king_boar_25", "weight": 2},
+                {"event": "squirrel_head_15", "weight": 5},
+                {"event": "squirrel_head_20", "weight": 3},
+                {"event": "squirrel_head_25", "weight": 2}
+            ]
+        },
+        "plain_b_1": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a_10", "weight": 3},
+                {"event": "plain_a_15", "weight": 2},
+                {"event": "plain_b_10", "weight": 3},
+                {"event": "plain_b_15", "weight": 2},
+                {"event": "plain_c_10", "weight": 3},
+                {"event": "plain_c_15", "weight": 2},
+                {"event": "walking_mushrooms_10", "weight": 1},
+                {"event": "walking_mushrooms_15", "weight": 1},
+                {"event": "boars_10", "weight": 1},
+                {"event": "boars_15", "weight": 1},
+                {"event": "spiders_10", "weight": 1},
+                {"event": "spiders_15", "weight": 1},
+                {"event": "king_boar_15", "weight": 1},
+                {"event": "king_boar_20", "weight": 1},
+                {"event": "king_boar_25", "weight": 1},
+                {"event": "king_boar_30", "weight": 1},
+                {"event": "king_boar_35", "weight": 1},
+                {"event": "king_boar_40", "weight": 1},
+                {"event": "squirrel_head_15", "weight": 1},
+                {"event": "squirrel_head_20", "weight": 1},
+                {"event": "squirrel_head_25", "weight": 1},
+                {"event": "squirrel_head_30", "weight": 1},
+                {"event": "squirrel_head_35", "weight": 1},
+                {"event": "squirrel_head_40", "weight": 1},
+                {"event": "martellos_15", "weight": 3},
+                {"event": "martellos_20", "weight": 3},
+                {"event": "martellos_25", "weight": 3},
+                {"event": "martellos_30", "weight": 3},
+                {"event": "martellos_35", "weight": 3},
+                {"event": "martellos_40", "weight": 3},
+                {"event": "ojinushi_20", "weight": 1},
+                {"event": "ojinushi_25", "weight": 1},
+                {"event": "ojinushi_30", "weight": 1},
+                {"event": "ojinushi_35", "weight": 1},
+                {"event": "ojinushi_40", "weight": 1},
+                {"event": "muscleroom_25", "weight": 1},
+                {"event": "muscleroom_30", "weight": 1},
+                {"event": "muscleroom_35", "weight": 1},
+                {"event": "muscleroom_40", "weight": 1}
+            ]
+        },
+        "cherry_a_1": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a_10", "weight": 3},
+                {"event": "plain_a_15", "weight": 2},
+                {"event": "plain_b_10", "weight": 3},
+                {"event": "plain_b_15", "weight": 2},
+                {"event": "plain_c_10", "weight": 3},
+                {"event": "plain_c_15", "weight": 2},
+                {"event": "walking_mushrooms_10", "weight": 1},
+                {"event": "walking_mushrooms_15", "weight": 1},
+                {"event": "boars_10", "weight": 1},
+                {"event": "boars_15", "weight": 1},
+                {"event": "spiders_10", "weight": 1},
+                {"event": "spiders_15", "weight": 1},
+                {"event": "cherry_martellos_20", "weight": 1},
+                {"event": "cherry_martellos_25", "weight": 1},
+                {"event": "cherry_martellos_30", "weight": 1},
+                {"event": "cherry_martellos_35", "weight": 1},
+                {"event": "cherry_martellos_40", "weight": 1},
+                {"event": "ojinushi_20", "weight": 3},
+                {"event": "ojinushi_25", "weight": 3},
+                {"event": "ojinushi_30", "weight": 3},
+                {"event": "ojinushi_35", "weight": 3},
+                {"event": "ojinushi_40", "weight": 3},
+                {"event": "muscleroom_25", "weight": 1},
+                {"event": "muscleroom_30", "weight": 1},
+                {"event": "muscleroom_35", "weight": 1},
+                {"event": "muscleroom_40", "weight": 1}
+            ]
+        },
+        "mushroom_a_1": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a_15", "weight": 5},
+                {"event": "plain_b_15", "weight": 5},
+                {"event": "plain_c_15", "weight": 5},
+                {"event": "walking_mushrooms_15", "weight": 5},
+                {"event": "mushroom_martellos_25", "weight": 1},
+                {"event": "mushroom_martellos_30", "weight": 1},
+                {"event": "mushroom_martellos_35", "weight": 1},
+                {"event": "mushroom_martellos_40", "weight": 1},
+                {"event": "ojinushi_25", "weight": 1},
+                {"event": "ojinushi_30", "weight": 1},
+                {"event": "ojinushi_35", "weight": 1},
+                {"event": "ojinushi_40", "weight": 1},
+                {"event": "muscleroom_25", "weight": 3},
+                {"event": "muscleroom_30", "weight": 3},
+                {"event": "muscleroom_35", "weight": 3},
+                {"event": "muscleroom_40", "weight": 3}
+            ]
+        },
+        "stone_a_1": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "stone_a_15", "weight": 6},
+                {"event": "stone_a_20", "weight": 5},
+                {"event": "stone_b_15", "weight": 6},
+                {"event": "stone_b_20", "weight": 5},
+                {"event": "spiders_10", "weight": 3},
+                {"event": "spiders_15", "weight": 2},
+                {"event": "stone_martellos_20", "weight": 2},
+                {"event": "stone_martellos_25", "weight": 2},
+                {"event": "stone_martellos_30", "weight": 2},
+                {"event": "stone_martellos_35", "weight": 2},
+                {"event": "stone_martellos_40", "weight": 1},
+                {"event": "ojinushi_20", "weight": 2},
+                {"event": "ojinushi_25", "weight": 2},
+                {"event": "ojinushi_30", "weight": 2},
+                {"event": "ojinushi_35", "weight": 2},
+                {"event": "ojinushi_40", "weight": 1},
+                {"event": "muscleroom_25", "weight": 1},
+                {"event": "muscleroom_30", "weight": 1},
+                {"event": "muscleroom_35", "weight": 1},
+                {"event": "muscleroom_40", "weight": 1},
+                {"event": "bagikeros_30", "weight": 7},
+                {"event": "bagikeros_35", "weight": 6},
+                {"event": "bagikeros_40", "weight": 5}
+            ]
+        },
+        "king_boar": {
+            "random_event_chance": 1.0,
+            "random_events": [
+                {"event": "king_boar_15", "weight": 6},
+                {"event": "king_boar_20", "weight": 5},
+                {"event": "king_boar_25", "weight": 4},
+                {"event": "king_boar_30", "weight": 3},
+                {"event": "king_boar_35", "weight": 2},
+                {"event": "king_boar_40", "weight": 1}
+            ]
+        },
+        "martellos": {
+            "random_event_chance": 1.0,
+            "random_events": [
+                {"event": "martellos_15", "weight": 6},
+                {"event": "martellos_20", "weight": 5},
+                {"event": "martellos_25", "weight": 4},
+                {"event": "martellos_30", "weight": 3},
+                {"event": "martellos_35", "weight": 2},
+                {"event": "martellos_40", "weight": 1}
+            ]
+        },
+        "ojinushi": {
+            "random_event_chance": 1.0,
+            "random_events": [
+                {"event": "ojinushi_20", "weight": 5},
+                {"event": "ojinushi_25", "weight": 4},
+                {"event": "ojinushi_30", "weight": 3},
+                {"event": "ojinushi_35", "weight": 2},
+                {"event": "ojinushi_40", "weight": 1}
+            ]
+        },
+        "muscleroom": {
+            "random_event_chance": 1.0,
+            "random_events": [
+                {"event": "muscleroom_25", "weight": 4},
+                {"event": "muscleroom_30", "weight": 3},
+                {"event": "muscleroom_35", "weight": 2},
+                {"event": "muscleroom_40", "weight": 1}
+            ]
+        },
+        "bagikeros": {
+            "random_event_chance": 1.0,
+            "random_events": [
+                {"event": "bagikeros_30", "weight": 3},
+                {"event": "bagikeros_35", "weight": 2},
+                {"event": "bagikeros_40", "weight": 1}
+            ]
+        }
+    }
+}

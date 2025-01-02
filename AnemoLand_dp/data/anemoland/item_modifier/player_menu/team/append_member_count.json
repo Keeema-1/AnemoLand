@@ -1,0 +1,29 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "  ",
+					"color": "white",
+					"italic": false
+				},
+				{
+					"score": {
+						"name": "#count",
+						"objective": "temp"
+					},
+					"color": "aqua",
+					"italic": false
+				},
+				{
+					"text": "/4",
+					"color": "white",
+					"italic": false
+				}
+			]
+		],
+		"mode": "append"
+	}
+]

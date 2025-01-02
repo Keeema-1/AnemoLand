@@ -1,0 +1,1 @@
+execute if score @s anger.time matches 1.. run scoreboard players remove @s anger.time 1

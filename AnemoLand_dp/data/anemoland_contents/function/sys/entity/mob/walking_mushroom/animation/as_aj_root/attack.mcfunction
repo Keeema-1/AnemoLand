@@ -1,0 +1,2 @@
+function animated_java:walking_mushroom/animations/pause_all
+function animated_java:walking_mushroom/animations/attack/play

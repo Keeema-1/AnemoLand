@@ -1,0 +1,34 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:chainmail_chestplate",
+			"components": {
+				"custom_model_data": 6
+			}
+		},
+		"title": "シュルーム防具",
+		"description": [
+			{
+				"text": "シュルームヘッド\n"
+			},
+			{
+				"text": "シュルームショルダー\n"
+			},
+			{
+				"text": "シュルームニー\n"
+			},
+			{
+				"text": "シュルームフット"
+			}
+		],
+		"show_toast": false,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"parent": "' + namespace_contents + ':armor_catalog/iron",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

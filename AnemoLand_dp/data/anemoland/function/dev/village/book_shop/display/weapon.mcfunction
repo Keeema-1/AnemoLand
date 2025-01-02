@@ -1,0 +1,2 @@
+kill @e[tag=book_shop.weapon,distance=..4]
+execute positioned ~ ~0.5 ~ align xyz positioned ~0.5 ~0.5 ~0.5 run summon minecraft:text_display ~ ~ ~ {text:'{"text":"武器ショップ"}',Tags:["book_shop","book_shop.weapon"],billboard:"center"}

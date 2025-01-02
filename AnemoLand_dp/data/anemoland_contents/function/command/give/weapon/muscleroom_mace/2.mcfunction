@@ -1,0 +1,1 @@
+loot give @s loot anemoland_contents:item/weapon/muscleroom_mace/2

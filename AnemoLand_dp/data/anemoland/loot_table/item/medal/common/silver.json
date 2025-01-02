@@ -1,0 +1,67 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:leather",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{"text":"  "},
+									{
+										"translate": "item.medal.common.lore.1",
+										"italic": false,
+										"color": "white"
+									}
+								],
+								[
+									{"text":"  "},
+									{
+										"translate": "item.medal.common.lore.2",
+										"with": [{"translate": "common.rank.silver"}],
+										"italic": false,
+										"color": "white"
+									}
+								],
+								[
+									{"text":"  "},
+									{
+										"translate": "item.medal.common.lore.3",
+										"italic": false,
+										"color": "white"
+									}
+								]
+							],
+							"mode": "append"
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"material\",id:\"silver_medal\"}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 1
+						},
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "item.medal.common.name",
+								"with": [{"translate": "common.rank.silver"}],
+								"italic": false,
+								"color": "gray"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

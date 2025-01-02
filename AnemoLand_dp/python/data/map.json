@@ -1,0 +1,202 @@
+{
+    "maps":[
+        {
+            "name": "beta1",
+            "display_name": "Beta-1",
+            "score": 1,
+            "size": 10,
+            "pos": [1024.0, 0.0],
+            "map":[
+                ["##","##","##","##","##","##","##","##","##","##"],
+                ["##","##","82","83","##","##","##","##","##","##"],
+                ["##","71","72","73","##","##","##","##","##","##"],
+                ["##","61","62","63","##","##","##","##","##","##"],
+                ["##","51","52","53","54","55","##","##","##","##"],
+                ["##","41","42","43","44","45","##","##","##","##"],
+                ["##","31","32","33","34","35","##","##","##","##"],
+                ["##","32","33","23","24","25","26","##","##","##"],
+                ["##","##","##","##","14","15","##","##","##","##"],
+                ["##","##","##","##","04","05","##","##","##","##"]
+            ],
+            "fields":{
+                "05": {
+                    "index":[0,5],
+                    "type": "ship",
+                    "no_cloud": 1,
+                    "no_barrier": 1,
+                    "display_name": "船"
+                },
+                "15": {
+                    "index":[1,5],
+                    "offset": [0, -1024],
+                    "type": "village",
+                    "field_type": "camp1",
+                    "no_cloud": 1,
+                    "no_barrier": 1,
+                    "display_name": "ベースキャンプ"
+                },
+                "14": {
+                    "index":[1,4],
+                    "offset": [512,-1024],
+                    "type": "field",
+                    "special_field": "training",
+                    "field_type": "plain_B",
+                    "display_name": "訓練場",
+                    "no_cloud": 1,
+                    "no_barrier": 1,
+                    "unlock":[],
+                    "default_event": "walking_mushrooms_5"
+                },
+                "04": {
+                    "index":[0,4],
+                    "offset": [0,-1536],
+                    "type": "field",
+                    "special_field": "arena_prepare",
+                    "field_type": "arena_prepare",
+                    "display_name": "闘技場",
+                    "no_cloud": 1,
+                    "no_barrier": 1,
+                    "unlock":[]
+                },
+                "arena1": {
+                    "id": "arena1",
+                    "index":[99,1],
+                    "offset": [512,-1536],
+                    "type": "field",
+                    "special_field": "arena",
+                    "field_type": "arena1",
+                    "display_name": "闘技場",
+                    "unlock":[],
+                    "default_event": "walking_mushrooms_5"
+                },
+                "26": {
+                    "index":[2,6],
+                    "offset": [0,-2048],
+                    "type": "field",
+                    "special_field": "explore",
+                    "field_type": "plain_C",
+                    "display_name": "池",
+                    "no_cloud": 1,
+                    "no_barrier": 1
+                },
+                "25": {
+                    "index":[2,5],
+                    "offset": [0, 1024],
+                    "type": "field",
+                    "field_type": "plain_A",
+                    "display_name": "森林 (小)",
+                    "no_barrier": 1,
+                    "unlock":["24"],
+                    "default_event": "walking_mushrooms_5",
+                    "random_event": "test"
+                },
+                "24": {
+                    "index":[2,4],
+                    "offset": [512, 1024],
+                    "type": "field",
+                    "field_type": "plain_B",
+                    "display_name": "森林 (中)",
+                    "unlock":[],
+                    "default_event": "walking_mushrooms_5",
+                    "random_event": "test"
+                }
+            }
+        }
+    ],
+    "field_types":{
+        "plain_A": {
+            "center": [1024.0, 0.0, 1280.0],
+            "entrance": [1023.0, 0.0, 1304.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[1019.0, 0.0, 1308.0], "aabb":[8,1]},
+                {"start":[1015.0, 0.0, 1257.0], "aabb":[8,1]}
+            ]
+        },
+        "plain_B": {
+            "center": [2048.0, 0.0, 1792.0],
+            "entrance": [2048.0, 0.0, 1820.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2044.0, 0.0, 1824.0], "aabb":[8,1]},
+                {"start":[2039.0, 0.0, 1769.0], "aabb":[8,1]}
+            ]
+        },
+        "plain_C": {
+            "center": [2048.0, 0.0, 3840.0],
+            "entrance": [2046.0, 0.0, 3880.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2042.0, 0.0, 3888.0], "aabb":[8,1]}
+            ]
+        },
+        "woods_A": {
+            "center": [1024.0, 0.0, 2048.0],
+            "entrance": [1023.0, 0.0, 2072.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[1019.0, 0.0, 2076.0], "aabb":[8,1]},
+                {"start":[1015.0, 0.0, 2025.0], "aabb":[8,1]}
+            ]
+        },
+        "dungeon_plain_A": {
+            "center": [1024.0, 0.0, 2560.0],
+            "entrance": [1024.0, 0.0, 2584.0],
+            "structure_size": 2,
+            "exits": [
+                {"start":[1020.0, 0.0, 2587.0], "aabb":[8,1]},
+                {"start":[1020.0, 0.0, 2532.0], "aabb":[8,1]}
+            ]
+        },
+        "mushroom_A": {
+            "center": [2048.0, 0.0, 2816.0],
+            "entrance": [2046.0, 0.0, 2841.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2042.0, 0.0, 2845.0], "aabb":[8,1]},
+                {"start":[2031.0, 0.0, 2760.0], "aabb":[8,1]}
+            ]
+        },
+        "cherry_A": {
+            "center": [2048.0, 0.0, 3328.0],
+            "entrance": [2046.0, 0.0, 3368.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2042.0, 0.0, 3375.0], "aabb":[8,1]}
+            ]
+        },
+        "rock_A": {
+            "center": [3072.0, 0.0, 8192.0],
+            "entrance": [3070.0, 0.0, 8217.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[3066.0, 0.0, 8221.0], "aabb":[8,1]},
+                {"start":[3057.0, 0.0, 8136.0], "aabb":[8,1]}
+            ]
+        },
+        "arena_prepare": {
+            "center": [3072.0, 0.0, -3072.0],
+            "entrance": [3072.0, 0.0, -3072.0],
+            "structure_size": 1,
+            "exits": [
+                {"start":[3070.0, 0.0, -3064.0], "aabb":[4,1]}
+            ]
+        },
+        "arena1": {
+            "center": [3072.0, 0.0, -2816.0],
+            "entrance": [3072.0, 0.0, -2784.0],
+            "structure_size": 2,
+            "exits": [
+                {"start":[3069.0, 0.0, -2776.0], "aabb":[6,1]}
+            ]
+        },
+        "camp1": {
+            "center": [1024.0, 0.0, -1024.0],
+            "entrance": [1024.0, 0.0, -1010.0],
+            "structure_size": 3,
+            "exits": [
+                {"start":[1022.0, 0.0, -1005.0], "aabb":[4,1]}
+            ]
+        }
+    }
+}

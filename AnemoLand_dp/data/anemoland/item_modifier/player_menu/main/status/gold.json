@@ -1,0 +1,33 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "  ",
+					"color": "yellow",
+					"italic": false
+				},
+				{
+					"translate": "common.player_money"
+				},
+				{
+					"text": " "
+				},
+				{
+					"score": {
+						"name": "@s",
+						"objective": "gold"
+					},
+					"color": "white",
+					"italic": false
+				},
+				{
+					"text": " G"
+				}
+			]
+		],
+		"mode": "append"
+	}
+]

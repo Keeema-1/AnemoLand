@@ -1,0 +1,108 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_helmet",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "armor.iron.helmet.name",
+								"color": "white",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "  Lv. 1",
+										"color": "yellow",
+										"italic": false
+									}
+								],
+								[
+									{
+										"text": "  ⏫ ",
+										"color": "aqua",
+										"italic": false
+									},
+									{
+										"translate": "common.armor"
+									},
+									{
+										"text": " +2"
+									}
+								],
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "▶ ",
+										"italic": false,
+										"color": "dark_gray"
+									},
+									{
+										"translate": "common.sell_price"
+									},
+									{
+										"text": ": 160G"
+									}
+								]
+							],
+							"mode": "replace_all"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"id": "helmet.armor.add.2",
+									"attribute": "minecraft:armor",
+									"amount": 0.2,
+									"operation": "add_value",
+									"slot": "head"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"armor\",series:\"iron\",part:\"helmet\",id:\"iron_helmet\",sell_price:160,loot_table:\"item/armor/iron/helmet\",power_up:{add_level:1,materials:[{id:\"silver_medal\",loot_table:\"item/medal/common/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{},skills:[]}}"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:unbreakable": {
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantment_glint_override": false,
+								"minecraft:equippable": {
+									"slot": "head",
+									"equip_sound": "item.armor.equip_chain",
+									"model": "iron"
+								}
+							}
+						},
+						{
+							"function": "minecraft:toggle_tooltips",
+							"toggles": {
+								"minecraft:enchantments": false,
+								"minecraft:attribute_modifiers": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

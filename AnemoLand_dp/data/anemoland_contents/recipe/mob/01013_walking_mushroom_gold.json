@@ -1,0 +1,30 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"key": {
+		"#": "minecraft:light_gray_stained_glass_pane"
+	},
+	"pattern": [
+		"#"
+	],
+	"result": {
+		"count": 1,
+		"id": "minecraft:green_dye",
+		"components": {
+			"item_name": "【No.01-01】金の歩き茸",
+			"custom_model_data": 13,
+			"lore": [
+				"{\"text\":\"  進化の過程で歩行機能を獲得した茸。\",\"italic\":false,\"color\":\"yellow\"}",
+				"{\"text\":\"\"}",
+				"{\"text\":\"主な出現地域\",\"italic\":false}",
+				"[{\"text\":\"  \"},{\"text\":\"森林\",\"italic\":false,\"color\":\"white\"}]",
+				"{\"text\":\"\"}",
+				"{\"text\":\"攻撃属性\",\"italic\":false}",
+				"[{\"text\":\"  \"},{\"text\":\"物理\",\"italic\":false,\"color\":\"white\"}]",
+				"{\"text\":\"\"}",
+				"{\"text\":\"与ダメージ率(%)\",\"italic\":false}",
+				"[{\"text\":\"  <全身> \",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"物理 \", \"italic\":false,\"color\":\"gray\"},{\"text\":\"50\", \"italic\":false,\"color\":\"gray\"}]"
+			]
+		}
+	}
+}

@@ -1,0 +1,1 @@
+loot give @s loot anemoland_contents:item/weapon/martellos_hammer/1

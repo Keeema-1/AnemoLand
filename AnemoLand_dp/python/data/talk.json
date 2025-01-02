@@ -1,0 +1,1649 @@
+{
+	"talkers":[
+		{
+			"name": "system",
+			"display_name": "",
+			"trigger_offset": 9000,
+			"talks": {
+				"movie_camera_distance": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"start_delay_ticks": 1,
+					"contents": [
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ムービー再生時のカメラ距離設定"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "choices",
+							"show_name": false,
+							"choices": [
+								{"text": "三人称視点用の距離", "command": "function anemoland:command/setting/player/movie_camera_distance/near", "trigger": 1},
+								{"text": "一人称視点用の距離", "command": "function anemoland:command/setting/player/movie_camera_distance/far", "trigger": 2}
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"demo_end": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"start_delay_ticks": 1,
+					"contents": [
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "このバージョンで挑戦できる全てのボスを討伐しました。", "color":"green"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "現在のバージョンではLv.40までのボスがランダムに出現します。", "color":"green"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "さらに、登場する全てのモブやボスはペットとして召喚することができるので、よければお試しください。", "color":"green"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "また、拠点の", "color":"green"},
+									{"text": "外部URL用書見台", "color":"aqua"},
+									{"text": "からフィードバックにご回答いただけると、今後の開発の参考にいたします。", "color":"green"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "バグを発見した場合も、そちらのURLから報告をお願いいたします。", "color":"green"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ここまで遊んでいただきありがとうございました。次回のバージョンをお楽しみに！", "color":"green"}
+								],
+								[
+									{"text": "(製作 Keeema)", "color":"green"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "girl1",
+			"display_name": "ナビゲーター マキ",
+			"trigger_offset": 1000,
+			"area": [3, -43],
+			"talks": {
+				"default": {
+					"score": 1,
+					"type": "display",
+					"trigger": "talk",
+					"important": false,
+					"contents": [
+						[
+							{"text": "こんにちは！"}
+						]
+					],
+					"after": "default"
+				},
+				"tutorial_choices": {
+					"score": 2,
+					"type": "chat",
+					"trigger": "talk",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "こんにちは！"}
+								],
+								[
+									{"text": "何か聞きたいことはありますか？"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "choices",
+							"show_name": false,
+							"choices": [
+								{"text": "やるべきことについて", "talk": "tutorial_purpose"},
+								{"text": "マップとフィールドについて", "talk": "tutorial_map"},
+								{"text": "メニューについて", "talk": "tutorial_menu"},
+								{"text": "戦闘について", "talk": "tutorial_battle"},
+								{"text": "装備について", "talk": "tutorial_equipment"},
+								{"text": "ペットについて", "talk": "tutorial_pet"},
+								{"text": "戦いを有利に進めるには", "talk": "tutorial_hint"},
+								{"text": "マルチプレイでの進め方", "talk": "tutorial_multi"}
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"hello": {
+					"score": 3,
+					"type": "chat",
+					"trigger": "talk",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "はじめまして！"}
+								],
+								[
+									{"text": "私はナビゲーターのマキといいます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ナビゲーターの名の通り、あなたの案内役を務めさせていただきます。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "わからないことがあれば、私に聞いてくださいね！"}
+								],
+								[
+									{"text": "よろしくお願いします！"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_purpose": {
+					"score": 11,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "近年、この島の周辺で危険なモンスターの大量発生・凶暴化などが頻発しています。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text":"私たちは、そんな危険なモンスターから人々を守るためにこの島にやってきました。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "私たちの任務は、この島を探索して危険なモンスターを討伐することです。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "モンスターを討伐していくとランクが昇格し、さらに強いモンスターとの戦闘が許可されます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"icon": "character.girl1.smile",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "現在はブロンズランクですが、シルバーランク、そしてゴールドランクへの昇格を目指して頑張りましょう！"}
+								],
+								[
+									{"text":""}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_map": {
+					"score": 12,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "拠点の外に出ると"},
+									{"text": "マップ", "color": "aqua"},
+									{"text": "に移動します。"}
+								],
+								[
+									{"text": "マップからは各フィールドに移動することができます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "「スニークでフィールドに移動」","color":"yellow"},
+									{"text":"と表示されている場所でスニークをすると、真下のフィールドに移動することができます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "そして、フィールドに移動すると敵が出現します。"},
+									{"text": "敵を全て倒すことで、フィールドイベントをクリアすることができます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "フィールドイベントを3回クリアするごとに、出現モンスターなどがランダムに変化します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マップ上に濃い霧がかかっているフィールドには移動ができませんが、フィールドをクリアしていくことで霧が晴れていきます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "フィールドをクリアしていき、どんどん先へ進みましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_menu": {
+					"score": 13,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"keybind": "key.inventory"},
+									{"text": "キーでインベントリを開いたとき、背景が黄色になっている上の1行を"},
+									{"text": "プレイヤーメニュー", "color": "aqua"},
+									{"text": "と呼びます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "装備タブでは防具の変更、ペットタブではペットの設定などを行います。"},
+									{"text": "このように、プレイヤーメニューを使って様々なことができるので、ぜひ試してみてくださいね！"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_battle": {
+					"score": 14,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "基本的な戦闘方法を説明します。"}
+								],
+								[
+									{"text": "通常攻撃は"},
+									{"keybind": "key.attack"},
+									{"text": "で行います。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ジャンプ中に"},
+									{"keybind": "key.jump"},
+									{"text": "キーで回避行動を行います。"}
+								],
+								[
+									{"text": "回避行動はスタミナを消費します。"},
+									{"text": "残りのスタミナはHP表示の下にあるバーで表示されます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "戦闘中に武器を持つと画面下に「|||||」のようなゲージが表示されます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "このゲージは"},
+									{"text": "技ゲージ","color":"aqua"},
+									{"text": "と呼ばれます。"}
+								],
+								[
+									{"text": "この技ゲージを消費して、武器ごとに設定された"},
+									{"text": "武器技","color":"aqua"},
+									{"text": "を発動することができます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "武器技は、"},
+									{"keybind": "key.drop"},
+									{"text": "キーまたは"},
+									{"keybind": "key.swapOffhand"},
+									{"text": "キーで"},
+									{"text": "技モード","color":"aqua"},
+									{"text": "に切り替えることで"}
+								],
+								[
+									{"text": "使用することができます。"}
+								],
+								[
+									{"text": "技モードに切り替えた状態で敵を攻撃すると、武器技が発動します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ぜひいろいろな武器や技を試して、自分に合った戦い方を探してみてくださいね！"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_equipment": {
+					"score": 15,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "装備について説明します。"}
+								],
+								[
+									{"text": "拠点では武器・防具の購入や取引・強化を行うことができます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ショップでは装備を購入することができます。"}
+								],
+								[
+									{"text": "装備商人との交易では、モンスターから入手した素材を交換して装備を入手することができます。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "入手した装備はメニューの装備タブから適用することができます。。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "また、手に入れた装備は、ランクが昇格するごとに次のレベルに強化できるようになります。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "装備には属性耐性や固有のスキルなどが付与されています。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "攻撃に特化したスキルや回避・回復を補助するスキルなど、さまざまなスキルが存在します。"}
+								],
+								[
+									{"text": "ぜひ、自分のプレイスタイルや挑戦する敵に合わせたスキルを選んでみてくださいね！"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_pet": {
+					"score": 16,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "ペットについて説明します。"}
+								],
+								[
+									{"text": "拠点にいるペット商人との取引によって、ペットアイテムを入手することができます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "一般モンスターとボスモンスターとでは、ペットを召喚する方法が異なります。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "一般モンスターのペットは、プレイヤーメニューのペットタブから設定する必要があります。"}
+								],
+								[
+									{"text": "ペットスロットにペットアイテムを設置することで、戦闘時に自動的にペットが召喚されるようになります。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "さらに、ペットスロットに設定されたペットは、戦闘時に倒した敵から経験値を獲得してレベルが上昇するようになります。"}
+								],
+								[
+									{"text": "レベルの上昇に伴って最大HPや攻撃力が増加します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "対してボスモンスターを召喚するためには、戦闘中に"}
+								],
+								[
+									{"keybind": "key.use"},
+									{"text": "でペットアイテムを使用します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ボスモンスターを召喚する際には技ゲージが消費され、一定時間が経過するとボスモンスターは去ってしまいます。"}
+								],
+								[
+									{"text": "さらに再召喚ができるまでのクールタイムが発生します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "また拠点の「装備・ペットの強化」では、素材を消費してレベルアップさせることも可能です。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ペットはあなたと共に戦い、時には敵の注意を引きつけてくれる頼もしい存在になってくれるでしょう。"}
+								],
+								[
+									{"text": "ぜひペットの編成についても考えてみてくださいね！。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_hint": {
+					"score": 17,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "戦いを有利に進めるためのヒントを説明します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "【メダルを有効活用しよう】","color":"yellow"}
+								],
+								[
+									{"text": "敵を倒して入手したメダルは、装備・ペットの入手や強化に使用できます。"}
+								],
+								[
+									{"text": "敵が手強いと思ったら、倒しやすいモンスターをペットにしたり、装備を強化することをおすすめします。"}
+								],
+								[
+									{"text": "メダル交換所では、メダルを別のメダルに交換することができます。余ったメダルも活用しましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "【武器技を活用しよう】","color":"yellow"}
+								],
+								[
+									{"text": "武器ごとに武器技が設定されています。"}
+								],
+								[
+									{"text": "当たり判定や属性など、武器技には個性があります。戦う相手に合わせて武器を選択しましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "【弱点を攻撃しよう】","color":"yellow"}
+								],
+								[
+									{"text": "大型のモンスターは部位ごとにダメージ効率が異なる場合があります。"}
+								],
+								[
+									{"text": "どの部位にダメージが通りやすいのか意識して攻撃してみましょう！"}
+								],
+								[
+									{"text": "モンスターを倒した時に図鑑が登録され、モンスターの情報が確認できるようになります。"}
+								],
+								[
+									{"text": "図鑑はインベントリの\\ue012マークから確認できますよ。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "【攻撃を見極めよう】","color":"yellow"}
+								],
+								[
+									{"text": "ボスモンスターは多彩な攻撃を行なってきます。"}
+								],
+								[
+									{"text": "攻撃の動作を観察して、どの方向に避けるべきか見極めましょう。"}
+								],
+								[
+									{"text": "避けられないと思ったら、回避行動で素早く距離をとることが大切です！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "【ランダムイベントを活用しよう】","color":"yellow"}
+								],
+								[
+									{"text": "フィールドイベントを3回クリアするごとに、ランダムイベントが更新されます。"}
+								],
+								[
+									{"text": "ランダムイベントが更新されると、出現するモンスターが一部変化します。"}
+								],
+								[
+									{"text": "メダルのドロップ数などのボーナスが発生する場合もあります。"}
+								],
+								[
+									{"text": "ランダムイベントが更新されたら、マップ上からイベントを確認してみましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_multi": {
+					"score": 18,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "マルチプレイでの進め方について説明します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マルチプレイ時に誰かがフィールドに移動すると、近くの他のプレイヤーも一緒に移動します。"},
+									{"text": "ただし、一度に参加できる人数は4人までです。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "複数プレイヤーでボスに挑戦する場合、人数が1人増加するたびにHPが50%ずつ上昇します。"}
+								],
+								[
+									{"text": "複数プレイヤーでボスを倒した場合、ボスのドロップ品は人数分だけ増加します。"}
+								],
+								[
+									{"text": "ただし、各プレイヤーが拾える量は一人分だけです。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "メニューからチームに所属すると、同じフィールドに移動できるのはチームメンバーのみになります。もし必要な場合は活用しましょう。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"king_boar_first": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "キングボア", "color": "aqua"},
+									{"text": "が出現しました！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "キングボアはHPや攻撃力が高い"},
+									{"text": "ボスモンスター", "color": "aqua"},
+									{"text": "です。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "キングボアは目の前の敵への突進攻撃、そして近くの敵を踏み潰す叩きつけ攻撃を行ってきます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "どちらの攻撃を行ってくるのか、動作を観察しながら見極めるのが討伐のコツですよ！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "しっかり準備をして、討伐に向かいましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"martellos_first": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "マルテロス", "color": "aqua"},
+									{"text": "が出現しました！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マルテロスは両腕と尻尾の木槌を振り回す攻撃が特徴的です。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "キングボアよりも多彩な攻撃を行ってくるので、攻撃の動作を見極められるようによく観察して戦いましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マルテロスのように体が大きいモンスターは、部位によってダメージ効率が異なる場合があります。"},
+									{"text": "弱点を見つけて攻撃することも大切ですよ！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "また、マルテロスを討伐すると、実力が認められて"},
+									{"text": "シルバーランク","color":"gray"},
+									{"text": "に昇格します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "シルバーランクに昇格すると Lv.20 - 29 のモンスターに挑戦できるようになり、武器や防具もさらに強化できるようになります。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マルテロスは強力な相手なので、しっかり装備を整えてから挑むことをおすすめします！"}
+								],
+								[
+									{"text": "もし討伐が難しい場合は、ペットを連れていってモンスターの攻撃を分散させるのが効果的ですよ！"}
+								],
+								[
+									{"text": "それでは、検討を祈ります！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"ojinushi_first": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "オオジヌシ", "color": "aqua"},
+									{"text": "が出現しました！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "オオジヌシは花火玉を吐き出す攻撃が特徴的です。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "花火玉は火属性を含む攻撃なので、火属性耐性が低い装備の場合は注意しましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"muscleroom_first": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "マッスルーム", "color": "aqua"},
+									{"text": "が出現しました！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マッスルームは地面を刺激して、茸を隆起させる攻撃を行います。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "怒り状態では隆起攻撃をしながら他の攻撃を連続して行ってくるため、特に注意が必要ですよ！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "また、マッスルームを討伐すると、実力が認められて"},
+									{"text": "ゴールドランク","color":"yellow"},
+									{"text": "に昇格します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ゴールドランクに昇格すると Lv. 30 + のモンスターに挑戦できるようになり、武器や防具もさらに強化できるようになります。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "もしマッスルームの討伐が難しい場合は、Lv.25のマルテロスとオオジヌシを討伐することでもゴールドランクに昇格することが可能です。"},
+									{"text": "その場合は、ゴールドランクの装備を揃えてからリベンジしてみましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"bagikeros_first": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "バギケロス", "color": "aqua"},
+									{"text": "が出現しました！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "バギケロスは全身の鱗から撒き散らした粉塵を、火花を発生させることで爆破させます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "その爆破は火属性を含む攻撃なので、火属性耐性が低い装備の場合は注意しましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "girl2",
+			"display_name": "サリー",
+			"trigger_offset": 1100,
+			"area": [3, -43],
+			"talks": {
+				"default": {
+					"score": 1,
+					"type": "display",
+					"trigger": "talk",
+					"important": false,
+					"contents": [
+						[
+							{"text": "よお！元気そうだな！"}
+						]
+					],
+					"after": "default"
+				},
+				"double_martellos_1": {
+					"score": 11,
+					"type": "chat",
+					"trigger": "talk",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl2.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "よお！"}
+								],
+								[
+									{"text": "アタシはサリーってんだ。よろしくな！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "最近この辺にマルテロスのつがいが住み着いちまったみたいでな。追い払おうにもアタシ1人じゃ手に負えねぇんだ。"}
+								],
+								[
+									{"text": "アンタ、ちょっと討伐を手伝ってくれねぇか?"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "choices",
+							"show_name": false,
+							"choices": [
+								{"text": "依頼を引き受ける", "talk": "double_martellos_2"}
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "double_martellos_1"
+				},
+				"double_martellos_2": {
+					"score": 12,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl2.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "おお、本当か！ありがとな！"}
+								],
+								[
+									{"text": "んじゃあ改めて、アタシの依頼を説明するぜ。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "アンタには、アタシと一緒にマルテロス2頭の同時討伐を行ってほしい。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マップ上からマルテロス2頭が同時出現しているフィールドに移動してくれ。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "アタシはそこで待っておくから、アンタが到着したら討伐開始だ。"}
+								],
+								[
+									{"text": "じゃあ、よろしくな！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0,
+							"functions": [
+								"function anemoland:command/field_event/demo2/change/martellos_double_20_with_sally {field_id:62}"
+							]
+						}
+					],
+					"after": "double_martellos_2_"
+				},
+				"double_martellos_2_": {
+					"score": 13,
+					"type": "chat",
+					"trigger": "talk",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl2.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "改めて、アタシの依頼を説明するぜ。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "アンタには、アタシと一緒にマルテロス2頭の同時討伐を行ってほしい。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マップ上からマルテロス2頭が同時出現しているフィールドに移動してくれ。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "アタシはそこで待っておくから、アンタが到着したら討伐開始だ。"}
+								],
+								[
+									{"text": "じゃあ、よろしくな！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0,
+							"functions": [
+								"function anemoland:command/field_event/demo2/change/martellos_double_20_with_sally {field_id:62}"
+							]
+						}
+					],
+					"after": "double_martellos_2_"
+				},
+				"double_martellos_enter": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"selector": "@a[distance=..64]",
+					"start_delay_ticks": 0,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl2.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "それじゃあ、さっさとやっちまおうぜ！"}
+								],
+								[
+									{"text": "気合い入れてくぞ、相棒！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"double_martellos_clear": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"selector": "@a[distance=..64]",
+					"start_delay_ticks": 0,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl2.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "討伐達成だ！"}
+								],
+								[
+									{"text": "手伝ってくれてありがとな、頼もしかったぜ！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"double_martellos_after_clear": {
+					"score": 16,
+					"type": "chat",
+					"trigger": "talk",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl2.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "改めて、手伝ってくれてありがとな！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "もしアタシを助っ人として呼びたいと思ったら、メニューの"},
+									{"text": "チームタブ","color":"aqua"},
+									{"text": "の"},
+									{"text": "助っ人を呼ぶ","color":"aqua"},
+									{"text": "を使ってくれ。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "助っ人にアタシを選べば、今回みたいにアタシが戦闘に参加するようになるぜ。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "じゃあ、また困った時は頼りにさせてもらうぜ！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0,
+							"functions": [
+								"function anemoland:command/progress/unlock/supporter/girl2"
+							]
+						},
+						{
+							"type": "choices",
+							"show_name": false,
+							"choices": [
+								{"text": "再び依頼を引き受ける 【マルテロス2頭の同時討伐】", "talk": "double_martellos_2"}
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "double_martellos_restart"
+				},
+				"double_martellos_restart": {
+					"score": 17,
+					"type": "chat",
+					"trigger": "talk",
+					"important": false,
+					"immediate": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "character.girl2.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "改めて、手伝ってくれてありがとな！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "また困った時は頼りにさせてもらうぜ！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "choices",
+							"show_name": false,
+							"choices": [
+								{"text": "再び依頼を引き受ける 【マルテロス2頭の同時討伐】", "talk": "double_martellos_2"}
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "double_martellos_restart"
+				}
+			}
+		}
+	]
+}

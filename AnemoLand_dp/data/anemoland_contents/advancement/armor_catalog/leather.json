@@ -1,0 +1,31 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:leather_chestplate"
+		},
+		"title": "革防具",
+		"description": [
+			{
+				"text": "革の帽子\n"
+			},
+			{
+				"text": "革の上着\n"
+			},
+			{
+				"text": "革のズボン\n"
+			},
+			{
+				"text": "革のブーツ"
+			}
+		],
+		"show_toast": false,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"parent": "' + namespace_contents + ':armor_catalog/initial",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

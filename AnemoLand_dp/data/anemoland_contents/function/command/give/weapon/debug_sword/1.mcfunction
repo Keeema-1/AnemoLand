@@ -1,0 +1,1 @@
+loot give @s loot anemoland_contents:item/weapon/debug_sword/1

@@ -1,0 +1,6 @@
+[
+	{
+		"function": "minecraft:set_custom_data",
+		"tag": "{menu_armor:1b}"
+	}
+]

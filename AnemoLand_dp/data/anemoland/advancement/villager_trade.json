@@ -1,0 +1,13 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:villager_trade",
+			"conditions": {
+				"player": []
+			}
+		}
+	},
+	"rewards": {
+		"function": "anemoland:sys/player/advancement/villager_trade/0"
+	}
+}

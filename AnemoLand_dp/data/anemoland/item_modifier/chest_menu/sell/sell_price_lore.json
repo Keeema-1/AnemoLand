@@ -1,0 +1,33 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "  "
+				},
+				{
+					"score": {
+						"name": "#sell_price_total",
+						"objective": "temp"
+					},
+					"color": "yellow",
+					"italic": false
+				},
+                {
+					"text": "G",
+					"color": "yellow",
+					"italic": false
+				}
+			],
+			[
+				{"text":"クリックで出現したアイテムを","color":"dark_gray","italic":false}
+			],
+			[
+				{"text":"拾うことでゴールドを入手可能","color":"dark_gray","italic":false}
+			]
+		],
+		"mode": "replace_all"
+	}
+]

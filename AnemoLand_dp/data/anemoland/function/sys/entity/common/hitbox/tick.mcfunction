@@ -1,0 +1,1 @@
+execute if predicate anemoland:random_chance/0_2 run data modify entity @s Health set value 1024.0f

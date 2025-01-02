@@ -1,0 +1,1 @@
+function anemoland:sys/player/init

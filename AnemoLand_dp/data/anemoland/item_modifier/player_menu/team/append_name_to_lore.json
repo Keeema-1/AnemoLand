@@ -1,0 +1,13 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			{
+				"selector": "@s",
+				"italic": false
+			}
+		],
+		"mode": "append"
+	}
+]

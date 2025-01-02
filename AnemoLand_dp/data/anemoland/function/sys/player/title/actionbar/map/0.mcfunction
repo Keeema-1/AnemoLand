@@ -1,0 +1,3 @@
+execute if entity @e[type=text_display,tag=area_info,tag=active,tag=!skip,tag=!player_exist,distance=..3.5] run return run function anemoland:sys/player/title/actionbar/map/00
+execute if entity @e[type=text_display,tag=area_info,tag=active,tag=!skip,tag=player_exist,distance=..3.5] run return run title @s actionbar {"text": "他プレイヤーが戦闘中","color": "yellow"}
+execute unless score @s sneak_time matches 1.. run title @s actionbar {"text": "","color": "yellow"}

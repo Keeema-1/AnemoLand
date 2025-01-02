@@ -1,0 +1,1 @@
+loot give @s loot anemoland_contents:item/weapon/carnara_spear/2

@@ -1,0 +1,23 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[""],
+			[
+				{
+					"text": "<",
+					"color": "dark_purple",
+					"italic": false
+				},
+				{
+					"translate": "common.skill"
+				},
+				{
+					"text": ">"
+				}
+			]
+		],
+		"mode": "append"
+	}
+]

@@ -1,0 +1,11 @@
+[
+	{
+		"function": "minecraft:set_components",
+		"components": {
+			"minecraft:equippable": {
+				"slot": "head",
+                "camera_overlay": "movie_frame_overlay"
+			}
+		}
+	}
+]

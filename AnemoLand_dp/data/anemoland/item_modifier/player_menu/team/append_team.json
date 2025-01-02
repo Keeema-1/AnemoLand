@@ -1,0 +1,22 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "チーム",
+					"color": "aqua",
+					"italic": false
+				},
+				{
+					"score": {
+						"name": "@s",
+						"objective": "team"
+					}
+				}
+			]
+		],
+		"mode": "append"
+	}
+]

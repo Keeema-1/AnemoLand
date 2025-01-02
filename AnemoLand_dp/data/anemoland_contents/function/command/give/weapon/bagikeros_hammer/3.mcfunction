@@ -1,0 +1,1 @@
+loot give @s loot anemoland_contents:item/weapon/bagikeros_hammer/3

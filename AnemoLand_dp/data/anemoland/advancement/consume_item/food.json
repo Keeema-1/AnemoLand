@@ -1,0 +1,17 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:consume_item",
+			"conditions": {
+				"item": {
+					"items": [
+						"minecraft:cooked_beef"
+					]
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "anemoland:sys/player/advancement/consume_item/food"
+	}
+}

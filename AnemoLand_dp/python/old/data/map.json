@@ -1,0 +1,424 @@
+{
+    "maps":[
+        {
+            "name": "demo2",
+            "display_name": "デモプレイ島1",
+            "score": 3,
+            "size": 10,
+            "pos": [3072.0, 0.0],
+            "map":[
+                ["##","##","##","##","##","##","##","##","##","##"],
+                ["##","##","82","83","##","##","##","##","##","##"],
+                ["##","71","72","73","74","##","##","##","##","##"],
+                ["##","61","62","63","64","65","##","##","##","##"],
+                ["##","51","52","53","54","55","##","##","##","##"],
+                ["##","##","##","43","44","45","##","##","##","##"],
+                ["##","##","##","##","34","35","36","##","##","##"],
+                ["##","##","##","##","24","##","##","##","##","##"],
+                ["##","##","##","##","##","##","##","##","##","##"],
+                ["##","##","##","##","##","##","##","##","##","##"]
+            ],
+            "fields":[
+                {
+                    "id": "24",
+                    "index":[2,4],
+                    "type": "ship",
+                    "no_cloud": 1,
+                    "display_name": "船"
+                },
+                {
+                    "id": "34",
+                    "index":[3,4],
+                    "z_offset": -1024,
+                    "type": "village",
+                    "display_name": "ベースキャンプ"
+                },
+                {
+                    "id": "35",
+                    "index":[3,5],
+                    "z_offset": -2048,
+                    "type": "field",
+                    "special_field": "training",
+                    "field_type": "plain_C2",
+                    "display_name": "訓練場",
+                    "auto_unlock": 1,
+                    "remove_cloud_when_clear": 0,
+                    "unlock":[],
+                    "default_event": "decoy1"
+                },
+                {
+                    "id": "36",
+                    "index":[3,6],
+                    "z_offset": -3072,
+                    "type": "field",
+                    "special_field": "arena_prepare",
+                    "field_type": "arena_prepare",
+                    "display_name": "闘技場",
+                    "auto_unlock": 1,
+                    "remove_cloud_when_clear": 0,
+                    "unlock":[]
+                },
+                {
+                    "id": "arena1",
+                    "index":[99,1],
+                    "z_offset": -2816,
+                    "type": "field",
+                    "special_field": "arena",
+                    "field_type": "arena1",
+                    "display_name": "闘技場",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 0,
+                    "unlock":[],
+                    "default_event": "decoy1"
+                },
+                {
+                    "id": "44",
+                    "index":[4,4],
+                    "z_offset": 1024,
+                    "type": "field",
+                    "field_type": "plain_A",
+                    "display_name": "森林 (小)",
+                    "auto_unlock": 1,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["43"],
+                    "default_event": "plain_small_a_5",
+                    "random_event": "plain_a_1"
+                },
+                {
+                    "id": "43",
+                    "index":[4,3],
+                    "z_offset": 1536,
+                    "type": "field",
+                    "field_type": "plain_B",
+                    "display_name": "森林 (中)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["53"],
+                    "initial_event": "movie_king_boar",
+                    "default_event": "plain_a_10",
+                    "random_event": "king_boar"
+                },
+                {
+                    "id": "53",
+                    "index":[5,3],
+                    "z_offset": 2048,
+                    "type": "field",
+                    "field_type": "plain_B",
+                    "display_name": "森林 (中)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["52","63"],
+                    "default_event": "plain_a_10",
+                    "random_event": "plain_a_1"
+                },
+                {
+                    "id": "52",
+                    "index":[5,2],
+                    "z_offset": 2560,
+                    "type": "field",
+                    "field_type": "plain_C2",
+                    "display_name": "森林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":[],
+                    "default_event": "plain_b_10",
+                    "random_event": "plain_a_1"
+                },
+                {
+                    "id": "63",
+                    "index":[6,3],
+                    "z_offset": 3072,
+                    "type": "field",
+                    "field_type": "plain_C2",
+                    "display_name": "森林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["62"],
+                    "initial_event": "movie_martellos",
+                    "default_event": "plain_b_10",
+                    "random_event": "martellos"
+                },
+                {
+                    "id": "51",
+                    "index":[5,1],
+                    "z_offset": 3584,
+                    "type": "field",
+                    "field_type": "cherry_A",
+                    "display_name": "桜林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["61"],
+                    "default_event": "plain_b_10",
+                    "random_event": "cherry_a_1"
+                },
+                {
+                    "id": "61",
+                    "index":[6,1],
+                    "z_offset": 4096,
+                    "type": "field",
+                    "field_type": "cherry_A",
+                    "display_name": "桜林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["71"],
+                    "default_event": "plain_b_10",
+                    "random_event": "cherry_a_1"
+                },
+                {
+                    "id": "62",
+                    "index":[6,2],
+                    "z_offset": 4608,
+                    "type": "field",
+                    "field_type": "plain_C2",
+                    "display_name": "森林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":[],
+                    "default_event": "plain_b_10",
+                    "random_event": "plain_b_1"
+                },
+                {
+                    "id": "71",
+                    "index":[7,1],
+                    "z_offset": 5120,
+                    "type": "field",
+                    "field_type": "cherry_A",
+                    "display_name": "桜林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["72"],
+                    "initial_event": "movie_ojinushi",
+                    "default_event": "plain_b_10",
+                    "random_event": "ojinushi"
+                },
+                {
+                    "id": "72",
+                    "index":[7,2],
+                    "z_offset": 5632,
+                    "type": "field",
+                    "field_type": "cherry_A",
+                    "display_name": "桜林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":[],
+                    "default_event": "plain_b_10",
+                    "random_event": "cherry_a_1"
+                },
+                {
+                    "id": "73",
+                    "index":[7,3],
+                    "z_offset": 6144,
+                    "type": "field",
+                    "field_type": "mushroom_A",
+                    "display_name": "茸林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["83","74"],
+                    "default_event": "plain_c_15",
+                    "random_event": "mushroom_a_1"
+                },
+                {
+                    "id": "74",
+                    "index":[7,4],
+                    "z_offset": 6656,
+                    "type": "field",
+                    "field_type": "mushroom_A",
+                    "display_name": "茸林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":[],
+                    "default_event": "plain_b_15",
+                    "random_event": "mushroom_a_1"
+                },
+                {
+                    "id": "83",
+                    "index":[8,3],
+                    "z_offset": 7168,
+                    "type": "field",
+                    "field_type": "mushroom_A",
+                    "display_name": "茸林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["82"],
+                    "initial_event": "movie_muscleroom",
+                    "default_event": "plain_b_15",
+                    "random_event": "muscleroom"
+                },
+                {
+                    "id": "82",
+                    "index":[8,2],
+                    "z_offset": 7680,
+                    "type": "field",
+                    "field_type": "mushroom_A",
+                    "display_name": "茸林 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":[],
+                    "default_event": "plain_b_15",
+                    "random_event": "mushroom_a_1"
+                },
+                {
+                    "id": "54",
+                    "index":[5,4],
+                    "z_offset": 8192,
+                    "type": "field",
+                    "field_type": "rock_A",
+                    "display_name": "岩場 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["55","64"],
+                    "default_event": "stone_a_15",
+                    "random_event": "stone_a_1"
+                },
+                {
+                    "id": "55",
+                    "index":[5,5],
+                    "z_offset": 8704,
+                    "type": "field",
+                    "field_type": "rock_A",
+                    "display_name": "岩場 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["65"],
+                    "default_event": "stone_a_15",
+                    "random_event": "stone_a_1"
+                },
+                {
+                    "id": "64",
+                    "index":[6,4],
+                    "z_offset": 9216,
+                    "type": "field",
+                    "field_type": "rock_A",
+                    "display_name": "岩場 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":["65"],
+                    "default_event": "stone_b_15",
+                    "random_event": "stone_a_1"
+                },
+                {
+                    "id": "65",
+                    "index":[6,5],
+                    "z_offset": 9728,
+                    "type": "field",
+                    "field_type": "rock_A",
+                    "display_name": "岩場 (大)",
+                    "auto_unlock": 0,
+                    "remove_cloud_when_clear": 1,
+                    "unlock":[],
+                    "initial_event": "movie_bagikeros",
+                    "default_event": "stone_b_15",
+                    "random_event": "bagikeros"
+                },
+                {
+                    "id": "45",
+                    "index":[4,5],
+                    "z_offset": 10240,
+                    "type": "field",
+                    "special_field": "explore",
+                    "field_type": "plain_C2",
+                    "display_name": "池",
+                    "auto_unlock": 0,
+                    "no_cloud": 1,
+                    "remove_cloud_when_clear": 1
+                }
+            ]
+        }
+    ],
+    "field_types":{
+        "plain_A": {
+            "center": [1024.0, 0.0, 1280.0],
+            "entrance": [1023.0, 0.0, 1304.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[1019.0, 0.0, 1308.0], "aabb":[8,1]},
+                {"start":[1015.0, 0.0, 1257.0], "aabb":[8,1]}
+            ]
+        },
+        "plain_B": {
+            "center": [2048.0, 0.0, 1792.0],
+            "entrance": [2048.0, 0.0, 1820.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2044.0, 0.0, 1824.0], "aabb":[8,1]},
+                {"start":[2039.0, 0.0, 1769.0], "aabb":[8,1]}
+            ]
+        },
+        "plain_C": {
+            "center": [2048.0, 0.0, 3840.0],
+            "entrance": [2046.0, 0.0, 3880.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2042.0, 0.0, 3888.0], "aabb":[8,1]}
+            ]
+        },
+        "plain_C2": {
+            "center": [2048.0, 0.0, 3840.0],
+            "entrance": [2046.0, 0.0, 3880.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2042.0, 0.0, 3888.0], "aabb":[8,1]}
+            ]
+        },
+        "woods_A": {
+            "center": [1024.0, 0.0, 2048.0],
+            "entrance": [1023.0, 0.0, 2072.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[1019.0, 0.0, 2076.0], "aabb":[8,1]},
+                {"start":[1015.0, 0.0, 2025.0], "aabb":[8,1]}
+            ]
+        },
+        "dungeon_plain_A": {
+            "center": [1024.0, 0.0, 2560.0],
+            "entrance": [1024.0, 0.0, 2584.0],
+            "structure_size": 2,
+            "exits": [
+                {"start":[1020.0, 0.0, 2587.0], "aabb":[8,1]},
+                {"start":[1020.0, 0.0, 2532.0], "aabb":[8,1]}
+            ]
+        },
+        "mushroom_A": {
+            "center": [2048.0, 0.0, 2816.0],
+            "entrance": [2046.0, 0.0, 2841.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2042.0, 0.0, 2845.0], "aabb":[8,1]},
+                {"start":[2031.0, 0.0, 2760.0], "aabb":[8,1]}
+            ]
+        },
+        "cherry_A": {
+            "center": [2048.0, 0.0, 3328.0],
+            "entrance": [2046.0, 0.0, 3368.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2042.0, 0.0, 3375.0], "aabb":[8,1]}
+            ]
+        },
+        "rock_A": {
+            "center": [3072.0, 0.0, 8192.0],
+            "entrance": [3070.0, 0.0, 8217.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[3066.0, 0.0, 8221.0], "aabb":[8,1]},
+                {"start":[3057.0, 0.0, 8136.0], "aabb":[8,1]}
+            ]
+        },
+        "arena_prepare": {
+            "center": [3072.0, 0.0, -3072.0],
+            "entrance": [3072.0, 0.0, -3072.0],
+            "structure_size": 1,
+            "exits": [
+                {"start":[3070.0, 0.0, -3064.0], "aabb":[4,1]}
+            ]
+        },
+        "arena1": {
+            "center": [3072.0, 0.0, -2816.0],
+            "entrance": [3072.0, 0.0, -2784.0],
+            "structure_size": 2,
+            "exits": [
+                {"start":[3069.0, 0.0, -2776.0], "aabb":[6,1]}
+            ]
+        }
+    }
+}

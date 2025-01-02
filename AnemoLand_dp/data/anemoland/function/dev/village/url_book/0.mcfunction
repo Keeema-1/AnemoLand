@@ -1,0 +1,3 @@
+execute positioned ~ ~-0.5 ~ align xyz positioned ~0.5 ~0.5 ~0.5 run data modify block ~ ~ ~ Book.components."minecraft:written_book_content".pages set value [\
+{raw:'["",{"text":"\\n\\n\\n    "},{"text":"[配布サイトへ移動]","color":"light_purple","clickEvent":{"action":"open_url","value":"https://github.com/Keeema-1/AnemoLand"}},{"text":"\\n\\n\\n"},{"text":"[フィードバック/バグ報告]","color":"light_purple","clickEvent":{"action":"open_url","value":"https://forms.gle/ouibniRXMmRb9dDM8"}},{"text":"\\n\\n\\n         "},{"text":"[製作者X]","color":"light_purple","clickEvent":{"action":"open_url","value":"https://x.com/keeema_1"}}]'}\
+]

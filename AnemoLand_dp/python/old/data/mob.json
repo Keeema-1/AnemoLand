@@ -1,0 +1,2458 @@
+{
+    "decoy1": {
+        "aj_name": "decoy1",
+        "display_name": "カカシ",
+        "type": "decoy",
+        "aj_cmd_offset": 20000,
+        "death_loot_table_disable": true,
+        "recipe_disable": true,
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            }
+        ],
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 1.75}
+        },
+        "root_entity": "cow",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 0,
+            "max_health": {"base": 10000, "mul": 0},
+            "attack_damage": {"base": 0, "mul": 0},
+            "gold": {"base": 0, "mul": 0},
+            "xp": {"base": 0, "mul": 0}
+        }
+    },
+    "walking_mushroom": {
+        "aj_name": "walking_mushroom",
+        "display_name": "歩き茸",
+        "type": "mob",
+        "aj_cmd_offset": 0,
+        "custom_model_data": 10,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "01010",
+            "number": "01",
+            "detail": ["進化の過程で歩行機能を獲得した茸。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical"]
+        },
+        "target_change": {
+            "when_damaged": {"preset": "mob_default"}
+        },
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "walk"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "0_stop"
+            },
+            {
+                "score": 1,
+                "name": "1_walk"
+            }
+        ],
+        "default_action": "0_stop",
+        "parts":{
+            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 1.0}
+        },
+        "root_entity": "cow",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 5,
+            "max_health": {"base": 20, "mul": 2},
+            "attack_damage": {"base": 2, "mul": 0.4},
+            "gold": {"base": 5, "mul": 1},
+            "xp": {"base": 5, "mul": 1}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 5, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10
+        },
+        "price": {
+            "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "boar": {
+        "aj_name": "boar",
+        "display_name": "ボア",
+        "type": "mob",
+        "aj_cmd_offset": 100,
+        "custom_model_data": 20,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "01020",
+            "number": "02",
+            "detail": ["目の前の敵めがけて突進を繰り返す。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical"]
+        },
+        "target_change": {
+            "when_damaged": {"preset": "mob_default"}
+        },
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "run"
+            },
+            {
+                "name": "brake"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "0_stop"
+            },
+            {
+                "score": 1,
+                "name": "1_target"
+            },
+            {
+                "score": 2,
+                "name": "2_tackle"
+            }
+        ],
+        "default_action": "0_stop",
+        "parts":{
+            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 1.0}
+        },
+        "root_entity": "hoglin",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 5,
+            "max_health": {"base": 30, "mul": 2},
+            "attack_damage": {"base": 4, "mul": 0.4},
+            "gold": {"base": 10, "mul": 1},
+            "xp": {"base": 10, "mul": 1}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 5, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10
+        },
+        "price": {
+            "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "spider": {
+        "aj_name": "spider",
+        "display_name": "スパイダー",
+        "type": "mob",
+        "aj_cmd_offset": 600,
+        "custom_model_data": 30,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "01030",
+            "number": "03",
+            "detail": ["獲物に跳びかかり襲いかかる。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical"]
+        },
+        "target_change": {
+            "when_damaged": {"preset": "mob_default"}
+        },
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "jump_charge"
+            },
+            {
+                "name": "jump"
+            },
+            {
+                "name": "jump_end"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "walk"
+            },
+            {
+                "score": 2,
+                "name": "jump"
+            }
+        ],
+        "attacks": {
+            "jump": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_2",
+                        "mul": 10,
+                        "position": [0,-2,0],
+                        "size": [2,4,2],
+                        "parts":["root"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 1.5}
+        },
+        "root_entity": "pig",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 5,
+            "max_health": {"base": 30, "mul": 2},
+            "attack_damage": {"base": 4, "mul": 0.4},
+            "gold": {"base": 10, "mul": 1},
+            "xp": {"base": 10, "mul": 1}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 5, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10
+        },
+        "price": {
+            "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "raptor": {
+        "aj_name": "raptor",
+        "display_name": "ラプルス",
+        "type": "mob",
+        "aj_cmd_offset": 700,
+        "custom_model_data": 40,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "01040",
+            "number": "04",
+            "detail": ["集団で獲物を囲み、一斉に跳びかかって襲いかかる。"],
+            "main_areas": ["岩場"],
+            "attack_elements": ["physical"]
+        },
+        "target_change": {
+            "when_damaged": {"preset": "mob_default"}
+        },
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "jump_charge"
+            },
+            {
+                "name": "jump"
+            },
+            {
+                "name": "jump_end"
+            },
+            {
+                "name": "left_jump"
+            },
+            {
+                "name": "right_jump"
+            },
+            {
+                "name": "bark"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "walk"
+            },
+            {
+                "score": 2,
+                "name": "jump"
+            },
+            {
+                "score": 3,
+                "name": "side_jump"
+            },
+            {
+                "score": 4,
+                "name": "bark"
+            }
+        ],
+        "attacks": {
+            "jump": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_2",
+                        "mul": 10,
+                        "position": [0,-2,0],
+                        "size": [2,4,2],
+                        "parts":["root"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 2.25},
+            "head": {"display_name": "頭", "armor_mul": 100, "hitbox_scale": 2.5}
+        },
+        "root_entity": "pig",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 5,
+            "max_health": {"base": 20, "mul": 4},
+            "attack_damage": {"base": 6, "mul": 0.4},
+            "gold": {"base": 20, "mul": 1},
+            "xp": {"base": 20, "mul": 1}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 5, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10
+        },
+        "price": {
+            "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "squirrel": {
+        "aj_name": "squirrel",
+        "display_name": "スクルス",
+        "type": "mob",
+        "aj_cmd_offset": 1100,
+        "custom_model_data": 50,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "01040",
+            "number": "04",
+            "detail": [""],
+            "main_areas": ["岩場"],
+            "attack_elements": ["physical"]
+        },
+        "target_change": {
+            "when_damaged": {"preset": "mob_default"}
+        },
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "bite"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "spin_left"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "walk"
+            },
+            {
+                "score": 2,
+                "name": "bite"
+            },
+            {
+                "score": 3,
+                "name": "spin"
+            },
+            {
+                "score": 4,
+                "name": "bark"
+            }
+        ],
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 8,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 5,
+                                    "bite": 1,
+                                    "spin": 0
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 5,
+                                    "bite": 0,
+                                    "spin": 1
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "bite": 2,
+                                    "spin": 1
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "bite": 1,
+                                    "spin": 3
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "attacks": {
+            "bite": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_5",
+                        "mul": 10,
+                        "position": [0,-2,0],
+                        "size": [3,4,3],
+                        "parts":["head"]
+                    }
+                ]
+            },
+            "spin": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_5",
+                        "mul": 10,
+                        "position": [0,-2,0],
+                        "size": [3,4,3],
+                        "parts":["root","tail"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 120, "ice": 50}},
+            "head": {"display_name": "頭", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 120, "ice": 50}},
+            "tail": {"display_name": "尻尾", "armor_mul": 120, "hitbox_scale": 2.0, "elemental_damage_mul": {"fire": 120, "ice": 50}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 5,
+            "max_health": {"base": 20, "mul": 4},
+            "attack_damage": {"base": 6, "mul": 0.4},
+            "gold": {"base": 20, "mul": 1},
+            "xp": {"base": 20, "mul": 1}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 5, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10
+        },
+        "price": {
+            "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "king_boar": {
+        "aj_name": "boar",
+        "display_name": "キングボア",
+        "type": "boss",
+        "aj_cmd_offset": 100,
+        "custom_model_data": 110,
+        "icon_scale": 1.75,
+        "dictionary": {
+            "recipe_prefix": "02010",
+            "number": "01",
+            "detail": ["ボアの群れのボス。","体当たりを繰り返すほど皮膚が硬くなっていくため、体の傷は強さの証でもある。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical"]
+        },
+        "animation_prefix": "large_",
+        "unlock": {"armor": ["king_boar"]},
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "run"
+            },
+            {
+                "name": "brake"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "dive"
+            }
+        ],
+        "variant_prefix": "king_",
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "0_stop"
+            },
+            {
+                "score": 1,
+                "name": "1_target"
+            },
+            {
+                "score": 2,
+                "name": "2_tackle"
+            },
+            {
+                "score": 3,
+                "name": "3_dive"
+            },
+            {
+                "score": 4,
+                "name": "4_bark"
+            }
+        ],
+        "default_action": "0_stop",
+        "parts":{
+            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 1.6}
+        },
+        "root_entity": "hoglin",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 15,
+            "max_health": {"base": 100, "mul": 20},
+            "attack_damage": {"base": -2, "mul": 0.8},
+            "gold": {"base": 20, "mul": 6},
+            "xp": {"base": 20, "mul": 6}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 15, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 2, "buy_required": 2}
+        }
+    },
+    "martellos": {
+        "aj_name": "martellos",
+        "display_name": "マルテロス",
+        "type": "boss",
+        "aj_cmd_offset": 200,
+        "custom_model_data": 120,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02020",
+            "number": "03",
+            "detail": ["両腕と尻尾の大きな丸太を使い、敵を叩き潰す。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical"]
+        },
+        "unlock": {"armor": ["martellos"]},
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "knock_left"
+            },
+            {
+                "name": "knock_right"
+            },
+            {
+                "name": "knock_left1"
+            },
+            {
+                "name": "knock_right1"
+            },
+            {
+                "name": "knock_left2"
+            },
+            {
+                "name": "knock_right2"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "turn_right"
+            },
+            {
+                "name": "turn_left"
+            },
+            {
+                "name": "spin_right"
+            },
+            {
+                "name": "spin_right1"
+            },
+            {
+                "name": "spin_right2"
+            },
+            {
+                "name": "spin_dirt_right1"
+            },
+            {
+                "name": "spin_dirt_right2"
+            },
+            {
+                "name": "tired"
+            },
+            {
+                "name": "dash_charge"
+            },
+            {
+                "name": "dash"
+            },
+            {
+                "name": "dash_end"
+            },
+            {
+                "name": "tail_right1"
+            },
+            {
+                "name": "backstep"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            },
+            {
+                "name": "cherry"
+            },
+            {
+                "name": "cherry_damaged"
+            },
+            {
+                "name": "mushroom"
+            },
+            {
+                "name": "mushroom_damaged"
+            },
+            {
+                "name": "stone"
+            },
+            {
+                "name": "stone_damaged"
+            },
+            {
+                "name": "amethyst"
+            },
+            {
+                "name": "amethyst_damaged"
+            }
+        ],
+        "variants": {
+            "cherry": {
+                "display_name": "マルテロス",
+                "custom_model_data": 121,
+                "dictionary": {
+                    "recipe_prefix": "02021",
+                    "number": "03",
+                    "detail": ["両腕と尻尾の大きな丸太を使い、敵を叩き潰す。"],
+                    "main_areas": ["桜林"],
+                    "attack_elements": ["physical"]
+                }
+            },
+            "mushroom": {
+                "display_name": "マシュテロス",
+                "custom_model_data": 122,
+                "dictionary": {
+                    "recipe_prefix": "02022",
+                    "number": "03",
+                    "detail": ["両腕と尻尾の大きなキノコを使い、敵を叩き潰す。"],
+                    "main_areas": ["茸林"],
+                    "attack_elements": ["physical"]
+                },
+                "parts":{
+                    "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 100}},
+                    "right_arm": {"display_name": "右腕槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 100}},
+                    "left_arm": {"display_name": "左腕槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 100}},
+                    "neck": {"display_name": "首", "armor_mul": 150, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 100}},
+                    "head": {"display_name": "頭", "armor_mul": 200, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 100}},
+                    "tail1": {"display_name": "尻尾", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 100}},
+                    "tail2": {"display_name": "尾槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 100}}
+                }
+            },
+            "stone": {
+                "display_name": "ボルテロス",
+                "custom_model_data": 123,
+                "dictionary": {
+                    "recipe_prefix": "02023",
+                    "number": "03",
+                    "detail": ["両腕と尻尾の大きな岩石を使い、敵を叩き潰す。"],
+                    "main_areas": ["岩場"],
+                    "attack_elements": ["physical"]
+                },
+                "parts":{
+                    "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 50}},
+                    "right_arm": {"display_name": "右腕槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 20}},
+                    "left_arm": {"display_name": "左腕槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 20}},
+                    "neck": {"display_name": "首", "armor_mul": 150, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 50}},
+                    "head": {"display_name": "頭", "armor_mul": 200, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 50}},
+                    "tail1": {"display_name": "尻尾", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 50}},
+                    "tail2": {"display_name": "尾槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 20}}
+                }
+            },
+            "amethyst": {}
+        },
+        "actions": [
+            {
+                "score": 0,
+                "name": "0_stop"
+            },
+            {
+                "score": 1,
+                "name": "1_bark"
+            },
+            {
+                "score": 2,
+                "name": "2_walk"
+            },
+            {
+                "score": 3,
+                "name": "3_turn"
+            },
+            {
+                "score": 4,
+                "name": "4_anger"
+            },
+            {
+                "score": 5,
+                "name": "5_tired"
+            },
+            {
+                "score": 11,
+                "name": "11_knock"
+            },
+            {
+                "score": 12,
+                "name": "12_spin"
+            },
+            {
+                "score": 13,
+                "name": "dash"
+            },
+            {
+                "score": 14,
+                "name": "spin_dirt"
+            },
+            {
+                "score": 15,
+                "name": "knock_tail"
+            },
+            {
+                "score": 16,
+                "name": "backstep"
+            }
+        ],
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 10,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "2_walk": 4,
+                                    "3_turn": 0,
+                                    "11_knock": 1,
+                                    "12_spin": 0,
+                                    "spin_dirt": 2,
+                                    "dash": 3,
+                                    "knock_tail": 1,
+                                    "backstep": 0
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "2_walk": 4,
+                                    "3_turn": 2,
+                                    "11_knock": 0,
+                                    "12_spin": 0,
+                                    "spin_dirt": 2,
+                                    "dash": 1,
+                                    "knock_tail": 2,
+                                    "backstep": 1
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "2_walk": 0,
+                                    "3_turn": 1,
+                                    "11_knock": 4,
+                                    "12_spin": 3,
+                                    "spin_dirt": 1,
+                                    "dash": 1,
+                                    "knock_tail": 2,
+                                    "backstep": 2
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "2_walk": 0,
+                                    "3_turn": 4,
+                                    "11_knock": 1,
+                                    "12_spin": 3,
+                                    "spin_dirt": 2,
+                                    "dash": 0,
+                                    "knock_tail": 3,
+                                    "backstep": 2
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "after_walk": {
+                "type": "random",
+                "weights": {
+                    "2_walk": 0,
+                    "3_turn": 0,
+                    "11_knock": 4,
+                    "12_spin": 3,
+                    "spin_dirt": 1,
+                    "dash": 0,
+                    "knock_tail": 1,
+                    "backstep": 0
+                }
+            },
+            "after_backstep": {
+                "type": "random",
+                "weights": {
+                    "2_walk": 0,
+                    "3_turn": 0,
+                    "11_knock": 2,
+                    "12_spin": 0,
+                    "spin_dirt": 0,
+                    "dash": 1,
+                    "knock_tail": 0,
+                    "backstep": 0
+                }
+            }
+        },
+        "default_action": "0_stop",
+        "parts":{
+            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150}},
+            "right_arm": {"display_name": "右腕槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 200}},
+            "left_arm": {"display_name": "左腕槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 200}},
+            "neck": {"display_name": "首", "armor_mul": 150, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 150}},
+            "head": {"display_name": "頭", "armor_mul": 200, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 150}},
+            "tail1": {"display_name": "尻尾", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 150}},
+            "tail2": {"display_name": "尾槌", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 200}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 15,
+            "max_health": {"base": 200, "mul": 40},
+            "attack_damage": {"base": 2, "mul": 0.8},
+            "gold": {"base": 40, "mul": 10},
+            "xp": {"base": 40, "mul": 10},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 15, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
+    },
+    "ojinushi": {
+        "aj_name": "ojinushi",
+        "display_name": "オオジヌシ",
+        "type": "boss",
+        "aj_cmd_offset": 400,
+        "custom_model_data": 130,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02030",
+            "number": "04",
+            "detail": ["体内で火薬や金属を合成し、花火玉を作り出して攻撃に使用する。","花火玉は縄張りに罠として設置したり、異性へのアピールにも用いられる。"],
+            "main_areas": ["桜林"],
+            "attack_elements": ["physical","fire"]
+        },
+        "unlock": {"armor": ["ojinushi"]},
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "launch1"
+            },
+            {
+                "name": "launch2"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "jump_launch1"
+            },
+            {
+                "name": "jump_launch2"
+            },
+            {
+                "name": "jump_launch2_right"
+            },
+            {
+                "name": "bite_left1"
+            },
+            {
+                "name": "bite_right1"
+            },
+            {
+                "name": "bite_left2"
+            },
+            {
+                "name": "bite_right2"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "tired"
+            },
+            {
+                "name": "right_punch1"
+            },
+            {
+                "name": "right_punch2"
+            },
+            {
+                "name": "sidestep_left"
+            },
+            {
+                "name": "launch_up"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "bark"
+            },
+            {
+                "score": 2,
+                "name": "walk"
+            },
+            {
+                "score": 3,
+                "name": "anger"
+            },
+            {
+                "score": 4,
+                "name": "tired"
+            },
+            {
+                "score": 11,
+                "name": "punch"
+            },
+            {
+                "score": 12,
+                "name": "launch"
+            },
+            {
+                "score": 13,
+                "name": "jump_launch"
+            },
+            {
+                "score": 14,
+                "name": "bite_side"
+            },
+            {
+                "score": 15,
+                "name": "sidestep"
+            },
+            {
+                "score": 16,
+                "name": "launch_up"
+            }
+        ],
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 10,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "punch": 3,
+                                    "launch": 3,
+                                    "jump_launch": 1,
+                                    "bite_side": 1,
+                                    "walk": 4,
+                                    "sidestep": 0,
+                                    "launch_up": 1
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "punch": 1,
+                                    "launch": 1,
+                                    "jump_launch": 1,
+                                    "bite_side": 1,
+                                    "walk": 5,
+                                    "sidestep": 0,
+                                    "launch_up": 1
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "punch": 3,
+                                    "launch": 3,
+                                    "jump_launch": 2,
+                                    "bite_side": 2,
+                                    "walk": 0,
+                                    "sidestep": 1,
+                                    "launch_up": 1
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "punch": 1,
+                                    "launch": 1,
+                                    "jump_launch": 2,
+                                    "bite_side": 3,
+                                    "walk": 0,
+                                    "sidestep": 1,
+                                    "launch_up": 1
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "after_walk": {
+                "type": "random",
+                "weights": {
+                    "punch": 1,
+                    "launch": 1,
+                    "jump_launch": 1,
+                    "bite_side": 1,
+                    "walk": 0,
+                    "sidestep": 1,
+                    "launch_up": 1
+                }
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 2.5, "elemental_damage_mul": {"fire": 75}},
+            "right_arm": {"display_name": "右腕", "armor_mul": 150, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 75}},
+            "left_arm": {"display_name": "左腕", "armor_mul": 150, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 75}},
+            "head": {"display_name": "頭", "armor_mul": 200, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 75}}
+        },
+        "root_entity": "cow",
+        "display_height_add": 1.5,
+        "status": {
+            "default_level": 20,
+            "max_health": {"base": 200, "mul": 40},
+            "attack_damage": {"base": 2, "mul": 0.8},
+            "gold": {"base": 50, "mul": 12},
+            "xp": {"base": 50, "mul": 12},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 20, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
+    },
+    "muscleroom": {
+        "aj_name": "muscleroom",
+        "display_name": "マッスルーム",
+        "type": "boss",
+        "aj_cmd_offset": 300,
+        "custom_model_data": 140,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02040",
+            "number": "05",
+            "detail": ["長く生き続けた歩き茸の菌糸が高密度に圧縮され、大型動物の筋肉をも凌駕する力を得た。"],
+            "main_areas": ["茸林"],
+            "attack_elements": ["physical"]
+        },
+        "unlock": {"armor": ["muscleroom"]},
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "left_punch1"
+            },
+            {
+                "name": "left_punch2"
+            },
+            {
+                "name": "jump"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "ground1"
+            },
+            {
+                "name": "ground2"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "backstep"
+            },
+            {
+                "name": "tired"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "bark"
+            },
+            {
+                "score": 2,
+                "name": "walk"
+            },
+            {
+                "score": 3,
+                "name": "angry"
+            },
+            {
+                "score": 4,
+                "name": "tired"
+            },
+            {
+                "score": 11,
+                "name": "jump"
+            },
+            {
+                "score": 12,
+                "name": "punch"
+            },
+            {
+                "score": 13,
+                "name": "ground_circle"
+            },
+            {
+                "score": 14,
+                "name": "ground_line"
+            },
+            {
+                "score": 15,
+                "name": "ground_target"
+            },
+            {
+                "score": 16,
+                "name": "backstep"
+            }
+        ],
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 10,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 3,
+                                    "jump": 3,
+                                    "punch": 3,
+                                    "ground_circle": 1,
+                                    "ground_line": 3,
+                                    "ground_target": 3,
+                                    "backstep": 0
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 3,
+                                    "jump": 1,
+                                    "punch": 1,
+                                    "ground_circle": 1,
+                                    "ground_line": 3,
+                                    "ground_target": 3,
+                                    "backstep": 0
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "jump": 4,
+                                    "punch": 4,
+                                    "ground_circle": 3,
+                                    "ground_line": 1,
+                                    "ground_target": 2,
+                                    "backstep": 2
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "jump": 4,
+                                    "punch": 2,
+                                    "ground_circle": 3,
+                                    "ground_line": 0,
+                                    "ground_target": 2,
+                                    "backstep": 3
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "after_walk": {
+                "type": "random",
+                "weights": {
+                    "walk": 0,
+                    "jump": 4,
+                    "punch": 4,
+                    "ground_circle": 3,
+                    "ground_line": 1,
+                    "ground_target": 2,
+                    "backstep": 0
+                }
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 2.5}
+        },
+        "root_entity": "cow",
+        "display_height_add": 1.0,
+        "status": {
+            "default_level": 25,
+            "max_health": {"base": 200, "mul": 40},
+            "attack_damage": {"base": 6, "mul": 0.8},
+            "gold": {"base": 60, "mul": 16},
+            "xp": {"base": 60, "mul": 16},
+            "angry": {"start_damage_ratio": 0.4, "keep_time_seconds": 60, "restart_damage_ratio": 0.1, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 25, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
+    },
+    "bagikeros": {
+        "aj_name": "bagikeros",
+        "display_name": "バギケロス",
+        "type": "boss",
+        "aj_cmd_offset": 500,
+        "custom_model_data": 150,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02050",
+            "number": "06",
+            "detail": ["全身の甲殻から粉塵を撒き、火花を発生させることで爆破させる。","水に濡れてしまうと粉塵の拡散が阻害されてしまうため、乾燥した地域を好む。"],
+            "main_areas": ["岩場"],
+            "attack_elements": ["physical", "fire"]
+        },
+        "unlock": {"armor": ["bagikeros"]},
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "bite1"
+            },
+            {
+                "name": "bite2"
+            },
+            {
+                "name": "dive1"
+            },
+            {
+                "name": "dive2"
+            },
+            {
+                "name": "shake_head1"
+            },
+            {
+                "name": "shake_head2"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "shake_tail1"
+            },
+            {
+                "name": "shake_tail2"
+            },
+            {
+                "name": "shake_walk"
+            },
+            {
+                "name": "shake_walk_end"
+            },
+            {
+                "name": "shake_walk_start"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "bite_left1"
+            },
+            {
+                "name": "bite_left2"
+            },
+            {
+                "name": "bite_right1"
+            },
+            {
+                "name": "bite_right2"
+            },
+            {
+                "name": "tired"
+            },
+            {
+                "name": "fire_head"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "bark"
+            },
+            {
+                "score": 2,
+                "name": "anger"
+            },
+            {
+                "score": 3,
+                "name": "tired"
+            },
+            {
+                "score": 4,
+                "name": "walk"
+            },
+            {
+                "score": 11,
+                "name": "bite"
+            },
+            {
+                "score": 12,
+                "name": "dive"
+            },
+            {
+                "score": 13,
+                "name": "shake_head"
+            },
+            {
+                "score": 14,
+                "name": "shake_tail"
+            },
+            {
+                "score": 15,
+                "name": "shake_walk"
+            },
+            {
+                "score": 16,
+                "name": "bite_side"
+            },
+            {
+                "score": 17,
+                "name": "fire_head"
+            }
+        ],
+        "choices":{
+            "test": {
+                "type": "random",
+                "weights": {
+                    "walk": 1,
+                    "bite": 2,
+                    "dive": 2,
+                    "shake_head": 2,
+                    "shake_tail": 2,
+                    "shake_walk": 2,
+                    "bite_side": 2
+                }
+            }
+        },
+        "attacks": {
+            "bite1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_2",
+                        "mul": 10,
+                        "position": [0,-2,0],
+                        "size": [4,4,4],
+                        "parts":["head"]
+                    },
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_2",
+                        "mul": 5,
+                        "position": [0,-2,0],
+                        "size": [4,4,4],
+                        "parts":["front_body","root"]
+                    }
+                ]
+            },
+            "dive1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_10",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["root", "front_body", "tail1", "left_arm", "right_arm", "left_leg", "right_leg"]
+                    }
+                ]
+            },
+            "walk1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_10",
+                        "mul": 5,
+                        "position": [0,0,0],
+                        "size": [3,3,3],
+                        "parts":["root", "front_body", "tail1", "left_arm", "right_arm", "left_leg", "right_leg"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "下半身", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 50}},
+            "front_body": {"display_name": "上半身", "armor_mul": 120, "hitbox_scale": 5, "elemental_damage_mul": {"fire": 50}},
+            "head": {"display_name": "頭", "armor_mul": 150, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
+            "left_arm": {"display_name": "左前脚", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
+            "right_arm": {"display_name": "右前脚", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
+            "left_leg": {"display_name": "左後脚", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
+            "right_leg": {"display_name": "左後脚", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
+            "tail1": {"display_name": "尻尾(前方)", "armor_mul": 100, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 25}},
+            "tail2": {"display_name": "尻尾(後方)", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 25}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 1.0,
+        "status": {
+            "default_level": 30,
+            "max_health": {"base": 100, "mul": 60},
+            "attack_damage": {"base": 6, "mul": 0.8},
+            "gold": {"base": 60, "mul": 16},
+            "xp": {"base": 60, "mul": 16},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 25, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
+    },
+    "squirrel_head": {
+        "aj_name": "squirrel_head",
+        "display_name": "スクルスヘッド",
+        "type": "boss",
+        "aj_cmd_offset": 800,
+        "custom_model_data": 160,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02014",
+            "number": "02",
+            "detail": ["スクルスの群れのリーダー。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical"]
+        },
+        "unlock": {"armor": []},
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "tired"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "bite1"
+            },
+            {
+                "name": "bite2"
+            },
+            {
+                "name": "bite_left1"
+            },
+            {
+                "name": "bite_left2"
+            },
+            {
+                "name": "spin_left1"
+            },
+            {
+                "name": "spin_left2"
+            },
+            {
+                "name": "tackle_left1"
+            },
+            {
+                "name": "tackle_left2"
+            },
+            {
+                "name": "spin_tail_left1"
+            },
+            {
+                "name": "spin_jump_left1"
+            },
+            {
+                "name": "spin_jump_left2"
+            },
+            {
+                "name": "spin_jump_left3"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "bark"
+            },
+            {
+                "score": 2,
+                "name": "anger"
+            },
+            {
+                "score": 3,
+                "name": "tired"
+            },
+            {
+                "score": 4,
+                "name": "walk"
+            },
+            {
+                "score": 11,
+                "name": "bite"
+            },
+            {
+                "score": 12,
+                "name": "spin"
+            },
+            {
+                "score": 13,
+                "name": "bite_side"
+            },
+            {
+                "score": 14,
+                "name": "tackle_side"
+            },
+            {
+                "score": 15,
+                "name": "knock_tail"
+            },
+            {
+                "score": 16,
+                "name": "spin_jump"
+            }
+        ],
+        "choices":{
+            "test": {
+                "type": "random",
+                "weights": {
+                    "walk": 6,
+                    "bite": 2,
+                    "spin": 2,
+                    "bite_side": 2,
+                    "tackle_side": 2,
+                    "knock_tail": 2,
+                    "spin_jump": 2
+                }
+            }
+        },
+        "attacks": {
+            "bite": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_8",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["head","neck"]
+                    },
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_5",
+                        "mul": 5,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["root"]
+                    }
+                ]
+            },
+            "spin": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_front_8",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["tail"]
+                    }
+                ]
+            },
+            "spin_jump1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_front_8",
+                        "mul": 8,
+                        "position": [0,0,0],
+                        "size": [2,4,2],
+                        "parts":["root","tail"]
+                    }
+                ]
+            },
+            "spin_jump2": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_front_8",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["root","tail"]
+                    }
+                ]
+            },
+            "tackle": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_10",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["root","head","neck","tail"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 3, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "head": {"display_name": "頭", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "neck": {"display_name": "首", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "tail": {"display_name": "尻尾", "armor_mul": 120, "hitbox_scale": 2, "elemental_damage_mul": {"fire":120,"ice":50}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 1.0,
+        "status": {
+            "default_level": 15,
+            "max_health": {"base": 100, "mul": 30},
+            "attack_damage": {"base": -2, "mul": 0.8},
+            "gold": {"base": 20, "mul": 8},
+            "xp": {"base": 20, "mul": 8},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 15, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
+    },
+    "garapapas": {
+        "aj_name": "garapapas",
+        "display_name": "ガラパパス",
+        "type": "boss",
+        "aj_cmd_offset": 900,
+        "custom_model_data": 170,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02018",
+            "number": "03",
+            "detail": ["ガラパスの親玉。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical","water"]
+        },
+        "unlock": {"armor": []},
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "tired"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "bite1"
+            },
+            {
+                "name": "bite2"
+            },
+            {
+                "name": "bite_left1"
+            },
+            {
+                "name": "bite_left2"
+            },
+            {
+                "name": "dive1"
+            },
+            {
+                "name": "dive2"
+            },
+            {
+                "name": "tail_left1"
+            },
+            {
+                "name": "tail_left2"
+            },
+            {
+                "name": "water_left1"
+            },
+            {
+                "name": "water_left2"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "bark"
+            },
+            {
+                "score": 2,
+                "name": "anger"
+            },
+            {
+                "score": 3,
+                "name": "tired"
+            },
+            {
+                "score": 4,
+                "name": "walk"
+            },
+            {
+                "score": 11,
+                "name": "bite"
+            },
+            {
+                "score": 12,
+                "name": "bite_side"
+            },
+            {
+                "score": 13,
+                "name": "dive"
+            },
+            {
+                "score": 14,
+                "name": "tail_side"
+            }
+        ],
+        "choices":{
+            "test": {
+                "type": "random",
+                "weights": {
+                    "bite": 2,
+                    "bite_side": 2,
+                    "dive": 2
+                }
+            }
+        },
+        "attacks": {
+            "bite": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_8",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["head","neck"]
+                    },
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_5",
+                        "mul": 5,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["root"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 50}},
+            "body": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 3.0, "elemental_damage_mul": {"fire": 50}, "skip_display_mul": true},
+            "head": {"display_name": "頭", "armor_mul": 150, "hitbox_scale": 2.5, "elemental_damage_mul": {"fire": 50}},
+            "neck": {"display_name": "首", "armor_mul": 120, "hitbox_scale": 2.75, "elemental_damage_mul": {"fire": 50}},
+            "arm": {"display_name": "前脚", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 50}},
+            "leg": {"display_name": "後脚", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 50}},
+            "tail": {"display_name": "尻尾", "armor_mul": 120, "hitbox_scale": 2.75, "elemental_damage_mul": {"fire": 50}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 1.0,
+        "status": {
+            "default_level": 15,
+            "max_health": {"base": 100, "mul": 30},
+            "attack_damage": {"base": -2, "mul": 0.8},
+            "gold": {"base": 20, "mul": 8},
+            "xp": {"base": 20, "mul": 8},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 15, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
+    },
+    "carnara": {
+        "aj_name": "carnara",
+        "display_name": "カールナーラ",
+        "type": "boss",
+        "aj_cmd_offset": 1000,
+        "custom_model_data": 180,
+        "icon_scale": 1.4,
+        "dictionary": {
+            "recipe_prefix": "02060",
+            "number": "07",
+            "detail": [""],
+            "main_areas": ["氷海"],
+            "attack_elements": ["physical","ice"]
+        },
+        "unlock": {"armor": []},
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "die"
+            },
+            {
+                "name": "bark"
+            },
+            {
+                "name": "tired"
+            },
+            {
+                "name": "walk"
+            },
+            {
+                "name": "dive1"
+            },
+            {
+                "name": "dive2"
+            },
+            {
+                "name": "beam1"
+            },
+            {
+                "name": "beam2"
+            },
+            {
+                "name": "drag_head_left1"
+            },
+            {
+                "name": "drag_head_left2"
+            },
+            {
+                "name": "drag_head_right1"
+            },
+            {
+                "name": "drag_head_right2"
+            },
+            {
+                "name": "tail_spear_left1"
+            },
+            {
+                "name": "tail_spear_left2"
+            },
+            {
+                "name": "tail_spear_right1"
+            },
+            {
+                "name": "tail_spear_right2"
+            },
+            {
+                "name": "beam2_left"
+            },
+            {
+                "name": "beam2_right"
+            },
+            {
+                "name": "drag_tail_left1"
+            },
+            {
+                "name": "drag_tail_left2"
+            },
+            {
+                "name": "drag_tail_right1"
+            },
+            {
+                "name": "drag_tail_right2"
+            },
+            {
+                "name": "beam_high_left1"
+            },
+            {
+                "name": "beam_high_left2"
+            },
+            {
+                "name": "beam_high_right1"
+            },
+            {
+                "name": "beam_high_right2"
+            },
+            {
+                "name": "beam_high_left2_far"
+            },
+            {
+                "name": "beam_high_right2_far"
+            },
+            {
+                "name": "turn_left"
+            },
+            {
+                "name": "turn_right"
+            },
+            {
+                "name": "beam_turn_left"
+            },
+            {
+                "name": "beam_turn_right"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 1,
+                "name": "bark"
+            },
+            {
+                "score": 2,
+                "name": "anger"
+            },
+            {
+                "score": 3,
+                "name": "tired"
+            },
+            {
+                "score": 4,
+                "name": "walk"
+            },
+            {
+                "score": 5,
+                "name": "turn"
+            },
+            {
+                "score": 11,
+                "name": "dive"
+            },
+            {
+                "score": 12,
+                "name": "beam"
+            },
+            {
+                "score": 13,
+                "name": "drag_head"
+            },
+            {
+                "score": 14,
+                "name": "tail_spear"
+            },
+            {
+                "score": 15,
+                "name": "drag_tail"
+            },
+            {
+                "score": 16,
+                "name": "beam_high"
+            },
+            {
+                "score": 17,
+                "name": "beam_turn"
+            }
+        ],
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 20,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "dive": 2,
+                                    "drag_head": 1,
+                                    "beam": 3,
+                                    "tail_spear": 2,
+                                    "drag_tail": 0,
+                                    "beam_high": 2,
+                                    "turn": 0,
+                                    "beam_turn": 0,
+                                    "walk": 5
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "dive": 0,
+                                    "drag_head": 0,
+                                    "beam": 0,
+                                    "tail_spear": 2,
+                                    "drag_tail": 2,
+                                    "beam_high": 2,
+                                    "turn": 6,
+                                    "beam_turn": 6,
+                                    "walk": 4
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "dive": 2,
+                                    "drag_head": 2,
+                                    "beam": 2,
+                                    "tail_spear": 2,
+                                    "drag_tail": 0,
+                                    "beam_high": 2,
+                                    "turn": 0,
+                                    "beam_turn": 0,
+                                    "walk": 0
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "dive": 0,
+                                    "drag_head": 0,
+                                    "beam": 0,
+                                    "tail_spear": 2,
+                                    "drag_tail": 2,
+                                    "beam_high": 2,
+                                    "turn": 2,
+                                    "beam_turn": 2,
+                                    "walk": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "test": {
+                "type": "random",
+                "weights": {
+                    "dive": 2,
+                    "drag_head": 2,
+                    "beam": 2,
+                    "tail_spear": 2,
+                    "drag_tail": 2,
+                    "beam_high": 2,
+                    "turn": 2,
+                    "beam_turn": 2,
+                    "walk": 2
+                }
+            }
+        },
+        "attacks": {
+            "head1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_back_12",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["head","neck","body"]
+                    }
+                ]
+            },
+            "dive1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_12",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [5,4,5],
+                        "parts":["root","head","neck","body"]
+                    }
+                ]
+            },
+            "tail1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_12",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["root","tail"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "胴体", "armor_mul": 80, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
+            "body": {"display_name": "胴体", "armor_mul": 80, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}, "skip_display_mul": true},
+            "head": {"display_name": "頭", "armor_mul": 200, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
+            "neck": {"display_name": "首", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
+            "tail": {"display_name": "尻尾", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 1.0,
+        "status": {
+            "default_level": 30,
+            "max_health": {"base": 100, "mul": 60},
+            "attack_damage": {"base": 5, "mul": 0.8},
+            "gold": {"base": 60, "mul": 14},
+            "xp": {"base": 60, "mul": 14},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 30, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
+    },
+    "girl2": {
+        "aj_name": "girl2",
+        "display_name": "サリー",
+        "type": "npc",
+        "npc_id": 1,
+        "aj_cmd_offset": 10000,
+        "immediate_disappear": true,
+        "death_loot_table_disable": true,
+        "recipe_disable": true,
+        "animations": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "attack"
+            },
+            {
+                "name": "walk"
+            }
+        ],
+        "skin_variants": [
+            {
+                "name": "default"
+            },
+            {
+                "name": "damaged"
+            }
+        ],
+        "actions": [
+            {
+                "score": 0,
+                "name": "stop"
+            },
+            {
+                "score": 11,
+                "name": "walk"
+            }
+        ],
+        "default_action": "stop",
+        "parts":{
+            "root": {"armor_mul": 100, "hitbox_scale": 1.0}
+        },
+        "root_entity": "skeleton",
+        "display_height_add": 0.5,
+        "status": {
+            "max_health": 100,
+            "attack_damage": 10,
+            "armor_mul": 60
+        }
+    }
+}

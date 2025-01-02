@@ -1,0 +1,19 @@
+execute positioned ~-64 ~ ~-64 run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+execute positioned ~-64 ~ ~ run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+execute positioned ~-64 ~ ~64 run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+execute positioned ~ ~ ~-64 run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+execute positioned ~ ~ ~ run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+execute positioned ~ ~ ~64 run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+execute positioned ~64 ~ ~-64 run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+execute positioned ~64 ~ ~ run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+execute positioned ~64 ~ ~64 run fill ~-64 -1 ~-64 ~63 -2 ~63 grass_block replace air
+
+execute positioned ~-64 ~ ~-64 run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air
+execute positioned ~-64 ~ ~ run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air
+execute positioned ~-64 ~ ~64 run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air
+execute positioned ~ ~ ~-64 run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air
+execute positioned ~ ~ ~ run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air
+execute positioned ~ ~ ~64 run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air
+execute positioned ~64 ~ ~-64 run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air
+execute positioned ~64 ~ ~ run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air
+execute positioned ~64 ~ ~64 run fill ~-64 -3 ~-64 ~63 -4 ~63 grass_block replace air

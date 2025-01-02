@@ -1,0 +1,34 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:chainmail_chestplate",
+			"components": {
+				"custom_model_data": 5
+			}
+		},
+		"title": "祭獅子防具",
+		"description": [
+			{
+				"text": "祭獅子の兜\n"
+			},
+			{
+				"text": "祭獅子の鎧\n"
+			},
+			{
+				"text": "祭獅子の袴\n"
+			},
+			{
+				"text": "祭獅子の臑当"
+			}
+		],
+		"show_toast": false,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"parent": "' + namespace_contents + ':armor_catalog/iron",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}
