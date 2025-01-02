@@ -1497,15 +1497,15 @@ for mob_name, mob_data in mob_database.items():
 		continue
 	overrides.append({
 		"predicate": { "custom_model_data": mob_data["custom_model_data"]*10 },
-		"model": "item/custom/entity/" + mob_name + "/bronze_medal"
+		"model": namespace_storage + ":item/entity/" + mob_name + "/bronze_medal"
 	})
 	overrides.append({
 		"predicate": { "custom_model_data": mob_data["custom_model_data"]*10+1 },
-		"model": "item/custom/entity/" + mob_name + "/silver_medal"
+		"model": namespace_storage + ":item/entity/" + mob_name + "/silver_medal"
 	})
 	overrides.append({
 		"predicate": { "custom_model_data": mob_data["custom_model_data"]*10+2 },
-		"model": "item/custom/entity/" + mob_name + "/gold_medal"
+		"model": namespace_storage + ":item/entity/" + mob_name + "/gold_medal"
 	})
 output = {
 	"parent": "minecraft:item/generated",
@@ -1526,7 +1526,7 @@ for mob_name, mob_data in mob_database.items():
 		continue
 	overrides.append({
 		"predicate": { "custom_model_data": mob_data["custom_model_data"] },
-		"model": "item/custom/entity/" + mob_name + "/pet"
+		"model": namespace_storage + ":item/entity/" + mob_name + "/pet"
 	})
 output = {
 	"parent": "minecraft:item/generated",
@@ -1547,7 +1547,7 @@ for mob_name, mob_data in mob_database.items():
 		continue
 	overrides.append({
 		"predicate": { "custom_model_data": mob_data["custom_model_data"] },
-		"model": "item/custom/entity/" + mob_name + "/icon"
+		"model": namespace_storage + ":item/entity/" + mob_name + "/icon"
 	})
 	if "variants" in mob_data:
 		for variant_id, variant_data in mob_data["variants"].items():
@@ -1555,7 +1555,7 @@ for mob_name, mob_data in mob_database.items():
 				continue
 			overrides.append({
 				"predicate": { "custom_model_data": variant_data["custom_model_data"] },
-				"model": "item/custom/entity/" + mob_name + "/icon_" + variant_id
+				"model": namespace_storage + ":item/entity/" + mob_name + "/icon_" + variant_id
 			})
 output = {
 	"parent": "minecraft:item/generated",
@@ -1627,8 +1627,8 @@ for mob_name, mob_data in mob_database.items():
 	output = {
 		"credit": "Made with Blockbench",
 		"textures": {
-			"0": "item/custom/entity/" + mob_name + "/icon",
-			"particle": "item/custom/entity/" + mob_name + "/icon"
+			"0": namespace_storage + ":item/entity/" + mob_name + "/icon",
+			"particle": namespace_storage + ":item/entity/" + mob_name + "/icon"
 		},
 		"elements": [
 			{
@@ -1659,8 +1659,8 @@ for mob_name, mob_data in mob_database.items():
 			output = {
 				"credit": "Made with Blockbench",
 				"textures": {
-					"0": "item/custom/entity/" + mob_name + "/icon_" + variant_id,
-					"particle": "item/custom/entity/" + mob_name + "/icon_" + variant_id
+					"0": namespace_storage + ":item/entity/" + mob_name + "/icon_" + variant_id,
+					"particle": namespace_storage + ":item/entity/" + mob_name + "/icon_" + variant_id
 				},
 				"elements": [
 					{

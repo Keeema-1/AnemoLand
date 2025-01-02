@@ -430,7 +430,7 @@ for skill_name, skill_data in skill_list.items():
 
 
 
-base_path = resourcepack_path + 'assets/minecraft/models/equipment/'
+base_path = resourcepack_path + 'assets/' + namespace_storage + '/models/equipment/'
 
 if not os.path.isdir(base_path):
 	print('dir not exist! (' + base_path + ')')
@@ -445,12 +445,12 @@ for series in armor_database["series"]:
 		"layers": {
 			"humanoid": [
 			{
-				"texture": series["name"]
+				"texture": namespace_storage + ":" + series["name"]
 			}
 			],
 			"humanoid_leggings": [
 			{
-				"texture": series["name"]
+				"texture": namespace_storage + ":" + series["name"]
 			}
 			]
 		}
@@ -463,7 +463,7 @@ for series in armor_database["series"]:
 		json.dump(output, f, indent='\t', ensure_ascii=False)
 
 
-base_path = resourcepack_path + 'assets/minecraft/models/item/'
+base_path = resourcepack_path + 'assets/' + namespace_storage + '/models/item/'
 
 if not os.path.isdir(base_path):
 	print('dir not exist! (' + base_path + ')')
@@ -490,7 +490,7 @@ for material in materials:
 					overrides.append(
 						{
 							"predicate": { "custom_model_data": series["custom_model_data"] },
-							"model": "minecraft:item/custom/armor/" + series["name"] + "/" + part
+							"model": namespace_storage + ":item/armor/" + series["name"] + "/" + part
 						}
 					)
 
@@ -498,7 +498,7 @@ for material in materials:
 			"parent": "minecraft:item/generated",
 			"overrides": overrides,
 			"textures": {
-			"layer0": "minecraft:item/custom/transparent"
+			"layer0": namespace_storage + ":item/transparent"
 			}
 		}
 		with open(path, 'w', encoding='utf-8') as f:
@@ -510,14 +510,14 @@ for material in materials:
 for series in armor_database["series"]:
 	for armor_type, armor_data in series["armors"].items():
 
-		path = base_path + 'custom/armor/' + series["name"] + '/' + armor_type + '.json'
+		path = base_path + 'armor/' + series["name"] + '/' + armor_type + '.json'
 		makedir(path)
 
 		output = {
 			"parent": "minecraft:item/generated",
 			"textures": {
-				"layer0": "minecraft:item/custom/armor/" + series["name"] + "/" + armor_type,
-				"layer1": "minecraft:item/custom/transparent"
+				"layer0": namespace_storage + ":item/armor/" + series["name"] + "/" + armor_type,
+				"layer1": namespace_storage + ":item/transparent"
 		    }
 		}
 		with open(path, 'w', encoding='utf-8') as f:
