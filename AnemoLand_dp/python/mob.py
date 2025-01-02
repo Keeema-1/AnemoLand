@@ -21,7 +21,7 @@ file_generation_flag = {
 
 pet_custom_model_data_offset = 10000
 
-with open('data/mob.json' , encoding='utf-8') as f:
+with open('data/mob/mob.json' , encoding='utf-8') as f:
 	mob_database = json.load(f)
 
 with open('data/common.json' , encoding='utf-8') as f:
@@ -106,21 +106,21 @@ for mob_name, mob_data in mob_database.items():
 
 	# animation
 	if "animations" in mob_data:
-		for animation in mob_data["animations"]:
-			path = base_path + mob_name + '/animation/' + animation["name"] + '.mcfunction'
+		for animation_id, animation_data in mob_data["animations"].items():
+			path = base_path + mob_name + '/animation/' + animation_id + '.mcfunction'
 			makedir(path)
 			output = []
-			output.append('execute on passengers if entity @s[tag=aj.rig_root] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/as_aj_root/' + animation["name"] + '\n')
+			output.append('execute on passengers if entity @s[tag=aj.rig_root] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/as_aj_root/' + animation_id + '\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
-			path = base_path + mob_name + '/animation/as_aj_root/' + animation["name"] + '.mcfunction'
+			path = base_path + mob_name + '/animation/as_aj_root/' + animation_id + '.mcfunction'
 			makedir(path)
 			output = []
 			output.append('function animated_java:' + mob_data["aj_name"] + '/animations/pause_all\n')
-			output.append('function animated_java:' + mob_data["aj_name"] + '/animations/' + (mob_data["animation_prefix"] if "animation_prefix" in mob_data else '') + animation["name"] + '/play\n')
-			if "extra" in animation:
-				for extra_animation in animation["extra"]:
+			output.append('function animated_java:' + mob_data["aj_name"] + '/animations/' + (mob_data["animation_prefix"] if "animation_prefix" in mob_data else '') + animation_id + '/play\n')
+			if "extra" in animation_data:
+				for extra_animation in animation_data["extra"]:
 					output.append('function animated_java:' + mob_data["aj_name"] + '/animations/' + (mob_data["animation_prefix"] if "animation_prefix" in mob_data else '') + extra_animation + '/play\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
@@ -128,11 +128,11 @@ for mob_name, mob_data in mob_database.items():
 
 	# variants
 	if "skin_variants" in mob_data:
-		for variant in mob_data["skin_variants"]:
-			path = base_path + mob_name + '/variant/' + variant["name"] + '.mcfunction'
+		for skin_variant_id, skin_variant_data in mob_data["skin_variants"].items():
+			path = base_path + mob_name + '/variant/' + skin_variant_id + '.mcfunction'
 			makedir(path)
 			output = []
-			output.append('execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:' + mob_data["aj_name"] + '/variants/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + variant["name"] + '/apply\n')
+			output.append('execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:' + mob_data["aj_name"] + '/variants/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + skin_variant_id + '/apply\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -184,7 +184,7 @@ for mob_name, mob_data in mob_database.items():
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/variant/damaged\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/damage/dst/apply\n')
 	output.append('execute unless score @s health matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/0\n')
-	output.append('execute if score @s health matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/sound\n')
+	output.append('execute if score @s health matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/damaged\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -210,11 +210,42 @@ for mob_name, mob_data in mob_database.items():
 			output.append('execute if entity @s[tag=variant.' + variant_id + '] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/variant/' + variant_id + '\n')
 	else:
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/variant/default\n')
-	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/sound\n')
-	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/0_\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/die\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/die/0\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
+
+	# manual/damaged
+	path = base_path + mob_name + '/manual/damaged.mcfunction'
+	if not os.path.isfile(path):
+		makedir(path)
+		output = []
+		output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/damaged\n')
+		output.append('#\n')
+		output.append('# 攻撃を受けた時に実行される\n')
+		output.append('# このファイルは初回のみ自動生成される\n')
+		output.append('# サウンドなど、攻撃を受けた時の処理をこの下に記述\n')
+		output.append('#\n')
+		output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/common\n')
+		output.append('\n')
+		with open(path, 'w', encoding='utf-8') as f:
+			f.writelines(output)
+
+	# manual/die
+	path = base_path + mob_name + '/manual/die.mcfunction'
+	if not os.path.isfile(path):
+		makedir(path)
+		output = []
+		output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/damaged\n')
+		output.append('#\n')
+		output.append('# 死亡時に実行される\n')
+		output.append('# このファイルは初回のみ自動生成される\n')
+		output.append('# サウンドなど、死亡時の処理をこの下に記述\n')
+		output.append('#\n')
+		output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/common\n')
+		output.append('\n')
+		with open(path, 'w', encoding='utf-8') as f:
+			f.writelines(output)
 
 	# die/drop
 	if not ("death_loot_table_disable" in mob_data and mob_data["death_loot_table_disable"]):
@@ -240,9 +271,10 @@ for mob_name, mob_data in mob_database.items():
 				output.append('function ' + namespace_contents + ':command/progress/unlock/armor/' + unlocked_armor + '\n')
 	if not ("recipe_disable" in mob_data and mob_data["recipe_disable"]):
 		output.append('execute if entity @s[tag=variant.default] run recipe give @a ' + namespace_contents + ':' + mob_data["type"] + '/' + mob_data["dictionary"]["recipe_prefix"] + "_" + mob_name + '\n')
-		for variant_id, variant_data in mob_data["variants"].items():
-			if "dictionary" in variant_data:
-				output.append('execute if entity @s[tag=variant.' + variant_id + '] run recipe give @a ' + namespace_contents + ':' + mob_data["type"] + '/' + variant_data["dictionary"]["recipe_prefix"] + "_" + mob_name + '_' + variant_id + '\n')
+		if "variants" in mob_data:
+			for variant_id, variant_data in mob_data["variants"].items():
+				if "dictionary" in variant_data:
+					output.append('execute if entity @s[tag=variant.' + variant_id + '] run recipe give @a ' + namespace_contents + ':' + mob_data["type"] + '/' + variant_data["dictionary"]["recipe_prefix"] + "_" + mob_name + '_' + variant_id + '\n')
 	output.append('data modify storage ' + namespace_storage + ':progress data.mob_list.' + mob_name + '.unlock set value 1b\n')
 	output.append('execute if score @s level matches 15.. run data modify storage ' + namespace_storage + ':progress data.mob_list.' + mob_name + '.defeated_levels.15 set value 1b\n')
 	output.append('execute if score @s level matches 20.. run data modify storage ' + namespace_storage + ':progress data.mob_list.' + mob_name + '.defeated_levels.20 set value 1b\n')
@@ -267,7 +299,7 @@ for mob_name, mob_data in mob_database.items():
 	path = base_path + mob_name + '/tick/0.mcfunction'
 	makedir(path)
 	output = []
-	output.append('execute on vehicle at @s run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/00\n')
+	output.append('execute at @s run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/00\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -277,7 +309,7 @@ for mob_name, mob_data in mob_database.items():
 	output = []
 	output.append('function ' + namespace_core + ':sys/entity/common/tick/0\n')
 	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/state/0\n')
-	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/0\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/0\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/tick/1\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -296,72 +328,72 @@ for mob_name, mob_data in mob_database.items():
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	# tick/action/0
-	path = base_path + mob_name + '/tick/action/0.mcfunction'
+	# action/0
+	path = base_path + mob_name + '/action/0.mcfunction'
 	makedir(path)
 	output = []
-	output.append('execute if entity @s[tag=pet,tag=!following_player] unless entity @e[type=#' + namespace_storage + ':mob_core,tag=enemy,distance=..64] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/start\n')
-	output.append('execute if entity @s[tag=pet,tag=following_player] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/0\n')
+	output.append('execute if entity @s[tag=pet,tag=!following_player] unless entity @e[type=#' + namespace_storage + ':mob_core,tag=enemy,distance=..64] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/start\n')
+	output.append('execute if entity @s[tag=pet,tag=following_player] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/0\n')
 	output.append('execute if entity @s[tag=pet,tag=following_player] run return 1\n')
 	output.append('scoreboard players add @s action_time 1\n')
-	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/branch\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/branch\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	# tick/action/branch
-	path = base_path + mob_name + '/tick/action/branch.mcfunction'
+	# action/branch
+	path = base_path + mob_name + '/action/branch.mcfunction'
 	makedir(path)
 	output = []
-	for action in mob_data["actions"]:
-		if action["score"] == 0:
-			output.append('execute unless score @s action0 matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action["name"] + '/tick\n')
+	for action_id, action_data in mob_data["actions"].items():
+		if action_data["score"] == 0:
+			output.append('execute unless score @s action0 matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/tick\n')
 		else:
-			output.append('execute if score @s action0 matches ' + str(action["score"]) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action["name"] + '/tick\n')
+			output.append('execute if score @s action0 matches ' + str(action_data["score"]) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/tick\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	for action in mob_data["actions"]:
-		# tick/action/*/start
-		path = base_path + mob_name + '/tick/action/' + action["name"] + '/start.mcfunction'
+	for action_id, action_data in mob_data["actions"].items():
+		# action/*/start
+		path = base_path + mob_name + '/action/' + action_id + '/start.mcfunction'
 		makedir(path)
 		output = []
-		output.append('scoreboard players set @s action0 ' + str(action["score"]) + '\n')
+		output.append('scoreboard players set @s action0 ' + str(action_data["score"]) + '\n')
 		output.append('scoreboard players set @s action1 0\n')
 		output.append('scoreboard players set @s action_time 0\n')
-		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action["name"] + '/start\n')
+		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/start\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
-		# tick/action/*/tick
-		path = base_path + mob_name + '/tick/action/' + action["name"] + '/tick.mcfunction'
+		# action/*/tick
+		path = base_path + mob_name + '/action/' + action_id + '/tick.mcfunction'
 		makedir(path)
 		output = []
-		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action["name"] + '/tick\n')
-		# output.append('execute if score @s action1 matches 0 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action["name"] + '/0/0\n')
-		# output.append('execute if score @s action1 matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action["name"] + '/1/0\n')
+		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/tick\n')
+		# output.append('execute if score @s action1 matches 0 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/0/0\n')
+		# output.append('execute if score @s action1 matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/1/0\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
-		# tick/action/*/end
-		path = base_path + mob_name + '/tick/action/' + action["name"] + '/end.mcfunction'
+		# action/*/end
+		path = base_path + mob_name + '/action/' + action_id + '/end.mcfunction'
 		makedir(path)
 		output = []
-		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action["name"] + '/end\n')
+		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/end\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
 		# manual/action/*/start
-		path = base_path + mob_name + '/manual/action/' + action["name"] + '/start.mcfunction'
+		path = base_path + mob_name + '/manual/action/' + action_id + '/start.mcfunction'
 		if not os.path.isfile(path):
 			makedir(path)
 			output = []
-			output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action["name"] + '/start\n')
+			output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/start\n')
 			output.append('#\n')
-			output.append('# アクション ' + action["name"] + ' の開始時に実行される\n')
+			output.append('# アクション ' + action_id + ' の開始時に実行される\n')
 			output.append('# このファイルは初回のみ自動生成される\n')
 			output.append('# アクション開始時の処理をこの下に記述\n')
 			output.append('#\n')
-			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action["name"] + '/start\n')
+			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/start\n')
 			output.append('\n')
 
 			output.append('# function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/default\n')
@@ -369,37 +401,37 @@ for mob_name, mob_data in mob_database.items():
 				f.writelines(output)
 
 		# manual/action/*/tick
-		path = base_path + mob_name + '/manual/action/' + action["name"] + '/tick.mcfunction'
+		path = base_path + mob_name + '/manual/action/' + action_id + '/tick.mcfunction'
 		if not os.path.isfile(path):
 			makedir(path)
 			output = []
-			output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action["name"] + '/tick\n')
+			output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/tick\n')
 			output.append('#\n')
-			output.append('# アクション ' + action["name"] + ' 中に実行される\n')
+			output.append('# アクション ' + action_id + ' 中に実行される\n')
 			output.append('# このファイルは初回のみ自動生成される\n')
 			output.append('# アクション中の処理をこの下に記述\n')
 			output.append('#\n')
-			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action["name"] + '/tick\n')
+			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/tick\n')
 			output.append('\n')
-			output.append('execute if score @s action1 matches 0 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action["name"] + '/0/0\n')
-			output.append('execute if score @s action1 matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action["name"] + '/1/0\n')
+			output.append('execute if score @s action1 matches 0 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/0/0\n')
+			output.append('execute if score @s action1 matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/1/0\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
 		# manual/action/*/end
-		path = base_path + mob_name + '/manual/action/' + action["name"] + '/end.mcfunction'
+		path = base_path + mob_name + '/manual/action/' + action_id + '/end.mcfunction'
 		if not os.path.isfile(path):
 			makedir(path)
 			output = []
-			output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action["name"] + '/end\n')
+			output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/end\n')
 			output.append('#\n')
-			output.append('# アクション ' + action["name"] + ' の終了時に実行される\n')
+			output.append('# アクション ' + action_id + ' の終了時に実行される\n')
 			output.append('# このファイルは初回のみ自動生成される\n')
 			output.append('# アクション終了時の処理をこの下に記述\n')
 			output.append('#\n')
-			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action["name"] + '/end\n')
+			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/end\n')
 			output.append('\n')
-			output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/stop/start\n')
+			output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/stop/start\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -463,21 +495,21 @@ for mob_name, mob_data in mob_database.items():
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
-	# tick/action/follow_player/
-	path = base_path + mob_name + '/tick/action/follow_player/0.mcfunction'
+	# action/follow_player/
+	path = base_path + mob_name + '/action/follow_player/0.mcfunction'
 	makedir(path)
 	output = []
-	output.append('execute unless score @s action1 matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/stop/0\n')
-	output.append('execute if score @s action1 matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/walk/0\n')
+	output.append('execute unless score @s action1 matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/stop/0\n')
+	output.append('execute if score @s action1 matches 1.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/walk/0\n')
 	if not mob_data["type"] == "boss":
 		output.append('function ' + namespace_core + ':sys/entity/common/collide/1\n')
 	else:
 		output.append('function ' + namespace_core + ':sys/entity/common/collide/4\n')
-	output.append('execute if entity @e[type=#' + namespace_storage + ':mob_core,tag=enemy,distance=..32] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/end\n')
+	output.append('execute if entity @e[type=#' + namespace_storage + ':mob_core,tag=enemy,distance=..32] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/end\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	path = base_path + mob_name + '/tick/action/follow_player/collide.mcfunction'
+	path = base_path + mob_name + '/action/follow_player/collide.mcfunction'
 	makedir(path)
 	output = []
 	output.append('data modify storage temp:_ data.rot2vec set value {abs:0.2}\n')
@@ -486,31 +518,31 @@ for mob_name, mob_data in mob_database.items():
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	path = base_path + mob_name + '/tick/action/follow_player/start.mcfunction'
+	path = base_path + mob_name + '/action/follow_player/start.mcfunction'
 	makedir(path)
 	output = []
 	output.append('tag @s add following_player\n')
-	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/stop/start\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/stop/start\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	path = base_path + mob_name + '/tick/action/follow_player/end.mcfunction'
+	path = base_path + mob_name + '/action/follow_player/end.mcfunction'
 	makedir(path)
 	output = []
 	output.append('tag @s remove following_player\n')
-	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + mob_data["default_action"] + '/start\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + mob_data["default_action"] + '/start\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	path = base_path + mob_name + '/tick/action/follow_player/stop/0.mcfunction'
+	path = base_path + mob_name + '/action/follow_player/stop/0.mcfunction'
 	makedir(path)
 	output = []
 	output.append('function ' + namespace_core + ':sys/entity/common/follow_player/stop\n')
-	output.append('execute unless entity @a[tag=pet_owner,distance=..8] if entity @a[tag=pet_owner,distance=..32] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/walk/start\n')
+	output.append('execute unless entity @a[tag=pet_owner,distance=..8] if entity @a[tag=pet_owner,distance=..32] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/walk/start\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	path = base_path + mob_name + '/tick/action/follow_player/stop/start.mcfunction'
+	path = base_path + mob_name + '/action/follow_player/stop/start.mcfunction'
 	makedir(path)
 	output = []
 	output.append('scoreboard players set @s action1 0\n')
@@ -518,16 +550,16 @@ for mob_name, mob_data in mob_database.items():
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	path = base_path + mob_name + '/tick/action/follow_player/walk/0.mcfunction'
+	path = base_path + mob_name + '/action/follow_player/walk/0.mcfunction'
 	makedir(path)
 	output = []
 	output.append('function ' + namespace_core + ':sys/entity/common/follow_player/walk\n')
-	output.append('execute if entity @a[tag=pet_owner,distance=..6] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/stop/start\n')
-	output.append('execute unless entity @a[tag=pet_owner,distance=..128] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/follow_player/stop/start\n')
+	output.append('execute if entity @a[tag=pet_owner,distance=..6] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/stop/start\n')
+	output.append('execute unless entity @a[tag=pet_owner,distance=..128] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/stop/start\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	path = base_path + mob_name + '/tick/action/follow_player/walk/start.mcfunction'
+	path = base_path + mob_name + '/action/follow_player/walk/start.mcfunction'
 	makedir(path)
 	output = []
 	output.append('scoreboard players set @s action1 1\n')
@@ -589,7 +621,7 @@ for mob_name, mob_data in mob_database.items():
 				weight_sum = 0
 				for action_name, weight in choices1_data["weights"].items():
 					if weight > 0:
-						output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+weight-1) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action_name + '/start\n')
+						output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+weight-1) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_name + '/start\n')
 						weight_sum += weight
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
@@ -619,7 +651,7 @@ for mob_name, mob_data in mob_database.items():
 								weight_sum = 0
 								for action_name, weight in choices3_data["weights"].items():
 									if weight > 0:
-										output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+weight-1) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/action/' + action_name + '/start\n')
+										output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+weight-1) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_name + '/start\n')
 										weight_sum += weight
 							with open(path, 'w', encoding='utf-8') as f:
 								f.writelines(output)
@@ -658,32 +690,24 @@ for mob_name, mob_data in mob_database.items():
 	output.append('function ' + namespace_core + ':sys/entity/common/summon/0\n')
 	if not ("without_aj" in mob_data and mob_data["without_aj"]):
 		output.append('execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:' + mob_data["aj_name"] + '/summon/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + 'default\n')
-		for variant_id, variant_data in mob_data["variants"].items():
-			output.append('execute if data storage temp:_ data.new_entity{"variant":"' + variant_id + '"} rotated ~ 0 run function animated_java:' + mob_data["aj_name"] + '/summon/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + variant_id + '\n')
+		if "variants" in mob_data:
+			for variant_id, variant_data in mob_data["variants"].items():
+				output.append('execute if data storage temp:_ data.new_entity{"variant":"' + variant_id + '"} rotated ~ 0 run function animated_java:' + mob_data["aj_name"] + '/summon/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + variant_id + '\n')
 		output.append('ride @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] mount @s\n')
 		output.append('tag @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] remove newly_summoned.aj\n')
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/default\n')
 	output.append('tag @s remove newly_summoned\n')
 	output.append('execute if data storage temp:_ data.new_entity{"variant":"default"} run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/common/variant/default\n')
-	for variant_id, variant_data in mob_data["variants"].items():
-		output.append('execute if data storage temp:_ data.new_entity{"variant":"' + variant_id + '"} run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/common/variant/' + variant_id + '\n')
+	if "variants" in mob_data:
+		for variant_id, variant_data in mob_data["variants"].items():
+			output.append('execute if data storage temp:_ data.new_entity{"variant":"' + variant_id + '"} run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/common/variant/' + variant_id + '\n')
 	for summon_type in ["enemy", "pet", "player_side"]:
 		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"' + summon_type + '"} run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/common/' + summon_type + '\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
 	# summon/common/variant/
-	for variant_id in ["default"]:
-		path = base_path + mob_name + '/summon/common/variant/' + variant_id + '.mcfunction'
-		makedir(path)
-		output = []
-		output.append('tag @s add variant.' + variant_id + '\n')
-		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"enemy"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"mob.' + mob_name + '.' + variant_id + '.name"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
-		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"pet"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"mob.' + mob_name + '.' + variant_id + '.name","color": "aqua"}]\'}\n')
-		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"player_side"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"mob.' + mob_name + '.' + variant_id + '.name","color": "aqua"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
-		with open(path, 'w', encoding='utf-8') as f:
-			f.writelines(output)
-	for variant_id, variant_data in mob_data["variants"].items():
+	for variant_id in variant_id_list:
 		path = base_path + mob_name + '/summon/common/variant/' + variant_id + '.mcfunction'
 		makedir(path)
 		output = []
@@ -694,78 +718,78 @@ for mob_name, mob_data in mob_database.items():
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
-		path = base_path + mob_name + '/summon/common/enemy.mcfunction'
-		makedir(path)
-		output = []
-		output.append('tag @s add enemy\n')
-		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/common/status\n')
-		output.append('execute store result score #gold_bonus temp run data get storage temp:_ data.event_bonus.gold 50\n')
-		output.append('execute store result score #xp_bonus temp run data get storage temp:_ data.event_bonus.xp 50\n')
-		output.append('execute store result score @s drop_bonus run data get storage temp:_ data.event_bonus.drop 1\n')
-		# output.append('tellraw @a ["G ",{"score":{"name":"#gold_bonus","objective":"temp"}},", XP ",{"score":{"name":"#xp_bonus","objective":"temp"}},", DROP ",{"score":{"name":"#drop_bonus","objective":"temp"}}]\n')
-		output.append('scoreboard players set @s gold ' + str(mob_data["status"]["gold"]["mul"]) + '\n')
-		output.append('scoreboard players operation @s gold *= #new_entity.level temp\n')
-		output.append('scoreboard players add @s gold ' + str(mob_data["status"]["gold"]["base"]) + '\n')
-		output.append('scoreboard players add #gold_bonus temp 100\n')
-		output.append('scoreboard players operation @s gold *= #gold_bonus temp\n')
-		output.append('scoreboard players set #const temp 100\n')
-		output.append('scoreboard players operation @s gold /= #const temp\n')
-		output.append('scoreboard players set @s xp ' + str(mob_data["status"]["xp"]["mul"]) + '\n')
-		output.append('scoreboard players operation @s xp *= #new_entity.level temp\n')
-		output.append('scoreboard players add @s xp ' + str(mob_data["status"]["xp"]["base"]) + '\n')
-		output.append('scoreboard players add #xp_bonus temp 100\n')
-		output.append('scoreboard players operation @s xp *= #xp_bonus temp\n')
-		output.append('scoreboard players set #const temp 100\n')
-		output.append('scoreboard players operation @s xp /= #const temp\n')
-		with open(path, 'w', encoding='utf-8') as f:
-			f.writelines(output)
+	path = base_path + mob_name + '/summon/common/enemy.mcfunction'
+	makedir(path)
+	output = []
+	output.append('tag @s add enemy\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/common/status\n')
+	output.append('execute store result score #gold_bonus temp run data get storage temp:_ data.event_bonus.gold 50\n')
+	output.append('execute store result score #xp_bonus temp run data get storage temp:_ data.event_bonus.xp 50\n')
+	output.append('execute store result score @s drop_bonus run data get storage temp:_ data.event_bonus.drop 1\n')
+	# output.append('tellraw @a ["G ",{"score":{"name":"#gold_bonus","objective":"temp"}},", XP ",{"score":{"name":"#xp_bonus","objective":"temp"}},", DROP ",{"score":{"name":"#drop_bonus","objective":"temp"}}]\n')
+	output.append('scoreboard players set @s gold ' + str(mob_data["status"]["gold"]["mul"]) + '\n')
+	output.append('scoreboard players operation @s gold *= #new_entity.level temp\n')
+	output.append('scoreboard players add @s gold ' + str(mob_data["status"]["gold"]["base"]) + '\n')
+	output.append('scoreboard players add #gold_bonus temp 100\n')
+	output.append('scoreboard players operation @s gold *= #gold_bonus temp\n')
+	output.append('scoreboard players set #const temp 100\n')
+	output.append('scoreboard players operation @s gold /= #const temp\n')
+	output.append('scoreboard players set @s xp ' + str(mob_data["status"]["xp"]["mul"]) + '\n')
+	output.append('scoreboard players operation @s xp *= #new_entity.level temp\n')
+	output.append('scoreboard players add @s xp ' + str(mob_data["status"]["xp"]["base"]) + '\n')
+	output.append('scoreboard players add #xp_bonus temp 100\n')
+	output.append('scoreboard players operation @s xp *= #xp_bonus temp\n')
+	output.append('scoreboard players set #const temp 100\n')
+	output.append('scoreboard players operation @s xp /= #const temp\n')
+	with open(path, 'w', encoding='utf-8') as f:
+		f.writelines(output)
 
-		path = base_path + mob_name + '/summon/common/status.mcfunction'
-		makedir(path)
-		output = []
-		output.append('execute unless score #new_entity.level temp matches 0.. run scoreboard players set #new_entity.level temp ' + str(mob_data["status"]["default_level"]) + '\n')
-		output.append('scoreboard players operation @s level = #new_entity.level temp\n')
-		output.append('scoreboard players set @s max_health ' + str(mob_data["status"]["max_health"]["mul"]) + '\n')
-		output.append('scoreboard players operation @s max_health *= #new_entity.level temp\n')
-		output.append('scoreboard players add @s max_health ' + str(mob_data["status"]["max_health"]["base"]) + '\n')
-		if mob_data["type"] == "boss":
-			output.append('scoreboard players set #rank_mul temp 100\n')
-			output.append('execute if score #new_entity.level temp matches 20.. run scoreboard players add #rank_mul temp 20\n')
-			output.append('execute if score #new_entity.level temp matches 30.. run scoreboard players add #rank_mul temp 20\n')
-			output.append('scoreboard players operation @s max_health *= #rank_mul temp\n')
-			output.append('scoreboard players set #rank_mul temp 100\n')
-			output.append('scoreboard players operation @s max_health /= #rank_mul temp\n')
-			output.append('scoreboard players operation @s max_health /= #rank_mul temp\n')
-			output.append('scoreboard players operation @s max_health *= #rank_mul temp\n')
-			output.append('execute store result score #team_mul temp if entity @a[gamemode=adventure,distance=..64]\n')
-			output.append('scoreboard players add #team_mul temp 1\n')
-			output.append('scoreboard players operation @s max_health *= #team_mul temp\n')
-			output.append('scoreboard players set #team_mul temp 2\n')
-			output.append('scoreboard players operation @s max_health /= #team_mul temp\n')
-		output.append('scoreboard players operation @s health = @s max_health\n')
-		output.append('scoreboard players set @s attack.base ' + str(round(100*mob_data["status"]["attack_damage"]["mul"])) + '\n')
-		output.append('scoreboard players operation @s attack.base *= #new_entity.level temp\n')
+	path = base_path + mob_name + '/summon/common/status.mcfunction'
+	makedir(path)
+	output = []
+	output.append('execute unless score #new_entity.level temp matches 0.. run scoreboard players set #new_entity.level temp ' + str(mob_data["status"]["default_level"]) + '\n')
+	output.append('scoreboard players operation @s level = #new_entity.level temp\n')
+	output.append('scoreboard players set @s max_health ' + str(mob_data["status"]["max_health"]["mul"]) + '\n')
+	output.append('scoreboard players operation @s max_health *= #new_entity.level temp\n')
+	output.append('scoreboard players add @s max_health ' + str(mob_data["status"]["max_health"]["base"]) + '\n')
+	if mob_data["type"] == "boss":
+		output.append('scoreboard players set #rank_mul temp 100\n')
+		output.append('execute if score #new_entity.level temp matches 20.. run scoreboard players add #rank_mul temp 20\n')
+		output.append('execute if score #new_entity.level temp matches 30.. run scoreboard players add #rank_mul temp 20\n')
+		output.append('scoreboard players operation @s max_health *= #rank_mul temp\n')
+		output.append('scoreboard players set #rank_mul temp 100\n')
+		output.append('scoreboard players operation @s max_health /= #rank_mul temp\n')
+		output.append('scoreboard players operation @s max_health /= #rank_mul temp\n')
+		output.append('scoreboard players operation @s max_health *= #rank_mul temp\n')
+		output.append('execute store result score #team_mul temp if entity @a[gamemode=adventure,distance=..64]\n')
+		output.append('scoreboard players add #team_mul temp 1\n')
+		output.append('scoreboard players operation @s max_health *= #team_mul temp\n')
+		output.append('scoreboard players set #team_mul temp 2\n')
+		output.append('scoreboard players operation @s max_health /= #team_mul temp\n')
+	output.append('scoreboard players operation @s health = @s max_health\n')
+	output.append('scoreboard players set @s attack.base ' + str(round(100*mob_data["status"]["attack_damage"]["mul"])) + '\n')
+	output.append('scoreboard players operation @s attack.base *= #new_entity.level temp\n')
+	output.append('scoreboard players set #temp temp 100\n')
+	output.append('scoreboard players operation @s attack.base /= #temp temp\n')
+	if mob_data["status"]["attack_damage"]["base"] > 0:
+		output.append('scoreboard players add @s attack.base ' + str(mob_data["status"]["attack_damage"]["base"]) + '\n')
+	elif mob_data["status"]["attack_damage"]["base"] < 0:
+		output.append('scoreboard players remove @s attack.base ' + str(abs(mob_data["status"]["attack_damage"]["base"])) + '\n')
+	output.append('scoreboard players set @s attack.mul 10\n')
+	output.append('scoreboard players set @s armor.mul ' + str(mob_data["parts"]["root"]["armor_mul"]) + '\n')
+	if "elemental_damage_mul" in mob_data["parts"]["root"]:
+		for elem in ["fire","water","ice","thunder"]:
+			if elem in mob_data["parts"]["root"]["elemental_damage_mul"]:
+				output.append('scoreboard players set @s armor.' + elem + '.mul ' + str(mob_data["parts"]["root"]["elemental_damage_mul"][elem]) + '\n')
+	if "angry" in mob_data["status"]:
+		output.append('scoreboard players operation @s anger.damage = @s max_health\n')
+		output.append('scoreboard players set #temp temp ' + str(round(100*mob_data["status"]["angry"]["start_damage_ratio"])) + '\n')
+		output.append('scoreboard players operation @s anger.damage *= #temp temp\n')
 		output.append('scoreboard players set #temp temp 100\n')
-		output.append('scoreboard players operation @s attack.base /= #temp temp\n')
-		if mob_data["status"]["attack_damage"]["base"] > 0:
-			output.append('scoreboard players add @s attack.base ' + str(mob_data["status"]["attack_damage"]["base"]) + '\n')
-		elif mob_data["status"]["attack_damage"]["base"] < 0:
-			output.append('scoreboard players remove @s attack.base ' + str(abs(mob_data["status"]["attack_damage"]["base"])) + '\n')
-		output.append('scoreboard players set @s attack.mul 10\n')
-		output.append('scoreboard players set @s armor.mul ' + str(mob_data["parts"]["root"]["armor_mul"]) + '\n')
-		if "elemental_damage_mul" in mob_data["parts"]["root"]:
-			for elem in ["fire","water","ice","thunder"]:
-				if elem in mob_data["parts"]["root"]["elemental_damage_mul"]:
-					output.append('scoreboard players set @s armor.' + elem + '.mul ' + str(mob_data["parts"]["root"]["elemental_damage_mul"][elem]) + '\n')
-		if "angry" in mob_data["status"]:
-			output.append('scoreboard players operation @s anger.damage = @s max_health\n')
-			output.append('scoreboard players set #temp temp ' + str(round(100*mob_data["status"]["angry"]["start_damage_ratio"])) + '\n')
-			output.append('scoreboard players operation @s anger.damage *= #temp temp\n')
-			output.append('scoreboard players set #temp temp 100\n')
-			output.append('scoreboard players operation @s anger.damage /= #temp temp\n')
-		output.append('scoreboard players operation #attack.base temp = @s attack.base\n')
-		with open(path, 'w', encoding='utf-8') as f:
-			f.writelines(output)
+		output.append('scoreboard players operation @s anger.damage /= #temp temp\n')
+	output.append('scoreboard players operation #attack.base temp = @s attack.base\n')
+	with open(path, 'w', encoding='utf-8') as f:
+		f.writelines(output)
 
 	# summon/pet/
 	path = base_path + mob_name + '/summon/common/pet.mcfunction'
@@ -1113,7 +1137,7 @@ for mob_name, mob_data in mob_database.items():
 					"id": "minecraft:green_dye",
 					"components":{
 						"item_name": "【No.0" + ("1" if mob_data["type"] == "mob" else "2") + "-" + variant_data["dictionary"]["number"] + "】" + variant_data["display_name"],
-						"custom_model_data": variant_data["custom_model_data"],
+						"custom_model_data": mob_data["custom_model_data"] + variant_data["custom_model_data_add"],
 						"lore": lore
 					}
 				}
@@ -1551,10 +1575,10 @@ for mob_name, mob_data in mob_database.items():
 	})
 	if "variants" in mob_data:
 		for variant_id, variant_data in mob_data["variants"].items():
-			if not "custom_model_data" in variant_data:
+			if not "custom_model_data_add" in variant_data:
 				continue
 			overrides.append({
-				"predicate": { "custom_model_data": variant_data["custom_model_data"] },
+				"predicate": { "custom_model_data": mob_data["custom_model_data"] + variant_data["custom_model_data_add"] },
 				"model": "item/custom/entity/" + mob_name + "/icon_" + variant_id
 			})
 output = {

@@ -19,8 +19,8 @@ tag @s remove fishing.big
 # data remove storage temp:_ data.player_storage.pet.boss1
 # function anemoland:sys/player/common/player_storage/write
 
-# tag @s add skip_inventory_changed
-# function anemoland:sys/player/menu/main/init_from_other_func
-# tag @s remove skip_inventory_changed
+tag @s add skip_inventory_changed
+function anemoland:sys/player/menu/main/init_from_other_func
+tag @s remove skip_inventory_changed
 
-# scoreboard players set @s sneak_time -20
+scoreboard players set @s sneak_time -20

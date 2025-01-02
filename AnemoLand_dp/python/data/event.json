@@ -30,6 +30,20 @@
                     "pos": [4, 14]
                 }
             ]
+        },
+        "boars": {
+            "enemies": [
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [-5, 1]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [6, 2]
+                }
+            ]
         }
     },
     "events": {
@@ -41,6 +55,15 @@
         },
         "walking_mushrooms_15": {
             "waves":[{"walking_mushrooms":15}]
+        },
+        "boars_5": {
+            "waves":[{"boars":5}]
+        },
+        "boars_10": {
+            "waves":[{"boars":10}]
+        },
+        "boars_15": {
+            "waves":[{"boars":15}]
         }
     },
     "random_events": {
@@ -49,7 +72,10 @@
             "random_events": [
                 {"event": "walking_mushrooms_5", "weight": 1},
                 {"event": "walking_mushrooms_10", "weight": 1},
-                {"event": "walking_mushrooms_15", "weight": 1}
+                {"event": "walking_mushrooms_15", "weight": 1},
+                {"event": "boars_5", "weight": 1},
+                {"event": "boars_10", "weight": 1},
+                {"event": "boars_15", "weight": 1}
             ]
         }
     }

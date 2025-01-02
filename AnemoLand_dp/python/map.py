@@ -21,7 +21,7 @@ namespace_core = common_database["namespace_core"]
 namespace_contents = common_database["namespace_contents"]
 namespace_storage = common_database["namespace_core"]
 
-with open('data/mob.json' , encoding='utf-8') as f:
+with open('data/mob/mob.json' , encoding='utf-8') as f:
 	mob_database = json.load(f)
 
 MAX_WAVES = 3
@@ -318,7 +318,7 @@ for map_data in map_database["maps"]:
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{summon_flag:1b} if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event{wave_interval:1b} unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/summon/warn\n')
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{summon_flag:1b} unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event{wave_interval:1b} unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} if entity @a[distance=..' + str(distance) + ',tag=player_check,limit=1] run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/summon/0\n')
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/clear/tick\n')
-				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run function ' + namespace_contents + ':sys/title/actionbar/field/skill_gauge/0\n')
+				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run function ' + namespace_core + ':sys/player/title/actionbar/field/skill_gauge/0\n')
 			if "special_field" in field_data and field_data["special_field"]  in ["arena_prepare"]:
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' run function ' + namespace_core + ':sys/player/area/common/arena_prepare/0\n')
 			with open(path, 'w', encoding='utf-8') as f:
@@ -391,7 +391,7 @@ for map_data in map_database["maps"]:
 				output = []
 				path = base_path + map_name + '/' + field_data["type"] + '/' + field_id + '/clear/tick.mcfunction'
 				makedir(path)
-				output.append('function ' + namespace_contents + ':sys/title/actionbar/field/return/0\n')
+				output.append('function ' + namespace_core + ':sys/player/title/actionbar/field/return/0\n')
 				output.append('execute if score @s sneak_time matches 20.. run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/return/0\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
@@ -539,7 +539,7 @@ for map_data in map_database["maps"]:
 							for enemy_ in wave_data_["enemies"]:
 								entity_ = enemy_["entity_id"]
 								if not entity_ in enemies_:
-									predicates += ' if data storage ' + namespace_storage + ':progress data.mob_list." + entity_ + "{unlock:1b}'
+									predicates += ' if data storage ' + namespace_storage + ':progress data.mob_list.' + entity_ + '{unlock:1b}'
 								level_ = enemy_["level"] + wave_level_
 								if level_ >= 20:
 									predicates += ' if data storage ' + namespace_storage + ':progress data.rank{silver:1b}'

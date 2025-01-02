@@ -7,7 +7,7 @@ data_path = 'data/event.json'
 with open(data_path , encoding='utf-8') as f:
 	event_database = json.load(f)
 
-with open('data/mob.json' , encoding='utf-8') as f:
+with open('data/mob/mob.json' , encoding='utf-8') as f:
 	mob_database = json.load(f)
 
 with open('data/map.json' , encoding='utf-8') as f:

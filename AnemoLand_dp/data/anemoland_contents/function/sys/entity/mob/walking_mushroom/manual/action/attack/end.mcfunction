@@ -4,6 +4,6 @@
 # このファイルは初回のみ自動生成される
 # アクション終了時の処理をこの下に記述
 #
-# @within function anemoland_contents:sys/entity/mob/walking_mushroom/tick/action/attack/end
+# @within function anemoland_contents:sys/entity/mob/walking_mushroom/action/attack/end
 
-function anemoland_contents:sys/entity/mob/walking_mushroom/tick/action/stop/start
+function anemoland_contents:sys/entity/mob/walking_mushroom/action/stop/start

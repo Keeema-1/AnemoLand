@@ -6,4 +6,4 @@ execute if entity @s[tag=variant.brown] run function anemoland_contents:sys/enti
 execute if entity @s[tag=variant.gold] run function anemoland_contents:sys/entity/mob/walking_mushroom/variant/gold_damaged
 function anemoland:sys/entity/common/damage/dst/apply
 execute unless score @s health matches 1.. run function anemoland_contents:sys/entity/mob/walking_mushroom/damaged/die/0
-execute if score @s health matches 1.. run function anemoland_contents:sys/entity/mob/walking_mushroom/damaged/sound
+execute if score @s health matches 1.. run function anemoland_contents:sys/entity/mob/walking_mushroom/manual/damaged

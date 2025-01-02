@@ -7,5 +7,5 @@ execute if entity @s[tag=aj.walking_mushroom.animation.die.playing] run function
 execute if entity @s[tag=aj.walking_mushroom.animation.attack.playing] run function animated_java:walking_mushroom/animations/attack/zzz/on_tick
 execute on passengers if entity @s[tag=aj.walking_mushroom.data] run function animated_java:walking_mushroom/root/zzz/0
 execute at @s on passengers run rotate @s ~ ~
-function anemoland_contents:sys/entity/mob/walking_mushroom/tick/0
+execute on vehicle run function anemoland_contents:sys/entity/mob/walking_mushroom/tick/0
 function #animated_java:walking_mushroom/as_root/post_tick
