@@ -18,7 +18,8 @@
   - [MIT-License](km-distance/LICENSE) / [こま](https://github.com/komaramune)様
 - AnemoLand-dp
   - [MIT-License](AnemoLand_dp/LICENSE) / [Keeema](https://github.com/Keeema-1)
-- AnimatedJava の生成には [AnimatedJava]((https://github.com/Animated-Java/animated-java))を使用しています。
+- AnimatedJava
+  - [AnimatedJava](https://github.com/Animated-Java/animated-java)を用いて生成しています。
 
 ## クレジット
 #### - 使用しているデータパック
