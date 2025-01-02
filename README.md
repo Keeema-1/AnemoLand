@@ -10,10 +10,22 @@
 #### - 詳細・ダウンロード
 [[Wikiを見てね]](https://github.com/Keeema-1/AnemoLand/wiki)
 
+## ライセンス
+データパックごとにライセンスが分かれています。
+- Hirobao_Player_Motion
+  - [CC-0](Hirobao_Player_Motion/LICENSE) / [ひろばお](https://github.com/Hirobao1)様
+- km-distance
+  - [MIT-License](km-distance/LICENSE) / [こま](https://github.com/komaramune)様
+- AnemoLand-dp
+  - [MIT-License](AnemoLand_dp/LICENSE) / [Keeema](https://github.com/Keeema-1)
+- AnimatedJava の生成には [AnimatedJava]((https://github.com/Animated-Java/animated-java))を使用しています。
+
 ## クレジット
-#### - 使用しているライブラリ
-- PlayerMotion / ひろばお様 (https://github.com/Hirobao1/CustomEnchant_PlayerMotion)
-- AnimatedJava (https://github.com/Animated-Java/animated-java)
+#### - 使用しているデータパック
+- プレイヤーモーション用ライブラリ
+  - [PlayerMotion](https://github.com/Hirobao1/CustomEnchant_PlayerMotion) / [ひろばお](https://github.com/Hirobao1)様
+- 距離測定用ライブラリ
+  - [km-distance](https://github.com/komaramune/km-distance) / [こま](https://github.com/komaramune)様
 
 #### - 使用しているBGM
 - ポケットサウンド様 (https://pocket-se.info)
