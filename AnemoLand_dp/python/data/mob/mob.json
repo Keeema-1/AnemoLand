@@ -349,7 +349,7 @@
             "main_areas": ["森林"],
             "attack_elements": ["physical"]
         },
-        "unlock": {"armor": []},
+        "unlock": {"armor": ["squirrel_head"]},
         "animations": {
             "default":{},
             "die":{},

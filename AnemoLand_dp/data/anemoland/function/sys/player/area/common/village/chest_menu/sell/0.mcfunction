@@ -23,8 +23,6 @@ execute unless data storage temp:_ data.Items[0] run return 1
 
 # sell
 
-# tellraw @a {"score":{"name":"#sell_price_total","objective":"temp"}}
-
 playsound minecraft:entity.experience_orb.pickup master @a ~ ~ ~ 1 1.2
 
 data modify storage temp:_ data.sell_price set value {}

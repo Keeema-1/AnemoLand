@@ -991,8 +991,8 @@ def add_recipe(buy, buyB = [], sell = [], required_progresses = []):
 		required_add += ' if data storage ' + namespace_storage + ':progress data.' + required_progress
 	output.append('execute' + required_add + ' run data modify storage temp:_ data.Recipes append from storage temp:_ data.recipe\n')
 output.append('data modify storage temp:_ data.Recipes set value []\n')
-add_recipe(buy=[namespace_storage + ':item/medal/common/silver', 2], buyB=[], sell=[namespace_storage + ':item/medal/common/bronze', 3], required_progresses=['rank{silver:1b}'])
-add_recipe(buy=[namespace_storage + ':item/medal/common/gold', 2], buyB=[], sell=[namespace_storage + ':item/medal/common/silver', 3], required_progresses=['rank{gold:1b}'])
+add_recipe(buy=[namespace_contents + ':item/medal/common/silver', 2], buyB=[], sell=[namespace_contents + ':item/medal/common/bronze', 3], required_progresses=['rank{silver:1b}'])
+add_recipe(buy=[namespace_contents + ':item/medal/common/gold', 2], buyB=[], sell=[namespace_contents + ':item/medal/common/silver', 3], required_progresses=['rank{gold:1b}'])
 output.append('\n')
 for mob_name, mob_data in mob_database.items():
 	if mob_data["type"] == 'npc' or mob_data["type"] == 'decoy':
@@ -1002,15 +1002,15 @@ for mob_name, mob_data in mob_database.items():
 	if mob_data["status"]["default_level"] < 30:
 		add_recipe(buy=[namespace_contents + ':item/medal/' + mob_name + '/gold', 2], buyB=[], sell=[namespace_contents + ':item/medal/' + mob_name + '/silver', 3], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{gold:1b}'])
 	if mob_data["status"]["default_level"] < 20:
-		add_recipe(buy=[namespace_contents + ':item/medal/' + mob_name + '/bronze', mob_data["price"]["exchange"]["sell_required"]], buyB=[], sell=[namespace_storage + ':item/medal/common/bronze', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}'])
+		add_recipe(buy=[namespace_contents + ':item/medal/' + mob_name + '/bronze', mob_data["price"]["exchange"]["sell_required"]], buyB=[], sell=[namespace_contents + ':item/medal/common/bronze', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}'])
 	if mob_data["status"]["default_level"] < 30:
-		add_recipe(buy=[namespace_contents + ':item/medal/' + mob_name + '/silver', mob_data["price"]["exchange"]["sell_required"]], buyB=[], sell=[namespace_storage + ':item/medal/common/silver', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{silver:1b}'])
-	add_recipe(buy=[namespace_contents + ':item/medal/' + mob_name + '/gold', mob_data["price"]["exchange"]["sell_required"]], buyB=[], sell=[namespace_storage + ':item/medal/common/gold', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{gold:1b}'])
+		add_recipe(buy=[namespace_contents + ':item/medal/' + mob_name + '/silver', mob_data["price"]["exchange"]["sell_required"]], buyB=[], sell=[namespace_contents + ':item/medal/common/silver', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{silver:1b}'])
+	add_recipe(buy=[namespace_contents + ':item/medal/' + mob_name + '/gold', mob_data["price"]["exchange"]["sell_required"]], buyB=[], sell=[namespace_contents + ':item/medal/common/gold', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{gold:1b}'])
 	if mob_data["status"]["default_level"] < 20:
-		add_recipe(buy=[namespace_storage + ':item/medal/common/bronze', mob_data["price"]["exchange"]["buy_required"]], buyB=[], sell=[namespace_contents + ':item/medal/' + mob_name + '/bronze', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}'])
+		add_recipe(buy=[namespace_contents + ':item/medal/common/bronze', mob_data["price"]["exchange"]["buy_required"]], buyB=[], sell=[namespace_contents + ':item/medal/' + mob_name + '/bronze', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}'])
 	if mob_data["status"]["default_level"] < 30:
-		add_recipe(buy=[namespace_storage + ':item/medal/common/silver', mob_data["price"]["exchange"]["buy_required"]], buyB=[], sell=[namespace_contents + ':item/medal/' + mob_name + '/silver', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{silver:1b}'])
-	add_recipe(buy=[namespace_storage + ':item/medal/common/gold', mob_data["price"]["exchange"]["buy_required"]], buyB=[], sell=[namespace_contents + ':item/medal/' + mob_name + '/gold', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{gold:1b}'])
+		add_recipe(buy=[namespace_contents + ':item/medal/common/silver', mob_data["price"]["exchange"]["buy_required"]], buyB=[], sell=[namespace_contents + ':item/medal/' + mob_name + '/silver', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{silver:1b}'])
+	add_recipe(buy=[namespace_contents + ':item/medal/common/gold', mob_data["price"]["exchange"]["buy_required"]], buyB=[], sell=[namespace_contents + ':item/medal/' + mob_name + '/gold', 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}', 'rank{gold:1b}'])
 output.append('kill @s\n')
 with open(path, 'w', encoding='utf-8') as f:
 	f.writelines(output)
@@ -1320,12 +1320,12 @@ for mob_name, mob_data in mob_database.items():
 				])
 				lore.append([
 					{"translate": "pet.max_duration", "color": "white", "italic":False},
-					{"text": "60"},
+					{"text": "：60"},
 					{"translate": "common.second"}
 				])
 				lore.append([
 					{"translate": "pet.cooltime", "color": "white", "italic":False},
-					{"text": "120"},
+					{"text": "：120"},
 					{"translate": "common.second"}
 				])
 

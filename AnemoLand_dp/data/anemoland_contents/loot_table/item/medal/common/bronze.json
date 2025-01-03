@@ -56,7 +56,7 @@
 								"translate": "item.medal.common.name",
 								"with": [{"translate": "common.rank.bronze"}],
 								"italic": false,
-								"color": "yellow"
+								"color": "gold"
 							}
 						}
 					]
