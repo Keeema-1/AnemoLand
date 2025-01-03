@@ -6,5 +6,6 @@
 #
 # @within function anemoland_contents:sys/entity/mob/squirrel/action/stop/tick
 
-execute if score @s action1 matches 0 run function anemoland_contents:sys/entity/mob/squirrel/manual/action/stop/0/0
-execute if score @s action1 matches 1 run function anemoland_contents:sys/entity/mob/squirrel/manual/action/stop/1/0
+execute unless entity @s[tag=damaged] if predicate anemoland:random_chance/0_2 run function anemoland:sys/entity/common/collide/1
+
+execute if score #hostile_target.exist temp matches 1 run function anemoland_contents:sys/entity/mob/squirrel/action/stop/end

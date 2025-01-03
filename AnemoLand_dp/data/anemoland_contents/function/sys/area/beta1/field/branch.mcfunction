@@ -4,3 +4,4 @@ execute if score @s area2 matches 9901 run function anemoland_contents:sys/area/
 execute if score @s area2 matches 206 run function anemoland_contents:sys/area/beta1/field/26/0
 execute if score @s area2 matches 205 run function anemoland_contents:sys/area/beta1/field/25/0
 execute if score @s area2 matches 204 run function anemoland_contents:sys/area/beta1/field/24/0
+execute if score @s area2 matches 304 run function anemoland_contents:sys/area/beta1/field/34/0

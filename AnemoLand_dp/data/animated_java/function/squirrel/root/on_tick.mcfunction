@@ -7,6 +7,7 @@ execute if entity @s[tag=aj.squirrel.animation.bite.playing] run function animat
 execute if entity @s[tag=aj.squirrel.animation.spin_left.playing] run function animated_java:squirrel/animations/spin_left/zzz/on_tick
 execute if entity @s[tag=aj.squirrel.animation.walk.playing] run function animated_java:squirrel/animations/walk/zzz/on_tick
 execute if entity @s[tag=aj.squirrel.animation.bark.playing] run function animated_java:squirrel/animations/bark/zzz/on_tick
+execute if entity @s[tag=aj.squirrel.animation.spin_right.playing] run function animated_java:squirrel/animations/spin_right/zzz/on_tick
 execute on passengers if entity @s[tag=aj.squirrel.data] run function animated_java:squirrel/root/zzz/0
 execute at @s on passengers run rotate @s ~ ~
 execute on vehicle run function anemoland_contents:sys/entity/mob/squirrel/tick/0

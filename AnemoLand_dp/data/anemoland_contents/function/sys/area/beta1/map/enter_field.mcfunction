@@ -6,3 +6,4 @@ execute if entity @s[tag=field_arena1] as @a[tag=player_check,limit=1] unless en
 execute if entity @s[tag=field_26] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=206}] run return run function anemoland_contents:sys/area/beta1/field/26/enter/0
 execute if entity @s[tag=field_25] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=205}] run return run function anemoland_contents:sys/area/beta1/field/25/enter/0
 execute if entity @s[tag=field_24] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=204}] run return run function anemoland_contents:sys/area/beta1/field/24/enter/0
+execute if entity @s[tag=field_34] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=304}] run return run function anemoland_contents:sys/area/beta1/field/34/enter/0

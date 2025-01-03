@@ -8,4 +8,4 @@ execute positioned 1024 0 0 run kill @e[type=marker,tag=unlock_flag,distance=..1
 
 data modify storage anemoland:progress data.beta1 set value {}
 
-function anemoland:command/progress/init_event
+function anemoland_contents:command/progress/init_event

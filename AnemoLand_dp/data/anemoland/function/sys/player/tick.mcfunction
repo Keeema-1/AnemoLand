@@ -37,7 +37,7 @@ tag @s add player_check
 
 tag @s remove player_check
 
-# clear @s *[custom_data={chest_menu:1b}]
+clear @s *[custom_data={chest_menu:1b}]
 
 # fill ~-20 -10 ~-20 ~20 -10 ~20 sandstone replace water
 # fill ~-20 -9 ~-20 ~20 -9 ~20 sand replace water

@@ -6,3 +6,4 @@ tag @s remove aj.squirrel.animation.bite.playing
 tag @s remove aj.squirrel.animation.spin_left.playing
 tag @s remove aj.squirrel.animation.walk.playing
 tag @s remove aj.squirrel.animation.bark.playing
+tag @s remove aj.squirrel.animation.spin_right.playing

@@ -5,3 +5,4 @@ scoreboard objectives add aj.bite.frame dummy
 scoreboard objectives add aj.spin_left.frame dummy
 scoreboard objectives add aj.walk.frame dummy
 scoreboard objectives add aj.bark.frame dummy
+scoreboard objectives add aj.spin_right.frame dummy

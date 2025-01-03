@@ -43,13 +43,13 @@ for mob_name, mob_data in mob_database.items():
 		path = base_path + mob_name + '/' + str(level) + '.mcfunction'
 		makedir(path)
 		output = []
-		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/enemy/level {level:' + str(level) + '}\n')
+		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/default/enemy/level {level:' + str(level) + '}\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 	path = base_path + mob_name + '/default.mcfunction'
 	makedir(path)
 	output = []
-	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/enemy/0\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/default/enemy/0\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -257,6 +257,22 @@ for mob_name, mob_data in mob_database.items():
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
+	# manual/die
+	path = base_path + mob_name + '/manual/angry.mcfunction'
+	if not os.path.isfile(path):
+		makedir(path)
+		output = []
+		output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/damaged\n')
+		output.append('#\n')
+		output.append('# 怒り中に実行される\n')
+		output.append('# このファイルは初回のみ自動生成される\n')
+		output.append('# パーティクルなど、怒り時の処理をこの下に記述\n')
+		output.append('#\n')
+		output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/state/tick\n')
+		output.append('\n')
+		with open(path, 'w', encoding='utf-8') as f:
+			f.writelines(output)
+
 	# die/drop
 	if not ("death_loot_table_disable" in mob_data and mob_data["death_loot_table_disable"]):
 		path = base_path + mob_name + '/damaged/die/drop.mcfunction'
@@ -318,14 +334,14 @@ for mob_name, mob_data in mob_database.items():
 	makedir(path)
 	output = []
 	output.append('function ' + namespace_core + ':sys/entity/common/tick/0\n')
-	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/state/0\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/state/tick\n')
 	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/0\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/tick/1\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	# tick/end_damaged
-	path = base_path + mob_name + '/tick/state/end_damaged.mcfunction'
+	# state/end_damaged
+	path = base_path + mob_name + '/state/end_damaged.mcfunction'
 	makedir(path)
 	output = []
 	output.append('tag @s remove damaged\n')
@@ -371,6 +387,12 @@ for mob_name, mob_data in mob_database.items():
 		output.append('scoreboard players set @s action1 0\n')
 		output.append('scoreboard players set @s action_time 0\n')
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/start\n')
+		if action_id == "get_angry":
+			output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/state/angry/start\n')			
+		if action_id == "tired":
+			output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/state/angry/end\n')			
+		if action_id == "bark":
+			output.append('tag @s add noticed\n')			
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
@@ -388,6 +410,13 @@ for mob_name, mob_data in mob_database.items():
 		path = base_path + mob_name + '/action/' + action_id + '/end.mcfunction'
 		makedir(path)
 		output = []
+		if action_id == mob_data["default_action"]:
+			if "bark" in mob_data["actions"]:
+				output.append('execute if entity @s[tag=!noticed] run return run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/bark/start\n')			
+			if "tired" in mob_data["actions"]:
+				output.append('execute if entity @s[tag=angry] unless score @s anger.time matches 1.. run return run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/tired/start\n')			
+			if "get_angry" in mob_data["actions"]:
+				output.append('execute if score @s anger.damage matches ..0 unless score @s anger.time matches 1.. run return run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/get_angry/start\n')			
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/end\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
@@ -406,7 +435,14 @@ for mob_name, mob_data in mob_database.items():
 			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/start\n')
 			output.append('\n')
 
-			output.append('# function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/default\n')
+			if action_id in ["bark", "get_angry"]:
+				output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/bark\n')
+			elif action_id in ["tired"]:
+				output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/tired\n')
+			elif action_id in ["walk"]:
+				output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/walk\n')
+			else:
+				output.append('# function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/default\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -423,8 +459,32 @@ for mob_name, mob_data in mob_database.items():
 			output.append('#\n')
 			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/tick\n')
 			output.append('\n')
-			output.append('execute if score @s action1 matches 0 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/0/0\n')
-			output.append('execute if score @s action1 matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/1/0\n')
+			if action_id == "tired":
+				output.append('execute if score @s action_time matches 100.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/end\n')
+			elif action_id in ["bark", "get_angry"]:
+				output.append('# プレイヤーの方を向く\n')
+				output.append('    execute if score #hostile_target.is_player temp matches 1 facing entity @a[tag=hostile_target,sort=nearest,distance=..64,limit=1] feet rotated ~ 0 run tp @s ~ ~ ~ ~ ~\n')
+				output.append('    execute unless score #hostile_target.is_player temp matches 1 facing entity @e[type=#anemoland:mob_core,tag=hostile_target,sort=nearest,distance=..64,limit=1] feet rotated ~ 0 run tp @s ~ ~ ~ ~ ~\n')
+				output.append('# 終了\n')
+				output.append('    execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/' + action_id + '/end\n')
+			elif action_id in ["walk"]:
+				output.append('# ターゲットがいなければ終了\n')
+				output.append('    execute unless score #hostile_target.exist temp matches 1 run return run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/' + action_id + '/end\n')
+				output.append('# プレイヤーの方を向く\n')
+				output.append('    execute if score #hostile_target.is_player temp matches 1 facing entity @a[tag=hostile_target,sort=nearest,distance=..64,limit=1] feet rotated ~ 0 run tp @s ~ ~ ~ ~ ~\n')
+				output.append('    execute unless score #hostile_target.is_player temp matches 1 facing entity @e[type=#anemoland:mob_core,tag=hostile_target,sort=nearest,distance=..64,limit=1] feet rotated ~ 0 run tp @s ~ ~ ~ ~ ~\n')
+				output.append('# 前方に移動\n')
+				output.append('    data modify storage temp:_ data.motion set value {speed:0.4}\n')
+				output.append('    execute at @s rotated ~ 0 run function anemoland:sys/entity/common/motion/0\n')
+				output.append('# 終了\n')
+				output.append('    execute if score #hostile_target.is_player temp matches 1 if entity @a[tag=hostile_target,sort=nearest,distance=..8,limit=1] run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/' + action_id + '/end\n')
+				output.append('    execute unless score #hostile_target.is_player temp matches 1 if entity @e[type=#anemoland:mob_core,tag=hostile_target,sort=nearest,distance=..8,limit=1] run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/' + action_id + '/end\n')
+			else:
+				output.append('# 分岐する場合\n')
+				output.append('    execute if score @s action1 matches 0 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/0/0\n')
+				output.append('    execute if score @s action1 matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/1/0\n')
+				output.append('# 終了\n')
+				output.append('    execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/' + action_id + '/end\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -438,6 +498,8 @@ for mob_name, mob_data in mob_database.items():
 			output.append('# アクション ' + action_id + ' の終了時に実行される\n')
 			output.append('# このファイルは初回のみ自動生成される\n')
 			output.append('# アクション終了時の処理をこの下に記述\n')
+			if action_id == mob_data["default_action"]:
+				output.append('# 咆哮(bark)・怒り(get_angry)・疲労(tired)の条件を満たした場合は自動的にそのアクションに移行し、この関数はスキップされます。\n')
 			output.append('#\n')
 			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/end\n')
 			output.append('\n')
@@ -522,9 +584,8 @@ for mob_name, mob_data in mob_database.items():
 	path = base_path + mob_name + '/action/follow_player/collide.mcfunction'
 	makedir(path)
 	output = []
-	output.append('data modify storage temp:_ data.rot2vec set value {abs:0.2}\n')
-	output.append('function ' + namespace_core + ':sys/entity/common/rot2vec/0\n')
-	output.append('data modify entity @s Motion set from storage temp:_ data.vec\n')
+	output.append('data modify storage temp:_ data.motion set value {speed:0.2}\n')
+	output.append('function ' + namespace_core + ':sys/entity/common/motion/0\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -577,25 +638,28 @@ for mob_name, mob_data in mob_database.items():
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	# state
-	path = base_path + mob_name + '/tick/state/0.mcfunction'
+	# state/tick
+	path = base_path + mob_name + '/state/tick.mcfunction'
 	makedir(path)
 	output = []
-	output.append('execute if entity @s[tag=damaged] if data entity @s {HurtTime:0s} run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/state/end_damaged\n')
+	output.append('execute if entity @s[tag=damaged] if data entity @s {HurtTime:0s} run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/state/end_damaged\n')
 	if mob_data["type"] == "boss" and "angry" in mob_data["status"]:
-		output.append('execute if predicate ' + namespace_storage + ':random_chance/0_1 if score @s anger.time matches 1.. if entity @s[tag=angry] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/state/angry/particle\n')
+		output.append('execute if score @s anger.time matches 1.. if entity @s[tag=angry] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/angry\n')
 	with open(path, 'w', encoding='utf-8') as f:
 	 	f.writelines(output)
 	if mob_data["type"] == "boss" and "angry" in mob_data["status"]:
-		path = base_path + mob_name + '/tick/state/angry/start.mcfunction'
+		# state/angry/start
+		path = base_path + mob_name + '/state/angry/start.mcfunction'
 		makedir(path)
 		output = []
 		output.append('scoreboard players set @s anger.time ' + str(mob_data["status"]["angry"]["keep_time_seconds"]*20) + '\n')
 		output.append('tag @s add angry\n')
+		output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/action/get_angry/start\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
-		path = base_path + mob_name + '/tick/state/angry/end.mcfunction'
+		# state/angry/end
+		path = base_path + mob_name + '/state/angry/end.mcfunction'
 		makedir(path)
 		output = []
 		output.append('tag @s remove angry\n')
@@ -605,23 +669,24 @@ for mob_name, mob_data in mob_database.items():
 		output.append('scoreboard players set #temp temp 100\n')
 		output.append('scoreboard players operation @s anger.damage /= #temp temp\n')
 		output.append('scoreboard players set @s anger.time ' + str(mob_data["status"]["angry"]["restart_interval_seconds"]*20) + '\n')
+		output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/action/tired/start\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
-
+	
 	# choose_action
 	if "choices" in mob_data:
 		for choices1_name, choices1_data in mob_data["choices"].items():
-			path = base_path + mob_name + '/tick/choose_action/' + choices1_name + '/0.mcfunction'
+			path = base_path + mob_name + '/choose_action/' + choices1_name + '/0.mcfunction'
 			makedir(path)
 			output = []
 			if choices1_data["type"] == "distance":
-				output.append('execute if entity @e[type=#' + namespace_storage + ':mob_core,tag=hostile_target,sort=nearest,distance=..' + str(choices1_data["threshold"]) + ',limit=1] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/choose_action/' + choices1_name + '/near/0\n')
-				output.append('execute unless entity @e[type=#' + namespace_storage + ':mob_core,tag=hostile_target,sort=nearest,distance=..' + str(choices1_data["threshold"]) + ',limit=1] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/choose_action/' + choices1_name + '/far/0\n')
+				output.append('execute if entity @e[type=#' + namespace_storage + ':mob_core,tag=hostile_target,sort=nearest,distance=..' + str(choices1_data["threshold"]) + ',limit=1] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/choose_action/' + choices1_name + '/near/0\n')
+				output.append('execute unless entity @e[type=#' + namespace_storage + ':mob_core,tag=hostile_target,sort=nearest,distance=..' + str(choices1_data["threshold"]) + ',limit=1] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/choose_action/' + choices1_name + '/far/0\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 			
 			if choices1_data["type"] == "random":
-				path = base_path + mob_name + '/tick/choose_action/' + choices1_name + '/0.mcfunction'
+				path = base_path + mob_name + '/choose_action/' + choices1_name + '/0.mcfunction'
 				makedir(path)
 				output = []
 				weight_total = 0
@@ -638,19 +703,19 @@ for mob_name, mob_data in mob_database.items():
 
 			if "next" in choices1_data:
 				for choices2_name, choices2_data in choices1_data["next"].items():
-					path = base_path + mob_name + '/tick/choose_action/' + choices1_name + '/' + choices2_name + '/0.mcfunction'
+					path = base_path + mob_name + '/choose_action/' + choices1_name + '/' + choices2_name + '/0.mcfunction'
 					makedir(path)
 					output = []
 					if choices2_data["type"] == "front_or_back":
 						output.append('function ' + namespace_core + ':sys/entity/common/target_direction/mob/is_frontside\n')
-						output.append('execute if score #target_is_frontside temp matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/choose_action/' + choices1_name + '/' + choices2_name + '/front\n')
-						output.append('execute unless score #target_is_frontside temp matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/choose_action/' + choices1_name + '/' + choices2_name + '/back\n')
+						output.append('execute if score #target_is_frontside temp matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/choose_action/' + choices1_name + '/' + choices2_name + '/front\n')
+						output.append('execute unless score #target_is_frontside temp matches 1 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/choose_action/' + choices1_name + '/' + choices2_name + '/back\n')
 					with open(path, 'w', encoding='utf-8') as f:
 						f.writelines(output)
 
 					if "next" in choices2_data:
 						for choices3_name, choices3_data in choices2_data["next"].items():
-							path = base_path + mob_name + '/tick/choose_action/' + choices1_name + '/' + choices2_name + '/' + choices3_name + '.mcfunction'
+							path = base_path + mob_name + '/choose_action/' + choices1_name + '/' + choices2_name + '/' + choices3_name + '.mcfunction'
 							makedir(path)
 							output = []
 							if choices3_data["type"] == "random":
@@ -894,7 +959,7 @@ for mob_name, mob_data in mob_database.items():
 	# summon/
 	for summon_type in ["enemy", "player_side"]:
 		for variant_id in variant_id_list:
-			path = base_path + mob_name + '/summon/' + variant_id + '/enemy/level.mcfunction'
+			path = base_path + mob_name + '/summon/' + variant_id + '/' + summon_type + '/level.mcfunction'
 			makedir(path)
 			output = []
 			output.append('$scoreboard players set #new_entity.level temp $(level)\n')

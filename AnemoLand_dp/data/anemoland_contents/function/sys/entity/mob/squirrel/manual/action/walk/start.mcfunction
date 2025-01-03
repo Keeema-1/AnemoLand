@@ -6,4 +6,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/squirrel/action/walk/start
 
-# function anemoland_contents:sys/entity/mob/squirrel/animation/default
+function anemoland_contents:sys/entity/mob/squirrel/animation/walk

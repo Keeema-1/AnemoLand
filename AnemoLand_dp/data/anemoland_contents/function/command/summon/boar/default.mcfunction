@@ -1,1 +1,1 @@
-function anemoland_contents:sys/entity/mob/boar/summon/enemy/0
+function anemoland_contents:sys/entity/mob/boar/summon/default/enemy/0

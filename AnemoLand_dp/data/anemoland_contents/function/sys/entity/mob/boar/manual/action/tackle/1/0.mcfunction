@@ -10,11 +10,10 @@
     function anemoland_contents:sys/entity/mob/boar/attack/tackle/0
 
 # 前方に走る
-    execute if score @s action_time matches ..5 run data modify storage temp:_ data.rot2vec set value {abs:0.7}
-    execute if score @s action_time matches 6.. run data modify storage temp:_ data.rot2vec set value {abs:0.5}
-    execute rotated ~ 0 run function anemoland:sys/entity/common/rot2vec/0
+    execute if score @s action_time matches ..5 run data modify storage temp:_ data.motion set value {speed:0.7}
+    execute if score @s action_time matches 6.. run data modify storage temp:_ data.motion set value {speed:0.5}
+    execute rotated ~ 0 run function anemoland:sys/entity/common/motion/0
     tp @s ~ ~ ~ ~ ~
-    data modify entity @s Motion set from storage temp:_ data.vec
 
 # ブレーキを開始
     execute if score @s action_time matches 76.. run function anemoland_contents:sys/entity/mob/boar/manual/action/tackle/2/start

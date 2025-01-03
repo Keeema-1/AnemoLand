@@ -7,3 +7,4 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"boars_15"
 execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels_5"} run function anemoland_contents:sys/event/display/squirrels_5 with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels_10"} run function anemoland_contents:sys/event/display/squirrels_10 with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels_15"} run function anemoland_contents:sys/event/display/squirrels_15 with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head_15"} run function anemoland_contents:sys/event/display/squirrel_head_15 with storage temp:_ data.field_display_macro

@@ -1,0 +1,1 @@
+$function anemoland_contents:sys/entity/mob/$(id)/summon/default/$(side)/level {level:$(level)}

@@ -1,1 +1,1 @@
-$data modify entity @s text set value '[{"translate":"mob.$(id)"},"  "]'
+$data modify entity @s text set value '[{"translate":"mob.$(id).icon.default"},"  "]'

@@ -1,0 +1,11 @@
+execute unless score @s action0 matches 1.. run function anemoland_contents:sys/entity/mob/squirrel_head/action/stop/tick
+execute if score @s action0 matches 1 run function anemoland_contents:sys/entity/mob/squirrel_head/action/bark/tick
+execute if score @s action0 matches 2 run function anemoland_contents:sys/entity/mob/squirrel_head/action/get_angry/tick
+execute if score @s action0 matches 3 run function anemoland_contents:sys/entity/mob/squirrel_head/action/tired/tick
+execute if score @s action0 matches 4 run function anemoland_contents:sys/entity/mob/squirrel_head/action/walk/tick
+execute if score @s action0 matches 11 run function anemoland_contents:sys/entity/mob/squirrel_head/action/bite/tick
+execute if score @s action0 matches 12 run function anemoland_contents:sys/entity/mob/squirrel_head/action/spin/tick
+execute if score @s action0 matches 13 run function anemoland_contents:sys/entity/mob/squirrel_head/action/bite_side/tick
+execute if score @s action0 matches 14 run function anemoland_contents:sys/entity/mob/squirrel_head/action/tackle_side/tick
+execute if score @s action0 matches 15 run function anemoland_contents:sys/entity/mob/squirrel_head/action/knock_tail/tick
+execute if score @s action0 matches 16 run function anemoland_contents:sys/entity/mob/squirrel_head/action/spin_jump/tick

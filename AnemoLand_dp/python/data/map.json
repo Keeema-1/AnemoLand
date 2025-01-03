@@ -96,8 +96,18 @@
                     "type": "field",
                     "field_type": "plain_B",
                     "display_name": "森林 (中)",
+                    "unlock":["34"],
+                    "default_event": "boars_10",
+                    "random_event": "test"
+                },
+                "34": {
+                    "index":[3,4],
+                    "offset": [1024, 1024],
+                    "type": "field",
+                    "field_type": "plain_C",
+                    "display_name": "森林 (大)",
                     "unlock":[],
-                    "default_event": "walking_mushrooms_5",
+                    "default_event": "squirrel_head_15",
                     "random_event": "test"
                 }
             }

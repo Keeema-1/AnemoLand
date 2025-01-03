@@ -8,3 +8,4 @@
 
 execute if score @s action1 matches 0 run function anemoland_contents:sys/entity/mob/squirrel/manual/action/spin/0/0
 execute if score @s action1 matches 1 run function anemoland_contents:sys/entity/mob/squirrel/manual/action/spin/1/0
+execute if score @s action1 matches 2 run function anemoland_contents:sys/entity/mob/squirrel/manual/action/spin/2/0

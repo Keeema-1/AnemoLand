@@ -214,7 +214,8 @@
             "walk": {},
             "bite": {},
             "bark": {},
-            "spin_left": {}
+            "spin_left": {},
+            "spin_right": {}
         },
         "skin_variants": {
             "default": {},
@@ -232,9 +233,6 @@
             },
             "spin": {
                 "score": 3
-            },
-            "bark": {
-                "score": 4
             }
         },
         "choices":{
@@ -335,6 +333,208 @@
         },
         "price": {
             "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "squirrel_head": {
+        "aj_name": "squirrel_head",
+        "display_name": "スクルスヘッド",
+        "type": "boss",
+        "aj_cmd_offset": 10000,
+        "custom_model_data": 1010,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02020",
+            "number": "02",
+            "detail": ["スクルスの群れのリーダー。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical"]
+        },
+        "unlock": {"armor": []},
+        "animations": {
+            "default":{},
+            "die":{},
+            "bark":{},
+            "tired":{},
+            "walk":{},
+            "bite1":{},
+            "bite2":{},
+            "bite_left1":{},
+            "bite_left2":{},
+            "bite_right1":{},
+            "bite_right2":{},
+            "spin_left1":{},
+            "spin_left2":{},
+            "spin_right1":{},
+            "spin_right2":{},
+            "tackle_left1":{},
+            "tackle_left2":{},
+            "tackle_right1":{},
+            "tackle_right2":{},
+            "spin_tail_left1":{},
+            "spin_jump_left1":{},
+            "spin_jump_left2":{},
+            "spin_jump3":{}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "bark": {
+                "score": 1
+            },
+            "get_angry": {
+                "score": 2
+            },
+            "tired": {
+                "score": 3
+            },
+            "walk": {
+                "score": 4
+            },
+            "bite": {
+                "score": 11
+            },
+            "spin": {
+                "score": 12
+            },
+            "bite_side": {
+                "score": 13
+            },
+            "tackle_side": {
+                "score": 14
+            },
+            "knock_tail": {
+                "score": 15
+            },
+            "spin_jump": {
+                "score": 16
+            }
+        },
+        "choices":{
+            "test": {
+                "type": "random",
+                "weights": {
+                    "walk": 6,
+                    "bite": 2,
+                    "spin": 2,
+                    "bite_side": 2,
+                    "tackle_side": 2,
+                    "knock_tail": 2,
+                    "spin_jump": 2
+                }
+            }
+        },
+        "attacks": {
+            "bite": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_8",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["head","neck"]
+                    },
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_5",
+                        "mul": 5,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["root"]
+                    }
+                ]
+            },
+            "bite_side": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_8",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["head","neck"]
+                    }
+                ]
+            },
+            "spin": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_front_8",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["tail"]
+                    }
+                ]
+            },
+            "spin_jump1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_front_8",
+                        "mul": 8,
+                        "position": [0,0,0],
+                        "size": [2,4,2],
+                        "parts":["root","tail"]
+                    }
+                ]
+            },
+            "spin_jump2": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_front_8",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["root","tail"]
+                    }
+                ]
+            },
+            "tackle": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_10",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["root","head","neck","tail"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 3, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "head": {"display_name": "頭", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "neck": {"display_name": "首", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "tail": {"display_name": "尻尾", "armor_mul": 120, "hitbox_scale": 2, "elemental_damage_mul": {"fire":120,"ice":50}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 1.0,
+        "status": {
+            "default_level": 15,
+            "max_health": {"base": 100, "mul": 30},
+            "attack_damage": {"base": -2, "mul": 0.8},
+            "gold": {"base": 20, "mul": 8},
+            "xp": {"base": 20, "mul": 8},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 15, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
         }
     }
 }

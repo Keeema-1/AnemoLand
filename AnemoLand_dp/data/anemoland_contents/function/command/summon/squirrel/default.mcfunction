@@ -1,1 +1,1 @@
-function anemoland_contents:sys/entity/mob/squirrel/summon/enemy/0
+function anemoland_contents:sys/entity/mob/squirrel/summon/default/enemy/0

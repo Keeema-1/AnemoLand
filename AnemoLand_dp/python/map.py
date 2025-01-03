@@ -28,7 +28,7 @@ MAX_WAVES = 3
 
 base_path = '../data/' + namespace_core + '/function/dev/map/'
 
-arena_prepare_field = '36'
+arena_prepare_field = '04'
 
 # base
 for map_data in map_database["maps"]:
@@ -734,7 +734,7 @@ for map_data in map_database["maps"]:
 					output.append('execute positioned ' + str(int(center[0] + i*48-structure_size*48/2)) + ' -1 ' + str(int(center[1] + j*48-structure_size*48/2)) + ' run fill ~ ~ ~ ~47 -3 ~47 grass_block replace air\n')
 			output.append('execute positioned ' + str(center[0]) + ' 0 ' + str(center[1]) + ' run kill @e[tag=area_entrance,distance=..64]\n')
 			for exit in field_type_data["exits"]:
-				output.append('execute positioned ' + str(center[0] + exit["start"][0]+exit["aabb"][0]/2 - field_type_data["center"][0]) + ' ' + str( exit["start"][1]) + ' ' + str(center[1] + exit["start"][2]+exit["aabb"][1]/2 - field_type_data["center"][2]) + ' run function ' + namespace_core + ':dev/field/common/area_entrance/x\n')
+				output.append('execute positioned ' + str(center[0] + exit["start"][0]+exit["aabb"][0]/2 - field_type_data["center"][0]) + ' ' + str( exit["start"][1]) + ' ' + str(center[1] + exit["start"][2]+exit["aabb"][1]/2 - field_type_data["center"][2] - 0.5) + ' run function ' + namespace_core + ':dev/field/common/area_entrance/x\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 

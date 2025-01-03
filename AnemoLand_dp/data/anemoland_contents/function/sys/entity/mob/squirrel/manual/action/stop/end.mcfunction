@@ -6,4 +6,5 @@
 #
 # @within function anemoland_contents:sys/entity/mob/squirrel/action/stop/end
 
-function anemoland_contents:sys/entity/mob/squirrel/action/stop/start
+# function anemoland_contents:sys/entity/mob/squirrel/action/stop/start
+function anemoland_contents:sys/entity/mob/squirrel/choose_action/any/0

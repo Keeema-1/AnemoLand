@@ -31,5 +31,5 @@ execute positioned 1584 -1 -1024 run fill ~ ~ ~ ~47 -3 ~47 grass_block replace a
 execute positioned 1584 -8 -976 run place template anemoland:field/plain_b/3_3
 execute positioned 1584 -1 -976 run fill ~ ~ ~ ~47 -3 ~47 grass_block replace air
 execute positioned 1536.0 0 -1024.0 run kill @e[tag=area_entrance,distance=..64]
-execute positioned 1536.0 0.0 -991.5 run function anemoland:dev/field/common/area_entrance/x
-execute positioned 1531.0 0.0 -1046.5 run function anemoland:dev/field/common/area_entrance/x
+execute positioned 1536.0 0.0 -992.0 run function anemoland:dev/field/common/area_entrance/x
+execute positioned 1531.0 0.0 -1047.0 run function anemoland:dev/field/common/area_entrance/x

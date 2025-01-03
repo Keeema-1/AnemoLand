@@ -1,1 +1,1 @@
-function anemoland_contents:sys/entity/mob/squirrel/summon/enemy/level {level:30}
+function anemoland_contents:sys/entity/mob/squirrel/summon/default/enemy/level {level:30}

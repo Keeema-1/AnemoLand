@@ -21,7 +21,7 @@ MAX_WAVES = 3
 
 base_path = '../data/anemoland/function/dev/map/'
 
-arena_prepare_field = '36'
+arena_prepare_field = '14'
 
 # base
 for map_data in data["maps"]:
@@ -397,7 +397,7 @@ for map_data in data["maps"]:
 			path = base_path + map_name + '/field/' + field["id"] + '/return/0.mcfunction'
 			makedir(path)
 			if "special_field" in field and field["special_field"] == "arena":
-				output.append('function anemoland:sys/player/area/' + map_name + '/field/' + arena_prepare_field + '/enter/_0\n')
+				output.append('function anemoland_contents:sys/player/area/' + map_name + '/field/' + arena_prepare_field + '/enter/0\n')
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless entity @a[distance=..128] run function anemoland:sys/player/area/' + map_name + '/field/' + field["id"] + '/init/0\n')
 			else:
 				output.append('function anemoland:sys/player/area/common/map/enter\n')

@@ -1,2 +1,2 @@
 
-function anemoland:sys/player/area/demo2/field/arena1/enter/_0
+function anemoland_contents:sys/area/beta1/field/arena1/enter/0

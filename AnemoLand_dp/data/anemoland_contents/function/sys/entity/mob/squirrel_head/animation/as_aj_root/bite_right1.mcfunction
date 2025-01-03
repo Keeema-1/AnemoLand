@@ -1,0 +1,2 @@
+function animated_java:squirrel_head/animations/pause_all
+function animated_java:squirrel_head/animations/bite_right1/play

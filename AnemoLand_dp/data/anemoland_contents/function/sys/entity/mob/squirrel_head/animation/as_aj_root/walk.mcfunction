@@ -1,0 +1,2 @@
+function animated_java:squirrel_head/animations/pause_all
+function animated_java:squirrel_head/animations/walk/play

@@ -1,1 +1,1 @@
-function anemoland_contents:sys/entity/mob/boar/summon/enemy/level {level:25}
+function anemoland_contents:sys/entity/mob/boar/summon/default/enemy/level {level:25}
