@@ -8,8 +8,7 @@
     execute if score @s action_time matches 11..20 unless score #hostile_target.is_player temp matches 1 rotated ~ 0 positioned ^ ^ ^8 facing entity @e[type=#anemoland:mob_core,tag=hostile_target,distance=..32,limit=1] feet rotated ~ 0 run function anemoland:sys/entity/common/motion/0
 
 # ターゲットの方に回転
-    execute if score #hostile_target.is_player temp matches 1 run function anemoland:sys/entity/common/target_direction/player/is_leftside
-    execute unless score #hostile_target.is_player temp matches 1 run function anemoland:sys/entity/common/target_direction/mob/is_leftside
+    function anemoland:sys/entity/common/target_direction/is_leftside
     execute if score @s action_time matches ..20 if score #target_is_leftside temp matches 1 at @s run tp @s ~ ~ ~ ~-4 ~
     execute if score @s action_time matches ..20 unless score #target_is_leftside temp matches 1 at @s run tp @s ~ ~ ~ ~4 ~
     execute if score @s action_time matches 21..30 if score #target_is_leftside temp matches 1 at @s run tp @s ~ ~ ~ ~-2 ~

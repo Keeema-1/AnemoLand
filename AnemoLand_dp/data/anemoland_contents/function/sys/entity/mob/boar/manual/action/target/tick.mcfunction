@@ -13,10 +13,8 @@
     execute unless score #hostile_target.exist temp matches 1 run return run function anemoland_contents:sys/entity/mob/boar/action/stop/start
 
 # ターゲットの方向を確認
-    execute if score #hostile_target.is_player temp matches 1 run function anemoland:sys/entity/common/target_direction/player/is_leftside
-    execute if score #hostile_target.is_player temp matches 1 run function anemoland:sys/entity/common/target_direction/player/is_front
-    execute unless score #hostile_target.is_player temp matches 1 run function anemoland:sys/entity/common/target_direction/mob/is_leftside
-    execute unless score #hostile_target.is_player temp matches 1 run function anemoland:sys/entity/common/target_direction/mob/is_front
+    function anemoland:sys/entity/common/target_direction/is_leftside
+    function anemoland:sys/entity/common/target_direction/is_front
 
 # ターゲットの向きに応じて回転
     execute if score #target_is_leftside temp matches 1 at @s run tp @s ~ ~ ~ ~-2 ~
