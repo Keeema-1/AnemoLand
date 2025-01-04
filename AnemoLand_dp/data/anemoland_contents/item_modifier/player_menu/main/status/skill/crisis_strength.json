@@ -10,7 +10,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.crisis_strength.name"
+					"translate": "anemoland.skill.crisis_strength.name"
 				},
 				{
 					"text": " +"
@@ -70,7 +70,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.crisis_strength.name"
+					"translate": "anemoland.skill.crisis_strength.name"
 				},
 				{
 					"text": " +"
@@ -111,7 +111,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.crisis_strength.lore.1",
+					"translate": "anemoland.skill.crisis_strength.lore.1",
 					"italic": false,
 					"color": "gray"
 				}

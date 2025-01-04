@@ -10,7 +10,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.ice_veil.name"
+					"translate": "anemoland.skill.ice_veil.name"
 				},
 				{
 					"text": " -"
@@ -70,7 +70,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.ice_veil.name"
+					"translate": "anemoland.skill.ice_veil.name"
 				},
 				{
 					"text": " -"
@@ -111,7 +111,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.ice_veil.lore.1",
+					"translate": "anemoland.skill.ice_veil.lore.1",
 					"italic": false,
 					"color": "gray"
 				}
@@ -121,7 +121,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.ice_veil.lore.2",
+					"translate": "anemoland.skill.ice_veil.lore.2",
 					"italic": false,
 					"color": "gray"
 				}
@@ -131,7 +131,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.ice_veil.lore.3",
+					"translate": "anemoland.skill.ice_veil.lore.3",
 					"italic": false,
 					"color": "gray"
 				}

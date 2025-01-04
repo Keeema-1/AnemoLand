@@ -10,7 +10,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.recovery_up.name"
+					"translate": "anemoland.skill.recovery_up.name"
 				},
 				{
 					"text": " +❤"
@@ -70,7 +70,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.recovery_up.name"
+					"translate": "anemoland.skill.recovery_up.name"
 				},
 				{
 					"text": " +❤"
@@ -111,7 +111,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.recovery_up.lore.1",
+					"translate": "anemoland.skill.recovery_up.lore.1",
 					"italic": false,
 					"color": "gray"
 				}

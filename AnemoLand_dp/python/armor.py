@@ -58,7 +58,7 @@ for series in armor_database["series"]:
 			# set_name
 			function_ = {}
 			# function_.update(function="minecraft:set_name",entity="this",name={"text": armor_data["display_name"],"color": "white","italic": False})
-			function_.update(function="minecraft:set_name",entity="this",name={"translate": "armor." + series["name"] + '.' + armor_type + ".name","color": "white","italic": False})
+			function_.update(function="minecraft:set_name",entity="this",name={"translate": "anemoland.armor." + series["name"] + '.' + armor_type + ".name","color": "white","italic": False})
 			functions.append(function_)
 
 			# set_lore
@@ -68,25 +68,25 @@ for series in armor_database["series"]:
 				lore.append([{"text":"  Lv. " + str(level),"color":"yellow", "italic":False}])
 			else:
 				lore.append([{"text":"  Lv. " + str(level) + " (MAX)","color":"yellow", "italic":False}])
-			lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"translate":"common.armor"},{"text":" +" + str(armor_value)}])
+			lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"translate":"anemoland.common.armor"},{"text":" +" + str(armor_value)}])
 			if "elemental_resistance" in armor_data["status"]:
 				for element, resistance in armor_data["status"]["elemental_resistance"].items():
 					if resistance > 0:
-						lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"translate":"common.damaged_rate." + element},{"text":" -" + str(resistance) + "%"}])
+						lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"translate":"anemoland.common.damaged_rate." + element},{"text":" -" + str(resistance) + "%"}])
 					elif resistance < 0:
-						lore.append([{"text":"  ⏬ ","color":"red", "italic":False},{"translate":"common.damaged_rate." + element},{"text":" +" + str(abs(resistance)) + "%"}])
+						lore.append([{"text":"  ⏬ ","color":"red", "italic":False},{"translate":"anemoland.common.damaged_rate." + element},{"text":" +" + str(abs(resistance)) + "%"}])
 			if len(armor_data["status"]["skills"]) > 0:
 				lore.append([{"text":""}])
-				lore.append([{"text": "<", "italic": False},{"translate":"common.skill"},{"text":">"}])
+				lore.append([{"text": "<", "italic": False},{"translate":"anemoland.common.skill"},{"text":">"}])
 				for skill in armor_data["status"]["skills"]:
 					# lore.append([{"text":"  " + skill_list[skill["name"]]["display_name"] + " " + skill_list[skill["name"]]["lore_value"]["prefix"] + str(skill["level"]*skill_list[skill["name"]]["lore_value"]["mul"]) + skill_list[skill["name"]]["lore_value"]["suffix"], "italic":False}])
 					# for line in skill_list[skill["name"]]["detail"]:
 					# 	lore.append([{"text":line, "italic":False, "color": "gray"}])
-					lore.append([{"text":"  ", "italic":False},{"translate":"skill." +skill["name"] + ".name"},{"text": " " + skill_list[skill["name"]]["lore_value"]["prefix"] + str(skill["level"]*skill_list[skill["name"]]["lore_value"]["mul"]) + skill_list[skill["name"]]["lore_value"]["suffix"]}])
+					lore.append([{"text":"  ", "italic":False},{"translate":"anemoland.skill." +skill["name"] + ".name"},{"text": " " + skill_list[skill["name"]]["lore_value"]["prefix"] + str(skill["level"]*skill_list[skill["name"]]["lore_value"]["mul"]) + skill_list[skill["name"]]["lore_value"]["suffix"]}])
 					for i in range(skill_list[skill["name"]]["lore_len"]):
-						lore.append([{"text":"    "},{"translate":"skill." + skill["name"] + ".lore." + str(i+1), "italic":False, "color": "gray"}])
+						lore.append([{"text":"    "},{"translate":"anemoland.skill." + skill["name"] + ".lore." + str(i+1), "italic":False, "color": "gray"}])
 			lore.append([{"text":""}])
-			lore.append([{"text":"▶ ","italic":False,"color":"dark_gray"},{"translate":"common.sell_price"},{"text":": " + str(sell_price) + "G"}])
+			lore.append([{"text":"▶ ","italic":False,"color":"dark_gray"},{"translate":"anemoland.common.sell_price"},{"text":": " + str(sell_price) + "G"}])
 			function_.update(function="minecraft:set_lore", entity="this", lore = lore, mode = "replace_all")
 			functions.append(function_)
 
@@ -219,7 +219,7 @@ for series in armor_database["series"]:
 	output.append('advancement grant @a only ' + namespace_contents + ':armor_catalog/' + series["name"] + '\n')
 	output.append('execute if data storage anemoland:progress data.armor.' + series["name"] + '{unlocked:1b} run return 1\n')
 	output.append('data modify storage anemoland:progress data.armor.' + series["name"] + '.unlocked set value 1b\n')
-	output.append('tellraw @a {"text":"新しい防具が追加されました：","color":"green"}\n')
+	output.append('tellraw @a {"translate":"anemoland.unlock.new_equipment","color":"green"}\n')
 	for armor_type, armor_data in series["armors"].items():
 		output.append('tellraw @a {"text":"  ' + armor_data["display_name"] + '","color":"green"}\n')
 	with open(path, 'w', encoding='utf-8') as f:
@@ -311,7 +311,7 @@ for skill_name, skill_data in skill_list.items():
 	makedir(path)
 	detail = []
 	for i in range(skill_data["lore_len"]):
-		detail.append([{"text":"    "},{"translate":"skill." + skill_name + ".lore." + str(i+1), "italic":False, "color": "gray"}])
+		detail.append([{"text":"    "},{"translate":"anemoland.skill." + skill_name + ".lore." + str(i+1), "italic":False, "color": "gray"}])
 	# for line in skill_list[skill_name]["detail"]:
 	# 	detail.append([{"text":line, "italic":False, "color": "gray"}])
 	output = [
@@ -325,7 +325,7 @@ for skill_name, skill_data in skill_list.items():
 						"color": "dark_purple",
 						"italic": False
 					},{
-						"translate": "skill." + skill_name + ".name"
+						"translate": "anemoland.skill." + skill_name + ".name"
 					},{
 						"text": " " + skill_data["lore_value"]["prefix"]
 					},
@@ -383,7 +383,7 @@ for skill_name, skill_data in skill_list.items():
 						"italic": False
 					},
 					{
-						"translate": "skill." + skill_name + ".name"
+						"translate": "anemoland.skill." + skill_name + ".name"
 					},
 					{
 						"text": " " + skill_data["lore_value"]["prefix"]
@@ -584,7 +584,7 @@ for series in armor_database["series"]:
 
 # book_shop
 
-base_path = '../data/' + namespace_contents + '/function/sys/player/'
+base_path = '../data/' + namespace_core + '/function/sys/player/'
 
 pages_list = [
 	[{"series":"leather", "part":"helmet", "add_space": 2, "level": 1, "need_unlock": 0, "trigger": 1}, {"series":"leather", "part":"chestplate", "add_space": 1, "level": 1, "need_unlock": 0, "trigger": 2}],
@@ -593,7 +593,7 @@ pages_list = [
 	[{"series":"iron", "part":"leggings", "add_space": 1, "level": 1, "need_unlock": 1, "trigger": 7}, {"series":"iron", "part":"boots", "add_space": 1, "level": 1, "need_unlock": 1, "trigger": 8}],
 ]
 output = []
-path = base_path + 'area/common/village/book_shop/armor/00.mcfunction'
+path = base_path + 'area/common/village/update/book_shop/armor/00.mcfunction'
 makedir(path)
 
 for page_list in pages_list:
@@ -613,22 +613,22 @@ for page_list in pages_list:
 					continue
 				lore = []
 				lore.append([{"text":"  Lv. " + str(page_item["level"]),"color":"yellow", "italic":False}])
-				lore.append([{"text":"\\n" + " ⏫ 防御力 +" + str(armor_data["status"]["armor"][list(series_data["levels"].keys())[0]]),"color":"aqua", "italic":False}])
+				lore.append([{"text":"\\n" + " ⏫ "},{"translate":"anemoland.common.armor"},{"text":" +" + str(armor_data["status"]["armor"][list(series_data["levels"].keys())[0]]),"color":"aqua", "italic":False}])
 				if "elemental_resistance" in armor_data["status"]:
 					for element, resistance in armor_data["status"]["elemental_resistance"].items():
 						if resistance > 0:
-							lore.append([{"text":"\\n" + " ⏫ " + elements_text[element] + "属性被ダメージ -" + str(resistance) + "%","color":"aqua", "italic":False}])
+							lore.append([{"text":"\\n" + " ⏫ ","color":"aqua"},{"translate":"anemoland.common.damaged_rate." + element,"color":"aqua" },{"text": " -" + str(resistance) + "%","color":"aqua", "italic":False}])
 						elif resistance < 0:
-							lore.append([{"text":"\\n" + " ⏬ " + elements_text[element] + "属性被ダメージ +" + str(abs(resistance)) + "%","color":"red", "italic":False}])
+							lore.append([{"text":"\\n" + " ⏬ ","color":"red"},{"translate":"anemoland.common.damaged_rate." + element,"color":"red" },{"text": " +" + str(abs(resistance)) + "%","color":"red", "italic":False}])
 				if len(armor_data["status"]["skills"]) > 0:
 					lore.append([{"text":"\\n" + ""}])
-					lore.append([{"text": "\\n" + "<スキル>", "italic": False, "color":"dark_purple"}])
+					lore.append([{"text": "\\n" + "<"},{"translate":"anemoland.common.skill"},{"text":">", "italic": False, "color":"dark_purple"}])
 					for skill in armor_data["status"]["skills"]:
 						lore.append([{"text":"\\n" + "  " + skill_list[skill["name"]]["display_name"] + " " + skill_list[skill["name"]]["lore_value"]["prefix"] + str(skill["level"]*skill_list[skill["name"]]["lore_value"]["mul"]) + skill_list[skill["name"]]["lore_value"]["suffix"], "color":"dark_purple", "italic":False}])
 						for line_ in skill_list[skill["name"]]["detail"]:
 							lore.append([{"text":"\\n" + line_, "italic":False, "color": "gray"}])
 
-				line += '{"text":"\\\\n               "},{"text":"【詳細】","hoverEvent":{"action":"show_text","contents":' + str(lore).replace("'",'"') + '}},{"text":"\\\\n"},{"text":"\\\\n  ","color":"light_purple"}," ",{"translate":"armor.' + series_data["name"] + '.' + part_name + '","color":"white"},{"text":"    ' + ' '*page_item["add_space"] + '"},{"text":"[' + str(armor_data["price"]["buy"]) + 'G]\\\\n","color":"light_purple","clickEvent": {"action": "run_command","value": "/trigger trigger set ' + str(32000 + page_item["trigger"]) + '"}},{"text":"' + ' '*max(6-len(armor_data["display_name"]), 0) + armor_data["display_name"] + '\\\\n\\\\n\\\\n","bold":true}'
+				line += '{"text":"\\\\n               "},{"text":"【"},{"translate":"anemoland.common.detail","hoverEvent":{"action":"show_text","contents":' + str(lore).replace("'",'"') + '}},{"text":"】"},{"text":"\\\\n"},{"text":"\\\\n  ","color":"light_purple"}," ",{"translate":"anemoland.armor.' + series_data["name"] + '.' + part_name + '","color":"white"},{"text":"    ' + ' '*page_item["add_space"] + '"},{"text":"[' + str(armor_data["price"]["buy"]) + 'G]\\\\n","color":"light_purple","clickEvent": {"action": "run_command","value": "/trigger trigger set ' + str(32000 + page_item["trigger"]) + '"}},{"translate":"anemoland.armor.' + series_data["name"] + '.' + part_name + '.shop_book_space"},{"translate":"anemoland.armor.' + series_data["name"] + '.' + part_name + '.name","bold":true},{"text":"\\\\n\\\\n\\\\n","bold":true}'
 
 	line += ']\'}\n'
 

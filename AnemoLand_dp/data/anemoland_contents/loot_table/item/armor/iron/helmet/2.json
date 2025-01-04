@@ -13,7 +13,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "armor.iron.helmet.name",
+								"translate": "anemoland.armor.iron.helmet.name",
 								"color": "white",
 								"italic": false
 							}
@@ -36,7 +36,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.armor"
+										"translate": "anemoland.common.armor"
 									},
 									{
 										"text": " +4"
@@ -54,7 +54,7 @@
 										"color": "dark_gray"
 									},
 									{
-										"translate": "common.sell_price"
+										"translate": "anemoland.common.sell_price"
 									},
 									{
 										"text": ": 160G"

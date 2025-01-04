@@ -13,7 +13,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "weapon.iron_axe.name",
+								"translate": "anemoland.weapon.iron_axe.name",
 								"color": "white",
 								"italic": false
 							}
@@ -36,7 +36,7 @@
 										"color": "aqua"
 									},
 									{
-										"translate": "common.attack_damage"
+										"translate": "anemoland.common.attack_damage"
 									},
 									{
 										"text": " +5"
@@ -49,7 +49,7 @@
 										"color": "blue"
 									},
 									{
-										"translate": "common.weapon_damage_rate"
+										"translate": "anemoland.common.weapon_damage_rate"
 									},
 									{
 										"text": " 180%"
@@ -62,7 +62,7 @@
 										"color": "blue"
 									},
 									{
-										"translate": "common.attack_speed"
+										"translate": "anemoland.common.attack_speed"
 									},
 									{
 										"text": " 0.8"
@@ -77,20 +77,20 @@
 										"italic": false
 									},
 									{
-										"translate": "common.weapon_skill"
+										"translate": "anemoland.common.weapon_skill"
 									},
 									{
 										"text": "1> "
 									},
 									{
-										"translate": "weapon_skill.strong_attack.name"
+										"translate": "anemoland.weapon_skill.strong_attack.name"
 									},
 									{
 										"text": " (",
 										"color": "gray"
 									},
 									{
-										"translate": "common.gauge_consumption",
+										"translate": "anemoland.common.gauge_consumption",
 										"color": "gray"
 									},
 									{
@@ -105,7 +105,7 @@
 										"italic": false
 									},
 									{
-										"translate": "weapon_skill.strong_attack.lore.1"
+										"translate": "anemoland.weapon_skill.strong_attack.lore.1"
 									}
 								],
 								{
@@ -120,7 +120,7 @@
 										"color": "dark_gray"
 									},
 									{
-										"translate": "common.sell_price"
+										"translate": "anemoland.common.sell_price"
 									},
 									{
 										"text": " 240G"

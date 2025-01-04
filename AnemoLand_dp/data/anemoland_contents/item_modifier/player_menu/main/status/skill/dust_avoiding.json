@@ -10,7 +10,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.dust_avoiding.name"
+					"translate": "anemoland.skill.dust_avoiding.name"
 				},
 				{
 					"text": " +"
@@ -70,7 +70,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.dust_avoiding.name"
+					"translate": "anemoland.skill.dust_avoiding.name"
 				},
 				{
 					"text": " +"
@@ -111,7 +111,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.dust_avoiding.lore.1",
+					"translate": "anemoland.skill.dust_avoiding.lore.1",
 					"italic": false,
 					"color": "gray"
 				}
@@ -121,7 +121,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.dust_avoiding.lore.2",
+					"translate": "anemoland.skill.dust_avoiding.lore.2",
 					"italic": false,
 					"color": "gray"
 				}
@@ -131,7 +131,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.dust_avoiding.lore.3",
+					"translate": "anemoland.skill.dust_avoiding.lore.3",
 					"italic": false,
 					"color": "gray"
 				}
@@ -141,7 +141,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.dust_avoiding.lore.4",
+					"translate": "anemoland.skill.dust_avoiding.lore.4",
 					"italic": false,
 					"color": "gray"
 				}

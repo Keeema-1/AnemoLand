@@ -13,7 +13,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "armor.martellos.helmet.name",
+								"translate": "anemoland.armor.martellos.helmet.name",
 								"color": "white",
 								"italic": false
 							}
@@ -36,7 +36,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.armor"
+										"translate": "anemoland.common.armor"
 									},
 									{
 										"text": " +5"
@@ -49,7 +49,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.damaged_rate.fire"
+										"translate": "anemoland.common.damaged_rate.fire"
 									},
 									{
 										"text": " +10%"
@@ -66,7 +66,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.skill"
+										"translate": "anemoland.common.skill"
 									},
 									{
 										"text": ">"
@@ -78,7 +78,7 @@
 										"italic": false
 									},
 									{
-										"translate": "skill.initial_gauge.name"
+										"translate": "anemoland.skill.initial_gauge.name"
 									},
 									{
 										"text": " +0.5"
@@ -89,7 +89,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.initial_gauge.lore.1",
+										"translate": "anemoland.skill.initial_gauge.lore.1",
 										"italic": false,
 										"color": "gray"
 									}
@@ -106,7 +106,7 @@
 										"color": "dark_gray"
 									},
 									{
-										"translate": "common.sell_price"
+										"translate": "anemoland.common.sell_price"
 									},
 									{
 										"text": ": 160G"

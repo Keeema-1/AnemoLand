@@ -22,7 +22,7 @@ data modify storage temp:_ data.Items_after append from storage temp:_ data.Item
 data modify storage temp:_ data.Items_after append from storage temp:_ data.Items[{Slot:14b}]
 data modify storage temp:_ data.Items_after append value {Slot:15b,id:"knowledge_book",count:1,components:{"minecraft:custom_model_data":7,"minecraft:custom_name":'""',"minecraft:custom_data":{chest_menu:1b},"minecraft:hide_tooltip":{}}} 
 data modify storage temp:_ data.Items_after append value {Slot:16b,id:"knowledge_book",count:1,components:{"minecraft:custom_model_data":2,"minecraft:custom_name":'""',"minecraft:custom_data":{chest_menu:1b},"minecraft:hide_tooltip":{}}} 
-data modify storage temp:_ data.Items_after append value {Slot:17b,id:"knowledge_book",count:1,components:{"minecraft:custom_model_data":30,"minecraft:custom_name":'{"text":"強化","color":"dark_gray","italic":false}',"minecraft:lore":[],"minecraft:custom_data":{chest_menu:1b}}}
+data modify storage temp:_ data.Items_after append value {Slot:17b,id:"knowledge_book",count:1,components:{"minecraft:custom_model_data":30,"minecraft:custom_name":'{"translate":"anemoland.chest_menu.power_up.power_up","color":"dark_gray","italic":false}',"minecraft:lore":[],"minecraft:custom_data":{chest_menu:1b}}}
 
 data modify storage temp:_ data.Items_after append value {Slot:18b,id:"knowledge_book",count:1,components:{"minecraft:custom_model_data":5,"minecraft:custom_name":'""',"minecraft:custom_data":{chest_menu:1b},"minecraft:hide_tooltip":{}}} 
 data modify storage temp:_ data.Items_after append value {Slot:19b,id:"knowledge_book",count:1,components:{"minecraft:custom_model_data":5,"minecraft:custom_name":'""',"minecraft:custom_data":{chest_menu:1b},"minecraft:hide_tooltip":{}}} 

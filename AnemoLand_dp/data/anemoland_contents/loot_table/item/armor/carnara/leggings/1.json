@@ -13,7 +13,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "armor.carnara.leggings.name",
+								"translate": "anemoland.armor.carnara.leggings.name",
 								"color": "white",
 								"italic": false
 							}
@@ -36,7 +36,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.armor"
+										"translate": "anemoland.common.armor"
 									},
 									{
 										"text": " +3"
@@ -49,7 +49,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.damaged_rate.ice"
+										"translate": "anemoland.common.damaged_rate.ice"
 									},
 									{
 										"text": " -10%"
@@ -66,7 +66,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.skill"
+										"translate": "anemoland.common.skill"
 									},
 									{
 										"text": ">"
@@ -78,7 +78,7 @@
 										"italic": false
 									},
 									{
-										"translate": "skill.ice_veil.name"
+										"translate": "anemoland.skill.ice_veil.name"
 									},
 									{
 										"text": " -10%"
@@ -89,7 +89,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.ice_veil.lore.1",
+										"translate": "anemoland.skill.ice_veil.lore.1",
 										"italic": false,
 										"color": "gray"
 									}
@@ -99,7 +99,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.ice_veil.lore.2",
+										"translate": "anemoland.skill.ice_veil.lore.2",
 										"italic": false,
 										"color": "gray"
 									}
@@ -109,7 +109,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.ice_veil.lore.3",
+										"translate": "anemoland.skill.ice_veil.lore.3",
 										"italic": false,
 										"color": "gray"
 									}
@@ -126,7 +126,7 @@
 										"color": "dark_gray"
 									},
 									{
-										"translate": "common.sell_price"
+										"translate": "anemoland.common.sell_price"
 									},
 									{
 										"text": ": 160G"

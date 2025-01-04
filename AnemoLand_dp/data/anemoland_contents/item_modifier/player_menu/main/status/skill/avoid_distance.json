@@ -10,7 +10,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.avoid_distance.name"
+					"translate": "anemoland.skill.avoid_distance.name"
 				},
 				{
 					"text": " +"
@@ -70,7 +70,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.avoid_distance.name"
+					"translate": "anemoland.skill.avoid_distance.name"
 				},
 				{
 					"text": " +"
@@ -111,7 +111,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.avoid_distance.lore.1",
+					"translate": "anemoland.skill.avoid_distance.lore.1",
 					"italic": false,
 					"color": "gray"
 				}

@@ -11,7 +11,7 @@
 					"italic": false
 				},
 				{
-					"translate": "common.armor"
+					"translate": "anemoland.common.armor"
 				},
 				{
 					"text": " "
@@ -27,7 +27,7 @@
 					"color": "gray"
 				},
 				{
-					"translate": "common.base_value",
+					"translate": "anemoland.common.base_value",
 					"color": "gray"
 				},
 				{
@@ -46,7 +46,7 @@
 					"color": "gray"
 				},
 				{
-					"translate": "common.armor_value",
+					"translate": "anemoland.common.armor_value",
 					"color": "gray"
 				},
 				{

@@ -4,4 +4,4 @@
 #
 # @within function anemoland:sys/player/login
 
-function anemoland:sys/player/area/beta1/village/15/enter/0
+function anemoland_contents:sys/area/beta1/village/15/enter/0

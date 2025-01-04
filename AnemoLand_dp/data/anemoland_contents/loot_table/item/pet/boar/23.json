@@ -40,7 +40,7 @@
 												"color": "blue"
 											},
 											{
-												"translate": "common.attack_damage"
+												"translate": "anemoland.common.attack_damage"
 											},
 											{
 												"text": " "
@@ -54,28 +54,28 @@
 										],
 										[
 											{
-												"translate": "pet.lore.mob.1",
+												"translate": "anemoland.pet.lore.mob.1",
 												"color": "gray",
 												"italic": false
 											}
 										],
 										[
 											{
-												"translate": "pet.lore.mob.2",
+												"translate": "anemoland.pet.lore.mob.2",
 												"color": "gray",
 												"italic": false
 											}
 										],
 										[
 											{
-												"translate": "pet.lore.mob.3",
+												"translate": "anemoland.pet.lore.mob.3",
 												"color": "gray",
 												"italic": false
 											}
 										],
 										[
 											{
-												"translate": "pet.cooltime",
+												"translate": "anemoland.pet.cooltime",
 												"color": "white",
 												"italic": false
 											},
@@ -83,7 +83,7 @@
 												"text": "：30"
 											},
 											{
-												"translate": "common.second"
+												"translate": "anemoland.common.second"
 											}
 										]
 									],
@@ -103,7 +103,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "mob.boar.default.name",
+								"translate": "anemoland.mob.boar.default.name",
 								"color": "white",
 								"italic": false
 							}

@@ -1,1 +1,1 @@
-tellraw @a [{"translate":"general.random_event_changed_after","color":"yellow"},{"score":{"name":"#beta1.event_counter","objective":"score"}},{"text":"/"},{"score":{"name":"#beta1.random_event_cycle","objective":"score"}}]
+tellraw @a [{"translate":"anemoland.general.random_event_changed_after","color":"yellow"},{"score":{"name":"#beta1.event_counter","objective":"score"}},{"text":"/"},{"score":{"name":"#beta1.random_event_cycle","objective":"score"}}]

@@ -18,13 +18,13 @@
 										"text": "  "
 									},
 									{
-										"translate": "item.medal.mob.lore.1",
+										"translate": "anemoland.item.medal.mob.lore.1",
 										"with": [
 											{
 												"text": "Lv.20-29"
 											},
 											{
-												"translate": "mob.squirrel.default.name"
+												"translate": "anemoland.mob.squirrel.default.name"
 											}
 										],
 										"italic": false,
@@ -46,13 +46,13 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "item.medal.mob.name",
+								"translate": "anemoland.item.medal.mob.name",
 								"with": [
 									{
-										"translate": "mob.squirrel.default.name"
+										"translate": "anemoland.mob.squirrel.default.name"
 									},
 									{
-										"translate": "common.rank.silver"
+										"translate": "anemoland.common.rank.silver"
 									}
 								],
 								"color": "gray",

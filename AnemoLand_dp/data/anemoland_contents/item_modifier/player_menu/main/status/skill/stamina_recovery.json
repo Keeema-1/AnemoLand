@@ -10,7 +10,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.stamina_recovery.name"
+					"translate": "anemoland.skill.stamina_recovery.name"
 				},
 				{
 					"text": " +"
@@ -70,7 +70,7 @@
 					"italic": false
 				},
 				{
-					"translate": "skill.stamina_recovery.name"
+					"translate": "anemoland.skill.stamina_recovery.name"
 				},
 				{
 					"text": " +"
@@ -111,7 +111,7 @@
 					"text": "    "
 				},
 				{
-					"translate": "skill.stamina_recovery.lore.1",
+					"translate": "anemoland.skill.stamina_recovery.lore.1",
 					"italic": false,
 					"color": "gray"
 				}

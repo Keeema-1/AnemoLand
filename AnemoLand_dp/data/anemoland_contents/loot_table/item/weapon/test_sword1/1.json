@@ -13,7 +13,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "weapon.test_sword1.name",
+								"translate": "anemoland.weapon.test_sword1.name",
 								"color": "white",
 								"italic": false
 							}
@@ -36,7 +36,7 @@
 										"color": "aqua"
 									},
 									{
-										"translate": "common.attack_damage"
+										"translate": "anemoland.common.attack_damage"
 									},
 									{
 										"text": " +4"
@@ -49,7 +49,7 @@
 										"color": "blue"
 									},
 									{
-										"translate": "common.weapon_damage_rate"
+										"translate": "anemoland.common.weapon_damage_rate"
 									},
 									{
 										"text": " 100%"
@@ -62,7 +62,7 @@
 										"color": "blue"
 									},
 									{
-										"translate": "common.attack_speed"
+										"translate": "anemoland.common.attack_speed"
 									},
 									{
 										"text": " 1.6"
@@ -77,20 +77,20 @@
 										"italic": false
 									},
 									{
-										"translate": "common.weapon_skill"
+										"translate": "anemoland.common.weapon_skill"
 									},
 									{
 										"text": "1> "
 									},
 									{
-										"translate": "weapon_skill.sweep_attack.name"
+										"translate": "anemoland.weapon_skill.sweep_attack.name"
 									},
 									{
 										"text": " (",
 										"color": "gray"
 									},
 									{
-										"translate": "common.gauge_consumption",
+										"translate": "anemoland.common.gauge_consumption",
 										"color": "gray"
 									},
 									{
@@ -105,7 +105,7 @@
 										"italic": false
 									},
 									{
-										"translate": "weapon_skill.sweep_attack.lore.1"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.1"
 									}
 								],
 								[
@@ -115,7 +115,7 @@
 										"italic": false
 									},
 									{
-										"translate": "weapon_skill.sweep_attack.lore.2"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.2"
 									}
 								],
 								[
@@ -125,7 +125,7 @@
 										"italic": false
 									},
 									{
-										"translate": "weapon_skill.sweep_attack.lore.3"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.3"
 									}
 								],
 								[
@@ -134,20 +134,20 @@
 										"italic": false
 									},
 									{
-										"translate": "common.weapon_skill"
+										"translate": "anemoland.common.weapon_skill"
 									},
 									{
 										"text": "2> "
 									},
 									{
-										"translate": "weapon_skill.strong_attack.name"
+										"translate": "anemoland.weapon_skill.strong_attack.name"
 									},
 									{
 										"text": " (",
 										"color": "gray"
 									},
 									{
-										"translate": "common.gauge_consumption",
+										"translate": "anemoland.common.gauge_consumption",
 										"color": "gray"
 									},
 									{
@@ -162,7 +162,7 @@
 										"italic": false
 									},
 									{
-										"translate": "weapon_skill.strong_attack.lore.1"
+										"translate": "anemoland.weapon_skill.strong_attack.lore.1"
 									}
 								],
 								[
@@ -171,20 +171,20 @@
 										"italic": false
 									},
 									{
-										"translate": "common.weapon_skill"
+										"translate": "anemoland.common.weapon_skill"
 									},
 									{
 										"text": "3> "
 									},
 									{
-										"translate": "weapon_skill.jump_attack.name"
+										"translate": "anemoland.weapon_skill.jump_attack.name"
 									},
 									{
 										"text": " (",
 										"color": "gray"
 									},
 									{
-										"translate": "common.gauge_consumption",
+										"translate": "anemoland.common.gauge_consumption",
 										"color": "gray"
 									},
 									{
@@ -199,7 +199,7 @@
 										"italic": false
 									},
 									{
-										"translate": "weapon_skill.jump_attack.lore.1"
+										"translate": "anemoland.weapon_skill.jump_attack.lore.1"
 									}
 								],
 								[
@@ -209,7 +209,7 @@
 										"italic": false
 									},
 									{
-										"translate": "weapon_skill.jump_attack.lore.2"
+										"translate": "anemoland.weapon_skill.jump_attack.lore.2"
 									}
 								],
 								[
@@ -219,7 +219,7 @@
 										"italic": false
 									},
 									{
-										"translate": "weapon_skill.jump_attack.lore.3"
+										"translate": "anemoland.weapon_skill.jump_attack.lore.3"
 									}
 								],
 								{
@@ -234,7 +234,7 @@
 										"color": "dark_gray"
 									},
 									{
-										"translate": "common.sell_price"
+										"translate": "anemoland.common.sell_price"
 									},
 									{
 										"text": " 0G"

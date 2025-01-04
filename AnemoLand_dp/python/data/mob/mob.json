@@ -10,7 +10,7 @@
             "recipe_prefix": "01010",
             "number": "01",
             "detail": ["進化の過程で歩行機能を獲得した茸。"],
-            "main_areas": ["森林"],
+            "main_areas": ["forest"],
             "attack_elements": ["physical"]
         },
         "target_change": {
@@ -33,7 +33,7 @@
                     "recipe_prefix": "01011",
                     "number": "01",
                     "detail": ["進化の過程で歩行機能を獲得した茸。"],
-                    "main_areas": ["森林"],
+                    "main_areas": ["forest"],
                     "attack_elements": ["physical"]
                 }
             },
@@ -44,7 +44,7 @@
                     "recipe_prefix": "01012",
                     "number": "01",
                     "detail": ["進化の過程で歩行機能を獲得した茸。"],
-                    "main_areas": ["森林"],
+                    "main_areas": ["forest"],
                     "attack_elements": ["physical"]
                 }
             },
@@ -55,11 +55,11 @@
                     "recipe_prefix": "01013",
                     "number": "01",
                     "detail": ["進化の過程で歩行機能を獲得した茸。"],
-                    "main_areas": ["森林"],
+                    "main_areas": ["forest"],
                     "attack_elements": ["physical"]
                 },
                 "parts":{
-                    "root": {"display_name": "全身", "armor_mul": 50, "hitbox_scale": 1.0}
+                    "root": {"display_name": "whole", "armor_mul": 50, "hitbox_scale": 1.0}
                 }
             }
         },
@@ -96,7 +96,7 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 1.0}
+            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 1.0}
         },
         "root_entity": "cow",
         "display_height_add": 0.5,
@@ -127,7 +127,7 @@
             "recipe_prefix": "01020",
             "number": "02",
             "detail": ["目の前の敵めがけて突進を繰り返す。"],
-            "main_areas": ["森林"],
+            "main_areas": ["forest"],
             "attack_elements": ["physical"]
         },
         "target_change": {
@@ -171,7 +171,7 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 1.0}
+            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 1.0}
         },
         "root_entity": "hoglin",
         "display_height_add": 0.5,
@@ -202,7 +202,7 @@
             "recipe_prefix": "01040",
             "number": "04",
             "detail": [""],
-            "main_areas": ["岩場"],
+            "main_areas": ["forest"],
             "attack_elements": ["physical"]
         },
         "target_change": {
@@ -313,9 +313,9 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 120, "ice": 50}},
-            "head": {"display_name": "頭", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 120, "ice": 50}},
-            "tail": {"display_name": "尻尾", "armor_mul": 120, "hitbox_scale": 2.0, "elemental_damage_mul": {"fire": 120, "ice": 50}}
+            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 120, "ice": 50}},
+            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 120, "ice": 50}},
+            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 2.0, "elemental_damage_mul": {"fire": 120, "ice": 50}}
         },
         "root_entity": "pig",
         "display_height_add": 0.5,
@@ -346,7 +346,7 @@
             "recipe_prefix": "02020",
             "number": "02",
             "detail": ["スクルスの群れのリーダー。"],
-            "main_areas": ["森林"],
+            "main_areas": ["forest"],
             "attack_elements": ["physical"]
         },
         "unlock": {"armor": ["squirrel_head"]},
@@ -512,10 +512,10 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 3, "elemental_damage_mul": {"fire":120,"ice":50}},
-            "head": {"display_name": "頭", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
-            "neck": {"display_name": "首", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
-            "tail": {"display_name": "尻尾", "armor_mul": 120, "hitbox_scale": 2, "elemental_damage_mul": {"fire":120,"ice":50}}
+            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
+            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 2, "elemental_damage_mul": {"fire":120,"ice":50}}
         },
         "root_entity": "pig",
         "display_height_add": 1.0,

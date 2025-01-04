@@ -22,10 +22,10 @@
 				}
 			],
 			[
-				{"text":"クリックで出現したアイテムを","color":"dark_gray","italic":false}
+				{"translate":"anemoland.chest_menu.sell.sell_detail.1","color":"dark_gray","italic":false}
 			],
 			[
-				{"text":"拾うことでゴールドを入手可能","color":"dark_gray","italic":false}
+				{"translate":"anemoland.chest_menu.sell.sell_detail.2","color":"dark_gray","italic":false}
 			]
 		],
 		"mode": "replace_all"

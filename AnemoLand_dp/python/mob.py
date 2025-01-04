@@ -18,7 +18,13 @@ file_generation_flag = {
 	"carnara": True,
 	"squirrel": True
 }
-
+element_color = {
+	"physical": "white",
+	"fire": "red",
+	"water": "blue",
+	"ice": "aqua",
+	"thunder": "yellow"
+}
 pet_custom_model_data_offset = 10000
 
 with open('data/mob/mob.json' , encoding='utf-8') as f:
@@ -787,9 +793,9 @@ for mob_name, mob_data in mob_database.items():
 		makedir(path)
 		output = []
 		output.append('tag @s add variant.' + variant_id + '\n')
-		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"enemy"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"mob.' + mob_name + '.' + variant_id + '.name"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
-		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"pet"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"mob.' + mob_name + '.' + variant_id + '.name","color": "aqua"}]\'}\n')
-		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"player_side"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"mob.' + mob_name + '.' + variant_id + '.name","color": "aqua"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
+		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"enemy"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
+		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"pet"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name","color": "aqua"}]\'}\n')
+		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"player_side"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name","color": "aqua"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
@@ -1060,52 +1066,46 @@ for mob_name, mob_data in mob_database.items():
 			lore.append("{\"text\":\"  " + line_ + "\",\"italic\":false,\"color\":\"yellow\"}")
 
 	lore.append("{\"text\":\"\"}")
-	lore.append("{\"text\":\"主な出現地域\",\"italic\":false}")
+	lore.append("{\"translate\":\"anemoland.dictionary.area\",\"italic\":false}")
 	appear_areas = "[{\"text\":\"  \"}"
 	for i, appear_area in enumerate(mob_data["dictionary"]["main_areas"]):
 		if i > 0:
 			appear_areas += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"}"
-		appear_areas += ",{\"text\":\"" + appear_area + "\",\"italic\":false,\"color\":\"white\"}"
+		appear_areas += ",{\"translate\":\"anemoland.area." + appear_area + "\",\"italic\":false,\"color\":\"white\"}"
 	appear_areas += "]"
 	lore.append(appear_areas)
 
 	lore.append("{\"text\":\"\"}")
-	lore.append("{\"text\":\"攻撃属性\",\"italic\":false}")
-	element2text = {
-		"physical": {"text":"物理","color":"white"},
-		"fire": {"text":"火","color":"red"},
-		"water": {"text":"水","color":"blue"},
-		"ice": {"text":"氷","color":"aqua"},
-		"thunder": {"text":"雷","color":"yellow"}
-	}
+	lore.append("{\"translate\":\"anemoland.common.attack_element\",\"italic\":false}")
 	attack_elements = "[{\"text\":\"  \"}"
 	for i, attack_elem in enumerate(mob_data["dictionary"]["attack_elements"]):
 		if i > 0:
 			attack_elements += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"}"
-		attack_elements += ",{\"text\":\"" + element2text[attack_elem]["text"] + "\",\"italic\":false,\"color\":\"" + element2text[attack_elem]["color"] + "\"}"
+		attack_elements += ",{\"translate\":\"anemoland.common.element." + attack_elem + "\",\"italic\":false,\"color\":\"" + element_color[attack_elem] + "\"}"
 	attack_elements += "]"
 	lore.append(attack_elements)
 
 	lore.append("{\"text\":\"\"}")
-	lore.append("{\"text\":\"与ダメージ率(%)\",\"italic\":false}")
+	lore.append("[{\"translate\":\"anemoland.common.damage_rate.give\",\"italic\":false},{\"text\":\"(%)\",\"italic\":false}]")
 	for part_name, part_data in mob_data["parts"].items():
 		if "skip_display_mul" in part_data:
 			continue
-		damage_mul = "[{\"text\":\"  <" + part_data["display_name"] + "> \",\"italic\":false,\"color\":\"yellow\"}"
+		damage_mul = "[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part." + part_data["display_name"] + "\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"}"
+		# damage_mul = "[{\"text\":\"  <" + part_data["display_name"] + "> \",\"italic\":false,\"color\":\"yellow\"}"
 		if part_data["armor_mul"] > 100:
-			damage_mul += ",{\"text\":\"物理 \", \"italic\":false,\"color\":\"gray\"},{\"text\":\"" + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"aqua\"}"
+			damage_mul += ",{\"translate\":\"anemoland.common.damage_rate.give\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"aqua\"}"
 		elif part_data["armor_mul"] < 100:
-			damage_mul += ",{\"text\":\"物理 \", \"italic\":false,\"color\":\"gray\"},{\"text\":\"" + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"gray\"}"
+			damage_mul += ",{\"translate\":\"anemoland.common.damage_rate.give\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"gray\"}"
 		else:
-			damage_mul += ",{\"text\":\"物理 \", \"italic\":false,\"color\":\"gray\"},{\"text\":\"" + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"white\"}"
+			damage_mul += ",{\"translate\":\"anemoland.common.damage_rate.give\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"white\"}"
 		if "elemental_damage_mul" in part_data:
 			for elem_name, elem_damage_mul in part_data["elemental_damage_mul"].items():
 				if elem_damage_mul == 100:
 					continue
 				if elem_damage_mul > 100:
-					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"text\":\"" + element2text[elem_name]["text"] + "\", \"italic\":false,\"color\":\"" + element2text[elem_name]["color"] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"aqua\"}"
+					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + attack_elem + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"aqua\"}"
 				elif elem_damage_mul < 100:
-					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"text\":\"" + element2text[elem_name]["text"] + "\", \"italic\":false,\"color\":\"" + element2text[elem_name]["color"] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"gray\"}"
+					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + attack_elem + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"gray\"}"
 		damage_mul += "]"
 		lore.append(damage_mul)
 
@@ -1119,7 +1119,7 @@ for mob_name, mob_data in mob_database.items():
 			"count": 1,
 			"id": "minecraft:green_dye",
 			"components":{
-				"item_name": "【No.0" + ("1" if mob_data["type"] == "mob" else "2") + "-" + mob_data["dictionary"]["number"] + "】" + mob_data["display_name"],
+				"item_name": '[{"text":"【No.0' + ("1" if mob_data["type"] == "mob" else "2") + "-" + mob_data["dictionary"]["number"] + '】"},{"translate":"anemoland.mob.' + mob_name + '.default.name"}]',
 				"custom_model_data": mob_data["custom_model_data"],
 				"lore": lore
 			}
@@ -1154,50 +1154,43 @@ for mob_name, mob_data in mob_database.items():
 			for i, appear_area in enumerate(variant_data["dictionary"]["main_areas"]):
 				if i > 0:
 					appear_areas += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"}"
-				appear_areas += ",{\"text\":\"" + appear_area + "\",\"italic\":false,\"color\":\"white\"}"
+				appear_areas += ",{\"translate\":\"anemoland.area." + appear_area + "\",\"italic\":false,\"color\":\"white\"}"
 			appear_areas += "]"
 			lore.append(appear_areas)
 
 			lore.append("{\"text\":\"\"}")
 			lore.append("{\"text\":\"攻撃属性\",\"italic\":false}")
-			element2text = {
-				"physical": {"text":"物理","color":"white"},
-				"fire": {"text":"火","color":"red"},
-				"water": {"text":"水","color":"blue"},
-				"ice": {"text":"氷","color":"aqua"},
-				"thunder": {"text":"雷","color":"yellow"}
-			}
 			attack_elements = "[{\"text\":\"  \"}"
 			for i, attack_elem in enumerate(variant_data["dictionary"]["attack_elements"]):
 				if i > 0:
 					attack_elements += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"}"
-				attack_elements += ",{\"text\":\"" + element2text[attack_elem]["text"] + "\",\"italic\":false,\"color\":\"" + element2text[attack_elem]["color"] + "\"}"
+				attack_elements += ",{\"translate\":\"anemoland.common.element." + attack_elem + "\",\"italic\":false,\"color\":\"" + element_color[attack_elem] + "\"}"
 			attack_elements += "]"
 			lore.append(attack_elements)
 
 			lore.append("{\"text\":\"\"}")
-			lore.append("{\"text\":\"与ダメージ率(%)\",\"italic\":false}")
+			lore.append("[{\"translate\":\"anemoland.common.damage_rate.give\",\"italic\":false},{\"text\":\"(%)\",\"italic\":false}]")
 			parts_data = mob_data["parts"]
 			if "parts" in variant_data:
 				parts_data = variant_data["parts"]
 			for part_name, part_data in parts_data.items():
 				if "skip_display_mul" in part_data:
 					continue
-				damage_mul = "[{\"text\":\"  <" + part_data["display_name"] + "> \",\"italic\":false,\"color\":\"yellow\"}"
+				damage_mul = "[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part." + part_data["display_name"] + "\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"}"
 				if part_data["armor_mul"] > 100:
-					damage_mul += ",{\"text\":\"物理 \", \"italic\":false,\"color\":\"gray\"},{\"text\":\"" + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"aqua\"}"
+					damage_mul += ",{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"aqua\"}"
 				elif part_data["armor_mul"] < 100:
-					damage_mul += ",{\"text\":\"物理 \", \"italic\":false,\"color\":\"gray\"},{\"text\":\"" + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"gray\"}"
+					damage_mul += ",{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"gray\"}"
 				else:
-					damage_mul += ",{\"text\":\"物理 \", \"italic\":false,\"color\":\"gray\"},{\"text\":\"" + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"white\"}"
+					damage_mul += ",{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"white\"}"
 				if "elemental_damage_mul" in part_data:
 					for elem_name, elem_damage_mul in part_data["elemental_damage_mul"].items():
 						if elem_damage_mul == 100:
 							continue
 						if elem_damage_mul > 100:
-							damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"text\":\"" + element2text[elem_name]["text"] + "\", \"italic\":false,\"color\":\"" + element2text[elem_name]["color"] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"aqua\"}"
+							damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + attack_elem + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"aqua\"}"
 						elif elem_damage_mul < 100:
-							damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"text\":\"" + element2text[elem_name]["text"] + "\", \"italic\":false,\"color\":\"" + element2text[elem_name]["color"] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"gray\"}"
+							damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + attack_elem + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"gray\"}"
 				damage_mul += "]"
 				lore.append(damage_mul)
 
@@ -1214,7 +1207,7 @@ for mob_name, mob_data in mob_database.items():
 					"count": 1,
 					"id": "minecraft:green_dye",
 					"components":{
-						"item_name": "【No.0" + ("1" if mob_data["type"] == "mob" else "2") + "-" + variant_data["dictionary"]["number"] + "】" + variant_data["display_name"],
+						"item_name": '[{"text":"【No.0' + ("1" if mob_data["type"] == "mob" else "2") + "-" + mob_data["dictionary"]["number"] + '】"},{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name"}]',
 						"custom_model_data": mob_data["custom_model_data"] + variant_data["custom_model_data_add"],
 						"lore": lore
 					}
@@ -1277,7 +1270,7 @@ for mob_name, mob_data in mob_database.items():
 						"color": "blue"
 					},
 					{
-						"translate": "common.attack_damage"
+						"translate": "anemoland.common.attack_damage"
 					},
 					{
 						"text": " "
@@ -1290,43 +1283,43 @@ for mob_name, mob_data in mob_database.items():
 			]
 			if mob_data["type"] == "mob":
 				lore.append([
-					{"translate": "pet.lore.mob.1", "color": "gray", "italic":False}
+					{"translate": "anemoland.pet.lore.mob.1", "color": "gray", "italic":False}
 				])
 				lore.append([
-					{"translate": "pet.lore.mob.2", "color": "gray", "italic":False}
+					{"translate": "anemoland.pet.lore.mob.2", "color": "gray", "italic":False}
 				])
 				lore.append([
-					{"translate": "pet.lore.mob.3", "color": "gray", "italic":False}
+					{"translate": "anemoland.pet.lore.mob.3", "color": "gray", "italic":False}
 				])
 				lore.append([
-					{"translate": "pet.cooltime", "color": "white", "italic":False},
+					{"translate": "anemoland.pet.cooltime", "color": "white", "italic":False},
 					{"text": "：30"},
-					{"translate": "common.second"}
+					{"translate": "anemoland.common.second"}
 				])
 			elif mob_data["type"] == "boss":
 				lore.append([
-					{"translate": "pet.lore.boss.1", "with":[{"keybind":"key.use"}], "color": "gray", "italic":False}
+					{"translate": "anemoland.pet.lore.boss.1", "with":[{"keybind":"key.use"}], "color": "gray", "italic":False}
 				])
 				lore.append([
-					{"translate": "pet.lore.boss.2", "color": "gray", "italic":False}
+					{"translate": "anemoland.pet.lore.boss.2", "color": "gray", "italic":False}
 				])
 				lore.append([
-					{"translate": "pet.lore.boss.3", "color": "gray", "italic":False}
+					{"translate": "anemoland.pet.lore.boss.3", "color": "gray", "italic":False}
 				])
 			if "gauge_consume" in mob_data["pet"] and mob_data["pet"]["gauge_consume"]>0:
 				lore.append([
-					{"translate": "pet.gauge_consumption", "color": "white", "italic":False},
+					{"translate": "anemoland.pet.gauge_consumption", "color": "white", "italic":False},
 					{"text": "：" + str(mob_data["pet"]["gauge_consume"]/100)}
 				])
 				lore.append([
-					{"translate": "pet.max_duration", "color": "white", "italic":False},
+					{"translate": "anemoland.pet.max_duration", "color": "white", "italic":False},
 					{"text": "：60"},
-					{"translate": "common.second"}
+					{"translate": "anemoland.common.second"}
 				])
 				lore.append([
-					{"translate": "pet.cooltime", "color": "white", "italic":False},
+					{"translate": "anemoland.pet.cooltime", "color": "white", "italic":False},
 					{"text": "：120"},
-					{"translate": "common.second"}
+					{"translate": "anemoland.common.second"}
 				])
 
 			power_up_str = ''
@@ -1385,7 +1378,7 @@ for mob_name, mob_data in mob_database.items():
 										"function": "minecraft:set_name",
 										"entity": "this",
 										"name": {
-											"translate": "mob." + mob_name + ".default.name",
+											"translate": "anemoland.mob." + mob_name + ".default.name",
 											"color": "white",
 											"italic": False
 										}
@@ -1415,8 +1408,8 @@ for mob_name, mob_data in mob_database.items():
 				[
 					{"text": "  "},
 					{
-						"translate": "item.medal.mob.lore.1",
-						"with": [{"text":"Lv." + str(medal_color[4][0]) + "-" + str(medal_color[4][1])},{"translate": "mob." + mob_name + ".default.name" }],
+						"translate": "anemoland.item.medal.mob.lore.1",
+						"with": [{"text":"Lv." + str(medal_color[4][0]) + "-" + str(medal_color[4][1])},{"translate": "anemoland.mob." + mob_name + ".default.name" }],
 						"italic": False,
 						"color": "white"
 					}
@@ -1426,8 +1419,8 @@ for mob_name, mob_data in mob_database.items():
 			lore.append([
 					{"text": "  "},
 					{
-						"translate": "item.medal.mob.lore.1",
-						"with": [{"text":"Lv." + str(medal_color[4][0]) + "+"},{"translate": "mob." + mob_name + ".default.name" }],
+						"translate": "anemoland.item.medal.mob.lore.1",
+						"with": [{"text":"Lv." + str(medal_color[4][0]) + "+"},{"translate": "anemoland.mob." + mob_name + ".default.name" }],
 						"italic": False,
 						"color": "white"
 					}
@@ -1463,8 +1456,8 @@ for mob_name, mob_data in mob_database.items():
 									"function": "minecraft:set_name",
 									"entity": "this",
 									"name": {
-										"translate": "item.medal.mob.name",
-										"with": [{"translate": "mob." + mob_name + ".default.name"},{"translate": "common.rank." + medal_color[0]}],
+										"translate": "anemoland.item.medal.mob.name",
+										"with": [{"translate": "anemoland.mob." + mob_name + ".default.name"},{"translate": "anemoland.common.rank." + medal_color[0]}],
 										"color": medal_color[3],
 										"italic": False
 									}

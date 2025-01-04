@@ -24,7 +24,7 @@
                     "type": "ship",
                     "no_cloud": 1,
                     "no_barrier": 1,
-                    "display_name": "船"
+                    "display_name": "ship"
                 },
                 "15": {
                     "index":[1,5],
@@ -33,7 +33,7 @@
                     "field_type": "camp1",
                     "no_cloud": 1,
                     "no_barrier": 1,
-                    "display_name": "ベースキャンプ"
+                    "display_name": "base_camp"
                 },
                 "14": {
                     "index":[1,4],
@@ -41,7 +41,7 @@
                     "type": "field",
                     "special_field": "training",
                     "field_type": "plain_B",
-                    "display_name": "訓練場",
+                    "display_name": "training",
                     "no_cloud": 1,
                     "no_barrier": 1,
                     "unlock":[],
@@ -53,7 +53,7 @@
                     "type": "field",
                     "special_field": "arena_prepare",
                     "field_type": "arena_prepare",
-                    "display_name": "闘技場",
+                    "display_name": "arena",
                     "no_cloud": 1,
                     "no_barrier": 1,
                     "unlock":[]
@@ -65,7 +65,7 @@
                     "type": "field",
                     "special_field": "arena",
                     "field_type": "arena1",
-                    "display_name": "闘技場",
+                    "display_name": "arena",
                     "unlock":[],
                     "default_event": "walking_mushrooms_5"
                 },
@@ -75,7 +75,7 @@
                     "type": "field",
                     "special_field": "explore",
                     "field_type": "plain_C",
-                    "display_name": "池",
+                    "display_name": "pond",
                     "no_cloud": 1,
                     "no_barrier": 1
                 },
@@ -84,7 +84,7 @@
                     "offset": [0, 1024],
                     "type": "field",
                     "field_type": "plain_A",
-                    "display_name": "森林 (小)",
+                    "display_name": "forest.small",
                     "no_barrier": 1,
                     "unlock":["24"],
                     "default_event": "walking_mushrooms_5",
@@ -95,7 +95,7 @@
                     "offset": [512, 1024],
                     "type": "field",
                     "field_type": "plain_B",
-                    "display_name": "森林 (中)",
+                    "display_name": "forest.medium",
                     "unlock":["34"],
                     "default_event": "boars_10",
                     "random_event": "test"
@@ -105,7 +105,7 @@
                     "offset": [1024, 1024],
                     "type": "field",
                     "field_type": "plain_C",
-                    "display_name": "森林 (大)",
+                    "display_name": "forest.large",
                     "unlock":[],
                     "default_event": "squirrel_head_15",
                     "random_event": "test"

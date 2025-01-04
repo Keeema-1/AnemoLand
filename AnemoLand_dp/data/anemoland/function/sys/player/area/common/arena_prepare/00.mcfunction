@@ -1,4 +1,4 @@
-execute unless score @s sneak_time matches 1.. run title @s actionbar {"text": "スニークで戦闘を開始","color": "yellow"}
+execute unless score @s sneak_time matches 1.. run title @s actionbar {"translate": "anemoland.general.sneak_to_start_battle","color": "yellow"}
 execute if score @s sneak_time matches 1..2 run title @s actionbar [{"text": "■■","color": "yellow"},{"text": "■■■■■■■■■■■■■■■■■","color": "white"}]
 execute if score @s sneak_time matches 3..4 run title @s actionbar [{"text": "■■■■","color": "yellow"},{"text": "■■■■■■■■■■■■■■■","color": "white"}]
 execute if score @s sneak_time matches 5..6 run title @s actionbar [{"text": "■■■■■■","color": "yellow"},{"text": "■■■■■■■■■■■■■","color": "white"}]

@@ -40,7 +40,7 @@
 												"color": "blue"
 											},
 											{
-												"translate": "common.attack_damage"
+												"translate": "anemoland.common.attack_damage"
 											},
 											{
 												"text": " "
@@ -54,7 +54,7 @@
 										],
 										[
 											{
-												"translate": "pet.lore.boss.1",
+												"translate": "anemoland.pet.lore.boss.1",
 												"with": [
 													{
 														"keybind": "key.use"
@@ -66,21 +66,21 @@
 										],
 										[
 											{
-												"translate": "pet.lore.boss.2",
+												"translate": "anemoland.pet.lore.boss.2",
 												"color": "gray",
 												"italic": false
 											}
 										],
 										[
 											{
-												"translate": "pet.lore.boss.3",
+												"translate": "anemoland.pet.lore.boss.3",
 												"color": "gray",
 												"italic": false
 											}
 										],
 										[
 											{
-												"translate": "pet.gauge_consumption",
+												"translate": "anemoland.pet.gauge_consumption",
 												"color": "white",
 												"italic": false
 											},
@@ -90,7 +90,7 @@
 										],
 										[
 											{
-												"translate": "pet.max_duration",
+												"translate": "anemoland.pet.max_duration",
 												"color": "white",
 												"italic": false
 											},
@@ -98,12 +98,12 @@
 												"text": "：60"
 											},
 											{
-												"translate": "common.second"
+												"translate": "anemoland.common.second"
 											}
 										],
 										[
 											{
-												"translate": "pet.cooltime",
+												"translate": "anemoland.pet.cooltime",
 												"color": "white",
 												"italic": false
 											},
@@ -111,7 +111,7 @@
 												"text": "：120"
 											},
 											{
-												"translate": "common.second"
+												"translate": "anemoland.common.second"
 											}
 										]
 									],
@@ -131,7 +131,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "mob.squirrel_head.default.name",
+								"translate": "anemoland.mob.squirrel_head.default.name",
 								"color": "white",
 								"italic": false
 							}

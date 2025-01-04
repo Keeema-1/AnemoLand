@@ -13,7 +13,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "armor.king_boar.chestplate.name",
+								"translate": "anemoland.armor.king_boar.chestplate.name",
 								"color": "white",
 								"italic": false
 							}
@@ -36,7 +36,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.armor"
+										"translate": "anemoland.common.armor"
 									},
 									{
 										"text": " +4"
@@ -53,7 +53,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.skill"
+										"translate": "anemoland.common.skill"
 									},
 									{
 										"text": ">"
@@ -65,7 +65,7 @@
 										"italic": false
 									},
 									{
-										"translate": "skill.recovery_up.name"
+										"translate": "anemoland.skill.recovery_up.name"
 									},
 									{
 										"text": " +❤0.8"
@@ -76,7 +76,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.recovery_up.lore.1",
+										"translate": "anemoland.skill.recovery_up.lore.1",
 										"italic": false,
 										"color": "gray"
 									}
@@ -93,7 +93,7 @@
 										"color": "dark_gray"
 									},
 									{
-										"translate": "common.sell_price"
+										"translate": "anemoland.common.sell_price"
 									},
 									{
 										"text": ": 40G"

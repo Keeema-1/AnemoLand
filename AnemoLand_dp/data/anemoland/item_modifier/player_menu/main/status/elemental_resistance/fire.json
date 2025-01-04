@@ -10,7 +10,7 @@
 					"italic": false
 				},
 				{
-					"translate": "common.damaged_rate.fire"
+					"translate": "anemoland.common.damaged_rate.fire"
 				},
 				{
 					"text": " +"
@@ -55,7 +55,7 @@
 					"italic": false
 				},
 				{
-					"translate": "common.damaged_rate.fire"
+					"translate": "anemoland.common.damaged_rate.fire"
 				},
 				{
 					"text": " "

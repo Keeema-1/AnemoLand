@@ -92,13 +92,13 @@ for event_id, event_data in event_database["events"].items():
 		max_level = max(event_data["display_overwrite"]["levels"])
 		waves_len = event_data["display_overwrite"]["waves"]
 	for enemy in enemies_boss:
-		display_add += ',{"translate":"mob.' + enemy + '"}," "'
+		display_add += ',{"translate":"anemoland.mob.' + enemy + '"}," "'
 	for enemy in enemies:
-		display_add += ',{"translate":"mob.' + enemy + '"}," "'
+		display_add += ',{"translate":"anemoland.mob.' + enemy + '"}," "'
 	display_add2 = ''
 	if "npc" in event_data and event_data["npc"]["npc1"]:
-		display_add2 += ',{"text":"\\\\n<同行者あり>","color":"yellow"}'
-	output.append('$data modify entity @s text set value \'["",{"text":"\\\\n"},{"text":"<戦闘フィールド>\\\\n","color":"yellow"},{"text":"$(field_name)\\\\n"},{"text":"----------------\\\\n","color":"gray"},{"text":"出現モンスター\\\\n"}' + display_add + ',{"text":"\\\\n\\\\n\\\\nウェーブ数 ' + str(waves_len) + '\\\\nLv. ' + ((str(min_level)) if (min_level == max_level) else (str(min_level) + ' - ' + str(max_level))) + '"}' + display_add2 + '$(bonus_display_base)$(bonus_display_gold)$(bonus_display_xp)$(bonus_display_drop)]\'\n')
+		display_add2 += ',{"text":"\\\\n<","color":"yellow"},{"translate":"with_companion","color":"yellow"},{"text":">","color":"yellow"}'
+	output.append('$data modify entity @s text set value \'["",{"text":"\\\\n"},{"text":"⚔ ","color":"red"},{"text":"anemoland.field_display.battle","color":"red"},{"text":" ⚔\\\\n","color":"red"},{"translate":"anemoland.field.$(field_name)\\\\n"},{"text":"----------------\\\\n","color":"gray"},{"translate":"anemoland.field_display.monsters"},{"text":"\\\\n"}' + display_add + ',{"text":"\\\\n\\\\n\\\\n"},{"translate":"anemoland.field_display.num_waves"},{"text":" ' + str(waves_len) + '\\\\nLv. ' + ((str(min_level)) if (min_level == max_level) else (str(min_level) + ' - ' + str(max_level))) + '"}' + display_add2 + '$(bonus_display_base)$(bonus_display_gold)$(bonus_display_xp)$(bonus_display_drop)]\'\n')
 	# output.append('#$tellraw @a [""$(bonus_display_base)$(bonus_display_gold)$(bonus_display_xp)$(bonus_display_drop)]\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)

@@ -13,7 +13,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "armor.ojinushi.helmet.name",
+								"translate": "anemoland.armor.ojinushi.helmet.name",
 								"color": "white",
 								"italic": false
 							}
@@ -36,7 +36,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.armor"
+										"translate": "anemoland.common.armor"
 									},
 									{
 										"text": " +3"
@@ -53,7 +53,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.skill"
+										"translate": "anemoland.common.skill"
 									},
 									{
 										"text": ">"
@@ -65,7 +65,7 @@
 										"italic": false
 									},
 									{
-										"translate": "skill.avoid_distance.name"
+										"translate": "anemoland.skill.avoid_distance.name"
 									},
 									{
 										"text": " +1"
@@ -76,7 +76,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.avoid_distance.lore.1",
+										"translate": "anemoland.skill.avoid_distance.lore.1",
 										"italic": false,
 										"color": "gray"
 									}
@@ -93,7 +93,7 @@
 										"color": "dark_gray"
 									},
 									{
-										"translate": "common.sell_price"
+										"translate": "anemoland.common.sell_price"
 									},
 									{
 										"text": ": 160G"

@@ -13,7 +13,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "armor.bagikeros.boots.name",
+								"translate": "anemoland.armor.bagikeros.boots.name",
 								"color": "white",
 								"italic": false
 							}
@@ -36,7 +36,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.armor"
+										"translate": "anemoland.common.armor"
 									},
 									{
 										"text": " +7"
@@ -49,7 +49,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.damaged_rate.fire"
+										"translate": "anemoland.common.damaged_rate.fire"
 									},
 									{
 										"text": " -10%"
@@ -66,7 +66,7 @@
 										"italic": false
 									},
 									{
-										"translate": "common.skill"
+										"translate": "anemoland.common.skill"
 									},
 									{
 										"text": ">"
@@ -78,7 +78,7 @@
 										"italic": false
 									},
 									{
-										"translate": "skill.dust_avoiding.name"
+										"translate": "anemoland.skill.dust_avoiding.name"
 									},
 									{
 										"text": " +75%"
@@ -89,7 +89,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.dust_avoiding.lore.1",
+										"translate": "anemoland.skill.dust_avoiding.lore.1",
 										"italic": false,
 										"color": "gray"
 									}
@@ -99,7 +99,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.dust_avoiding.lore.2",
+										"translate": "anemoland.skill.dust_avoiding.lore.2",
 										"italic": false,
 										"color": "gray"
 									}
@@ -109,7 +109,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.dust_avoiding.lore.3",
+										"translate": "anemoland.skill.dust_avoiding.lore.3",
 										"italic": false,
 										"color": "gray"
 									}
@@ -119,7 +119,7 @@
 										"text": "    "
 									},
 									{
-										"translate": "skill.dust_avoiding.lore.4",
+										"translate": "anemoland.skill.dust_avoiding.lore.4",
 										"italic": false,
 										"color": "gray"
 									}
@@ -136,7 +136,7 @@
 										"color": "dark_gray"
 									},
 									{
-										"translate": "common.sell_price"
+										"translate": "anemoland.common.sell_price"
 									},
 									{
 										"text": ": 160G"
