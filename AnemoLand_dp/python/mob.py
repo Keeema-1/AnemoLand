@@ -1092,19 +1092,19 @@ for mob_name, mob_data in mob_database.items():
 		damage_mul = "[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part." + part_data["display_name"] + "\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"}"
 		# damage_mul = "[{\"text\":\"  <" + part_data["display_name"] + "> \",\"italic\":false,\"color\":\"yellow\"}"
 		if part_data["armor_mul"] > 100:
-			damage_mul += ",{\"translate\":\"anemoland.common.damage_rate.give\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"aqua\"}"
+			damage_mul += ",{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"aqua\"}"
 		elif part_data["armor_mul"] < 100:
-			damage_mul += ",{\"translate\":\"anemoland.common.damage_rate.give\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"gray\"}"
+			damage_mul += ",{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"gray\"}"
 		else:
-			damage_mul += ",{\"translate\":\"anemoland.common.damage_rate.give\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"white\"}"
+			damage_mul += ",{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"white\"}"
 		if "elemental_damage_mul" in part_data:
 			for elem_name, elem_damage_mul in part_data["elemental_damage_mul"].items():
 				if elem_damage_mul == 100:
 					continue
 				if elem_damage_mul > 100:
-					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + attack_elem + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"aqua\"}"
+					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + elem_name + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"aqua\"}"
 				elif elem_damage_mul < 100:
-					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + attack_elem + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"gray\"}"
+					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + elem_name + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"gray\"}"
 		damage_mul += "]"
 		lore.append(damage_mul)
 
