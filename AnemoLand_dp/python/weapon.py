@@ -12,7 +12,7 @@ def makedir(path):
 	if not os.path.isdir(os.path.dirname(path)):
 		os.makedirs(os.path.dirname(path))
 
-attack_skills = weapon_database["attack_skills"]
+weapon_skills = weapon_database["weapon_skills"]
 weapon_types = weapon_database["weapon_types"]
 
 for weapon_data in weapon_database["weapons"]:
@@ -45,11 +45,11 @@ for weapon_data in weapon_database["weapons"]:
 		# lore.append({"text":"  攻撃速度 " + str(weapon_data["attack_speed"]), "italic":False, "color":"blue"})
 		lore.append([{"text":"  ", "italic":False, "color":"blue"},{"translate":"anemoland.common.attack_speed"},{"text":" " + str(weapon_data["attack_speed"])}])
 		lore.append({"text":""})
-		for i, attack_skill in enumerate(weapon_data["attack_skills"]):
-			# lore.append([{"text":" <技" + str(i+1) + "> " + attack_skills[attack_skill["name"]]["display_name"], "italic":False},{"text":' (消費ゲージ ' + str(round(attack_skills[attack_skill["name"]]["gauge_consume"]/100, 1)) + ')', "italic":False,"color":"gray"}])
-			lore.append([{"text":" <", "italic":False},{"translate":"anemoland.common.weapon_skill"},{"text":str(i+1) + "> "},{"translate":"anemoland.weapon_skill." + attack_skill["name"] + ".name"},{"text":" (","color":"gray"},{"translate":"anemoland.common.gauge_consumption","color":"gray"},{"text":" " + str(round(attack_skills[attack_skill["name"]]["gauge_consume"]/100, 1)) + ')',"color":"gray"}])
-			for j in range(attack_skills[attack_skill["name"]]["lore_len"]):
-				lore.append([{"text":"    ", "color": "dark_gray", "italic":False},{"translate":"anemoland.weapon_skill." + attack_skill["name"] + ".lore." + str(j+1)}])
+		for i, weapon_skill in enumerate(weapon_data["weapon_skills"]):
+			# lore.append([{"text":" <技" + str(i+1) + "> " + weapon_skills[weapon_skill["name"]]["display_name"], "italic":False},{"text":' (消費ゲージ ' + str(round(weapon_skills[weapon_skill["name"]]["gauge_consume"]/100, 1)) + ')', "italic":False,"color":"gray"}])
+			lore.append([{"text":" <", "italic":False},{"translate":"anemoland.common.weapon_skill"},{"text":str(i+1) + "> "},{"translate":"anemoland.weapon_skill." + weapon_skill["name"] + ".name"},{"text":" (","color":"gray"},{"translate":"anemoland.common.gauge_consumption","color":"gray"},{"text":" " + str(round(weapon_skills[weapon_skill["name"]]["gauge_consume"]/100, 1)) + ')',"color":"gray"}])
+			for j in range(weapon_skills[weapon_skill["name"]]["lore_len"]):
+				lore.append([{"text":"    ", "color": "dark_gray", "italic":False},{"translate":"anemoland.weapon_skill." + weapon_skill["name"] + ".lore." + str(j+1)}])
 		function_.update(function="minecraft:set_lore", entity="this", lore = lore, mode = "replace_all")
 		functions.append(function_)
 		lore.append({"text":"","italic":False,"color":"dark_gray"})
@@ -90,12 +90,12 @@ for weapon_data in weapon_database["weapons"]:
 
 		# custom_data
 		function_ = {}
-		attack_skills_str = ""
+		weapon_skills_str = ""
 		i = 0
-		for attack_skill in weapon_data["attack_skills"]:
+		for weapon_skill in weapon_data["weapon_skills"]:
 			if i > 0:
-				attack_skills_str += ","
-			attack_skills_str += "{id:\"" + attack_skill["name"] + "\",gauge_consume:" + str(attack_skills[attack_skill["name"]]["gauge_consume"]) + ",mul:" + str(attack_skills[attack_skill["name"]]["mul"]) + "}"
+				weapon_skills_str += ","
+			weapon_skills_str += "{id:\"" + weapon_skill["name"] + "\",gauge_consume:" + str(weapon_skills[weapon_skill["name"]]["gauge_consume"]) + ",mul:" + str(weapon_skills[weapon_skill["name"]]["mul"]) + "}"
 			i += 1
 		power_up_str = ''
 		if str(int(level)+1) in weapon_data["levels"]:
@@ -106,7 +106,7 @@ for weapon_data in weapon_database["weapons"]:
 				power_up_str += '{id:"' + material["id"] + '",loot_table:"' + material["loot_table"] + '",count:' + str(material["count"]) + '}'
 			power_up_str += ']'
 		function_.update(function="minecraft:set_custom_data",
-			tag = "{item_type:\"weapon\",weapon_type:\"" + weapon_data["weapon_type"] + "\",loot_table:\"item/weapon/" + weapon_data["name"] + "\",sell_price:" + str(sell_price) + ",power_up:{" + power_up_str + "},status:{level:" + str(level) + ",attack:{base:" + str(attack_damage_value) + ",mul:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "},attack_skills:[" + attack_skills_str + "],skill_gauge:{get:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "}}}"
+			tag = "{item_type:\"weapon\",weapon_type:\"" + weapon_data["weapon_type"] + "\",loot_table:\"item/weapon/" + weapon_data["name"] + "\",sell_price:" + str(sell_price) + ",power_up:{" + power_up_str + "},status:{level:" + str(level) + ",attack:{base:" + str(attack_damage_value) + ",mul:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "},weapon_skills:[" + weapon_skills_str + "],skill_gauge:{get:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "}}}"
 			)
 		functions.append(function_)
 
@@ -195,8 +195,8 @@ for page_list in pages_list:
 				lore.append([{"text":" "},{"translate":"anemoland.common.weapon_damage_rate", "italic":False, "color":"blue"},{"text":" " + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]*10) + "%" + "\\n", "italic":False, "color":"blue"}])
 				lore.append([{"text":" "},{"translate":"anemoland.common.attack_speed", "italic":False, "color":"blue"},{"text":" " + str(weapon_data["attack_speed"]) + "\\n", "italic":False, "color":"blue"}])
 				lore.append({"text":"\\n"})
-				for j, attack_skill in enumerate(weapon_data["attack_skills"]):
-					lore.append([{"text":" <", "color":"dark_purple"},{"translate":"anemoland.common.weapon_skill", "color":"dark_purple"},{"text":"> ", "color":"dark_purple"},{"translate": "anemoland.weapon_skill." + attack_skill["name"] + ".name", "color":"dark_purple"},{ "text":("" if j == len(weapon_data["attack_skills"])-1 else "\\n"), "italic":False, "color":"dark_purple"}])
+				for j, weapon_skill in enumerate(weapon_data["weapon_skills"]):
+					lore.append([{"text":" <", "color":"dark_purple"},{"translate":"anemoland.common.weapon_skill", "color":"dark_purple"},{"text":"> ", "color":"dark_purple"},{"translate": "anemoland.weapon_skill." + weapon_skill["name"] + ".name", "color":"dark_purple"},{ "text":("" if j == len(weapon_data["weapon_skills"])-1 else "\\n"), "italic":False, "color":"dark_purple"}])
 
 				line += '{"text":"\\\\n               "},{"text":"【"},{"translate":"anemoland.common.detail","hoverEvent":{"action":"show_text","contents":' + str(lore).replace("'",'"') + '}},{"text":"】"},{"text":"\\\\n"},{"text":"\\\\n   ","color":"light_purple"},{"translate":"anemoland.weapon.' + weapon_data["name"] + '","color":"white"},{"text":"    ' + ' '*page_item["add_space"] + '"},{"text":"[' + str(weapon_data["price"]["buy"]) + 'G]\\\\n","color":"light_purple","clickEvent": {"action": "run_command","value": "/trigger trigger set ' + str(31000 + page_item["trigger"]) + '"}},{"translate":"anemoland.weapon.' + weapon_data["name"] + '.shop_book_space"},{"translate":"anemoland.weapon.' + weapon_data["name"] + '.name","bold":true},{"text":"\\\\n\\\\n\\\\n","bold":true}'
 

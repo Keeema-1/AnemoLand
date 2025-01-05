@@ -3,7 +3,7 @@
 # 攻撃対象のモンスターの防御率や減少したHealthを取得
 #
 # @input
-#   score #attack_skill_flag temp
+#   score #weapon_skill_flag temp
 #       スキル使用時のフラグ
 #
 # @within
@@ -23,6 +23,6 @@ execute if score @s armor.water.mul matches 0.. run scoreboard players operation
 execute if score @s armor.ice.mul matches 0.. run scoreboard players operation #damage.dst.armor.fire.mul temp = @s armor.ice.mul
 execute if score @s armor.thunder.mul matches 0.. run scoreboard players operation #damage.dst.armor.fire.mul temp = @s armor.thunder.mul
 
-execute if score #attack_skill_flag temp matches 1.. run scoreboard players set #health temp -100
+execute if score #weapon_skill_flag temp matches 1.. run scoreboard players set #health temp -100
 
 # execute if score #health temp matches -5.. run tellraw @a "damage 0"

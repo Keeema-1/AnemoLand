@@ -200,7 +200,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"spear\",loot_table:\"item/weapon/carnara_spear\",sell_price:400,power_up:{add_level:1,materials:[{id:\"carnara_silver_medal\",loot_table:\"item/medal/carnara/silver\",count:6}]},status:{level:1,attack:{base:4.5,mul:18},attack_skills:[{id:\"ice_beam\",gauge_consume:100,mul:20}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"spear\",loot_table:\"item/weapon/carnara_spear\",sell_price:400,power_up:{add_level:1,materials:[{id:\"carnara_silver_medal\",loot_table:\"item/medal/carnara/silver\",count:6}]},status:{level:1,attack:{base:4.5,mul:18},weapon_skills:[{id:\"ice_beam\",gauge_consume:100,mul:20}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

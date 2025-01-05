@@ -25,7 +25,7 @@ execute if data storage temp:_ data.elemental_attack.thunder run function anemol
 # tellraw @a [{"text":" / DAMAGE:","color": "red"},{"score":{"name": "#damage","objective": "temp"},"color": "red"}]
 
 # tellraw @a [{"text":"  ATK BASE:"},{"score":{"name": "#damage.src.attack.base","objective": "temp"}},{"text":" / MUL:"},{"score":{"name": "#damage.src.attack.mul","objective": "temp"}},{"text":" / DAMAGE:","color": "red"},{"score":{"name": "#damage","objective": "temp"},"color": "red"}]
-# execute unless score #attack_skill_flag temp matches 1 run tellraw @a [{"text":"HEALTH:"},{"score":{"name": "#health","objective": "temp"}},{"text":"  ATK BASE:"},{"score":{"name": "#damage.src.attack.base","objective": "temp"}},{"text":" / WEAPON:"},{"score":{"name": "#damage.src.attack.weapon","objective": "temp"}},{"text":" / MUL:"},{"score":{"name": "#damage.src.attack.mul","objective": "temp"}},{"text":" / DAMAGE:","color": "red"},{"score":{"name": "#damage","objective": "temp"},"color": "red"}]
+# execute unless score #weapon_skill_flag temp matches 1 run tellraw @a [{"text":"HEALTH:"},{"score":{"name": "#health","objective": "temp"}},{"text":"  ATK BASE:"},{"score":{"name": "#damage.src.attack.base","objective": "temp"}},{"text":" / WEAPON:"},{"score":{"name": "#damage.src.attack.weapon","objective": "temp"}},{"text":" / MUL:"},{"score":{"name": "#damage.src.attack.mul","objective": "temp"}},{"text":" / DAMAGE:","color": "red"},{"score":{"name": "#damage","objective": "temp"},"color": "red"}]
 
 execute store result storage temp:_ data.player_damage.value float 0.1 run scoreboard players get #damage temp
 

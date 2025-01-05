@@ -170,7 +170,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"mace\",loot_table:\"item/weapon/muscleroom_mace\",sell_price:400,power_up:{add_level:1,materials:[{id:\"muscleroom_gold_medal\",loot_table:\"item/medal/muscleroom/gold\",count:6}]},status:{level:2,attack:{base:5.5,mul:10},attack_skills:[{id:\"mushroom_attack\",gauge_consume:100,mul:60}],skill_gauge:{get:10}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"mace\",loot_table:\"item/weapon/muscleroom_mace\",sell_price:400,power_up:{add_level:1,materials:[{id:\"muscleroom_gold_medal\",loot_table:\"item/medal/muscleroom/gold\",count:6}]},status:{level:2,attack:{base:5.5,mul:10},weapon_skills:[{id:\"mushroom_attack\",gauge_consume:100,mul:60}],skill_gauge:{get:10}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

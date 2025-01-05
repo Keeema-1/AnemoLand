@@ -19,9 +19,6 @@
     # エンティティid
         scoreboard objectives add entity_id dummy
 
-    # scoreboard objectives add team dummy
-    # scoreboard objectives add member dummy
-
     # 選択しているアイテムスロット (アイテム入れ替え検知用)
         scoreboard objectives add selected_item_slot dummy
 
@@ -30,13 +27,6 @@
 
     # バトルの時間計測用
         scoreboard objectives add battle_timer dummy
-
-    scoreboard objectives add damage_motion_timer dummy
-    scoreboard objectives add motion.x dummy
-    scoreboard objectives add motion.y dummy
-    scoreboard objectives add motion.z dummy
-
-    # scoreboard objectives add event_id dummy
 
     # プレイヤー用
         # プレイヤーログイン検知用
@@ -65,8 +55,6 @@
         # スキル用
             # アイスヴェール
                 scoreboard objectives add ice_veil_time dummy
-        # # 攻撃クールタイム
-        #     scoreboard objectives add attack_cooltime dummy
         # スタミナ
             scoreboard objectives add max_stamina dummy
             scoreboard objectives add stamina dummy
@@ -197,4 +185,4 @@ scoreboard players set #beta1.random_event_cycle score 3
 
 forceload add 0 0
 
-tellraw @a "Reloaded"
+tellraw @a "AnmoLand: Reloaded"

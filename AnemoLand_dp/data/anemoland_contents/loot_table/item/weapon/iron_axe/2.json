@@ -150,7 +150,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/iron_axe\",sell_price:240,power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:6}]},status:{level:2,attack:{base:5,mul:18},attack_skills:[{id:\"strong_attack\",gauge_consume:100,mul:80}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/iron_axe\",sell_price:240,power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:6}]},status:{level:2,attack:{base:5,mul:18},weapon_skills:[{id:\"strong_attack\",gauge_consume:100,mul:80}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

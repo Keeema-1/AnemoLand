@@ -85,7 +85,7 @@
                 "groups":[
                     {
                         "predicate": "",
-                        "knockback": "facing1_from_back_2",
+                        "knockback": "facing1_from_back_5",
                         "mul": 10,
                         "position": [0,0,1],
                         "size": [2,4,2],

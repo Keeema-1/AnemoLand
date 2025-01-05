@@ -1,5 +1,5 @@
 {
-	"attack_skills":{
+	"weapon_skills":{
 		"sweep_attack": {
 			"display_name": "薙ぎ払い",
 			"gauge_consume": 100,
@@ -94,7 +94,7 @@
 			"custom_model_data": 3,
 			"attack_damage": 4,
 			"attack_speed": 1.6,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "sweep_attack"},
 				{"name": "strong_attack"},
 				{"name": "jump_attack"}
@@ -108,7 +108,7 @@
 			"custom_model_data": 1,
 			"attack_damage": 2,
 			"attack_speed": 1.6,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "sweep_attack"}
 			],
 			"levels": {"1": {"sell_price": 8}},
@@ -121,7 +121,7 @@
 			"custom_model_data": 2,
 			"attack_damage": 3,
 			"attack_speed": 1.6,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "sweep_attack"}
 			],
 			"levels": {"1": {"sell_price": 80}},
@@ -134,7 +134,7 @@
 			"custom_model_data": 3,
 			"attack_damage": 4,
 			"attack_speed": 1.6,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "sweep_attack"}
 			],
 			"levels": {
@@ -151,7 +151,7 @@
 			"custom_model_data": 303,
 			"attack_damage": 4,
 			"attack_speed": 1.6,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "sweep_attack"}
 			],
 			"levels": {
@@ -167,7 +167,7 @@
 			"custom_model_data": 311,
 			"attack_damage": 4.5,
 			"attack_speed": 1.6,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "firework_helmet_breaker"}
 			],
 			"levels": {
@@ -182,7 +182,7 @@
 			"custom_model_data": 2,
 			"attack_damage": 999,
 			"attack_speed": 1.6,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "sweep_attack"}
 			],
 			"levels": {"1": {"sell_price": 0}}
@@ -194,7 +194,7 @@
 			"custom_model_data": 102,
 			"attack_damage": 3,
 			"attack_speed": 0.8,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "strong_attack"}
 			],
 			"levels": {"1": {"sell_price": 80}},
@@ -207,7 +207,7 @@
 			"custom_model_data": 103,
 			"attack_damage": 4,
 			"attack_speed": 0.8,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "strong_attack"}
 			],
 			"levels": {
@@ -224,7 +224,7 @@
 			"custom_model_data": 111,
 			"attack_damage": 4,
 			"attack_speed": 0.8,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "strong_dash_attack"}
 			],
 			"levels": {
@@ -240,7 +240,7 @@
 			"custom_model_data": 211,
 			"attack_damage": 4.5,
 			"attack_speed": 0.8,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "impact_crater"}
 			],
 			"levels": {
@@ -256,7 +256,7 @@
 			"custom_model_data": 411,
 			"attack_damage": 4.5,
 			"attack_speed": 1.6,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "mushroom_attack"}
 			],
 			"levels": {
@@ -272,7 +272,7 @@
 			"custom_model_data": 212,
 			"attack_damage": 4.5,
 			"attack_speed": 0.8,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "dust_impact_crater"}
 			],
 			"levels": {
@@ -288,7 +288,7 @@
 			"custom_model_data": 511,
 			"attack_damage": 4.5,
 			"attack_speed": 0.8,
-			"attack_skills":[
+			"weapon_skills":[
 				{"name": "ice_beam"}
 			],
 			"levels": {

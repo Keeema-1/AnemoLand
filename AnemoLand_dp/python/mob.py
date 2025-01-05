@@ -159,7 +159,7 @@ for mob_name, mob_data in mob_database.items():
 	if "target_change" in mob_data and "when_damaged" in mob_data["target_change"] and "preset" in mob_data["target_change"]["when_damaged"]:
 		output.append('function ' + namespace_core + ':sys/entity/common/target/change/preset/' + mob_data["target_change"]["when_damaged"]["preset"] + '/0\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/damage/dst/get_status\n')
-	output.append('execute unless score #attack_skill_flag temp matches 1.. if score #health temp matches -9.. run return 1\n')
+	output.append('execute unless score #weapon_skill_flag temp matches 1.. if score #health temp matches -9.. run return 1\n')
 	output.append('execute at @s anchored eyes facing entity @p eyes rotated ~ 0 positioned ^ ^ ^0.5 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/common\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -171,7 +171,7 @@ for mob_name, mob_data in mob_database.items():
 		output = []
 		output.append('function ' + namespace_core + ':sys/entity/common/damage/dst/get_status\n')
 		# output.append('data modify storage temp:_ data.Motion set from entity @s Motion\n')
-		output.append('execute unless score #attack_skill_flag temp matches 1.. if score #health temp matches -9.. run return 1\n')
+		output.append('execute unless score #weapon_skill_flag temp matches 1.. if score #health temp matches -9.. run return 1\n')
 		output.append('scoreboard players operation #entity_id temp = @s entity_id\n')
 		output.append('execute at @s anchored eyes facing entity @p eyes rotated ~ 0 positioned ^ ^ ^0.5 as @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,distance=..32] if score @s entity_id = #entity_id temp run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/root_from_hitbox\n')
 		with open(path, 'w', encoding='utf-8') as f:
@@ -566,9 +566,8 @@ for mob_name, mob_data in mob_database.items():
 			makedir(path)
 			output = []
 			for group_data in attack_data["groups"]:
-				# 一時的にコメントアウト
-				# if "knockback" in group_data:
-				# 	output.append('function ' + namespace_core + ':sys/entity/common/attack_knockback/' + group_data["knockback"] + '\n')
+				if "knockback" in group_data:
+					output.append('function ' + namespace_core + ':sys/entity/common/attack_knockback/' + group_data["knockback"] + '\n')
 				output.append('function ' + namespace_core + ':sys/player/common/damage/dst/apply\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)

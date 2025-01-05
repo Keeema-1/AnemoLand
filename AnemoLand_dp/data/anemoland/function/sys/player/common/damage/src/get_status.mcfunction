@@ -2,7 +2,7 @@
 #
 # 攻撃したプレイヤーのステータスを取得
 #
-# @within anemoland:sys/enchantment/post_attack/victim2victim/player
+# @within anemoland:sys/enchantment/post_attack/victim2victim/as_attacker_player
 
 scoreboard players operation #damage.src.skill_mode temp = @s skill_mode
 scoreboard players operation #damage.src.attack.base temp = @s attack.base_total

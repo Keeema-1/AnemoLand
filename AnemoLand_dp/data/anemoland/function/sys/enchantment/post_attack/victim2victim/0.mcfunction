@@ -6,15 +6,20 @@
 #
 # @within enchantment anemoland:/victim2victim
 
-execute if entity @s[tag=pet] run data modify entity @s Health set value 1024.0f
-execute if entity @s[tag=pet] run return 1
+# ペットの場合は終了
+    execute if entity @s[tag=pet] run return run data modify entity @s Health set value 1024.0f
 
-tag @s add attack_victim
+# 攻撃対象タグを付与
+    tag @s add attack_victim
 
-execute on attacker if entity @s[type=player] run function anemoland:sys/enchantment/post_attack/victim2victim/player
+# 攻撃者のプレイヤーとして実行する処理
+    execute on attacker if entity @s[type=player] run function anemoland:sys/enchantment/post_attack/victim2victim/as_attacker_player
 
-execute unless score #attack_skill_flag temp matches 1 if entity @s[tag=mob] run function anemoland_contents:sys/entity/branch/damaged_by_player
+# ダメージを受けた際の処理
+    execute unless score #weapon_skill_flag temp matches 1 if entity @s[tag=mob] run function anemoland_contents:sys/entity/branch/damaged_by_player
 
-scoreboard players reset #attack_skill_flag temp
+# 武器スキル使用フラグをリセット
+    scoreboard players reset #weapon_skill_flag temp
 
-tag @s remove attack_victim
+# 攻撃対象タグを削除
+    tag @s remove attack_victim

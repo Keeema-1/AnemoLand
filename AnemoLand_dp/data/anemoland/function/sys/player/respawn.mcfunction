@@ -5,7 +5,7 @@
 # @within
 #    function anemoland:sys/player/state/dead/0
 
-# function anemoland:sys/player/area/demo2/village/34/enter/0
+function anemoland:command/enter/village
 
 # ステータス効果のリセット
     function anemoland:sys/player/reset
