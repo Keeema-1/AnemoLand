@@ -15,6 +15,21 @@ def makedir(path):
 weapon_skills = weapon_database["weapon_skills"]
 weapon_types = weapon_database["weapon_types"]
 
+element_color = {
+	"physical": "white",
+	"fire": "red",
+	"water": "blue",
+	"ice": "aqua",
+	"thunder": "yellow"
+}
+element_icon = {
+	"physical": "🗡",
+	"fire": "🔥",
+	"water": "🌊",
+	"ice": "❄",
+	"thunder": "⚡️"
+}
+
 for weapon_data in weapon_database["weapons"]:
 	for level, level_data in weapon_data["levels"].items():
 		sell_price = level_data["sell_price"]
@@ -39,17 +54,41 @@ for weapon_data in weapon_database["weapons"]:
 		else:
 			lore.append([{"text":"  Lv. " + str(level) + " (MAX)","color":"yellow", "italic":False}])
 		# lore.append({"text":"  ⏫ 攻撃力 +" + str(attack_damage_value), "italic":False, "color":"aqua"})
-		lore.append([{"text":"  ⏫ ", "italic":False, "color":"aqua"},{"translate":"anemoland.common.attack_damage"},{"text":" +" + str(attack_damage_value)}])
+		lore.append([{"text":"  ⏫ ", "italic":False, "color":"aqua"},{"translate":"anemoland.common.attack_damage"},{"text":" 🗡" + str(attack_damage_value+1)}])
+		if "element_attack_damage" in weapon_data:
+			for element_id, element_attack_damage in weapon_data["element_attack_damage"].items():
+				lore.append([{"text":"  ⏫ ", "italic":False, "color":"aqua"},{"translate":"anemoland.common.element_attack_damage"},{"text":" " + element_icon[element_id] + "" + str(element_attack_damage),"color": element_color[element_id]}])
 		# lore.append({"text":"  武器倍率 " + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]*10) + "%", "italic":False, "color":"blue"})
 		lore.append([{"text":"  ", "italic":False, "color":"blue"},{"translate":"anemoland.common.weapon_damage_rate"},{"text":" " + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]*10) + "%"}])
 		# lore.append({"text":"  攻撃速度 " + str(weapon_data["attack_speed"]), "italic":False, "color":"blue"})
 		lore.append([{"text":"  ", "italic":False, "color":"blue"},{"translate":"anemoland.common.attack_speed"},{"text":" " + str(weapon_data["attack_speed"])}])
 		lore.append({"text":""})
 		for i, weapon_skill in enumerate(weapon_data["weapon_skills"]):
+			lore_translate_name = weapon_skill["name"]
+			if "lore_translate_reference" in weapon_skills[weapon_skill["name"]]:
+				lore_translate_name = weapon_skills[weapon_skill["name"]]["lore_translate_reference"]
 			# lore.append([{"text":" <技" + str(i+1) + "> " + weapon_skills[weapon_skill["name"]]["display_name"], "italic":False},{"text":' (消費ゲージ ' + str(round(weapon_skills[weapon_skill["name"]]["gauge_consume"]/100, 1)) + ')', "italic":False,"color":"gray"}])
 			lore.append([{"text":" <", "italic":False},{"translate":"anemoland.common.weapon_skill"},{"text":str(i+1) + "> "},{"translate":"anemoland.weapon_skill." + weapon_skill["name"] + ".name"},{"text":" (","color":"gray"},{"translate":"anemoland.common.gauge_consumption","color":"gray"},{"text":" " + str(round(weapon_skills[weapon_skill["name"]]["gauge_consume"]/100, 1)) + ')',"color":"gray"}])
+			translate_with = []
+			for attack_damage_data in weapon_skills[weapon_skill["name"]]["attack_damage_list"]:
+				translate_with_item = []
+				first_flag = True
+				if "physical" in attack_damage_data:
+					if first_flag:
+						first_flag = False
+					translate_with_item.append({"text":"🗡" + str(int( ( attack_damage_data["physical"]["base"] + (int(level)-1) ) * attack_damage_data["physical"]["mul"] ))})
+				for elem_id, elem_data in attack_damage_data.items():
+					if elem_id == "physical":
+						continue
+					else:
+						if first_flag:
+							first_flag = False
+						else:
+							translate_with_item.append({"text":"+"})
+						translate_with_item.append({"text":element_icon[elem_id] + attack_damage_data[elem_id]["base"] + attack_damage_data[elem_id]["mul"] * (int(level)-1)})
+				translate_with.append(translate_with_item)
 			for j in range(weapon_skills[weapon_skill["name"]]["lore_len"]):
-				lore.append([{"text":"    ", "color": "dark_gray", "italic":False},{"translate":"anemoland.weapon_skill." + weapon_skill["name"] + ".lore." + str(j+1)}])
+				lore.append([{"text":"    ", "color": "dark_gray", "italic":False},{"translate":"anemoland.weapon_skill." + lore_translate_name + ".lore." + str(j+1), "with": translate_with}])
 		function_.update(function="minecraft:set_lore", entity="this", lore = lore, mode = "replace_all")
 		functions.append(function_)
 		lore.append({"text":"","italic":False,"color":"dark_gray"})
@@ -95,7 +134,7 @@ for weapon_data in weapon_database["weapons"]:
 		for weapon_skill in weapon_data["weapon_skills"]:
 			if i > 0:
 				weapon_skills_str += ","
-			weapon_skills_str += "{id:\"" + weapon_skill["name"] + "\",gauge_consume:" + str(weapon_skills[weapon_skill["name"]]["gauge_consume"]) + ",mul:" + str(weapon_skills[weapon_skill["name"]]["mul"]) + "}"
+			weapon_skills_str += "{id:\"" + weapon_skill["name"] + "\",gauge_consume:" + str(weapon_skills[weapon_skill["name"]]["gauge_consume"]) + ",attack_damage:" + str(weapon_skills[weapon_skill["name"]]["attack_damage_list"]).replace("'",'') + "}"
 			i += 1
 		power_up_str = ''
 		if str(int(level)+1) in weapon_data["levels"]:
@@ -105,8 +144,11 @@ for weapon_data in weapon_database["weapons"]:
 			for material in next_level_data["materials"]:
 				power_up_str += '{id:"' + material["id"] + '",loot_table:"' + material["loot_table"] + '",count:' + str(material["count"]) + '}'
 			power_up_str += ']'
+		element_attack = {}
+		if "element_attack_damage" in weapon_data:
+			element_attack = weapon_data[ "element_attack_damage"]
 		function_.update(function="minecraft:set_custom_data",
-			tag = "{item_type:\"weapon\",weapon_type:\"" + weapon_data["weapon_type"] + "\",loot_table:\"item/weapon/" + weapon_data["name"] + "\",sell_price:" + str(sell_price) + ",power_up:{" + power_up_str + "},status:{level:" + str(level) + ",attack:{base:" + str(attack_damage_value) + ",mul:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "},weapon_skills:[" + weapon_skills_str + "],skill_gauge:{get:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "}}}"
+			tag = "{item_type:\"weapon\",weapon_type:\"" + weapon_data["weapon_type"] + "\",loot_table:\"item/weapon/" + weapon_data["name"] + "\",sell_price:" + str(sell_price) + ",power_up:{" + power_up_str + "},status:{level:" + str(level) + ",attack:{base:" + str(attack_damage_value) + ",mul:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "},elemental_attack:" + str(element_attack) + ",weapon_skills:[" + weapon_skills_str + "],skill_gauge:{get:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "}}}"
 			)
 		functions.append(function_)
 

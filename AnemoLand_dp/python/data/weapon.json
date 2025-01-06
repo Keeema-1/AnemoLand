@@ -3,56 +3,21 @@
 		"sweep_attack": {
 			"display_name": "薙ぎ払い",
 			"gauge_consume": 100,
-			"mul": 50,
+			"attack_damage_list": [
+				{"physical": {"base": 3, "level_bonus": 1, "mul": 5}},
+				{"physical": {"base": 3, "level_bonus": 1, "mul": 1}}
+			],
 			"lore_len": 3
 		},
-		"strong_attack": {
-			"display_name": "強撃",
+		"sweep_attack_2": {
+			"display_name": "薙ぎ払いII",
 			"gauge_consume": 100,
-			"mul": 80,
-			"lore_len": 1
-		},
-		"strong_dash_attack": {
-			"display_name": "強撃【ダッシュ強化】",
-			"gauge_consume": 100,
-			"mul": 80,
-			"lore_len": 3
-		},
-		"jump_attack": {
-			"display_name": "飛翔斬り",
-			"gauge_consume": 100,
-			"mul": 120,
-			"lore_len": 3
-		},
-		"firework_helmet_breaker": {
-			"display_name": "兜割り【祭】",
-			"gauge_consume": 100,
-			"mul": 10,
-			"lore_len": 4
-		},
-		"impact_crater": {
-			"display_name": "インパクトクレーター",
-			"gauge_consume": 100,
-			"mul": 80,
-			"lore_len": 5
-		},
-		"mushroom_attack": {
-			"display_name": "マッシュルームファング",
-			"gauge_consume": 100,
-			"mul": 60,
-			"lore_len": 3
-		},
-		"dust_impact_crater": {
-			"display_name": "インパクトクレーター【爆塵】",
-			"gauge_consume": 100,
-			"mul": 80,
-			"lore_len": 6
-		},
-		"ice_beam": {
-			"display_name": "アイスビーム",
-			"gauge_consume": 100,
-			"mul": 20,
-			"lore_len": 6
+			"attack_damage_list": [
+				{"physical": {"base": 4, "level_bonus": 1, "mul": 5}},
+				{"physical": {"base": 4, "level_bonus": 1, "mul": 1}}
+			],
+			"lore_len": 3,
+			"lore_translate_reference": "sweep_attack"
 		}
 	},
 	"weapon_types":{
@@ -88,20 +53,6 @@
 	},
 	"weapons":[
 		{
-			"name": "test_sword1",
-			"display_name": "テストソード1",
-			"weapon_type": "sword",
-			"custom_model_data": 3,
-			"attack_damage": 4,
-			"attack_speed": 1.6,
-			"weapon_skills":[
-				{"name": "sweep_attack"},
-				{"name": "strong_attack"},
-				{"name": "jump_attack"}
-			],
-			"levels": {"1": {"sell_price": 0}}
-		},
-		{
 			"name": "wooden_sword",
 			"display_name": "木の剣",
 			"weapon_type": "sword",
@@ -135,7 +86,7 @@
 			"attack_damage": 4,
 			"attack_speed": 1.6,
 			"weapon_skills":[
-				{"name": "sweep_attack"}
+				{"name": "sweep_attack_2"}
 			],
 			"levels": {
 				"1": {"sell_price": 240},
@@ -143,159 +94,6 @@
 				"3": {"materials": [{"id":"gold_medal", "loot_table":"item/medal/common/gold", "count":6}], "sell_price": 240}
 			},
 			"price": {"buy": 300}
-		},
-		{
-			"name": "iron_katana",
-			"display_name": "鉄の刀",
-			"weapon_type": "katana",
-			"custom_model_data": 303,
-			"attack_damage": 4,
-			"attack_speed": 1.6,
-			"weapon_skills":[
-				{"name": "sweep_attack"}
-			],
-			"levels": {
-				"1": {"sell_price": 400},
-				"2": {"materials": [{"id":"silver_medal", "loot_table":"item/medal/common/silver", "count":6}], "sell_price": 400},
-				"3": {"materials": [{"id":"gold_medal", "loot_table":"item/medal/common/gold", "count":6}], "sell_price": 400}
-			}
-		},
-		{
-			"name": "ojinushi_katana",
-			"display_name": "祭獅子の刀",
-			"weapon_type": "katana",
-			"custom_model_data": 311,
-			"attack_damage": 4.5,
-			"attack_speed": 1.6,
-			"weapon_skills":[
-				{"name": "firework_helmet_breaker"}
-			],
-			"levels": {
-				"2": {"sell_price": 400},
-				"3": {"materials": [{"id":"ojinushi_gold_medal", "loot_table":"item/medal/ojinushi/gold", "count":6}], "sell_price": 400}
-			}
-		},
-		{
-			"name": "debug_sword",
-			"display_name": "デバッグソード",
-			"weapon_type": "sword",
-			"custom_model_data": 2,
-			"attack_damage": 999,
-			"attack_speed": 1.6,
-			"weapon_skills":[
-				{"name": "sweep_attack"}
-			],
-			"levels": {"1": {"sell_price": 0}}
-		},
-		{
-			"name": "stone_axe",
-			"display_name": "石の斧",
-			"weapon_type": "axe",
-			"custom_model_data": 102,
-			"attack_damage": 3,
-			"attack_speed": 0.8,
-			"weapon_skills":[
-				{"name": "strong_attack"}
-			],
-			"levels": {"1": {"sell_price": 80}},
-			"price": {"buy": 100}
-		},
-		{
-			"name": "iron_axe",
-			"display_name": "鉄の斧",
-			"weapon_type": "axe",
-			"custom_model_data": 103,
-			"attack_damage": 4,
-			"attack_speed": 0.8,
-			"weapon_skills":[
-				{"name": "strong_attack"}
-			],
-			"levels": {
-				"1": {"sell_price": 240},
-				"2": {"materials": [{"id":"silver_medal", "loot_table":"item/medal/common/silver", "count":6}], "sell_price": 240},
-				"3": {"materials": [{"id":"gold_medal", "loot_table":"item/medal/common/gold", "count":6}], "sell_price": 240}
-			},
-			"price": {"buy": 300}
-		},
-		{
-			"name": "king_boar_axe",
-			"display_name": "ボアアックス",
-			"weapon_type": "axe",
-			"custom_model_data": 111,
-			"attack_damage": 4,
-			"attack_speed": 0.8,
-			"weapon_skills":[
-				{"name": "strong_dash_attack"}
-			],
-			"levels": {
-				"1": {"sell_price": 80},
-				"2": {"materials": [{"id":"king_boar_silver_medal", "loot_table":"item/medal/king_boar/silver", "count":6}], "sell_price": 400},
-				"3": {"materials": [{"id":"king_boar_gold_medal", "loot_table":"item/medal/king_boar/gold", "count":6}], "sell_price": 400}
-			}
-		},
-		{
-			"name": "martellos_hammer",
-			"display_name": "マルテロハンマー",
-			"weapon_type": "hammer",
-			"custom_model_data": 211,
-			"attack_damage": 4.5,
-			"attack_speed": 0.8,
-			"weapon_skills":[
-				{"name": "impact_crater"}
-			],
-			"levels": {
-				"1": {"sell_price": 400},
-				"2": {"materials": [{"id":"martellos_silver_medal", "loot_table":"item/medal/martellos/silver", "count":6}], "sell_price": 400},
-				"3": {"materials": [{"id":"martellos_gold_medal", "loot_table":"item/medal/martellos/gold", "count":6}], "sell_price": 400}
-			}
-		},
-		{
-			"name": "muscleroom_mace",
-			"display_name": "シュルームメイス",
-			"weapon_type": "mace",
-			"custom_model_data": 411,
-			"attack_damage": 4.5,
-			"attack_speed": 1.6,
-			"weapon_skills":[
-				{"name": "mushroom_attack"}
-			],
-			"levels": {
-				"1": {"sell_price": 400},
-				"2": {"materials": [{"id":"muscleroom_silver_medal", "loot_table":"item/medal/muscleroom/silver", "count":6}], "sell_price": 400},
-				"3": {"materials": [{"id":"muscleroom_gold_medal", "loot_table":"item/medal/muscleroom/gold", "count":6}], "sell_price": 400}
-			}
-		},
-		{
-			"name": "bagikeros_hammer",
-			"display_name": "バギケロハンマー",
-			"weapon_type": "hammer",
-			"custom_model_data": 212,
-			"attack_damage": 4.5,
-			"attack_speed": 0.8,
-			"weapon_skills":[
-				{"name": "dust_impact_crater"}
-			],
-			"levels": {
-				"1": {"sell_price": 400},
-				"2": {"materials": [{"id":"bagikeros_silver_medal", "loot_table":"item/medal/bagikeros/silver", "count":6}], "sell_price": 400},
-				"3": {"materials": [{"id":"bagikeros_gold_medal", "loot_table":"item/medal/bagikeros/gold", "count":6}], "sell_price": 400}
-			}
-		},
-		{
-			"name": "carnara_spear",
-			"display_name": "カルナスピア",
-			"weapon_type": "spear",
-			"custom_model_data": 511,
-			"attack_damage": 4.5,
-			"attack_speed": 0.8,
-			"weapon_skills":[
-				{"name": "ice_beam"}
-			],
-			"levels": {
-				"1": {"sell_price": 400},
-				"2": {"materials": [{"id":"carnara_silver_medal", "loot_table":"item/medal/carnara/silver", "count":6}], "sell_price": 400},
-				"3": {"materials": [{"id":"carnara_gold_medal", "loot_table":"item/medal/carnara/gold", "count":6}], "sell_price": 400}
-			}
 		}
 	]
 }

@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " +6"
+										"text": " 🗡7"
 									}
 								],
 								[
@@ -83,7 +83,7 @@
 										"text": "1> "
 									},
 									{
-										"translate": "anemoland.weapon_skill.sweep_attack.name"
+										"translate": "anemoland.weapon_skill.sweep_attack_2.name"
 									},
 									{
 										"text": " (",
@@ -105,7 +105,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.sweep_attack.lore.1"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.1",
+										"with": [
+											[
+												{
+													"text": "🗡30"
+												}
+											],
+											[
+												{
+													"text": "🗡6"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -115,7 +127,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.sweep_attack.lore.2"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.2",
+										"with": [
+											[
+												{
+													"text": "🗡30"
+												}
+											],
+											[
+												{
+													"text": "🗡6"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -125,7 +149,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.sweep_attack.lore.3"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.3",
+										"with": [
+											[
+												{
+													"text": "🗡30"
+												}
+											],
+											[
+												{
+													"text": "🗡6"
+												}
+											]
+										]
 									}
 								],
 								{
@@ -170,7 +206,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/iron_sword\",sell_price:240,power_up:{},status:{level:3,attack:{base:6,mul:10},weapon_skills:[{id:\"sweep_attack\",gauge_consume:100,mul:50}],skill_gauge:{get:10}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/iron_sword\",sell_price:240,power_up:{},status:{level:3,attack:{base:6,mul:10},elemental_attack:{},weapon_skills:[{id:\"sweep_attack_2\",gauge_consume:100,attack_damage:[{physical: {base: 4, level_bonus: 1, mul: 5}}, {physical: {base: 4, level_bonus: 1, mul: 1}}]}],skill_gauge:{get:10}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

@@ -14,7 +14,14 @@
     scoreboard players operation #damage.src.attack.base temp = @s attack.base_total
 
 # 武器倍率
-    execute store result score #damage.src.attack.mul temp run data get storage temp:_ data.player_data.SelectedItem.components."minecraft:custom_data".status.attack.mul
-    execute unless score #damage.src.attack.mul temp matches 1.. run scoreboard players set #damage.src.attack.mul temp 10
+    scoreboard players operation #damage.src.attack.mul temp = @s attack.mul
+    # execute store result score #damage.src.attack.mul temp run data get storage temp:_ data.player_data.SelectedItem.components."minecraft:custom_data".status.attack.mul
+    # execute unless score #damage.src.attack.mul temp matches 1.. run scoreboard players set #damage.src.attack.mul temp 10
+
+# 属性攻撃力
+    scoreboard players operation #damage.src.attack.fire.base temp = @s attack.fire.base
+    scoreboard players operation #damage.src.attack.water.base temp = @s attack.water.base
+    scoreboard players operation #damage.src.attack.ice.base temp = @s attack.ice.base
+    scoreboard players operation #damage.src.attack.thunder.base temp = @s attack.thunder.base
 
 function anemoland:sys/player/skill/attack/0

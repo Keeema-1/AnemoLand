@@ -1,5 +1,6 @@
 
 execute if data storage temp:_ data.weapon_skill_data{id:"sweep_attack"} run function anemoland_contents:sys/player/weapon_skill/hit/sweep_attack/0
+execute if data storage temp:_ data.weapon_skill_data{id:"sweep_attack_2"} run function anemoland_contents:sys/player/weapon_skill/hit/sweep_attack/0
 # execute if data storage temp:_ data.weapon_skill_data{id:"strong_attack"} run function anemoland:sys/player/item/weapon/weapon_skill/strong_attack/hit
 # execute if data storage temp:_ data.weapon_skill_data{id:"jump_attack"} run function anemoland:sys/player/item/weapon/weapon_skill/jump_attack/hit
 # execute if data storage temp:_ data.weapon_skill_data{id:"firework_helmet_breaker"} run function anemoland:sys/player/item/weapon/weapon_skill/firework_helmet_breaker/hit

@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " +4"
+										"text": " 🗡+4"
 									}
 								],
 								[
@@ -264,7 +264,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/test_sword1\",sell_price:0,power_up:{},status:{level:1,attack:{base:4,mul:10},weapon_skills:[{id:\"sweep_attack\",gauge_consume:100,mul:50},{id:\"strong_attack\",gauge_consume:100,mul:80},{id:\"jump_attack\",gauge_consume:100,mul:120}],skill_gauge:{get:10}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/test_sword1\",sell_price:0,power_up:{},status:{level:1,attack:{base:4,mul:10},elemental_attack:{},weapon_skills:[{id:\"sweep_attack\",gauge_consume:100,mul:50},{id:\"strong_attack\",gauge_consume:100,mul:80},{id:\"jump_attack\",gauge_consume:100,mul:120}],skill_gauge:{get:10}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

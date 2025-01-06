@@ -313,9 +313,9 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 120, "ice": 50}},
-            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 120, "ice": 50}},
-            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 2.0, "elemental_damage_mul": {"fire": 120, "ice": 50}}
+            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 120, "ice": 60}},
+            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 170, "ice": 60}},
+            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 2.0, "elemental_damage_mul": {"fire": 140, "ice": 60}}
         },
         "root_entity": "pig",
         "display_height_add": 0.5,
@@ -512,10 +512,10 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3, "elemental_damage_mul": {"fire":120,"ice":50}},
-            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
-            "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":120,"ice":50}},
-            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 2, "elemental_damage_mul": {"fire":120,"ice":50}}
+            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3, "elemental_damage_mul": {"fire":120,"ice":60}},
+            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":170,"ice":60}},
+            "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire":140,"ice":60}},
+            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 2, "elemental_damage_mul": {"fire":140,"ice":60}}
         },
         "root_entity": "pig",
         "display_height_add": 1.0,

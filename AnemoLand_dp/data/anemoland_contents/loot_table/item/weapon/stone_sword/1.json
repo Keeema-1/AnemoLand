@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " +3"
+										"text": " 🗡4"
 									}
 								],
 								[
@@ -105,7 +105,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.sweep_attack.lore.1"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.1",
+										"with": [
+											[
+												{
+													"text": "🗡15"
+												}
+											],
+											[
+												{
+													"text": "🗡3"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -115,7 +127,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.sweep_attack.lore.2"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.2",
+										"with": [
+											[
+												{
+													"text": "🗡15"
+												}
+											],
+											[
+												{
+													"text": "🗡3"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -125,7 +149,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.sweep_attack.lore.3"
+										"translate": "anemoland.weapon_skill.sweep_attack.lore.3",
+										"with": [
+											[
+												{
+													"text": "🗡15"
+												}
+											],
+											[
+												{
+													"text": "🗡3"
+												}
+											]
+										]
 									}
 								],
 								{
@@ -170,7 +206,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/stone_sword\",sell_price:80,power_up:{},status:{level:1,attack:{base:3,mul:10},weapon_skills:[{id:\"sweep_attack\",gauge_consume:100,mul:50}],skill_gauge:{get:10}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/stone_sword\",sell_price:80,power_up:{},status:{level:1,attack:{base:3,mul:10},elemental_attack:{},weapon_skills:[{id:\"sweep_attack\",gauge_consume:100,attack_damage:[{physical: {base: 3, level_bonus: 1, mul: 5}}, {physical: {base: 3, level_bonus: 1, mul: 1}}]}],skill_gauge:{get:10}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

@@ -159,7 +159,7 @@ for mob_name, mob_data in mob_database.items():
 	if "target_change" in mob_data and "when_damaged" in mob_data["target_change"] and "preset" in mob_data["target_change"]["when_damaged"]:
 		output.append('function ' + namespace_core + ':sys/entity/common/target/change/preset/' + mob_data["target_change"]["when_damaged"]["preset"] + '/0\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/damage/dst/get_status\n')
-	output.append('execute unless score #weapon_skill_flag temp matches 1.. if score #health temp matches -9.. run return 1\n')
+	# output.append('execute unless score #weapon_skill_flag temp matches 1.. if score #charge_rate temp matches -9.. run return 1\n')
 	output.append('execute at @s anchored eyes facing entity @p eyes rotated ~ 0 positioned ^ ^ ^0.5 run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/common\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -829,9 +829,9 @@ for mob_name, mob_data in mob_database.items():
 	output = []
 	output.append('execute unless score #new_entity.level temp matches 0.. run scoreboard players set #new_entity.level temp ' + str(mob_data["status"]["default_level"]) + '\n')
 	output.append('scoreboard players operation @s level = #new_entity.level temp\n')
-	output.append('scoreboard players set @s max_health ' + str(mob_data["status"]["max_health"]["mul"]) + '\n')
+	output.append('scoreboard players set @s max_health ' + str(int(mob_data["status"]["max_health"]["mul"]*10)) + '\n')
 	output.append('scoreboard players operation @s max_health *= #new_entity.level temp\n')
-	output.append('scoreboard players add @s max_health ' + str(mob_data["status"]["max_health"]["base"]) + '\n')
+	output.append('scoreboard players add @s max_health ' + str(int(mob_data["status"]["max_health"]["base"]*10)) + '\n')
 	if mob_data["type"] == "boss":
 		output.append('scoreboard players set #rank_mul temp 100\n')
 		output.append('execute if score #new_entity.level temp matches 20.. run scoreboard players add #rank_mul temp 20\n')
@@ -849,7 +849,7 @@ for mob_name, mob_data in mob_database.items():
 	output.append('scoreboard players operation @s health = @s max_health\n')
 	output.append('scoreboard players set @s attack.base ' + str(round(100*mob_data["status"]["attack_damage"]["mul"])) + '\n')
 	output.append('scoreboard players operation @s attack.base *= #new_entity.level temp\n')
-	output.append('scoreboard players set #temp temp 100\n')
+	output.append('scoreboard players set #temp temp 10\n')
 	output.append('scoreboard players operation @s attack.base /= #temp temp\n')
 	if mob_data["status"]["attack_damage"]["base"] > 0:
 		output.append('scoreboard players add @s attack.base ' + str(mob_data["status"]["attack_damage"]["base"]) + '\n')
@@ -882,7 +882,7 @@ for mob_name, mob_data in mob_database.items():
 		output.append('team join player_side\n')
 		output.append('tag @s add player_side\n')
 		output.append('scoreboard players operation @s player_id = #player_id temp\n')
-		output.append('scoreboard players set @s max_health ' + str(mob_data["status"]["max_health"]) + '\n')
+		output.append('scoreboard players set @s max_health ' + str(int(mob_data["status"]["max_health"]*10)) + '\n')
 		output.append('scoreboard players operation @s health = @s max_health\n')
 		output.append('scoreboard players set @s attack.base ' + str(mob_data["status"]["attack_damage"]) + '\n')
 		output.append('scoreboard players set @s attack.mul 10\n')
@@ -1099,14 +1099,14 @@ for mob_name, mob_data in mob_database.items():
 			damage_mul += ",{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" " + str(part_data["armor_mul"]) + "\", \"italic\":false,\"color\":\"white\"}"
 		if "elemental_damage_mul" in part_data:
 			for elem_name, elem_damage_mul in part_data["elemental_damage_mul"].items():
-				if elem_damage_mul == 100:
-					continue
 				if elem_damage_mul > 100:
 					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + elem_name + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"aqua\"}"
 				elif elem_damage_mul < 100:
 					damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + elem_name + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"gray\"}"
 		damage_mul += "]"
 		lore.append(damage_mul)
+	lore.append("[{\"text\":\"  \"},{\"translate\":\"anemoland.dictionary.elem_mul_value_detail\",\"italic\":false,\"color\":\"dark_gray\"}]")
+
 
 	output = {
 		"type": "minecraft:crafting_shapeless",

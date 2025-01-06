@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " +4.5"
+										"text": " 🗡+4.5"
 									}
 								],
 								[
@@ -190,7 +190,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"hammer\",loot_table:\"item/weapon/martellos_hammer\",sell_price:400,power_up:{add_level:1,materials:[{id:\"martellos_silver_medal\",loot_table:\"item/medal/martellos/silver\",count:6}]},status:{level:1,attack:{base:4.5,mul:18},weapon_skills:[{id:\"impact_crater\",gauge_consume:100,mul:80}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"hammer\",loot_table:\"item/weapon/martellos_hammer\",sell_price:400,power_up:{add_level:1,materials:[{id:\"martellos_silver_medal\",loot_table:\"item/medal/martellos/silver\",count:6}]},status:{level:1,attack:{base:4.5,mul:18},elemental_attack:{},weapon_skills:[{id:\"impact_crater\",gauge_consume:100,mul:80}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

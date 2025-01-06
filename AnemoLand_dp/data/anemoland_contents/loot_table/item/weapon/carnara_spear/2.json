@@ -39,7 +39,21 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " +5.5"
+										"text": " 🗡+3.5"
+									}
+								],
+								[
+									{
+										"text": "  ⏫ ",
+										"italic": false,
+										"color": "aqua"
+									},
+									{
+										"translate": "anemoland.common.element_attack_damage"
+									},
+									{
+										"text": " ❄+2.0",
+										"color": "aqua"
 									}
 								],
 								[
@@ -200,7 +214,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"spear\",loot_table:\"item/weapon/carnara_spear\",sell_price:400,power_up:{add_level:1,materials:[{id:\"carnara_gold_medal\",loot_table:\"item/medal/carnara/gold\",count:6}]},status:{level:2,attack:{base:5.5,mul:18},weapon_skills:[{id:\"ice_beam\",gauge_consume:100,mul:20}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"spear\",loot_table:\"item/weapon/carnara_spear\",sell_price:400,power_up:{add_level:1,materials:[{id:\"carnara_gold_medal\",loot_table:\"item/medal/carnara/gold\",count:6}]},status:{level:2,attack:{base:3.5,mul:18},elemental_attack:{'ice': 2.0},weapon_skills:[{id:\"ice_beam\",gauge_consume:100,mul:20}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",
