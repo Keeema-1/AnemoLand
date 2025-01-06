@@ -185,4 +185,4 @@ scoreboard players set #beta1.random_event_cycle score 3
 
 forceload add 0 0
 
-tellraw @a "AnmoLand: Reloaded"
+tellraw @a "AnemoLand: Reloaded"

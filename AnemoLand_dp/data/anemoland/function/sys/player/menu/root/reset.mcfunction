@@ -6,7 +6,7 @@
     item replace entity @s inventory.0 with knowledge_book[custom_data={menu:1b},custom_model_data=21,item_name='{"translate":"anemoland.menu.status"}']
     function anemoland:sys/player/menu/root/update_status/0
 # 1
-    item replace entity @s inventory.1 with knowledge_book[custom_data={menu:1b},custom_model_data=101,item_name='{"translate":"anemoland.menu.pet"}']
+    item replace entity @s inventory.1 with knowledge_book[custom_data={menu:1b},custom_model_data=59,item_name='{"translate":"anemoland.menu.pet"}']
 # 2
     item replace entity @s inventory.2 with knowledge_book[custom_data={menu:1b},custom_model_data=104,item_name='{"translate":"anemoland.menu.equipment"}']
 # 3

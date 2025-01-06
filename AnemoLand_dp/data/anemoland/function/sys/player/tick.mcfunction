@@ -31,8 +31,9 @@ tag @s add player_check
     function anemoland:sys/player/title/0
 # プレイヤーに流す音楽の処理
     function anemoland:sys/player/music/0
+# ペット
+    function anemoland:sys/player/pet/0
 # 一時的にコメントアウト
-    # function anemoland:sys/player/pet/0
     # execute if score @s area2 matches 1.. run function anemoland:sys/player/skill/tick/0
 
 tag @s remove player_check

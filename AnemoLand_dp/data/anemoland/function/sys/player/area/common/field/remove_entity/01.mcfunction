@@ -1,3 +1,3 @@
 
 tp ~ -80 ~
-execute at @s run function anemoland:sys/entity/branch/aj_remove
+execute at @s run function anemoland_contents:sys/entity/branch/aj_remove

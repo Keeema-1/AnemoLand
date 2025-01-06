@@ -792,6 +792,7 @@ for mob_name, mob_data in mob_database.items():
 		makedir(path)
 		output = []
 		output.append('tag @s add variant.' + variant_id + '\n')
+		output.append('data modify entity @s CustomName set value \'{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name"}\'\n')
 		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"enemy"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
 		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"pet"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name","color": "aqua"}]\'}\n')
 		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"player_side"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name","color": "aqua"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
