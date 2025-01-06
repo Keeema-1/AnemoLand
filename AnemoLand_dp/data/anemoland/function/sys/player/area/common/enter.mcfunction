@@ -20,7 +20,7 @@ tag @s remove fishing.big
 # function anemoland:sys/player/common/player_storage/write
 
 tag @s add skip_inventory_changed
-function anemoland:sys/player/menu/main/init_from_other_func
+function anemoland:sys/player/menu/root/reset_from_other_func
 tag @s remove skip_inventory_changed
 
 scoreboard players set @s sneak_time -20

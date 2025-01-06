@@ -1,9 +1,4 @@
-# playsound ui.button.click master @a ~ ~ ~ 0.3 1
-
-data modify storage temp:_ data.drop_item set from storage temp:_ data.player_data.Inventory[{Slot:13b}]
-execute if data storage temp:_ data.drop_item.id run function anemoland:sys/common/drop_item/0
-
-scoreboard players set #click_flag temp 1
+function anemoland:sys/player/menu/common/click
 
 scoreboard players set #selected_set temp 2
 data modify storage temp:_ data.player_storage.equipments.selected_set set value 2
@@ -17,5 +12,3 @@ function anemoland:sys/player/menu/armor/main/init
 function anemoland:sys/player/menu/armor_update/force
 
 playsound item.armor.equip_leather player @a ~ ~ ~ 2 1
-
-return 1

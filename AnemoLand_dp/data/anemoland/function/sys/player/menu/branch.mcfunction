@@ -10,7 +10,7 @@
 #
 # @within function anemoland:sys/player/menu/0
 
-execute unless score @s menu0 matches 1.. run return run function anemoland:sys/player/menu/main/0
+execute unless score @s menu0 matches 1.. run return run function anemoland:sys/player/menu/root/0
 execute if score @s menu0 matches 1 run return run function anemoland:sys/player/menu/pet/0
 execute if score @s menu0 matches 2 run return run function anemoland:sys/player/menu/armor/0
 execute if score @s menu0 matches 3 run return run function anemoland:sys/player/menu/tp/0
