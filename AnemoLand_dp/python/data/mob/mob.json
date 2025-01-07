@@ -87,7 +87,7 @@
                         "predicate": "",
                         "knockback": "facing1_from_back_5",
                         "mul": 10,
-                        "position": [0,0,1],
+                        "position": [0,0,1.5],
                         "size": [2,4,2],
                         "parts":["root"]
                     }
@@ -124,7 +124,7 @@
         "custom_model_data": 20,
         "icon_scale": 1.5,
         "dictionary": {
-            "recipe_prefix": "01020",
+            "recipe_prefix": "01030",
             "number": "02",
             "detail": ["目の前の敵めがけて突進を繰り返す。"],
             "main_areas": ["forest"],
@@ -171,12 +171,12 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 1.0}
+            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 1.6}
         },
-        "root_entity": "hoglin",
+        "root_entity": "pig",
         "display_height_add": 0.5,
         "status": {
-            "default_level": 5,
+            "default_level": 10,
             "max_health": {"base": 20, "mul": 2},
             "attack_damage": {"base": 4, "mul": 0.4},
             "gold": {"base": 10, "mul": 1.5},
@@ -320,7 +320,7 @@
         "root_entity": "pig",
         "display_height_add": 0.5,
         "status": {
-            "default_level": 5,
+            "default_level": 10,
             "max_health": {"base": 20, "mul": 2},
             "attack_damage": {"base": 3, "mul": 0.4},
             "gold": {"base": 10, "mul": 1.5},
@@ -333,6 +333,229 @@
         },
         "price": {
             "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "garapas": {
+        "aj_name": "garapas",
+        "display_name": "ガラパス",
+        "type": "mob",
+        "aj_cmd_offset": 300,
+        "custom_model_data": 40,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "01040",
+            "number": "04",
+            "detail": [""],
+            "main_areas": ["waterside"],
+            "attack_elements": ["physical", "water"]
+        },
+        "target_change": {
+            "when_damaged": {"preset": "mob_default"}
+        },
+        "animations": {
+            "default": {},
+            "die": {},
+            "walk": {},
+            "bite": {},
+            "water_front": {}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "walk": {
+                "score": 1
+            },
+            "bite": {
+                "score": 2
+            },
+            "water_front": {
+                "score": 3
+            },
+            "keep_distance": {
+                "score": 4
+            }
+        },
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 8,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 5,
+                                    "bite": 1
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 5,
+                                    "bite": 0
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "bite": 2
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "bite": 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "attacks": {
+            "bite": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_5",
+                        "mul": 10,
+                        "position": [0,0,2],
+                        "size": [2,4,2],
+                        "parts":["root"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 60, "water": 40, "ice": 120}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 10,
+            "max_health": {"base": 20, "mul": 2},
+            "attack_damage": {"base": 3, "mul": 0.4},
+            "gold": {"base": 10, "mul": 1.5},
+            "xp": {"base": 10, "mul": 1.5}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 5, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10
+        },
+        "price": {
+            "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "king_boar": {
+        "aj_name": "boar",
+        "display_name": "キングボア",
+        "type": "boss",
+        "aj_cmd_offset": 100,
+        "custom_model_data": 1000,
+        "icon_scale": 1.75,
+        "dictionary": {
+            "recipe_prefix": "02010",
+            "number": "01",
+            "detail": ["ボアの群れのボス。","体当たりを繰り返すほど皮膚が硬くなっていくため、体の傷は強さの証でもある。"],
+            "main_areas": ["森林"],
+            "attack_elements": ["physical"]
+        },
+        "animation_prefix": "large_",
+        "unlock": {"armor": ["king_boar"]},
+        "animations": {
+            "default": {},
+            "die": {},
+            "walk": {},
+            "run": {},
+            "brake": {},
+            "bark": {},
+            "dive": {}
+        },
+        "variant_prefix": "king_",
+        "skin_variants": {
+            "default": {},
+            "damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "bark": {
+                "score": 1
+            },
+            "target": {
+                "score": 11
+            },
+            "tackle": {
+                "score": 12
+            },
+            "dive": {
+                "score": 13
+            }
+        },
+        "attacks": {
+            "tackle": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "tackle1_15",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["root"]
+                    }
+                ]
+            },
+            "dive": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_10",
+                        "mul": 10,
+                        "position": [0,0,2],
+                        "size": [5,4,5],
+                        "parts":["root"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 2.7}
+        },
+        "root_entity": "pig",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 15,
+            "max_health": {"base": 100, "mul": 20},
+            "attack_damage": {"base": -2, "mul": 0.8},
+            "gold": {"base": 20, "mul": 6},
+            "xp": {"base": 20, "mul": 6}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 10, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 2, "buy_required": 2}
         }
     },
     "squirrel_head": {

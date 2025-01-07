@@ -16,7 +16,7 @@
 								[
 									{"text":"  "},
 									{
-										"translate": "item.medal.common.lore.1",
+										"translate": "anemoland.item.medal.common.lore.1",
 										"italic": false,
 										"color": "white"
 									}
@@ -24,7 +24,7 @@
 								[
 									{"text":"  "},
 									{
-										"translate": "item.medal.common.lore.2",
+										"translate": "anemoland.item.medal.common.lore.2",
 										"with": [{"translate": "common.rank.bronze"}],
 										"italic": false,
 										"color": "white"
@@ -33,7 +33,7 @@
 								[
 									{"text":"  "},
 									{
-										"translate": "item.medal.common.lore.3",
+										"translate": "anemoland.item.medal.common.lore.3",
 										"italic": false,
 										"color": "white"
 									}
@@ -53,7 +53,7 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "item.medal.common.name",
+								"translate": "anemoland.item.medal.common.name",
 								"with": [{"translate": "common.rank.bronze"}],
 								"italic": false,
 								"color": "gold"

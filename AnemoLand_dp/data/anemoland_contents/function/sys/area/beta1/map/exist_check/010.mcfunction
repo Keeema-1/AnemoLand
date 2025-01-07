@@ -5,3 +5,8 @@ execute if entity @s[tag=field_26] unless entity @a[scores={area0=100,area1=1,ar
 execute if entity @s[tag=field_25] unless entity @a[scores={area0=100,area1=1,area2=205}] run tag @s remove player_exist
 execute if entity @s[tag=field_24] unless entity @a[scores={area0=100,area1=1,area2=204}] run tag @s remove player_exist
 execute if entity @s[tag=field_34] unless entity @a[scores={area0=100,area1=1,area2=304}] run tag @s remove player_exist
+execute if entity @s[tag=field_23] unless entity @a[scores={area0=100,area1=1,area2=203}] run tag @s remove player_exist
+execute if entity @s[tag=field_33] unless entity @a[scores={area0=100,area1=1,area2=303}] run tag @s remove player_exist
+execute if entity @s[tag=field_22] unless entity @a[scores={area0=100,area1=1,area2=202}] run tag @s remove player_exist
+execute if entity @s[tag=field_32] unless entity @a[scores={area0=100,area1=1,area2=302}] run tag @s remove player_exist
+execute if entity @s[tag=field_31] unless entity @a[scores={area0=100,area1=1,area2=301}] run tag @s remove player_exist

@@ -6,10 +6,9 @@ execute as @a[distance=..64] at @s run function anemoland_contents:sys/player/mu
 scoreboard players operation #sec temp = @p battle_timer
 scoreboard players set #temp temp 20
 scoreboard players operation #sec temp /= #temp temp
-scoreboard players operation #min temp = #temp temp
+scoreboard players operation #min temp = #sec temp
 scoreboard players set #temp temp 60
 scoreboard players operation #min temp /= #temp temp
-scoreboard players set #temp temp 60
 scoreboard players operation #sec temp %= #temp temp
 
 execute if score #min temp matches 1.. run tellraw @a[distance=..64] [{"text":"タイム: ","color":"yellow"},{"score":{"name":"#min","objective":"temp"}},{"text":"分 "},{"score":{"name":"#sec","objective":"temp"}},{"text":"秒"}]

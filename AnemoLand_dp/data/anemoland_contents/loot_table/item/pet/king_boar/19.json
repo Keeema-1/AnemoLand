@@ -1,0 +1,144 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:carrot_on_a_stick",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:sequence",
+							"functions": [
+								{
+									"function": "minecraft:set_lore",
+									"entity": "this",
+									"lore": [
+										[
+											{
+												"text": "  Lv.19",
+												"italic": false,
+												"color": "yellow"
+											}
+										],
+										[
+											{
+												"text": "  HP ",
+												"italic": false,
+												"color": "blue"
+											},
+											{
+												"text": "400"
+											}
+										],
+										[
+											{
+												"text": "  ",
+												"italic": false,
+												"color": "blue"
+											},
+											{
+												"translate": "anemoland.common.attack_damage"
+											},
+											{
+												"text": " "
+											},
+											{
+												"text": "13.200000000000001"
+											}
+										],
+										[
+											""
+										],
+										[
+											{
+												"translate": "anemoland.pet.lore.boss.1",
+												"with": [
+													{
+														"keybind": "key.use"
+													}
+												],
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "anemoland.pet.lore.boss.2",
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "anemoland.pet.lore.boss.3",
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "anemoland.pet.gauge_consumption",
+												"color": "white",
+												"italic": false
+											},
+											{
+												"text": "：3.0"
+											}
+										],
+										[
+											{
+												"translate": "anemoland.pet.max_duration",
+												"color": "white",
+												"italic": false
+											},
+											{
+												"text": "：60"
+											},
+											{
+												"translate": "anemoland.common.second"
+											}
+										],
+										[
+											{
+												"translate": "anemoland.pet.cooltime",
+												"color": "white",
+												"italic": false
+											},
+											{
+												"text": "：120"
+											},
+											{
+												"translate": "anemoland.common.second"
+											}
+										]
+									],
+									"mode": "append"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"king_boar\",display:{name:\"キングボア\"},loot_table:\"item/pet/king_boar\",power_up:{add_level:1,materials:[{id:\"king_boar_silver_medal\",loot_table:\"item/medal/king_boar/silver\",count:10}]},status:{health:{max:480},attack:{base:13.200000000000001},armor:{base:10},level:19,level_up:{health:20,attack:0.8},xp:{value:0,required:332,required_mul:10},gauge_consume_when_summon:300}}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 11000
+						},
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "anemoland.mob.king_boar.default.name",
+								"color": "white",
+								"italic": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

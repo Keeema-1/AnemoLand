@@ -5,3 +5,8 @@ data modify storage anemoland:progress data.beta1.field.26.display_update_flag s
 data modify storage anemoland:progress data.beta1.field.25.display_update_flag set value 1b
 data modify storage anemoland:progress data.beta1.field.24.display_update_flag set value 1b
 data modify storage anemoland:progress data.beta1.field.34.display_update_flag set value 1b
+data modify storage anemoland:progress data.beta1.field.23.display_update_flag set value 1b
+data modify storage anemoland:progress data.beta1.field.33.display_update_flag set value 1b
+data modify storage anemoland:progress data.beta1.field.22.display_update_flag set value 1b
+data modify storage anemoland:progress data.beta1.field.32.display_update_flag set value 1b
+data modify storage anemoland:progress data.beta1.field.31.display_update_flag set value 1b

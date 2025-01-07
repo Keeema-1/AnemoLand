@@ -59,6 +59,25 @@
                 }
             ]
         },
+        "garapases": {
+            "enemies": [
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [0, -3]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [-4, 1]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [5, 2]
+                }
+            ]
+        },
         "squirrel_head": {
             "enemies": [
                 {
@@ -68,15 +87,38 @@
                 },
                 {
                     "entity_id": "squirrel",
-                    "level": 0,
+                    "level": -5,
                     "pos": [-5, 1]
                 },
                 {
                     "entity_id": "squirrel",
-                    "level": 0,
+                    "level": -5,
                     "pos": [6, 2]
                 }
-            ]
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "king_boar": {
+            "enemies": [
+                {
+                    "entity_id": "king_boar",
+                    "level": 0,
+                    "pos": [0, -4]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": -5,
+                    "pos": [-4, 0]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": -5,
+                    "pos": [4, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
         }
     },
     "events": {
@@ -107,8 +149,20 @@
         "squirrels_15": {
             "waves":[{"squirrels":15}]
         },
+        "garapases_10": {
+            "waves":[{"garapases":10}]
+        },
+        "garapases_15": {
+            "waves":[{"garapases":15}]
+        },
         "squirrel_head_15": {
             "waves":[{"squirrel_head":15}]
+        },
+        "king_boar_10": {
+            "waves":[{"king_boar":10}]
+        },
+        "king_boar_15": {
+            "waves":[{"king_boar":15}]
         }
     },
     "random_events": {
@@ -124,7 +178,11 @@
                 {"event": "squirrels_5", "weight": 3},
                 {"event": "squirrels_10", "weight": 3},
                 {"event": "squirrels_15", "weight": 3},
-                {"event": "squirrel_head_15", "weight": 10}
+                {"event": "garapases_10", "weight": 3},
+                {"event": "garapases_15", "weight": 3},
+                {"event": "king_boar_10", "weight": 5},
+                {"event": "king_boar_15", "weight": 5},
+                {"event": "squirrel_head_15", "weight": 5}
             ]
         }
     }

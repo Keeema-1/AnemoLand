@@ -5,3 +5,8 @@ execute if score @s area2 matches 206 run function anemoland_contents:sys/area/b
 execute if score @s area2 matches 205 run function anemoland_contents:sys/area/beta1/field/25/0
 execute if score @s area2 matches 204 run function anemoland_contents:sys/area/beta1/field/24/0
 execute if score @s area2 matches 304 run function anemoland_contents:sys/area/beta1/field/34/0
+execute if score @s area2 matches 203 run function anemoland_contents:sys/area/beta1/field/23/0
+execute if score @s area2 matches 303 run function anemoland_contents:sys/area/beta1/field/33/0
+execute if score @s area2 matches 202 run function anemoland_contents:sys/area/beta1/field/22/0
+execute if score @s area2 matches 302 run function anemoland_contents:sys/area/beta1/field/32/0
+execute if score @s area2 matches 301 run function anemoland_contents:sys/area/beta1/field/31/0

@@ -2,7 +2,7 @@ data merge entity @s {Silent:1b,Age:0,DeathLootTable:"empty",ArmorItems:[{},{},{
 tag @s add mob
 tag @s add mob_root
 tag @s add boar
-attribute @s scale base set 1.0
+attribute @s scale base set 1.6
 function anemoland:sys/entity/common/summon/0
 execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:boar/summon/default
 ride @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] mount @s

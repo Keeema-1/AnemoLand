@@ -1,0 +1,1 @@
+function animated_java:mushroom_fang/remove/this

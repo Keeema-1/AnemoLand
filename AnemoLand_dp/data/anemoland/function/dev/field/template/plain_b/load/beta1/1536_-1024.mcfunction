@@ -1,3 +1,4 @@
+execute positioned 1536 0 -1024 unless entity @s[distance=..32] run return run tp ~ ~ ~
 execute positioned 1440 -8 -1120 run place template anemoland:field/plain_b/0_0
 execute positioned 1440 -1 -1120 run fill ~ ~ ~ ~47 -3 ~47 grass_block replace air
 execute positioned 1440 -8 -1072 run place template anemoland:field/plain_b/0_1
@@ -33,3 +34,4 @@ execute positioned 1584 -1 -976 run fill ~ ~ ~ ~47 -3 ~47 grass_block replace ai
 execute positioned 1536.0 0 -1024.0 run kill @e[tag=area_entrance,distance=..64]
 execute positioned 1536.0 0.0 -992.0 run function anemoland:dev/field/common/area_entrance/x
 execute positioned 1531.0 0.0 -1047.0 run function anemoland:dev/field/common/area_entrance/x
+tp 1536 0 -1024

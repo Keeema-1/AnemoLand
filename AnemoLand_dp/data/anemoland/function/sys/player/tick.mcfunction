@@ -44,3 +44,8 @@ clear @s *[custom_data={chest_menu:1b}]
 # fill ~-20 -9 ~-20 ~20 -9 ~20 sand replace water
 
 # fill ~-2 -8 ~-2 ~2 -8 ~2 sand replace water
+
+# execute positioned ~ -1 ~ if block ~ ~ ~ grass_block if block ~ ~ ~1 mossy_cobblestone_slab run setblock ~ ~ ~ mossy_cobblestone
+# execute positioned ~ -1 ~ if block ~ ~ ~ grass_block if block ~ ~ ~-1 mossy_cobblestone_slab run setblock ~ ~ ~ mossy_cobblestone
+# execute positioned ~ -1 ~ if block ~ ~ ~ grass_block if block ~1 ~ ~ mossy_cobblestone_slab run setblock ~ ~ ~ mossy_cobblestone
+# execute positioned ~ -1 ~ if block ~ ~ ~ grass_block if block ~-1 ~ ~ mossy_cobblestone_slab run setblock ~ ~ ~ mossy_cobblestone

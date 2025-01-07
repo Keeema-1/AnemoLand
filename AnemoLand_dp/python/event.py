@@ -42,7 +42,7 @@ for event_id, event_data in event_database["events"].items():
 				else:
 					output.append('execute positioned ~' + str(enemy["pos"][0]) + ' ~ ~' + str(enemy["pos"][1]) + ' run function ' + namespace_contents + ':sys/entity/mob/' + enemy["entity_id"] + '/summon/default/enemy/level {level:' + str(enemy["level"] + wave_level) + '}\n')
 			if "bgm" in wave_data:
-				output.append('execute as @a[distance=..64] at @s run function ' + namespace_core + ':sys/player/music/' + wave_data["bgm"] + '/start\n')
+				output.append('execute as @a[distance=..64] at @s run function ' + namespace_contents + ':sys/player/music/' + wave_data["bgm"] + '/start\n')
 			if "boss_flag" in wave_data and wave_data["boss_flag"]:
 				output.append('scoreboard players set #boss_flag temp 1\n')
 			else:

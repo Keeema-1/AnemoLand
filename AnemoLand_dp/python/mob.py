@@ -16,7 +16,8 @@ file_generation_flag = {
 	"squirrel_head": True,
 	"garapapas": True,
 	"carnara": True,
-	"squirrel": True
+	"squirrel": True,
+	"garapas": True
 }
 element_color = {
 	"physical": "white",
@@ -365,8 +366,7 @@ for mob_name, mob_data in mob_database.items():
 	makedir(path)
 	output = []
 	output.append('execute if entity @s[tag=pet,tag=!following_player] unless entity @e[type=#' + namespace_storage + ':mob_core,tag=enemy,distance=..64] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/start\n')
-	output.append('execute if entity @s[tag=pet,tag=following_player] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/0\n')
-	output.append('execute if entity @s[tag=pet,tag=following_player] run return 1\n')
+	output.append('execute if entity @s[tag=pet,tag=following_player] run return run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/0\n')
 	output.append('scoreboard players add @s action_time 1\n')
 	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/branch\n')
 	with open(path, 'w', encoding='utf-8') as f:
@@ -979,9 +979,9 @@ base_path = '../data/' + namespace_contents + '/function/sys/trade/'
 path = base_path + 'exchange/1.mcfunction'
 makedir(path)
 output = []
-def add_recipe(buy, buyB = [], sell = [], required_progresses = []):
+def add_recipe(buy, buyB = [], sell = [], required_progresses = [], maxUses = 10000):
 	output.append('\n')
-	output.append('data modify storage temp:_ data.recipe set value {rewardExp:false,maxUses:10000,xp:0,priceMultiplier:0.0f}\n')
+	output.append('data modify storage temp:_ data.recipe set value {rewardExp:false,maxUses:' + str(maxUses) + ',xp:0,priceMultiplier:0.0f}\n')
 	output.append('loot replace entity @s weapon.mainhand loot ' + buy[0] + '\n')
 	output.append('data modify storage temp:_ data.recipe.buy set from entity @s HandItems[0]\n')
 	output.append('data modify storage temp:_ data.recipe.buy.count set value ' + str(buy[1]) + '\n')
@@ -1039,7 +1039,7 @@ for mob_name, mob_data in mob_database.items():
 		buy[0] = namespace_contents + ':item/medal/' + mob_name + '/silver'
 	if mob_data["type"] == "boss":
 		buy[1] = 30
-	add_recipe(buy=buy, buyB=[], sell=[namespace_contents + ':item/pet/' + mob_name + '/' + str(mob_data["status"]["default_level"]), 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}'])
+	add_recipe(buy=buy, buyB=[], sell=[namespace_contents + ':item/pet/' + mob_name + '/' + str(mob_data["status"]["default_level"]), 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}'], maxUses = 1)
 output.append('kill @s\n')
 with open(path, 'w', encoding='utf-8') as f:
 	f.writelines(output)

@@ -15,7 +15,7 @@
 
 # 前方に移動
     data modify storage temp:_ data.motion set value {speed:0.3}
-    execute rotated ~ 0 run function anemoland:sys/entity/common/motion/0
+    execute rotated ~ 5 run function anemoland:sys/entity/common/motion/0
 
 # ある程度近づいたら終了
     execute if score #hostile_target.is_player temp matches 1 if entity @a[tag=hostile_target,sort=nearest,distance=..5,limit=1] run return run function anemoland_contents:sys/entity/mob/squirrel/action/walk/end

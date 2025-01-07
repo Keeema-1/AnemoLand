@@ -4,8 +4,8 @@ execute if score @s action_time matches ..10 run data modify storage temp:_ data
 execute if score @s action_time matches 11..15 run data modify storage temp:_ data.motion set value {speed:0.3}
 execute if score @s action_time matches 16..20 run data modify storage temp:_ data.motion set value {speed:0.2}
 execute if score @s action_time matches 21..26 run data modify storage temp:_ data.motion set value {speed:0.1}
-execute if score #hostile_target.is_player temp matches 1 rotated ~ 0 run function anemoland:sys/entity/common/motion/0
-execute unless score #hostile_target.is_player temp matches 1 rotated ~ 0 run function anemoland:sys/entity/common/motion/0
+execute if score #hostile_target.is_player temp matches 1 rotated ~ 5 run function anemoland:sys/entity/common/motion/0
+execute unless score #hostile_target.is_player temp matches 1 rotated ~ 5 run function anemoland:sys/entity/common/motion/0
 
 execute if score @s action_time matches 5..10 run function anemoland_contents:sys/entity/mob/squirrel/attack/bite/0
 execute if score @s action_time matches 5..10 run particle sweep_attack ^ ^1 ^3

@@ -1,0 +1,4 @@
+execute if entity @s[tag=pet] run scoreboard players set #bullet.pet_flag temp 1
+execute if entity @s[type=player] run scoreboard players set #bullet.pet_flag temp 1
+execute rotated ~ ~ positioned ~ ~ ~ summon armor_stand run function rpg:sys/entity/bullet/auto_ignite_dust/summon_fast_
+scoreboard players reset #bullet.pet_flag temp

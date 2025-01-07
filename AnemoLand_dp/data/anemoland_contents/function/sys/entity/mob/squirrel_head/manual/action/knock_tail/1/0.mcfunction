@@ -25,7 +25,7 @@ execute if score @s action_time matches 36..45 if score #hostile_target.is_playe
 execute if score @s action_time matches 36..45 unless score #hostile_target.is_player temp matches 1 unless entity @e[type=#anemoland:mob_core,tag=hostile_target,distance=..4,limit=1] run data modify storage temp:_ data.motion set value {speed:0.3}
 execute if score @s action_time matches 46..55 if score #hostile_target.is_player temp matches 1 unless entity @a[tag=hostile_target,distance=..4,limit=1] run data modify storage temp:_ data.motion set value {speed:0.15}
 execute if score @s action_time matches 46..55 unless score #hostile_target.is_player temp matches 1 unless entity @e[type=#anemoland:mob_core,tag=hostile_target,distance=..4,limit=1] run data modify storage temp:_ data.motion set value {speed:0.15}
-execute if score @s action_time matches 25..55 run execute rotated ~180 0 run function anemoland:sys/entity/common/motion/0
+execute if score @s action_time matches 25..55 run execute rotated ~180 5 run function anemoland:sys/entity/common/motion/0
 
 execute if score @s action_time matches 130.. run return run function anemoland_contents:sys/entity/mob/squirrel_head/action/knock_tail/end
 execute if entity @s[tag=angry] if score @s action_time matches 120.. run return run function anemoland_contents:sys/entity/mob/squirrel_head/action/knock_tail/end

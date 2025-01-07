@@ -1,4 +1,4 @@
-execute unless score #new_entity.level temp matches 0.. run scoreboard players set #new_entity.level temp 5
+execute unless score #new_entity.level temp matches 0.. run scoreboard players set #new_entity.level temp 10
 scoreboard players operation @s level = #new_entity.level temp
 scoreboard players set @s max_health 20
 scoreboard players operation @s max_health *= #new_entity.level temp

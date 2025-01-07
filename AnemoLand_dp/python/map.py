@@ -685,21 +685,21 @@ for map_data in map_database["maps"]:
 
 base_path = '../data/anemoland/function/dev/field/'
 
-# # each field_type
-# for field_type_name, field_type_data in data["field_types"].items():
-# 	center = field_type_data["center"]
-# 	structure_size = field_type_data["structure_size"]
+# each field_type
+for field_type_name, field_type_data in map_database["field_types"].items():
+	center = field_type_data["center"]
+	structure_size = field_type_data["structure_size"]
 
-# 	# save
-# 	output = []
-# 	path = base_path + 'template/' + field_type_name.lower() + '/save/0.mcfunction'
-# 	makedir(path)
-# 	for i in range(structure_size):
-# 		for j in range(structure_size):
-# 			output.append('execute positioned ' + str(int(center[0])) + ' 32 ' + str(int(center[2])) + ' run setblock ~' + str(int(i*48-structure_size*48/2)) + ' 32 ~' + str(int(j*48-structure_size*48/2)) + ' structure_block[mode=save]\n')
-# 			output.append('execute positioned ' + str(int(center[0])) + ' 32 ' + str(int(center[2])) + ' run data merge block ~' + str(int(i*48-structure_size*48/2)) + ' 32 ~' + str(int(j*48-structure_size*48/2)) + ' {posX:0,posY:-40,posZ:0,sizeX:48,sizeY:32,sizeZ:48,name:"field/' + field_type_name.lower() + '/' + str(i) + '_' + str(j) + '"}\n')
-# 	with open(path, 'w', encoding='utf-8') as f:
-# 		f.writelines(output)
+	# save
+	output = []
+	path = base_path + 'template/' + field_type_name.lower() + '/save/0.mcfunction'
+	makedir(path)
+	for i in range(structure_size):
+		for j in range(structure_size):
+			output.append('execute positioned ' + str(int(center[0])) + ' 32 ' + str(int(center[2])) + ' run setblock ~' + str(int(i*48-structure_size*48/2)) + ' 32 ~' + str(int(j*48-structure_size*48/2)) + ' structure_block[mode=save]\n')
+			output.append('execute positioned ' + str(int(center[0])) + ' 32 ' + str(int(center[2])) + ' run data merge block ~' + str(int(i*48-structure_size*48/2)) + ' 32 ~' + str(int(j*48-structure_size*48/2)) + ' {posX:0,posY:-40,posZ:0,sizeX:48,sizeY:32,sizeZ:48,name:"field/' + field_type_name.lower() + '/' + str(i) + '_' + str(j) + '"}\n')
+	with open(path, 'w', encoding='utf-8') as f:
+		f.writelines(output)
 
 # 	output = []
 # 	path = base_path + 'template/' + field_type_name.lower() + '/save/macro.mcfunction'
@@ -728,6 +728,7 @@ for map_data in map_database["maps"]:
 			output = []
 			path = base_path + 'template/' + field_data["field_type"].lower() + '/load/' + map_name + '/' + str(int(center[0])) + '_' + str(int(center[1])) + '.mcfunction'
 			makedir(path)
+			output.append('execute positioned ' + str(int(center[0])) + ' 0 ' + str(int(center[1])) + ' unless entity @s[distance=..32] run return run tp ~ ~ ~\n')
 			for i in range(structure_size):
 				for j in range(structure_size):
 					output.append('execute positioned ' + str(int(center[0] + i*48-structure_size*48/2)) + ' -8 ' + str(int(center[1] + j*48-structure_size*48/2)) + ' run place template anemoland:field/' + field_data["field_type"].lower() + '/' + str(i) + '_' + str(j) +'\n')
@@ -735,6 +736,7 @@ for map_data in map_database["maps"]:
 			output.append('execute positioned ' + str(center[0]) + ' 0 ' + str(center[1]) + ' run kill @e[tag=area_entrance,distance=..64]\n')
 			for exit in field_type_data["exits"]:
 				output.append('execute positioned ' + str(center[0] + exit["start"][0]+exit["aabb"][0]/2 - field_type_data["center"][0]) + ' ' + str( exit["start"][1]) + ' ' + str(center[1] + exit["start"][2]+exit["aabb"][1]/2 - field_type_data["center"][2] - 0.5) + ' run function ' + namespace_core + ':dev/field/common/area_entrance/x\n')
+			output.append('tp ' + str(int(center[0])) + ' 0 ' + str(int(center[1])) + '\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
