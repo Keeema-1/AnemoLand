@@ -82,10 +82,10 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.skill.recovery_up.name"
+										"translate": "anemoland.skill.bring_it_on.name"
 									},
 									{
-										"text": " +❤0.8"
+										"text": " +1"
 									}
 								],
 								[
@@ -93,7 +93,17 @@
 										"text": "    "
 									},
 									{
-										"translate": "anemoland.skill.recovery_up.lore.1",
+										"translate": "anemoland.skill.bring_it_on.lore.1",
+										"italic": false,
+										"color": "gray"
+									}
+								],
+								[
+									{
+										"text": "    "
+									},
+									{
+										"translate": "anemoland.skill.bring_it_on.lore.2",
 										"italic": false,
 										"color": "gray"
 									}
@@ -133,7 +143,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"chestplate\",id:\"garapapas_chestplate\",sell_price:40,loot_table:\"item/armor/garapapas/chestplate\",power_up:{add_level:1,materials:[{id:\"garapapas_gold_medal\",loot_table:\"item/medal/garapapas/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{water: 10},skills:[{id:\"recovery_up\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"chestplate\",id:\"garapapas_chestplate\",sell_price:40,loot_table:\"item/armor/garapapas/chestplate\",power_up:{add_level:1,materials:[{id:\"garapapas_gold_medal\",loot_table:\"item/medal/garapapas/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{water: 10},skills:[{id:\"bring_it_on\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

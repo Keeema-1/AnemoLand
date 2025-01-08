@@ -783,7 +783,7 @@
 						},
 						"skills":[
 							{
-								"name": "recovery_up",
+								"name": "bring_it_on",
 								"level": 1
 							}
 						]
@@ -800,7 +800,7 @@
 						},
 						"skills":[
 							{
-								"name": "recovery_up",
+								"name": "depth_strider",
 								"level": 1
 							}
 						]
