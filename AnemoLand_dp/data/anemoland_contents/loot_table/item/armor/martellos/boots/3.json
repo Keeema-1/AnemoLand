@@ -133,7 +133,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"martellos\",part:\"boots\",id:\"martellos_boots\",sell_price:160,loot_table:\"item/armor/martellos/boots\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{fire: -10},skills:[{id:\"gauge_extension\",level:50}]}}"
+							"tag": "{item_type:\"armor\",series:\"martellos\",part:\"boots\",id:\"martellos_boots\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/martellos/boots\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{fire: -10},skills:[{id:\"gauge_extension\",level:50}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

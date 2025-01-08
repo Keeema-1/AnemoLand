@@ -133,7 +133,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"squirrel_head\",part:\"chestplate\",id:\"squirrel_head_chestplate\",sell_price:40,loot_table:\"item/armor/squirrel_head/chestplate\",power_up:{add_level:1,materials:[{id:\"squirrel_head_gold_medal\",loot_table:\"item/medal/squirrel_head/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{ice: 10},skills:[{id:\"recovery_up\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"squirrel_head\",part:\"chestplate\",id:\"squirrel_head_chestplate\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/squirrel_head/chestplate\",power_up:{add_level:1,materials:[{id:\"squirrel_head_gold_medal\",loot_table:\"item/medal/squirrel_head/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{ice: 10},skills:[{id:\"recovery_up\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

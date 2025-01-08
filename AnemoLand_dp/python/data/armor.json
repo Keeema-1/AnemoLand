@@ -677,6 +677,7 @@
 				"helmet": {
 					"display_name": "スクルスキャップ",
 					"item": "chainmail_helmet",
+					"visual_model": "helmet_visual",
 					"price": {"sell": {"1": 40, "2": 40, "3": 40}},
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
@@ -758,6 +759,7 @@
 				"helmet": {
 					"display_name": "ガラパスヘルム",
 					"item": "chainmail_helmet",
+					"visual_model": "helmet_visual",
 					"price": {"sell": {"1": 40, "2": 40, "3": 40}},
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},

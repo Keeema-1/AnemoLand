@@ -6,6 +6,10 @@ data modify storage temp:_ data.ArmorItems_temp append value {id:"chainmail_legg
 data modify storage temp:_ data.ArmorItems_temp append value {id:"chainmail_chestplate",count:1,components:{"minecraft:lore":['{"text":"装備メニューから変更可能","color":"dark_gray","italic":false}'],"minecraft:attribute_modifiers":{"show_in_tooltip":0b,modifiers:[{"id":"leggings.armor.0","type": "minecraft:armor","amount": 0.0,"operation": "add_value","slot": "any"}]},"minecraft:custom_name":'{"text":"胴装備スロット","color":"gray","italic":false}',"minecraft:unbreakable":{show_in_tooltip:false},"minecraft:custom_data":{menu_armor:1b},"minecraft:enchantments":{show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}}}
 data modify storage temp:_ data.ArmorItems_temp append value {id:"chainmail_helmet",count:1,components:{"minecraft:lore":['{"text":"装備メニューから変更可能","color":"dark_gray","italic":false}'],"minecraft:attribute_modifiers":{"show_in_tooltip":0b,modifiers:[{"id":"boots.armor.0","type": "minecraft:armor","amount": 0.0,"operation": "add_value","slot": "any"}]},"minecraft:custom_name":'{"text":"頭装備スロット","color":"gray","italic":false}',"minecraft:unbreakable":{show_in_tooltip:false},"minecraft:custom_data":{menu_armor:1b},"minecraft:enchantments":{show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}}}
 
+# 頭をモデリングした場合
+    execute if data storage temp:_ data.selected_set.head.components."minecraft:custom_data"{visual_model_flag:1} run data modify storage temp:_ data.selected_set.head.id set value "gray_dye"
+    execute if data storage temp:_ data.selected_set.head.components."minecraft:custom_data"{visual_model_flag:1} run data remove storage temp:_ data.selected_set.head.components."minecraft:equippable"
+
 data modify storage temp:_ data.selected_set.head.components."minecraft:custom_data" set value {menu_armor:1b}
 data modify storage temp:_ data.selected_set.chest.components."minecraft:custom_data" set value {menu_armor:1b}
 data modify storage temp:_ data.selected_set.legs.components."minecraft:custom_data" set value {menu_armor:1b}

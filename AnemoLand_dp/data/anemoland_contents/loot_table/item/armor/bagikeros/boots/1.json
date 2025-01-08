@@ -163,7 +163,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"bagikeros\",part:\"boots\",id:\"bagikeros_boots\",sell_price:160,loot_table:\"item/armor/bagikeros/boots\",power_up:{add_level:1,materials:[{id:\"bagikeros_silver_medal\",loot_table:\"item/medal/bagikeros/silver\",count:3}]},status:{level:1,armor:{base:3},elemental_resistance:{fire: 10},skills:[{id:\"dust_avoiding\",level:3}]}}"
+							"tag": "{item_type:\"armor\",series:\"bagikeros\",part:\"boots\",id:\"bagikeros_boots\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/bagikeros/boots\",power_up:{add_level:1,materials:[{id:\"bagikeros_silver_medal\",loot_table:\"item/medal/bagikeros/silver\",count:3}]},status:{level:1,armor:{base:3},elemental_resistance:{fire: 10},skills:[{id:\"dust_avoiding\",level:3}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

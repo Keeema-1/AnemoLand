@@ -116,7 +116,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"ojinushi\",part:\"chestplate\",id:\"ojinushi_chestplate\",sell_price:160,loot_table:\"item/armor/ojinushi/chestplate\",power_up:{add_level:1,materials:[{id:\"ojinushi_gold_medal\",loot_table:\"item/medal/ojinushi/gold\",count:3}]},status:{level:2,armor:{base:5},elemental_resistance:{},skills:[{id:\"stamina_recovery\",level:25}]}}"
+							"tag": "{item_type:\"armor\",series:\"ojinushi\",part:\"chestplate\",id:\"ojinushi_chestplate\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/ojinushi/chestplate\",power_up:{add_level:1,materials:[{id:\"ojinushi_gold_medal\",loot_table:\"item/medal/ojinushi/gold\",count:3}]},status:{level:2,armor:{base:5},elemental_resistance:{},skills:[{id:\"stamina_recovery\",level:25}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

@@ -136,8 +136,12 @@ for series in armor_database["series"]:
 				for material in next_level_data["materials"]:
 					power_up_str += '{id:"' + material["id"] + '",loot_table:"' + material["loot_table"] + '",count:' + str(material["count"]) + '}'
 				power_up_str += ']'
+			if "visual_model" in armor_data:
+				visual_model_flag = 1
+			else:
+				visual_model_flag = 0
 			function_.update(function="minecraft:set_custom_data",
-				tag = "{item_type:\"armor\",series:\"" + series["name"] + "\",part:\"" + armor_type + "\",id:\"" + series["name"] + "_" + armor_type + "\",sell_price:" + str(sell_price) + ",loot_table:\"item/armor/" + series["name"] + "/" + armor_type + "\",power_up:{" + power_up_str + "},status:{level:" + str(level) + ",armor:{base:" + str(armor_value) + "},elemental_resistance:" + str(armor_data["status"]["elemental_resistance"]).replace("'", "") + ",skills:[" + skills_str + "]}}"
+				tag = "{item_type:\"armor\",series:\"" + series["name"] + "\",part:\"" + armor_type + "\",id:\"" + series["name"] + "_" + armor_type + "\",visual_model_flag:" + str(visual_model_flag) + ",sell_price:" + str(sell_price) + ",loot_table:\"item/armor/" + series["name"] + "/" + armor_type + "\",power_up:{" + power_up_str + "},status:{level:" + str(level) + ",armor:{base:" + str(armor_value) + "},elemental_resistance:" + str(armor_data["status"]["elemental_resistance"]).replace("'", "") + ",skills:[" + skills_str + "]}}"
 				)
 			functions.append(function_)
 
@@ -528,6 +532,34 @@ for material in materials:
 		}
 		with open(path, 'w', encoding='utf-8') as f:
 			json.dump(output, f, indent='\t', ensure_ascii=False)
+
+
+
+path = base_path + 'gray_dye.json'
+
+makedir(path)
+
+overrides = []
+
+for series in armor_database["series"]:
+	for armor_type, armor_data in series["armors"].items():
+		if "visual_model" in armor_data:
+			overrides.append(
+				{
+					"predicate": { "custom_model_data": series["custom_model_data"] },
+					"model": "minecraft:item/custom/armor/" + series["name"] + "/" + armor_data["visual_model"]
+				}
+			)
+
+output = {
+	"parent": "minecraft:item/generated",
+	"overrides": overrides,
+	"textures": {
+	"layer0": "minecraft:item/custom/gray_dye"
+	}
+}
+with open(path, 'w', encoding='utf-8') as f:
+	json.dump(output, f, indent='\t', ensure_ascii=False)
 
 
 

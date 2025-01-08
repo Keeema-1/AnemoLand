@@ -116,7 +116,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"muscleroom\",part:\"leggings\",id:\"muscleroom_leggings\",sell_price:160,loot_table:\"item/armor/muscleroom/leggings\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{},skills:[{id:\"crisis_strength\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"muscleroom\",part:\"leggings\",id:\"muscleroom_leggings\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/muscleroom/leggings\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{},skills:[{id:\"crisis_strength\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

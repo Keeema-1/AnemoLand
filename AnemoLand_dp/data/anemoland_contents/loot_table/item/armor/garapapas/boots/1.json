@@ -143,7 +143,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"boots\",id:\"garapapas_boots\",sell_price:40,loot_table:\"item/armor/garapapas/boots\",power_up:{add_level:1,materials:[{id:\"garapapas_silver_medal\",loot_table:\"item/medal/garapapas/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{water: 10},skills:[{id:\"depth_strider\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"boots\",id:\"garapapas_boots\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/garapapas/boots\",power_up:{add_level:1,materials:[{id:\"garapapas_silver_medal\",loot_table:\"item/medal/garapapas/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{water: 10},skills:[{id:\"depth_strider\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

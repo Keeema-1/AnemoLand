@@ -133,7 +133,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"martellos\",part:\"leggings\",id:\"martellos_leggings\",sell_price:160,loot_table:\"item/armor/martellos/leggings\",power_up:{add_level:1,materials:[{id:\"martellos_gold_medal\",loot_table:\"item/medal/martellos/gold\",count:3}]},status:{level:2,armor:{base:5},elemental_resistance:{fire: -10},skills:[{id:\"initial_gauge\",level:50}]}}"
+							"tag": "{item_type:\"armor\",series:\"martellos\",part:\"leggings\",id:\"martellos_leggings\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/martellos/leggings\",power_up:{add_level:1,materials:[{id:\"martellos_gold_medal\",loot_table:\"item/medal/martellos/gold\",count:3}]},status:{level:2,armor:{base:5},elemental_resistance:{fire: -10},skills:[{id:\"initial_gauge\",level:50}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

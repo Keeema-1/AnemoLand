@@ -126,7 +126,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"king_boar\",part:\"leggings\",id:\"king_boar_leggings\",sell_price:40,loot_table:\"item/armor/king_boar/leggings\",power_up:{add_level:1,materials:[{id:\"king_boar_gold_medal\",loot_table:\"item/medal/king_boar/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{},skills:[{id:\"sprint_charge\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"king_boar\",part:\"leggings\",id:\"king_boar_leggings\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/king_boar/leggings\",power_up:{add_level:1,materials:[{id:\"king_boar_gold_medal\",loot_table:\"item/medal/king_boar/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{},skills:[{id:\"sprint_charge\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

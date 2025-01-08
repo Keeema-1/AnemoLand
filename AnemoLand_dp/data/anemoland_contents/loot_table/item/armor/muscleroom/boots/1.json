@@ -116,7 +116,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"muscleroom\",part:\"boots\",id:\"muscleroom_boots\",sell_price:160,loot_table:\"item/armor/muscleroom/boots\",power_up:{add_level:1,materials:[{id:\"muscleroom_silver_medal\",loot_table:\"item/medal/muscleroom/silver\",count:3}]},status:{level:1,armor:{base:3},elemental_resistance:{},skills:[{id:\"crisis_strength\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"muscleroom\",part:\"boots\",id:\"muscleroom_boots\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/muscleroom/boots\",power_up:{add_level:1,materials:[{id:\"muscleroom_silver_medal\",loot_table:\"item/medal/muscleroom/silver\",count:3}]},status:{level:1,armor:{base:3},elemental_resistance:{},skills:[{id:\"crisis_strength\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

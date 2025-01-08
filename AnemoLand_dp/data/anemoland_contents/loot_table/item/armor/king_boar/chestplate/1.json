@@ -116,7 +116,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"king_boar\",part:\"chestplate\",id:\"king_boar_chestplate\",sell_price:40,loot_table:\"item/armor/king_boar/chestplate\",power_up:{add_level:1,materials:[{id:\"king_boar_silver_medal\",loot_table:\"item/medal/king_boar/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{},skills:[{id:\"recovery_up\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"king_boar\",part:\"chestplate\",id:\"king_boar_chestplate\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/king_boar/chestplate\",power_up:{add_level:1,materials:[{id:\"king_boar_silver_medal\",loot_table:\"item/medal/king_boar/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{},skills:[{id:\"recovery_up\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",
