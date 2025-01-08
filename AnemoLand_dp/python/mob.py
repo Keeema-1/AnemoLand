@@ -767,6 +767,8 @@ for mob_name, mob_data in mob_database.items():
 	output.append('attribute @s scale base set ' + str(mob_data["parts"]["root"]["hitbox_scale"]) + '\n')
 	if mob_data["type"] == "boss":
 		output.append('attribute @s knockback_resistance base set 1.0\n')
+	elif len(mob_data["parts"]) > 1:
+		output.append('attribute @s knockback_resistance base set 1.0\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/summon/0\n')
 	if not ("without_aj" in mob_data and mob_data["without_aj"]):
 		output.append('execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:' + mob_data["aj_name"] + '/summon/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + 'default\n')
