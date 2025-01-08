@@ -1,7 +1,9 @@
-function anemoland:sys/player/common/skill_levels/0
+
+# プレイヤー別ストレージを取得
+    function anemoland:sys/player/common/player_storage/read
 
 scoreboard players set #skill_mul temp 100
-execute store result score #temp temp run data get storage temp:_ data.skill_levels.ice_veil
+execute store result score #temp temp run data get storage temp:_ data.player_storage.skill_levels.ice_veil
 scoreboard players operation #skill_mul temp -= #temp temp
 scoreboard players operation #damage temp *= #skill_mul temp
 scoreboard players set #temp temp 100

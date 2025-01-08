@@ -6,9 +6,7 @@ effect give @s slowness 2 30 true
 effect clear @s speed
 function anemoland:sys/player/area/common/enter
 
-function anemoland:sys/player/common/skill_levels/0
-
-execute if data storage temp:_ data.skill_levels.initial_gauge store result score @s skill_gauge run data get storage temp:_ data.skill_levels.initial_gauge 1
+function anemoland_contents:sys/player/skill/enter_field/0
 
 scoreboard players reset @s battle_timer
 

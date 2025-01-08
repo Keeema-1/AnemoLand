@@ -124,7 +124,7 @@
         "custom_model_data": 20,
         "icon_scale": 1.5,
         "dictionary": {
-            "recipe_prefix": "01030",
+            "recipe_prefix": "01020",
             "number": "02",
             "detail": ["目の前の敵めがけて突進を繰り返す。"],
             "main_areas": ["forest"],
@@ -199,7 +199,7 @@
         "custom_model_data": 30,
         "icon_scale": 1.5,
         "dictionary": {
-            "recipe_prefix": "01040",
+            "recipe_prefix": "01030",
             "number": "04",
             "detail": [""],
             "main_areas": ["forest"],
@@ -473,7 +473,7 @@
             "recipe_prefix": "02010",
             "number": "01",
             "detail": ["ボアの群れのボス。","体当たりを繰り返すほど皮膚が硬くなっていくため、体の傷は強さの証でもある。"],
-            "main_areas": ["森林"],
+            "main_areas": ["forest"],
             "attack_elements": ["physical"]
         },
         "animation_prefix": "large_",
@@ -537,7 +537,7 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "全身", "armor_mul": 100, "hitbox_scale": 2.7}
+            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 2.7}
         },
         "root_entity": "pig",
         "display_height_add": 0.5,
@@ -826,7 +826,7 @@
             "main_areas": ["waterside"],
             "attack_elements": ["physical","water"]
         },
-        "unlock": {"armor": []},
+        "unlock": {"armor": ["garapapas"]},
         "animations": {
             "default": {},
             "die": {},

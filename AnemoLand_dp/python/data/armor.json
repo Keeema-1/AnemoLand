@@ -35,6 +35,14 @@
 		"ice_veil": {
 			"lore_len": 3,
 			"lore_value": {"mul": 1, "prefix": "-", "suffix": "%"}
+		},
+		"depth_strider": {
+			"lore_len": 2,
+			"lore_value": {"mul": 1, "prefix": "Lv.", "suffix": ""}
+		},
+		"bring_it_on": {
+			"lore_len": 2,
+			"lore_value": {"mul": 1, "prefix": "+", "suffix": ""}
 		}
 	},
 	"series":[
@@ -732,6 +740,90 @@
 								"level": 1
 							}
 						]
+					}
+				}
+			}
+		},
+		{
+			"name": "garapapas",
+			"display_name": "ガラパパス",
+			"parent": "leather",
+			"custom_model_data": 10,
+			"levels": {
+				"1": {},
+				"2": {"materials": [{"id":"garapapas_silver_medal", "loot_table":"item/medal/garapapas/silver", "count":3}]},
+				"3": {"materials": [{"id":"garapapas_gold_medal", "loot_table":"item/medal/garapapas/gold", "count":3}]}
+			},
+			"armors":{
+				"helmet": {
+					"display_name": "ガラパスヘルム",
+					"item": "chainmail_helmet",
+					"price": {"sell": {"1": 40, "2": 40, "3": 40}},
+					"status":{
+						"armor": {"1": 2, "2": 4, "3": 6},
+						"elemental_resistance": {
+							"water": 10
+						},
+						"skills":[
+							{
+								"name": "bring_it_on",
+								"level": 1
+							}
+						]
+					}
+				},
+				"chestplate": {
+					"display_name": "ガラパスアーマー",
+					"item": "chainmail_chestplate",
+					"price": {"sell": {"1": 40, "2": 40, "3": 40}},
+					"status":{
+						"armor": {"1": 2, "2": 4, "3": 6},
+						"elemental_resistance": {
+							"water": 10
+						},
+						"skills":[
+							{
+								"name": "recovery_up",
+								"level": 1
+							}
+						]
+					}
+				},
+				"leggings": {
+					"display_name": "ガラパスレギンス",
+					"item": "chainmail_leggings",
+					"price": {"sell": {"1": 40, "2": 40, "3": 40}},
+					"status":{
+						"armor": {"1": 2, "2": 4, "3": 6},
+						"elemental_resistance": {
+							"water": 10
+						},
+						"skills":[
+							{
+								"name": "recovery_up",
+								"level": 1
+							}
+						]
+					}
+				},
+				"boots": {
+					"display_name": "ガラパスブーツ",
+					"item": "chainmail_boots",
+					"price": {"sell": {"1": 40, "2": 40, "3": 40}},
+					"status":{
+						"armor": {"1": 2, "2": 4, "3": 6},
+						"elemental_resistance": {
+							"water": 10
+						},
+						"skills":[
+							{
+								"name": "depth_strider",
+								"level": 1
+							}
+						],
+						"enchantments":{
+							"depth_strider": 1
+						}
 					}
 				}
 			}

@@ -1,0 +1,174 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:chainmail_chestplate",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "anemoland.armor.garapapas.chestplate.name",
+								"color": "white",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "  Lv. 1",
+										"color": "yellow",
+										"italic": false
+									}
+								],
+								[
+									{
+										"text": "  ⏫ ",
+										"color": "aqua",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.common.armor"
+									},
+									{
+										"text": " +2"
+									}
+								],
+								[
+									{
+										"text": "  ⏫ ",
+										"color": "aqua",
+										"italic": false
+									},
+									{
+										"text": "🌊",
+										"color": "blue"
+									},
+									{
+										"translate": "anemoland.common.damaged_rate.water"
+									},
+									{
+										"text": " -10%"
+									}
+								],
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "<",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.common.skill"
+									},
+									{
+										"text": ">"
+									}
+								],
+								[
+									{
+										"text": "  ",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.skill.recovery_up.name"
+									},
+									{
+										"text": " +❤0.8"
+									}
+								],
+								[
+									{
+										"text": "    "
+									},
+									{
+										"translate": "anemoland.skill.recovery_up.lore.1",
+										"italic": false,
+										"color": "gray"
+									}
+								],
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "▶ ",
+										"italic": false,
+										"color": "dark_gray"
+									},
+									{
+										"translate": "anemoland.common.sell_price"
+									},
+									{
+										"text": ": 40G"
+									}
+								]
+							],
+							"mode": "replace_all"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"id": "chestplate.armor.add.2",
+									"attribute": "minecraft:armor",
+									"amount": 0.2,
+									"operation": "add_value",
+									"slot": "chest"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"chestplate\",id:\"garapapas_chestplate\",sell_price:40,loot_table:\"item/armor/garapapas/chestplate\",power_up:{add_level:1,materials:[{id:\"garapapas_silver_medal\",loot_table:\"item/medal/garapapas/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{water: 10},skills:[{id:\"recovery_up\",level:1}]}}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 10
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:unbreakable": {
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantment_glint_override": false,
+								"minecraft:equippable": {
+									"slot": "chest",
+									"equip_sound": "item.armor.equip_chain",
+									"model": "garapapas"
+								}
+							}
+						},
+						{
+							"function": "minecraft:toggle_tooltips",
+							"toggles": {
+								"minecraft:enchantments": false,
+								"minecraft:attribute_modifiers": false
+							}
+						},
+						{
+							"function": "minecraft:set_enchantments",
+							"enchantments": {
+								"minecraft:binding_curse": 1
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

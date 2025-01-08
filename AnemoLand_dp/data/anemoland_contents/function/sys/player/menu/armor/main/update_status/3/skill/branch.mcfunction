@@ -7,3 +7,5 @@ execute if data storage temp:_ data.skill_levels.crisis_strength run function an
 execute if data storage temp:_ data.skill_levels.recovery_up run function anemoland_contents:sys/player/menu/armor/main/update_status/3/skill/recovery_up
 execute if data storage temp:_ data.skill_levels.dust_avoiding run function anemoland_contents:sys/player/menu/armor/main/update_status/3/skill/dust_avoiding
 execute if data storage temp:_ data.skill_levels.ice_veil run function anemoland_contents:sys/player/menu/armor/main/update_status/3/skill/ice_veil
+execute if data storage temp:_ data.skill_levels.depth_strider run function anemoland_contents:sys/player/menu/armor/main/update_status/3/skill/depth_strider
+execute if data storage temp:_ data.skill_levels.bring_it_on run function anemoland_contents:sys/player/menu/armor/main/update_status/3/skill/bring_it_on

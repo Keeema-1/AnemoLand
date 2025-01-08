@@ -1,5 +1,10 @@
+#> anemoland:sys/player/common/skill_levels/0
+#
+# 各発動スキルのレベルを計算
+#
+# @within function anemoland:sys/player/menu/armor_update/00
 
-function anemoland:sys/player/common/player_storage/read
+# function anemoland:sys/player/common/player_storage/read
 
 data modify storage temp:_ data.skill_levels set value {}
 

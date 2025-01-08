@@ -41,8 +41,8 @@
     scoreboard players operation #damage temp = #damage.physical temp
     scoreboard players operation #damage temp += #damage.elem temp
 
-# ice_veil
-    execute if score @s ice_veil_time matches 200.. run function anemoland:sys/player/common/damage/dst/skill/ice_veil
+# スキル
+    function anemoland_contents:sys/player/skill/damaged/0
 
 execute store result storage temp:_ data.player_damage.value float 0.1 run scoreboard players get #damage temp
 

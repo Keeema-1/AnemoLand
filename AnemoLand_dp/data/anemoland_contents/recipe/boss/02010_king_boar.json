@@ -17,13 +17,13 @@
 				"{\"text\":\"  。\",\"italic\":false,\"color\":\"yellow\"}",
 				"{\"text\":\"\"}",
 				"{\"translate\":\"anemoland.dictionary.area\",\"italic\":false}",
-				"[{\"text\":\"  \"},{\"translate\":\"anemoland.area.森林\",\"italic\":false,\"color\":\"white\"}]",
+				"[{\"text\":\"  \"},{\"translate\":\"anemoland.area.forest\",\"italic\":false,\"color\":\"white\"}]",
 				"{\"text\":\"\"}",
 				"{\"translate\":\"anemoland.common.attack_element\",\"italic\":false}",
 				"[{\"text\":\"  \"},{\"translate\":\"anemoland.common.element.physical\",\"italic\":false,\"color\":\"white\"}]",
 				"{\"text\":\"\"}",
 				"[{\"translate\":\"anemoland.common.damage_rate.give\",\"italic\":false},{\"text\":\"(%)\",\"italic\":false}]",
-				"[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part.全身\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" 100\", \"italic\":false,\"color\":\"white\"}]",
+				"[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part.whole\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" 100\", \"italic\":false,\"color\":\"white\"}]",
 				"[{\"text\":\"  \"},{\"translate\":\"anemoland.dictionary.elem_mul_value_detail\",\"italic\":false,\"color\":\"dark_gray\"}]"
 			]
 		}

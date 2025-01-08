@@ -172,7 +172,7 @@ for mob_name, mob_data in mob_database.items():
 		output = []
 		output.append('function ' + namespace_core + ':sys/entity/common/damage/dst/get_status\n')
 		# output.append('data modify storage temp:_ data.Motion set from entity @s Motion\n')
-		output.append('execute unless score #weapon_skill_flag temp matches 1.. if score #health temp matches -9.. run return 1\n')
+		# output.append('execute unless score #weapon_skill_flag temp matches 1.. if score #health temp matches -9.. run return 1\n')
 		output.append('scoreboard players operation #entity_id temp = @s entity_id\n')
 		output.append('execute at @s anchored eyes facing entity @p eyes rotated ~ 0 positioned ^ ^ ^0.5 as @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,distance=..32] if score @s entity_id = #entity_id temp run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/root_from_hitbox\n')
 		with open(path, 'w', encoding='utf-8') as f:
@@ -1038,7 +1038,7 @@ for mob_name, mob_data in mob_database.items():
 	elif mob_data["status"]["default_level"] >= 20:
 		buy[0] = namespace_contents + ':item/medal/' + mob_name + '/silver'
 	if mob_data["type"] == "boss":
-		buy[1] = 30
+		buy[1] = 20
 	add_recipe(buy=buy, buyB=[], sell=[namespace_contents + ':item/pet/' + mob_name + '/' + str(mob_data["status"]["default_level"]), 1], required_progresses=['mob_list.' + mob_name + '{unlock:1b}'], maxUses = 1)
 output.append('kill @s\n')
 with open(path, 'w', encoding='utf-8') as f:
@@ -1195,6 +1195,8 @@ for mob_name, mob_data in mob_database.items():
 							damage_mul += ",{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element." + attack_elem + "\", \"italic\":false,\"color\":\"" + element_color[elem_name] + "\"},{\"text\":\" " + str(elem_damage_mul) + "\", \"italic\":false,\"color\":\"white\"}"
 				damage_mul += "]"
 				lore.append(damage_mul)
+			lore.append("[{\"text\":\"  \"},{\"translate\":\"anemoland.dictionary.elem_mul_value_detail\",\"italic\":false,\"color\":\"dark_gray\"}]")
+
 
 			output = {
 				"type": "minecraft:crafting_shaped",

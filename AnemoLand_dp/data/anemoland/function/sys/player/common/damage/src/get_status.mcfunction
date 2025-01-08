@@ -24,4 +24,5 @@
     scoreboard players operation #damage.src.attack.ice.base temp = @s attack.ice.base
     scoreboard players operation #damage.src.attack.thunder.base temp = @s attack.thunder.base
 
-function anemoland:sys/player/skill/attack/0
+# スキル
+    function anemoland_contents:sys/player/skill/attack/src/0

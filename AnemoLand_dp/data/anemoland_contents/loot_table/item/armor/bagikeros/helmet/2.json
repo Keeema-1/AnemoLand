@@ -49,6 +49,10 @@
 										"italic": false
 									},
 									{
+										"text": "🔥",
+										"color": "red"
+									},
+									{
 										"translate": "anemoland.common.damaged_rate.fire"
 									},
 									{
@@ -184,6 +188,12 @@
 							"toggles": {
 								"minecraft:enchantments": false,
 								"minecraft:attribute_modifiers": false
+							}
+						},
+						{
+							"function": "minecraft:set_enchantments",
+							"enchantments": {
+								"minecraft:binding_curse": 1
 							}
 						}
 					]

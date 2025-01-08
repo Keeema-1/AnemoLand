@@ -4,7 +4,7 @@ data modify storage temp:_ data.recipe.buy set from entity @s HandItems[0]
 data modify storage temp:_ data.recipe.buy.count set value 1
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/medal/ojinushi/silver
 data modify storage temp:_ data.recipe.buyB set from entity @s HandItems[0]
-data modify storage temp:_ data.recipe.buyB.count set value 5
+data modify storage temp:_ data.recipe.buyB.count set value 4
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/armor/ojinushi/helmet/2
 data modify storage temp:_ data.recipe.sell set from entity @s HandItems[0]
 execute if data storage anemoland:progress data.armor.ojinushi{unlocked:1b} run data modify storage temp:_ data.Recipes append from storage temp:_ data.recipe
@@ -15,7 +15,7 @@ data modify storage temp:_ data.recipe.buy set from entity @s HandItems[0]
 data modify storage temp:_ data.recipe.buy.count set value 1
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/medal/ojinushi/silver
 data modify storage temp:_ data.recipe.buyB set from entity @s HandItems[0]
-data modify storage temp:_ data.recipe.buyB.count set value 5
+data modify storage temp:_ data.recipe.buyB.count set value 4
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/armor/ojinushi/chestplate/2
 data modify storage temp:_ data.recipe.sell set from entity @s HandItems[0]
 execute if data storage anemoland:progress data.armor.ojinushi{unlocked:1b} run data modify storage temp:_ data.Recipes append from storage temp:_ data.recipe
@@ -26,7 +26,7 @@ data modify storage temp:_ data.recipe.buy set from entity @s HandItems[0]
 data modify storage temp:_ data.recipe.buy.count set value 1
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/medal/ojinushi/silver
 data modify storage temp:_ data.recipe.buyB set from entity @s HandItems[0]
-data modify storage temp:_ data.recipe.buyB.count set value 5
+data modify storage temp:_ data.recipe.buyB.count set value 4
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/armor/ojinushi/leggings/2
 data modify storage temp:_ data.recipe.sell set from entity @s HandItems[0]
 execute if data storage anemoland:progress data.armor.ojinushi{unlocked:1b} run data modify storage temp:_ data.Recipes append from storage temp:_ data.recipe
@@ -37,7 +37,7 @@ data modify storage temp:_ data.recipe.buy set from entity @s HandItems[0]
 data modify storage temp:_ data.recipe.buy.count set value 1
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/medal/ojinushi/silver
 data modify storage temp:_ data.recipe.buyB set from entity @s HandItems[0]
-data modify storage temp:_ data.recipe.buyB.count set value 5
+data modify storage temp:_ data.recipe.buyB.count set value 4
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/armor/ojinushi/boots/2
 data modify storage temp:_ data.recipe.sell set from entity @s HandItems[0]
 execute if data storage anemoland:progress data.armor.ojinushi{unlocked:1b} run data modify storage temp:_ data.Recipes append from storage temp:_ data.recipe
@@ -48,7 +48,7 @@ data modify storage temp:_ data.recipe.buy set from entity @s HandItems[0]
 data modify storage temp:_ data.recipe.buy.count set value 1
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/medal/ojinushi/silver
 data modify storage temp:_ data.recipe.buyB set from entity @s HandItems[0]
-data modify storage temp:_ data.recipe.buyB.count set value 10
+data modify storage temp:_ data.recipe.buyB.count set value 8
 loot replace entity @s weapon.mainhand loot anemoland_contents:item/weapon/ojinushi_katana/2
 data modify storage temp:_ data.recipe.sell set from entity @s HandItems[0]
 execute if data storage anemoland:progress data.armor.ojinushi{unlocked:1b} run data modify storage temp:_ data.Recipes append from storage temp:_ data.recipe

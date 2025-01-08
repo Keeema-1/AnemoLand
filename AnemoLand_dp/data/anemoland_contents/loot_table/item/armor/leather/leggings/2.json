@@ -103,6 +103,12 @@
 								"minecraft:enchantments": false,
 								"minecraft:attribute_modifiers": false
 							}
+						},
+						{
+							"function": "minecraft:set_enchantments",
+							"enchantments": {
+								"minecraft:binding_curse": 1
+							}
 						}
 					]
 				}

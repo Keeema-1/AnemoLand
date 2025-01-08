@@ -42,6 +42,21 @@ elements_text = {
 	"thunder": "雷"
 }
 
+element_color = {
+	"physical": "white",
+	"fire": "red",
+	"water": "blue",
+	"ice": "aqua",
+	"thunder": "yellow"
+}
+element_icon = {
+	"physical": "🗡",
+	"fire": "🔥",
+	"water": "🌊",
+	"ice": "❄",
+	"thunder": "⚡️"
+}
+
 base_path = '../data/' + namespace_contents + '/loot_table/item/armor/'
 
 for series in armor_database["series"]:
@@ -72,9 +87,9 @@ for series in armor_database["series"]:
 			if "elemental_resistance" in armor_data["status"]:
 				for element, resistance in armor_data["status"]["elemental_resistance"].items():
 					if resistance > 0:
-						lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"translate":"anemoland.common.damaged_rate." + element},{"text":" -" + str(resistance) + "%"}])
+						lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"text":element_icon[element],"color":element_color[element]},{"translate":"anemoland.common.damaged_rate." + element},{"text":" -" + str(resistance) + "%"}])
 					elif resistance < 0:
-						lore.append([{"text":"  ⏬ ","color":"red", "italic":False},{"translate":"anemoland.common.damaged_rate." + element},{"text":" +" + str(abs(resistance)) + "%"}])
+						lore.append([{"text":"  ⏬ ","color":"red", "italic":False},{"text":element_icon[element],"color":element_color[element]},{"translate":"anemoland.common.damaged_rate." + element},{"text":" +" + str(abs(resistance)) + "%"}])
 			if len(armor_data["status"]["skills"]) > 0:
 				lore.append([{"text":""}])
 				lore.append([{"text": "<", "italic": False},{"translate":"anemoland.common.skill"},{"text":">"}])
@@ -165,6 +180,16 @@ for series in armor_database["series"]:
 					"minecraft:enchantments": False,
 					"minecraft:attribute_modifiers": False
 				}
+			})
+
+			# enchantments
+			enchantments = {}
+			if "enchantments" in armor_data["status"]:
+				enchantments = armor_data["status"]["enchantments"]
+			enchantments["minecraft:binding_curse"] = 1
+			functions.append({
+				"function": "minecraft:set_enchantments",
+				"enchantments": enchantments
 			})
 
 			output = {}

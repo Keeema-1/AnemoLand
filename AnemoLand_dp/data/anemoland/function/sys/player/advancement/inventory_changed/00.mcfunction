@@ -17,10 +17,5 @@
 # メニュー処理
     function anemoland:sys/player/menu/0
 
-# スキル関連
-    function anemoland:sys/player/common/skill_levels/0
-    execute store result score @s skill_gauge_max run data get storage temp:_ data.skill_levels.gauge_extension 1
-    scoreboard players add @s skill_gauge_max 300
-
 # 攻撃力ステータスを更新
     function anemoland:sys/player/common/update_attack_status/0

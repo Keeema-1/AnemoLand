@@ -10,10 +10,10 @@ data modify storage temp:_ data.selected_set.head.components."minecraft:custom_d
 data modify storage temp:_ data.selected_set.chest.components."minecraft:custom_data" set value {menu_armor:1b}
 data modify storage temp:_ data.selected_set.legs.components."minecraft:custom_data" set value {menu_armor:1b}
 data modify storage temp:_ data.selected_set.feet.components."minecraft:custom_data" set value {menu_armor:1b}
-data modify storage temp:_ data.selected_set.head.components."minecraft:enchantments" set value {show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}
-data modify storage temp:_ data.selected_set.chest.components."minecraft:enchantments" set value {show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}
-data modify storage temp:_ data.selected_set.legs.components."minecraft:enchantments" set value {show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}
-data modify storage temp:_ data.selected_set.feet.components."minecraft:enchantments" set value {show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}
+# data modify storage temp:_ data.selected_set.head.components."minecraft:enchantments" set value {show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}
+# data modify storage temp:_ data.selected_set.chest.components."minecraft:enchantments" set value {show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}
+# data modify storage temp:_ data.selected_set.legs.components."minecraft:enchantments" set value {show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}
+# data modify storage temp:_ data.selected_set.feet.components."minecraft:enchantments" set value {show_in_tooltip:0b,levels:{"minecraft:binding_curse":1}}
 
 execute if data storage temp:_ data.selected_set.head.count run data modify storage temp:_ data.ArmorItems_temp[3] set from storage temp:_ data.selected_set.head
 execute if data storage temp:_ data.selected_set.chest.count run data modify storage temp:_ data.ArmorItems_temp[2] set from storage temp:_ data.selected_set.chest

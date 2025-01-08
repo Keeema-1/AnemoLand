@@ -20,6 +20,9 @@
 #
 # @within function anemoland_contents:sys/entity/mob/*/damaged/common
 
+# スキル
+    function anemoland_contents:sys/player/skill/attack/dst/0
+
 # 物理・属性共通
     # チャージ率
         scoreboard players operation #damage.common temp = #charge_rate temp

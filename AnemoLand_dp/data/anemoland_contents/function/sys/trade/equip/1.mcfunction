@@ -5,6 +5,8 @@ data modify storage temp:_ data.Recipes set value []
     function anemoland_contents:sys/trade/equip/mob/king_boar
 # squirrel_head
     function anemoland_contents:sys/trade/equip/mob/squirrel_head
+# garapapas
+    function anemoland_contents:sys/trade/equip/mob/garapapas
 # martellos
     function anemoland_contents:sys/trade/equip/mob/martellos
 # ojinushi

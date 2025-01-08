@@ -1,4 +1,4 @@
-execute if entity @s[tag=variant.default] run recipe give @a anemoland_contents:mob/01040_squirrel
+execute if entity @s[tag=variant.default] run recipe give @a anemoland_contents:mob/01030_squirrel
 data modify storage anemoland:progress data.mob_list.squirrel.unlock set value 1b
 execute if score @s level matches 15.. run data modify storage anemoland:progress data.mob_list.squirrel.defeated_levels.15 set value 1b
 execute if score @s level matches 20.. run data modify storage anemoland:progress data.mob_list.squirrel.defeated_levels.20 set value 1b
