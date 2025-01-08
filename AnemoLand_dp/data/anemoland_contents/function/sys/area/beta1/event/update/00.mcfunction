@@ -6,3 +6,5 @@ execute if data storage anemoland:progress data.beta1.field.33{cleared_once:1b,e
 execute if data storage anemoland:progress data.beta1.field.22{cleared_once:1b,event:{random_event_enable:1b}} run function anemoland_contents:sys/area/beta1/event/update/field/22
 execute if data storage anemoland:progress data.beta1.field.32{cleared_once:1b,event:{random_event_enable:1b}} run function anemoland_contents:sys/area/beta1/event/update/field/32
 execute if data storage anemoland:progress data.beta1.field.31{cleared_once:1b,event:{random_event_enable:1b}} run function anemoland_contents:sys/area/beta1/event/update/field/31
+execute if data storage anemoland:progress data.beta1.field.42{cleared_once:1b,event:{random_event_enable:1b}} run function anemoland_contents:sys/area/beta1/event/update/field/42
+execute if data storage anemoland:progress data.beta1.field.21{cleared_once:1b,event:{random_event_enable:1b}} run function anemoland_contents:sys/area/beta1/event/update/field/21

@@ -10,3 +10,5 @@ execute if entity @s[tag=field_33] run data remove storage anemoland:progress da
 execute if entity @s[tag=field_22] run data remove storage anemoland:progress data.beta1.field.22.display_update_flag
 execute if entity @s[tag=field_32] run data remove storage anemoland:progress data.beta1.field.32.display_update_flag
 execute if entity @s[tag=field_31] run data remove storage anemoland:progress data.beta1.field.31.display_update_flag
+execute if entity @s[tag=field_42] run data remove storage anemoland:progress data.beta1.field.42.display_update_flag
+execute if entity @s[tag=field_21] run data remove storage anemoland:progress data.beta1.field.21.display_update_flag

@@ -10,3 +10,5 @@ execute if score @s area2 matches 303 run function anemoland_contents:sys/area/b
 execute if score @s area2 matches 202 run function anemoland_contents:sys/area/beta1/field/22/0
 execute if score @s area2 matches 302 run function anemoland_contents:sys/area/beta1/field/32/0
 execute if score @s area2 matches 301 run function anemoland_contents:sys/area/beta1/field/31/0
+execute if score @s area2 matches 402 run function anemoland_contents:sys/area/beta1/field/42/0
+execute if score @s area2 matches 201 run function anemoland_contents:sys/area/beta1/field/21/0

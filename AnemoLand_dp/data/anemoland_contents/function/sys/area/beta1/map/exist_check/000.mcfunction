@@ -10,3 +10,5 @@ execute if entity @s[tag=field_33] if entity @a[scores={area0=100,area1=1,area2=
 execute if entity @s[tag=field_22] if entity @a[scores={area0=100,area1=1,area2=202}] run tag @s add player_exist
 execute if entity @s[tag=field_32] if entity @a[scores={area0=100,area1=1,area2=302}] run tag @s add player_exist
 execute if entity @s[tag=field_31] if entity @a[scores={area0=100,area1=1,area2=301}] run tag @s add player_exist
+execute if entity @s[tag=field_42] if entity @a[scores={area0=100,area1=1,area2=402}] run tag @s add player_exist
+execute if entity @s[tag=field_21] if entity @a[scores={area0=100,area1=1,area2=201}] run tag @s add player_exist

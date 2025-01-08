@@ -10,3 +10,5 @@ execute if entity @s[tag=field_33] run data modify storage temp:_ data.field_dis
 execute if entity @s[tag=field_22] run data modify storage temp:_ data.field_display_data set from storage anemoland:progress data.beta1.field.22
 execute if entity @s[tag=field_32] run data modify storage temp:_ data.field_display_data set from storage anemoland:progress data.beta1.field.32
 execute if entity @s[tag=field_31] run data modify storage temp:_ data.field_display_data set from storage anemoland:progress data.beta1.field.31
+execute if entity @s[tag=field_42] run data modify storage temp:_ data.field_display_data set from storage anemoland:progress data.beta1.field.42
+execute if entity @s[tag=field_21] run data modify storage temp:_ data.field_display_data set from storage anemoland:progress data.beta1.field.21

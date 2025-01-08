@@ -48,3 +48,13 @@ data modify storage anemoland:progress data.beta1.field.31.display_name set valu
 data modify storage anemoland:progress data.beta1.field.31.event.event_id set value garapapas_15
 data modify storage anemoland:progress data.beta1.field.31.event.waves set value ['garapapas_15']
 data modify storage anemoland:progress data.beta1.field.31.event.waves_len set value 1
+data modify storage anemoland:progress data.beta1.field.42.event.random_event_enable set value 0b
+data modify storage anemoland:progress data.beta1.field.42.display_name set value "forest.large"
+data modify storage anemoland:progress data.beta1.field.42.event.event_id set value squirrel_head_15
+data modify storage anemoland:progress data.beta1.field.42.event.waves set value ['squirrel_head_15']
+data modify storage anemoland:progress data.beta1.field.42.event.waves_len set value 1
+data modify storage anemoland:progress data.beta1.field.21.event.random_event_enable set value 0b
+data modify storage anemoland:progress data.beta1.field.21.display_name set value "forest.large"
+data modify storage anemoland:progress data.beta1.field.21.event.event_id set value squirrel_head_15
+data modify storage anemoland:progress data.beta1.field.21.event.waves set value ['squirrel_head_15']
+data modify storage anemoland:progress data.beta1.field.21.event.waves_len set value 1

@@ -156,8 +156,28 @@
                     "type": "field",
                     "field_type": "waterside_B",
                     "display_name": "waterside.large",
-                    "unlock":[],
+                    "unlock":["42"],
                     "default_event": "garapapas_15",
+                    "random_event": "test"
+                },
+                "42": {
+                    "index":[4,2],
+                    "offset": [1024, 1536],
+                    "type": "field",
+                    "field_type": "plain_C",
+                    "display_name": "forest.large",
+                    "unlock":[],
+                    "default_event": "squirrel_head_15",
+                    "random_event": "test"
+                },
+                "21": {
+                    "index":[2,1],
+                    "offset": [1536, 1536],
+                    "type": "field",
+                    "field_type": "plain_C",
+                    "display_name": "forest.large",
+                    "unlock":[],
+                    "default_event": "squirrel_head_15",
                     "random_event": "test"
                 }
             }

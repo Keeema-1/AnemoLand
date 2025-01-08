@@ -12,3 +12,5 @@ execute if entity @s[tag=field_33] as @a[tag=player_check,limit=1] unless entity
 execute if entity @s[tag=field_22] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=202}] run return run function anemoland_contents:sys/area/beta1/field/22/enter/0
 execute if entity @s[tag=field_32] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=302}] run return run function anemoland_contents:sys/area/beta1/field/32/enter/0
 execute if entity @s[tag=field_31] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=301}] run return run function anemoland_contents:sys/area/beta1/field/31/enter/0
+execute if entity @s[tag=field_42] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=402}] run return run function anemoland_contents:sys/area/beta1/field/42/enter/0
+execute if entity @s[tag=field_21] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=201}] run return run function anemoland_contents:sys/area/beta1/field/21/enter/0
