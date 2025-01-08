@@ -7,5 +7,5 @@
 #
 # @within function anemoland_contents:sys/entity/mob/squirrel_head/action/stop/end
 
-function anemoland_contents:sys/entity/mob/squirrel_head/choose_action/test/0
-# function anemoland_contents:sys/entity/mob/squirrel_head/action/spin_jump/start
+function anemoland_contents:sys/entity/mob/squirrel_head/choose_action/any/0
+# function anemoland_contents:sys/entity/mob/squirrel_head/action/bite_side/start

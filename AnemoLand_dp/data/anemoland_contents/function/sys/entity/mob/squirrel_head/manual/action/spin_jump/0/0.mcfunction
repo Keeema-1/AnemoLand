@@ -1,14 +1,8 @@
-# 回転
-    function anemoland:sys/entity/common/target_direction/is_leftside
 
-    execute if score @s action_time matches ..20 if score #target_is_leftside temp matches 1 run tp @s ~ ~ ~ ~-4 ~
-    execute if score @s action_time matches ..20 unless score #target_is_leftside temp matches 1 run tp @s ~ ~ ~ ~4 ~
-
-    execute if score @s action_time matches 21..40 if score #target_is_leftside temp matches 1 run tp @s ~ ~ ~ ~-2 ~
-    execute if score @s action_time matches 21..40 unless score #target_is_leftside temp matches 1 run tp @s ~ ~ ~ ~2 ~
-
-    execute if score @s action_time matches 41..65 if score #target_is_leftside temp matches 1 run tp @s ~ ~ ~ ~-1 ~
-    execute if score @s action_time matches 41..65 unless score #target_is_leftside temp matches 1 run tp @s ~ ~ ~ ~1 ~
+# プレイヤーの方に回転
+    execute if score @s action_time matches ..20 run function anemoland:sys/entity/common/rotate/to_player/front/4
+    execute if score @s action_time matches 21..40 run function anemoland:sys/entity/common/rotate/to_player/front/2
+    execute if score @s action_time matches 41..50 run function anemoland:sys/entity/common/rotate/to_player/front/1
 
 execute if score @s action_time matches 8 as @a[distance=..64] at @s run playsound entity.player.attack.sweep hostile @s ~ ~ ~ 0.7 0.5
 execute if score @s action_time matches 16 as @a[distance=..64] at @s run playsound entity.player.attack.sweep hostile @s ~ ~ ~ 0.7 0.5

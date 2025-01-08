@@ -14,5 +14,7 @@
     execute rotated ~ 0 run function anemoland:sys/entity/common/motion/0
     tp @s ~ ~ ~ ~ ~
 
+data modify entity @s Motion[1] set value -0.1
+
 # ブレーキを開始
     execute if score @s action_time matches 76.. run function anemoland_contents:sys/entity/mob/boar/manual/action/tackle/2/start

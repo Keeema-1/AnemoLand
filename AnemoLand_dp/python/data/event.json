@@ -119,6 +119,27 @@
             ],
             "bgm": "king_boar",
             "boss_flag": 1
+        },
+        "garapapas": {
+            "enemies": [
+                {
+                    "entity_id": "garapapas",
+                    "level": 0,
+                    "pos": [0, -4]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": -5,
+                    "pos": [-4, 0]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": -5,
+                    "pos": [4, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
         }
     },
     "events": {
@@ -163,6 +184,9 @@
         },
         "king_boar_15": {
             "waves":[{"king_boar":15}]
+        },
+        "garapapas_15": {
+            "waves":[{"garapapas":15}]
         }
     },
     "random_events": {
@@ -182,7 +206,8 @@
                 {"event": "garapases_15", "weight": 3},
                 {"event": "king_boar_10", "weight": 5},
                 {"event": "king_boar_15", "weight": 5},
-                {"event": "squirrel_head_15", "weight": 5}
+                {"event": "squirrel_head_15", "weight": 5},
+                {"event": "garapapas_15", "weight": 5}
             ]
         }
     }

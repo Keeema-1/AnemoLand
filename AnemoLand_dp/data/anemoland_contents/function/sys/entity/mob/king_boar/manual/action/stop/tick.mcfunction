@@ -6,5 +6,7 @@
 #
 # @within function anemoland_contents:sys/entity/mob/king_boar/action/stop/tick
 
+data modify entity @s Motion[1] set value -0.1
+
 # 終了
     execute if score #hostile_target.exist temp matches 1 run function anemoland_contents:sys/entity/mob/king_boar/action/stop/end

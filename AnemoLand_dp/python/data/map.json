@@ -157,7 +157,7 @@
                     "field_type": "waterside_B",
                     "display_name": "waterside.large",
                     "unlock":[],
-                    "default_event": "squirrel_head_15",
+                    "default_event": "garapapas_15",
                     "random_event": "test"
                 }
             }

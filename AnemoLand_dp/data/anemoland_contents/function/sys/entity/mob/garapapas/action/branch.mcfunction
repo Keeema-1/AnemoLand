@@ -1,0 +1,10 @@
+execute unless score @s action0 matches 1.. run function anemoland_contents:sys/entity/mob/garapapas/action/stop/tick
+execute if score @s action0 matches 1 run function anemoland_contents:sys/entity/mob/garapapas/action/bark/tick
+execute if score @s action0 matches 2 run function anemoland_contents:sys/entity/mob/garapapas/action/get_angry/tick
+execute if score @s action0 matches 3 run function anemoland_contents:sys/entity/mob/garapapas/action/tired/tick
+execute if score @s action0 matches 4 run function anemoland_contents:sys/entity/mob/garapapas/action/walk/tick
+execute if score @s action0 matches 11 run function anemoland_contents:sys/entity/mob/garapapas/action/bite/tick
+execute if score @s action0 matches 12 run function anemoland_contents:sys/entity/mob/garapapas/action/bite_side/tick
+execute if score @s action0 matches 13 run function anemoland_contents:sys/entity/mob/garapapas/action/dive/tick
+execute if score @s action0 matches 14 run function anemoland_contents:sys/entity/mob/garapapas/action/tail_side/tick
+execute if score @s action0 matches 15 run function anemoland_contents:sys/entity/mob/garapapas/action/water_front/tick

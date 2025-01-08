@@ -12,3 +12,4 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"garapases
 execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head_15"} run function anemoland_contents:sys/event/display/squirrel_head_15 with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"king_boar_10"} run function anemoland_contents:sys/event/display/king_boar_10 with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"king_boar_15"} run function anemoland_contents:sys/event/display/king_boar_15 with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_15"} run function anemoland_contents:sys/event/display/garapapas_15 with storage temp:_ data.field_display_macro

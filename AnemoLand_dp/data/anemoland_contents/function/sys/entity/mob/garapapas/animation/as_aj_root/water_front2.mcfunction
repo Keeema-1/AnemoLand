@@ -1,0 +1,2 @@
+function animated_java:garapapas/animations/pause_all
+function animated_java:garapapas/animations/water_front2/play

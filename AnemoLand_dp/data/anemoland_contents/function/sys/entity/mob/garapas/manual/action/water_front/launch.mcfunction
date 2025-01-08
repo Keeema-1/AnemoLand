@@ -9,7 +9,7 @@
     execute store result score #action_way temp run data get storage km_distance: out
 
 # 発射
-    function anemoland_contents:sys/entity/bullet/water/summon/0
+    function anemoland_contents:sys/entity/bullet/water/summon/medium/0
 
 execute as @a[distance=..64] at @s run playsound minecraft:entity.polar_bear.hurt hostile @s ~ ~ ~ 1 1
 execute as @a[distance=..64] at @s run playsound minecraft:entity.shulker.hurt hostile @s ~ ~ ~ 1 0.5
