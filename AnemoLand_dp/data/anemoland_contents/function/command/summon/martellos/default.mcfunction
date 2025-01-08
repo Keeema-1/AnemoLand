@@ -1,1 +1,1 @@
-function anemoland_contents:sys/entity/mob/martellos/summon/enemy/0
+function anemoland_contents:sys/entity/mob/martellos/summon/default/enemy/0

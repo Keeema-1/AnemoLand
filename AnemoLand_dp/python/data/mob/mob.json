@@ -971,5 +971,275 @@
         "price": {
             "exchange": {"sell_required": 1, "buy_required": 5}
         }
+    },
+    "martellos": {
+        "aj_name": "martellos",
+        "display_name": "マルテロス",
+        "type": "boss",
+        "aj_cmd_offset": 10200,
+        "custom_model_data": 1030,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02040",
+            "number": "04",
+            "detail": ["両腕と尻尾の大きな丸太を使い、敵を叩き潰す。"],
+            "main_areas": ["forest"],
+            "attack_elements": ["physical"]
+        },
+        "unlock": {"armor": ["martellos"]},
+        "animations": {
+            "default": {},
+            "knock_left": {},
+            "knock_right": {},
+            "knock_left1": {},
+            "knock_right1": {},
+            "knock_left2": {},
+            "knock_right2": {},
+            "die": {},
+            "bark": {},
+            "walk": {},
+            "turn_right": {},
+            "turn_left": {},
+            "spin_right": {},
+            "spin_right1": {},
+            "spin_right2": {},
+            "spin_dirt_right1": {},
+            "spin_dirt_right2": {},
+            "tired": {},
+            "dash_charge": {},
+            "dash": {},
+            "dash_end": {},
+            "tail_right1": {},
+            "backstep": {}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {},
+            "cherry": {},
+            "cherry_damaged": {},
+            "mushroom": {},
+            "mushroom_damaged": {},
+            "stone": {},
+            "stone_damaged": {},
+            "amethyst": {},
+            "amethyst_damaged": {}
+        },
+        "variants": {
+            "cherry": {
+                "display_name": "マルテロス",
+                "custom_model_data_add": 1,
+                "dictionary": {
+                    "recipe_prefix": "02041",
+                    "number": "04",
+                    "detail": ["両腕と尻尾の大きな丸太を使い、敵を叩き潰す。"],
+                    "main_areas": ["cherry"],
+                    "attack_elements": ["physical"]
+                }
+            },
+            "mushroom": {
+                "display_name": "マシュテロス",
+                "custom_model_data_add": 2,
+                "dictionary": {
+                    "recipe_prefix": "02042",
+                    "number": "04",
+                    "detail": ["両腕と尻尾の大きなキノコを使い、敵を叩き潰す。"],
+                    "main_areas": ["mushroom"],
+                    "attack_elements": ["physical"]
+                },
+                "parts":{
+                    "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 100}},
+                    "right_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 100}},
+                    "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 100}},
+                    "neck": {"display_name": "neck", "armor_mul": 150, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 100}},
+                    "head": {"display_name": "head", "armor_mul": 200, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 100}},
+                    "tail1": {"display_name": "tail", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 100}},
+                    "tail2": {"display_name": "tail_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 100}}
+                }
+            },
+            "stone": {
+                "display_name": "ボルテロス",
+                "custom_model_data_add": 3,
+                "dictionary": {
+                    "recipe_prefix": "02043",
+                    "number": "04",
+                    "detail": ["両腕と尻尾の大きな岩石を使い、敵を叩き潰す。"],
+                    "main_areas": ["stone"],
+                    "attack_elements": ["physical"]
+                },
+                "parts":{
+                    "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 50}},
+                    "right_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 20}},
+                    "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 20}},
+                    "neck": {"display_name": "neck", "armor_mul": 150, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 50}},
+                    "head": {"display_name": "head", "armor_mul": 200, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 50}},
+                    "tail1": {"display_name": "tail", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 50}},
+                    "tail2": {"display_name": "tail_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 20}}
+                }
+            },
+            "amethyst": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "bark": {
+                "score": 1
+            },
+            "walk": {
+                "score": 2
+            },
+            "turn": {
+                "score": 3
+            },
+            "anger": {
+                "score": 4
+            },
+            "tired": {
+                "score": 5
+            },
+            "knock": {
+                "score": 11
+            },
+            "spin": {
+                "score": 12
+            },
+            "dash": {
+                "score": 13
+            },
+            "spin_dirt": {
+                "score": 14
+            },
+            "knock_tail": {
+                "score": 15
+            },
+            "backstep": {
+                "score": 16
+            }
+        },
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 10,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 4,
+                                    "turn": 0,
+                                    "knock": 1,
+                                    "spin": 0,
+                                    "spin_dirt": 2,
+                                    "dash": 3,
+                                    "knock_tail": 1,
+                                    "backstep": 0
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 4,
+                                    "turn": 2,
+                                    "knock": 0,
+                                    "spin": 0,
+                                    "spin_dirt": 2,
+                                    "dash": 1,
+                                    "knock_tail": 2,
+                                    "backstep": 1
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "turn": 1,
+                                    "knock": 4,
+                                    "spin": 3,
+                                    "spin_dirt": 1,
+                                    "dash": 1,
+                                    "knock_tail": 2,
+                                    "backstep": 2
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "turn": 4,
+                                    "knock": 1,
+                                    "spin": 3,
+                                    "spin_dirt": 2,
+                                    "dash": 0,
+                                    "knock_tail": 3,
+                                    "backstep": 2
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "after_walk": {
+                "type": "random",
+                "weights": {
+                    "walk": 0,
+                    "turn": 0,
+                    "knock": 4,
+                    "spin": 3,
+                    "spin_dirt": 1,
+                    "dash": 0,
+                    "knock_tail": 1,
+                    "backstep": 0
+                }
+            },
+            "after_backstep": {
+                "type": "random",
+                "weights": {
+                    "walk": 0,
+                    "turn": 0,
+                    "knock": 2,
+                    "spin": 0,
+                    "spin_dirt": 0,
+                    "dash": 1,
+                    "knock_tail": 0,
+                    "backstep": 0
+                }
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150}},
+            "right_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 200}},
+            "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 200}},
+            "neck": {"display_name": "neck", "armor_mul": 150, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 150}},
+            "head": {"display_name": "head", "armor_mul": 200, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 150}},
+            "tail1": {"display_name": "tail", "armor_mul": 150, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 150}},
+            "tail2": {"display_name": "tail_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 200}}
+        },
+        "root_entity": "pig",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 15,
+            "max_health": {"base": 200, "mul": 40},
+            "attack_damage": {"base": 2, "mul": 0.8},
+            "gold": {"base": 40, "mul": 10},
+            "xp": {"base": 40, "mul": 10},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 15, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
     }
 }

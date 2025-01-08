@@ -1,1 +1,1 @@
-function anemoland_contents:sys/entity/mob/martellos/summon/enemy/level {level:25}
+function anemoland_contents:sys/entity/mob/martellos/summon/default/enemy/level {level:25}
