@@ -6,8 +6,8 @@
 #
 # @within function anemoland_contents:sys/entity/mob/martellos/action/backstep/tick
 
-# 分岐する場合
-    execute if score @s action1 matches 0 run function anemoland_contents:sys/entity/mob/martellos/manual/action/backstep/0/0
-    execute if score @s action1 matches 1 run function anemoland_contents:sys/entity/mob/martellos/manual/action/backstep/1/0
-# 終了
-    execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/martellos/action/backstep/end
+tp @s ~ ~ ~ ~ ~
+execute if score @s action_time matches ..25 run data modify storage temp:_ data.motion set value {speed:0.4}
+execute if score @s action_time matches ..25 run execute rotated ~ 0 facing ^ ^ ^-1 run function anemoland:sys/entity/common/motion/0
+
+execute if score @s action_time matches 46.. run function anemoland_contents:sys/entity/mob/martellos/action/backstep/end

@@ -22,5 +22,4 @@ execute if entity @s[tag=angry] if score @s action_time matches 30 if score @s a
 execute if entity @s[tag=angry] if score @s action_time matches 30 if score @s action_way matches 1 run function anemoland_contents:sys/entity/mob/martellos/animation/spin_right2
 
 execute if entity @s[tag=angry] if score @s action_time matches 50.. run return run function anemoland_contents:sys/entity/mob/martellos/manual/action/spin/1/start
-
 execute if score @s action_time matches 60.. run return run function anemoland_contents:sys/entity/mob/martellos/manual/action/spin/1/start

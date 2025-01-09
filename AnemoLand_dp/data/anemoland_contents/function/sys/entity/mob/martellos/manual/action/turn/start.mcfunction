@@ -6,4 +6,7 @@
 #
 # @within function anemoland_contents:sys/entity/mob/martellos/action/turn/start
 
-# function anemoland_contents:sys/entity/mob/martellos/animation/default
+function anemoland:sys/entity/common/target_direction/is_leftside
+
+execute if score #target_is_leftside temp matches 1 run function anemoland_contents:sys/entity/mob/martellos/animation/turn_left
+execute unless score #target_is_leftside temp matches 1 run function anemoland_contents:sys/entity/mob/martellos/animation/turn_right

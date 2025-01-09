@@ -6,3 +6,9 @@
 #
 # @within function anemoland_contents:sys/entity/mob/martellos/damaged/common
 
+execute as @a[distance=..64] at @s run playsound entity.polar_bear.death hostile @s ~ ~ ~ 1 0.3
+execute as @a[distance=..64] at @s run playsound entity.polar_bear.death hostile @s ~ ~ ~ 1 0.3
+# execute as @a[distance=..64] at @s run playsound item.trident.thunder hostile @s ~ ~ ~ 0.5 1
+# execute as @a[distance=..64] at @s run playsound entity.generic.explode hostile @s ~ ~ ~ 2 0
+
+# particle explosion_emitter ~ ~ ~ 0 0 0 0 1

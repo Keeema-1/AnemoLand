@@ -6,4 +6,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/martellos/action/backstep/start
 
-# function anemoland_contents:sys/entity/mob/martellos/animation/default
+function anemoland_contents:sys/entity/mob/martellos/animation/backstep

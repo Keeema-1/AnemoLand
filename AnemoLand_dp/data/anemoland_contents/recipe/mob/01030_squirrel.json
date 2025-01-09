@@ -8,7 +8,7 @@
 		"count": 1,
 		"id": "minecraft:green_dye",
 		"components": {
-			"item_name": "[{\"text\":\"【No.01-04】\"},{\"translate\":\"anemoland.mob.squirrel.default.name\"}]",
+			"item_name": "[{\"text\":\"【No.01-03】\"},{\"translate\":\"anemoland.mob.squirrel.default.name\"}]",
 			"custom_model_data": 30,
 			"lore": [
 				"{\"text\":\"\"}",

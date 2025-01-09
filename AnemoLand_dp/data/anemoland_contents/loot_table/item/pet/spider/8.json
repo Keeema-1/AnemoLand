@@ -1,0 +1,116 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:carrot_on_a_stick",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:sequence",
+							"functions": [
+								{
+									"function": "minecraft:set_lore",
+									"entity": "this",
+									"lore": [
+										[
+											{
+												"text": "  Lv.8",
+												"italic": false,
+												"color": "yellow"
+											}
+										],
+										[
+											{
+												"text": "  HP ",
+												"italic": false,
+												"color": "blue"
+											},
+											{
+												"text": "46"
+											}
+										],
+										[
+											{
+												"text": "  ",
+												"italic": false,
+												"color": "blue"
+											},
+											{
+												"translate": "anemoland.common.attack_damage"
+											},
+											{
+												"text": " "
+											},
+											{
+												"text": "7.2"
+											}
+										],
+										[
+											""
+										],
+										[
+											{
+												"translate": "anemoland.pet.lore.mob.1",
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "anemoland.pet.lore.mob.2",
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "anemoland.pet.lore.mob.3",
+												"color": "gray",
+												"italic": false
+											}
+										],
+										[
+											{
+												"translate": "anemoland.pet.cooltime",
+												"color": "white",
+												"italic": false
+											},
+											{
+												"text": "：30"
+											},
+											{
+												"translate": "anemoland.common.second"
+											}
+										]
+									],
+									"mode": "append"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"pet\",is_boss:0b,is_pet:1b,pet_id:\"spider\",display:{name:\"スパイダー\"},loot_table:\"item/pet/spider\",power_up:{add_level:1,materials:[{id:\"spider_bronze_medal\",loot_table:\"item/medal/spider/bronze\",count:9}]},status:{health:{max:46},attack:{base:7.2},armor:{base:10},level:8,level_up:{health:2,attack:0.4},xp:{value:0,required:74,required_mul:10}}}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 10050
+						},
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "anemoland.mob.spider.default.name",
+								"color": "white",
+								"italic": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

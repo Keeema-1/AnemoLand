@@ -200,7 +200,7 @@
         "icon_scale": 1.5,
         "dictionary": {
             "recipe_prefix": "01030",
-            "number": "04",
+            "number": "03",
             "detail": [""],
             "main_areas": ["forest"],
             "attack_elements": ["physical"]
@@ -452,6 +452,82 @@
             "attack_damage": {"base": 3, "mul": 0.4},
             "gold": {"base": 10, "mul": 1.5},
             "xp": {"base": 10, "mul": 1.5}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 5, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10
+        },
+        "price": {
+            "exchange": {"sell_required": 5, "buy_required": 1}
+        }
+    },
+    "spider": {
+        "aj_name": "spider",
+        "display_name": "スパイダー",
+        "type": "mob",
+        "aj_cmd_offset": 400,
+        "custom_model_data": 50,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "01050",
+            "number": "05",
+            "detail": ["獲物に跳びかかり襲いかかる。"],
+            "main_areas": ["forest"],
+            "attack_elements": ["physical"]
+        },
+        "target_change": {
+            "when_damaged": {"preset": "mob_default"}
+        },
+        "animations": {
+            "default": {},
+            "die": {},
+            "walk": {},
+            "jump_charge": {},
+            "jump": {},
+            "jump_end": {}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "walk": {
+                "score": 1
+            },
+            "jump": {
+                "score": 2
+            }
+        },
+        "attacks": {
+            "jump": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_2",
+                        "mul": 10,
+                        "position": [0,-2,0],
+                        "size": [2,4,2],
+                        "parts":["root"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 1.5}
+        },
+        "root_entity": "pig",
+        "display_height_add": 0.5,
+        "status": {
+            "default_level": 5,
+            "max_health": {"base": 30, "mul": 2},
+            "attack_damage": {"base": 4, "mul": 0.4},
+            "gold": {"base": 10, "mul": 1},
+            "xp": {"base": 10, "mul": 1}
         },
         "pet":{
             "loot_table_levels": {"min": 5, "max": 40, "step":1},
@@ -1194,6 +1270,30 @@
                         "position": [0,0,0],
                         "size": [4,4,4],
                         "parts":["right_arm"]
+                    }
+                ]
+            },
+            "tail": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_back_15",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["tail1","tail2"]
+                    }
+                ]
+            },
+            "dash": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_back_15",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["root","right_arm","left_arm","head","tail1","tail2"]
                     }
                 ]
             }

@@ -14,4 +14,4 @@
 # プレイヤーの方に回転
     function anemoland:sys/entity/common/rotate/to_player/front/8
 
-execute if score @s action_time matches 30.. run function anemoland:sys/entity/mob/martellos/tick/action/turn/end
+execute if score @s action_time matches 30.. run function anemoland_contents:sys/entity/mob/martellos/action/turn/end

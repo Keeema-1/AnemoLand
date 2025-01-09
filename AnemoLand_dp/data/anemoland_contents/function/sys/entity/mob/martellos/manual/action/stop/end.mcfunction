@@ -7,4 +7,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/martellos/action/stop/end
 
-function anemoland_contents:sys/entity/mob/martellos/action/knock/start
+function anemoland_contents:sys/entity/mob/martellos/choose_action/any/0
