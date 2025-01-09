@@ -2,7 +2,7 @@ execute unless score @s action0 matches 1.. run function anemoland_contents:sys/
 execute if score @s action0 matches 1 run function anemoland_contents:sys/entity/mob/martellos/action/bark/tick
 execute if score @s action0 matches 2 run function anemoland_contents:sys/entity/mob/martellos/action/walk/tick
 execute if score @s action0 matches 3 run function anemoland_contents:sys/entity/mob/martellos/action/turn/tick
-execute if score @s action0 matches 4 run function anemoland_contents:sys/entity/mob/martellos/action/anger/tick
+execute if score @s action0 matches 4 run function anemoland_contents:sys/entity/mob/martellos/action/get_angry/tick
 execute if score @s action0 matches 5 run function anemoland_contents:sys/entity/mob/martellos/action/tired/tick
 execute if score @s action0 matches 11 run function anemoland_contents:sys/entity/mob/martellos/action/knock/tick
 execute if score @s action0 matches 12 run function anemoland_contents:sys/entity/mob/martellos/action/spin/tick

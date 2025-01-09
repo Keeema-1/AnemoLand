@@ -6,8 +6,12 @@
 #
 # @within function anemoland_contents:sys/entity/mob/martellos/action/turn/tick
 
-# 分岐する場合
-    execute if score @s action1 matches 0 run function anemoland_contents:sys/entity/mob/martellos/manual/action/turn/0/0
-    execute if score @s action1 matches 1 run function anemoland_contents:sys/entity/mob/martellos/manual/action/turn/1/0
-# 終了
-    execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/martellos/action/turn/end
+# 移動
+    data modify storage temp:_ data.motion set value {speed:0.05}
+    execute if score #hostile_target.is_player temp matches 1 rotated ~ 0 positioned ^ ^ ^6 facing entity @a[tag=hostile_target,distance=..32,limit=1] feet rotated ~ 0 run function anemoland:sys/entity/common/motion/0
+    execute unless score #hostile_target.is_player temp matches 1 rotated ~ 0 positioned ^ ^ ^6 facing entity @e[type=#anemoland:mob_core,tag=hostile_target,distance=..32,limit=1] feet rotated ~ 0 run function anemoland:sys/entity/common/motion/0
+
+# プレイヤーの方に回転
+    function anemoland:sys/entity/common/rotate/to_player/front/8
+
+execute if score @s action_time matches 30.. run function anemoland:sys/entity/mob/martellos/tick/action/turn/end

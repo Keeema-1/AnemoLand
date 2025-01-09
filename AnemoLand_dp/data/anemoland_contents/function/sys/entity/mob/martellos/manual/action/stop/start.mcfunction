@@ -7,3 +7,5 @@
 # @within function anemoland_contents:sys/entity/mob/martellos/action/stop/start
 
 # function anemoland_contents:sys/entity/mob/martellos/animation/default
+
+scoreboard players reset @s action_counter

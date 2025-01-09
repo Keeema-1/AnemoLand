@@ -7,6 +7,6 @@
 #
 # @within function anemoland_contents:sys/entity/mob/garapapas/action/stop/end
 
-function anemoland_contents:sys/entity/mob/garapapas/choose_action/test/0
+function anemoland_contents:sys/entity/mob/garapapas/choose_action/any/0
 
 # function anemoland_contents:sys/entity/mob/garapapas/action/tail_side/start

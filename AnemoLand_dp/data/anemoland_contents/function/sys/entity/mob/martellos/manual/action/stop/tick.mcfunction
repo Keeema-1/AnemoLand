@@ -6,8 +6,11 @@
 #
 # @within function anemoland_contents:sys/entity/mob/martellos/action/stop/tick
 
-# 分岐する場合
-    execute if score @s action1 matches 0 run function anemoland_contents:sys/entity/mob/martellos/manual/action/stop/0/0
-    execute if score @s action1 matches 1 run function anemoland_contents:sys/entity/mob/martellos/manual/action/stop/1/0
-# 終了
-    execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/martellos/action/stop/end
+tp @s ~ ~ ~ ~ ~
+
+function anemoland:sys/entity/common/collide/3
+
+data modify entity @s Motion[1] set value -0.1
+
+execute if score #hostile_target.exist temp matches 1 if entity @s[tag=angry] run function anemoland_contents:sys/entity/mob/martellos/action/stop/end
+execute if score #hostile_target.exist temp matches 1 if score @s action_time matches 10.. run function anemoland_contents:sys/entity/mob/martellos/action/stop/end

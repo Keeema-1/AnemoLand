@@ -885,6 +885,62 @@
             }
         },
         "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 8,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "bite": 2,
+                                    "bite_side": 0,
+                                    "dive": 2,
+                                    "tail_side": 2,
+                                    "walk": 8
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "bite": 0,
+                                    "bite_side": 2,
+                                    "dive": 1,
+                                    "tail_side": 1,
+                                    "walk": 8
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "bite": 4,
+                                    "bite_side": 2,
+                                    "dive": 4,
+                                    "tail_side": 4,
+                                    "walk": 0
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "bite": 1,
+                                    "bite_side": 4,
+                                    "dive": 2,
+                                    "tail_side": 2,
+                                    "walk": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "test": {
                 "type": "random",
                 "weights": {
@@ -1091,7 +1147,7 @@
             "turn": {
                 "score": 3
             },
-            "anger": {
+            "get_angry": {
                 "score": 4
             },
             "tired": {
@@ -1114,6 +1170,32 @@
             },
             "backstep": {
                 "score": 16
+            }
+        },
+        "attacks": {
+            "knock_left": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_back_15",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["left_arm"]
+                    }
+                ]
+            },
+            "knock_right": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_back_15",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["right_arm"]
+                    }
+                ]
             }
         },
         "choices":{
