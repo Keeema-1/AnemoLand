@@ -4,11 +4,8 @@ scoreboard objectives add aj.bark.frame dummy
 scoreboard objectives add aj.walk.frame dummy
 scoreboard objectives add aj.turn_right.frame dummy
 scoreboard objectives add aj.turn_left.frame dummy
-scoreboard objectives add aj.knock_right.frame dummy
-scoreboard objectives add aj.knock_left.frame dummy
 scoreboard objectives add aj.die.frame dummy
 scoreboard objectives add aj.tired.frame dummy
-scoreboard objectives add aj.spin_right.frame dummy
 scoreboard objectives add aj.dash_charge.frame dummy
 scoreboard objectives add aj.dash.frame dummy
 scoreboard objectives add aj.dash_end.frame dummy

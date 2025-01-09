@@ -7,7 +7,7 @@ execute if score @s used.carrot_on_a_stick matches 1.. run function anemoland:sy
 
 execute if score @s dropped.knowledge_book matches 1.. run function anemoland:sys/player/item/drop_menu_item
 
-execute if score @s action0 matches 1.. run function anemoland:sys/player/item/weapon/weapon_skill/action
+execute if score @s action0 matches 1.. run function anemoland:sys/player/item/weapon/weapon_skill/tick
 
 execute if entity @s[tag=fishing] run function anemoland:sys/player/item/fishing/0
 

@@ -14,5 +14,5 @@
 
 # パーティクルとサウンド
     scoreboard players operation #entity_id temp = @s entity_id
-    execute if score @s action_time matches 50..100 as @e[type=#rpg:mob_core,tag=hitbox.head,tag=garapapas,distance=..32] if score @s entity_id = #entity_id temp at @s run particle flash ^ ^ ^1 0 0 0 1 1
+    execute if score @s action_time matches 50..100 as @e[type=#anemoland:mob_core,tag=hitbox.head,tag=garapapas,distance=..32] if score @s entity_id = #entity_id temp at @s run particle flash ^ ^ ^1 0 0 0 1 1
     execute if score @s action_time matches 50..80 as @a[distance=..64] at @s run playsound minecraft:entity.ravager.roar hostile @s ~ ~ ~ 0.6 0.7

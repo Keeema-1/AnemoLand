@@ -1,1 +1,1 @@
-function rpg:sys/entity/mob/martellos/animation/walk
+function anemoland_contents:sys/entity/mob/martellos/animation/walk

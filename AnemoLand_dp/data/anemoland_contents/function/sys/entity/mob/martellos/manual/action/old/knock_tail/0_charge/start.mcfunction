@@ -7,8 +7,8 @@ execute unless score #target_is_leftside temp matches 1 run scoreboard players s
 
 scoreboard players set @s action_way 1
 
-execute if score @s action_way matches 0 run function rpg:sys/entity/mob/martellos/animation/spin_left1
-execute if score @s action_way matches 1 run function rpg:sys/entity/mob/martellos/animation/spin_right1
+execute if score @s action_way matches 0 run function anemoland_contents:sys/entity/mob/martellos/animation/spin_left1
+execute if score @s action_way matches 1 run function anemoland_contents:sys/entity/mob/martellos/animation/spin_right1
 
 execute as @a[distance=..64] at @s run playsound entity.polar_bear.death hostile @s ~ ~ ~ 1 0.5
 

@@ -18,8 +18,9 @@
 # ダメージを受けた際の処理
     execute unless score #weapon_skill_flag temp matches 1 if entity @s[tag=mob] run function anemoland_contents:sys/entity/branch/damaged_by_player
 
-# 武器スキル使用フラグをリセット
-    scoreboard players reset #weapon_skill_flag temp
-
 # 攻撃対象タグを削除
     tag @s remove attack_victim
+
+# 一時的なスコアとストレージをリセット
+    scoreboard players reset * temp
+    data remove storage temp:_ data

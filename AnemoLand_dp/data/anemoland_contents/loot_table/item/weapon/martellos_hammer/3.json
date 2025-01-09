@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " 🗡+6.5"
+										"text": " 🗡7.5"
 									}
 								],
 								[
@@ -105,7 +105,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.impact_crater.lore.1"
+										"translate": "anemoland.weapon_skill.impact_crater.lore.1",
+										"with": [
+											[
+												{
+													"text": "🗡42"
+												}
+											],
+											[
+												{
+													"text": "🗡7"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -115,7 +127,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.impact_crater.lore.2"
+										"translate": "anemoland.weapon_skill.impact_crater.lore.2",
+										"with": [
+											[
+												{
+													"text": "🗡42"
+												}
+											],
+											[
+												{
+													"text": "🗡7"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -125,7 +149,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.impact_crater.lore.3"
+										"translate": "anemoland.weapon_skill.impact_crater.lore.3",
+										"with": [
+											[
+												{
+													"text": "🗡42"
+												}
+											],
+											[
+												{
+													"text": "🗡7"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -135,7 +171,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.impact_crater.lore.4"
+										"translate": "anemoland.weapon_skill.impact_crater.lore.4",
+										"with": [
+											[
+												{
+													"text": "🗡42"
+												}
+											],
+											[
+												{
+													"text": "🗡7"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -145,7 +193,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.impact_crater.lore.5"
+										"translate": "anemoland.weapon_skill.impact_crater.lore.5",
+										"with": [
+											[
+												{
+													"text": "🗡42"
+												}
+											],
+											[
+												{
+													"text": "🗡7"
+												}
+											]
+										]
 									}
 								],
 								{
@@ -190,7 +250,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"hammer\",loot_table:\"item/weapon/martellos_hammer\",sell_price:400,power_up:{},status:{level:3,attack:{base:6.5,mul:18},elemental_attack:{},weapon_skills:[{id:\"impact_crater\",gauge_consume:100,mul:80}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"hammer\",loot_table:\"item/weapon/martellos_hammer\",sell_price:400,power_up:{},status:{level:3,attack:{base:6.5,mul:18},elemental_attack:{},weapon_skills:[{id:\"impact_crater\",gauge_consume:100,attack_damage:[{physical: {base: 5, level_bonus: 1, mul: 6}}, {physical: {base: 5, level_bonus: 1, mul: 1}}]}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

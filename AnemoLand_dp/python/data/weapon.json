@@ -4,8 +4,8 @@
 			"display_name": "薙ぎ払い",
 			"gauge_consume": 100,
 			"attack_damage_list": [
-				{"physical": {"base": 3, "level_bonus": 1, "mul": 5}},
-				{"physical": {"base": 3, "level_bonus": 1, "mul": 1}}
+				{"physical": {"base": 4, "level_bonus": 1, "mul": 3}},
+				{"physical": {"base": 4, "level_bonus": 1, "mul": 1}}
 			],
 			"lore_len": 3
 		},
@@ -13,11 +13,46 @@
 			"display_name": "薙ぎ払いII",
 			"gauge_consume": 100,
 			"attack_damage_list": [
-				{"physical": {"base": 4, "level_bonus": 1, "mul": 5}},
-				{"physical": {"base": 4, "level_bonus": 1, "mul": 1}}
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 3}},
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 1}}
 			],
 			"lore_len": 3,
 			"lore_translate_reference": "sweep_attack"
+		},
+		"strong_attack": {
+			"display_name": "強撃",
+			"gauge_consume": 100,
+			"lore_len": 1,
+			"attack_damage_list": [
+				{"physical": {"base": 4, "level_bonus": 1, "mul": 6}}
+			]
+		},
+		"strong_attack_2": {
+			"display_name": "強撃II",
+			"gauge_consume": 100,
+			"lore_len": 1,
+			"attack_damage_list": [
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 6}}
+			],
+			"lore_translate_reference": "strong_attack"
+		},
+		"strong_dash_attack": {
+			"display_name": "強撃【ダッシュ強化】",
+			"gauge_consume": 100,
+			"lore_len": 3,
+			"attack_damage_list": [
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 6}},
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 8}}
+			]
+		},
+		"impact_crater": {
+			"display_name": "インパクトクレーター",
+			"gauge_consume": 100,
+			"lore_len": 5,
+			"attack_damage_list": [
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 6}},
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 1}}
+			]
 		}
 	},
 	"weapon_types":{
@@ -94,6 +129,68 @@
 				"3": {"materials": [{"id":"gold_medal", "loot_table":"item/medal/common/gold", "count":6}], "sell_price": 240}
 			},
 			"price": {"buy": 300}
+		},
+		{
+			"name": "stone_axe",
+			"display_name": "石の斧",
+			"weapon_type": "axe",
+			"custom_model_data": 102,
+			"attack_damage": 3,
+			"attack_speed": 0.8,
+			"weapon_skills":[
+				{"name": "strong_attack"}
+			],
+			"levels": {"1": {"sell_price": 80}},
+			"price": {"buy": 100}
+		},
+		{
+			"name": "iron_axe",
+			"display_name": "鉄の斧",
+			"weapon_type": "axe",
+			"custom_model_data": 103,
+			"attack_damage": 4,
+			"attack_speed": 0.8,
+			"weapon_skills":[
+				{"name": "strong_attack_2"}
+			],
+			"levels": {
+				"1": {"sell_price": 240},
+				"2": {"materials": [{"id":"silver_medal", "loot_table":"item/medal/common/silver", "count":6}], "sell_price": 240},
+				"3": {"materials": [{"id":"gold_medal", "loot_table":"item/medal/common/gold", "count":6}], "sell_price": 240}
+			},
+			"price": {"buy": 300}
+		},
+		{
+			"name": "king_boar_axe",
+			"display_name": "ボアアックス",
+			"weapon_type": "axe",
+			"custom_model_data": 111,
+			"attack_damage": 4,
+			"attack_speed": 0.8,
+			"weapon_skills":[
+				{"name": "strong_dash_attack"}
+			],
+			"levels": {
+				"1": {"sell_price": 80},
+				"2": {"materials": [{"id":"king_boar_silver_medal", "loot_table":"item/medal/king_boar/silver", "count":6}], "sell_price": 400},
+				"3": {"materials": [{"id":"king_boar_gold_medal", "loot_table":"item/medal/king_boar/gold", "count":6}], "sell_price": 400}
+			}
+		},
+		{
+			"name": "martellos_hammer",
+			"display_name": "マルテロハンマー",
+			"weapon_type": "hammer",
+			"custom_model_data": 211,
+			"attack_damage": 4.5,
+			"attack_speed": 0.8,
+			"weapon_skills":[
+				{"name": "impact_crater"}
+			],
+			"levels": {
+				"1": {"sell_price": 400},
+				"2": {"materials": [{"id":"martellos_silver_medal", "loot_table":"item/medal/martellos/silver", "count":6}], "sell_price": 400},
+				"3": {"materials": [{"id":"martellos_gold_medal", "loot_table":"item/medal/martellos/gold", "count":6}], "sell_price": 400}
+			}
 		}
 	]
 }

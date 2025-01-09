@@ -19,3 +19,7 @@
     scoreboard players operation @s skill_gauge += #skill_gauge_get temp
 # 最大値を超えたら調整
     execute if score @s skill_gauge > @s skill_gauge_max run scoreboard players operation @s skill_gauge = @s skill_gauge_max
+
+# 一時的なスコアとストレージをリセット
+    scoreboard players reset * temp
+    data remove storage temp:_ data

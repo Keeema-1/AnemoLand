@@ -7,4 +7,4 @@ execute if score @s action_way matches 0 at @p if entity @s[distance=..20] run s
 execute if score @s action_way matches 0 at @p if entity @s[distance=..32] run scoreboard players set @s action_way 5
 
 scoreboard players operation #action_way temp = @s action_way
-function rpg:sys/entity/bullet/dirt/summon
+function anemoland_contents:sys/entity/bullet/dirt/summon

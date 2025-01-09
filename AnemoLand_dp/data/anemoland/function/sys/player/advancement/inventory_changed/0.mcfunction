@@ -9,3 +9,7 @@
 
 # 再検知用に進捗を剥奪 (必ず最後に実行！でないと無限ループの恐れあり)
     advancement revoke @s only anemoland:inventory_changed
+
+# 一時的なスコアとストレージをリセット
+    scoreboard players reset * temp
+    data remove storage temp:_ data

@@ -10,6 +10,6 @@ execute unless score #hostile_target.is_player temp matches 1 run function anemo
 
 execute if score @s action_time matches ..189 unless score #target_is_frontside temp matches 1 run scoreboard players set @s action_time 190
 
-function rpg:sys/entity/mob/martellos/tick/action/dash/attack
+function anemoland_contents:sys/entity/mob/martellos/tick/action/dash/attack
 
-execute if score @s action_time matches 200.. run function rpg:sys/entity/mob/martellos/tick/action/dash/2_cooltime/start
+execute if score @s action_time matches 200.. run function anemoland_contents:sys/entity/mob/martellos/tick/action/dash/2_cooltime/start

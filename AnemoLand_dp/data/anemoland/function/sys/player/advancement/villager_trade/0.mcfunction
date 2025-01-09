@@ -10,3 +10,7 @@
 
 # 1tick後に村人のusesを削除
     schedule function anemoland:sys/player/advancement/villager_trade/scheduled 1t
+
+# 一時的なスコアとストレージをリセット
+    scoreboard players reset * temp
+    data remove storage temp:_ data

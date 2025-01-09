@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " 🗡+4"
+										"text": " 🗡5"
 									}
 								],
 								[
@@ -105,7 +105,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.strong_dash_attack.lore.1"
+										"translate": "anemoland.weapon_skill.strong_dash_attack.lore.1",
+										"with": [
+											[
+												{
+													"text": "🗡30"
+												}
+											],
+											[
+												{
+													"text": "🗡40"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -115,7 +127,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.strong_dash_attack.lore.2"
+										"translate": "anemoland.weapon_skill.strong_dash_attack.lore.2",
+										"with": [
+											[
+												{
+													"text": "🗡30"
+												}
+											],
+											[
+												{
+													"text": "🗡40"
+												}
+											]
+										]
 									}
 								],
 								[
@@ -125,7 +149,19 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.strong_dash_attack.lore.3"
+										"translate": "anemoland.weapon_skill.strong_dash_attack.lore.3",
+										"with": [
+											[
+												{
+													"text": "🗡30"
+												}
+											],
+											[
+												{
+													"text": "🗡40"
+												}
+											]
+										]
 									}
 								],
 								{
@@ -170,7 +206,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/king_boar_axe\",sell_price:80,power_up:{add_level:1,materials:[{id:\"king_boar_silver_medal\",loot_table:\"item/medal/king_boar/silver\",count:6}]},status:{level:1,attack:{base:4,mul:18},elemental_attack:{},weapon_skills:[{id:\"strong_dash_attack\",gauge_consume:100,mul:80}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/king_boar_axe\",sell_price:80,power_up:{add_level:1,materials:[{id:\"king_boar_silver_medal\",loot_table:\"item/medal/king_boar/silver\",count:6}]},status:{level:1,attack:{base:4,mul:18},elemental_attack:{},weapon_skills:[{id:\"strong_dash_attack\",gauge_consume:100,attack_damage:[{physical: {base: 5, level_bonus: 1, mul: 6}}, {physical: {base: 5, level_bonus: 1, mul: 8}}]}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

@@ -5,11 +5,8 @@ tag @s remove aj.martellos.animation.bark.playing
 tag @s remove aj.martellos.animation.walk.playing
 tag @s remove aj.martellos.animation.turn_right.playing
 tag @s remove aj.martellos.animation.turn_left.playing
-tag @s remove aj.martellos.animation.knock_right.playing
-tag @s remove aj.martellos.animation.knock_left.playing
 tag @s remove aj.martellos.animation.die.playing
 tag @s remove aj.martellos.animation.tired.playing
-tag @s remove aj.martellos.animation.spin_right.playing
 tag @s remove aj.martellos.animation.dash_charge.playing
 tag @s remove aj.martellos.animation.dash.playing
 tag @s remove aj.martellos.animation.dash_end.playing

@@ -109,12 +109,12 @@
 										"with": [
 											[
 												{
-													"text": "🗡25"
+													"text": "🗡18"
 												}
 											],
 											[
 												{
-													"text": "🗡5"
+													"text": "🗡6"
 												}
 											]
 										]
@@ -131,12 +131,12 @@
 										"with": [
 											[
 												{
-													"text": "🗡25"
+													"text": "🗡18"
 												}
 											],
 											[
 												{
-													"text": "🗡5"
+													"text": "🗡6"
 												}
 											]
 										]
@@ -153,12 +153,12 @@
 										"with": [
 											[
 												{
-													"text": "🗡25"
+													"text": "🗡18"
 												}
 											],
 											[
 												{
-													"text": "🗡5"
+													"text": "🗡6"
 												}
 											]
 										]
@@ -206,7 +206,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/iron_sword\",sell_price:240,power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:6}]},status:{level:2,attack:{base:5,mul:10},elemental_attack:{},weapon_skills:[{id:\"sweep_attack_2\",gauge_consume:100,attack_damage:[{physical: {base: 4, level_bonus: 1, mul: 5}}, {physical: {base: 4, level_bonus: 1, mul: 1}}]}],skill_gauge:{get:10}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/iron_sword\",sell_price:240,power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:6}]},status:{level:2,attack:{base:5,mul:10},elemental_attack:{},weapon_skills:[{id:\"sweep_attack_2\",gauge_consume:100,attack_damage:[{physical: {base: 5, level_bonus: 1, mul: 3}}, {physical: {base: 5, level_bonus: 1, mul: 1}}]}],skill_gauge:{get:10}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

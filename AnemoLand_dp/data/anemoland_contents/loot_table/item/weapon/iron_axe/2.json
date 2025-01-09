@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " 🗡+5"
+										"text": " 🗡6"
 									}
 								],
 								[
@@ -83,7 +83,7 @@
 										"text": "1> "
 									},
 									{
-										"translate": "anemoland.weapon_skill.strong_attack.name"
+										"translate": "anemoland.weapon_skill.strong_attack_2.name"
 									},
 									{
 										"text": " (",
@@ -105,7 +105,14 @@
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.strong_attack.lore.1"
+										"translate": "anemoland.weapon_skill.strong_attack.lore.1",
+										"with": [
+											[
+												{
+													"text": "🗡36"
+												}
+											]
+										]
 									}
 								],
 								{
@@ -150,7 +157,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/iron_axe\",sell_price:240,power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:6}]},status:{level:2,attack:{base:5,mul:18},elemental_attack:{},weapon_skills:[{id:\"strong_attack\",gauge_consume:100,mul:80}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/iron_axe\",sell_price:240,power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:6}]},status:{level:2,attack:{base:5,mul:18},elemental_attack:{},weapon_skills:[{id:\"strong_attack_2\",gauge_consume:100,attack_damage:[{physical: {base: 5, level_bonus: 1, mul: 6}}]}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

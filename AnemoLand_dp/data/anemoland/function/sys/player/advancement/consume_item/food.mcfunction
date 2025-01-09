@@ -12,3 +12,7 @@
 
 # 再検知用に進捗を剥奪
     advancement revoke @s only anemoland:consume_item/food
+
+# 一時的なスコアとストレージをリセット
+    scoreboard players reset * temp
+    data remove storage temp:_ data

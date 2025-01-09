@@ -11,4 +11,4 @@ execute if score @s action_time matches ..40 run particle block{block_state:{Nam
 # execute if score @s action_time matches 11..40 as @a[distance=..64] at @s run playsound block.sand.break hostile @s ~ ~ ~ 1 1
 execute if score @s action_time matches 11..40 as @a[distance=..64] at @s run playsound minecraft:block.rooted_dirt.hit hostile @s ~ ~ ~ 0.4 0
 
-execute if score @s action_time matches 80.. run function rpg:sys/entity/mob/martellos/tick/action/dash/end
+execute if score @s action_time matches 80.. run function anemoland_contents:sys/entity/mob/martellos/tick/action/dash/end

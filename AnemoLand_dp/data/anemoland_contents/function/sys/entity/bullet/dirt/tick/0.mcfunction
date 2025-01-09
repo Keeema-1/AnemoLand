@@ -25,11 +25,11 @@ execute if score @s action_way matches 4 at @s run tp ^ ^ ^1.0
 execute if score @s action_way matches 5 at @s run tp ^ ^ ^1.25
 execute if score @s action_way matches 0 at @s run tp ^ ^ ^1.5
 
-execute unless score @s action_time matches 100.. at @s if block ~ ~ ~ #rpg:space positioned ~-1 ~-1 ~-1 if entity @a[dx=1,dy=1,dz=1,gamemode=adventure] positioned ~1 ~1 ~1 run function rpg:sys/entity/bullet/dirt/tick/hit
-execute unless score @s action_time matches 100.. at @s if block ~ ~ ~ #rpg:space positioned ~-1 ~-1 ~-1 unless entity @a[dx=1,dy=1,dz=1,gamemode=adventure] if entity @e[type=#rpg:mob_core,tag=mob_root,tag=enemy,tag=!damaged,dx=1,dy=1,dz=1,limit=1] positioned ~1 ~1 ~1 run function rpg:sys/entity/bullet/dirt/tick/hit
+execute unless score @s action_time matches 100.. at @s if block ~ ~ ~ #anemoland:space positioned ~-1 ~-1 ~-1 if entity @a[dx=1,dy=1,dz=1,gamemode=adventure] positioned ~1 ~1 ~1 run function anemoland_contents:sys/entity/bullet/dirt/tick/hit
+execute unless score @s action_time matches 100.. at @s if block ~ ~ ~ #anemoland:space positioned ~-1 ~-1 ~-1 unless entity @a[dx=1,dy=1,dz=1,gamemode=adventure] if entity @e[type=#anemoland:mob_core,tag=mob_root,tag=enemy,tag=!damaged,dx=1,dy=1,dz=1,limit=1] positioned ~1 ~1 ~1 run function anemoland_contents:sys/entity/bullet/dirt/tick/hit
 
-execute unless score @s action_time matches 100.. at @s unless block ~ ~0.5 ~ #rpg:space positioned ^ ^1 ^ run function rpg:sys/entity/bullet/dirt/tick/hit
+execute unless score @s action_time matches 100.. at @s unless block ~ ~0.5 ~ #anemoland:space positioned ^ ^1 ^ run function anemoland_contents:sys/entity/bullet/dirt/tick/hit
 
-execute if score @s action_time matches 100.. run function rpg:sys/entity/bullet/dirt/tick/hit
+execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/bullet/dirt/tick/hit
 
 # tellraw @a "bullet dirt tick"
