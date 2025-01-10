@@ -6,3 +6,5 @@
 #
 # @within function anemoland_contents:sys/entity/mob/bagikeros/state/tick
 
+scoreboard players operation #entity_id temp = @s entity_id
+execute if predicate anemoland:random_chance/0_2 as @e[type=#anemoland:mob_core,tag=hitbox.head,tag=bagikeros,distance=..32] if score @s entity_id = #entity_id temp positioned as @s run particle poof ^ ^0.5 ^1.5 0.1 0.1 0.1 0 1

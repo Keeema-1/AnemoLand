@@ -1,0 +1,12 @@
+execute unless score @s action0 matches 1.. run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/stop/0
+execute if score @s action0 matches 1 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/bark/0
+execute if score @s action0 matches 2 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/anger/0
+execute if score @s action0 matches 3 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/tired/0
+execute if score @s action0 matches 4 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/walk/0
+execute if score @s action0 matches 11 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/bite/0
+execute if score @s action0 matches 12 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/dive/0
+execute if score @s action0 matches 13 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/shake_head/0
+execute if score @s action0 matches 14 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/shake_tail/0
+execute if score @s action0 matches 15 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/shake_walk/0
+execute if score @s action0 matches 16 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/bite_side/0
+execute if score @s action0 matches 17 run function anemoland_contents:sys/entity/mob/bagikeros/tick/action/fire_head/0

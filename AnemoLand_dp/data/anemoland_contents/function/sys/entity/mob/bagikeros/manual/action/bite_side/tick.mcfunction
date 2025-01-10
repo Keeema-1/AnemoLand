@@ -6,8 +6,6 @@
 #
 # @within function anemoland_contents:sys/entity/mob/bagikeros/action/bite_side/tick
 
-# 分岐する場合
+# 分岐
     execute if score @s action1 matches 0 run function anemoland_contents:sys/entity/mob/bagikeros/manual/action/bite_side/0/0
     execute if score @s action1 matches 1 run function anemoland_contents:sys/entity/mob/bagikeros/manual/action/bite_side/1/0
-# 終了
-    execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/bagikeros/action/bite_side/end

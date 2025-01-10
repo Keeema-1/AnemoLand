@@ -6,4 +6,6 @@
 #
 # @within function anemoland_contents:sys/entity/mob/bagikeros/action/tired/tick
 
-execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/bagikeros/manual/action/tired/end
+tp @s ~ ~ ~ ~ ~
+
+execute if score @s action_time matches 120.. run function anemoland_contents:sys/entity/mob/bagikeros/action/tired/end

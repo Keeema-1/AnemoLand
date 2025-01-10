@@ -6,4 +6,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/bagikeros/action/dive/start
 
-# function anemoland_contents:sys/entity/mob/bagikeros/animation/default
+function anemoland_contents:sys/entity/mob/bagikeros/animation/dive1

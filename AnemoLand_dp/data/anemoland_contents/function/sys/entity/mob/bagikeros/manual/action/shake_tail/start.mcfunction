@@ -6,4 +6,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/bagikeros/action/shake_tail/start
 
-# function anemoland_contents:sys/entity/mob/bagikeros/animation/default
+function anemoland_contents:sys/entity/mob/bagikeros/animation/shake_tail1

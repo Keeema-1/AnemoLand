@@ -7,4 +7,6 @@
 #
 # @within function anemoland_contents:sys/entity/mob/bagikeros/action/stop/end
 
-function anemoland_contents:sys/entity/mob/bagikeros/action/stop/start
+# function anemoland_contents:sys/entity/mob/bagikeros/choose_action/any/0
+
+function anemoland_contents:sys/entity/mob/bagikeros/choose_action/test/0

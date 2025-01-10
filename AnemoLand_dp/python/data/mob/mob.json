@@ -2030,7 +2030,7 @@
                 "groups":[
                     {
                         "predicate": "",
-                        "knockback": "facing1_from_back_2",
+                        "knockback": "facing/middle/15",
                         "mul": 10,
                         "position": [0,-2,0],
                         "size": [4,4,4],
@@ -2038,7 +2038,7 @@
                     },
                     {
                         "predicate": "",
-                        "knockback": "facing1_from_back_2",
+                        "knockback": "facing/middle/15",
                         "mul": 5,
                         "position": [0,-2,0],
                         "size": [4,4,4],
@@ -2050,7 +2050,7 @@
                 "groups":[
                     {
                         "predicate": "",
-                        "knockback": "facing2_10",
+                        "knockback": "facing/middle/15",
                         "mul": 10,
                         "position": [0,0,0],
                         "size": [4,4,4],
@@ -2062,7 +2062,7 @@
                 "groups":[
                     {
                         "predicate": "",
-                        "knockback": "facing1_10",
+                        "knockback": "tackle/middle/15",
                         "mul": 5,
                         "position": [0,0,0],
                         "size": [3,3,3],
