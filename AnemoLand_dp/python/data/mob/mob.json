@@ -2068,5 +2068,254 @@
         "price": {
             "exchange": {"sell_required": 1, "buy_required": 5}
         }
+    },
+    "carnara": {
+        "aj_name": "carnara",
+        "display_name": "カールナーラ",
+        "type": "boss",
+        "aj_cmd_offset": 10600,
+        "custom_model_data": 1070,
+        "icon_scale": 1.4,
+        "dictionary": {
+            "recipe_prefix": "02080",
+            "number": "08",
+            "detail": [""],
+            "main_areas": ["ice"],
+            "attack_elements": ["physical","ice"]
+        },
+        "unlock": {"armor": []},
+        "animations": {
+            "default": {},
+            "die": {},
+            "bark": {},
+            "tired": {},
+            "walk": {},
+            "dive1": {},
+            "dive2": {},
+            "beam1": {},
+            "beam2": {},
+            "drag_head_left1": {},
+            "drag_head_left2": {},
+            "drag_head_right1": {},
+            "drag_head_right2": {},
+            "tail_spear_left1": {},
+            "tail_spear_left2": {},
+            "tail_spear_right1": {},
+            "tail_spear_right2": {},
+            "beam2_left": {},
+            "beam2_right": {},
+            "drag_tail_left1": {},
+            "drag_tail_left2": {},
+            "drag_tail_right1": {},
+            "drag_tail_right2": {},
+            "beam_high_left1": {},
+            "beam_high_left2": {},
+            "beam_high_right1": {},
+            "beam_high_right2": {},
+            "beam_high_left2_far": {},
+            "beam_high_right2_far": {},
+            "turn_left": {},
+            "turn_right": {},
+            "beam_turn_left": {},
+            "beam_turn_right": {}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "bark": {
+                "score": 1
+            },
+            "anger": {
+                "score": 2
+            },
+            "tired": {
+                "score": 3
+            },
+            "walk": {
+                "score": 4
+            },
+            "turn": {
+                "score": 5
+            },
+            "dive": {
+                "score": 11
+            },
+            "beam": {
+                "score": 12
+            },
+            "drag_head": {
+                "score": 13
+            },
+            "tail_spear": {
+                "score": 14
+            },
+            "drag_tail": {
+                "score": 15
+            },
+            "beam_high": {
+                "score": 16
+            },
+            "beam_turn": {
+                "score": 17
+            }
+        },
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 20,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "dive": 2,
+                                    "drag_head": 1,
+                                    "beam": 3,
+                                    "tail_spear": 2,
+                                    "drag_tail": 0,
+                                    "beam_high": 2,
+                                    "turn": 0,
+                                    "beam_turn": 0,
+                                    "walk": 5
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "dive": 0,
+                                    "drag_head": 0,
+                                    "beam": 0,
+                                    "tail_spear": 2,
+                                    "drag_tail": 2,
+                                    "beam_high": 2,
+                                    "turn": 6,
+                                    "beam_turn": 6,
+                                    "walk": 4
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "dive": 2,
+                                    "drag_head": 2,
+                                    "beam": 2,
+                                    "tail_spear": 2,
+                                    "drag_tail": 0,
+                                    "beam_high": 2,
+                                    "turn": 0,
+                                    "beam_turn": 0,
+                                    "walk": 0
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "dive": 0,
+                                    "drag_head": 0,
+                                    "beam": 0,
+                                    "tail_spear": 2,
+                                    "drag_tail": 2,
+                                    "beam_high": 2,
+                                    "turn": 2,
+                                    "beam_turn": 2,
+                                    "walk": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "test": {
+                "type": "random",
+                "weights": {
+                    "dive": 2,
+                    "drag_head": 2,
+                    "beam": 2,
+                    "tail_spear": 2,
+                    "drag_tail": 2,
+                    "beam_high": 2,
+                    "turn": 2,
+                    "beam_turn": 2,
+                    "walk": 2
+                }
+            }
+        },
+        "attacks": {
+            "head1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_from_back_12",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,4,3],
+                        "parts":["head","neck","body"]
+                    }
+                ]
+            },
+            "dive1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_12",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [5,4,5],
+                        "parts":["root","head","neck","body"]
+                    }
+                ]
+            },
+            "tail1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_12",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["root","tail"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "body", "armor_mul": 80, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
+            "body": {"display_name": "body", "armor_mul": 80, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}, "skip_display_mul": true},
+            "head": {"display_name": "head", "armor_mul": 200, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
+            "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
+            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}}
+        },
+        "root_entity": "pig",
+        "display_height": 1.0,
+        "status": {
+            "default_level": 30,
+            "max_health": {"base": 100, "mul": 60},
+            "attack_damage": {"base": 5, "mul": 0.8},
+            "gold": {"base": 60, "mul": 14},
+            "xp": {"base": 60, "mul": 14},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 30, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
     }
 }

@@ -11,3 +11,4 @@ execute if entity @s[tag=martellos] run function anemoland_contents:sys/entity/m
 execute if entity @s[tag=ojinushi] run function anemoland_contents:sys/entity/mob/ojinushi/tick/0
 execute if entity @s[tag=muscleroom] run function anemoland_contents:sys/entity/mob/muscleroom/tick/0
 execute if entity @s[tag=bagikeros] run function anemoland_contents:sys/entity/mob/bagikeros/tick/0
+execute if entity @s[tag=carnara] run function anemoland_contents:sys/entity/mob/carnara/tick/0
