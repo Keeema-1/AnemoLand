@@ -49,3 +49,6 @@ execute store result storage temp:_ data.player_damage.value float 0.1 run score
 function anemoland:sys/player/common/damage/dst/apply_ with storage temp:_ data.player_damage
 
 scoreboard players set @s hurt_time 20
+
+# tellraw @a [{"selector": "@s"},{"text":" Damage: "},{"score":{"name":"#damage","objective":"temp"}}]
+# tellraw @a [{"text":"   src attack: "},{"score":{"name":"#damage.src.attack.base","objective":"temp"}},{"text":" * "},{"score":{"name":"#damage.src.attack.mul","objective":"temp"}}]

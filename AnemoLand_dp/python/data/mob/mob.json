@@ -1240,7 +1240,9 @@
             "stone": {},
             "stone_damaged": {},
             "amethyst": {},
-            "amethyst_damaged": {}
+            "amethyst_damaged": {},
+            "ice": {},
+            "ice_damaged": {}
         },
         "variants": {
             "cherry": {
@@ -1292,6 +1294,26 @@
                     "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 100}},
                     "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 70}},
                     "tail2": {"display_name": "tail_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 30}}
+                }
+            },
+            "ice": {
+                "display_name": "イルテロス",
+                "custom_model_data_add": 4,
+                "dictionary": {
+                    "recipe_prefix": "02044",
+                    "number": "04",
+                    "detail": ["両腕と尻尾の大きな氷塊を使い、敵を叩き潰す。"],
+                    "main_areas": ["ice"],
+                    "attack_elements": ["physical"]
+                },
+                "parts":{
+                    "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 120}},
+                    "right_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 90}},
+                    "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 90}, "skip_display_mul": true},
+                    "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 140}},
+                    "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 170}},
+                    "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 140}},
+                    "tail2": {"display_name": "tail_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 90}}
                 }
             },
             "amethyst": {}
@@ -2073,15 +2095,15 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 50}},
-            "front_body": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 5, "elemental_damage_mul": {"fire": 50}},
-            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
-            "left_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
-            "right_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
-            "left_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
-            "right_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
-            "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 25}},
-            "tail2": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 25}}
+            "root": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 70}},
+            "front_body": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 5, "elemental_damage_mul": {"fire": 70}},
+            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 90}},
+            "left_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
+            "right_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
+            "left_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
+            "right_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
+            "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 50}},
+            "tail2": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 50}}
         },
         "root_entity": "pig",
         "display_height": 1.0,
@@ -2326,11 +2348,11 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "body", "armor_mul": 80, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
-            "body": {"display_name": "body", "armor_mul": 80, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}, "skip_display_mul": true},
-            "head": {"display_name": "head", "armor_mul": 200, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
-            "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}},
-            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":50}}
+            "root": {"display_name": "body", "armor_mul": 80, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 110, "ice":50}},
+            "body": {"display_name": "body", "armor_mul": 80, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 110, "ice":50}, "skip_display_mul": true},
+            "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 180, "ice":80}},
+            "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":60}},
+            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 150, "ice":60}}
         },
         "root_entity": "pig",
         "display_height": 1.0,

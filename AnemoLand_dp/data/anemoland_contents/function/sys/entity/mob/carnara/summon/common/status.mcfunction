@@ -24,7 +24,7 @@ scoreboard players operation @s attack.base /= #temp temp
 scoreboard players add @s attack.base 5
 scoreboard players set @s attack.mul 10
 scoreboard players set @s armor.mul 80
-scoreboard players set @s armor.fire.mul 150
+scoreboard players set @s armor.fire.mul 110
 scoreboard players set @s armor.ice.mul 50
 scoreboard players operation @s anger.damage = @s max_health
 scoreboard players set #temp temp 50

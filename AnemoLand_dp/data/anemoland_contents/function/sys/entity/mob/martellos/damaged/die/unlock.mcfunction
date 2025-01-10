@@ -3,6 +3,7 @@ execute if entity @s[tag=variant.default] run recipe give @a anemoland_contents:
 execute if entity @s[tag=variant.cherry] run recipe give @a anemoland_contents:boss/02041_martellos_cherry
 execute if entity @s[tag=variant.mushroom] run recipe give @a anemoland_contents:boss/02042_martellos_mushroom
 execute if entity @s[tag=variant.stone] run recipe give @a anemoland_contents:boss/02043_martellos_stone
+execute if entity @s[tag=variant.ice] run recipe give @a anemoland_contents:boss/02044_martellos_ice
 data modify storage anemoland:progress data.mob_list.martellos.unlock set value 1b
 execute if score @s level matches 15.. run data modify storage anemoland:progress data.mob_list.martellos.defeated_levels.15 set value 1b
 execute if score @s level matches 20.. run data modify storage anemoland:progress data.mob_list.martellos.defeated_levels.20 set value 1b

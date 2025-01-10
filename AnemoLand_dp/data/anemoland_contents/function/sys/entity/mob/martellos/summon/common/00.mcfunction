@@ -10,6 +10,7 @@ execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 
 execute if data storage temp:_ data.new_entity{"variant":"cherry"} rotated ~ 0 run function animated_java:martellos/summon/cherry
 execute if data storage temp:_ data.new_entity{"variant":"mushroom"} rotated ~ 0 run function animated_java:martellos/summon/mushroom
 execute if data storage temp:_ data.new_entity{"variant":"stone"} rotated ~ 0 run function animated_java:martellos/summon/stone
+execute if data storage temp:_ data.new_entity{"variant":"ice"} rotated ~ 0 run function animated_java:martellos/summon/ice
 execute if data storage temp:_ data.new_entity{"variant":"amethyst"} rotated ~ 0 run function animated_java:martellos/summon/amethyst
 ride @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] mount @s
 tag @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] remove newly_summoned.aj
@@ -19,6 +20,7 @@ execute if data storage temp:_ data.new_entity{"variant":"default"} run function
 execute if data storage temp:_ data.new_entity{"variant":"cherry"} run function anemoland_contents:sys/entity/mob/martellos/summon/common/variant/cherry
 execute if data storage temp:_ data.new_entity{"variant":"mushroom"} run function anemoland_contents:sys/entity/mob/martellos/summon/common/variant/mushroom
 execute if data storage temp:_ data.new_entity{"variant":"stone"} run function anemoland_contents:sys/entity/mob/martellos/summon/common/variant/stone
+execute if data storage temp:_ data.new_entity{"variant":"ice"} run function anemoland_contents:sys/entity/mob/martellos/summon/common/variant/ice
 execute if data storage temp:_ data.new_entity{"variant":"amethyst"} run function anemoland_contents:sys/entity/mob/martellos/summon/common/variant/amethyst
 execute if data storage temp:_ data.new_entity{"summon_type":"enemy"} run function anemoland_contents:sys/entity/mob/martellos/summon/common/enemy
 execute if data storage temp:_ data.new_entity{"summon_type":"pet"} run function anemoland_contents:sys/entity/mob/martellos/summon/common/pet

@@ -7,4 +7,6 @@
 #
 # @within function anemoland_contents:sys/entity/mob/carnara/action/stop/end
 
-function anemoland_contents:sys/entity/mob/carnara/action/stop/start
+# function anemoland_contents:sys/entity/mob/carnara/action/stop/start
+
+function anemoland_contents:sys/entity/mob/carnara/choose_action/any/0
