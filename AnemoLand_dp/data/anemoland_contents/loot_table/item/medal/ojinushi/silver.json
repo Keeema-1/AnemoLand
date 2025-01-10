@@ -1,0 +1,67 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:yellow_dye",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "  "
+									},
+									{
+										"translate": "anemoland.item.medal.mob.lore.1",
+										"with": [
+											{
+												"text": "Lv.20-29"
+											},
+											{
+												"translate": "anemoland.mob.ojinushi.default.name"
+											}
+										],
+										"italic": false,
+										"color": "white"
+									}
+								]
+							],
+							"mode": "append"
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"material\",id:\"ojinushi_silver_medal\"}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 10401
+						},
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "anemoland.item.medal.mob.name",
+								"with": [
+									{
+										"translate": "anemoland.mob.ojinushi.default.name"
+									},
+									{
+										"translate": "anemoland.common.rank.silver"
+									}
+								],
+								"color": "gray",
+								"italic": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -101,21 +101,25 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.sweep_attack.lore.1",
 										"with": [
 											[
-												{
-													"text": "🗡21"
-												}
+												[
+													{
+														"text": "🗡21"
+													}
+												]
 											],
 											[
-												{
-													"text": "🗡7"
-												}
+												[
+													{
+														"text": "🗡7"
+													}
+												]
 											]
 										]
 									}
@@ -123,21 +127,25 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.sweep_attack.lore.2",
 										"with": [
 											[
-												{
-													"text": "🗡21"
-												}
+												[
+													{
+														"text": "🗡21"
+													}
+												]
 											],
 											[
-												{
-													"text": "🗡7"
-												}
+												[
+													{
+														"text": "🗡7"
+													}
+												]
 											]
 										]
 									}
@@ -145,29 +153,31 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.sweep_attack.lore.3",
 										"with": [
 											[
-												{
-													"text": "🗡21"
-												}
+												[
+													{
+														"text": "🗡21"
+													}
+												]
 											],
 											[
-												{
-													"text": "🗡7"
-												}
+												[
+													{
+														"text": "🗡7"
+													}
+												]
 											]
 										]
 									}
 								],
 								{
-									"text": "",
-									"italic": false,
-									"color": "dark_gray"
+									"text": ""
 								},
 								[
 									{
@@ -179,7 +189,7 @@
 										"translate": "anemoland.common.sell_price"
 									},
 									{
-										"text": " 240G"
+										"text": ": 240G"
 									}
 								]
 							],

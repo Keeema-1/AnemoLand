@@ -1,0 +1,2 @@
+function animated_java:ojinushi/animations/pause_all
+function animated_java:ojinushi/animations/bite_left2/play

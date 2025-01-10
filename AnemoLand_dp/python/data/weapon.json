@@ -53,6 +53,14 @@
 				{"physical": {"base": 5, "level_bonus": 1, "mul": 6}},
 				{"physical": {"base": 5, "level_bonus": 1, "mul": 1}}
 			]
+		},
+		"firework_helmet_breaker": {
+			"display_name": "兜割り【祭】",
+			"gauge_consume": 100,
+			"lore_len": 4,
+			"attack_damage_list": [
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 1}, "fire": {"base": 5, "level_bonus": 1, "mul": 1}}
+			]
 		}
 	},
 	"weapon_types":{
@@ -190,6 +198,21 @@
 				"1": {"sell_price": 400},
 				"2": {"materials": [{"id":"martellos_silver_medal", "loot_table":"item/medal/martellos/silver", "count":6}], "sell_price": 400},
 				"3": {"materials": [{"id":"martellos_gold_medal", "loot_table":"item/medal/martellos/gold", "count":6}], "sell_price": 400}
+			}
+		},
+		{
+			"name": "ojinushi_katana",
+			"display_name": "祭獅子の刀",
+			"weapon_type": "katana",
+			"custom_model_data": 311,
+			"attack_damage": 4.5,
+			"attack_speed": 1.6,
+			"weapon_skills":[
+				{"name": "firework_helmet_breaker"}
+			],
+			"levels": {
+				"2": {"sell_price": 400},
+				"3": {"materials": [{"id":"ojinushi_gold_medal", "loot_table":"item/medal/ojinushi/gold", "count":6}], "sell_price": 400}
 			}
 		}
 	]

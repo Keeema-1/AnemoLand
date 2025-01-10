@@ -101,24 +101,24 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.strong_attack.lore.1",
 										"with": [
 											[
-												{
-													"text": "🗡30"
-												}
+												[
+													{
+														"text": "🗡30"
+													}
+												]
 											]
 										]
 									}
 								],
 								{
-									"text": "",
-									"italic": false,
-									"color": "dark_gray"
+									"text": ""
 								},
 								[
 									{
@@ -130,7 +130,7 @@
 										"translate": "anemoland.common.sell_price"
 									},
 									{
-										"text": " 240G"
+										"text": ": 240G"
 									}
 								]
 							],

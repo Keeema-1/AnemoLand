@@ -2,7 +2,7 @@
     data modify storage temp:_ data.weapon_data set from storage temp:_ data.player_data.SelectedItem.components."minecraft:custom_data"
 
 # 武器スキルにインパクトクレーターがなければ終了
-    execute unless data storage temp:_ data.weapon_data.status.weapon_skills[{id:"impact_crater"}] run return run tellraw @a "test:impact crater じゃない"
+    execute unless data storage temp:_ data.weapon_data.status.weapon_skills[{id:"impact_crater"}] run return 1
 
 # 武器技使用フラグをセット
     scoreboard players set #weapon_skill_flag temp 1
@@ -10,7 +10,7 @@
 # 武器技ステータスを取得
     data modify storage temp:_ data.weapon_skill_data set from storage temp:_ data.weapon_data.status.weapon_skills[{id:"impact_crater"}]
 
-# メイン攻撃のステータスを取得
+# サブ攻撃のステータスを取得
     execute store result score #damage.src.attack.base temp run data get storage temp:_ data.weapon_skill_data.attack_damage[1].physical.base 10
     execute store result score #damage.src.attack.mul temp run data get storage temp:_ data.weapon_skill_data.attack_damage[1].physical.mul 10
 

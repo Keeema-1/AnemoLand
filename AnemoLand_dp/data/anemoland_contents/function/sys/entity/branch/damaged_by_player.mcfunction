@@ -8,3 +8,4 @@ execute if entity @s[tag=king_boar] run function anemoland_contents:sys/entity/m
 execute if entity @s[tag=squirrel_head] run function anemoland_contents:sys/entity/mob/squirrel_head/damaged/0
 execute if entity @s[tag=garapapas] run function anemoland_contents:sys/entity/mob/garapapas/damaged/0
 execute if entity @s[tag=martellos] run function anemoland_contents:sys/entity/mob/martellos/damaged/0
+execute if entity @s[tag=ojinushi] run function anemoland_contents:sys/entity/mob/ojinushi/damaged/0

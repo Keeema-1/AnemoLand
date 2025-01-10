@@ -1,0 +1,2 @@
+function animated_java:ojinushi/animations/pause_all
+function animated_java:ojinushi/animations/right_punch2/play

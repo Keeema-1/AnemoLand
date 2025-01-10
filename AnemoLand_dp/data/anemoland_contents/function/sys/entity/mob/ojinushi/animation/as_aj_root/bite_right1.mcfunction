@@ -1,0 +1,2 @@
+function animated_java:ojinushi/animations/pause_all
+function animated_java:ojinushi/animations/bite_right1/play

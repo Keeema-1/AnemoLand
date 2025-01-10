@@ -1,0 +1,34 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "redstone",
+	"ingredients": [
+		"minecraft:light_gray_stained_glass_pane"
+	],
+	"result": {
+		"count": 1,
+		"id": "minecraft:green_dye",
+		"components": {
+			"item_name": "[{\"text\":\"【No.02-05】\"},{\"translate\":\"anemoland.mob.ojinushi.default.name\"}]",
+			"custom_model_data": 1040,
+			"lore": [
+				"{\"text\":\"  体内で火薬や金属を合成し、花火玉を作\",\"italic\":false,\"color\":\"yellow\"}",
+				"{\"text\":\"  り出して攻撃に使用する。\",\"italic\":false,\"color\":\"yellow\"}",
+				"{\"text\":\"  花火玉は縄張りに罠として設置したり、\",\"italic\":false,\"color\":\"yellow\"}",
+				"{\"text\":\"  異性へのアピールにも用いられる。\",\"italic\":false,\"color\":\"yellow\"}",
+				"{\"text\":\"\"}",
+				"{\"translate\":\"anemoland.dictionary.area\",\"italic\":false}",
+				"[{\"text\":\"  \"},{\"translate\":\"anemoland.area.cherry\",\"italic\":false,\"color\":\"white\"}]",
+				"{\"text\":\"\"}",
+				"{\"translate\":\"anemoland.common.attack_element\",\"italic\":false}",
+				"[{\"text\":\"  \"},{\"translate\":\"anemoland.common.element.physical\",\"italic\":false,\"color\":\"white\"},{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element.fire\",\"italic\":false,\"color\":\"red\"}]",
+				"{\"text\":\"\"}",
+				"[{\"translate\":\"anemoland.common.damage_rate.give\",\"italic\":false},{\"text\":\"(%)\",\"italic\":false}]",
+				"[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part.胴体\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" 100\", \"italic\":false,\"color\":\"white\"},{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element.fire\", \"italic\":false,\"color\":\"red\"},{\"text\":\" 70\", \"italic\":false,\"color\":\"gray\"}]",
+				"[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part.右腕\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" 130\", \"italic\":false,\"color\":\"aqua\"},{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element.fire\", \"italic\":false,\"color\":\"red\"},{\"text\":\" 80\", \"italic\":false,\"color\":\"gray\"}]",
+				"[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part.左腕\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" 130\", \"italic\":false,\"color\":\"aqua\"},{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element.fire\", \"italic\":false,\"color\":\"red\"},{\"text\":\" 80\", \"italic\":false,\"color\":\"gray\"}]",
+				"[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part.頭\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" 160\", \"italic\":false,\"color\":\"aqua\"},{\"text\":\" / \",\"italic\":false,\"color\":\"dark_gray\"},{\"translate\":\"anemoland.common.element.fire\", \"italic\":false,\"color\":\"red\"},{\"text\":\" 90\", \"italic\":false,\"color\":\"gray\"}]",
+				"[{\"text\":\"  \"},{\"translate\":\"anemoland.dictionary.elem_mul_value_detail\",\"italic\":false,\"color\":\"dark_gray\"}]"
+			]
+		}
+	}
+}

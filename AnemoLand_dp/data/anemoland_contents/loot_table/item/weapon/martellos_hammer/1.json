@@ -101,21 +101,25 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.impact_crater.lore.1",
 										"with": [
 											[
-												{
-													"text": "🗡30"
-												}
+												[
+													{
+														"text": "🗡30"
+													}
+												]
 											],
 											[
-												{
-													"text": "🗡5"
-												}
+												[
+													{
+														"text": "🗡5"
+													}
+												]
 											]
 										]
 									}
@@ -123,21 +127,25 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.impact_crater.lore.2",
 										"with": [
 											[
-												{
-													"text": "🗡30"
-												}
+												[
+													{
+														"text": "🗡30"
+													}
+												]
 											],
 											[
-												{
-													"text": "🗡5"
-												}
+												[
+													{
+														"text": "🗡5"
+													}
+												]
 											]
 										]
 									}
@@ -145,21 +153,25 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.impact_crater.lore.3",
 										"with": [
 											[
-												{
-													"text": "🗡30"
-												}
+												[
+													{
+														"text": "🗡30"
+													}
+												]
 											],
 											[
-												{
-													"text": "🗡5"
-												}
+												[
+													{
+														"text": "🗡5"
+													}
+												]
 											]
 										]
 									}
@@ -167,21 +179,25 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.impact_crater.lore.4",
 										"with": [
 											[
-												{
-													"text": "🗡30"
-												}
+												[
+													{
+														"text": "🗡30"
+													}
+												]
 											],
 											[
-												{
-													"text": "🗡5"
-												}
+												[
+													{
+														"text": "🗡5"
+													}
+												]
 											]
 										]
 									}
@@ -189,29 +205,31 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
 										"translate": "anemoland.weapon_skill.impact_crater.lore.5",
 										"with": [
 											[
-												{
-													"text": "🗡30"
-												}
+												[
+													{
+														"text": "🗡30"
+													}
+												]
 											],
 											[
-												{
-													"text": "🗡5"
-												}
+												[
+													{
+														"text": "🗡5"
+													}
+												]
 											]
 										]
 									}
 								],
 								{
-									"text": "",
-									"italic": false,
-									"color": "dark_gray"
+									"text": ""
 								},
 								[
 									{
@@ -223,7 +241,7 @@
 										"translate": "anemoland.common.sell_price"
 									},
 									{
-										"text": " 400G"
+										"text": ": 400G"
 									}
 								]
 							],

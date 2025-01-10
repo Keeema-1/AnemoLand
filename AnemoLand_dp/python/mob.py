@@ -659,7 +659,7 @@ for mob_name, mob_data in mob_database.items():
 		output = []
 		output.append('scoreboard players set @s anger.time ' + str(mob_data["status"]["angry"]["keep_time_seconds"]*20) + '\n')
 		output.append('tag @s add angry\n')
-		output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/action/get_angry/start\n')
+		# output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/action/get_angry/start\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
@@ -741,7 +741,7 @@ for mob_name, mob_data in mob_database.items():
 		path = base_path + mob_name + '/summon/common/0.mcfunction'
 		makedir(path)
 		output = []
-		output.append('summon ' + mob_data["root_entity"] + ' ~ ~ ~ {Tags:["newly_summoned"],Passengers:[{id:"turtle"},{id:"text_display",text:\'""\',Tags:["display1"],billboard:"vertical",transformation:{right_rotation:[0.0f,0.0f,0.0f,1.0f],left_rotation:[0.0f,0.0f,0.0f,1.0f],translation:[0.0f,0.5f,0.0f],scale:[1.0f,1.0f,1.0f]}},{id:"area_effect_cloud",Duration:2147483647,Radius:0.0f,effects:[],Tags:["target_recorder"]}]}\n')
+		output.append('summon ' + mob_data["root_entity"] + ' ~ ~ ~ {Tags:["newly_summoned"],Passengers:[{id:"turtle"},{id:"text_display",text:\'""\',Tags:["display1"],billboard:"vertical",transformation:{right_rotation:[0.0f,0.0f,0.0f,1.0f],left_rotation:[0.0f,0.0f,0.0f,1.0f],translation:[0.0f,' + str(mob_data["display_height"]) + 'f,0.0f],scale:[1.0f,1.0f,1.0f]}},{id:"area_effect_cloud",Duration:2147483647,Radius:0.0f,effects:[],Tags:["target_recorder"]}]}\n')
 		output.append('execute as @e[type=' + mob_data["root_entity"] + ',tag=newly_summoned,distance=..1,limit=1] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/common/00\n')
 		# output.append('particle poof ~ ~ ~ 0.3 0.3 0.3 0 10\n')
 		output.append('scoreboard players reset #new_entity.level temp\n')

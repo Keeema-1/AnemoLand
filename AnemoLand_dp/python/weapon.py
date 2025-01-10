@@ -71,12 +71,12 @@ for weapon_data in weapon_database["weapons"]:
 			lore.append([{"text":" <", "italic":False},{"translate":"anemoland.common.weapon_skill"},{"text":str(i+1) + "> "},{"translate":"anemoland.weapon_skill." + weapon_skill["name"] + ".name"},{"text":" (","color":"gray"},{"translate":"anemoland.common.gauge_consumption","color":"gray"},{"text":" " + str(round(weapon_skills[weapon_skill["name"]]["gauge_consume"]/100, 1)) + ')',"color":"gray"}])
 			translate_with = []
 			for attack_damage_data in weapon_skills[weapon_skill["name"]]["attack_damage_list"]:
-				translate_with_item = []
+				translate_with_item = [[]]
 				first_flag = True
 				if "physical" in attack_damage_data:
 					if first_flag:
 						first_flag = False
-					translate_with_item.append({"text":"🗡" + str(int( ( attack_damage_data["physical"]["base"] + (int(level)-1) ) * attack_damage_data["physical"]["mul"] ))})
+					translate_with_item[0].append({"text":"🗡" + str(int( ( attack_damage_data["physical"]["base"] + (int(level)-1) ) * attack_damage_data["physical"]["mul"] ))})
 				for elem_id, elem_data in attack_damage_data.items():
 					if elem_id == "physical":
 						continue
@@ -84,15 +84,15 @@ for weapon_data in weapon_database["weapons"]:
 						if first_flag:
 							first_flag = False
 						else:
-							translate_with_item.append({"text":"+"})
-						translate_with_item.append({"text":element_icon[elem_id] + attack_damage_data[elem_id]["base"] + attack_damage_data[elem_id]["mul"] * (int(level)-1)})
+							translate_with_item[0].append({"text":"+"})
+						translate_with_item[0].append([{"text":element_icon[elem_id], "color": element_color[elem_id]},{"text":str(int(attack_damage_data[elem_id]["base"] + attack_damage_data[elem_id]["mul"] * (int(level)-1))), "color": "gray"}])
 				translate_with.append(translate_with_item)
 			for j in range(weapon_skills[weapon_skill["name"]]["lore_len"]):
-				lore.append([{"text":"    ", "color": "dark_gray", "italic":False},{"translate":"anemoland.weapon_skill." + lore_translate_name + ".lore." + str(j+1), "with": translate_with}])
+				lore.append([{"text":"    ", "color": "gray", "italic":False},{"translate":"anemoland.weapon_skill." + lore_translate_name + ".lore." + str(j+1), "with": translate_with}])
 		function_.update(function="minecraft:set_lore", entity="this", lore = lore, mode = "replace_all")
 		functions.append(function_)
-		lore.append({"text":"","italic":False,"color":"dark_gray"})
-		lore.append([{"text":"▶ ","italic":False,"color":"dark_gray"},{"translate":"anemoland.common.sell_price"},{"text":" " + str(sell_price) + "G"}])
+		lore.append({"text":""})
+		lore.append([{"text":"▶ ","italic":False,"color":"dark_gray"},{"translate":"anemoland.common.sell_price"},{"text":": " + str(sell_price) + "G"}])
 
 		# set_attributes
 		function_ = {}
