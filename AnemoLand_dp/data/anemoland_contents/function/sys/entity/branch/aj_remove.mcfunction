@@ -3,6 +3,7 @@ execute if entity @s[tag=aj.boar.root] run function animated_java:boar/remove/th
 execute if entity @s[tag=aj.squirrel.root] run function animated_java:squirrel/remove/this
 execute if entity @s[tag=aj.garapas.root] run function animated_java:garapas/remove/this
 execute if entity @s[tag=aj.spider.root] run function animated_java:spider/remove/this
+execute if entity @s[tag=aj.raptor.root] run function animated_java:raptor/remove/this
 execute if entity @s[tag=aj.squirrel_head.root] run function animated_java:squirrel_head/remove/this
 execute if entity @s[tag=aj.garapapas.root] run function animated_java:garapapas/remove/this
 execute if entity @s[tag=aj.martellos.root] run function animated_java:martellos/remove/this

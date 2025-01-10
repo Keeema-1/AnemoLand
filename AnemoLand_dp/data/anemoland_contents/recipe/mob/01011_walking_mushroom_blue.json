@@ -16,10 +16,10 @@
 			"lore": [
 				"{\"text\":\"  進化の過程で歩行機能を獲得した茸。\",\"italic\":false,\"color\":\"yellow\"}",
 				"{\"text\":\"\"}",
-				"{\"text\":\"主な出現地域\",\"italic\":false}",
+				"{\"translate\":\"anemoland.dictionary.area\",\"italic\":false}",
 				"[{\"text\":\"  \"},{\"translate\":\"anemoland.area.forest\",\"italic\":false,\"color\":\"white\"}]",
 				"{\"text\":\"\"}",
-				"{\"text\":\"攻撃属性\",\"italic\":false}",
+				"{\"translate\":\"anemoland.common.attack_element\",\"italic\":false}",
 				"[{\"text\":\"  \"},{\"translate\":\"anemoland.common.element.physical\",\"italic\":false,\"color\":\"white\"}]",
 				"{\"text\":\"\"}",
 				"[{\"translate\":\"anemoland.common.damage_rate.give\",\"italic\":false},{\"text\":\"(%)\",\"italic\":false}]",

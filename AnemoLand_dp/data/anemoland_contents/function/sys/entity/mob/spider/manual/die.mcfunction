@@ -6,3 +6,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/spider/damaged/common
 
+execute as @a[distance=..64] at @s run playsound entity.spider.death hostile @s ~ ~ ~ 1 0.4
