@@ -6,3 +6,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/muscleroom/state/tick
 
+execute if predicate anemoland:random_chance/0_2 run particle poof ^ ^2 ^ 0.1 0.1 0.1 0.1 1

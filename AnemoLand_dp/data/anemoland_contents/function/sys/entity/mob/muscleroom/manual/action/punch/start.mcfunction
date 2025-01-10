@@ -6,4 +6,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/muscleroom/action/punch/start
 
-# function anemoland_contents:sys/entity/mob/muscleroom/animation/default
+function anemoland_contents:sys/entity/mob/muscleroom/animation/left_punch1

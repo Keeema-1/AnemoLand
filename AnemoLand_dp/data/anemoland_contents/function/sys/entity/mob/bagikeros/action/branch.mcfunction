@@ -1,6 +1,6 @@
 execute unless score @s action0 matches 1.. run function anemoland_contents:sys/entity/mob/bagikeros/action/stop/tick
 execute if score @s action0 matches 1 run function anemoland_contents:sys/entity/mob/bagikeros/action/bark/tick
-execute if score @s action0 matches 2 run function anemoland_contents:sys/entity/mob/bagikeros/action/anger/tick
+execute if score @s action0 matches 2 run function anemoland_contents:sys/entity/mob/bagikeros/action/get_angry/tick
 execute if score @s action0 matches 3 run function anemoland_contents:sys/entity/mob/bagikeros/action/tired/tick
 execute if score @s action0 matches 4 run function anemoland_contents:sys/entity/mob/bagikeros/action/walk/tick
 execute if score @s action0 matches 11 run function anemoland_contents:sys/entity/mob/bagikeros/action/bite/tick

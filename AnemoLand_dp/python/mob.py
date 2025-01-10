@@ -466,6 +466,8 @@ for mob_name, mob_data in mob_database.items():
 			output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/' + action_id + '/tick\n')
 			output.append('\n')
 			if action_id == "tired":
+				output.append('tp @s ~ ~ ~ ~ ~\n')
+				output.append('\n')
 				output.append('execute if score @s action_time matches 100.. run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/end\n')
 			elif action_id in ["bark", "get_angry"]:
 				output.append('# プレイヤーの方を向く\n')
@@ -521,6 +523,7 @@ for mob_name, mob_data in mob_database.items():
 			makedir(path)
 			output = []
 			output.append('function ' + namespace_core + ':sys/entity/common/damage/src/get_status\n')
+			group_counter = 1
 			for group_data in attack_data["groups"]:
 				output.append('scoreboard players set #damage.src.attack.mul temp ' + str(group_data["mul"]) + '\n')
 				include_other_than_root = False
@@ -533,44 +536,47 @@ for mob_name, mob_data in mob_database.items():
 						if attack_part == "root":
 							continue
 						output.append('execute' + (" " + group_data["predicate"] if ("predicate" in group_data and len(group_data["predicate"])) else "" ) + ' as @e[type=#' + namespace_storage + ':mob_core,tag=hitbox.' + attack_part + ',tag=' + mob_name + ',distance=..32] if score @s entity_id = #entity_id temp run tag @s add attack_part\n')
-					output.append('execute if entity @s[tag=pet] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_enemy\n')
-					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_pet\n')
-					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' as @a[dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',scores={hurt_time=-1},gamemode=adventure] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_player\n')
+					output.append('execute if entity @s[tag=pet] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_enemy_' + str(group_counter) + '\n')
+					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_pet_' + str(group_counter) + '\n')
+					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' as @a[dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',scores={hurt_time=-1},gamemode=adventure] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_player_' + str(group_counter) + '\n')
 					output.append('tag @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] remove attack_part\n')
 				if "root" in group_data["parts"]:
-					output.append('execute if entity @s[tag=pet] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_enemy\n')
-					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_pet\n')
-					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' as @a[dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',scores={hurt_time=-1},gamemode=adventure] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_player\n')
+					output.append('execute if entity @s[tag=pet] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_enemy_' + str(group_counter) + '\n')
+					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_pet_' + str(group_counter) + '\n')
+					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' as @a[dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',scores={hurt_time=-1},gamemode=adventure] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_player_' + str(group_counter) + '\n')
+				group_counter += 1
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
-			path = base_path + mob_name + '/attack/' + attack_name + '/to_enemy.mcfunction'
-			makedir(path)
-			output = []
+			group_counter = 1
 			for group_data in attack_data["groups"]:
+
+				path = base_path + mob_name + '/attack/' + attack_name + '/to_enemy_' + str(group_counter) + '.mcfunction'
+				makedir(path)
+				output = []
 				output.append('damage @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] 10 generic_kill by @s\n')
 				output.append('execute as @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] run function ' + namespace_contents + ':sys/entity/branch/damaged_by_mob\n')
-			with open(path, 'w', encoding='utf-8') as f:
-				f.writelines(output)
+				with open(path, 'w', encoding='utf-8') as f:
+					f.writelines(output)
 
-			path = base_path + mob_name + '/attack/' + attack_name + '/to_pet.mcfunction'
-			makedir(path)
-			output = []
-			for group_data in attack_data["groups"]:
+				path = base_path + mob_name + '/attack/' + attack_name + '/to_pet_' + str(group_counter) + '.mcfunction'
+				makedir(path)
+				output = []
 				output.append('damage @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] 10 generic_kill by @s\n')
 				output.append('execute as @e[type=#' + namespace_storage + ':mob_core,tag=mob_root,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] run function ' + namespace_contents + ':sys/entity/branch/damaged_by_mob\n')
-			with open(path, 'w', encoding='utf-8') as f:
-				f.writelines(output)
+				with open(path, 'w', encoding='utf-8') as f:
+					f.writelines(output)
 
-			path = base_path + mob_name + '/attack/' + attack_name + '/to_player.mcfunction'
-			makedir(path)
-			output = []
-			for group_data in attack_data["groups"]:
+				path = base_path + mob_name + '/attack/' + attack_name + '/to_player_' + str(group_counter) + '.mcfunction'
+				makedir(path)
+				output = []
 				if "knockback" in group_data:
 					output.append('function ' + namespace_core + ':sys/entity/common/attack_knockback/' + group_data["knockback"] + '\n')
 				output.append('function ' + namespace_core + ':sys/player/common/damage/dst/apply\n')
-			with open(path, 'w', encoding='utf-8') as f:
-				f.writelines(output)
+				with open(path, 'w', encoding='utf-8') as f:
+					f.writelines(output)
+
+				group_counter += 1
 
 	# action/follow_player/
 	path = base_path + mob_name + '/action/follow_player/0.mcfunction'

@@ -6,8 +6,7 @@
 #
 # @within function anemoland_contents:sys/entity/mob/muscleroom/action/punch/tick
 
-# 分岐する場合
+# 分岐
     execute if score @s action1 matches 0 run function anemoland_contents:sys/entity/mob/muscleroom/manual/action/punch/0/0
     execute if score @s action1 matches 1 run function anemoland_contents:sys/entity/mob/muscleroom/manual/action/punch/1/0
-# 終了
-    execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/muscleroom/action/punch/end
+    

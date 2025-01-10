@@ -7,4 +7,6 @@
 #
 # @within function anemoland_contents:sys/entity/mob/muscleroom/action/stop/end
 
-function anemoland_contents:sys/entity/mob/muscleroom/action/stop/start
+function anemoland_contents:sys/entity/mob/muscleroom/choose_action/any/0
+
+# function anemoland_contents:sys/entity/mob/muscleroom/action/ground_target/start

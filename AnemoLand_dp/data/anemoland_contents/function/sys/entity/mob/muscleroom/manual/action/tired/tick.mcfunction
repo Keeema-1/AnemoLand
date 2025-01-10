@@ -6,4 +6,6 @@
 #
 # @within function anemoland_contents:sys/entity/mob/muscleroom/action/tired/tick
 
-execute if score @s action_time matches 100.. run function anemoland_contents:sys/entity/mob/muscleroom/manual/action/tired/end
+tp @s ~ ~ ~ ~ ~
+
+execute if score @s action_time matches 160.. run function anemoland_contents:sys/entity/mob/muscleroom/manual/action/tired/end
