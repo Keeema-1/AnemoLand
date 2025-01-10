@@ -1896,5 +1896,177 @@
         "price": {
             "exchange": {"sell_required": 1, "buy_required": 5}
         }
+    },
+    "bagikeros": {
+        "aj_name": "bagikeros",
+        "display_name": "バギケロス",
+        "type": "boss",
+        "aj_cmd_offset": 10500,
+        "custom_model_data": 1060,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02070",
+            "number": "07",
+            "detail": ["全身の甲殻から粉塵を撒き、火花を発生させることで爆破させる。","水に濡れてしまうと粉塵の拡散が阻害されてしまうため、乾燥した地域を好む。"],
+            "main_areas": ["stone"],
+            "attack_elements": ["physical", "fire"]
+        },
+        "unlock": {"armor": ["bagikeros"]},
+        "animations": {
+            "default": {},
+            "die": {},
+            "bite1": {},
+            "bite2": {},
+            "dive1": {},
+            "dive2": {},
+            "shake_head1": {},
+            "shake_head2": {},
+            "walk": {},
+            "shake_tail1": {},
+            "shake_tail2": {},
+            "shake_walk": {},
+            "shake_walk_end": {},
+            "shake_walk_start": {},
+            "bark": {},
+            "bite_left1": {},
+            "bite_left2": {},
+            "bite_right1": {},
+            "bite_right2": {},
+            "tired": {},
+            "fire_head": {}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "bark": {
+                "score": 1
+            },
+            "anger": {
+                "score": 2
+            },
+            "tired": {
+                "score": 3
+            },
+            "walk": {
+                "score": 4
+            },
+            "bite": {
+                "score": 11
+            },
+            "dive": {
+                "score": 12
+            },
+            "shake_head": {
+                "score": 13
+            },
+            "shake_tail": {
+                "score": 14
+            },
+            "shake_walk": {
+                "score": 15
+            },
+            "bite_side": {
+                "score": 16
+            },
+            "fire_head": {
+                "score": 17
+            }
+        },
+        "choices":{
+            "test": {
+                "type": "random",
+                "weights": {
+                    "walk": 1,
+                    "bite": 2,
+                    "dive": 2,
+                    "shake_head": 2,
+                    "shake_tail": 2,
+                    "shake_walk": 2,
+                    "bite_side": 2
+                }
+            }
+        },
+        "attacks": {
+            "bite1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_2",
+                        "mul": 10,
+                        "position": [0,-2,0],
+                        "size": [4,4,4],
+                        "parts":["head"]
+                    },
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_2",
+                        "mul": 5,
+                        "position": [0,-2,0],
+                        "size": [4,4,4],
+                        "parts":["front_body","root"]
+                    }
+                ]
+            },
+            "dive1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing2_10",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["root", "front_body", "tail1", "left_arm", "right_arm", "left_leg", "right_leg"]
+                    }
+                ]
+            },
+            "walk1": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_10",
+                        "mul": 5,
+                        "position": [0,0,0],
+                        "size": [3,3,3],
+                        "parts":["root", "front_body", "tail1", "left_arm", "right_arm", "left_leg", "right_leg"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 50}},
+            "front_body": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 5, "elemental_damage_mul": {"fire": 50}},
+            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
+            "left_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
+            "right_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
+            "left_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
+            "right_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 25}},
+            "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 25}},
+            "tail2": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 25}}
+        },
+        "root_entity": "pig",
+        "display_height": 1.0,
+        "status": {
+            "default_level": 30,
+            "max_health": {"base": 100, "mul": 60},
+            "attack_damage": {"base": 6, "mul": 0.8},
+            "gold": {"base": 60, "mul": 16},
+            "xp": {"base": 60, "mul": 16},
+            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 25, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
     }
 }

@@ -1,0 +1,2 @@
+function animated_java:bagikeros/animations/pause_all
+function animated_java:bagikeros/animations/shake_tail1/play

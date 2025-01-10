@@ -9,3 +9,4 @@ execute if entity @s[tag=aj.garapapas.root] run function animated_java:garapapas
 execute if entity @s[tag=aj.martellos.root] run function animated_java:martellos/remove/this
 execute if entity @s[tag=aj.ojinushi.root] run function animated_java:ojinushi/remove/this
 execute if entity @s[tag=aj.muscleroom.root] run function animated_java:muscleroom/remove/this
+execute if entity @s[tag=aj.bagikeros.root] run function animated_java:bagikeros/remove/this
