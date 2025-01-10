@@ -9,3 +9,4 @@ execute if entity @s[tag=squirrel_head] run function anemoland_contents:sys/enti
 execute if entity @s[tag=garapapas] run function anemoland_contents:sys/entity/mob/garapapas/damaged/0
 execute if entity @s[tag=martellos] run function anemoland_contents:sys/entity/mob/martellos/damaged/0
 execute if entity @s[tag=ojinushi] run function anemoland_contents:sys/entity/mob/ojinushi/damaged/0
+execute if entity @s[tag=muscleroom] run function anemoland_contents:sys/entity/mob/muscleroom/damaged/0

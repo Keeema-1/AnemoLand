@@ -1,0 +1,11 @@
+execute unless score @s action0 matches 1.. run function anemoland_contents:sys/entity/mob/muscleroom/action/stop/tick
+execute if score @s action0 matches 1 run function anemoland_contents:sys/entity/mob/muscleroom/action/bark/tick
+execute if score @s action0 matches 2 run function anemoland_contents:sys/entity/mob/muscleroom/action/walk/tick
+execute if score @s action0 matches 3 run function anemoland_contents:sys/entity/mob/muscleroom/action/angry/tick
+execute if score @s action0 matches 4 run function anemoland_contents:sys/entity/mob/muscleroom/action/tired/tick
+execute if score @s action0 matches 11 run function anemoland_contents:sys/entity/mob/muscleroom/action/jump/tick
+execute if score @s action0 matches 12 run function anemoland_contents:sys/entity/mob/muscleroom/action/punch/tick
+execute if score @s action0 matches 13 run function anemoland_contents:sys/entity/mob/muscleroom/action/ground_circle/tick
+execute if score @s action0 matches 14 run function anemoland_contents:sys/entity/mob/muscleroom/action/ground_line/tick
+execute if score @s action0 matches 15 run function anemoland_contents:sys/entity/mob/muscleroom/action/ground_target/tick
+execute if score @s action0 matches 16 run function anemoland_contents:sys/entity/mob/muscleroom/action/backstep/tick

@@ -14,4 +14,4 @@ data modify entity @s Health set value 1024.0f
 scoreboard players operation @s entity_id = #new_entity_id entity_id
 scoreboard players operation @s attack.base = #attack.base temp
 execute if entity @s[tag=hitbox.head] run attribute @s scale base set 2.5
-execute if entity @s[tag=hitbox.head] run scoreboard players set @s armor.mul 100
+execute if entity @s[tag=hitbox.head] run scoreboard players set @s armor.mul 120

@@ -604,7 +604,7 @@
         "default_action": "stop",
         "parts":{
             "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 2.25},
-            "head": {"display_name": "head", "armor_mul": 100, "hitbox_scale": 2.5}
+            "head": {"display_name": "head", "armor_mul": 120, "hitbox_scale": 2.5}
         },
         "root_entity": "pig",
         "display_height": 0.5,
@@ -1267,7 +1267,7 @@
                 "parts":{
                     "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {}},
                     "right_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {}},
-                    "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {}},
+                    "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {}, "skip_display_mul": true},
                     "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 1.5, "elemental_damage_mul": {}},
                     "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 1.5, "elemental_damage_mul": {}},
                     "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {}},
@@ -1287,7 +1287,7 @@
                 "parts":{
                     "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 60}},
                     "right_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 30}},
-                    "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 30}},
+                    "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 30}, "skip_display_mul": true},
                     "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 70}},
                     "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 100}},
                     "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 70}},
@@ -1484,7 +1484,7 @@
         "parts":{
             "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 120}},
             "right_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 160}},
-            "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 160}},
+            "left_arm": {"display_name": "arm_log", "armor_mul": 50, "hitbox_scale": 1.25, "elemental_damage_mul": {"fire": 160}, "skip_display_mul": true},
             "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 140}},
             "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 1.5, "elemental_damage_mul": {"fire": 170}},
             "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 140}},
@@ -1703,10 +1703,10 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "胴体", "armor_mul": 100, "hitbox_scale": 2.5, "elemental_damage_mul": {"fire": 70}},
-            "right_arm": {"display_name": "右腕", "armor_mul": 130, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 80}},
-            "left_arm": {"display_name": "左腕", "armor_mul": 130, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 80}},
-            "head": {"display_name": "頭", "armor_mul": 160, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 90}}
+            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 2.5, "elemental_damage_mul": {"fire": 70}},
+            "right_arm": {"display_name": "arm", "armor_mul": 130, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 80}},
+            "left_arm": {"display_name": "arm", "armor_mul": 130, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 80}, "skip_display_mul": true},
+            "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 90}}
         },
         "root_entity": "cow",
         "display_height": 1.5,
@@ -1720,6 +1720,175 @@
         },
         "pet":{
             "loot_table_levels": {"min": 20, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
+    },
+    "muscleroom": {
+        "aj_name": "muscleroom",
+        "display_name": "マッスルーム",
+        "type": "boss",
+        "aj_cmd_offset": 10400,
+        "custom_model_data": 1050,
+        "icon_scale": 1.5,
+        "dictionary": {
+            "recipe_prefix": "02060",
+            "number": "06",
+            "detail": ["長く生き続けた歩き茸の菌糸が高密度に圧縮され、大型動物の筋肉をも凌駕する力を得た。"],
+            "main_areas": ["mushroom"],
+            "attack_elements": ["physical"]
+        },
+        "unlock": {"armor": ["muscleroom"]},
+        "animations": {
+            "default": {},
+            "left_punch1": {},
+            "left_punch2": {},
+            "jump": {},
+            "die": {},
+            "bark": {},
+            "ground1": {},
+            "ground2": {},
+            "walk": {},
+            "backstep": {},
+            "tired": {}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "bark": {
+                "score": 1
+            },
+            "walk": {
+                "score": 2
+            },
+            "angry": {
+                "score": 3
+            },
+            "tired": {
+                "score": 4
+            },
+            "jump": {
+                "score": 11
+            },
+            "punch": {
+                "score": 12
+            },
+            "ground_circle": {
+                "score": 13
+            },
+            "ground_line": {
+                "score": 14
+            },
+            "ground_target": {
+                "score": 15
+            },
+            "backstep": {
+                "score": 16
+            }
+        },
+        "choices":{
+            "any": {
+                "type": "distance",
+                "threshold": 10,
+                "next": {
+                    "far": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 3,
+                                    "jump": 3,
+                                    "punch": 3,
+                                    "ground_circle": 1,
+                                    "ground_line": 3,
+                                    "ground_target": 3,
+                                    "backstep": 0
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 3,
+                                    "jump": 1,
+                                    "punch": 1,
+                                    "ground_circle": 1,
+                                    "ground_line": 3,
+                                    "ground_target": 3,
+                                    "backstep": 0
+                                }
+                            }
+                        }
+                    },
+                    "near": {
+                        "type": "front_or_back",
+                        "next": {
+                            "front": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "jump": 4,
+                                    "punch": 4,
+                                    "ground_circle": 3,
+                                    "ground_line": 1,
+                                    "ground_target": 2,
+                                    "backstep": 2
+                                }
+                            },
+                            "back": {
+                                "type": "random",
+                                "weights": {
+                                    "walk": 0,
+                                    "jump": 4,
+                                    "punch": 2,
+                                    "ground_circle": 3,
+                                    "ground_line": 0,
+                                    "ground_target": 2,
+                                    "backstep": 3
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "after_walk": {
+                "type": "random",
+                "weights": {
+                    "walk": 0,
+                    "jump": 4,
+                    "punch": 4,
+                    "ground_circle": 3,
+                    "ground_line": 1,
+                    "ground_target": 2,
+                    "backstep": 0
+                }
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 2.5}
+        },
+        "root_entity": "cow",
+        "display_height": 1.0,
+        "status": {
+            "default_level": 25,
+            "max_health": {"base": 200, "mul": 40},
+            "attack_damage": {"base": 6, "mul": 0.8},
+            "gold": {"base": 60, "mul": 16},
+            "xp": {"base": 60, "mul": 16},
+            "angry": {"start_damage_ratio": 0.4, "keep_time_seconds": 60, "restart_damage_ratio": 0.1, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 25, "max": 40, "step":1},
             "xp_required_base": 50,
             "xp_required_mul": 10,
             "gauge_consume": 300
