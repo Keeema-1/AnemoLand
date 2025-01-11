@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " 🗡+6.5"
+										"text": " 🗡7.5"
 									}
 								],
 								[
@@ -101,37 +101,83 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.mushroom_attack.lore.1"
+										"translate": "anemoland.weapon_skill.mushroom_attack.lore.1",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡42"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡7"
+													}
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.mushroom_attack.lore.2"
+										"translate": "anemoland.weapon_skill.mushroom_attack.lore.2",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡42"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡7"
+													}
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.mushroom_attack.lore.3"
+										"translate": "anemoland.weapon_skill.mushroom_attack.lore.3",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡42"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡7"
+													}
+												]
+											]
+										]
 									}
 								],
 								{
-									"text": "",
-									"italic": false,
-									"color": "dark_gray"
+									"text": ""
 								},
 								[
 									{
@@ -143,7 +189,7 @@
 										"translate": "anemoland.common.sell_price"
 									},
 									{
-										"text": " 400G"
+										"text": ": 400G"
 									}
 								]
 							],
@@ -170,7 +216,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"mace\",loot_table:\"item/weapon/muscleroom_mace\",sell_price:400,power_up:{},status:{level:3,attack:{base:6.5,mul:10},elemental_attack:{},weapon_skills:[{id:\"mushroom_attack\",gauge_consume:100,mul:60}],skill_gauge:{get:10}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"mace\",loot_table:\"item/weapon/muscleroom_mace\",sell_price:400,power_up:{},status:{level:3,attack:{base:6.5,mul:10},elemental_attack:{},weapon_skills:[{id:\"mushroom_attack\",gauge_consume:100,attack_damage:[{physical: {base: 7, mul: 6}}, {physical: {base: 7, mul: 1}}]}],skill_gauge:{get:10}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

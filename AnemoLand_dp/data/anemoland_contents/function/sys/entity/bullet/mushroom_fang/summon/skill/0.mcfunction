@@ -8,7 +8,7 @@
 
 # 召喚
     execute rotated ~ 0 run function animated_java:mushroom_fang/summon/default
-    execute as @e[type=item_display,tag=newly_summoned.aj,distance=..1] run function anemoland_contents:sys/entity/bullet/mushroom_fang/summon/default/00
+    execute as @e[type=item_display,tag=newly_summoned.aj,distance=..1] run function anemoland_contents:sys/entity/bullet/mushroom_fang/summon/skill/00
 
 # ペット用フラグのリセット
     scoreboard players reset #bullet.pet_flag temp

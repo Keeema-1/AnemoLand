@@ -216,7 +216,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/king_boar_axe\",sell_price:400,power_up:{add_level:1,materials:[{id:\"king_boar_gold_medal\",loot_table:\"item/medal/king_boar/gold\",count:6}]},status:{level:2,attack:{base:5,mul:18},elemental_attack:{},weapon_skills:[{id:\"strong_dash_attack\",gauge_consume:100,attack_damage:[{physical: {base: 5, level_bonus: 1, mul: 6}}, {physical: {base: 5, level_bonus: 1, mul: 8}}]}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/king_boar_axe\",sell_price:400,power_up:{add_level:1,materials:[{id:\"king_boar_gold_medal\",loot_table:\"item/medal/king_boar/gold\",count:6}]},status:{level:2,attack:{base:5,mul:18},elemental_attack:{},weapon_skills:[{id:\"strong_dash_attack\",gauge_consume:100,attack_damage:[{physical: {base: 6, mul: 6}}, {physical: {base: 6, mul: 8}}]}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

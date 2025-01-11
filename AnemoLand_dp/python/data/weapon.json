@@ -61,6 +61,15 @@
 			"attack_damage_list": [
 				{"physical": {"base": 5, "level_bonus": 1, "mul": 1}, "fire": {"base": 5, "level_bonus": 1, "mul": 1}}
 			]
+		},
+		"mushroom_attack": {
+			"display_name": "マッシュルームファング",
+			"gauge_consume": 100,
+			"lore_len": 3,
+			"attack_damage_list": [
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 6}},
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 1}}
+			]
 		}
 	},
 	"weapon_types":{
@@ -213,6 +222,22 @@
 			"levels": {
 				"2": {"sell_price": 400},
 				"3": {"materials": [{"id":"ojinushi_gold_medal", "loot_table":"item/medal/ojinushi/gold", "count":6}], "sell_price": 400}
+			}
+		},
+		{
+			"name": "muscleroom_mace",
+			"display_name": "シュルームメイス",
+			"weapon_type": "mace",
+			"custom_model_data": 411,
+			"attack_damage": 4.5,
+			"attack_speed": 1.6,
+			"weapon_skills":[
+				{"name": "mushroom_attack"}
+			],
+			"levels": {
+				"1": {"sell_price": 400},
+				"2": {"materials": [{"id":"muscleroom_silver_medal", "loot_table":"item/medal/muscleroom/silver", "count":6}], "sell_price": 400},
+				"3": {"materials": [{"id":"muscleroom_gold_medal", "loot_table":"item/medal/muscleroom/gold", "count":6}], "sell_price": 400}
 			}
 		}
 	]

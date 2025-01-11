@@ -134,7 +134,14 @@ for weapon_data in weapon_database["weapons"]:
 		for weapon_skill in weapon_data["weapon_skills"]:
 			if i > 0:
 				weapon_skills_str += ","
-			weapon_skills_str += "{id:\"" + weapon_skill["name"] + "\",gauge_consume:" + str(weapon_skills[weapon_skill["name"]]["gauge_consume"]) + ",attack_damage:" + str(weapon_skills[weapon_skill["name"]]["attack_damage_list"]).replace("'",'') + "}"
+			attack_damage_list_before = weapon_skills[weapon_skill["name"]]["attack_damage_list"]
+			attack_damage_list = []
+			for attack_damage_item_before in attack_damage_list_before:
+				attack_damage_item = {}
+				for attack_elem, attack_data in attack_damage_item_before.items():
+					attack_damage_item[attack_elem] = {"base": attack_data["base"] + attack_data["level_bonus"]*(int(level) - 1), "mul": attack_data["mul"]}
+				attack_damage_list.append(attack_damage_item)
+			weapon_skills_str += "{id:\"" + weapon_skill["name"] + "\",gauge_consume:" + str(weapon_skills[weapon_skill["name"]]["gauge_consume"]) + ",attack_damage:" + str(attack_damage_list).replace("'",'') + "}"
 			i += 1
 		power_up_str = ''
 		if str(int(level)+1) in weapon_data["levels"]:

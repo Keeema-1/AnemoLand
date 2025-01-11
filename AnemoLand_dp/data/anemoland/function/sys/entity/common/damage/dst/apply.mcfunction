@@ -81,3 +81,6 @@
 
     # ダメージディスプレイ
         function anemoland:sys/entity/common/damage/dst/damage_display/0
+
+# tellraw @a [{"selector": "@s"},{"text": " <- "},{"score":{"name": "#damage","objective":"temp"}}]
+# tellraw @a [{"text": "   src : "},{"score":{"name": "#damage.src.attack.base","objective":"temp"}},{"text": " * "},{"score":{"name": "#damage.src.attack.mul","objective":"temp"}},{"text": " * "},{"score":{"name": "#charge_rate","objective":"temp"}}]

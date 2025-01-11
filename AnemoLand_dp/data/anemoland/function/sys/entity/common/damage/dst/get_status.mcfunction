@@ -33,3 +33,5 @@
 
 # 武器技発動時は一律でクリティカル率を1倍とする
     execute if score #weapon_skill_flag temp matches 1.. run scoreboard players set #charge_rate temp -100
+
+# tellraw @a {"score":{"name": "#charge_rate","objective": "temp"}}
