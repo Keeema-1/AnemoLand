@@ -8,5 +8,5 @@ data modify storage anemoland:progress data.beta1.field.32.event.random_event_en
 function anemoland_contents:sys/area/beta1/field/32/clear/clear_
 data modify storage temp:_ data.event_id.event_id set from storage anemoland:progress data.beta1.field.32.event.event_id
 function anemoland_contents:sys/event/clear with storage temp:_ data.event_id
-function anemoland_contents:command/field_event/beta1/change/garapases_15 {field_id:32}
+function anemoland_contents:command/field_event/beta1/change/garapases {field_id:32, level: 15}
 function anemoland_contents:sys/area/beta1/event/update/0

@@ -1,4 +1,4 @@
-execute if entity @s[tag=variant.default] run recipe give @a anemoland_contents:mob/01040_raptor
+execute if entity @s[tag=variant.default] run recipe give @a anemoland_contents:mob/01060_raptor
 data modify storage anemoland:progress data.mob_list.raptor.unlock set value 1b
 execute if score @s level matches 15.. run data modify storage anemoland:progress data.mob_list.raptor.defeated_levels.15 set value 1b
 execute if score @s level matches 20.. run data modify storage anemoland:progress data.mob_list.raptor.defeated_levels.20 set value 1b

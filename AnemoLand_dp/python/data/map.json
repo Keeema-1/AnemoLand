@@ -45,7 +45,7 @@
                     "no_cloud": 1,
                     "no_barrier": 1,
                     "unlock":[],
-                    "default_event": "walking_mushrooms_5"
+                    "default_event": {"id": "walking_mushrooms", "level": 10}
                 },
                 "04": {
                     "index":[0,4],
@@ -67,7 +67,7 @@
                     "field_type": "arena1",
                     "display_name": "arena",
                     "unlock":[],
-                    "default_event": "walking_mushrooms_5"
+                    "default_event": {"id": "walking_mushrooms", "level": 5}
                 },
                 "26": {
                     "index":[2,6],
@@ -87,8 +87,8 @@
                     "display_name": "forest.small",
                     "no_barrier": 1,
                     "unlock":["24"],
-                    "default_event": "walking_mushrooms_5",
-                    "random_event": "test"
+                    "default_event": {"id": "walking_mushrooms", "level": 5},
+                    "random_event": "plain_small"
                 },
                 "24": {
                     "index":[2,4],
@@ -97,8 +97,8 @@
                     "field_type": "plain_B",
                     "display_name": "forest.medium",
                     "unlock":["34"],
-                    "default_event": "boars_10",
-                    "random_event": "test"
+                    "default_event": {"id": "plain_a", "level": 5},
+                    "random_event": "plain_medium"
                 },
                 "34": {
                     "index":[3,4],
@@ -107,8 +107,9 @@
                     "field_type": "plain_B",
                     "display_name": "forest.large",
                     "unlock":["23","33"],
-                    "default_event": "king_boar_10",
-                    "random_event": "test"
+                    "initial_event": {"id": "king_boar", "level": 10},
+                    "default_event": {"id": "boars", "level": 10},
+                    "random_event": "king_boar"
                 },
                 "23": {
                     "index":[2,3],
@@ -117,8 +118,9 @@
                     "field_type": "plain_C",
                     "display_name": "forest.large",
                     "unlock":["33","22"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "squirrel_head", "level": 10},
+                    "default_event": {"id": "squirrels", "level": 10},
+                    "random_event": "squirrel_head"
                 },
                 "33": {
                     "index":[3,3],
@@ -127,8 +129,8 @@
                     "field_type": "plain_C",
                     "display_name": "forest.large",
                     "unlock":[],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "plain_c", "level": 10},
+                    "random_event": "plain_large"
                 },
                 "22": {
                     "index":[2,2],
@@ -137,8 +139,8 @@
                     "field_type": "plain_B",
                     "display_name": "waterside.medium",
                     "unlock":["32"],
-                    "default_event": "garapases_10",
-                    "random_event": "test"
+                    "default_event": {"id": "waterside_a", "level": 10},
+                    "random_event": "waterside_medium"
                 },
                 "32": {
                     "index":[3,2],
@@ -147,8 +149,8 @@
                     "field_type": "waterside_B",
                     "display_name": "waterside.large",
                     "unlock":["31"],
-                    "default_event": "garapases_15",
-                    "random_event": "test"
+                    "default_event": {"id": "garapases", "level": 15},
+                    "random_event": "waterside_large"
                 },
                 "31": {
                     "index":[3,1],
@@ -157,8 +159,9 @@
                     "field_type": "waterside_B",
                     "display_name": "waterside.large",
                     "unlock":["42"],
-                    "default_event": "garapapas_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "garapapas", "level": 15},
+                    "default_event": {"id": "waterside_c", "level": 15},
+                    "random_event": "waterside_large"
                 },
                 "42": {
                     "index":[4,2],
@@ -167,8 +170,9 @@
                     "field_type": "plain_C",
                     "display_name": "forest.large",
                     "unlock":["21","41","43"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "martellos", "level": 20},
+                    "default_event": {"id": "plain_d", "level": 15},
+                    "random_event": "martellos"
                 },
                 "21": {
                     "index":[2,1],
@@ -177,8 +181,8 @@
                     "field_type": "plain_C",
                     "display_name": "forest.large",
                     "unlock":[],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "spiders", "level": 15},
+                    "random_event": "plain_large"
                 },
                 "41": {
                     "index":[4,1],
@@ -187,8 +191,8 @@
                     "field_type": "plain_C",
                     "display_name": "forest.large",
                     "unlock":[],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "plain_e", "level": 15},
+                    "random_event": "plain_large"
                 },
                 "43": {
                     "index":[4,3],
@@ -197,8 +201,8 @@
                     "field_type": "cherry_A",
                     "display_name": "cherry.large",
                     "unlock":["53"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "spiders", "level": 15},
+                    "random_event": "cherry_large"
                 },
                 "53": {
                     "index":[5,3],
@@ -207,8 +211,8 @@
                     "field_type": "cherry_A",
                     "display_name": "cherry.large",
                     "unlock":["52","63"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "plain_f", "level": 15},
+                    "random_event": "cherry_large"
                 },
                 "52": {
                     "index":[5,2],
@@ -217,8 +221,8 @@
                     "field_type": "cherry_A",
                     "display_name": "cherry.large",
                     "unlock":[],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "boars", "level": 15},
+                    "random_event": "cherry_large"
                 },
                 "63": {
                     "index":[6,3],
@@ -227,8 +231,8 @@
                     "field_type": "cherry_A",
                     "display_name": "cherry.large",
                     "unlock":["40"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "ojinushi", "level": 20},
+                    "random_event": "ojinushi"
                 },
                 "40": {
                     "index":[4,0],
@@ -237,8 +241,8 @@
                     "field_type": "mushroom_A",
                     "display_name": "mushroom.large",
                     "unlock":["50"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "walking_mushrooms", "level": 20},
+                    "random_event": "mushroom_large"
                 },
                 "50": {
                     "index":[5,0],
@@ -247,8 +251,9 @@
                     "field_type": "mushroom_A",
                     "display_name": "mushroom.large",
                     "unlock":["51"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "martellos_mushroom", "level": 20},
+                    "default_event": {"id": "plain_a", "level": 20},
+                    "random_event": "mushroom_large"
                 },
                 "51": {
                     "index":[5,1],
@@ -257,8 +262,8 @@
                     "field_type": "mushroom_A",
                     "display_name": "mushroom.large",
                     "unlock":["61"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "many_walking_mushrooms", "level": 20},
+                    "random_event": "mushroom_large"
                 },
                 "61": {
                     "index":[6,1],
@@ -267,8 +272,9 @@
                     "field_type": "mushroom_A",
                     "display_name": "mushroom.large",
                     "unlock":["35"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "muscleroom", "level": 25},
+                    "default_event": {"id": "plain_f", "level": 20},
+                    "random_event": "muscleroom"
                 },
                 "35": {
                     "index":[3,5],
@@ -277,8 +283,8 @@
                     "field_type": "rock_A",
                     "display_name": "stone.large",
                     "unlock":["45"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "raptors", "level": 20},
+                    "random_event": "stone_large"
                 },
                 "45": {
                     "index":[4,5],
@@ -287,8 +293,8 @@
                     "field_type": "rock_A",
                     "display_name": "stone.large",
                     "unlock":["44","55"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "stone_a", "level": 20},
+                    "random_event": "stone_large"
                 },
                 "44": {
                     "index":[4,4],
@@ -297,8 +303,8 @@
                     "field_type": "rock_A",
                     "display_name": "stone.large",
                     "unlock":["54"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "spiders", "level": 25},
+                    "random_event": "stone_large"
                 },
                 "55": {
                     "index":[5,5],
@@ -307,8 +313,9 @@
                     "field_type": "rock_A",
                     "display_name": "stone.large",
                     "unlock":["54"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "martellos_stone", "level": 20},
+                    "default_event": {"id": "stone_b", "level": 25},
+                    "random_event": "stone_large"
                 },
                 "54": {
                     "index":[5,4],
@@ -317,8 +324,9 @@
                     "field_type": "rock_A",
                     "display_name": "stone.large",
                     "unlock":["62"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "bagikeros", "level": 30},
+                    "default_event": {"id": "stone_a", "level": 25},
+                    "random_event": "bagikeros"
                 },
                 "62": {
                     "index":[6,2],
@@ -327,8 +335,8 @@
                     "field_type": "snowy_A",
                     "display_name": "snowy.large",
                     "unlock":["72"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "squirrels", "level": 20},
+                    "random_event": "snowy_large"
                 },
                 "72": {
                     "index":[7,2],
@@ -337,8 +345,9 @@
                     "field_type": "ice_A",
                     "display_name": "ice.large",
                     "unlock":["73","82"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "garapapas_penguin", "level": 20},
+                    "default_event": {"id": "plain_c", "level": 20},
+                    "random_event": "ice_large"
                 },
                 "73": {
                     "index":[7,3],
@@ -347,8 +356,8 @@
                     "field_type": "snowy_A",
                     "display_name": "snowy.large",
                     "unlock":["83"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "squirrels", "level": 25},
+                    "random_event": "snowy_large"
                 },
                 "82": {
                     "index":[8,2],
@@ -357,8 +366,8 @@
                     "field_type": "ice_A",
                     "display_name": "ice.large",
                     "unlock":["83"],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "default_event": {"id": "plain_c", "level": 25},
+                    "random_event": "ice_large"
                 },
                 "83": {
                     "index":[8,3],
@@ -367,8 +376,9 @@
                     "field_type": "ice_A",
                     "display_name": "ice.large",
                     "unlock":[],
-                    "default_event": "squirrel_head_15",
-                    "random_event": "test"
+                    "initial_event": {"id": "carnara", "level": 30},
+                    "default_event": {"id": "squirrels", "level": 25},
+                    "random_event": "ice_large"
                 }
             }
         }
@@ -495,9 +505,10 @@
         },
         "ice_A": {
             "center": [2560.0, 0.0, 4096.0],
-            "entrance": [2547.0, 0.0, 4046.0],
+            "entrance": [2558.0, 0.0, 4119.0],
             "structure_size": 4,
             "exits": [
+                {"start":[2555.0, 0.0, 4125.0], "aabb":[6,1]},
                 {"start":[2543.0, 0.0, 4040.0], "aabb":[8,1]}
             ],
             "biome": "frozen_ocean"

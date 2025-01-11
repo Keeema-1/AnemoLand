@@ -64,5 +64,6 @@ execute positioned 2608 -1 4144 run fill ~ ~ ~ ~47 -3 ~47 grass_block replace ai
 execute positioned 2608 -1 4144 run fillbiome ~ ~ ~ ~47 8 ~47 frozen_ocean
 execute positioned 2608 9 4144 run fillbiome ~ ~ ~ ~47 16 ~47 frozen_ocean
 execute positioned 2560.0 0 4096.0 run kill @e[tag=area_entrance,distance=..64]
+execute positioned 2558.0 0.0 4125.0 run function anemoland:dev/field/common/area_entrance/x
 execute positioned 2547.0 0.0 4040.0 run function anemoland:dev/field/common/area_entrance/x
 tp 2560 0 4096

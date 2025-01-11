@@ -546,8 +546,8 @@
         "custom_model_data": 60,
         "icon_scale": 1.5,
         "dictionary": {
-            "recipe_prefix": "01040",
-            "number": "04",
+            "recipe_prefix": "01060",
+            "number": "06",
             "detail": ["集団で獲物を囲み、一斉に跳びかかって襲いかかる。"],
             "main_areas": ["stone"],
             "attack_elements": ["physical"]
@@ -1749,10 +1749,10 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 2.5, "elemental_damage_mul": {"fire": 70}},
-            "right_arm": {"display_name": "arm", "armor_mul": 130, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 80}},
-            "left_arm": {"display_name": "arm", "armor_mul": 130, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 80}, "skip_display_mul": true},
-            "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 90}}
+            "root": {"display_name": "body", "armor_mul": 100, "hitbox_scale": 2.5, "elemental_damage_mul": {"fire": 70, "water": 110, "ice": 120}},
+            "right_arm": {"display_name": "arm", "armor_mul": 130, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 80, "water": 140, "ice": 150}},
+            "left_arm": {"display_name": "arm", "armor_mul": 130, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 80, "water": 140, "ice": 150}, "skip_display_mul": true},
+            "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 1.75, "elemental_damage_mul": {"fire": 90, "water": 170, "ice": 180}}
         },
         "root_entity": "cow",
         "display_height": 1.5,
@@ -2119,15 +2119,15 @@
         },
         "default_action": "stop",
         "parts":{
-            "root": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 70}},
-            "front_body": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 5, "elemental_damage_mul": {"fire": 70}},
-            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 90}},
-            "left_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
-            "right_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
-            "left_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
-            "right_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50}},
-            "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 50}},
-            "tail2": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 50}}
+            "root": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 3.5, "elemental_damage_mul": {"fire": 70, "water": 130}},
+            "front_body": {"display_name": "body", "armor_mul": 120, "hitbox_scale": 5, "elemental_damage_mul": {"fire": 70, "water": 130}, "skip_display_mul": true},
+            "head": {"display_name": "head", "armor_mul": 150, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 90, "water": 160}},
+            "left_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50, "water": 130}},
+            "right_arm": {"display_name": "front_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50, "water": 130}},
+            "left_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50, "water": 130}},
+            "right_leg": {"display_name": "back_leg", "armor_mul": 100, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 50, "water": 130}},
+            "tail1": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 50, "water": 130}},
+            "tail2": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 4.5, "elemental_damage_mul": {"fire": 50, "water": 130}}
         },
         "root_entity": "pig",
         "display_height": 1.0,

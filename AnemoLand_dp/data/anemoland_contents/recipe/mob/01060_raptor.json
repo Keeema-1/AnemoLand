@@ -1,0 +1,30 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "building",
+	"ingredients": [
+		"minecraft:light_gray_stained_glass_pane"
+	],
+	"result": {
+		"count": 1,
+		"id": "minecraft:green_dye",
+		"components": {
+			"item_name": "[{\"text\":\"【No.01-06】\"},{\"translate\":\"anemoland.mob.raptor.default.name\"}]",
+			"custom_model_data": 60,
+			"lore": [
+				"{\"text\":\"  集団で獲物を囲み、一斉に跳びかかって\",\"italic\":false,\"color\":\"yellow\"}",
+				"{\"text\":\"  襲いかかる。\",\"italic\":false,\"color\":\"yellow\"}",
+				"{\"text\":\"\"}",
+				"{\"translate\":\"anemoland.dictionary.area\",\"italic\":false}",
+				"[{\"text\":\"  \"},{\"translate\":\"anemoland.area.stone\",\"italic\":false,\"color\":\"white\"}]",
+				"{\"text\":\"\"}",
+				"{\"translate\":\"anemoland.common.attack_element\",\"italic\":false}",
+				"[{\"text\":\"  \"},{\"translate\":\"anemoland.common.element.physical\",\"italic\":false,\"color\":\"white\"}]",
+				"{\"text\":\"\"}",
+				"[{\"translate\":\"anemoland.common.damage_rate.give\",\"italic\":false},{\"text\":\"(%)\",\"italic\":false}]",
+				"[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part.body\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" 100\", \"italic\":false,\"color\":\"white\"}]",
+				"[{\"text\":\"  <\",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.mob_part.head\",\"italic\":false,\"color\":\"yellow\"},{\"text\":\"> \",\"italic\":false,\"color\":\"yellow\"},{\"translate\":\"anemoland.common.element.physical\", \"italic\":false,\"color\":\"gray\"},{\"text\":\" 120\", \"italic\":false,\"color\":\"aqua\"}]",
+				"[{\"text\":\"  \"},{\"translate\":\"anemoland.dictionary.elem_mul_value_detail\",\"italic\":false,\"color\":\"dark_gray\"}]"
+			]
+		}
+	}
+}

@@ -1,6 +1,230 @@
 {
     "waves": {
-        "walking_mushrooms": {
+        "plain_a": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
+        "plain_b": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
+        "plain_c": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
+        "plain_d": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
+        "plain_e": {
+            "enemies": [
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
+        "plain_f": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [0, 10]
+                },
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [-1, 0]
+                }
+            ]
+        },
+        "waterside_a": {
+            "enemies": [
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
+        "waterside_b": {
+            "enemies": [
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
+        "waterside_c": {
+            "enemies": [
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [0, 10]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [-1, 0]
+                }
+            ]
+        },
+        "stone_a": {
+            "enemies": [
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
+        "stone_b": {
+            "enemies": [
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [0, 10]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-1, 0]
+                }
+            ]
+        },
+        "many_walking_mushrooms": {
             "enemies": [
                 {
                     "entity_id": "walking_mushroom",
@@ -31,6 +255,25 @@
                 }
             ]
         },
+        "walking_mushrooms": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "walking_mushroom",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
         "boars": {
             "enemies": [
                 {
@@ -42,6 +285,11 @@
                     "entity_id": "boar",
                     "level": 0,
                     "pos": [6, 2]
+                },
+                {
+                    "entity_id": "boar",
+                    "level": 0,
+                    "pos": [0, 10]
                 }
             ]
         },
@@ -56,6 +304,11 @@
                     "entity_id": "squirrel",
                     "level": 0,
                     "pos": [6, 2]
+                },
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [0, 10]
                 }
             ]
         },
@@ -97,6 +350,25 @@
                 }
             ]
         },
+        "raptors": {
+            "enemies": [
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [0, -3]
+                },
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [-4, 1]
+                },
+                {
+                    "entity_id": "raptor",
+                    "level": 0,
+                    "pos": [5, 2]
+                }
+            ]
+        },
         "squirrel_head": {
             "enemies": [
                 {
@@ -111,6 +383,22 @@
                 },
                 {
                     "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [6, 2]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "squirrel_head_double": {
+            "enemies": [
+                {
+                    "entity_id": "squirrel_head",
+                    "level": 0,
+                    "pos": [-5, 1]
+                },
+                {
+                    "entity_id": "squirrel_head",
                     "level": 0,
                     "pos": [6, 2]
                 }
@@ -139,10 +427,96 @@
             "bgm": "king_boar",
             "boss_flag": 1
         },
+        "king_boar_double": {
+            "enemies": [
+                {
+                    "entity_id": "king_boar",
+                    "level": 0,
+                    "pos": [-4, 0]
+                },
+                {
+                    "entity_id": "king_boar",
+                    "level": 0,
+                    "pos": [4, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "king_boar_and_squirrel_head": {
+            "enemies": [
+                {
+                    "entity_id": "king_boar",
+                    "level": 0,
+                    "pos": [-4, 0]
+                },
+                {
+                    "entity_id": "squirrel_head",
+                    "level": 0,
+                    "pos": [4, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
         "garapapas": {
             "enemies": [
                 {
                     "entity_id": "garapapas",
+                    "level": 0,
+                    "pos": [0, -4]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [-4, 0]
+                },
+                {
+                    "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [4, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "garapapas_and_squirrel_head": {
+            "enemies": [
+                {
+                    "entity_id": "garapapas",
+                    "level": 0,
+                    "pos": [-4, 0]
+                },
+                {
+                    "entity_id": "squirrel_head",
+                    "level": 0,
+                    "pos": [4, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "garapapas_double": {
+            "enemies": [
+                {
+                    "entity_id": "garapapas",
+                    "level": 0,
+                    "pos": [-4, 0]
+                },
+                {
+                    "entity_id": "garapapas",
+                    "level": 0,
+                    "pos": [4, 0]
+                }
+            ],
+            "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "garapapas_penguin": {
+            "enemies": [
+                {
+                    "entity_id": "garapapas",
+                    "variant": "penguin",
                     "level": 0,
                     "pos": [0, -4]
                 },
@@ -170,86 +544,570 @@
             ],
             "bgm": "martellos",
             "boss_flag": 1
+        },
+        "martellos_double": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "level": 0,
+                    "pos": [5, 0]
+                },
+                {
+                    "entity_id": "martellos",
+                    "level": 0,
+                    "pos": [-5, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "martellos_and_squirrel_head": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "level": 0,
+                    "pos": [5, 0]
+                },
+                {
+                    "entity_id": "squirrel_head",
+                    "level": 0,
+                    "pos": [-5, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "martellos_cherry": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "variant": "cherry",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "martellos_mushroom": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "variant": "mushroom",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "martellos_stone": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "variant": "stone",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "martellos_ice": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "variant": "ice",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "ojinushi": {
+            "enemies": [
+                {
+                    "entity_id": "ojinushi",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "ojinushi",
+            "boss_flag": 1
+        },
+        "ojinushi_double": {
+            "enemies": [
+                {
+                    "entity_id": "ojinushi",
+                    "level": 0,
+                    "pos": [-6, 0]
+                },
+                {
+                    "entity_id": "ojinushi",
+                    "level": 0,
+                    "pos": [6, 0]
+                }
+            ],
+            "bgm": "ojinushi",
+            "boss_flag": 1
+        },
+        "muscleroom": {
+            "enemies": [
+                {
+                    "entity_id": "muscleroom",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "muscleroom",
+            "boss_flag": 1
+        },
+        "muscleroom_double": {
+            "enemies": [
+                {
+                    "entity_id": "muscleroom",
+                    "level": 0,
+                    "pos": [-6, 0]
+                },
+                {
+                    "entity_id": "muscleroom",
+                    "level": 0,
+                    "pos": [6, 0]
+                }
+            ],
+            "bgm": "muscleroom",
+            "boss_flag": 1
+        },
+        "bagikeros": {
+            "enemies": [
+                {
+                    "entity_id": "bagikeros",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "bagikeros_double": {
+            "enemies": [
+                {
+                    "entity_id": "bagikeros",
+                    "level": 0,
+                    "pos": [8, 0]
+                },
+                {
+                    "entity_id": "bagikeros",
+                    "level": 0,
+                    "pos": [-8, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
+        "carnara": {
+            "enemies": [
+                {
+                    "entity_id": "carnara",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "carnara",
+            "boss_flag": 1
+        },
+        "carnara_double": {
+            "enemies": [
+                {
+                    "entity_id": "carnara",
+                    "level": 0,
+                    "pos": [8, 0]
+                },
+                {
+                    "entity_id": "carnara",
+                    "level": 0,
+                    "pos": [-8, 0]
+                }
+            ],
+            "bgm": "carnara",
+            "boss_flag": 1
         }
     },
     "events": {
-        "walking_mushrooms_5": {
-            "waves":[{"walking_mushrooms":5}]
+        "plain_a": {
+            "waves":[{"plain_a":0}]
         },
-        "walking_mushrooms_10": {
-            "waves":[{"walking_mushrooms":10}]
+        "plain_b": {
+            "waves":[{"plain_b":0}]
         },
-        "walking_mushrooms_15": {
-            "waves":[{"walking_mushrooms":15}]
+        "plain_c": {
+            "waves":[{"plain_c":0}]
         },
-        "boars_5": {
-            "waves":[{"boars":5}]
+        "plain_d": {
+            "waves":[{"plain_d":0}]
         },
-        "boars_10": {
-            "waves":[{"boars":10}]
+        "plain_e": {
+            "waves":[{"plain_e":0}]
         },
-        "boars_15": {
-            "waves":[{"boars":15}]
+        "plain_f": {
+            "waves":[{"plain_f":0}]
         },
-        "spiders_5": {
-            "waves":[{"spiders":5}]
+        "waterside_a": {
+            "waves":[{"waterside_a":0}]
         },
-        "spiders_10": {
-            "waves":[{"spiders":10}]
+        "waterside_b": {
+            "waves":[{"waterside_b":0}]
         },
-        "spiders_15": {
-            "waves":[{"spiders":15}]
+        "waterside_c": {
+            "waves":[{"waterside_c":0}]
         },
-        "squirrels_5": {
-            "waves":[{"squirrels":5}]
+        "stone_a": {
+            "waves":[{"stone_a":0}]
         },
-        "squirrels_10": {
-            "waves":[{"squirrels":10}]
+        "stone_b": {
+            "waves":[{"stone_b":0}]
         },
-        "squirrels_15": {
-            "waves":[{"squirrels":15}]
+        "walking_mushrooms": {
+            "waves":[{"walking_mushrooms":0}]
         },
-        "garapases_10": {
-            "waves":[{"garapases":10}]
+        "many_walking_mushrooms": {
+            "waves":[{"many_walking_mushrooms":0}]
         },
-        "garapases_15": {
-            "waves":[{"garapases":15}]
+        "boars": {
+            "waves":[{"boars":0}]
         },
-        "squirrel_head_15": {
-            "waves":[{"squirrel_head":15}]
+        "spiders": {
+            "waves":[{"spiders":0}]
         },
-        "king_boar_10": {
-            "waves":[{"king_boar":10}]
+        "squirrels": {
+            "waves":[{"squirrels":0}]
         },
-        "king_boar_15": {
-            "waves":[{"king_boar":15}]
+        "garapases": {
+            "waves":[{"garapases":0}]
         },
-        "garapapas_15": {
-            "waves":[{"garapapas":15}]
+        "raptors": {
+            "waves":[{"raptors":0}]
         },
-        "martellos_20": {
-            "waves":[{"martellos":20}]
+        "squirrel_head": {
+            "waves":[{"squirrel_head":0}]
+        },
+        "squirrel_head_double": {
+            "waves":[{"squirrel_head_double":0}]
+        },
+        "king_boar": {
+            "waves":[{"king_boar":0}]
+        },
+        "king_boar_double": {
+            "waves":[{"king_boar_double":0}]
+        },
+        "garapapas": {
+            "waves":[{"garapapas":0}]
+        },
+        "garapapas_double": {
+            "waves":[{"garapapas_double":0}]
+        },
+        "garapapas_penguin": {
+            "waves":[{"garapapas_penguin":0}]
+        },
+        "martellos": {
+            "waves":[{"martellos":0}]
+        },
+        "martellos_double": {
+            "waves":[{"martellos_double":0}]
+        },
+        "martellos_cherry": {
+            "waves":[{"martellos_cherry":0}]
+        },
+        "martellos_mushroom": {
+            "waves":[{"martellos_mushroom":0}]
+        },
+        "martellos_stone": {
+            "waves":[{"martellos_stone":0}]
+        },
+        "martellos_ice": {
+            "waves":[{"martellos_ice":0}]
+        },
+        "ojinushi": {
+            "waves":[{"ojinushi":0}]
+        },
+        "ojinushi_double": {
+            "waves":[{"ojinushi_double":0}]
+        },
+        "muscleroom": {
+            "waves":[{"muscleroom":0}]
+        },
+        "muscleroom_double": {
+            "waves":[{"muscleroom_double":0}]
+        },
+        "bagikeros": {
+            "waves":[{"bagikeros":0}]
+        },
+        "bagikeros_double": {
+            "waves":[{"bagikeros_double":0}]
+        },
+        "carnara": {
+            "waves":[{"carnara":0}]
+        },
+        "carnara_double": {
+            "waves":[{"carnara_double":0}]
         }
     },
     "random_events": {
-        "test": {
+        "king_boar": {
             "random_event_chance": 0.8,
             "random_events": [
-                {"event": "walking_mushrooms_5", "weight": 1},
-                {"event": "walking_mushrooms_10", "weight": 1},
-                {"event": "walking_mushrooms_15", "weight": 1},
-                {"event": "boars_5", "weight": 1},
-                {"event": "boars_10", "weight": 1},
-                {"event": "boars_15", "weight": 1},
-                {"event": "squirrels_5", "weight": 3},
-                {"event": "squirrels_10", "weight": 3},
-                {"event": "squirrels_15", "weight": 3},
-                {"event": "garapases_10", "weight": 3},
-                {"event": "garapases_15", "weight": 3},
-                {"event": "king_boar_10", "weight": 5},
-                {"event": "king_boar_15", "weight": 5},
-                {"event": "squirrel_head_15", "weight": 5},
-                {"event": "garapapas_15", "weight": 5}
+                {"event": "king_boar", "weight": 9},
+                {"event": "king_boar_double", "weight": 1}
+            ]
+        },
+        "squirrel_head": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "squirrel_head", "weight": 9},
+                {"event": "squirrel_head_double", "weight": 1}
+            ]
+        },
+        "garapapas": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "garapapas", "weight": 9},
+                {"event": "garapapas_double", "weight": 1}
+            ]
+        },
+        "martellos": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "martellos", "weight": 9},
+                {"event": "martellos_double", "weight": 1}
+            ]
+        },
+        "ojinushi": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "ojinushi", "weight": 9},
+                {"event": "ojinushi_double", "weight": 1}
+            ]
+        },
+        "muscleroom": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "muscleroom", "weight": 9},
+                {"event": "muscleroom_double", "weight": 1}
+            ]
+        },
+        "bagikeros": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "bagikeros", "weight": 9},
+                {"event": "bagikeros_double", "weight": 1}
+            ]
+        },
+        "carnara": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "carnara", "weight": 1},
+                {"event": "carnara_double", "weight": 1}
+            ]
+        },
+        "plain_small": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a", "weight": 4},
+                {"event": "plain_b", "weight": 3},
+                {"event": "plain_c", "weight": 2},
+                {"event": "plain_d", "weight": 2},
+                {"event": "plain_e", "weight": 2},
+                {"event": "plain_f", "weight": 1},
+                {"event": "walking_mushrooms", "weight": 3},
+                {"event": "many_walking_mushrooms", "weight": 1},
+                {"event": "boars", "weight": 2},
+                {"event": "spiders", "weight": 2},
+                {"event": "squirrels", "weight": 2},
+                {"event": "garapases", "weight": 2},
+                {"event": "king_boar", "weight": 8}
+            ]
+        },
+        "plain_medium": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a", "weight": 4},
+                {"event": "plain_b", "weight": 3},
+                {"event": "plain_c", "weight": 2},
+                {"event": "plain_d", "weight": 2},
+                {"event": "plain_e", "weight": 2},
+                {"event": "plain_f", "weight": 2},
+                {"event": "walking_mushrooms", "weight": 3},
+                {"event": "many_walking_mushrooms", "weight": 1},
+                {"event": "boars", "weight": 2},
+                {"event": "spiders", "weight": 2},
+                {"event": "squirrels", "weight": 2},
+                {"event": "garapases", "weight": 1},
+                {"event": "king_boar", "weight": 8},
+                {"event": "squirrel_head", "weight": 10},
+                {"event": "martellos", "weight": 4}
+            ]
+        },
+        "plain_large": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a", "weight": 4},
+                {"event": "plain_b", "weight": 3},
+                {"event": "plain_c", "weight": 2},
+                {"event": "plain_d", "weight": 2},
+                {"event": "plain_e", "weight": 4},
+                {"event": "plain_f", "weight": 5},
+                {"event": "walking_mushrooms", "weight": 3},
+                {"event": "many_walking_mushrooms", "weight": 1},
+                {"event": "boars", "weight": 2},
+                {"event": "spiders", "weight": 2},
+                {"event": "squirrels", "weight": 2},
+                {"event": "garapases", "weight": 1},
+                {"event": "king_boar", "weight": 4},
+                {"event": "squirrel_head", "weight": 8},
+                {"event": "garapapas", "weight": 2},
+                {"event": "martellos", "weight": 10},
+                {"event": "ojinushi", "weight": 2},
+                {"event": "muscleroom", "weight": 1}
+            ]
+        },
+        "waterside_medium": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a", "weight": 4},
+                {"event": "plain_b", "weight": 3},
+                {"event": "plain_c", "weight": 2},
+                {"event": "plain_d", "weight": 2},
+                {"event": "plain_e", "weight": 1},
+                {"event": "plain_f", "weight": 1},
+                {"event": "waterside_a", "weight": 5},
+                {"event": "waterside_b", "weight": 5},
+                {"event": "waterside_c", "weight": 5},
+                {"event": "walking_mushrooms", "weight": 3},
+                {"event": "many_walking_mushrooms", "weight": 1},
+                {"event": "boars", "weight": 2},
+                {"event": "spiders", "weight": 2},
+                {"event": "squirrels", "weight": 5},
+                {"event": "garapases", "weight": 10},
+                {"event": "king_boar", "weight": 6},
+                {"event": "squirrel_head", "weight": 8},
+                {"event": "garapapas", "weight": 8},
+                {"event": "martellos", "weight": 2}
+            ]
+        },
+        "waterside_large": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a", "weight": 4},
+                {"event": "plain_b", "weight": 3},
+                {"event": "plain_c", "weight": 2},
+                {"event": "plain_d", "weight": 2},
+                {"event": "plain_e", "weight": 1},
+                {"event": "plain_f", "weight": 1},
+                {"event": "waterside_a", "weight": 5},
+                {"event": "waterside_b", "weight": 5},
+                {"event": "waterside_c", "weight": 5},
+                {"event": "walking_mushrooms", "weight": 3},
+                {"event": "many_walking_mushrooms", "weight": 1},
+                {"event": "boars", "weight": 2},
+                {"event": "spiders", "weight": 2},
+                {"event": "squirrels", "weight": 5},
+                {"event": "garapases", "weight": 10},
+                {"event": "king_boar", "weight": 6},
+                {"event": "squirrel_head", "weight": 8},
+                {"event": "garapapas", "weight": 20},
+                {"event": "martellos", "weight": 4},
+                {"event": "muscleroom", "weight": 1}
+            ]
+        },
+        "cherry_large": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a", "weight": 4},
+                {"event": "plain_b", "weight": 3},
+                {"event": "plain_c", "weight": 2},
+                {"event": "plain_d", "weight": 2},
+                {"event": "plain_e", "weight": 3},
+                {"event": "plain_f", "weight": 3},
+                {"event": "walking_mushrooms", "weight": 3},
+                {"event": "many_walking_mushrooms", "weight": 1},
+                {"event": "boars", "weight": 2},
+                {"event": "spiders", "weight": 5},
+                {"event": "squirrels", "weight": 5},
+                {"event": "garapases", "weight": 1},
+                {"event": "king_boar", "weight": 2},
+                {"event": "squirrel_head", "weight": 5},
+                {"event": "garapapas", "weight": 1},
+                {"event": "martellos", "weight": 2},
+                {"event": "martellos_cherry", "weight": 8},
+                {"event": "ojinushi", "weight": 15},
+                {"event": "muscleroom", "weight": 3}
+            ]
+        },
+        "mushroom_large": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a", "weight": 4},
+                {"event": "plain_b", "weight": 3},
+                {"event": "plain_c", "weight": 2},
+                {"event": "plain_d", "weight": 2},
+                {"event": "plain_e", "weight": 3},
+                {"event": "plain_f", "weight": 3},
+                {"event": "walking_mushrooms", "weight": 3},
+                {"event": "many_walking_mushrooms", "weight": 10},
+                {"event": "boars", "weight": 2},
+                {"event": "spiders", "weight": 5},
+                {"event": "squirrels", "weight": 3},
+                {"event": "king_boar", "weight": 2},
+                {"event": "squirrel_head", "weight": 3},
+                {"event": "martellos", "weight": 2},
+                {"event": "martellos_mushroom", "weight": 8},
+                {"event": "ojinushi", "weight": 3},
+                {"event": "muscleroom", "weight": 15},
+                {"event": "bagikeros", "weight": 1}
+            ]
+        },
+        "stone_large": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "stone_a", "weight": 8},
+                {"event": "stone_b", "weight": 8},
+                {"event": "boars", "weight": 1},
+                {"event": "spiders", "weight": 5},
+                {"event": "raptors", "weight": 8},
+                {"event": "king_boar", "weight": 1},
+                {"event": "martellos_stone", "weight": 8},
+                {"event": "ojinushi", "weight": 4},
+                {"event": "muscleroom", "weight": 1},
+                {"event": "bagikeros", "weight": 15}
+            ]
+        },
+        "snowy_large": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_a", "weight": 2},
+                {"event": "plain_b", "weight": 1},
+                {"event": "plain_c", "weight": 10},
+                {"event": "plain_d", "weight": 1},
+                {"event": "plain_e", "weight": 1},
+                {"event": "squirrels", "weight": 10},
+                {"event": "boars", "weight": 4},
+                {"event": "spiders", "weight": 2},
+                {"event": "king_boar", "weight": 1},
+                {"event": "squirrel_head", "weight": 10},
+                {"event": "martellos_ice", "weight": 10},
+                {"event": "carnara", "weight": 5}
+            ]
+        },
+        "ice_large": {
+            "random_event_chance": 0.8,
+            "random_events": [
+                {"event": "plain_c", "weight": 10},
+                {"event": "boars", "weight": 5},
+                {"event": "squirrels", "weight": 15},
+                {"event": "squirrel_head", "weight": 5},
+                {"event": "martellos_ice", "weight": 10},
+                {"event": "carnara", "weight": 15}
             ]
         }
     }

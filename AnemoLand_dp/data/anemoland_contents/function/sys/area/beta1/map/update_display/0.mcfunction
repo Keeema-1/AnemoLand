@@ -2,6 +2,7 @@ data remove storage temp:_ data.field_display_data
 function anemoland_contents:sys/area/beta1/map/update_display/00
 execute unless data storage temp:_ data.field_display_data{display_update_flag:1b} run return 1
 data modify storage temp:_ data.field_display_macro.field_name set from storage temp:_ data.field_display_data.display_name
+data modify storage temp:_ data.field_display_macro.level set from storage temp:_ data.field_display_data.event.waves[0].level
 data modify storage temp:_ data.field_display_macro.bonus_display_base set value ""
 data modify storage temp:_ data.field_display_macro.bonus_display_gold set value ""
 data modify storage temp:_ data.field_display_macro.bonus_display_xp set value ""

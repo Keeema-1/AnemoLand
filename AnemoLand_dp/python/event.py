@@ -33,14 +33,14 @@ for event_id, event_data in event_database["events"].items():
 		for wave_id, wave_level in wave_data_.items():
 			wave_data = event_database["waves"][wave_id]
 
-			path = base_path + 'field/wave/' + str(wave_id) + '_' + str(wave_level) + '.mcfunction'
+			path = base_path + 'field/wave/' + str(wave_id) + '.mcfunction'
 			makedir(path)
 			output = []
 			for enemy in wave_data["enemies"]:
 				if "variant" in enemy:
-					output.append('execute positioned ~' + str(enemy["pos"][0]) + ' ~ ~' + str(enemy["pos"][1]) + ' run function ' + namespace_contents + ':sys/entity/mob/' + enemy["entity_id"] + '/summon/' + enemy["variant"] + '/enemy/level {level:' + str(enemy["level"] + wave_level) + '}\n')
+					output.append('execute positioned ~' + str(enemy["pos"][0]) + ' ~ ~' + str(enemy["pos"][1]) + ' run function ' + namespace_contents + ':sys/entity/mob/' + enemy["entity_id"] + '/summon/' + enemy["variant"] + '/enemy/level with storage temp:_ data.wave\n')
 				else:
-					output.append('execute positioned ~' + str(enemy["pos"][0]) + ' ~ ~' + str(enemy["pos"][1]) + ' run function ' + namespace_contents + ':sys/entity/mob/' + enemy["entity_id"] + '/summon/default/enemy/level {level:' + str(enemy["level"] + wave_level) + '}\n')
+					output.append('execute positioned ~' + str(enemy["pos"][0]) + ' ~ ~' + str(enemy["pos"][1]) + ' run function ' + namespace_contents + ':sys/entity/mob/' + enemy["entity_id"] + '/summon/default/enemy/level with storage temp:_ data.wave\n')
 			if "bgm" in wave_data:
 				output.append('execute as @a[distance=..64] at @s run function ' + namespace_contents + ':sys/player/music/' + wave_data["bgm"] + '/start\n')
 			if "boss_flag" in wave_data and wave_data["boss_flag"]:
@@ -98,7 +98,7 @@ for event_id, event_data in event_database["events"].items():
 	display_add2 = ''
 	if "npc" in event_data and event_data["npc"]["npc1"]:
 		display_add2 += ',{"text":"\\\\n<","color":"yellow"},{"translate":"with_companion","color":"yellow"},{"text":">","color":"yellow"}'
-	output.append('$data modify entity @s text set value \'["",{"text":"\\\\n"},{"text":"⚔ ","color":"red"},{"translate":"anemoland.field_display.field_type.battle","color":"red"},{"text":" ⚔\\\\n","color":"red"},{"translate":"anemoland.field.$(field_name)"},{"text":"\\\\n----------------\\\\n","color":"gray"},{"translate":"anemoland.field_display.monsters"},{"text":"\\\\n"}' + display_add + ',{"text":"\\\\n\\\\n\\\\n"},{"translate":"anemoland.field_display.num_waves"},{"text":" ' + str(waves_len) + '\\\\nLv. ' + ((str(min_level)) if (min_level == max_level) else (str(min_level) + ' - ' + str(max_level))) + '"}' + display_add2 + '$(bonus_display_base)$(bonus_display_gold)$(bonus_display_xp)$(bonus_display_drop)]\'\n')
+	output.append('$data modify entity @s text set value \'["",{"text":"\\\\n"},{"text":"⚔ ","color":"red"},{"translate":"anemoland.field_display.field_type.battle","color":"red"},{"text":" ⚔\\\\n","color":"red"},{"translate":"anemoland.field.$(field_name)"},{"text":"\\\\n----------------\\\\n","color":"gray"},{"translate":"anemoland.field_display.monsters"},{"text":"\\\\n"}' + display_add + ',{"text":"\\\\n\\\\n\\\\n"},{"translate":"anemoland.field_display.num_waves"},{"text":" ' + str(waves_len) + '\\\\nLv. $(level)"}' + display_add2 + '$(bonus_display_base)$(bonus_display_gold)$(bonus_display_xp)$(bonus_display_drop)]\'\n')
 	# output.append('#$tellraw @a [""$(bonus_display_base)$(bonus_display_gold)$(bonus_display_xp)$(bonus_display_drop)]\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -158,7 +158,7 @@ for map_name in map_names:
 		waves_list = []
 		for wave_data in event_data["waves"]:
 			for wave_id, wave_level in wave_data.items():
-				waves_list.append(wave_id + '_' + str(wave_level))
+				waves_list.append({"id": wave_id, "level": "$(level)"})
 		output = []
 		output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.event_id set value "' + event_id + '"\n')
 		output.append(('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.waves set value ' + str(waves_list) + '\n').replace("'", '"'))

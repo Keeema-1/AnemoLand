@@ -2,4 +2,4 @@
 tag @s remove aj.new
 function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
 tag @s add hitbox.head
-function rpg:sys/entity/mob/raptor/summon/hitbox/0
+function anemoland_contents:sys/entity/mob/raptor/summon/common/hitbox

@@ -116,14 +116,17 @@ for map_data in map_database["maps"]:
 						enemies_boss = []
 						min_level = 10000
 						max_level = 0
-						event_data = event_database["events"][field_data["initial_event"]] if "initial_event" in field_data else event_database["events"][field_data["default_event"]]
+						initial_event = field_data["default_event"]
+						if "initial_event" in field_data:
+							initial_event = field_data["initial_event"]
+						event_data = event_database["events"][initial_event["id"]]
 						waves_len = len(event_data["waves"])
 						for wave_data_ in (event_data["waves"]):
-							for wave_id, wave_level in wave_data_.items():
+							for wave_id, wave_level_add in wave_data_.items():
 								wave_data = event_database["waves"][wave_id]["enemies"]
 								for enemy in wave_data:
-									min_level = min(enemy["level"] + wave_level, min_level)
-									max_level = max(enemy["level"] + wave_level, max_level)
+									min_level = min(enemy["level"] + wave_level_add + initial_event["level"], min_level)
+									max_level = max(enemy["level"] + wave_level_add + initial_event["level"], max_level)
 									if mob_database[enemy["entity_id"]]["type"] == "boss":
 										enemies_boss.append(enemy["entity_id"])
 									else:
@@ -143,7 +146,7 @@ for map_data in map_database["maps"]:
 						if ("decoy" in enemies):
 							output.append('execute positioned ' + str(center_pos[0]+x*8-size*4 + 4) + ' 0.0 ' + str(center_pos[1]+y*8-size*4 + 4) + ' run summon text_display ~ ~-1.5 ~ {Tags:["area_info","' + map_data["name"] + '","field","field_' + map[y][x] + '"' + tags_add + '],text:\'["",{"text":"\\\\n"},{"text":"⚔ ","color":"red"},{"translate":"anemoland.field_display.field_type.battle","color":"red"},{"text":" ⚔\\\\n","color":"red"},{"translate":"anemoland.field.' + field_data["display_name"] + '"},{"text":"\\\\n"}]\',billboard:"center",view_range:0.3,transformation:{right_rotation:[0.0f,0.0f,0.0f,1.0f],left_rotation:[0.0f,0.0f,0.0f,1.0f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.0f,0.0f]}}\n')
 						else:
-							output.append('execute positioned ' + str(center_pos[0]+x*8-size*4 + 4) + ' 0.0 ' + str(center_pos[1]+y*8-size*4 + 4) + ' run summon text_display ~ ~-1.5 ~ {Tags:["area_info","' + map_data["name"] + '","field","field_' + map[y][x] + '"' + tags_add + '],text:\'["",{"text":"\\\\n"},{"text":"⚔ ","color":"red"},{"translate":"anemoland.field_display.field_type.battle","color":"red"},{"text":" ⚔\\\\n","color":"red"},{"translate":"anemoland.field.' + field_data["display_name"] + '"},{"text":"\\\\n"},{"text":"----------------\\\\n","color":"gray"},{"translate":"anemoland.field_display.monsters"},{"text":"\\\\n"}' + monsters + ',{"text":"\\\\n\\\\n\\\\n"},{"translate":"anemoland.field_display.num_waves"},{"text":" ' + str(len(event_database["events"][field_data["default_event"]]["waves"])) + '\\\\nLv. ' + ((str(min_level)) if (min_level == max_level) else (str(min_level) + ' - ' + str(max_level))) + '"}]\',billboard:"center",view_range:0.3,transformation:{right_rotation:[0.0f,0.0f,0.0f,1.0f],left_rotation:[0.0f,0.0f,0.0f,1.0f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.0f,0.0f]}}\n')
+							output.append('execute positioned ' + str(center_pos[0]+x*8-size*4 + 4) + ' 0.0 ' + str(center_pos[1]+y*8-size*4 + 4) + ' run summon text_display ~ ~-1.5 ~ {Tags:["area_info","' + map_data["name"] + '","field","field_' + map[y][x] + '"' + tags_add + '],text:\'["",{"text":"\\\\n"},{"text":"⚔ ","color":"red"},{"translate":"anemoland.field_display.field_type.battle","color":"red"},{"text":" ⚔\\\\n","color":"red"},{"translate":"anemoland.field.' + field_data["display_name"] + '"},{"text":"\\\\n"},{"text":"----------------\\\\n","color":"gray"},{"translate":"anemoland.field_display.monsters"},{"text":"\\\\n"}' + monsters + ',{"text":"\\\\n\\\\n\\\\n"},{"translate":"anemoland.field_display.num_waves"},{"text":" ' + str(len(event_database["events"][field_data["default_event"]["id"]]["waves"])) + '\\\\nLv. ' + ((str(min_level)) if (min_level == max_level) else (str(min_level) + ' - ' + str(max_level))) + '"}]\',billboard:"center",view_range:0.3,transformation:{right_rotation:[0.0f,0.0f,0.0f,1.0f],left_rotation:[0.0f,0.0f,0.0f,1.0f],translation:[0.0f,0.0f,0.0f],scale:[0.0f,0.0f,0.0f]}}\n')
 					break
 			if flag == False:
 				output.append('execute positioned ' + str(center_pos[0]+x*8-size*4 + 4) + ' 0.0 ' + str(center_pos[1]+y*8-size*4 + 4) + ' run summon text_display ~ ~-1.5 ~ {Tags:["area_info","' + map_data["name"] + '","field","field_' + map[y][x] + '","skip","auto_unlock"],text:\'[""]\',view_range:0}\n')
@@ -376,7 +379,7 @@ for map_data in map_database["maps"]:
 				output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/clear/clear_\n')
 				output.append('data modify storage temp:_ data.event_id.event_id set from storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.event_id\n')
 				output.append('function ' + namespace_contents + ':sys/event/clear with storage temp:_ data.event_id\n')
-				output.append('function ' + namespace_contents + ':command/field_event/' + map_name + '/change/' + field_data["default_event"] + ' {field_id:' + field_id + '}\n')
+				output.append('function ' + namespace_contents + ':command/field_event/' + map_name + '/change/' + field_data["default_event"]["id"] + ' {field_id:' + field_id + ', level: ' +  str(field_data["default_event"]["level"]) + '}\n')
 				output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/event/update/0\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
@@ -489,7 +492,7 @@ for map_data in map_database["maps"]:
 				output.append('function ' + namespace_core + ':sys/player/area/common/field/set_pet_timer\n')
 				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.summon_flag set value 1b\n')
 				for i in range(MAX_WAVES):
-					output.append('execute if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event{wave:' + str(i+1) + '} run data modify storage temp:_ data.wave.wave set from storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.waves[' + str(i) + ']\n')
+					output.append('execute if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event{wave:' + str(i+1) + '} run data modify storage temp:_ data.wave set from storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.waves[' + str(i) + ']\n')
 				output.append('data remove storage temp:_ data.event_bonus\n')
 				output.append('data modify storage temp:_ data.event_bonus set from storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus\n')
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' run function ' + namespace_contents + ':sys/event/field/branch with storage temp:_ data.wave\n')
@@ -512,19 +515,28 @@ for map_data in map_database["maps"]:
 				path = base_path + map_name + '/event/update/field/' + field_id + '.mcfunction'
 				makedir(path)
 				random_event_data = event_database["random_events"][field_data["random_event"]]
-				output.append('execute positioned ' + str(center[0]) + ' 0 ' + str(center[1]) + ' if entity @a[distance=..128] unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run return 1\n')
-				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus set value {xp:0,gold:0,drop:0}\n')
-				output.append('execute store result score #random temp run random value 0..19\n')
-				output.append('execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.xp set value 1\n')
-				output.append('execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.xp set value 2\n')
-				output.append('execute store result score #random temp run random value 0..19\n')
-				output.append('execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.gold set value 1\n')
-				output.append('execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.gold set value 2\n')
-				output.append('execute store result score #random temp run random value 0..19\n')
-				output.append('execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.drop set value 1\n')
-				output.append('execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.drop set value 2\n')
-				output.append('execute store result score #random temp run random value 0..999\n')
-				output.append('execute if score #random temp matches ' + str(int(random_event_data["random_event_chance"]*1000)) + '.. run return 1\n')
+				output.append('# フィールドにプレイヤーがいたらスキップ\n')
+				output.append('    execute positioned ' + str(center[0]) + ' 0 ' + str(center[1]) + ' if entity @a[distance=..128] unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run return 1\n')
+				output.append('# ボーナス\n')
+				output.append('    data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus set value {xp:0,gold:0,drop:0}\n')
+				output.append('    execute store result score #random temp run random value 0..19\n')
+				output.append('    execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.xp set value 1\n')
+				output.append('    execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.xp set value 2\n')
+				output.append('    execute store result score #random temp run random value 0..19\n')
+				output.append('    execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.gold set value 1\n')
+				output.append('    execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.gold set value 2\n')
+				output.append('    execute store result score #random temp run random value 0..19\n')
+				output.append('    execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.drop set value 1\n')
+				output.append('    execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.drop set value 2\n')
+				output.append('# 一定確率でイベントを変化させずにスキップ\n')
+				output.append('    execute store result score #random temp run random value 0..999\n')
+				output.append('    execute if score #random temp matches ' + str(int(random_event_data["random_event_chance"]*1000)) + '.. run return 1\n')
+				output.append('# フィールドidとレベルをセット\n')
+				output.append('    data modify storage temp:_ data.field_event set value {field_id:' + field_id + ',level:10}\n')
+				output.append('    execute store result score #level temp run random value 1..3\n')
+				output.append('    execute if data storage anemoland:progress data.rank{silver:1b} store result score #level temp run random value 1..5\n')
+				output.append('    execute if data storage anemoland:progress data.rank{gold:1b} store result score #level temp run random value 1..8\n')
+				output.append('    execute store result storage temp:_ data.field_event.level int 5 run scoreboard players get #level temp\n')
 				weight_sum_all = 0
 				for random_event_item in random_event_data["random_events"]:
 					weight_sum_all += random_event_item["weight"]
@@ -546,18 +558,19 @@ for map_data in map_database["maps"]:
 								if level_ >= 30:
 									predicates += ' if data storage ' + namespace_storage + ':progress data.rank{gold:1b}'
 								enemies_.add(enemy_["entity_id"])
-					output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+random_event_item["weight"]-1) + '' + predicates + ' run function ' + namespace_contents + ':command/field_event/' + map_name + '/change/' + random_event_item["event"] + ' {field_id:' + field_id + '}\n')
+					output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+random_event_item["weight"]-1) + '' + predicates + ' run function ' + namespace_contents + ':command/field_event/' + map_name + '/change/' + random_event_item["event"] + ' with storage temp:_ data.field_event\n')
 					weight_sum += random_event_item["weight"]
 				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus set value {xp:0,gold:0,drop:0}\n')
-				output.append('execute store result score #random temp run random value 0..19\n')
-				output.append('execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.xp set value 1\n')
-				output.append('execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.xp set value 2\n')
-				output.append('execute store result score #random temp run random value 0..19\n')
-				output.append('execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.gold set value 1\n')
-				output.append('execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.gold set value 2\n')
-				output.append('execute store result score #random temp run random value 0..19\n')
-				output.append('execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.drop set value 1\n')
-				output.append('execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.drop set value 2\n')
+				output.append('# ボーナス\n')
+				output.append('    execute store result score #random temp run random value 0..19\n')
+				output.append('    execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.xp set value 1\n')
+				output.append('    execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.xp set value 2\n')
+				output.append('    execute store result score #random temp run random value 0..19\n')
+				output.append('    execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.gold set value 1\n')
+				output.append('    execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.gold set value 2\n')
+				output.append('    execute store result score #random temp run random value 0..19\n')
+				output.append('    execute if score #random temp matches 0..1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.drop set value 1\n')
+				output.append('    execute if score #random temp matches 2 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.bonus.drop set value 2\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
 
@@ -571,6 +584,7 @@ for map_data in map_database["maps"]:
 	output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/map/update_display/00\n')
 	output.append('execute unless data storage temp:_ data.field_display_data{display_update_flag:1b} run return 1\n')
 	output.append('data modify storage temp:_ data.field_display_macro.field_name set from storage temp:_ data.field_display_data.display_name\n')
+	output.append('data modify storage temp:_ data.field_display_macro.level set from storage temp:_ data.field_display_data.event.waves[0].level\n')
 	output.append('data modify storage temp:_ data.field_display_macro.bonus_display_base set value ""\n')
 	output.append('data modify storage temp:_ data.field_display_macro.bonus_display_gold set value ""\n')
 	output.append('data modify storage temp:_ data.field_display_macro.bonus_display_xp set value ""\n')
@@ -755,15 +769,18 @@ for map_data in map_database["maps"]:
 			continue
 
 		if field_data["type"] == "field":
+			initial_event = field_data["default_event"]
+			if "initial_event" in field_data:
+				initial_event = field_data["initial_event"]
 			waves_data = []
-			for wave_data in event_database["events"][str(field_data["default_event"])]["waves"]:
+			for wave_data in event_database["events"][str(initial_event["id"])]["waves"]:
 				for wave_id, wave_level in wave_data.items():
-					waves_data.append(wave_id + "_" + str(wave_level))
+					waves_data.append({"id":wave_id, "level": initial_event["level"]})
 			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.random_event_enable set value 0b\n')
 			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.display_name set value "' + field_data["display_name"] + '"\n')
-			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.event_id set value ' + str(field_data["initial_event"] if "initial_event" in field_data else field_data["default_event"]) + '\n')
+			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.event_id set value ' + str(initial_event["id"]) + '\n')
 			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.waves set value ' + str(waves_data) + '\n')
-			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.waves_len set value ' + str(len(event_database["events"][str(field_data["default_event"])]["waves"])) + '\n')
+			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.waves_len set value ' + str(len(event_database["events"][str(initial_event["id"])]["waves"])) + '\n')
 with open(path, 'w', encoding='utf-8') as f:
 	f.writelines(output)
 

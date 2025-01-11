@@ -7,5 +7,5 @@ data modify storage anemoland:progress data.beta1.field.33.event.random_event_en
 function anemoland_contents:sys/area/beta1/field/33/clear/clear_
 data modify storage temp:_ data.event_id.event_id set from storage anemoland:progress data.beta1.field.33.event.event_id
 function anemoland_contents:sys/event/clear with storage temp:_ data.event_id
-function anemoland_contents:command/field_event/beta1/change/squirrel_head_15 {field_id:33}
+function anemoland_contents:command/field_event/beta1/change/plain_c {field_id:33, level: 10}
 function anemoland_contents:sys/area/beta1/event/update/0
