@@ -1,5 +1,29 @@
 {
     "waves": {
+        "decoy": {
+            "enemies": [
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [-6, -6]
+                },
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [-6, 6]
+                },
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [6, -6]
+                },
+                {
+                    "entity_id": "decoy1",
+                    "level": 0,
+                    "pos": [6, 6]
+                }
+            ]
+        },
         "plain_a": {
             "enemies": [
                 {
@@ -735,6 +759,9 @@
         }
     },
     "events": {
+        "decoy": {
+            "waves":[{"decoy":0}]
+        },
         "plain_a": {
             "waves":[{"plain_a":0}]
         },
@@ -854,6 +881,12 @@
         }
     },
     "random_events": {
+        "decoy": {
+            "random_event_chance": 0.0,
+            "random_events": [
+                {"event": "decoy", "weight": 1}
+            ]
+        },
         "king_boar": {
             "random_event_chance": 0.8,
             "random_events": [

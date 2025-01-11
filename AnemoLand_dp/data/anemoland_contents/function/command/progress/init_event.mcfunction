@@ -1,7 +1,7 @@
 data modify storage anemoland:progress data.beta1.field.14.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.14.display_name set value "training"
-data modify storage anemoland:progress data.beta1.field.14.event.event_id set value walking_mushrooms
-data modify storage anemoland:progress data.beta1.field.14.event.waves set value [{'id': 'walking_mushrooms', 'level': 10}]
+data modify storage anemoland:progress data.beta1.field.14.event.event_id set value decoy
+data modify storage anemoland:progress data.beta1.field.14.event.waves set value [{'id': 'decoy', 'level': 0}]
 data modify storage anemoland:progress data.beta1.field.14.event.waves_len set value 1
 data modify storage anemoland:progress data.beta1.field.arena1.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.arena1.display_name set value "arena"

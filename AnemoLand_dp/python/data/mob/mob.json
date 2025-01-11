@@ -1,4 +1,38 @@
 {
+    "decoy1": {
+        "aj_name": "decoy1",
+        "display_name": "カカシ",
+        "type": "decoy",
+        "aj_cmd_offset": 20000,
+        "death_loot_table_disable": true,
+        "recipe_disable": true,
+        "animations": {
+            "default": {},
+            "die": {}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 1.75}
+        },
+        "root_entity": "cow",
+        "display_height": 0.5,
+        "status": {
+            "default_level": 0,
+            "max_health": {"base": 10000, "mul": 0},
+            "attack_damage": {"base": 0, "mul": 0},
+            "gold": {"base": 0, "mul": 0},
+            "xp": {"base": 0, "mul": 0}
+        }
+    },
     "walking_mushroom": {
         "aj_name": "walking_mushroom",
         "display_name": "歩き茸",

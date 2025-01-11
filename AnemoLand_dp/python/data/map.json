@@ -45,7 +45,7 @@
                     "no_cloud": 1,
                     "no_barrier": 1,
                     "unlock":[],
-                    "default_event": {"id": "walking_mushrooms", "level": 10}
+                    "default_event": {"id": "decoy", "level": 0}
                 },
                 "04": {
                     "index":[0,4],

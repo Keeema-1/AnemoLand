@@ -1,3 +1,4 @@
+execute if data storage temp:_ data.field_display_data.event{event_id:"decoy"} run function anemoland_contents:sys/event/display/decoy with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"plain_a"} run function anemoland_contents:sys/event/display/plain_a with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"plain_b"} run function anemoland_contents:sys/event/display/plain_b with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"plain_c"} run function anemoland_contents:sys/event/display/plain_c with storage temp:_ data.field_display_macro
