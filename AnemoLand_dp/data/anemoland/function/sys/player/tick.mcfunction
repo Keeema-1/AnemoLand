@@ -49,3 +49,16 @@ clear @s *[custom_data={chest_menu:1b}]
 # execute positioned ~ -1 ~ if block ~ ~ ~ grass_block if block ~ ~ ~-1 mossy_cobblestone_slab run setblock ~ ~ ~ mossy_cobblestone
 # execute positioned ~ -1 ~ if block ~ ~ ~ grass_block if block ~1 ~ ~ mossy_cobblestone_slab run setblock ~ ~ ~ mossy_cobblestone
 # execute positioned ~ -1 ~ if block ~ ~ ~ grass_block if block ~-1 ~ ~ mossy_cobblestone_slab run setblock ~ ~ ~ mossy_cobblestone
+
+# fill ~-16 4 ~-16 ~16 24 ~16 spruce_leaves replace oak_leaves
+# fill ~-16 0 ~-16 ~16 16 ~16 spruce_log replace oak_log
+
+# fillbiome ~-16 -1 ~-16 ~16 16 ~16 snowy_plains
+
+# fill ~-16 -1 ~-16 ~16 16 ~16 packed_ice replace stone
+# fill ~-6 -1 ~-6 ~6 16 ~6 blue_ice replace packed_ice
+
+# fill ~-16 -1 ~-16 ~16 16 ~16 stone replace mossy_cobblestone
+# fill ~-16 -1 ~-16 ~16 16 ~16 stone replace podzol
+
+# execute if predicate anemoland:random_chance/0_5 run fill ~-16 8 ~-16 ~16 8 ~16 snow replace air

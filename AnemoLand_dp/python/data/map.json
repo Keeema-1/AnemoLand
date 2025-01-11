@@ -266,7 +266,7 @@
                     "type": "field",
                     "field_type": "mushroom_A",
                     "display_name": "mushroom.large",
-                    "unlock":[],
+                    "unlock":["35"],
                     "default_event": "squirrel_head_15",
                     "random_event": "test"
                 },
@@ -276,7 +276,7 @@
                     "type": "field",
                     "field_type": "rock_A",
                     "display_name": "stone.large",
-                    "unlock":[],
+                    "unlock":["45"],
                     "default_event": "squirrel_head_15",
                     "random_event": "test"
                 },
@@ -286,7 +286,7 @@
                     "type": "field",
                     "field_type": "rock_A",
                     "display_name": "stone.large",
-                    "unlock":[],
+                    "unlock":["44","55"],
                     "default_event": "squirrel_head_15",
                     "random_event": "test"
                 },
@@ -296,7 +296,7 @@
                     "type": "field",
                     "field_type": "rock_A",
                     "display_name": "stone.large",
-                    "unlock":[],
+                    "unlock":["54"],
                     "default_event": "squirrel_head_15",
                     "random_event": "test"
                 },
@@ -306,7 +306,7 @@
                     "type": "field",
                     "field_type": "rock_A",
                     "display_name": "stone.large",
-                    "unlock":[],
+                    "unlock":["54"],
                     "default_event": "squirrel_head_15",
                     "random_event": "test"
                 },
@@ -316,6 +316,56 @@
                     "type": "field",
                     "field_type": "rock_A",
                     "display_name": "stone.large",
+                    "unlock":["62"],
+                    "default_event": "squirrel_head_15",
+                    "random_event": "test"
+                },
+                "62": {
+                    "index":[6,2],
+                    "offset": [0, 4096],
+                    "type": "field",
+                    "field_type": "snowy_A",
+                    "display_name": "snowy.large",
+                    "unlock":["72"],
+                    "default_event": "squirrel_head_15",
+                    "random_event": "test"
+                },
+                "72": {
+                    "index":[7,2],
+                    "offset": [512, 4096],
+                    "type": "field",
+                    "field_type": "ice_A",
+                    "display_name": "ice.large",
+                    "unlock":["73","82"],
+                    "default_event": "squirrel_head_15",
+                    "random_event": "test"
+                },
+                "73": {
+                    "index":[7,3],
+                    "offset": [1024, 4096],
+                    "type": "field",
+                    "field_type": "snowy_A",
+                    "display_name": "snowy.large",
+                    "unlock":["83"],
+                    "default_event": "squirrel_head_15",
+                    "random_event": "test"
+                },
+                "82": {
+                    "index":[8,2],
+                    "offset": [1536, 4096],
+                    "type": "field",
+                    "field_type": "ice_A",
+                    "display_name": "ice.large",
+                    "unlock":["83"],
+                    "default_event": "squirrel_head_15",
+                    "random_event": "test"
+                },
+                "83": {
+                    "index":[8,3],
+                    "offset": [2048, 4096],
+                    "type": "field",
+                    "field_type": "ice_A",
+                    "display_name": "ice.large",
                     "unlock":[],
                     "default_event": "squirrel_head_15",
                     "random_event": "test"
@@ -433,6 +483,24 @@
             "exits": [
                 {"start":[1530.0, 0.0, 2096.0], "aabb":[8,1]}
             ]
+        },
+        "snowy_A": {
+            "center": [1024.0, 0.0, 4096.0],
+            "entrance": [1022.0, 0.0, 4138.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[1018.0, 0.0, 4144.0], "aabb":[8,1]}
+            ],
+            "biome": "snowy_plains"
+        },
+        "ice_A": {
+            "center": [2560.0, 0.0, 4096.0],
+            "entrance": [2547.0, 0.0, 4046.0],
+            "structure_size": 4,
+            "exits": [
+                {"start":[2543.0, 0.0, 4040.0], "aabb":[8,1]}
+            ],
+            "biome": "frozen_ocean"
         }
     }
 }

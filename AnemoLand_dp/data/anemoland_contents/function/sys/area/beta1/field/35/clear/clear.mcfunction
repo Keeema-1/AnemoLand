@@ -1,3 +1,4 @@
+execute unless data storage anemoland:progress data.beta1.field.45{cleared_once:1b} run function anemoland_contents:command/progress/unlock/field/beta1/field45
 execute unless data storage anemoland:progress data.beta1.field.35{cleared_once:1b} run function anemoland_contents:sys/area/beta1/field/35/clear/first_clear
 execute if data storage anemoland:progress data.beta1.field.35{boss_flag:1b} run function anemoland:sys/player/area/common/field/clear_boss
 execute unless data storage anemoland:progress data.beta1.field.35{boss_flag:1b} run function anemoland:sys/player/area/common/field/clear_mob

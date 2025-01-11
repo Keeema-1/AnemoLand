@@ -78,6 +78,25 @@
                 }
             ]
         },
+        "spiders": {
+            "enemies": [
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [0, -3]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [-4, 1]
+                },
+                {
+                    "entity_id": "spider",
+                    "level": 0,
+                    "pos": [5, 2]
+                }
+            ]
+        },
         "squirrel_head": {
             "enemies": [
                 {
@@ -87,12 +106,12 @@
                 },
                 {
                     "entity_id": "squirrel",
-                    "level": -5,
+                    "level": 0,
                     "pos": [-5, 1]
                 },
                 {
                     "entity_id": "squirrel",
-                    "level": -5,
+                    "level": 0,
                     "pos": [6, 2]
                 }
             ],
@@ -108,12 +127,12 @@
                 },
                 {
                     "entity_id": "boar",
-                    "level": -5,
+                    "level": 0,
                     "pos": [-4, 0]
                 },
                 {
                     "entity_id": "boar",
-                    "level": -5,
+                    "level": 0,
                     "pos": [4, 0]
                 }
             ],
@@ -129,16 +148,27 @@
                 },
                 {
                     "entity_id": "garapas",
-                    "level": -5,
+                    "level": 0,
                     "pos": [-4, 0]
                 },
                 {
                     "entity_id": "garapas",
-                    "level": -5,
+                    "level": 0,
                     "pos": [4, 0]
                 }
             ],
             "bgm": "king_boar",
+            "boss_flag": 1
+        },
+        "martellos": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "level": 0,
+                    "pos": [0, 0]
+                }
+            ],
+            "bgm": "martellos",
             "boss_flag": 1
         }
     },
@@ -160,6 +190,15 @@
         },
         "boars_15": {
             "waves":[{"boars":15}]
+        },
+        "spiders_5": {
+            "waves":[{"spiders":5}]
+        },
+        "spiders_10": {
+            "waves":[{"spiders":10}]
+        },
+        "spiders_15": {
+            "waves":[{"spiders":15}]
         },
         "squirrels_5": {
             "waves":[{"squirrels":5}]
@@ -187,6 +226,9 @@
         },
         "garapapas_15": {
             "waves":[{"garapapas":15}]
+        },
+        "martellos_20": {
+            "waves":[{"martellos":20}]
         }
     },
     "random_events": {

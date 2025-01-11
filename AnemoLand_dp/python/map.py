@@ -697,7 +697,7 @@ for field_type_name, field_type_data in map_database["field_types"].items():
 	for i in range(structure_size):
 		for j in range(structure_size):
 			output.append('execute positioned ' + str(int(center[0])) + ' 32 ' + str(int(center[2])) + ' run setblock ~' + str(int(i*48-structure_size*48/2)) + ' 32 ~' + str(int(j*48-structure_size*48/2)) + ' structure_block[mode=save]\n')
-			output.append('execute positioned ' + str(int(center[0])) + ' 32 ' + str(int(center[2])) + ' run data merge block ~' + str(int(i*48-structure_size*48/2)) + ' 32 ~' + str(int(j*48-structure_size*48/2)) + ' {posX:0,posY:-40,posZ:0,sizeX:48,sizeY:32,sizeZ:48,name:"field/' + field_type_name.lower() + '/' + str(i) + '_' + str(j) + '"}\n')
+			output.append('execute positioned ' + str(int(center[0])) + ' 32 ' + str(int(center[2])) + ' run data merge block ~' + str(int(i*48-structure_size*48/2)) + ' 32 ~' + str(int(j*48-structure_size*48/2)) + ' {posX:0,posY:-40,posZ:0,sizeX:48,sizeY:32,sizeZ:48,name:"anemoland:field/' + field_type_name.lower() + '/' + str(i) + '_' + str(j) + '"}\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -733,6 +733,9 @@ for map_data in map_database["maps"]:
 				for j in range(structure_size):
 					output.append('execute positioned ' + str(int(center[0] + i*48-structure_size*48/2)) + ' -8 ' + str(int(center[1] + j*48-structure_size*48/2)) + ' run place template anemoland:field/' + field_data["field_type"].lower() + '/' + str(i) + '_' + str(j) +'\n')
 					output.append('execute positioned ' + str(int(center[0] + i*48-structure_size*48/2)) + ' -1 ' + str(int(center[1] + j*48-structure_size*48/2)) + ' run fill ~ ~ ~ ~47 -3 ~47 grass_block replace air\n')
+					if "biome" in field_type_data:
+						output.append('execute positioned ' + str(int(center[0] + i*48-structure_size*48/2)) + ' -1 ' + str(int(center[1] + j*48-structure_size*48/2)) + ' run fillbiome ~ ~ ~ ~47 8 ~47 ' + field_type_data["biome"] + '\n')
+						output.append('execute positioned ' + str(int(center[0] + i*48-structure_size*48/2)) + ' 9 ' + str(int(center[1] + j*48-structure_size*48/2)) + ' run fillbiome ~ ~ ~ ~47 16 ~47 ' + field_type_data["biome"] + '\n')
 			output.append('execute positioned ' + str(center[0]) + ' 0 ' + str(center[1]) + ' run kill @e[tag=area_entrance,distance=..64]\n')
 			for exit in field_type_data["exits"]:
 				output.append('execute positioned ' + str(center[0] + exit["start"][0]+exit["aabb"][0]/2 - field_type_data["center"][0]) + ' ' + str( exit["start"][1]) + ' ' + str(center[1] + exit["start"][2]+exit["aabb"][1]/2 - field_type_data["center"][2] - 0.5) + ' run function ' + namespace_core + ':dev/field/common/area_entrance/x\n')

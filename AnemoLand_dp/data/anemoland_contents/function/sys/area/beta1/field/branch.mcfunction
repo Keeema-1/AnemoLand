@@ -26,3 +26,8 @@ execute if score @s area2 matches 405 run function anemoland_contents:sys/area/b
 execute if score @s area2 matches 404 run function anemoland_contents:sys/area/beta1/field/44/0
 execute if score @s area2 matches 505 run function anemoland_contents:sys/area/beta1/field/55/0
 execute if score @s area2 matches 504 run function anemoland_contents:sys/area/beta1/field/54/0
+execute if score @s area2 matches 602 run function anemoland_contents:sys/area/beta1/field/62/0
+execute if score @s area2 matches 702 run function anemoland_contents:sys/area/beta1/field/72/0
+execute if score @s area2 matches 703 run function anemoland_contents:sys/area/beta1/field/73/0
+execute if score @s area2 matches 802 run function anemoland_contents:sys/area/beta1/field/82/0
+execute if score @s area2 matches 803 run function anemoland_contents:sys/area/beta1/field/83/0

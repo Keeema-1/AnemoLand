@@ -26,3 +26,8 @@ execute if entity @s[tag=field_45] if entity @a[scores={area0=100,area1=1,area2=
 execute if entity @s[tag=field_44] if entity @a[scores={area0=100,area1=1,area2=404}] run tag @s add player_exist
 execute if entity @s[tag=field_55] if entity @a[scores={area0=100,area1=1,area2=505}] run tag @s add player_exist
 execute if entity @s[tag=field_54] if entity @a[scores={area0=100,area1=1,area2=504}] run tag @s add player_exist
+execute if entity @s[tag=field_62] if entity @a[scores={area0=100,area1=1,area2=602}] run tag @s add player_exist
+execute if entity @s[tag=field_72] if entity @a[scores={area0=100,area1=1,area2=702}] run tag @s add player_exist
+execute if entity @s[tag=field_73] if entity @a[scores={area0=100,area1=1,area2=703}] run tag @s add player_exist
+execute if entity @s[tag=field_82] if entity @a[scores={area0=100,area1=1,area2=802}] run tag @s add player_exist
+execute if entity @s[tag=field_83] if entity @a[scores={area0=100,area1=1,area2=803}] run tag @s add player_exist

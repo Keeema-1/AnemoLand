@@ -28,3 +28,8 @@ execute if entity @s[tag=field_45] as @a[tag=player_check,limit=1] unless entity
 execute if entity @s[tag=field_44] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=404}] run return run function anemoland_contents:sys/area/beta1/field/44/enter/0
 execute if entity @s[tag=field_55] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=505}] run return run function anemoland_contents:sys/area/beta1/field/55/enter/0
 execute if entity @s[tag=field_54] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=504}] run return run function anemoland_contents:sys/area/beta1/field/54/enter/0
+execute if entity @s[tag=field_62] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=602}] run return run function anemoland_contents:sys/area/beta1/field/62/enter/0
+execute if entity @s[tag=field_72] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=702}] run return run function anemoland_contents:sys/area/beta1/field/72/enter/0
+execute if entity @s[tag=field_73] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=703}] run return run function anemoland_contents:sys/area/beta1/field/73/enter/0
+execute if entity @s[tag=field_82] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=802}] run return run function anemoland_contents:sys/area/beta1/field/82/enter/0
+execute if entity @s[tag=field_83] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=1,area2=803}] run return run function anemoland_contents:sys/area/beta1/field/83/enter/0
