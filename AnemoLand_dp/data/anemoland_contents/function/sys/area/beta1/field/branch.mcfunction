@@ -12,3 +12,17 @@ execute if score @s area2 matches 302 run function anemoland_contents:sys/area/b
 execute if score @s area2 matches 301 run function anemoland_contents:sys/area/beta1/field/31/0
 execute if score @s area2 matches 402 run function anemoland_contents:sys/area/beta1/field/42/0
 execute if score @s area2 matches 201 run function anemoland_contents:sys/area/beta1/field/21/0
+execute if score @s area2 matches 401 run function anemoland_contents:sys/area/beta1/field/41/0
+execute if score @s area2 matches 403 run function anemoland_contents:sys/area/beta1/field/43/0
+execute if score @s area2 matches 503 run function anemoland_contents:sys/area/beta1/field/53/0
+execute if score @s area2 matches 502 run function anemoland_contents:sys/area/beta1/field/52/0
+execute if score @s area2 matches 603 run function anemoland_contents:sys/area/beta1/field/63/0
+execute if score @s area2 matches 400 run function anemoland_contents:sys/area/beta1/field/40/0
+execute if score @s area2 matches 500 run function anemoland_contents:sys/area/beta1/field/50/0
+execute if score @s area2 matches 501 run function anemoland_contents:sys/area/beta1/field/51/0
+execute if score @s area2 matches 601 run function anemoland_contents:sys/area/beta1/field/61/0
+execute if score @s area2 matches 305 run function anemoland_contents:sys/area/beta1/field/35/0
+execute if score @s area2 matches 405 run function anemoland_contents:sys/area/beta1/field/45/0
+execute if score @s area2 matches 404 run function anemoland_contents:sys/area/beta1/field/44/0
+execute if score @s area2 matches 505 run function anemoland_contents:sys/area/beta1/field/55/0
+execute if score @s area2 matches 504 run function anemoland_contents:sys/area/beta1/field/54/0
