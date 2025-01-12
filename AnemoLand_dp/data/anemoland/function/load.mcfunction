@@ -90,8 +90,10 @@
         # 攻撃力
             # 基礎攻撃力
                 scoreboard objectives add attack.base dummy
-            # 攻撃倍率
+            # 攻撃モーションなどの攻撃倍率
                 scoreboard objectives add attack.mul dummy
+            # 状態変化による攻撃倍率
+                scoreboard objectives add attack.state_mul dummy
             # 基礎攻撃力+武器攻撃力
                 scoreboard objectives add attack.base_total dummy
             # 属性攻撃力

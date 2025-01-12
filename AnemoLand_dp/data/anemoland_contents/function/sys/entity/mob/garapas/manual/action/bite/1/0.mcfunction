@@ -7,7 +7,7 @@ execute if score @s action_time matches 21..26 run data modify storage temp:_ da
 execute if score #hostile_target.is_player temp matches 1 rotated ~ 5 run function anemoland:sys/entity/common/motion/0
 execute unless score #hostile_target.is_player temp matches 1 rotated ~ 5 run function anemoland:sys/entity/common/motion/0
 
-execute if score @s action_time matches 5..10 run function anemoland_contents:sys/entity/mob/garapas/attack/bite/0
+execute if score @s action_time matches 5..20 run function anemoland_contents:sys/entity/mob/garapas/attack/bite/0
 execute if score @s action_time matches 5..10 run particle sweep_attack ^ ^1 ^3
 # execute if score @s action_time matches ..10 as @a[distance=..64] at @s run playsound minecraft:entity.fox.bite hostile @s ~ ~ ~ 0.7 0
 # execute if score @s action_time matches ..10 as @a[distance=..64] at @s run playsound minecraft:entity.fox.bite hostile @s ~ ~ ~ 1 0

@@ -11,3 +11,5 @@
 scoreboard players operation #damage.src.attack.base temp = @s attack.base
 # scoreboard players set #const temp 10
 # scoreboard players operation #damage.src.attack.base temp *= #const temp
+
+scoreboard players operation #damage.src.attack.state_mul temp = @s attack.state_mul

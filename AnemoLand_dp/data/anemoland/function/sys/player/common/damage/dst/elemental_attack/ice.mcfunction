@@ -5,11 +5,14 @@
 
 # 共通ダメージ
     scoreboard players operation #damage.elem.ice temp = #damage.common temp
-# 属性攻撃力
+# 属性攻撃力 (*10)
     scoreboard players operation #damage.elem.ice temp *= #damage.src.attack.ice.base temp
-# 属性被ダメージ率
+# (/100)
+    scoreboard players set #temp temp 100
+    scoreboard players operation #damage.elem.ice temp /= #temp temp
+# 属性被ダメージ率 (*100)
     scoreboard players operation #damage.elem.ice temp *= #armor.elem.mul temp
-# /100
+# (/1000)
     scoreboard players set #temp temp 1000
     scoreboard players operation #damage.elem.ice temp /= #temp temp
 

@@ -330,7 +330,7 @@
                         "predicate": "",
                         "knockback": "facing1_from_back_5",
                         "mul": 10,
-                        "position": [0,-2,0],
+                        "position": [0,0,0],
                         "size": [3,4,3],
                         "parts":["head"]
                     }
@@ -342,7 +342,7 @@
                         "predicate": "",
                         "knockback": "facing1_5",
                         "mul": 10,
-                        "position": [0,-2,0],
+                        "position": [0,0,0],
                         "size": [3,4,3],
                         "parts":["root","tail"]
                     }
@@ -718,10 +718,12 @@
                 "score": 11
             },
             "tackle": {
-                "score": 12
+                "score": 12,
+                "next_target": "preset/boss_default/0"
             },
             "dive": {
-                "score": 13
+                "score": 13,
+                "next_target": "preset/boss_default/0"
             }
         },
         "attacks": {
@@ -825,31 +827,39 @@
                 "score": 1
             },
             "get_angry": {
-                "score": 2
+                "score": 2,
+                "next_target": "preset/boss_default/0"
             },
             "tired": {
-                "score": 3
+                "score": 3,
+                "next_target": "preset/boss_default/0"
             },
             "walk": {
                 "score": 4
             },
             "bite": {
-                "score": 11
+                "score": 11,
+                "next_target": "preset/boss_default/0"
             },
             "spin": {
-                "score": 12
+                "score": 12,
+                "next_target": "preset/boss_default/0"
             },
             "bite_side": {
-                "score": 13
+                "score": 13,
+                "next_target": "preset/boss_default/0"
             },
             "tackle_side": {
-                "score": 14
+                "score": 14,
+                "next_target": "preset/boss_default/0"
             },
             "knock_tail": {
-                "score": 15
+                "score": 15,
+                "next_target": "preset/boss_default/0"
             },
             "spin_jump": {
-                "score": 16
+                "score": 16,
+                "next_target": "preset/boss_default/0"
             }
         },
         "choices":{
@@ -1015,7 +1025,7 @@
             "attack_damage": {"base": -2, "mul": 0.8},
             "gold": {"base": 20, "mul": 8},
             "xp": {"base": 20, "mul": 8},
-            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+            "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
         },
         "pet":{
             "loot_table_levels": {"min": 15, "max": 40, "step":1},
@@ -1074,31 +1084,39 @@
                 "score": 0
             },
             "bark": {
-                "score": 1
+                "score": 1,
+                "next_target": "preset/boss_default/0"
             },
             "get_angry": {
-                "score": 2
+                "score": 2,
+                "next_target": "preset/boss_default/0"
             },
             "tired": {
-                "score": 3
+                "score": 3,
+                "next_target": "preset/boss_default/0"
             },
             "walk": {
                 "score": 4
             },
             "bite": {
-                "score": 11
+                "score": 11,
+                "next_target": "preset/boss_default/0"
             },
             "bite_side": {
-                "score": 12
+                "score": 12,
+                "next_target": "preset/boss_default/0"
             },
             "dive": {
-                "score": 13
+                "score": 13,
+                "next_target": "preset/boss_default/0"
             },
             "tail_side": {
-                "score": 14
+                "score": 14,
+                "next_target": "preset/boss_default/0"
             },
             "water_front": {
-                "score": 15
+                "score": 15,
+                "next_target": "preset/boss_default/0"
             }
         },
         "choices":{
@@ -1259,7 +1277,7 @@
             "attack_damage": {"base": 0, "mul": 0.8},
             "gold": {"base": 30, "mul": 10},
             "xp": {"base": 30, "mul": 10},
-            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+            "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
         },
         "pet":{
             "loot_table_levels": {"min": 15, "max": 40, "step":1},
@@ -1404,7 +1422,8 @@
                 "score": 0
             },
             "bark": {
-                "score": 1
+                "score": 1,
+                "next_target": "preset/boss_default/0"
             },
             "walk": {
                 "score": 2
@@ -1413,28 +1432,36 @@
                 "score": 3
             },
             "get_angry": {
-                "score": 4
+                "score": 4,
+                "next_target": "preset/boss_default/0"
             },
             "tired": {
-                "score": 5
+                "score": 5,
+                "next_target": "preset/boss_default/0"
             },
             "knock": {
-                "score": 11
+                "score": 11,
+                "next_target": "preset/boss_default/0"
             },
             "spin": {
-                "score": 12
+                "score": 12,
+                "next_target": "preset/boss_default/0"
             },
             "dash": {
-                "score": 13
+                "score": 13,
+                "next_target": "preset/boss_default/0"
             },
             "spin_dirt": {
-                "score": 14
+                "score": 14,
+                "next_target": "preset/boss_default/0"
             },
             "knock_tail": {
-                "score": 15
+                "score": 15,
+                "next_target": "preset/boss_default/0"
             },
             "backstep": {
-                "score": 16
+                "score": 16,
+                "next_target": "preset/boss_default/0"
             }
         },
         "attacks": {
@@ -1601,7 +1628,7 @@
             "attack_damage": {"base": 2, "mul": 0.8},
             "gold": {"base": 40, "mul": 10},
             "xp": {"base": 40, "mul": 10},
-            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+            "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
         },
         "pet":{
             "loot_table_levels": {"min": 15, "max": 40, "step":1},
@@ -1658,34 +1685,42 @@
                 "score": 0
             },
             "bark": {
-                "score": 1
+                "score": 1,
+                "next_target": "preset/boss_default/0"
             },
             "walk": {
                 "score": 2
             },
             "get_angry": {
-                "score": 3
+                "score": 3,
+                "next_target": "preset/boss_default/0"
             },
             "tired": {
-                "score": 4
+                "score": 4,
+                "next_target": "preset/boss_default/0"
             },
             "punch": {
-                "score": 11
+                "score": 11,
+                "next_target": "preset/boss_default/0"
             },
             "launch": {
-                "score": 12
+                "score": 12,
+                "next_target": "preset/boss_default/0"
             },
             "jump_launch": {
-                "score": 13
+                "score": 13,
+                "next_target": "preset/boss_default/0"
             },
             "bite_side": {
-                "score": 14
+                "score": 14,
+                "next_target": "preset/boss_default/0"
             },
             "sidestep": {
                 "score": 15
             },
             "launch_up": {
-                "score": 16
+                "score": 16,
+                "next_target": "preset/boss_default/0"
             }
         },
         "choices":{
@@ -1819,7 +1854,7 @@
             "attack_damage": {"base": 2, "mul": 0.8},
             "gold": {"base": 50, "mul": 12},
             "xp": {"base": 50, "mul": 12},
-            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+            "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
         },
         "pet":{
             "loot_table_levels": {"min": 20, "max": 40, "step":1},
@@ -1868,31 +1903,39 @@
                 "score": 0
             },
             "bark": {
-                "score": 1
+                "score": 1,
+                "next_target": "preset/boss_default/0"
             },
             "walk": {
                 "score": 2
             },
             "get_angry": {
-                "score": 3
+                "score": 3,
+                "next_target": "preset/boss_default/0"
             },
             "tired": {
-                "score": 4
+                "score": 4,
+                "next_target": "preset/boss_default/0"
             },
             "jump": {
-                "score": 11
+                "score": 11,
+                "next_target": "preset/boss_default/0"
             },
             "punch": {
-                "score": 12
+                "score": 12,
+                "next_target": "preset/boss_default/0"
             },
             "ground_circle": {
-                "score": 13
+                "score": 13,
+                "next_target": "preset/boss_default/0"
             },
             "ground_line": {
-                "score": 14
+                "score": 14,
+                "next_target": "preset/boss_default/0"
             },
             "ground_target": {
-                "score": 15
+                "score": 15,
+                "next_target": "preset/boss_default/0"
             },
             "backstep": {
                 "score": 16
@@ -2022,7 +2065,7 @@
             "attack_damage": {"base": 6, "mul": 0.8},
             "gold": {"base": 60, "mul": 16},
             "xp": {"base": 60, "mul": 16},
-            "angry": {"start_damage_ratio": 0.4, "keep_time_seconds": 60, "restart_damage_ratio": 0.1, "restart_interval_seconds": 60}
+            "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.4, "keep_time_seconds": 60, "restart_damage_ratio": 0.1, "restart_interval_seconds": 60}
         },
         "pet":{
             "loot_table_levels": {"min": 25, "max": 40, "step":1},
@@ -2081,10 +2124,12 @@
                 "score": 0
             },
             "bark": {
-                "score": 1
+                "score": 1,
+                "next_target": "preset/boss_default/0"
             },
             "get_angry": {
-                "score": 2
+                "score": 2,
+                "next_target": "preset/boss_default/0"
             },
             "tired": {
                 "score": 3
@@ -2093,25 +2138,32 @@
                 "score": 4
             },
             "bite": {
-                "score": 11
+                "score": 11,
+                "next_target": "preset/boss_default/0"
             },
             "dive": {
-                "score": 12
+                "score": 12,
+                "next_target": "preset/boss_default/0"
             },
             "shake_head": {
-                "score": 13
+                "score": 13,
+                "next_target": "preset/boss_default/0"
             },
             "shake_tail": {
-                "score": 14
+                "score": 14,
+                "next_target": "preset/boss_default/0"
             },
             "shake_walk": {
-                "score": 15
+                "score": 15,
+                "next_target": "preset/boss_default/0"
             },
             "bite_side": {
-                "score": 16
+                "score": 16,
+                "next_target": "preset/boss_default/0"
             },
             "fire_head": {
-                "score": 17
+                "score": 17,
+                "next_target": "preset/boss_default/0"
             }
         },
         "choices":{
@@ -2194,7 +2246,7 @@
             "attack_damage": {"base": 6, "mul": 0.8},
             "gold": {"base": 60, "mul": 16},
             "xp": {"base": 60, "mul": 16},
-            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+            "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
         },
         "pet":{
             "loot_table_levels": {"min": 25, "max": 40, "step":1},
@@ -2265,13 +2317,16 @@
                 "score": 0
             },
             "bark": {
-                "score": 1
+                "score": 1,
+                "next_target": "preset/boss_default/0"
             },
             "get_angry": {
-                "score": 2
+                "score": 2,
+                "next_target": "preset/boss_default/0"
             },
             "tired": {
-                "score": 3
+                "score": 3,
+                "next_target": "preset/boss_default/0"
             },
             "walk": {
                 "score": 4
@@ -2280,25 +2335,32 @@
                 "score": 5
             },
             "dive": {
-                "score": 11
+                "score": 11,
+                "next_target": "preset/boss_default/0"
             },
             "beam": {
-                "score": 12
+                "score": 12,
+                "next_target": "preset/boss_default/0"
             },
             "drag_head": {
-                "score": 13
+                "score": 13,
+                "next_target": "preset/boss_default/0"
             },
             "tail_spear": {
-                "score": 14
+                "score": 14,
+                "next_target": "preset/boss_default/0"
             },
             "drag_tail": {
-                "score": 15
+                "score": 15,
+                "next_target": "preset/boss_default/0"
             },
             "beam_high": {
-                "score": 16
+                "score": 16,
+                "next_target": "preset/boss_default/0"
             },
             "beam_turn": {
-                "score": 17
+                "score": 17,
+                "next_target": "preset/boss_default/0"
             }
         },
         "choices":{
@@ -2443,7 +2505,7 @@
             "attack_damage": {"base": 5, "mul": 0.8},
             "gold": {"base": 60, "mul": 14},
             "xp": {"base": 60, "mul": 14},
-            "angry": {"start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
+            "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
         },
         "pet":{
             "loot_table_levels": {"min": 30, "max": 40, "step":1},

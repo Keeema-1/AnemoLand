@@ -400,7 +400,7 @@ for mob_name, mob_data in mob_database.items():
 		if action_id == "tired":
 			output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/state/angry/end\n')			
 		if action_id == "bark":
-			output.append('tag @s add noticed\n')			
+			output.append('tag @s add noticed\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
@@ -418,13 +418,15 @@ for mob_name, mob_data in mob_database.items():
 		path = base_path + mob_name + '/action/' + action_id + '/end.mcfunction'
 		makedir(path)
 		output = []
+		if "next_target" in action_data:
+			output.append('function anemoland:sys/entity/common/target/change/' + action_data["next_target"] + '\n')
 		if action_id == mob_data["default_action"]:
 			if "bark" in mob_data["actions"]:
 				output.append('execute if entity @s[tag=!noticed] run return run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/bark/start\n')			
 			if "tired" in mob_data["actions"]:
 				output.append('execute if entity @s[tag=angry] unless score @s anger.time matches 1.. run return run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/tired/start\n')			
 			if "get_angry" in mob_data["actions"]:
-				output.append('execute if score @s anger.damage matches ..0 unless score @s anger.time matches 1.. run return run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/get_angry/start\n')			
+				output.append('execute if score @s anger.damage matches ..0 unless score @s anger.time matches 1.. run return run function anemoland_contents:sys/entity/mob/' + mob_name + '/action/get_angry/start\n')
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/action/' + action_id + '/end\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
@@ -659,7 +661,7 @@ for mob_name, mob_data in mob_database.items():
 	if mob_data["type"] == "boss" and "angry" in mob_data["status"]:
 		output.append('execute if score @s anger.time matches 1.. if entity @s[tag=angry] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/angry\n')
 	with open(path, 'w', encoding='utf-8') as f:
-	 	f.writelines(output)
+		f.writelines(output)
 	if mob_data["type"] == "boss" and "angry" in mob_data["status"]:
 		# state/angry/start
 		path = base_path + mob_name + '/state/angry/start.mcfunction'
@@ -667,6 +669,8 @@ for mob_name, mob_data in mob_database.items():
 		output = []
 		output.append('scoreboard players set @s anger.time ' + str(mob_data["status"]["angry"]["keep_time_seconds"]*20) + '\n')
 		output.append('tag @s add angry\n')
+		if "attack_damage_mul" in mob_data["status"]["angry"]:
+			output.append('scoreboard players set @s attack.state_mul ' + str(int(mob_data["status"]["angry"]["attack_damage_mul"]*100)) + '\n')
 		# output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/action/get_angry/start\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
@@ -682,6 +686,7 @@ for mob_name, mob_data in mob_database.items():
 		output.append('scoreboard players set #temp temp 100\n')
 		output.append('scoreboard players operation @s anger.damage /= #temp temp\n')
 		output.append('scoreboard players set @s anger.time ' + str(mob_data["status"]["angry"]["restart_interval_seconds"]*20) + '\n')
+		output.append('scoreboard players set @s attack.state_mul 100\n')
 		output.append('function anemoland_contents:sys/entity/mob/' + mob_name + '/action/tired/start\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
@@ -851,46 +856,55 @@ for mob_name, mob_data in mob_database.items():
 	path = base_path + mob_name + '/summon/common/status.mcfunction'
 	makedir(path)
 	output = []
-	output.append('execute unless score #new_entity.level temp matches 0.. run scoreboard players set #new_entity.level temp ' + str(mob_data["status"]["default_level"]) + '\n')
-	output.append('scoreboard players operation @s level = #new_entity.level temp\n')
-	output.append('scoreboard players set @s max_health ' + str(int(mob_data["status"]["max_health"]["mul"]*10)) + '\n')
-	output.append('scoreboard players operation @s max_health *= #new_entity.level temp\n')
-	output.append('scoreboard players add @s max_health ' + str(int(mob_data["status"]["max_health"]["base"]*10)) + '\n')
+	output.append('# level\n')
+	output.append('    execute unless score #new_entity.level temp matches 0.. run scoreboard players set #new_entity.level temp ' + str(mob_data["status"]["default_level"]) + '\n')
+	output.append('    scoreboard players operation @s level = #new_entity.level temp\n')
+	output.append('# max health\n')
+	output.append('    scoreboard players set @s max_health ' + str(int(mob_data["status"]["max_health"]["mul"]*10)) + '\n')
+	output.append('    scoreboard players operation @s max_health *= #new_entity.level temp\n')
+	output.append('    scoreboard players add @s max_health ' + str(int(mob_data["status"]["max_health"]["base"]*10)) + '\n')
 	if mob_data["type"] == "boss":
-		output.append('scoreboard players set #rank_mul temp 100\n')
-		output.append('execute if score #new_entity.level temp matches 20.. run scoreboard players add #rank_mul temp 20\n')
-		output.append('execute if score #new_entity.level temp matches 30.. run scoreboard players add #rank_mul temp 20\n')
-		output.append('scoreboard players operation @s max_health *= #rank_mul temp\n')
-		output.append('scoreboard players set #rank_mul temp 100\n')
-		output.append('scoreboard players operation @s max_health /= #rank_mul temp\n')
-		output.append('scoreboard players operation @s max_health /= #rank_mul temp\n')
-		output.append('scoreboard players operation @s max_health *= #rank_mul temp\n')
-		output.append('execute store result score #team_mul temp if entity @a[gamemode=adventure,distance=..64]\n')
-		output.append('scoreboard players add #team_mul temp 1\n')
-		output.append('scoreboard players operation @s max_health *= #team_mul temp\n')
-		output.append('scoreboard players set #team_mul temp 2\n')
-		output.append('scoreboard players operation @s max_health /= #team_mul temp\n')
-	output.append('scoreboard players operation @s health = @s max_health\n')
-	output.append('scoreboard players set @s attack.base ' + str(round(100*mob_data["status"]["attack_damage"]["mul"])) + '\n')
-	output.append('scoreboard players operation @s attack.base *= #new_entity.level temp\n')
-	output.append('scoreboard players set #temp temp 10\n')
-	output.append('scoreboard players operation @s attack.base /= #temp temp\n')
+		output.append('# rank による倍率\n')
+		output.append('    scoreboard players set #rank_mul temp 100\n')
+		output.append('    execute if score #new_entity.level temp matches 20.. run scoreboard players add #rank_mul temp 20\n')
+		output.append('    execute if score #new_entity.level temp matches 30.. run scoreboard players add #rank_mul temp 20\n')
+		output.append('    scoreboard players operation @s max_health *= #rank_mul temp\n')
+		output.append('    scoreboard players set #rank_mul temp 100\n')
+		output.append('    scoreboard players operation @s max_health /= #rank_mul temp\n')
+		output.append('    scoreboard players operation @s max_health /= #rank_mul temp\n')
+		output.append('    scoreboard players operation @s max_health *= #rank_mul temp\n')
+		output.append('# 人数による倍率\n')
+		output.append('    execute store result score #team_mul temp if entity @a[gamemode=adventure,distance=..64]\n')
+		output.append('    scoreboard players add #team_mul temp 1\n')
+		output.append('    scoreboard players operation @s max_health *= #team_mul temp\n')
+		output.append('    scoreboard players set #team_mul temp 2\n')
+		output.append('    scoreboard players operation @s max_health /= #team_mul temp\n')
+	output.append('# health\n')
+	output.append('    scoreboard players operation @s health = @s max_health\n')
+	output.append('# attack damage\n')
+	output.append('    scoreboard players set @s attack.base ' + str(round(100*mob_data["status"]["attack_damage"]["mul"])) + '\n')
+	output.append('    scoreboard players operation @s attack.base *= #new_entity.level temp\n')
+	output.append('    scoreboard players set #temp temp 10\n')
+	output.append('    scoreboard players operation @s attack.base /= #temp temp\n')
 	if mob_data["status"]["attack_damage"]["base"] > 0:
-		output.append('scoreboard players add @s attack.base ' + str(mob_data["status"]["attack_damage"]["base"]) + '\n')
+		output.append('    scoreboard players add @s attack.base ' + str(mob_data["status"]["attack_damage"]["base"]) + '\n')
 	elif mob_data["status"]["attack_damage"]["base"] < 0:
-		output.append('scoreboard players remove @s attack.base ' + str(abs(mob_data["status"]["attack_damage"]["base"])) + '\n')
-	output.append('scoreboard players set @s attack.mul 10\n')
-	output.append('scoreboard players set @s armor.mul ' + str(mob_data["parts"]["root"]["armor_mul"]) + '\n')
+		output.append('    scoreboard players remove @s attack.base ' + str(abs(mob_data["status"]["attack_damage"]["base"])) + '\n')
+	output.append('    scoreboard players set @s attack.mul 10\n')
+	output.append('    scoreboard players set @s attack.state_mul 100\n')
+	output.append('# armor\n')
+	output.append('    scoreboard players set @s armor.mul ' + str(mob_data["parts"]["root"]["armor_mul"]) + '\n')
 	if "elemental_damage_mul" in mob_data["parts"]["root"]:
 		for elem in ["fire","water","ice","thunder"]:
 			if elem in mob_data["parts"]["root"]["elemental_damage_mul"]:
-				output.append('scoreboard players set @s armor.' + elem + '.mul ' + str(mob_data["parts"]["root"]["elemental_damage_mul"][elem]) + '\n')
+				output.append('    scoreboard players set @s armor.' + elem + '.mul ' + str(mob_data["parts"]["root"]["elemental_damage_mul"][elem]) + '\n')
 	if "angry" in mob_data["status"]:
-		output.append('scoreboard players operation @s anger.damage = @s max_health\n')
-		output.append('scoreboard players set #temp temp ' + str(round(100*mob_data["status"]["angry"]["start_damage_ratio"])) + '\n')
-		output.append('scoreboard players operation @s anger.damage *= #temp temp\n')
-		output.append('scoreboard players set #temp temp 100\n')
-		output.append('scoreboard players operation @s anger.damage /= #temp temp\n')
+		output.append('# 怒りステータス\n')
+		output.append('    scoreboard players operation @s anger.damage = @s max_health\n')
+		output.append('    scoreboard players set #temp temp ' + str(round(100*mob_data["status"]["angry"]["start_damage_ratio"])) + '\n')
+		output.append('    scoreboard players operation @s anger.damage *= #temp temp\n')
+		output.append('    scoreboard players set #temp temp 100\n')
+		output.append('    scoreboard players operation @s anger.damage /= #temp temp\n')
 	if "variants" in mob_data:
 		for variant_id, variant_data in mob_data["variants"].items():
 			if "parts" in variant_data:

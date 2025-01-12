@@ -8,8 +8,8 @@
 
 # ターゲットまでの距離測定
     data merge storage km_distance: {out:32}
-    execute if score #hostile_target.is_player temp matches 1 at @e[type=#anemoland:mob_core,tag=hostile_target,distance=..32,limit=1] run function km_distance:as_to_at
-    execute unless score #hostile_target.is_player temp matches 1 at @a[tag=hostile_target,distance=..32,limit=1] run function km_distance:as_to_at
+    execute unless score #hostile_target.is_player temp matches 1 at @e[type=#anemoland:mob_core,tag=hostile_target,distance=..32,limit=1] run function km_distance:as_to_at
+    execute if score #hostile_target.is_player temp matches 1 at @a[tag=hostile_target,distance=..32,limit=1] run function km_distance:as_to_at
     execute store result score #action_way temp run data get storage km_distance: out
 
 # 発射

@@ -183,6 +183,7 @@
 						{
 							"function": "minecraft:set_enchantments",
 							"enchantments": {
+								"frost_walker": 1,
 								"minecraft:binding_curse": 1
 							}
 						}

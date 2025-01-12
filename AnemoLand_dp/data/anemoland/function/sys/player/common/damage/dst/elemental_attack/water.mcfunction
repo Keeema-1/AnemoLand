@@ -5,11 +5,14 @@
 
 # 共通ダメージ
     scoreboard players operation #damage.elem.water temp = #damage.common temp
-# 属性攻撃力
+# 属性攻撃力 (*10)
     scoreboard players operation #damage.elem.water temp *= #damage.src.attack.water.base temp
-# 属性被ダメージ率
+# (/100)
+    scoreboard players set #temp temp 100
+    scoreboard players operation #damage.elem.water temp /= #temp temp
+# 属性被ダメージ率 (*100)
     scoreboard players operation #damage.elem.water temp *= #armor.elem.mul temp
-# /100
+# (/1000)
     scoreboard players set #temp temp 1000
     scoreboard players operation #damage.elem.water temp /= #temp temp
 

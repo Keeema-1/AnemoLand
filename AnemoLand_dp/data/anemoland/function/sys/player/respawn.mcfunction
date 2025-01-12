@@ -15,4 +15,4 @@ function anemoland:command/enter/village
 
 # function anemoland:sys/player/area/common/enter
 
-# function anemoland:sys/player/music/stop
+function anemoland:sys/player/music/stop
