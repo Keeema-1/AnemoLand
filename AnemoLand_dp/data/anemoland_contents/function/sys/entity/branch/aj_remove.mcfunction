@@ -1,3 +1,4 @@
+execute if entity @s[tag=aj.human1.root] run function animated_java:human1/remove/this
 execute if entity @s[tag=aj.decoy1.root] run function animated_java:decoy1/remove/this
 execute if entity @s[tag=aj.walking_mushroom.root] run function animated_java:walking_mushroom/remove/this
 execute if entity @s[tag=aj.boar.root] run function animated_java:boar/remove/this

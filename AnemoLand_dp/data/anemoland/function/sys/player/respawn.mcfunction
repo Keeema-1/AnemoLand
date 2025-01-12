@@ -5,8 +5,6 @@
 # @within
 #    function anemoland:sys/player/state/dead/0
 
-function anemoland:command/enter/village
-
 # ステータス効果のリセット
     function anemoland:sys/player/reset
 
@@ -16,3 +14,6 @@ function anemoland:command/enter/village
 # function anemoland:sys/player/area/common/enter
 
 function anemoland:sys/player/music/stop
+
+execute if score @s area2 matches 9901.. run return run function anemoland:command/enter/arena_prepare
+execute unless score @s area2 matches 9901.. run return run function anemoland:command/enter/village

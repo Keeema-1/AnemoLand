@@ -13,3 +13,7 @@ scoreboard players operation #sec temp %= #temp temp
 
 execute if score #min temp matches 1.. run tellraw @a[distance=..64] [{"text":"タイム: ","color":"yellow"},{"score":{"name":"#min","objective":"temp"}},{"text":"分 "},{"score":{"name":"#sec","objective":"temp"}},{"text":"秒"}]
 execute unless score #min temp matches 1.. run tellraw @a[distance=..64] [{"text":"タイム: ","color":"yellow"},{"score":{"name":"#sec","objective":"temp"}},{"text":"秒"}]
+
+# クリア後のNPCチャットなど用
+    execute as @e[type=#anemoland:mob_core,tag=npc,distance=..64] run tag @s add clear
+    execute as @e[type=#anemoland:mob_core,tag=npc,distance=..64] run tag @s add clear.boss

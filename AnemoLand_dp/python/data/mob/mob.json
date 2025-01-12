@@ -1,4 +1,93 @@
 {
+    "human1": {
+        "aj_name": "human1",
+        "display_name": "サリー",
+        "type": "npc",
+        "npc_id": 1,
+        "aj_cmd_offset": 20100,
+        "immediate_disappear": true,
+        "death_loot_table_disable": true,
+        "recipe_disable": true,
+        "variants": {
+            "sally": {
+                "display_name": "サリー",
+                "custom_model_data_add": 1
+            }
+        },
+        "animations": {
+            "default": {},
+            "attack1": {},
+            "walk": {},
+            "keep_distance1": {},
+            "standing1": {},
+            "standing2": {},
+            "waiting1": {}
+        },
+        "emote": {
+            "after_clear": {
+                "animation": "waiting1",
+                "chat_display": {
+                    "icon": "anemoland.character.girl2.smile",
+                    "talk_pool": [
+                        "anemoland.character.sally.talk.general.clear.1",
+                        "anemoland.character.sally.talk.general.clear.2",
+                        "anemoland.character.sally.talk.general.clear.3",
+                        "anemoland.character.sally.talk.general.clear.4"
+                    ]
+                }
+            }
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {},
+            "sally": {},
+            "sally_damaged": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "walk1": {
+                "score": 11
+            },
+            "keep_distance1": {
+                "score": 12
+            },
+            "attack1": {
+                "score": 13
+            },
+            "walk_straight1": {
+                "score": 14
+            }
+        },
+        "default_action": "stop",
+        "attacks": {
+            "attack": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing1_from_back_5",
+                        "mul": 15,
+                        "position": [0,0,3],
+                        "size": [3,4,3],
+                        "parts":["root"]
+                    }
+                ]
+            }
+        },
+        "parts":{
+            "root": {"armor_mul": 100, "hitbox_scale": 1.0}
+        },
+        "root_entity": "skeleton",
+        "display_height": 0.3,
+        "status": {
+            "default_level": 20,
+            "max_health": {"base": 100, "mul": 5},
+            "attack_damage": {"base": 4, "mul": 0.4},
+            "gold": {"base": 0, "mul": 0},
+            "xp": {"base": 0, "mul": 0}
+        }
+    },
     "decoy1": {
         "aj_name": "decoy1",
         "display_name": "カカシ",
@@ -1821,7 +1910,7 @@
                         "knockback": "facing2_10",
                         "mul": 10,
                         "position": [0,0,0],
-                        "size": [3,3,3],
+                        "size": [4,4,4],
                         "parts":["head"]
                     }
                 ]

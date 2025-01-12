@@ -1,4 +1,5 @@
 tag @s add damaged
+execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:martellos/as_own_locator_entities {command:"tag @s add damaged"}
 damage @s 0
 execute if entity @s[tag=variant.default] run function anemoland_contents:sys/entity/mob/martellos/variant/damaged
 execute if entity @s[tag=variant.cherry] run function anemoland_contents:sys/entity/mob/martellos/variant/cherry_damaged

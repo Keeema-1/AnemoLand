@@ -1,2 +1,2 @@
 $scoreboard players set #new_entity.level temp $(level)
-function anemoland_contents:sys/entity/mob/martellos/summon/cherry/enemy/0
+function anemoland_contents:sys/entity/mob/martellos/summon/cherry/player_side/0
