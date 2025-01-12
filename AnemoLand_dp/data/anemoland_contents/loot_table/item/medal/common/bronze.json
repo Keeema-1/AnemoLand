@@ -25,7 +25,7 @@
 									{"text":"  "},
 									{
 										"translate": "anemoland.item.medal.common.lore.2",
-										"with": [{"translate": "common.rank.bronze"}],
+										"with": [{"translate": "anemoland.common.rank.bronze"}],
 										"italic": false,
 										"color": "white"
 									}
@@ -54,7 +54,7 @@
 							"entity": "this",
 							"name": {
 								"translate": "anemoland.item.medal.common.name",
-								"with": [{"translate": "common.rank.bronze"}],
+								"with": [{"translate": "anemoland.common.rank.bronze"}],
 								"italic": false,
 								"color": "gold"
 							}
