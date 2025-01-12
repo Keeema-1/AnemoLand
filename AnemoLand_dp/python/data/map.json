@@ -378,7 +378,7 @@
                     "unlock":[],
                     "initial_event": {"id": "carnara", "level": 30},
                     "default_event": {"id": "squirrels", "level": 25},
-                    "random_event": "ice_large"
+                    "random_event": "carnara"
                 }
             }
         }

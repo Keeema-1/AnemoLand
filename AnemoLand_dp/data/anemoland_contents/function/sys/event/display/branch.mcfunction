@@ -20,10 +20,10 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapases"} run function anemoland_contents:sys/event/display/garapases with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapases_penguin"} run function anemoland_contents:sys/event/display/garapases_penguin with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"raptors"} run function anemoland_contents:sys/event/display/raptors with storage temp:_ data.field_display_macro
-execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head"} run function anemoland_contents:sys/event/display/squirrel_head with storage temp:_ data.field_display_macro
-execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head_double"} run function anemoland_contents:sys/event/display/squirrel_head_double with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"king_boar"} run function anemoland_contents:sys/event/display/king_boar with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"king_boar_double"} run function anemoland_contents:sys/event/display/king_boar_double with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head"} run function anemoland_contents:sys/event/display/squirrel_head with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head_double"} run function anemoland_contents:sys/event/display/squirrel_head_double with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas"} run function anemoland_contents:sys/event/display/garapapas with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_double"} run function anemoland_contents:sys/event/display/garapapas_double with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_penguin"} run function anemoland_contents:sys/event/display/garapapas_penguin with storage temp:_ data.field_display_macro
