@@ -442,14 +442,19 @@ for map_data in map_database["maps"]:
 				output = []
 				path = base_path + map_name + '/' + field_data["type"] + '/' + field_id + '/init/0.mcfunction'
 				makedir(path)
-				output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/init/remove_entity\n')
-				output.append('schedule function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/init/remove_entity 1s\n')
-				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.summon_flag set value 0b\n')
-				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.cleared set value 0b\n')
-				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.wave set value 1\n')
-				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.wave_interval set value 0b\n')
-				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.boss_flag set value 0b\n')
-				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.npc1_exist set value 0b\n')
+				output.append('# エンティティを除去\n')
+				output.append('    function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/init/remove_entity\n')
+				output.append('    schedule function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/init/remove_entity 1s\n')
+				output.append('# フィールド状態のデータをリセット\n')
+				output.append('    data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.summon_flag set value 0b\n')
+				output.append('    data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.cleared set value 0b\n')
+				output.append('    data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.wave set value 1\n')
+				output.append('    data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.wave_interval set value 0b\n')
+				output.append('    data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.boss_flag set value 0b\n')
+				output.append('    data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.npc1_exist set value 0b\n')
+				output.append('# forceload\n')
+				output.append('    execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' run forceload add ~-32 ~-32 ~32 ~32\n')
+				output.append('    schedule function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/init/forceload_remove 5s replace\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
 
@@ -459,6 +464,13 @@ for map_data in map_database["maps"]:
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' run function ' + namespace_core + ':sys/player/area/common/field/remove_entity/0\n')
 				# output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' if loaded ~ ~ ~ run function ' + namespace_core + ':sys/player/area/common/field/remove_entity/0\n')
 				# output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless loaded ~ ~ ~ run schedule function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/init/remove_entity 1t\n')
+				with open(path, 'w', encoding='utf-8') as f:
+					f.writelines(output)
+
+				output = []
+				path = base_path + map_name + '/' + field_data["type"] + '/' + field_id + '/init/forceload_remove.mcfunction'
+				makedir(path)
+				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' run forceload remove ~-32 ~-32 ~32 ~32\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
 

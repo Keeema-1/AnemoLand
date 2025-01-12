@@ -11,7 +11,7 @@
     data modify storage temp:_ data.weapon_skill_data set from storage temp:_ data.weapon_data.status.weapon_skills[{id:"dust_impact_crater"}]
 
 # サブ攻撃のステータスを取得
-    execute store result score #attack.base temp run data get storage temp:_ data.weapon_skill_data.attack_damage[1].fire.base 10
+    execute store result score #attack.base temp run data get storage temp:_ data.weapon_skill_data.attack_damage[1].fire.base 20
     execute store result score #attack.mul temp run data get storage temp:_ data.weapon_skill_data.attack_damage[1].fire.mul 10
 
 # 粉塵を撒く

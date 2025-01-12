@@ -209,6 +209,8 @@ for mob_name, mob_data in mob_database.items():
 	path = base_path + mob_name + '/damaged/die/0.mcfunction'
 	makedir(path)
 	output = []
+	if len(mob_data["parts"]) > 1:
+		output.append('execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:' + mob_data["aj_name"] + '/as_own_locator_entities {command:"tag @s add dead"}\n')
 	if not ("death_loot_table_disable" in mob_data and mob_data["death_loot_table_disable"]):
 		output.append('execute if entity @s[tag=enemy] run scoreboard players operation #drop_bonus temp = @s drop_bonus\n')
 		output.append('execute if entity @s[tag=enemy] run scoreboard players operation #level temp = @s level\n')

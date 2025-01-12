@@ -1,7 +1,7 @@
 
-function anemoland:sys/player/common/black_title_long
+function anemoland:sys/player/common/black_title_medium
 
-effect give @s slowness 2 30 true
+effect give @s slowness 1 30 true
 # effect give @s resistance 2 30 true
 effect clear @s speed
 function anemoland:sys/player/area/common/enter
