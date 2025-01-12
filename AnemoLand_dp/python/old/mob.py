@@ -1588,7 +1588,7 @@ for mob_name, mob_data in data.items():
 
 	if "variants" in mob_data:
 		for variant_id, variant_data in mob_data["variants"].items():
-			if not "custom_model_data" in variant_data:
+			if not "custom_model_data_add" in variant_data:
 				continue
 			path = base_path + 'custom/entity/' + mob_name + '/icon_' + variant_id + '.json'
 			makedir(path)

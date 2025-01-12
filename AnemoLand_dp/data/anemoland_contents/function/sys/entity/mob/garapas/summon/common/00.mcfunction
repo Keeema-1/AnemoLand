@@ -5,11 +5,13 @@ tag @s add garapas
 attribute @s scale base set 2.25
 function anemoland:sys/entity/common/summon/0
 execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:garapas/summon/default
+execute if data storage temp:_ data.new_entity{"variant":"penguin"} rotated ~ 0 run function animated_java:garapas/summon/penguin
 ride @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] mount @s
 tag @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] remove newly_summoned.aj
 function anemoland_contents:sys/entity/mob/garapas/animation/default
 tag @s remove newly_summoned
 execute if data storage temp:_ data.new_entity{"variant":"default"} run function anemoland_contents:sys/entity/mob/garapas/summon/common/variant/default
+execute if data storage temp:_ data.new_entity{"variant":"penguin"} run function anemoland_contents:sys/entity/mob/garapas/summon/common/variant/penguin
 execute if data storage temp:_ data.new_entity{"summon_type":"enemy"} run function anemoland_contents:sys/entity/mob/garapas/summon/common/enemy
 execute if data storage temp:_ data.new_entity{"summon_type":"pet"} run function anemoland_contents:sys/entity/mob/garapas/summon/common/pet
 execute if data storage temp:_ data.new_entity{"summon_type":"player_side"} run function anemoland_contents:sys/entity/mob/garapas/summon/common/player_side

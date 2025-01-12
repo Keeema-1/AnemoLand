@@ -248,6 +248,27 @@
                 }
             ]
         },
+        "ice_a": {
+            "enemies": [
+                {
+                    "entity_id": "garapas",
+                    "variant": "penguin",
+                    "level": 0,
+                    "pos": [-5, 6]
+                },
+                {
+                    "entity_id": "garapas",
+                    "variant": "penguin",
+                    "level": 0,
+                    "pos": [6, 7]
+                },
+                {
+                    "entity_id": "squirrel",
+                    "level": 0,
+                    "pos": [0, 10]
+                }
+            ]
+        },
         "many_walking_mushrooms": {
             "enemies": [
                 {
@@ -295,6 +316,16 @@
                     "entity_id": "walking_mushroom",
                     "level": 0,
                     "pos": [0, 10]
+                }
+            ]
+        },
+        "walking_mushroom_gold": {
+            "enemies": [
+                {
+                    "entity_id": "walking_mushroom",
+                    "variant": "gold",
+                    "level": 0,
+                    "pos": [0, 0]
                 }
             ]
         },
@@ -350,6 +381,28 @@
                 },
                 {
                     "entity_id": "garapas",
+                    "level": 0,
+                    "pos": [5, 2]
+                }
+            ]
+        },
+        "garapases_penguin": {
+            "enemies": [
+                {
+                    "entity_id": "garapas",
+                    "variant": "penguin",
+                    "level": 0,
+                    "pos": [0, -3]
+                },
+                {
+                    "entity_id": "garapas",
+                    "variant": "penguin",
+                    "level": 0,
+                    "pos": [-4, 1]
+                },
+                {
+                    "entity_id": "garapas",
+                    "variant": "penguin",
                     "level": 0,
                     "pos": [5, 2]
                 }
@@ -546,16 +599,18 @@
                 },
                 {
                     "entity_id": "garapas",
+                    "variant": "penguin",
                     "level": 0,
                     "pos": [-4, 0]
                 },
                 {
                     "entity_id": "garapas",
+                    "variant": "penguin",
                     "level": 0,
                     "pos": [4, 0]
                 }
             ],
-            "bgm": "king_boar",
+            "bgm": "carnara",
             "boss_flag": 1
         },
         "martellos": {
@@ -646,7 +701,7 @@
                     "pos": [0, 0]
                 }
             ],
-            "bgm": "martellos",
+            "bgm": "carnara",
             "boss_flag": 1
         },
         "ojinushi": {
@@ -795,8 +850,14 @@
         "stone_b": {
             "waves":[{"stone_b":0}]
         },
+        "ice_a": {
+            "waves":[{"ice_a":0}]
+        },
         "walking_mushrooms": {
             "waves":[{"walking_mushrooms":0}]
+        },
+        "walking_mushroom_gold": {
+            "waves":[{"walking_mushroom_gold":0}]
         },
         "many_walking_mushrooms": {
             "waves":[{"many_walking_mushrooms":0}]
@@ -812,6 +873,9 @@
         },
         "garapases": {
             "waves":[{"garapases":0}]
+        },
+        "garapases_penguin": {
+            "waves":[{"garapases_penguin":0}]
         },
         "raptors": {
             "waves":[{"raptors":0}]
@@ -1088,6 +1152,7 @@
                 {"event": "plain_f", "weight": 3},
                 {"event": "walking_mushrooms", "weight": 3},
                 {"event": "many_walking_mushrooms", "weight": 10},
+                {"event": "walking_mushroom_gold", "weight": 2},
                 {"event": "boars", "weight": 2},
                 {"event": "spiders", "weight": 5},
                 {"event": "squirrels", "weight": 3},
@@ -1120,26 +1185,32 @@
             "random_events": [
                 {"event": "plain_a", "weight": 2},
                 {"event": "plain_b", "weight": 1},
-                {"event": "plain_c", "weight": 10},
+                {"event": "plain_c", "weight": 2},
                 {"event": "plain_d", "weight": 1},
                 {"event": "plain_e", "weight": 1},
-                {"event": "squirrels", "weight": 10},
-                {"event": "boars", "weight": 4},
-                {"event": "spiders", "weight": 2},
+                {"event": "ice_a", "weight": 8},
+                {"event": "garapases_penguin", "weight": 8},
+                {"event": "squirrels", "weight": 6},
+                {"event": "boars", "weight": 2},
+                {"event": "spiders", "weight": 1},
                 {"event": "king_boar", "weight": 1},
                 {"event": "squirrel_head", "weight": 10},
                 {"event": "martellos_ice", "weight": 10},
+                {"event": "garapapas_penguin", "weight": 5},
                 {"event": "carnara", "weight": 5}
             ]
         },
         "ice_large": {
             "random_event_chance": 0.8,
             "random_events": [
-                {"event": "plain_c", "weight": 10},
-                {"event": "boars", "weight": 5},
-                {"event": "squirrels", "weight": 15},
+                {"event": "plain_c", "weight": 2},
+                {"event": "boars", "weight": 2},
+                {"event": "ice_a", "weight": 10},
+                {"event": "garapases_penguin", "weight": 15},
+                {"event": "squirrels", "weight": 5},
                 {"event": "squirrel_head", "weight": 5},
-                {"event": "martellos_ice", "weight": 10},
+                {"event": "martellos_ice", "weight": 5},
+                {"event": "garapapas_penguin", "weight": 10},
                 {"event": "carnara", "weight": 15}
             ]
         }

@@ -18,4 +18,4 @@ scoreboard players operation #damage.elem.ice temp /= #const temp
 
 scoreboard players operation #damage.elem temp += #damage.elem.ice temp
 
-tellraw @a [{"text":" ❄","color":"aqua"},{"score":{"name":"#damage.elem.ice","objective":"temp"},"color":"aqua"}]
+# tellraw @a [{"text":" ❄","color":"aqua"},{"score":{"name":"#damage.elem.ice","objective":"temp"},"color":"aqua"}]

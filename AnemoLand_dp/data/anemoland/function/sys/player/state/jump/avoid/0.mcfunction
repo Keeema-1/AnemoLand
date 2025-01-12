@@ -10,7 +10,7 @@ tag @s add cannot_avoid
 
 # 回避距離を計算
     scoreboard players set $strength hb.Motion 0
-    function anemoland:sys/player/skill/avoid/0
+    function anemoland_contents:sys/player/skill/avoid/0
     scoreboard players add $strength hb.Motion 4000
 
 # 水中やダッシュ中

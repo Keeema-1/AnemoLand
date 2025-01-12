@@ -1,6 +1,7 @@
 
 # パーティクル
-    particle block{block_state:{Name:"dirt"}} ^ ^ ^ 0.5 0.5 0.5 1 5
+    execute if entity @s[tag=!bullet.dirt.ice] run particle block{block_state:{Name:"dirt"}} ^ ^ ^ 0.5 0.5 0.5 1 5
+    execute if entity @s[tag=bullet.dirt.ice] run particle block{block_state:{Name:"packed_ice"}} ^ ^ ^ 0.5 0.5 0.5 1 5
 
 # タイマーを進める
     scoreboard players add @s action_time 1
@@ -23,7 +24,7 @@
     function anemoland_contents:sys/entity/bullet/dirt/tick/horizontal_motion with storage temp:_ data.horizontal_speed
 
 # ヒット処理
-    # Medium
+    # default
         # 敵の弾：味方にヒット
             execute if entity @s[tag=!pet_bullet] at @s if block ~ ~ ~ #anemoland:space positioned ~-1 ~-1 ~-1 if entity @a[dx=1,dy=1,dz=1,gamemode=adventure] positioned ~1 ~1 ~1 run return run function anemoland_contents:sys/entity/bullet/dirt/tick/hit
             execute if entity @s[tag=!pet_bullet] at @s if block ~ ~ ~ #anemoland:space positioned ~-1 ~-1 ~-1 unless entity @a[dx=1,dy=1,dz=1,gamemode=adventure] if entity @e[type=#anemoland:mob_core,tag=mob_root,tag=pet,tag=!damaged,dx=1,dy=1,dz=1,limit=1] positioned ~1 ~1 ~1 run return run function anemoland_contents:sys/entity/bullet/dirt/tick/hit

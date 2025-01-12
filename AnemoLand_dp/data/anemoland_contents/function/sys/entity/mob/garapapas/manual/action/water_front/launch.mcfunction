@@ -13,7 +13,8 @@
     execute store result score #action_way temp run data get storage km_distance: out
 
 # 発射
-    function anemoland_contents:sys/entity/bullet/water/summon/large/0
+    execute if entity @s[tag=!variant.penguin] run function anemoland_contents:sys/entity/bullet/water/summon/large/0
+    execute if entity @s[tag=variant.penguin] run function anemoland_contents:sys/entity/bullet/water/summon/ice_large/0
 
 execute as @a[distance=..64] at @s run playsound minecraft:entity.polar_bear.hurt hostile @s ~ ~ ~ 1.3 0.7
 execute as @a[distance=..64] at @s run playsound minecraft:entity.shulker.hurt hostile @s ~ ~ ~ 1.3 0.3

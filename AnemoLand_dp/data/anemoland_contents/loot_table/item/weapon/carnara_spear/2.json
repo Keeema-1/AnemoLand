@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " 🗡+3.5"
+										"text": " 🗡4.5"
 									}
 								],
 								[
@@ -52,7 +52,7 @@
 										"translate": "anemoland.common.element_attack_damage"
 									},
 									{
-										"text": " ❄+2.0",
+										"text": " ❄2.0",
 										"color": "aqua"
 									}
 								],
@@ -115,67 +115,203 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.ice_beam.lore.1"
+										"translate": "anemoland.weapon_skill.ice_beam.lore.1",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡12"
+													}
+												]
+											],
+											[
+												[
+													[
+														{
+															"text": "❄",
+															"color": "aqua"
+														},
+														{
+															"text": "12",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.ice_beam.lore.2"
+										"translate": "anemoland.weapon_skill.ice_beam.lore.2",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡12"
+													}
+												]
+											],
+											[
+												[
+													[
+														{
+															"text": "❄",
+															"color": "aqua"
+														},
+														{
+															"text": "12",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.ice_beam.lore.3"
+										"translate": "anemoland.weapon_skill.ice_beam.lore.3",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡12"
+													}
+												]
+											],
+											[
+												[
+													[
+														{
+															"text": "❄",
+															"color": "aqua"
+														},
+														{
+															"text": "12",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.ice_beam.lore.4"
+										"translate": "anemoland.weapon_skill.ice_beam.lore.4",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡12"
+													}
+												]
+											],
+											[
+												[
+													[
+														{
+															"text": "❄",
+															"color": "aqua"
+														},
+														{
+															"text": "12",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.ice_beam.lore.5"
+										"translate": "anemoland.weapon_skill.ice_beam.lore.5",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡12"
+													}
+												]
+											],
+											[
+												[
+													[
+														{
+															"text": "❄",
+															"color": "aqua"
+														},
+														{
+															"text": "12",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.ice_beam.lore.6"
+										"translate": "anemoland.weapon_skill.ice_beam.lore.6",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡12"
+													}
+												]
+											],
+											[
+												[
+													[
+														{
+															"text": "❄",
+															"color": "aqua"
+														},
+														{
+															"text": "12",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								{
-									"text": "",
-									"italic": false,
-									"color": "dark_gray"
+									"text": ""
 								},
 								[
 									{
@@ -187,7 +323,7 @@
 										"translate": "anemoland.common.sell_price"
 									},
 									{
-										"text": " 400G"
+										"text": ": 400G"
 									}
 								]
 							],
@@ -214,7 +350,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"spear\",loot_table:\"item/weapon/carnara_spear\",sell_price:400,power_up:{add_level:1,materials:[{id:\"carnara_gold_medal\",loot_table:\"item/medal/carnara/gold\",count:6}]},status:{level:2,attack:{base:3.5,mul:18},elemental_attack:{'ice': 2.0},weapon_skills:[{id:\"ice_beam\",gauge_consume:100,mul:20}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"spear\",loot_table:\"item/weapon/carnara_spear\",sell_price:400,power_up:{add_level:1,materials:[{id:\"carnara_gold_medal\",loot_table:\"item/medal/carnara/gold\",count:6}]},status:{level:2,attack:{base:3.5,mul:18},elemental_attack:{'ice': 2.0},weapon_skills:[{id:\"ice_beam\",gauge_consume:100,attack_damage:[{physical: {base: 6, mul: 2}}, {ice: {base: 6, mul: 2}}]}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

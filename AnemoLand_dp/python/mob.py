@@ -812,24 +812,37 @@ for mob_name, mob_data in mob_database.items():
 	output = []
 	output.append('tag @s add enemy\n')
 	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/summon/common/status\n')
-	output.append('execute store result score #gold_bonus temp run data get storage temp:_ data.event_bonus.gold 50\n')
-	output.append('execute store result score #xp_bonus temp run data get storage temp:_ data.event_bonus.xp 50\n')
-	output.append('execute store result score @s drop_bonus run data get storage temp:_ data.event_bonus.drop 1\n')
+	output.append('# ボーナス\n')
+	output.append('    execute store result score #gold_bonus temp run data get storage temp:_ data.event_bonus.gold 50\n')
+	output.append('    execute store result score #xp_bonus temp run data get storage temp:_ data.event_bonus.xp 50\n')
+	output.append('    execute store result score @s drop_bonus run data get storage temp:_ data.event_bonus.drop 1\n')
 	# output.append('tellraw @a ["G ",{"score":{"name":"#gold_bonus","objective":"temp"}},", XP ",{"score":{"name":"#xp_bonus","objective":"temp"}},", DROP ",{"score":{"name":"#drop_bonus","objective":"temp"}}]\n')
-	output.append('scoreboard players set @s gold ' + str(int(mob_data["status"]["gold"]["mul"]*10)) + '\n')
-	output.append('scoreboard players operation @s gold *= #new_entity.level temp\n')
-	output.append('scoreboard players add @s gold ' + str(int(mob_data["status"]["gold"]["base"]*10)) + '\n')
-	output.append('scoreboard players add #gold_bonus temp 100\n')
-	output.append('scoreboard players operation @s gold *= #gold_bonus temp\n')
-	output.append('scoreboard players set #const temp 1000\n')
-	output.append('scoreboard players operation @s gold /= #const temp\n')
-	output.append('scoreboard players set @s xp ' + str(int(mob_data["status"]["xp"]["mul"]*10)) + '\n')
-	output.append('scoreboard players operation @s xp *= #new_entity.level temp\n')
-	output.append('scoreboard players add @s xp ' + str(int(mob_data["status"]["xp"]["base"]*10)) + '\n')
-	output.append('scoreboard players add #xp_bonus temp 100\n')
-	output.append('scoreboard players operation @s xp *= #xp_bonus temp\n')
-	output.append('scoreboard players set #const temp 1000\n')
-	output.append('scoreboard players operation @s xp /= #const temp\n')
+	output.append('# ゴールド\n')
+	output.append('    scoreboard players set @s gold ' + str(int(mob_data["status"]["gold"]["mul"]*10)) + '\n')
+	output.append('    scoreboard players operation @s gold *= #new_entity.level temp\n')
+	output.append('    scoreboard players add @s gold ' + str(int(mob_data["status"]["gold"]["base"]*10)) + '\n')
+	output.append('    scoreboard players add #gold_bonus temp 100\n')
+	output.append('    scoreboard players operation @s gold *= #gold_bonus temp\n')
+	output.append('    scoreboard players set #const temp 1000\n')
+	output.append('    scoreboard players operation @s gold /= #const temp\n')
+	output.append('# XP\n')
+	output.append('    scoreboard players set @s xp ' + str(int(mob_data["status"]["xp"]["mul"]*10)) + '\n')
+	output.append('    scoreboard players operation @s xp *= #new_entity.level temp\n')
+	output.append('    scoreboard players add @s xp ' + str(int(mob_data["status"]["xp"]["base"]*10)) + '\n')
+	output.append('    scoreboard players add #xp_bonus temp 100\n')
+	output.append('    scoreboard players operation @s xp *= #xp_bonus temp\n')
+	output.append('    scoreboard players set #const temp 1000\n')
+	output.append('    scoreboard players operation @s xp /= #const temp\n')
+	if "variants" in mob_data:
+		output.append('# バリアントボーナス\n')
+		for variant_id, variant_data in mob_data["variants"].items():
+			if "status" in variant_data:
+				if "xp_bonus" in variant_data["status"] and "mul" in variant_data["status"]["xp_bonus"]:
+					output.append('    execute if entity @s[tag=variant.' + variant_id + '] run scoreboard players set #xp_bonus temp ' + str(variant_data["status"]["xp_bonus"]["mul"]) + '\n')
+					output.append('    execute if entity @s[tag=variant.' + variant_id + '] run scoreboard players operation @s xp *= #xp_bonus temp\n')
+				if "gold_bonus" in variant_data["status"] and "mul" in variant_data["status"]["gold_bonus"]:
+					output.append('    execute if entity @s[tag=variant.' + variant_id + '] run scoreboard players set #gold_bonus temp ' + str(variant_data["status"]["gold_bonus"]["mul"]) + '\n')
+					output.append('    execute if entity @s[tag=variant.' + variant_id + '] run scoreboard players operation @s gold *= #gold_bonus temp\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -876,6 +889,16 @@ for mob_name, mob_data in mob_database.items():
 		output.append('scoreboard players operation @s anger.damage *= #temp temp\n')
 		output.append('scoreboard players set #temp temp 100\n')
 		output.append('scoreboard players operation @s anger.damage /= #temp temp\n')
+	if "variants" in mob_data:
+		for variant_id, variant_data in mob_data["variants"].items():
+			if "parts" in variant_data:
+				part_name = "root"
+				part_data = variant_data["parts"]["root"]
+				output.append('execute if data storage temp:_ data.new_entity{variant:"' + variant_id + '"} run scoreboard players set @s armor.mul ' + str(part_data["armor_mul"]) + '\n')
+				if "elemental_damage_mul" in part_data:
+					for elem in ["fire","water","ice","thunder"]:
+						if elem in part_data["elemental_damage_mul"]:
+							output.append('execute if data storage temp:_ data.new_entity{variant:"' + variant_id + '"} run scoreboard players set @s armor.' + elem + '.mul ' + str(part_data["elemental_damage_mul"][elem]) + '\n')
 	output.append('scoreboard players operation #attack.base temp = @s attack.base\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -949,12 +972,12 @@ for mob_name, mob_data in mob_database.items():
 					for part_name, part_data in variant_data["parts"].items():
 						if part_name == "root":
 							continue
-						output.append('execute if score #new_entity.variant.' + variant_id + ' temp matches 1 if entity @s[tag=hitbox.' + part_name + '] run attribute @s scale base set ' + str(part_data["hitbox_scale"]) + '\n')
-						output.append('execute if score #new_entity.variant.' + variant_id + ' temp matches 1 if entity @s[tag=hitbox.' + part_name + '] run scoreboard players set @s armor.mul ' + str(part_data["armor_mul"]) + '\n')
+						output.append('execute if data storage temp:_ data.new_entity{variant:"' + variant_id + '"} if entity @s[tag=hitbox.' + part_name + '] run attribute @s scale base set ' + str(part_data["hitbox_scale"]) + '\n')
+						output.append('execute if data storage temp:_ data.new_entity{variant:"' + variant_id + '"} if entity @s[tag=hitbox.' + part_name + '] run scoreboard players set @s armor.mul ' + str(part_data["armor_mul"]) + '\n')
 						if "elemental_damage_mul" in part_data:
 							for elem in ["fire","water","ice","thunder"]:
 								if elem in part_data["elemental_damage_mul"]:
-									output.append('execute if score #new_entity.variant.' + variant_id + ' temp matches 1 if entity @s[tag=hitbox.' + part_name + '] run scoreboard players set @s armor.' + elem + '.mul ' + str(part_data["elemental_damage_mul"][elem]) + '\n')
+									output.append('execute if data storage temp:_ data.new_entity{variant:"' + variant_id + '"} if entity @s[tag=hitbox.' + part_name + '] run scoreboard players set @s armor.' + elem + '.mul ' + str(part_data["elemental_damage_mul"][elem]) + '\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
@@ -1759,7 +1782,7 @@ for mob_name, mob_data in mob_database.items():
 
 	if "variants" in mob_data:
 		for variant_id, variant_data in mob_data["variants"].items():
-			if not "custom_model_data" in variant_data:
+			if not "custom_model_data_add" in variant_data:
 				continue
 			path = base_path + 'custom/entity/' + mob_name + '/icon_' + variant_id + '.json'
 			makedir(path)

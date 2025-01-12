@@ -1,5 +1,5 @@
 # 攻撃処理
-    function anemoland_contents:sys/entity/bullet/dirt/attack/medium/0
+    function anemoland_contents:sys/entity/bullet/dirt/attack/default/0
 # kill
     execute on passengers run kill @s
     kill @s

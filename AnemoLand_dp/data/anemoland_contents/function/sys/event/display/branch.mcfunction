@@ -10,12 +10,15 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"waterside
 execute if data storage temp:_ data.field_display_data.event{event_id:"waterside_c"} run function anemoland_contents:sys/event/display/waterside_c with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"stone_a"} run function anemoland_contents:sys/event/display/stone_a with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"stone_b"} run function anemoland_contents:sys/event/display/stone_b with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"ice_a"} run function anemoland_contents:sys/event/display/ice_a with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"walking_mushrooms"} run function anemoland_contents:sys/event/display/walking_mushrooms with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"walking_mushroom_gold"} run function anemoland_contents:sys/event/display/walking_mushroom_gold with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"many_walking_mushrooms"} run function anemoland_contents:sys/event/display/many_walking_mushrooms with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"boars"} run function anemoland_contents:sys/event/display/boars with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"spiders"} run function anemoland_contents:sys/event/display/spiders with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels"} run function anemoland_contents:sys/event/display/squirrels with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapases"} run function anemoland_contents:sys/event/display/garapases with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"garapases_penguin"} run function anemoland_contents:sys/event/display/garapases_penguin with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"raptors"} run function anemoland_contents:sys/event/display/raptors with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head"} run function anemoland_contents:sys/event/display/squirrel_head with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head_double"} run function anemoland_contents:sys/event/display/squirrel_head_double with storage temp:_ data.field_display_macro

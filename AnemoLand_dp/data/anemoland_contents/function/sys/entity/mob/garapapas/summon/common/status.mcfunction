@@ -31,4 +31,8 @@ scoreboard players set #temp temp 50
 scoreboard players operation @s anger.damage *= #temp temp
 scoreboard players set #temp temp 100
 scoreboard players operation @s anger.damage /= #temp temp
+execute if data storage temp:_ data.new_entity{variant:"penguin"} run scoreboard players set @s armor.mul 100
+execute if data storage temp:_ data.new_entity{variant:"penguin"} run scoreboard players set @s armor.fire.mul 120
+execute if data storage temp:_ data.new_entity{variant:"penguin"} run scoreboard players set @s armor.water.mul 40
+execute if data storage temp:_ data.new_entity{variant:"penguin"} run scoreboard players set @s armor.ice.mul 40
 scoreboard players operation #attack.base temp = @s attack.base

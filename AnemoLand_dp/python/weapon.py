@@ -85,7 +85,7 @@ for weapon_data in weapon_database["weapons"]:
 							first_flag = False
 						else:
 							translate_with_item[0].append({"text":"+"})
-						translate_with_item[0].append([{"text":element_icon[elem_id], "color": element_color[elem_id]},{"text":str(int(attack_damage_data[elem_id]["base"] + attack_damage_data[elem_id]["mul"] * (int(level)-1))), "color": "gray"}])
+						translate_with_item[0].append([{"text":element_icon[elem_id], "color": element_color[elem_id]},{"text":str(int((attack_damage_data[elem_id]["base"] + (int(level)-1)) * attack_damage_data[elem_id]["mul"])), "color": "gray"}])
 				translate_with.append(translate_with_item)
 			for j in range(weapon_skills[weapon_skill["name"]]["lore_len"]):
 				lore.append([{"text":"    ", "color": "gray", "italic":False},{"translate":"anemoland.weapon_skill." + lore_translate_name + ".lore." + str(j+1), "with": translate_with}])
@@ -153,7 +153,7 @@ for weapon_data in weapon_database["weapons"]:
 			power_up_str += ']'
 		element_attack = {}
 		if "element_attack_damage" in weapon_data:
-			element_attack = weapon_data[ "element_attack_damage"]
+			element_attack = weapon_data["element_attack_damage"]
 		function_.update(function="minecraft:set_custom_data",
 			tag = "{item_type:\"weapon\",weapon_type:\"" + weapon_data["weapon_type"] + "\",loot_table:\"item/weapon/" + weapon_data["name"] + "\",sell_price:" + str(sell_price) + ",power_up:{" + power_up_str + "},status:{level:" + str(level) + ",attack:{base:" + str(attack_damage_value) + ",mul:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "},elemental_attack:" + str(element_attack) + ",weapon_skills:[" + weapon_skills_str + "],skill_gauge:{get:" + str(weapon_types[weapon_data["weapon_type"]]["weapon_mul"]) + "}}}"
 			)

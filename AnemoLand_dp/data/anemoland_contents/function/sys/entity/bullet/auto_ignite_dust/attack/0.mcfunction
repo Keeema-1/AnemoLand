@@ -1,9 +1,9 @@
 
 scoreboard players set #damage.src.attack.mul temp 5
 scoreboard players operation #damage.src.attack.base temp = @s attack.base
-scoreboard players operation #damage.src.attack.water.base temp = @s attack.base
+scoreboard players operation #damage.src.attack.fire.base temp = @s attack.base
 
-# scoreboard players set #attack_skill_flag temp 1
+scoreboard players set #weapon_skill_flag temp 1
 
 execute if entity @s[tag=pet_bullet] rotated ~ 0 positioned ^0 ^0 ^0 positioned ~-2.0 ~-2.0 ~-2.0 if entity @e[type=#anemoland:mob_core,tag=mob,tag=enemy,dx=3,dy=3,dz=3,limit=1] run return run function anemoland_contents:sys/entity/bullet/auto_ignite_dust/attack/to_enemy
 execute if entity @s[tag=!pet_bullet] rotated ~ 0 positioned ^0 ^0 ^0 positioned ~-2.0 ~-2.0 ~-2.0 if entity @e[type=#anemoland:mob_core,tag=mob,tag=pet,dx=3,dy=3,dz=3,limit=1] run return run function anemoland_contents:sys/entity/bullet/auto_ignite_dust/attack/to_pet

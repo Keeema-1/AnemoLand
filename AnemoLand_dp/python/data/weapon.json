@@ -70,6 +70,25 @@
 				{"physical": {"base": 5, "level_bonus": 1, "mul": 6}},
 				{"physical": {"base": 5, "level_bonus": 1, "mul": 1}}
 			]
+		},
+		"dust_impact_crater": {
+			"display_name": "インパクトクレーター【爆塵】",
+			"gauge_consume": 100,
+			"lore_len": 6,
+			"attack_damage_list": [
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 6}},
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 1}, "fire": {"base": 5, "level_bonus": 1, "mul": 1}}
+			]
+		},
+		"ice_beam": {
+			"display_name": "アイスビーム",
+			"gauge_consume": 100,
+			"mul": 20,
+			"lore_len": 6,
+			"attack_damage_list": [
+				{"physical": {"base": 5, "level_bonus": 1, "mul": 2}},
+				{"ice": {"base": 5, "level_bonus": 1, "mul": 2}}
+			]
 		}
 	},
 	"weapon_types":{
@@ -214,7 +233,10 @@
 			"display_name": "祭獅子の刀",
 			"weapon_type": "katana",
 			"custom_model_data": 311,
-			"attack_damage": 4.5,
+			"attack_damage": 3.0,
+			"element_attack_damage": {
+				"fire": 1.0
+			},
 			"attack_speed": 1.6,
 			"weapon_skills":[
 				{"name": "firework_helmet_breaker"}
@@ -238,6 +260,41 @@
 				"1": {"sell_price": 400},
 				"2": {"materials": [{"id":"muscleroom_silver_medal", "loot_table":"item/medal/muscleroom/silver", "count":6}], "sell_price": 400},
 				"3": {"materials": [{"id":"muscleroom_gold_medal", "loot_table":"item/medal/muscleroom/gold", "count":6}], "sell_price": 400}
+			}
+		},
+		{
+			"name": "bagikeros_hammer",
+			"display_name": "バギケロハンマー",
+			"weapon_type": "hammer",
+			"custom_model_data": 212,
+			"attack_damage": 4.5,
+			"attack_speed": 0.8,
+			"weapon_skills":[
+				{"name": "dust_impact_crater"}
+			],
+			"levels": {
+				"1": {"sell_price": 400},
+				"2": {"materials": [{"id":"bagikeros_silver_medal", "loot_table":"item/medal/bagikeros/silver", "count":6}], "sell_price": 400},
+				"3": {"materials": [{"id":"bagikeros_gold_medal", "loot_table":"item/medal/bagikeros/gold", "count":6}], "sell_price": 400}
+			}
+		},
+		{
+			"name": "carnara_spear",
+			"display_name": "カルナスピア",
+			"weapon_type": "spear",
+			"custom_model_data": 511,
+			"attack_damage": 2.5,
+			"element_attack_damage": {
+				"ice": 2.0
+			},
+			"attack_speed": 0.8,
+			"weapon_skills":[
+				{"name": "ice_beam"}
+			],
+			"levels": {
+				"1": {"sell_price": 400},
+				"2": {"materials": [{"id":"carnara_silver_medal", "loot_table":"item/medal/carnara/silver", "count":6}], "sell_price": 400},
+				"3": {"materials": [{"id":"carnara_gold_medal", "loot_table":"item/medal/carnara/gold", "count":6}], "sell_price": 400}
 			}
 		}
 	]

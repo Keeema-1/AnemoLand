@@ -39,7 +39,7 @@
 										"translate": "anemoland.common.attack_damage"
 									},
 									{
-										"text": " 🗡+5.5"
+										"text": " 🗡6.5"
 									}
 								],
 								[
@@ -101,67 +101,239 @@
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.1"
+										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.1",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡36"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡6"
+													},
+													{
+														"text": "+"
+													},
+													[
+														{
+															"text": "🔥",
+															"color": "red"
+														},
+														{
+															"text": "6",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.2"
+										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.2",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡36"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡6"
+													},
+													{
+														"text": "+"
+													},
+													[
+														{
+															"text": "🔥",
+															"color": "red"
+														},
+														{
+															"text": "6",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.3"
+										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.3",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡36"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡6"
+													},
+													{
+														"text": "+"
+													},
+													[
+														{
+															"text": "🔥",
+															"color": "red"
+														},
+														{
+															"text": "6",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.4"
+										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.4",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡36"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡6"
+													},
+													{
+														"text": "+"
+													},
+													[
+														{
+															"text": "🔥",
+															"color": "red"
+														},
+														{
+															"text": "6",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.5"
+										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.5",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡36"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡6"
+													},
+													{
+														"text": "+"
+													},
+													[
+														{
+															"text": "🔥",
+															"color": "red"
+														},
+														{
+															"text": "6",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								[
 									{
 										"text": "    ",
-										"color": "dark_gray",
+										"color": "gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.6"
+										"translate": "anemoland.weapon_skill.dust_impact_crater.lore.6",
+										"with": [
+											[
+												[
+													{
+														"text": "🗡36"
+													}
+												]
+											],
+											[
+												[
+													{
+														"text": "🗡6"
+													},
+													{
+														"text": "+"
+													},
+													[
+														{
+															"text": "🔥",
+															"color": "red"
+														},
+														{
+															"text": "6",
+															"color": "gray"
+														}
+													]
+												]
+											]
+										]
 									}
 								],
 								{
-									"text": "",
-									"italic": false,
-									"color": "dark_gray"
+									"text": ""
 								},
 								[
 									{
@@ -173,7 +345,7 @@
 										"translate": "anemoland.common.sell_price"
 									},
 									{
-										"text": " 400G"
+										"text": ": 400G"
 									}
 								]
 							],
@@ -200,7 +372,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"hammer\",loot_table:\"item/weapon/bagikeros_hammer\",sell_price:400,power_up:{add_level:1,materials:[{id:\"bagikeros_gold_medal\",loot_table:\"item/medal/bagikeros/gold\",count:6}]},status:{level:2,attack:{base:5.5,mul:18},elemental_attack:{},weapon_skills:[{id:\"dust_impact_crater\",gauge_consume:100,mul:80}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"hammer\",loot_table:\"item/weapon/bagikeros_hammer\",sell_price:400,power_up:{add_level:1,materials:[{id:\"bagikeros_gold_medal\",loot_table:\"item/medal/bagikeros/gold\",count:6}]},status:{level:2,attack:{base:5.5,mul:18},elemental_attack:{},weapon_skills:[{id:\"dust_impact_crater\",gauge_consume:100,attack_damage:[{physical: {base: 6, mul: 6}}, {physical: {base: 6, mul: 1}, fire: {base: 6, mul: 1}}]}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

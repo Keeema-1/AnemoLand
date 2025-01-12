@@ -11,4 +11,5 @@ scoreboard players operation @s attack.base /= #temp temp
 scoreboard players add @s attack.base 2
 scoreboard players set @s attack.mul 10
 scoreboard players set @s armor.mul 100
+execute if data storage temp:_ data.new_entity{variant:"gold"} run scoreboard players set @s armor.mul 20
 scoreboard players operation #attack.base temp = @s attack.base

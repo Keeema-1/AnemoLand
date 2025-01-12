@@ -1,5 +1,0 @@
-action0
-1 jump_attack
-2 firework_helmet_breaker
-3 impact_crater
-4 dust_impact_crater

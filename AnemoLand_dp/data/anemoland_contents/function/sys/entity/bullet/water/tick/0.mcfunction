@@ -3,6 +3,11 @@
     particle block{block_state:{Name:"water"}} ^ ^ ^ 0.5 0.5 0.5 1 5
     execute if entity @s[tag=bullet.water.large] run particle block{block_state:{Name:"water"}} ^ ^ ^ 1 1 1 1 5
 
+    execute if entity @s[tag=bullet.water.ice] if predicate anemoland:random_chance/0_5 run particle dust{color:[1.0, 1.0, 1.0], scale:1.0} ~ ~ ~ 0.5 0.5 0.5 0 1
+    execute if entity @s[tag=bullet.water.ice] if predicate anemoland:random_chance/0_1 run particle wax_off ~ ~ ~ 1 1 1 0 1
+    execute if entity @s[tag=bullet.water.large,tag=bullet.water.ice] run particle dust{color:[1.0, 1.0, 1.0], scale:1.0} ~ ~ ~ 0.5 0.5 0.5 0 2
+    execute if entity @s[tag=bullet.water.large,tag=bullet.water.ice] if predicate anemoland:random_chance/0_5 run particle wax_off ~ ~ ~ 1 1 1 0 1
+
 # タイマーを進める
     scoreboard players add @s action_time 1
 

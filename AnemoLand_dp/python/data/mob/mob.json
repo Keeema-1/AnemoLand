@@ -88,12 +88,16 @@
                 "dictionary": {
                     "recipe_prefix": "01013",
                     "number": "01",
-                    "detail": ["進化の過程で歩行機能を獲得した茸。"],
-                    "main_areas": ["forest"],
+                    "detail": ["その姿を目にした者は、ただならぬ幸運に恵まれる。"],
+                    "main_areas": ["mushroom"],
                     "attack_elements": ["physical"]
                 },
                 "parts":{
-                    "root": {"display_name": "whole", "armor_mul": 50, "hitbox_scale": 1.0}
+                    "root": {"display_name": "whole", "armor_mul": 20, "hitbox_scale": 1.0}
+                },
+                "status":{
+                    "xp_bonus": {"mul": 50},
+                    "gold_bonus": {"mul": 50}
                 }
             }
         },
@@ -395,7 +399,9 @@
         },
         "skin_variants": {
             "default": {},
-            "damaged": {}
+            "damaged": {},
+            "penguin": {},
+            "penguin_damaged": {}
         },
         "actions": {
             "stop": {
@@ -477,6 +483,19 @@
         "default_action": "stop",
         "parts":{
             "root": {"display_name": "whole", "armor_mul": 100, "hitbox_scale": 2.25, "elemental_damage_mul": {"fire": 60, "water": 40, "ice": 120}}
+        },
+        "variants": {
+            "penguin": {
+                "display_name": "ガラペス",
+                "custom_model_data_add": 1,
+                "dictionary": {
+                    "recipe_prefix": "01041",
+                    "number": "04",
+                    "detail": [""],
+                    "main_areas": ["ice"],
+                    "attack_elements": ["physical","water","ice"]
+                }
+            }
         },
         "root_entity": "pig",
         "display_height": 0.5,
@@ -1097,7 +1116,8 @@
                                     "bite_side": 0,
                                     "dive": 2,
                                     "tail_side": 2,
-                                    "walk": 8
+                                    "walk": 8,
+                                    "water_front": 4
                                 }
                             },
                             "back": {
@@ -1107,7 +1127,8 @@
                                     "bite_side": 2,
                                     "dive": 1,
                                     "tail_side": 1,
-                                    "walk": 8
+                                    "walk": 8,
+                                    "water_front": 3
                                 }
                             }
                         }
@@ -1122,7 +1143,8 @@
                                     "bite_side": 2,
                                     "dive": 4,
                                     "tail_side": 4,
-                                    "walk": 0
+                                    "walk": 0,
+                                    "water_front": 2
                                 }
                             },
                             "back": {
@@ -1132,7 +1154,8 @@
                                     "bite_side": 4,
                                     "dive": 2,
                                     "tail_side": 2,
-                                    "walk": 0
+                                    "walk": 0,
+                                    "water_front": 0
                                 }
                             }
                         }
