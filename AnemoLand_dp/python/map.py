@@ -555,6 +555,14 @@ for map_data in map_database["maps"]:
 				output.append('execute store result score #random temp run random value 0..' + str(weight_sum_all-1) + '\n')
 				weight_sum = 0
 				for random_event_item in random_event_data["random_events"]:
+					# レベル下限・上限チェック
+					# print(random_event_item)
+					# print(event_database["events"][random_event_item["event"]])
+					if "level_range" in event_database["events"][random_event_item["event"]]: # レベル上限下限が設定されているイベントの場合
+						level_range = event_database["events"][random_event_item["event"]]["level_range"]
+						output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+random_event_item["weight"]-1) + ' unless score #level temp matches ' + str(level_range[0]//5) + '.. run data modify storage temp:_ data.field_event.level set value ' + str(level_range[0]) + '\n')
+						output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+random_event_item["weight"]-1) + ' unless score #level temp matches ..' + str(level_range[1]//5) + ' run data modify storage temp:_ data.field_event.level set value ' + str(level_range[1]) + '\n')
+					# input()
 					predicates = ''
 					for wave_ in event_database["events"][random_event_item["event"]]["waves"]:
 						for wave_id_, wave_level_ in wave_.items():
@@ -564,11 +572,6 @@ for map_data in map_database["maps"]:
 								entity_ = enemy_["entity_id"]
 								if not entity_ in enemies_:
 									predicates += ' if data storage ' + namespace_storage + ':progress data.mob_list.' + entity_ + '{unlock:1b}'
-								level_ = enemy_["level"] + wave_level_
-								if level_ >= 20:
-									predicates += ' if data storage ' + namespace_storage + ':progress data.rank{silver:1b}'
-								if level_ >= 30:
-									predicates += ' if data storage ' + namespace_storage + ':progress data.rank{gold:1b}'
 								enemies_.add(enemy_["entity_id"])
 					output.append('execute if score #random temp matches ' + str(weight_sum) + '..' + str(weight_sum+random_event_item["weight"]-1) + '' + predicates + ' run function ' + namespace_contents + ':command/field_event/' + map_name + '/change/' + random_event_item["event"] + ' with storage temp:_ data.field_event\n')
 					weight_sum += random_event_item["weight"]

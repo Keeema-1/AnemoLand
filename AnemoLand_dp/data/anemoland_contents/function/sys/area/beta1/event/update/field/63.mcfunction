@@ -21,7 +21,11 @@
     execute if data storage anemoland:progress data.rank{gold:1b} store result score #level temp run random value 1..8
     execute store result storage temp:_ data.field_event.level int 5 run scoreboard players get #level temp
 execute store result score #random temp run random value 0..9
+execute if score #random temp matches 0..8 unless score #level temp matches 4.. run data modify storage temp:_ data.field_event.level set value 20
+execute if score #random temp matches 0..8 unless score #level temp matches ..8 run data modify storage temp:_ data.field_event.level set value 40
 execute if score #random temp matches 0..8 if data storage anemoland:progress data.mob_list.ojinushi{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/ojinushi with storage temp:_ data.field_event
+execute if score #random temp matches 9..9 unless score #level temp matches 4.. run data modify storage temp:_ data.field_event.level set value 20
+execute if score #random temp matches 9..9 unless score #level temp matches ..8 run data modify storage temp:_ data.field_event.level set value 40
 execute if score #random temp matches 9..9 if data storage anemoland:progress data.mob_list.ojinushi{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/ojinushi_double with storage temp:_ data.field_event
 data modify storage anemoland:progress data.beta1.field.63.event.bonus set value {xp:0,gold:0,drop:0}
 # ボーナス

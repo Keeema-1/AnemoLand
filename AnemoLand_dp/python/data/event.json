@@ -880,68 +880,89 @@
         "raptors": {
             "waves":[{"raptors":0}]
         },
-        "squirrel_head": {
-            "waves":[{"squirrel_head":0}]
-        },
-        "squirrel_head_double": {
-            "waves":[{"squirrel_head_double":0}]
-        },
         "king_boar": {
-            "waves":[{"king_boar":0}]
+            "waves":[{"king_boar":0}],
+            "level_range": [5,40]
         },
         "king_boar_double": {
-            "waves":[{"king_boar_double":0}]
+            "waves":[{"king_boar_double":0}],
+            "level_range": [5,40]
+        },
+        "squirrel_head": {
+            "waves":[{"squirrel_head":0}],
+            "level_range": [5,40]
+        },
+        "squirrel_head_double": {
+            "waves":[{"squirrel_head_double":0}],
+            "level_range": [5,40]
         },
         "garapapas": {
-            "waves":[{"garapapas":0}]
+            "waves":[{"garapapas":0}],
+            "level_range": [10,40]
         },
         "garapapas_double": {
-            "waves":[{"garapapas_double":0}]
+            "waves":[{"garapapas_double":0}],
+            "level_range": [10,40]
         },
         "garapapas_penguin": {
-            "waves":[{"garapapas_penguin":0}]
+            "waves":[{"garapapas_penguin":0}],
+            "level_range": [10,40]
         },
         "martellos": {
-            "waves":[{"martellos":0}]
+            "waves":[{"martellos":0}],
+            "level_range": [20,40]
         },
         "martellos_double": {
-            "waves":[{"martellos_double":0}]
+            "waves":[{"martellos_double":0}],
+            "level_range": [20,40]
         },
         "martellos_cherry": {
-            "waves":[{"martellos_cherry":0}]
+            "waves":[{"martellos_cherry":0}],
+            "level_range": [20,40]
         },
         "martellos_mushroom": {
-            "waves":[{"martellos_mushroom":0}]
+            "waves":[{"martellos_mushroom":0}],
+            "level_range": [20,40]
         },
         "martellos_stone": {
-            "waves":[{"martellos_stone":0}]
+            "waves":[{"martellos_stone":0}],
+            "level_range": [20,40]
         },
         "martellos_ice": {
-            "waves":[{"martellos_ice":0}]
+            "waves":[{"martellos_ice":0}],
+            "level_range": [20,40]
         },
         "ojinushi": {
-            "waves":[{"ojinushi":0}]
+            "waves":[{"ojinushi":0}],
+            "level_range": [20,40]
         },
         "ojinushi_double": {
-            "waves":[{"ojinushi_double":0}]
+            "waves":[{"ojinushi_double":0}],
+            "level_range": [20,40]
         },
         "muscleroom": {
-            "waves":[{"muscleroom":0}]
+            "waves":[{"muscleroom":0}],
+            "level_range": [20,40]
         },
         "muscleroom_double": {
-            "waves":[{"muscleroom_double":0}]
+            "waves":[{"muscleroom_double":0}],
+            "level_range": [20,40]
         },
         "bagikeros": {
-            "waves":[{"bagikeros":0}]
+            "waves":[{"bagikeros":0}],
+            "level_range": [30,40]
         },
         "bagikeros_double": {
-            "waves":[{"bagikeros_double":0}]
+            "waves":[{"bagikeros_double":0}],
+            "level_range": [30,40]
         },
         "carnara": {
-            "waves":[{"carnara":0}]
+            "waves":[{"carnara":0}],
+            "level_range": [30,40]
         },
         "carnara_double": {
-            "waves":[{"carnara_double":0}]
+            "waves":[{"carnara_double":0}],
+            "level_range": [30,40]
         }
     },
     "random_events": {

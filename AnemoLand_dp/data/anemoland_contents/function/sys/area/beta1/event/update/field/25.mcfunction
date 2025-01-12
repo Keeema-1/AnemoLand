@@ -33,6 +33,8 @@ execute if score #random temp matches 18..19 if data storage anemoland:progress 
 execute if score #random temp matches 20..21 if data storage anemoland:progress data.mob_list.spider{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/spiders with storage temp:_ data.field_event
 execute if score #random temp matches 22..23 if data storage anemoland:progress data.mob_list.squirrel{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/squirrels with storage temp:_ data.field_event
 execute if score #random temp matches 24..25 if data storage anemoland:progress data.mob_list.garapas{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/garapases with storage temp:_ data.field_event
+execute if score #random temp matches 26..33 unless score #level temp matches 1.. run data modify storage temp:_ data.field_event.level set value 5
+execute if score #random temp matches 26..33 unless score #level temp matches ..8 run data modify storage temp:_ data.field_event.level set value 40
 execute if score #random temp matches 26..33 if data storage anemoland:progress data.mob_list.king_boar{unlock:1b} if data storage anemoland:progress data.mob_list.boar{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/king_boar with storage temp:_ data.field_event
 data modify storage anemoland:progress data.beta1.field.25.event.bonus set value {xp:0,gold:0,drop:0}
 # ボーナス

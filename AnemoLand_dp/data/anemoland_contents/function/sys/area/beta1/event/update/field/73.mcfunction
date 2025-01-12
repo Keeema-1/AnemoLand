@@ -31,10 +31,20 @@ execute if score #random temp matches 15..22 if data storage anemoland:progress 
 execute if score #random temp matches 23..28 if data storage anemoland:progress data.mob_list.squirrel{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/squirrels with storage temp:_ data.field_event
 execute if score #random temp matches 29..30 if data storage anemoland:progress data.mob_list.boar{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/boars with storage temp:_ data.field_event
 execute if score #random temp matches 31..31 if data storage anemoland:progress data.mob_list.spider{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/spiders with storage temp:_ data.field_event
+execute if score #random temp matches 32..32 unless score #level temp matches 1.. run data modify storage temp:_ data.field_event.level set value 5
+execute if score #random temp matches 32..32 unless score #level temp matches ..8 run data modify storage temp:_ data.field_event.level set value 40
 execute if score #random temp matches 32..32 if data storage anemoland:progress data.mob_list.king_boar{unlock:1b} if data storage anemoland:progress data.mob_list.boar{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/king_boar with storage temp:_ data.field_event
+execute if score #random temp matches 33..42 unless score #level temp matches 1.. run data modify storage temp:_ data.field_event.level set value 5
+execute if score #random temp matches 33..42 unless score #level temp matches ..8 run data modify storage temp:_ data.field_event.level set value 40
 execute if score #random temp matches 33..42 if data storage anemoland:progress data.mob_list.squirrel_head{unlock:1b} if data storage anemoland:progress data.mob_list.squirrel{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/squirrel_head with storage temp:_ data.field_event
+execute if score #random temp matches 43..52 unless score #level temp matches 4.. run data modify storage temp:_ data.field_event.level set value 20
+execute if score #random temp matches 43..52 unless score #level temp matches ..8 run data modify storage temp:_ data.field_event.level set value 40
 execute if score #random temp matches 43..52 if data storage anemoland:progress data.mob_list.martellos{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/martellos_ice with storage temp:_ data.field_event
+execute if score #random temp matches 53..57 unless score #level temp matches 2.. run data modify storage temp:_ data.field_event.level set value 10
+execute if score #random temp matches 53..57 unless score #level temp matches ..8 run data modify storage temp:_ data.field_event.level set value 40
 execute if score #random temp matches 53..57 if data storage anemoland:progress data.mob_list.garapapas{unlock:1b} if data storage anemoland:progress data.mob_list.garapas{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/garapapas_penguin with storage temp:_ data.field_event
+execute if score #random temp matches 58..62 unless score #level temp matches 6.. run data modify storage temp:_ data.field_event.level set value 30
+execute if score #random temp matches 58..62 unless score #level temp matches ..8 run data modify storage temp:_ data.field_event.level set value 40
 execute if score #random temp matches 58..62 if data storage anemoland:progress data.mob_list.carnara{unlock:1b} run function anemoland_contents:command/field_event/beta1/change/carnara with storage temp:_ data.field_event
 data modify storage anemoland:progress data.beta1.field.73.event.bonus set value {xp:0,gold:0,drop:0}
 # ボーナス
