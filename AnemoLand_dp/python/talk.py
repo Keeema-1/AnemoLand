@@ -6,7 +6,7 @@ data_path = 'data/talk.json'
 with open(data_path , encoding='utf-8') as f:
 	talk_database = json.load(f)
 
-base_path = '../data/anemoland/function/'
+base_path = '../data/anemoland_contents/function/'
 
 def makedir(path):
 	if not os.path.isdir(os.path.dirname(path)):
@@ -19,11 +19,11 @@ line_len = 30
 for talker in talk_database["talkers"]:
 
 	output = []
-	path = base_path + 'sys/entity/npc/' + talker["name"] + '/talk/branch.mcfunction'
+	path = base_path + 'sys/talk/' + talker["name"] + '/branch.mcfunction'
 	makedir(path)
 	for talk_name, talk in talker["talks"].items():
 		if talk["trigger"] == "talk":
-			output.append("execute if score #npc." + talker["name"] + " talk0 matches " + str(talk["score"]) + " run function anemoland:sys/entity/npc/" + talker["name"] + "/talk/" + talk_name + "/0\n")
+			output.append("execute if score #npc." + talker["name"] + " talk0 matches " + str(talk["score"]) + " run return run function anemoland_contents:sys/talk/" + talker["name"] + "/" + talk_name + "/0\n")
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -33,7 +33,7 @@ for talker in talk_database["talkers"]:
 
 		if talk["type"] == "display":
 			output = []
-			path = base_path + 'sys/entity/npc/' + talker["name"] + '/talk/' + talk_name + '/0.mcfunction'
+			path = base_path + 'sys/talk/' + talker["name"] + '/' + talk_name + '/0.mcfunction'
 			makedir(path)
 			output.append("scoreboard players add #npc." + talker["name"] + " talk1 1\n")
 			output.append("execute if score #npc." + talker["name"] + " talk1 matches " + str(len(talk["contents"])+1) + ".. run scoreboard players set #npc." + talker["name"] + " talk1 0\n")
@@ -51,10 +51,10 @@ for talker in talk_database["talkers"]:
 				output = []
 				selector = '@a'
 				if not talk["important"]:
-					selector += '[scores={area1=' + str(talker["area"][0]) + ',area2=' + str(talker["area"][1]) + '}]'
+					selector += ' at @s if entity @e[type=villager,tag=talker,tag=' + talker["name"] + ',distance=..64]'
 				if "selector" in talk:
 					selector = talk["selector"]
-				path = base_path + 'sys/entity/npc/' + talker["name"] + '/talk/' + talk_name + '/' + str(i) + '.mcfunction'
+				path = base_path + 'sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i) + '.mcfunction'
 				makedir(path)
 				if i == 0:
 					if not (talk["important"] and talk["trigger"] == "command"):
@@ -62,9 +62,9 @@ for talker in talk_database["talkers"]:
 					if not talk["score"] < 0:
 						output.append("scoreboard players set #npc." + talker["name"] + " talk1 -1\n")
 				if "icon" in talk_content:
-					output.append('tellraw ' + selector + ' [{"translate":"' + talk_content["icon"] + '"}]\n')
+					output.append('execute as ' + selector + ' run tellraw @s [{"translate":"' + talk_content["icon"] + '"}]\n')
 				if talk_content["show_name"]:
-					output.append('tellraw ' + selector + ' ["         ",{"text":"<' + talker["display_name"] + '>"}]\n')
+					output.append('execute as ' + selector + ' run tellraw @s ["         ",{"text":"<' + talker["display_name"] + '>"}]\n')
 				schedule_time = 1
 				if talk_content["type"] == "text":
 					for text in talk_content["text"]:
@@ -87,10 +87,10 @@ for talker in talk_database["talkers"]:
 							if "color" in text_part:
 								text_str += ',"color":"' + text_part["color"] + '"'
 							text_str += "}"
-						# output.append('tellraw ' + selector + ' [" "," "," "," "," "," "," "," "," "," "," "' + text_str + ']\n')
-						output.append('tellraw ' + selector + ' ["           "' + text_str + ']\n')
+						# output.append('execute as ' + selector + ' run tellraw @s [" "," "," "," "," "," "," "," "," "," "," "' + text_str + ']\n')
+						output.append('execute as ' + selector + ' run tellraw @s ["           "' + text_str + ']\n')
 					if "icon" in talk_content and len(talk_content["text"]) < 3:
-						output.append('tellraw ' + selector + ' "' + "\n"*(len(talk_content["text"])-3) + '"\n')
+						output.append('execute as ' + selector + ' run tellraw @s "' + "\n"*(len(talk_content["text"])-3) + '"\n')
 				elif talk_content["type"] == "choices":
 					for choice in talk_content["choices"]:
 						trigger_score = trigger_offset + talker["trigger_offset"]
@@ -98,7 +98,7 @@ for talker in talk_database["talkers"]:
 							trigger_score += choice["trigger"]
 						elif "talk" in choice:
 							trigger_score += talker["talks"][choice["talk"]]["score"]
-						output.append('tellraw ' + selector + ' ["           ",{"text":"[' + choice["text"] + ']","color":"light_purple","clickEvent": {"action": "run_command","value": "/trigger trigger set ' + str(trigger_score) + '"}}]\n')
+						output.append('execute as ' + selector + ' run tellraw @s ["           ",{"text":"[' + choice["text"] + ']","color":"light_purple","clickEvent": {"action": "run_command","value": "/trigger trigger set ' + str(trigger_score) + '"}}]\n')
 				if talk_content["schedule_time_overlay"] >= 0:
 					schedule_time = max(talk_content["schedule_time_overlay"], 1)
 				schedule_time += talk_content["schedule_time_add"]
@@ -107,19 +107,19 @@ for talker in talk_database["talkers"]:
 						output.append(function_ + '\n')
 				schedule_time_slow = schedule_time * 1.2
 				schedule_time_fast = max(schedule_time * 0.8, 1)
-				output.append('execute unless data storage anemoland:settings data{text_speed:0b} unless data storage anemoland:settings data{text_speed:0b} run schedule function anemoland:sys/entity/npc/' + talker["name"] + '/talk/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time)) + 't\n')
-				output.append('execute if data storage anemoland:settings data{text_speed:0b} run schedule function anemoland:sys/entity/npc/' + talker["name"] + '/talk/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time_slow)) + 't\n')
-				output.append('execute if data storage anemoland:settings data{text_speed:2b} run schedule function anemoland:sys/entity/npc/' + talker["name"] + '/talk/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time_fast)) + 't\n')
+				output.append('execute unless data storage anemoland:settings data{text_speed:0b} unless data storage anemoland:settings data{text_speed:0b} run schedule function anemoland_contents:sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time)) + 't\n')
+				output.append('execute if data storage anemoland:settings data{text_speed:0b} run schedule function anemoland_contents:sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time_slow)) + 't\n')
+				output.append('execute if data storage anemoland:settings data{text_speed:2b} run schedule function anemoland_contents:sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time_fast)) + 't\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
 			
 			output = []
-			path = base_path + 'sys/entity/npc/' + talker["name"] + '/talk/' + talk_name + '/' + str(i+1) + '.mcfunction'
+			path = base_path + 'sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i+1) + '.mcfunction'
 			makedir(path)
 			if not talk["score"] < 0:
 				output.append('scoreboard players set #npc.' + talker["name"] + ' talk1 0\n')
 			if "after" in talk:
-				output.append('function anemoland:command/talk/' + talker["name"] + '/' + talk["after"] + '\n')
+				output.append('function anemoland_contents:command/talk/' + talker["name"] + '/' + talk["after"] + '\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -152,9 +152,9 @@ for talker in talk_database["talkers"]:
 			if "start_delay_ticks" in talk:
 				start_delay = talk["start_delay_ticks"]
 			if start_delay > 0:
-				output.append("schedule function anemoland:sys/entity/npc/" + talker["name"] + "/talk/" + talk_name + "/0 " + str(start_delay) + "t\n")
+				output.append("schedule function anemoland_contents:sys/talk/" + talker["name"] + "/" + talk_name + "/0 " + str(start_delay) + "t\n")
 			else:
-				output.append("function anemoland:sys/entity/npc/" + talker["name"] + "/talk/" + talk_name + "/0\n")
+				output.append("function anemoland_contents:sys/talk/" + talker["name"] + "/" + talk_name + "/0\n")
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -177,7 +177,7 @@ for talker in talk_database["talkers"]:
 						elif "talk" in choice:
 							trigger_score += talker["talks"][choice["talk"]]["score"]
 						if "talk" in choice:
-							output.append("execute if score @s trigger matches " + str(trigger_score) + " run function anemoland:command/talk/" + talker["name"] + "/" + choice["talk"] + "\n")
+							output.append("execute if score @s trigger matches " + str(trigger_score) + " run function anemoland_contents:command/talk/" + talker["name"] + "/" + choice["talk"] + "\n")
 						if "command" in choice:
 							output.append("execute if score @s trigger matches " + str(trigger_score) + " run " + choice["command"] + "\n")
 with open(path, 'w', encoding='utf-8') as f:

@@ -118,7 +118,7 @@
 			}
 		},
 		{
-			"name": "girl1",
+			"name": "navigator1",
 			"display_name": "ナビゲーター マキ",
 			"trigger_offset": 1000,
 			"area": [3, -43],
@@ -143,7 +143,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.smile",
+							"icon": "anemoland.character.girl1.smile",
 							"show_name": true,
 							"text": [
 								[
@@ -183,7 +183,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.smile",
+							"icon": "anemoland.character.girl1.smile",
 							"show_name": true,
 							"text": [
 								[
@@ -231,7 +231,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -280,7 +280,7 @@
 						},
 						{
 							"type": "text",
-							"icon": "character.girl1.smile",
+							"icon": "anemoland.character.girl1.smile",
 							"show_name": false,
 							"text": [
 								[
@@ -304,7 +304,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -392,7 +392,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -429,7 +429,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -540,7 +540,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -626,7 +626,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -751,7 +751,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -880,7 +880,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -945,7 +945,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -1016,7 +1016,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -1118,7 +1118,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -1163,7 +1163,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -1246,7 +1246,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl1.speak",
+							"icon": "anemoland.character.girl1.speak",
 							"show_name": true,
 							"text": [
 								[
@@ -1286,7 +1286,7 @@
 			}
 		},
 		{
-			"name": "girl2",
+			"name": "sally",
 			"display_name": "サリー",
 			"trigger_offset": 1100,
 			"area": [3, -43],
@@ -1311,7 +1311,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl2.smile",
+							"icon": "anemoland.character.girl2.smile",
 							"show_name": true,
 							"text": [
 								[
@@ -1360,7 +1360,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl2.smile",
+							"icon": "anemoland.character.girl2.smile",
 							"show_name": true,
 							"text": [
 								[
@@ -1426,7 +1426,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl2.smile",
+							"icon": "anemoland.character.girl2.smile",
 							"show_name": true,
 							"text": [
 								[
@@ -1491,7 +1491,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl2.smile",
+							"icon": "anemoland.character.girl2.smile",
 							"show_name": true,
 							"text": [
 								[
@@ -1516,7 +1516,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl2.smile",
+							"icon": "anemoland.character.girl2.smile",
 							"show_name": true,
 							"text": [
 								[
@@ -1539,7 +1539,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl2.smile",
+							"icon": "anemoland.character.girl2.smile",
 							"show_name": true,
 							"text": [
 								[
@@ -1610,7 +1610,7 @@
 					"contents": [
 						{
 							"type": "text",
-							"icon": "character.girl2.smile",
+							"icon": "anemoland.character.girl2.smile",
 							"show_name": true,
 							"text": [
 								[
