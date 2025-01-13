@@ -640,6 +640,23 @@
             "bgm": "martellos",
             "boss_flag": 1
         },
+        "martellos_default_and_cherry": {
+            "enemies": [
+                {
+                    "entity_id": "martellos",
+                    "level": 0,
+                    "pos": [5, 0]
+                },
+                {
+                    "entity_id": "martellos",
+                    "variant": "cherry",
+                    "level": 0,
+                    "pos": [-5, 0]
+                }
+            ],
+            "bgm": "martellos",
+            "boss_flag": 1
+        },
         "martellos_and_squirrel_head": {
             "enemies": [
                 {
@@ -898,7 +915,15 @@
         },
         "garapapas": {
             "waves":[{"garapapas":0}],
-            "level_range": [10,40]
+            "level_range": [10,40],
+            "triggers": {
+                "first_clear": [
+                    {
+                        "type": "command",
+                        "command": "function anemoland:command/progress/beta1/npc/boy1/summon"
+                    }
+                ]
+            }
         },
         "garapapas_double": {
             "waves":[{"garapapas_double":0}],
@@ -908,6 +933,21 @@
             "waves":[{"garapapas_penguin":0}],
             "level_range": [10,40]
         },
+        "garapapas_and_squirrel_head_with_boy1": {
+            "waves":[{"garapapas_and_squirrel_head":0}],
+            "npc": {"npc1": {"npc_id": 1}},
+            "random_event_enable": 0,
+            "level_range": [10,40],
+            "triggers": {
+                "clear": [
+                    {
+                        "type": "talk",
+                        "npc_id": "boy1",
+                        "talk_id": "quest1_clear"
+                    }
+                ]
+            }
+        },
         "martellos": {
             "waves":[{"martellos":0}],
             "level_range": [20,40]
@@ -915,6 +955,21 @@
         "martellos_double": {
             "waves":[{"martellos_double":0}],
             "level_range": [20,40]
+        },
+        "martellos_double_with_sally": {
+            "waves":[{"martellos_default_and_cherry":0}],
+            "npc": {"npc1": {"npc_id": 2}},
+            "random_event_enable": 0,
+            "level_range": [20,40],
+            "triggers": {
+                "clear": [
+                    {
+                        "type": "talk",
+                        "npc_id": "sally",
+                        "talk_id": "quest1_clear"
+                    }
+                ]
+            }
         },
         "martellos_cherry": {
             "waves":[{"martellos_cherry":0}],
@@ -934,7 +989,15 @@
         },
         "ojinushi": {
             "waves":[{"ojinushi":0}],
-            "level_range": [20,40]
+            "level_range": [20,40],
+            "triggers": {
+                "first_clear": [
+                    {
+                        "type": "command",
+                        "command": "function anemoland:command/progress/beta1/npc/sally/summon"
+                    }
+                ]
+            }
         },
         "ojinushi_double": {
             "waves":[{"ojinushi_double":0}],

@@ -626,8 +626,8 @@ for mob_name, mob_data in mob_database.items():
 	makedir(path)
 	output = []
 	output.append('function ' + namespace_core + ':sys/entity/common/follow_player/stop\n')
-	if "emote" in mob_data and "after_clear" in mob_data["emote"]:
-		output.append('execute if score @s action_time matches 40 if entity @s[tag=clear] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/emote/after_clear/start\n')
+	if "emote" in mob_data:
+		output.append('execute if score @s action_time matches 40 if entity @s[tag=clear] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/emote/after_clear/branch\n')
 	output.append('execute unless entity @a[tag=pet_owner,distance=..8] if entity @a[tag=pet_owner,distance=..32] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/follow_player/walk/start\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -661,23 +661,34 @@ for mob_name, mob_data in mob_database.items():
 
 	# emote
 	if "emote" in mob_data:
-		if "after_clear" in mob_data["emote"]:
-			emote_data = mob_data["emote"]["after_clear"]
-			path = base_path + mob_name + '/emote/after_clear/start.mcfunction'
-			makedir(path)
-			output = []
-			if "animation" in emote_data:
-				output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/' + emote_data["animation"] + '\n')
-			if "chat_display" in emote_data:
-				# output.append('execute on passengers if entity @s[tag=chat_display] run data modify entity @s text set value \'{"translate":"' + emote_data["chat_display"]["icon"] + '"}\'\n')
-				if len(emote_data["chat_display"]["talk_pool"]) > 1:
-					output.append('execute store result score #temp temp run random value 1..' + str(len(emote_data["chat_display"]["talk_pool"])) + '\n')
-					for i, talk_item in enumerate(emote_data["chat_display"]["talk_pool"]):
-						output.append('execute if score #temp temp matches ' + str(i+1) + ' on passengers if entity @s[tag=chat_display] run data modify entity @s text set value \'{"translate":"' + talk_item + '"}\'\n')
-				else:
-					output.append('execute on passengers if entity @s[tag=chat_display] run data modify entity @s text set value \'{"translate":"' + emote_data["chat_display"]["talk_pool"][0] + '"}\'\n')
-			with open(path, 'w', encoding='utf-8') as f:
-				f.writelines(output)
+		path = base_path + mob_name + '/emote/after_clear/branch.mcfunction'
+		makedir(path)
+		output = []
+		for variant_id, variant_data in mob_data["emote"].items():
+			output.append('execute if entity @s[tag=variant.' + variant_id + '] run function anemoland_contents:sys/entity/mob/' + mob_name + '/emote/after_clear/' + variant_id + '\n')
+		with open(path, 'w', encoding='utf-8') as f:
+			f.writelines(output)
+
+	# emote
+	if "emote" in mob_data:
+		for variant_id, variant_data in mob_data["emote"].items():
+			if "after_clear" in variant_data:
+				emote_data = variant_data["after_clear"]
+				path = base_path + mob_name + '/emote/after_clear/' + variant_id + '.mcfunction'
+				makedir(path)
+				output = []
+				if "animation" in emote_data:
+					output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/' + emote_data["animation"] + '\n')
+				if "chat_display" in emote_data:
+					# output.append('execute on passengers if entity @s[tag=chat_display] run data modify entity @s text set value \'{"translate":"' + emote_data["chat_display"]["icon"] + '"}\'\n')
+					if len(emote_data["chat_display"]["talk_pool"]) > 1:
+						output.append('execute store result score #temp temp run random value 1..' + str(len(emote_data["chat_display"]["talk_pool"])) + '\n')
+						for i, talk_item in enumerate(emote_data["chat_display"]["talk_pool"]):
+							output.append('execute if score #temp temp matches ' + str(i+1) + ' on passengers if entity @s[tag=chat_display] run data modify entity @s text set value \'{"translate":"' + talk_item + '"}\'\n')
+					else:
+						output.append('execute on passengers if entity @s[tag=chat_display] run data modify entity @s text set value \'{"translate":"' + emote_data["chat_display"]["talk_pool"][0] + '"}\'\n')
+				with open(path, 'w', encoding='utf-8') as f:
+					f.writelines(output)
 
 	# state/tick
 	path = base_path + mob_name + '/state/tick.mcfunction'
@@ -834,6 +845,8 @@ for mob_name, mob_data in mob_database.items():
 		path = base_path + mob_name + '/summon/common/variant/' + variant_id + '.mcfunction'
 		makedir(path)
 		output = []
+		if len(variant_id_list) > 1 and variant_id in mob_data["variants"] and "weapon" in mob_data["variants"][variant_id]:
+			output.append('execute as @e[type=item_display,tag=aj.' + mob_name + '.bone.weapon,distance=..8,sort=nearest,limit=1] run data modify entity @s item set value ' + mob_data["variants"][variant_id]["weapon"] + '\n')
 		output.append('tag @s add variant.' + variant_id + '\n')
 		output.append('data modify entity @s CustomName set value \'{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name"}\'\n')
 		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"enemy"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')

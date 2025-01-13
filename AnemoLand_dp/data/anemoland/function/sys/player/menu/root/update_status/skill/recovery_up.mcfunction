@@ -10,4 +10,4 @@ scoreboard players operation #skill_level.decimal1 temp = #skill_level temp
 scoreboard players operation #skill_level.decimal1 temp %= #const temp
 scoreboard players set #const temp 0
 scoreboard players operation #skill_level.decimal1 temp /= #const temp
-item modify entity @s inventory.0 anemoland:player_menu/main/status/skill/recovery_up
+item modify entity @s inventory.0 anemoland:player_menu/status/skill/recovery_up

@@ -1,3 +1,4 @@
+function anemoland_contents:command/progress/unlock/armor/carnara
 execute if entity @s[tag=variant.default] run recipe give @a anemoland_contents:boss/02080_carnara
 data modify storage anemoland:progress data.mob_list.carnara.unlock set value 1b
 execute if score @s level matches 15.. run data modify storage anemoland:progress data.mob_list.carnara.defeated_levels.15 set value 1b

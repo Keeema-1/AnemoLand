@@ -1,7 +1,6 @@
 {
-	"talkers":[
-		{
-			"name": "system",
+	"talkers":{
+		"system": {
 			"display_name": "",
 			"trigger_offset": 9000,
 			"talks": {
@@ -117,11 +116,9 @@
 				}
 			}
 		},
-		{
-			"name": "navigator1",
+		"navigator1": {
 			"display_name": "ナビゲーター マキ",
 			"trigger_offset": 1000,
-			"area": [3, -43],
 			"talks": {
 				"default": {
 					"score": 1,
@@ -1285,11 +1282,9 @@
 				}
 			}
 		},
-		{
-			"name": "sally",
+		"sally": {
 			"display_name": "サリー",
 			"trigger_offset": 1100,
-			"area": [3, -43],
 			"talks": {
 				"default": {
 					"score": 1,
@@ -1303,7 +1298,7 @@
 					],
 					"after": "default"
 				},
-				"double_martellos_1": {
+				"quest1_ask": {
 					"score": 11,
 					"type": "chat",
 					"trigger": "talk",
@@ -1344,15 +1339,15 @@
 							"type": "choices",
 							"show_name": false,
 							"choices": [
-								{"text": "依頼を引き受ける", "talk": "double_martellos_2"}
+								{"text": "依頼を引き受ける", "talk": "quest1_take"}
 							],
 							"schedule_time_overlay": -1,
 							"schedule_time_add": 0
 						}
 					],
-					"after": "double_martellos_1"
+					"after": "quest1_ask"
 				},
-				"double_martellos_2": {
+				"quest1_take": {
 					"score": 12,
 					"type": "chat",
 					"trigger": "command",
@@ -1412,13 +1407,13 @@
 							"schedule_time_overlay": -1,
 							"schedule_time_add": 0,
 							"functions": [
-								"function anemoland:command/field_event/demo2/change/martellos_double_20_with_sally {field_id:62}"
+								"function anemoland_contents:command/field_event/beta1/change/martellos_double_with_sally {field_id:52,level:20}"
 							]
 						}
 					],
-					"after": "double_martellos_2_"
+					"after": "quest1_take_re"
 				},
-				"double_martellos_2_": {
+				"quest1_take_re": {
 					"score": 13,
 					"type": "chat",
 					"trigger": "talk",
@@ -1475,13 +1470,13 @@
 							"schedule_time_overlay": -1,
 							"schedule_time_add": 0,
 							"functions": [
-								"function anemoland:command/field_event/demo2/change/martellos_double_20_with_sally {field_id:62}"
+								"function anemoland_contents:command/field_event/beta1/change/martellos_double_with_sally {field_id:52,level:20}"
 							]
 						}
 					],
-					"after": "double_martellos_2_"
+					"after": "quest1_take_re"
 				},
-				"double_martellos_enter": {
+				"quest1_start": {
 					"score": -1,
 					"type": "chat",
 					"trigger": "command",
@@ -1506,7 +1501,7 @@
 						}
 					]
 				},
-				"double_martellos_clear": {
+				"quest1_clear": {
 					"score": -1,
 					"type": "chat",
 					"trigger": "command",
@@ -1520,7 +1515,7 @@
 							"show_name": true,
 							"text": [
 								[
-									{"text": "討伐達成だ！"}
+									{"text": "討伐成功だ！"}
 								],
 								[
 									{"text": "手伝ってくれてありがとな、頼もしかったぜ！"}
@@ -1529,9 +1524,10 @@
 							"schedule_time_overlay": -1,
 							"schedule_time_add": 0
 						}
-					]
+					],
+					"after": "quest1_after_clear"
 				},
-				"double_martellos_after_clear": {
+				"quest1_after_clear": {
 					"score": 16,
 					"type": "chat",
 					"trigger": "talk",
@@ -1555,7 +1551,7 @@
 							"text": [
 								[
 									{"text": "もしアタシを助っ人として呼びたいと思ったら、メニューの"},
-									{"text": "チームタブ","color":"aqua"},
+									{"text": "ペット・助っ人タブ","color":"aqua"},
 									{"text": "の"},
 									{"text": "助っ人を呼ぶ","color":"aqua"},
 									{"text": "を使ってくれ。"}
@@ -1588,20 +1584,11 @@
 							"functions": [
 								"function anemoland:command/progress/unlock/supporter/girl2"
 							]
-						},
-						{
-							"type": "choices",
-							"show_name": false,
-							"choices": [
-								{"text": "再び依頼を引き受ける 【マルテロス2頭の同時討伐】", "talk": "double_martellos_2"}
-							],
-							"schedule_time_overlay": -1,
-							"schedule_time_add": 0
 						}
 					],
-					"after": "double_martellos_restart"
+					"after": "quest1_ask_re"
 				},
-				"double_martellos_restart": {
+				"quest1_ask_re": {
 					"score": 17,
 					"type": "chat",
 					"trigger": "talk",
@@ -1635,15 +1622,389 @@
 							"type": "choices",
 							"show_name": false,
 							"choices": [
-								{"text": "再び依頼を引き受ける 【マルテロス2頭の同時討伐】", "talk": "double_martellos_2"}
+								{"text": "再び依頼を引き受ける 【マルテロス2頭の同時討伐】", "talk": "quest1_take_re"}
 							],
 							"schedule_time_overlay": -1,
 							"schedule_time_add": 0
 						}
 					],
-					"after": "double_martellos_restart"
+					"after": "quest1_ask_re"
+				}
+			}
+		},
+		"boy1": {
+			"display_name": "ミナト",
+			"trigger_offset": 1200,
+			"talks": {
+				"default": {
+					"score": 1,
+					"type": "display",
+					"trigger": "talk",
+					"important": false,
+					"contents": [
+						[
+							{"text": "あ、どうも..."}
+						]
+					],
+					"after": "default"
+				},
+				"quest1_ask": {
+					"score": 11,
+					"type": "chat",
+					"trigger": "talk",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.boy1.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "初めまして!僕はミナトといいます。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"icon": "anemoland.character.boy1.worry",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "いきなりですが、ちょっとお願い事を聞いて欲しいんです...。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "最近スクルスヘッドとガラパパスが水辺で暴れ回っていて、その討伐を頼まれたんですけど..."},
+									{"text": "とても一人じゃ自信がないんです。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "どうか討伐を手伝って貰えませんか...！"},
+									{"text": "お願いします...！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "choices",
+							"show_name": false,
+							"choices": [
+								{"text": "依頼を引き受ける", "talk": "quest1_take"}
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "quest1_ask"
+				},
+				"quest1_take": {
+					"score": 12,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.boy1.happy",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "本当ですか！ありがとうございます〜！"}
+								],
+								[
+									{"text": "では改めて、僕の依頼を説明しますね。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "あなたには、僕と一緒にスクルスヘッド・ガラパパスの同時討伐を行ってほしいんです。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マップ上からスクルスヘッド・ガラパパスが同時出現しているフィールドに移動してください。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "僕はそこで待っておきますから、あなたが到着したら討伐を開始しましょう。"}
+								],
+								[
+									{"text": "じゃあ、よろしくお願いします！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0,
+							"functions": [
+								"function anemoland_contents:command/field_event/beta1/change/garapapas_and_squirrel_head_with_boy1 {field_id:32,level:15}"
+							]
+						}
+					],
+					"after": "quest1_take_re"
+				},
+				"quest1_take_re": {
+					"score": 13,
+					"type": "chat",
+					"trigger": "talk",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.boy1.happy",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "本当ですか！ありがとうございます〜！"}
+								],
+								[
+									{"text": "では改めて、僕の依頼を説明しますね。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "あなたには、僕と一緒にスクルスヘッド・ガラパパスの同時討伐を行ってほしいんです。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "マップ上からスクルスヘッドとガラパパスが同時出現しているフィールドに移動してください。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "僕はそこで待っておきますから、あなたが到着したら討伐を開始しましょう。"}
+								],
+								[
+									{"text": "じゃあ、よろしくお願いします！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0,
+							"functions": [
+								"function anemoland_contents:command/field_event/beta1/change/garapapas_and_squirrel_head_with_boy1 {field_id:32,level:15}"
+							]
+						}
+					],
+					"after": "quest1_take_re"
+				},
+				"quest1_enter": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"selector": "@a[distance=..64]",
+					"start_delay_ticks": 0,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.boy1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "足を引っ張らないように頑張ります...！"}
+								],
+								[
+									{"text": "では行きましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"quest1_clear": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"selector": "@a[distance=..64]",
+					"start_delay_ticks": 0,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.boy1.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "目標達成ですね！"}
+								],
+								[
+									{"text": "本当に助かりました、ありがとうございます！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "quest1_after_clear"
+				},
+				"quest1_after_clear": {
+					"score": 16,
+					"type": "chat",
+					"trigger": "talk",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.boy1.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "改めて、手伝ってくれてありがとうございました！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "もし僕を助っ人として呼びたいと思ったら、メニューの"},
+									{"text": "ペット・助っ人タブ","color":"aqua"},
+									{"text": "の"},
+									{"text": "助っ人を呼ぶ","color":"aqua"},
+									{"text": "を使ってください。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "助っ人に僕を選べば、今回みたいに僕が戦闘に参加するようになりますよ。"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "...できれば安全な場所でお願いしたいですけど！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "改めて、今回はありがとうございました！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0,
+							"functions": [
+								"function anemoland_contents:command/progress/unlock/supporter/boy1"
+							]
+						}
+					],
+					"after": "quest1_ask_re"
+				},
+				"quest1_ask_re": {
+					"score": 17,
+					"type": "chat",
+					"trigger": "talk",
+					"important": false,
+					"immediate": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.boy1.smile",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "この間は手伝ってくれてありがとうございました！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "choices",
+							"show_name": false,
+							"choices": [
+								{"text": "再び依頼を引き受ける 【スクルスヘッドとガラパパスの同時討伐】", "talk": "quest1_ask_re"}
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "quest1_ask_re"
 				}
 			}
 		}
-	]
+	}
 }

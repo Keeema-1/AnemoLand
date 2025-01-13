@@ -1,0 +1,1 @@
+function anemoland_contents:command/talk/boy1/quest1_after_clear

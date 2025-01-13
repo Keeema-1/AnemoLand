@@ -1,0 +1,1 @@
+function anemoland_contents:command/talk/sally/quest1_after_clear

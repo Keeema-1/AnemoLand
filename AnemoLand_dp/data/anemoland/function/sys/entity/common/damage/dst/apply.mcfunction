@@ -25,6 +25,7 @@
 
 # 物理・属性共通
     # チャージ率
+        execute unless score #charge_rate temp matches ..-1 run scoreboard players set #charge_rate temp -100
         scoreboard players operation #damage.common temp = #charge_rate temp
     # 武器倍率・武器技倍率
         scoreboard players operation #damage.common temp *= #damage.src.attack.mul temp

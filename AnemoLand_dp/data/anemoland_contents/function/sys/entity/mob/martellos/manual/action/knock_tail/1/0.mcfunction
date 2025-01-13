@@ -8,6 +8,8 @@
     execute if score @s action_time matches 60 as @a[distance=..64] at @s run playsound entity.generic.explode hostile @s ~ ~ ~ 1 1
     execute if score @s action_time matches 60 rotated ~ 0 positioned ^ ^ ^-6 run function anemoland_contents:sys/entity/mob/martellos/manual/action/knock/1/particle
 
+execute if entity @s[tag=variant.mushroom] if score @s action_time matches 60 rotated ~ 0 positioned ^ ^ ^-5 run function anemoland_contents:sys/entity/mob/martellos/manual/action/knock/1/mushroom
+
 # 攻撃
     execute if score @s action_time matches 52..60 run function anemoland_contents:sys/entity/mob/martellos/attack/tail/0
 

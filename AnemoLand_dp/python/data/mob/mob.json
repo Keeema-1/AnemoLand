@@ -12,6 +12,11 @@
             "sally": {
                 "display_name": "サリー",
                 "custom_model_data_add": 1
+            },
+            "boy1": {
+                "display_name": "ミナト",
+                "custom_model_data_add": 2,
+                "weapon": "{id: \"iron_sword\",count:1}"
             }
         },
         "animations": {
@@ -21,19 +26,34 @@
             "keep_distance1": {},
             "standing1": {},
             "standing2": {},
+            "standing3": {},
             "waiting1": {}
         },
         "emote": {
-            "after_clear": {
-                "animation": "waiting1",
-                "chat_display": {
-                    "icon": "anemoland.character.girl2.smile",
-                    "talk_pool": [
-                        "anemoland.character.sally.talk.general.clear.1",
-                        "anemoland.character.sally.talk.general.clear.2",
-                        "anemoland.character.sally.talk.general.clear.3",
-                        "anemoland.character.sally.talk.general.clear.4"
-                    ]
+            "sally": {
+                "after_clear": {
+                    "animation": "waiting1",
+                    "chat_display": {
+                        "icon": "anemoland.character.girl2.smile",
+                        "talk_pool": [
+                            "anemoland.character.sally.talk.general.clear.1",
+                            "anemoland.character.sally.talk.general.clear.2",
+                            "anemoland.character.sally.talk.general.clear.3",
+                            "anemoland.character.sally.talk.general.clear.4"
+                        ]
+                    }
+                }
+            },
+            "boy1": {
+                "after_clear": {
+                    "chat_display": {
+                        "talk_pool": [
+                            "anemoland.character.boy1.talk.general.clear.1",
+                            "anemoland.character.boy1.talk.general.clear.2",
+                            "anemoland.character.boy1.talk.general.clear.3",
+                            "anemoland.character.boy1.talk.general.clear.4"
+                        ]
+                    }
                 }
             }
         },
@@ -41,7 +61,9 @@
             "default": {},
             "damaged": {},
             "sally": {},
-            "sally_damaged": {}
+            "sally_damaged": {},
+            "boy1": {},
+            "boy1_damaged": {}
         },
         "actions": {
             "stop": {
@@ -1712,7 +1734,7 @@
         "root_entity": "pig",
         "display_height": 0.5,
         "status": {
-            "default_level": 15,
+            "default_level": 20,
             "max_health": {"base": 200, "mul": 40},
             "attack_damage": {"base": 2, "mul": 0.8},
             "gold": {"base": 40, "mul": 10},
@@ -2361,7 +2383,7 @@
             "main_areas": ["ice"],
             "attack_elements": ["physical","ice"]
         },
-        "unlock": {"armor": []},
+        "unlock": {"armor": ["carnara"]},
         "animations": {
             "default": {},
             "die": {},

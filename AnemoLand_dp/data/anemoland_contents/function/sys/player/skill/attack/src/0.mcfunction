@@ -9,13 +9,13 @@ scoreboard players set #damage.src.attack.skill.add temp 0
 
 function anemoland:sys/player/common/player_storage/read
 
-# sprint_charge
+# bring_it_on
     scoreboard players set #damage.src.attack.skill.bring_it_on temp 0
     execute store result score #damage.src.attack.skill.bring_it_on temp run data get storage temp:_ data.player_storage.skill_levels.bring_it_on 10
 
 # sprint_charge
     scoreboard players set #add temp 0
-    execute if score @s sprint_time matches 40.. store result score #add temp run data get storage temp:_ data.player_storage.skill_levels.sprint_charge 10
+    execute if score @s sprint_time matches 20.. store result score #add temp run data get storage temp:_ data.player_storage.skill_levels.sprint_charge 10
     scoreboard players operation #damage.src.attack.base temp += #add temp
 
 # crisis_strength

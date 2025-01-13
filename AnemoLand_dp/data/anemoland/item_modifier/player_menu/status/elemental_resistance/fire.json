@@ -1,0 +1,102 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "  ⏬ ",
+					"color": "red",
+					"italic": false
+				},
+				{
+					"text": "🔥",
+					"color": "red",
+					"italic": false
+				},
+				{
+					"translate": "anemoland.common.damaged_rate.fire"
+				},
+				{
+					"text": " +"
+				},
+				{
+					"score": {
+						"name": "#elemental_resistance",
+						"objective": "temp"
+					}
+				},
+				{
+					"text": "%"
+				}
+			]
+		],
+		"mode": "append",
+		"conditions": [
+			{
+				"condition": "minecraft:value_check",
+				"value": {
+					"type": "minecraft:score",
+					"target": {
+						"type": "minecraft:fixed",
+						"name": "#elemental_resistance"
+					},
+					"score": "temp"
+				},
+				"range": {
+					"min": 1
+				}
+			}
+		]
+	},
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "  ⏫ ",
+					"color": "aqua",
+					"italic": false
+				},
+				{
+					"text": "🔥",
+					"color": "red",
+					"italic": false
+				},
+				{
+					"translate": "anemoland.common.damaged_rate.fire"
+				},
+				{
+					"text": " "
+				},
+				{
+					"score": {
+						"name": "#elemental_resistance",
+						"objective": "temp"
+					}
+				},
+				{
+					"text": "%"
+				}
+			]
+		],
+		"mode": "append",
+		"conditions": [
+			{
+				"condition": "minecraft:value_check",
+				"value": {
+					"type": "minecraft:score",
+					"target": {
+						"type": "minecraft:fixed",
+						"name": "#elemental_resistance"
+					},
+					"score": "temp"
+				},
+				"range": {
+					"max": -1
+				}
+			}
+		]
+	}
+]

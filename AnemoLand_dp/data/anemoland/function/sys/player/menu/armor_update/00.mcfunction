@@ -37,7 +37,7 @@ data modify storage temp:_ data.player_storage.equipments.active_armor set from 
     scoreboard players reset #temp temp
     execute store result score #temp temp run data get storage temp:_ data.selected_set.feet.components."minecraft:custom_data".status.elemental_resistance.water
     scoreboard players operation #armor.water.mul temp -= #temp temp
-    scoreboard players operation @s armor.fire.mul = #armor.water.mul temp
+    scoreboard players operation @s armor.water.mul = #armor.water.mul temp
 
 # ice
     scoreboard players set #armor.ice.mul temp 100
@@ -53,7 +53,7 @@ data modify storage temp:_ data.player_storage.equipments.active_armor set from 
     scoreboard players reset #temp temp
     execute store result score #temp temp run data get storage temp:_ data.selected_set.feet.components."minecraft:custom_data".status.elemental_resistance.ice
     scoreboard players operation #armor.ice.mul temp -= #temp temp
-    scoreboard players operation @s armor.fire.mul = #armor.water.mul temp
+    scoreboard players operation @s armor.ice.mul = #armor.ice.mul temp
 
 # thunder
     scoreboard players set #armor.thunder.mul temp 100
@@ -69,7 +69,7 @@ data modify storage temp:_ data.player_storage.equipments.active_armor set from 
     scoreboard players reset #temp temp
     execute store result score #temp temp run data get storage temp:_ data.selected_set.feet.components."minecraft:custom_data".status.elemental_resistance.thunder
     scoreboard players operation #armor.thunder.mul temp -= #temp temp
-    scoreboard players operation @s armor.fire.mul = #armor.water.mul temp
+    scoreboard players operation @s armor.thunder.mul = #armor.thunder.mul temp
 
 execute positioned ~ -100 ~ summon armor_stand run function anemoland:sys/player/menu/armor_update/000
 

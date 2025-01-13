@@ -1,4 +1,3 @@
-execute unless data storage anemoland:progress data.beta1.field.21{cleared_once:1b} run function anemoland_contents:command/progress/unlock/field/beta1/field21
 execute unless data storage anemoland:progress data.beta1.field.41{cleared_once:1b} run function anemoland_contents:command/progress/unlock/field/beta1/field41
 execute unless data storage anemoland:progress data.beta1.field.43{cleared_once:1b} run function anemoland_contents:command/progress/unlock/field/beta1/field43
 execute unless data storage anemoland:progress data.beta1.field.42{cleared_once:1b} run function anemoland_contents:sys/area/beta1/field/42/clear/first_clear

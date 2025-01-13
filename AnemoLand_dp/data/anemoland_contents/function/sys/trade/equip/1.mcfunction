@@ -15,5 +15,7 @@ data modify storage temp:_ data.Recipes set value []
     function anemoland_contents:sys/trade/equip/mob/muscleroom
 # bagikeros
     function anemoland_contents:sys/trade/equip/mob/bagikeros
+# carnara
+    function anemoland_contents:sys/trade/equip/mob/carnara
 
 kill @s

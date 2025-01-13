@@ -257,13 +257,14 @@ for series in armor_database["series"]:
 
 
 
-base_path = '../data/' + namespace_contents + '/function/sys/player/menu/main/update_status/skill/'
+base_path = '../data/' + namespace_contents + '/function/sys/player/menu/status/skill/slot0/'
 
 path = base_path + 'branch.mcfunction'
 output = []
 makedir(path)
+output.append("# メニューのステータス表示のスキルレベル\n")
 for skill_name, skill_data in skill_list.items():
-	output.append("execute if data storage temp:_ data.skill_levels." + skill_name + " run function ' + namespace_contents + ':sys/player/menu/main/update_status/skill/" + skill_name + "\n")
+	output.append("execute if data storage temp:_ data.player_storage.skill_levels." + skill_name + " run function " + namespace_contents + ":sys/player/menu/status/skill/slot0/" + skill_name + "\n")
 with open(path, 'w', encoding='utf-8') as f:
 	f.writelines(output)
 
@@ -272,7 +273,7 @@ for skill_name, skill_data in skill_list.items():
 	path = base_path + skill_name + '.mcfunction'
 	output = []
 	makedir(path)
-	output.append('execute store result score #skill_level temp run data get storage temp:_ data.skill_levels.' + skill_name + ' 1\n')
+	output.append('execute store result score #skill_level temp run data get storage temp:_ data.player_storage.skill_levels.' + skill_name + ' 1\n')
 	if skill_data["lore_value"]["mul"] < 1 or skill_data["lore_value"]["mul"] > 1:
 		output.append('scoreboard players set #const temp ' + str(round(skill_data["lore_value"]["mul"]*1000)) + '\n')
 		output.append('scoreboard players operation #skill_level temp *= #const temp\n')
@@ -288,20 +289,20 @@ for skill_name, skill_data in skill_list.items():
 	else:
 		output.append('scoreboard players operation #skill_level.int temp = #skill_level temp\n')
 		output.append('scoreboard players set #skill_level.decimal1 temp 0\n')
-	output.append('item modify entity @s inventory.0 ' + namespace_contents + ':player_menu/main/status/skill/' + skill_name + '\n')
+	output.append('item modify entity @s inventory.0 ' + namespace_contents + ':skill/' + skill_name + '\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
 
 
 for armor_set in [1, 2, 3]:
-	base_path = '../data/' + namespace_contents + '/function/sys/player/menu/armor/main/update_status/' + str(armor_set) + '/skill/'
+	base_path = '../data/' + namespace_contents + '/function/sys/player/menu/status/skill/slot' + str(armor_set*2-1) + '_' + str(armor_set*2) + '/'
 
 	path = base_path + 'branch.mcfunction'
 	output = []
 	makedir(path)
 	for skill_name, skill_data in skill_list.items():
-		output.append("execute if data storage temp:_ data.skill_levels." + skill_name + " run function " + namespace_contents + ":sys/player/menu/armor/main/update_status/" + str(armor_set) + "/skill/" + skill_name + "\n")
+		output.append("execute if data storage temp:_ data.player_storage.skill_levels." + skill_name + " run function " + namespace_contents + ":sys/player/menu/status/skill/slot" + str(armor_set*2-1) + '_' + str(armor_set*2) + "/" + skill_name + "\n")
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -310,7 +311,7 @@ for armor_set in [1, 2, 3]:
 		path = base_path + skill_name + '.mcfunction'
 		output = []
 		makedir(path)
-		output.append('execute store result score #skill_level temp run data get storage temp:_ data.skill_levels.' + skill_name + ' 1\n')
+		output.append('execute store result score #skill_level temp run data get storage temp:_ data.player_storage.skill_levels.' + skill_name + ' 1\n')
 		if skill_data["lore_value"]["mul"] < 1 or skill_data["lore_value"]["mul"] > 1:
 			output.append('scoreboard players set #const temp ' + str(round(skill_data["lore_value"]["mul"]*1000)) + '\n')
 			output.append('scoreboard players operation #skill_level temp *= #const temp\n')
@@ -326,14 +327,14 @@ for armor_set in [1, 2, 3]:
 		else:
 			output.append('scoreboard players operation #skill_level.int temp = #skill_level temp\n')
 			output.append('scoreboard players set #skill_level.decimal1 temp 0\n')
-		output.append('item modify entity @s inventory.' + str(armor_set*2-1) + ' ' + namespace_contents + ':player_menu/main/status/skill/' + skill_name + '\n')
-		output.append('item modify entity @s inventory.' + str(armor_set*2) + ' ' + namespace_contents + ':player_menu/main/status/skill/' + skill_name + '\n')
+		output.append('item modify entity @s inventory.' + str(armor_set*2-1) + ' ' + namespace_contents + ':skill/' + skill_name + '\n')
+		output.append('item modify entity @s inventory.' + str(armor_set*2) + ' ' + namespace_contents + ':skill/' + skill_name + '\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
 
 
-base_path = '../data/' + namespace_contents + '/item_modifier/player_menu/main/status/skill/'
+base_path = '../data/' + namespace_contents + '/item_modifier/skill/'
 
 for skill_name, skill_data in skill_list.items():
 	path = base_path + skill_name + '.json'

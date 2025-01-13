@@ -16,33 +16,33 @@ trigger_offset = 20000
 
 line_len = 30
 
-for talker in talk_database["talkers"]:
+for talker_id, talker_data in talk_database["talkers"].items():
 
 	output = []
-	path = base_path + 'sys/talk/' + talker["name"] + '/branch.mcfunction'
+	path = base_path + 'sys/talk/' + talker_id + '/branch.mcfunction'
 	makedir(path)
-	for talk_name, talk in talker["talks"].items():
+	for talk_name, talk in talker_data["talks"].items():
 		if talk["trigger"] == "talk":
-			output.append("execute if score #npc." + talker["name"] + " talk0 matches " + str(talk["score"]) + " run return run function anemoland_contents:sys/talk/" + talker["name"] + "/" + talk_name + "/0\n")
+			output.append("execute if score #npc." + talker_id + " talk0 matches " + str(talk["score"]) + " run return run function anemoland_contents:sys/talk/" + talker_id + "/" + talk_name + "/0\n")
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
-	for talk_name, talk in talker["talks"].items():
+	for talk_name, talk in talker_data["talks"].items():
 
 		# talks
 
 		if talk["type"] == "display":
 			output = []
-			path = base_path + 'sys/talk/' + talker["name"] + '/' + talk_name + '/0.mcfunction'
+			path = base_path + 'sys/talk/' + talker_id + '/' + talk_name + '/0.mcfunction'
 			makedir(path)
-			output.append("scoreboard players add #npc." + talker["name"] + " talk1 1\n")
-			output.append("execute if score #npc." + talker["name"] + " talk1 matches " + str(len(talk["contents"])+1) + ".. run scoreboard players set #npc." + talker["name"] + " talk1 0\n")
-			output.append("execute if score #npc." + talker["name"] + " talk1 matches 0 run data modify entity @s text set value '[{\"text\": \"<" +  talker["display_name"] + ">\"}]'\n")
+			output.append("scoreboard players add #npc." + talker_id + " talk1 1\n")
+			output.append("execute if score #npc." + talker_id + " talk1 matches " + str(len(talk["contents"])+1) + ".. run scoreboard players set #npc." + talker_id + " talk1 0\n")
+			output.append("execute if score #npc." + talker_id + " talk1 matches 0 run data modify entity @s text set value '[{\"text\": \"<" +  talker_data["display_name"] + ">\"}]'\n")
 			for i, talk_content in enumerate(talk["contents"]):
 				text_str = ""
 				for talk_part in talk_content:
 					text_str += ",{\"text\": \"" +  talk_part["text"] + "\"}"
-				output.append("execute if score #npc." + talker["name"] + " talk1 matches " + str(i+1) + " run data modify entity @s text set value '[{\"text\": \"<" +  talker["display_name"] + ">\\\\n\"}" + text_str + "]'\n")
+				output.append("execute if score #npc." + talker_id + " talk1 matches " + str(i+1) + " run data modify entity @s text set value '[{\"text\": \"<" +  talker_data["display_name"] + ">\\\\n\"}" + text_str + "]'\n")
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -51,20 +51,20 @@ for talker in talk_database["talkers"]:
 				output = []
 				selector = '@a'
 				if not talk["important"]:
-					selector += ' at @s if entity @e[type=villager,tag=talker,tag=' + talker["name"] + ',distance=..64]'
+					selector += ' at @s if entity @e[type=villager,tag=talker,tag=' + talker_id + ',distance=..64]'
 				if "selector" in talk:
 					selector = talk["selector"]
-				path = base_path + 'sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i) + '.mcfunction'
+				path = base_path + 'sys/talk/' + talker_id + '/' + talk_name + '/' + str(i) + '.mcfunction'
 				makedir(path)
 				if i == 0:
 					if not (talk["important"] and talk["trigger"] == "command"):
-						output.append("execute unless score #npc." + talker["name"] + " talk1 matches 0 run return 1\n")
+						output.append("execute unless score #npc." + talker_id + " talk1 matches 0 run return 1\n")
 					if not talk["score"] < 0:
-						output.append("scoreboard players set #npc." + talker["name"] + " talk1 -1\n")
+						output.append("scoreboard players set #npc." + talker_id + " talk1 -1\n")
 				if "icon" in talk_content:
 					output.append('execute as ' + selector + ' run tellraw @s [{"translate":"' + talk_content["icon"] + '"}]\n')
 				if talk_content["show_name"]:
-					output.append('execute as ' + selector + ' run tellraw @s ["         ",{"text":"<' + talker["display_name"] + '>"}]\n')
+					output.append('execute as ' + selector + ' run tellraw @s ["         ",{"text":"<' + talker_data["display_name"] + '>"}]\n')
 				schedule_time = 1
 				if talk_content["type"] == "text":
 					for text in talk_content["text"]:
@@ -93,11 +93,11 @@ for talker in talk_database["talkers"]:
 						output.append('execute as ' + selector + ' run tellraw @s "' + "\n"*(len(talk_content["text"])-3) + '"\n')
 				elif talk_content["type"] == "choices":
 					for choice in talk_content["choices"]:
-						trigger_score = trigger_offset + talker["trigger_offset"]
+						trigger_score = trigger_offset + talker_data["trigger_offset"]
 						if "trigger" in choice:
 							trigger_score += choice["trigger"]
 						elif "talk" in choice:
-							trigger_score += talker["talks"][choice["talk"]]["score"]
+							trigger_score += talker_data["talks"][choice["talk"]]["score"]
 						output.append('execute as ' + selector + ' run tellraw @s ["           ",{"text":"[' + choice["text"] + ']","color":"light_purple","clickEvent": {"action": "run_command","value": "/trigger trigger set ' + str(trigger_score) + '"}}]\n')
 				if talk_content["schedule_time_overlay"] >= 0:
 					schedule_time = max(talk_content["schedule_time_overlay"], 1)
@@ -107,36 +107,36 @@ for talker in talk_database["talkers"]:
 						output.append(function_ + '\n')
 				schedule_time_slow = schedule_time * 1.2
 				schedule_time_fast = max(schedule_time * 0.8, 1)
-				output.append('execute unless data storage anemoland:settings data{text_speed:0b} unless data storage anemoland:settings data{text_speed:0b} run schedule function anemoland_contents:sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time)) + 't\n')
-				output.append('execute if data storage anemoland:settings data{text_speed:0b} run schedule function anemoland_contents:sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time_slow)) + 't\n')
-				output.append('execute if data storage anemoland:settings data{text_speed:2b} run schedule function anemoland_contents:sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time_fast)) + 't\n')
+				output.append('execute unless data storage anemoland:settings data{text_speed:0b} unless data storage anemoland:settings data{text_speed:0b} run schedule function anemoland_contents:sys/talk/' + talker_id + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time)) + 't\n')
+				output.append('execute if data storage anemoland:settings data{text_speed:0b} run schedule function anemoland_contents:sys/talk/' + talker_id + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time_slow)) + 't\n')
+				output.append('execute if data storage anemoland:settings data{text_speed:2b} run schedule function anemoland_contents:sys/talk/' + talker_id + '/' + talk_name + '/' + str(i+1) + ' ' + str(int(schedule_time_fast)) + 't\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
 			
 			output = []
-			path = base_path + 'sys/talk/' + talker["name"] + '/' + talk_name + '/' + str(i+1) + '.mcfunction'
+			path = base_path + 'sys/talk/' + talker_id + '/' + talk_name + '/' + str(i+1) + '.mcfunction'
 			makedir(path)
 			if not talk["score"] < 0:
-				output.append('scoreboard players set #npc.' + talker["name"] + ' talk1 0\n')
+				output.append('scoreboard players set #npc.' + talker_id + ' talk1 0\n')
 			if "after" in talk:
-				output.append('function anemoland_contents:command/talk/' + talker["name"] + '/' + talk["after"] + '\n')
+				output.append('function anemoland_contents:command/talk/' + talker_id + '/' + talk["after"] + '\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
 
 		# command
 
-		path = base_path + 'command/talk/' + talker["name"] + '/' + talk_name + '.mcfunction'
+		path = base_path + 'command/talk/' + talker_id + '/' + talk_name + '.mcfunction'
 		if talk["trigger"] == "talk":
 			output = []
 			makedir(path)
 			if not talk["score"] < 0:
-				output.append("scoreboard players set #npc." + talker["name"] + " talk0 " + str(talk["score"]) + "\n")
-				output.append("scoreboard players set #npc." + talker["name"] + " talk1 0\n")
+				output.append("scoreboard players set #npc." + talker_id + " talk0 " + str(talk["score"]) + "\n")
+				output.append("scoreboard players set #npc." + talker_id + " talk1 0\n")
 			if talk["important"]:
-				output.append("execute as @e[type=text_display,tag=" + talker["name"] + ",tag=display1] run data modify entity @s text set value '{\"text\":\"<" +  talker["display_name"] + ">\",\"color\":\"aqua\"}'\n")
+				output.append("execute as @e[type=text_display,tag=" + talker_id + ",tag=display1] run data modify entity @s text set value '{\"text\":\"<" +  talker_data["display_name"] + ">\",\"color\":\"aqua\"}'\n")
 			else:
-				output.append("execute as @e[type=text_display,tag=" + talker["name"] + ",tag=display1] run data modify entity @s text set value '{\"text\":\"<" +  talker["display_name"] + ">\"}'\n")
+				output.append("execute as @e[type=text_display,tag=" + talker_id + ",tag=display1] run data modify entity @s text set value '{\"text\":\"<" +  talker_data["display_name"] + ">\"}'\n")
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -144,17 +144,17 @@ for talker in talk_database["talkers"]:
 			output = []
 			makedir(path)
 			if not talk["important"]:
-				output.append("execute if score #npc." + talker["name"] + " talk1 matches -1 run return 1\n")
+				output.append("execute if score #npc." + talker_id + " talk1 matches -1 run return 1\n")
 			if not talk["score"] < 0:
-				output.append("scoreboard players set #npc." + talker["name"] + " talk0 " + str(talk["score"]) + "\n")
-				output.append("scoreboard players set #npc." + talker["name"] + " talk1 0\n")
+				output.append("scoreboard players set #npc." + talker_id + " talk0 " + str(talk["score"]) + "\n")
+				output.append("scoreboard players set #npc." + talker_id + " talk1 0\n")
 			start_delay = 20
 			if "start_delay_ticks" in talk:
 				start_delay = talk["start_delay_ticks"]
 			if start_delay > 0:
-				output.append("schedule function anemoland_contents:sys/talk/" + talker["name"] + "/" + talk_name + "/0 " + str(start_delay) + "t\n")
+				output.append("schedule function anemoland_contents:sys/talk/" + talker_id + "/" + talk_name + "/0 " + str(start_delay) + "t\n")
 			else:
-				output.append("function anemoland_contents:sys/talk/" + talker["name"] + "/" + talk_name + "/0\n")
+				output.append("function anemoland_contents:sys/talk/" + talker_id + "/" + talk_name + "/0\n")
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -165,19 +165,19 @@ for talker in talk_database["talkers"]:
 path = base_path + 'sys/player/trigger/talk/branch.mcfunction'
 output = []
 makedir(path)
-for talker in talk_database["talkers"]:
-	for talk_name, talk in talker["talks"].items():
+for talker_id, talker_data in talk_database["talkers"].items():
+	for talk_name, talk in talker_data["talks"].items():
 		if talk["type"] == "chat":
 			for talk_content in talk["contents"]:
 				if talk_content["type"] == "choices":
 					for choice in talk_content["choices"]:
-						trigger_score = trigger_offset + talker["trigger_offset"]
+						trigger_score = trigger_offset + talker_data["trigger_offset"]
 						if "trigger" in choice:
 							trigger_score += choice["trigger"]
 						elif "talk" in choice:
-							trigger_score += talker["talks"][choice["talk"]]["score"]
+							trigger_score += talker_data["talks"][choice["talk"]]["score"]
 						if "talk" in choice:
-							output.append("execute if score @s trigger matches " + str(trigger_score) + " run function anemoland_contents:command/talk/" + talker["name"] + "/" + choice["talk"] + "\n")
+							output.append("execute if score @s trigger matches " + str(trigger_score) + " run function anemoland_contents:command/talk/" + talker_id + "/" + choice["talk"] + "\n")
 						if "command" in choice:
 							output.append("execute if score @s trigger matches " + str(trigger_score) + " run " + choice["command"] + "\n")
 with open(path, 'w', encoding='utf-8') as f:

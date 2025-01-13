@@ -1,6 +1,6 @@
 playsound block.anvil.use master @s ~ ~ ~ 1 1
 
-$loot replace block ~ ~ ~ container.10 loot anemoland:$(loot_table)/$(level)
+$loot replace block ~ ~ ~ container.10 loot anemoland_contents:$(loot_table)/$(level)
 data modify storage temp:_ data.Items_after[{Slot:10b}] set from block ~ ~ ~ Items[{Slot:10b}]
 
 

@@ -30,7 +30,7 @@
 
 # 初期アイテム
     clear @s
-    # loot give @s loot anemoland:item/weapon/wooden_sword/1
+    loot give @s loot anemoland_contents:item/weapon/wooden_sword/1
     give @s cooked_beef 16
 
 # レシピの初期化

@@ -97,7 +97,7 @@ for event_id, event_data in event_database["events"].items():
 		display_add += ',{"translate":"anemoland.mob.' + enemy + '"}," "'
 	display_add2 = ''
 	if "npc" in event_data and event_data["npc"]["npc1"]:
-		display_add2 += ',{"text":"\\\\n<","color":"yellow"},{"translate":"with_companion","color":"yellow"},{"text":">","color":"yellow"}'
+		display_add2 += ',{"text":"\\\\n<","color":"yellow"},{"translate":"anemoland.field_display.with_companion","color":"yellow"},{"text":">","color":"yellow"}'
 	output.append('$data modify entity @s text set value \'["",{"text":"\\\\n"},{"text":"⚔ ","color":"red"},{"translate":"anemoland.field_display.field_type.battle","color":"red"},{"text":" ⚔\\\\n","color":"red"},{"translate":"anemoland.field.$(field_name)"},{"text":"\\\\n----------------\\\\n","color":"gray"},{"translate":"anemoland.field_display.monsters"},{"text":"\\\\n"}' + display_add + ',{"text":"\\\\n\\\\n\\\\n"},{"translate":"anemoland.field_display.num_waves"},{"text":" ' + str(waves_len) + '\\\\nLv. $(level)"}' + display_add2 + '$(bonus_display_base)$(bonus_display_gold)$(bonus_display_xp)$(bonus_display_drop)]\'\n')
 	# output.append('#$tellraw @a [""$(bonus_display_base)$(bonus_display_gold)$(bonus_display_xp)$(bonus_display_drop)]\n')
 	with open(path, 'w', encoding='utf-8') as f:
@@ -113,11 +113,13 @@ for event_id, event_data in event_database["events"].items():
 		if "clear" in event_data["triggers"]:
 			for function_ in event_data["triggers"]["clear"]:
 				if function_["type"] == "talk":
-					output.append('function ' + namespace_core + ':command/talk/' + str(function_["npc_id"]) + '/' + function_["talk_id"] + '\n')
+					output.append('function ' + namespace_contents + ':command/talk/' + str(function_["npc_id"]) + '/' + function_["talk_id"] + '\n')
 		elif "first_clear" in event_data["triggers"]:
 			for function_ in event_data["triggers"]["first_clear"]:
 				if function_["type"] == "talk":
 					output.append('execute unless data storage ' + namespace_storage + ':progress data.event_list.' + event_id + '{cleared:1b} run function ' + namespace_core + ':command/talk/' + str(function_["npc_id"]) + '/' + function_["talk_id"] + '\n')
+				if function_["type"] == "command":
+					output.append('execute unless data storage ' + namespace_storage + ':progress data.event_list.' + event_id + '{cleared:1b} run ' + function_["command"] + '\n')
 	output.append('data modify storage ' + namespace_storage + ':progress data.event_list.' + event_id + '.cleared set value 1b\n')
 	if "unlock" in event_data:
 		for unlock_data in event_data["unlock"]:
@@ -168,6 +170,7 @@ for map_name in map_names:
 		if "npc" in event_data:
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.with_npc1 set value 1b\n')
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.npc1_id set value ' + str(event_data["npc"]["npc1"]["npc_id"]) + '\n')
+			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.npc1_level set value $(level)\n')
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.npc_exist set value 0b\n')
 		else:
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.with_npc1 set value 0b\n')

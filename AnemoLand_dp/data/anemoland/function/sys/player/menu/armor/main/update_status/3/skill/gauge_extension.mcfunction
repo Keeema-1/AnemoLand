@@ -10,5 +10,5 @@ scoreboard players operation #skill_level.decimal1 temp = #skill_level temp
 scoreboard players operation #skill_level.decimal1 temp %= #const temp
 scoreboard players set #const temp 10
 scoreboard players operation #skill_level.decimal1 temp /= #const temp
-item modify entity @s inventory.5 anemoland:player_menu/main/status/skill/gauge_extension
-item modify entity @s inventory.6 anemoland:player_menu/main/status/skill/gauge_extension
+item modify entity @s inventory.5 anemoland:player_menu/status/skill/gauge_extension
+item modify entity @s inventory.6 anemoland:player_menu/status/skill/gauge_extension

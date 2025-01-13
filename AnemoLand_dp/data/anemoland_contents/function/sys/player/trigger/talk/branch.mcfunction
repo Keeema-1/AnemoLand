@@ -8,6 +8,7 @@ execute if score @s trigger matches 21015 run function anemoland_contents:comman
 execute if score @s trigger matches 21016 run function anemoland_contents:command/talk/navigator1/tutorial_pet
 execute if score @s trigger matches 21017 run function anemoland_contents:command/talk/navigator1/tutorial_hint
 execute if score @s trigger matches 21018 run function anemoland_contents:command/talk/navigator1/tutorial_multi
-execute if score @s trigger matches 21112 run function anemoland_contents:command/talk/sally/double_martellos_2
-execute if score @s trigger matches 21112 run function anemoland_contents:command/talk/sally/double_martellos_2
-execute if score @s trigger matches 21112 run function anemoland_contents:command/talk/sally/double_martellos_2
+execute if score @s trigger matches 21112 run function anemoland_contents:command/talk/sally/quest1_take
+execute if score @s trigger matches 21113 run function anemoland_contents:command/talk/sally/quest1_take_re
+execute if score @s trigger matches 21212 run function anemoland_contents:command/talk/boy1/quest1_take
+execute if score @s trigger matches 21217 run function anemoland_contents:command/talk/boy1/quest1_ask_re

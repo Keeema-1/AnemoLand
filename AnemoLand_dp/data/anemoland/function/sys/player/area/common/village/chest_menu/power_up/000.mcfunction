@@ -1,5 +1,5 @@
 
-$loot replace block ~ ~ ~ container.16 loot anemoland:$(loot_table)/$(level)
+$loot replace block ~ ~ ~ container.16 loot anemoland_contents:$(loot_table)/$(level)
 # $tellraw @a "$(loot_table)"
 # $tellraw @a "$(level)"
 

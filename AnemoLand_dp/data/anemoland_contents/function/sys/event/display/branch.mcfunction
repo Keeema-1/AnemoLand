@@ -27,8 +27,10 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas"} run function anemoland_contents:sys/event/display/garapapas with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_double"} run function anemoland_contents:sys/event/display/garapapas_double with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_penguin"} run function anemoland_contents:sys/event/display/garapapas_penguin with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_and_squirrel_head_with_boy1"} run function anemoland_contents:sys/event/display/garapapas_and_squirrel_head_with_boy1 with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos"} run function anemoland_contents:sys/event/display/martellos with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_double"} run function anemoland_contents:sys/event/display/martellos_double with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_double_with_sally"} run function anemoland_contents:sys/event/display/martellos_double_with_sally with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_cherry"} run function anemoland_contents:sys/event/display/martellos_cherry with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_mushroom"} run function anemoland_contents:sys/event/display/martellos_mushroom with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_stone"} run function anemoland_contents:sys/event/display/martellos_stone with storage temp:_ data.field_display_macro
