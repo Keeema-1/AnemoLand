@@ -14,6 +14,7 @@ execute if entity @s[tag=aj.human1.animation.attack1.playing] run function anima
 execute if entity @s[tag=aj.human1.animation.waiting1.playing] run function animated_java:human1/animations/waiting1/zzz/on_tick
 execute if entity @s[tag=aj.human1.animation.waiting_copy2.playing] run function animated_java:human1/animations/waiting_copy2/zzz/on_tick
 execute if entity @s[tag=aj.human1.animation.standing2.playing] run function animated_java:human1/animations/standing2/zzz/on_tick
+execute if entity @s[tag=aj.human1.animation.standing3.playing] run function animated_java:human1/animations/standing3/zzz/on_tick
 execute at @s on passengers run rotate @s ~ ~
 execute on vehicle run function anemoland_contents:sys/entity/mob/human1/tick/0
 function #animated_java:human1/as_root/post_tick

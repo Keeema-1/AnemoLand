@@ -12,3 +12,4 @@ scoreboard objectives add aj.attack1.frame dummy
 scoreboard objectives add aj.waiting1.frame dummy
 scoreboard objectives add aj.waiting_copy2.frame dummy
 scoreboard objectives add aj.standing2.frame dummy
+scoreboard objectives add aj.standing3.frame dummy

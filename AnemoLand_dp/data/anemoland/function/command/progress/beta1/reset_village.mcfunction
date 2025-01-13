@@ -3,7 +3,7 @@
     # execute as @e[type=villager,tag=npc,tag=talker,tag=girl2] run function anemoland:sys/entity/npc/remove/common
     execute positioned 1024.0 0.0 -1024.0 as @e[type=villager,tag=npc,tag=talker,distance=..32] run function anemoland_contents:sys/entity/talker/remove
     execute positioned 1024.0 0.0 -1024.0 positioned ~5.5 0.0 ~13.5 rotated 90 ~ run function anemoland_contents:sys/entity/talker/navigator1/summon/0
-    # function anemoland:command/talk/girl1/hello
+    function anemoland_contents:command/talk/navigator1/hello
 
 # 商人
     execute positioned 1024.0 0.0 -1024.0 run kill @e[type=villager,tag=trader,distance=..32]

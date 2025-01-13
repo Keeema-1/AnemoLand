@@ -34,6 +34,7 @@
 - PeriTune様 (https://peritune.com)
   - prairie3
   - Amenoshita3
+  - Climbing
 - 魔王魂様 (https://maou.audio)
   - オーケストラ21 新たな危険
 - BGMer様 (http://bgmer.net)

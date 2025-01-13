@@ -13,3 +13,4 @@ tag @s remove aj.human1.animation.attack1.playing
 tag @s remove aj.human1.animation.waiting1.playing
 tag @s remove aj.human1.animation.waiting_copy2.playing
 tag @s remove aj.human1.animation.standing2.playing
+tag @s remove aj.human1.animation.standing3.playing
