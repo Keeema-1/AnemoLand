@@ -13,7 +13,7 @@
 					"translate": "anemoland.skill.depth_strider.name"
 				},
 				{
-					"text": " Lv."
+					"text": " +"
 				},
 				{
 					"score": {
@@ -73,7 +73,7 @@
 					"translate": "anemoland.skill.depth_strider.name"
 				},
 				{
-					"text": " Lv."
+					"text": " +"
 				},
 				{
 					"score": {

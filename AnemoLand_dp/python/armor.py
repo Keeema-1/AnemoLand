@@ -26,22 +26,6 @@ armor2slot = {
 	"boots": "feet"
 }
 
-skill_lore_value_mul = {
-	"gauge_extension": 100,
-	"initial_gauge": 100
-}
-
-skill_lore_value_type = {
-	"stamina_recovery": "percent"
-}
-
-elements_text = {
-	"fire": "火",
-	"water": "水",
-	"ice": "氷",
-	"thunder": "雷"
-}
-
 element_color = {
 	"physical": "white",
 	"fire": "red",
@@ -85,7 +69,7 @@ for series in armor_database["series"]:
 				lore.append([{"text":"  Lv. " + str(level) + " (MAX)","color":"yellow", "italic":False}])
 			lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"translate":"anemoland.common.armor"},{"text":" +" + str(armor_value)}])
 			if "elemental_resistance" in armor_data["status"]:
-				for element, resistance in armor_data["status"]["elemental_resistance"].items():
+				for element, resistance in armor_data["status"]["elemental_resistance"][level].items():
 					if resistance > 0:
 						lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"text":element_icon[element],"color":element_color[element]},{"translate":"anemoland.common.damaged_rate." + element},{"text":" -" + str(resistance) + "%"}])
 					elif resistance < 0:
@@ -93,7 +77,7 @@ for series in armor_database["series"]:
 			if len(armor_data["status"]["skills"]) > 0:
 				lore.append([{"text":""}])
 				lore.append([{"text": "<", "italic": False},{"translate":"anemoland.common.skill"},{"text":">"}])
-				for skill in armor_data["status"]["skills"]:
+				for skill in armor_data["status"]["skills"][level]:
 					# lore.append([{"text":"  " + skill_list[skill["name"]]["display_name"] + " " + skill_list[skill["name"]]["lore_value"]["prefix"] + str(skill["level"]*skill_list[skill["name"]]["lore_value"]["mul"]) + skill_list[skill["name"]]["lore_value"]["suffix"], "italic":False}])
 					# for line in skill_list[skill["name"]]["detail"]:
 					# 	lore.append([{"text":line, "italic":False, "color": "gray"}])
@@ -123,7 +107,7 @@ for series in armor_database["series"]:
 			function_ = {}
 			skills_str = ""
 			i = 0
-			for skill in armor_data["status"]["skills"]:
+			for skill in armor_data["status"]["skills"][level]:
 				if i > 0:
 					skills_str += ","
 				skills_str += "{id:\"" + skill["name"] + "\",level:" + str(skill["level"]) + "}"
@@ -605,7 +589,7 @@ for series in armor_database["series"]:
 		# 		elif resistance < 0:
 		# 			discription.append([{"text":" ⏬ " + elements_text[element] + "属性被ダメージ +" + str(abs(resistance)) + "%\n","color":"red", "italic":False}])
 		# if len(armor_data["status"]["skills"]) > 0:
-		# 	for skill in armor_data["status"]["skills"]:
+		# 	for skill in armor_data["status"]["skills"][level]:
 		# 		discription.append([{"text":"  " + skill_list[skill["name"]]["display_name"] + " " + skill_list[skill["name"]]["lore_value"]["prefix"] + str(skill["level"]*skill_list[skill["name"]]["lore_value"]["mul"]) + skill_list[skill["name"]]["lore_value"]["suffix"] + "\n", "color":"dark_purple", "italic":False}])
 
 	output = {
@@ -673,7 +657,7 @@ for page_list in pages_list:
 				lore.append([{"text":"  Lv. " + str(page_item["level"]),"color":"yellow", "italic":False}])
 				lore.append([{"text":"\\n" + " ⏫ "},{"translate":"anemoland.common.armor"},{"text":" +" + str(armor_data["status"]["armor"][list(series_data["levels"].keys())[0]]),"color":"aqua", "italic":False}])
 				if "elemental_resistance" in armor_data["status"]:
-					for element, resistance in armor_data["status"]["elemental_resistance"].items():
+					for element, resistance in armor_data["status"]["elemental_resistance"][level].items():
 						if resistance > 0:
 							lore.append([{"text":"\\n" + " ⏫ ","color":"aqua"},{"translate":"anemoland.common.damaged_rate." + element,"color":"aqua" },{"text": " -" + str(resistance) + "%","color":"aqua", "italic":False}])
 						elif resistance < 0:
@@ -681,7 +665,7 @@ for page_list in pages_list:
 				if len(armor_data["status"]["skills"]) > 0:
 					lore.append([{"text":"\\n" + ""}])
 					lore.append([{"text": "\\n" + "<"},{"translate":"anemoland.common.skill"},{"text":">", "italic": False, "color":"dark_purple"}])
-					for skill in armor_data["status"]["skills"]:
+					for skill in armor_data["status"]["skills"][level]:
 						lore.append([{"text":"\\n" + "  " + skill_list[skill["name"]]["display_name"] + " " + skill_list[skill["name"]]["lore_value"]["prefix"] + str(skill["level"]*skill_list[skill["name"]]["lore_value"]["mul"]) + skill_list[skill["name"]]["lore_value"]["suffix"], "color":"dark_purple", "italic":False}])
 						for line_ in skill_list[skill["name"]]["detail"]:
 							lore.append([{"text":"\\n" + line_, "italic":False, "color": "gray"}])

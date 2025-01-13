@@ -85,7 +85,7 @@
 										"translate": "anemoland.skill.bring_it_on.name"
 									},
 									{
-										"text": " +1"
+										"text": " +1.5"
 									}
 								],
 								[
@@ -143,7 +143,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"helmet\",id:\"garapapas_helmet\",visual_model_flag:1,sell_price:40,loot_table:\"item/armor/garapapas/helmet\",power_up:{},status:{level:3,armor:{base:6},elemental_resistance:{water: 10},skills:[{id:\"bring_it_on\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"helmet\",id:\"garapapas_helmet\",visual_model_flag:1,sell_price:40,loot_table:\"item/armor/garapapas/helmet\",power_up:{},status:{level:3,armor:{base:6},elemental_resistance:{1: {water: 10}, 2: {water: 10}, 3: {water: 10}},skills:[{id:\"bring_it_on\",level:1.5}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

@@ -185,7 +185,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"bagikeros\",part:\"chestplate\",id:\"bagikeros_chestplate\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/bagikeros/chestplate\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{fire: 10},skills:[{id:\"dust_avoiding\",level:1},{id:\"stamina_recovery\",level:25}]}}"
+							"tag": "{item_type:\"armor\",series:\"bagikeros\",part:\"chestplate\",id:\"bagikeros_chestplate\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/bagikeros/chestplate\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{3: {fire: 10}},skills:[{id:\"dust_avoiding\",level:1},{id:\"stamina_recovery\",level:25}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

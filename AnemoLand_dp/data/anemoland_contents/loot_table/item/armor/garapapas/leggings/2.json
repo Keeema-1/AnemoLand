@@ -85,7 +85,7 @@
 										"translate": "anemoland.skill.depth_strider.name"
 									},
 									{
-										"text": " Lv.1"
+										"text": " +1"
 									}
 								],
 								[
@@ -143,7 +143,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"leggings\",id:\"garapapas_leggings\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/garapapas/leggings\",power_up:{add_level:1,materials:[{id:\"garapapas_gold_medal\",loot_table:\"item/medal/garapapas/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{water: 10},skills:[{id:\"depth_strider\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"leggings\",id:\"garapapas_leggings\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/garapapas/leggings\",power_up:{add_level:1,materials:[{id:\"garapapas_gold_medal\",loot_table:\"item/medal/garapapas/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{1: {water: 10}, 2: {water: 10}, 3: {water: 10}},skills:[{id:\"depth_strider\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",
@@ -173,6 +173,7 @@
 						{
 							"function": "minecraft:set_enchantments",
 							"enchantments": {
+								"depth_strider": 1,
 								"minecraft:binding_curse": 1
 							}
 						}

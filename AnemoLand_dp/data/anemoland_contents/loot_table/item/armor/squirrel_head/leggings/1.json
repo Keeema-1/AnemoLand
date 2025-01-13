@@ -133,7 +133,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"squirrel_head\",part:\"leggings\",id:\"squirrel_head_leggings\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/squirrel_head/leggings\",power_up:{add_level:1,materials:[{id:\"squirrel_head_silver_medal\",loot_table:\"item/medal/squirrel_head/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{ice: 10},skills:[{id:\"recovery_up\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"squirrel_head\",part:\"leggings\",id:\"squirrel_head_leggings\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/squirrel_head/leggings\",power_up:{add_level:1,materials:[{id:\"squirrel_head_silver_medal\",loot_table:\"item/medal/squirrel_head/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{1: {ice: 10}, 2: {ice: 10}, 3: {ice: 10}},skills:[{id:\"recovery_up\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

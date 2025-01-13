@@ -38,7 +38,7 @@
 		},
 		"depth_strider": {
 			"lore_len": 2,
-			"lore_value": {"mul": 1, "prefix": "Lv.", "suffix": ""}
+			"lore_value": {"mul": 1, "prefix": "+", "suffix": ""}
 		},
 		"bring_it_on": {
 			"lore_len": 2,
@@ -64,9 +64,11 @@
 					"status":{
 						"armor": {"1": 1, "2": 3, "3": 5},
 						"elemental_resistance": {
+							"1":{"ice": 5},
+							"2":{"ice": 5},
+							"3":{"ice": 5}
 						},
-						"skills":[
-						]
+						"skills":{"1": [], "2": [], "3":[]}
 					},
 					"dyed_color": "835432"
 				},
@@ -77,9 +79,11 @@
 					"status":{
 						"armor": {"1": 1, "2": 3, "3": 5},
 						"elemental_resistance": {
+							"1":{"ice": 5},
+							"2":{"ice": 5},
+							"3":{"ice": 5}
 						},
-						"skills":[
-						]
+						"skills":{"1": [], "2": [], "3":[]}
 					},
 					"dyed_color": "835432"
 				},
@@ -90,9 +94,11 @@
 					"status":{
 						"armor": {"1": 1, "2": 3, "3": 5},
 						"elemental_resistance": {
+							"1":{"ice": 5},
+							"2":{"ice": 5},
+							"3":{"ice": 5}
 						},
-						"skills":[
-						]
+						"skills":{"1": [], "2": [], "3":[]}
 					},
 					"dyed_color": "835432"
 				},
@@ -103,9 +109,11 @@
 					"status":{
 						"armor": {"1": 1, "2": 3, "3": 5},
 						"elemental_resistance": {
+							"1":{"ice": 5},
+							"2":{"ice": 5},
+							"3":{"ice": 5}
 						},
-						"skills":[
-						]
+						"skills":{"1": [], "2": [], "3":[]}
 					},
 					"dyed_color": "835432"
 				}
@@ -128,9 +136,11 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
+							"1":{},
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-						]
+						"skills":{"1": [], "2": [], "3":[]}
 					}
 				},
 				"chestplate": {
@@ -140,9 +150,11 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
+							"1":{},
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-						]
+						"skills":{"1": [], "2": [], "3":[]}
 					}
 				},
 				"leggings": {
@@ -152,9 +164,11 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
+							"1":{},
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-						]
+						"skills":{"1": [], "2": [], "3":[]}
 					}
 				},
 				"boots": {
@@ -164,9 +178,11 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
+							"1":{},
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-						]
+						"skills":{"1": [], "2": [], "3":[]}
 					}
 				}
 			}
@@ -191,13 +207,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
+							"1":{},
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-							{
-								"name": "sprint_charge",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "sprint_charge",
+									"level": 0.5
+								}
+							],
+							"2": [
+								{
+									"name": "sprint_charge",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "sprint_charge",
+									"level": 1
+								}
+							]
+						}
 					}
 				},
 				"chestplate": {
@@ -207,13 +240,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
+							"1":{},
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-							{
-								"name": "recovery_up",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"2": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "recovery_up",
+									"level": 2
+								}
+							]
+						}
 					}
 				},
 				"leggings": {
@@ -223,13 +273,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
+							"1":{},
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-							{
-								"name": "sprint_charge",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "sprint_charge",
+									"level": 0.5
+								}
+							],
+							"2": [
+								{
+									"name": "sprint_charge",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "sprint_charge",
+									"level": 1
+								}
+							]
+						}
 					}
 				},
 				"boots": {
@@ -239,13 +306,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
+							"1":{},
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-							{
-								"name": "sprint_charge",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "sprint_charge",
+									"level": 0.5
+								}
+							],
+							"2": [
+								{
+									"name": "sprint_charge",
+									"level": 0.5
+								}
+							],
+							"3": [
+								{
+									"name": "sprint_charge",
+									"level": 1
+								}
+							]
+						}
 					}
 				}
 			}
@@ -258,77 +342,112 @@
 			"pattern": "silence",
 			"custom_model_data": 4,
 			"levels": {
-				"1": {},
-				"2": {"materials": [{"id":"martellos_silver_medal", "loot_table":"item/medal/martellos/silver", "count":3}]},
+				"2": {},
 				"3": {"materials": [{"id":"martellos_gold_medal", "loot_table":"item/medal/martellos/gold", "count":3}]}
 			},
 			"armors":{
 				"helmet": {
 					"display_name": "マルテロヘルム",
 					"item": "chainmail_helmet",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
-							"fire": -10
+							"2": {"fire": -10},
+							"3": {"fire": -10}
 						},
-						"skills":[
-							{
-								"name": "initial_gauge",
-								"level": 50
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "initial_gauge",
+									"level": 50
+								}
+							],
+							"3": [
+								{
+									"name": "initial_gauge",
+									"level": 100
+								}
+							]
+						}
 					}
 				},
 				"chestplate": {
 					"display_name": "マルテロアーマー",
 					"item": "chainmail_chestplate",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
-							"fire": -10
+							"2": {"fire": -10},
+							"3": {"fire": -10}
 						},
-						"skills":[
-							{
-								"name": "gauge_extension",
-								"level": 50
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "gauge_extension",
+									"level": 50
+								}
+							],
+							"3": [
+								{
+									"name": "gauge_extension",
+									"level": 50
+								}
+							]
+						}
 					}
 				},
 				"leggings": {
 					"display_name": "マルテロレギンス",
 					"item": "chainmail_leggings",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
-							"fire": -10
+							"2": {"fire": -10},
+							"3": {"fire": -10}
 						},
-						"skills":[
-							{
-								"name": "initial_gauge",
-								"level": 50
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "initial_gauge",
+									"level": 50
+								}
+							],
+							"3": [
+								{
+									"name": "initial_gauge",
+									"level": 100
+								}
+							]
+						}
 					}
 				},
 				"boots": {
 					"display_name": "マルテロブーツ",
 					"item": "chainmail_boots",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
-							"fire": -10
+							"2": {"fire": -10},
+							"3": {"fire": -10}
 						},
-						"skills":[
-							{
-								"name": "gauge_extension",
-								"level": 50
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "gauge_extension",
+									"level": 50
+								}
+							],
+							"3": [
+								{
+									"name": "gauge_extension",
+									"level": 50
+								}
+							]
+						}
 					}
 				}
 			}
@@ -341,73 +460,112 @@
 			"pattern": "raiser",
 			"custom_model_data": 5,
 			"levels": {
-				"1": {},
-				"2": {"materials": [{"id":"ojinushi_silver_medal", "loot_table":"item/medal/ojinushi/silver", "count":3}]},
+				"2": {},
 				"3": {"materials": [{"id":"ojinushi_gold_medal", "loot_table":"item/medal/ojinushi/gold", "count":3}]}
 			},
 			"armors":{
 				"helmet": {
 					"display_name": "祭獅子の兜",
 					"item": "chainmail_helmet",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
+							"2": {"fire": 5},
+							"3": {"fire": 5}
 						},
-						"skills":[
-							{
-								"name": "avoid_distance",
-								"level": 1
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "avoid_distance",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "avoid_distance",
+									"level": 2
+								}
+							]
+						}
 					}
 				},
 				"chestplate": {
 					"display_name": "祭獅子の鎧",
 					"item": "chainmail_chestplate",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
+							"2": {"fire": 5},
+							"3": {"fire": 5}
 						},
-						"skills":[
-							{
-								"name": "stamina_recovery",
-								"level": 25
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "stamina_recovery",
+									"level": 25
+								}
+							],
+							"3": [
+								{
+									"name": "stamina_recovery",
+									"level": 25
+								}
+							]
+						}
 					}
 				},
 				"leggings": {
 					"display_name": "祭獅子の袴",
 					"item": "chainmail_leggings",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
+							"2": {"fire": 5},
+							"3": {"fire": 5}
 						},
-						"skills":[
-							{
-								"name": "stamina_recovery",
-								"level": 25
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "stamina_recovery",
+									"level": 25
+								}
+							],
+							"3": [
+								{
+									"name": "stamina_recovery",
+									"level": 50
+								}
+							]
+						}
 					}
 				},
 				"boots": {
 					"display_name": "祭獅子の臑当",
 					"item": "chainmail_boots",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
+							"2": {"fire": 5},
+							"3": {"fire": 5}
 						},
-						"skills":[
-							{
-								"name": "avoid_distance",
-								"level": 1
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "avoid_distance",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "avoid_distance",
+									"level": 1
+								}
+							]
+						}
 					}
 				}
 			}
@@ -420,73 +578,112 @@
 			"pattern": "vex",
 			"custom_model_data": 6,
 			"levels": {
-				"1": {},
-				"2": {"materials": [{"id":"muscleroom_silver_medal", "loot_table":"item/medal/muscleroom/silver", "count":3}]},
+				"2": {},
 				"3": {"materials": [{"id":"muscleroom_gold_medal", "loot_table":"item/medal/muscleroom/gold", "count":3}]}
 			},
 			"armors":{
 				"helmet": {
 					"display_name": "シュルームヘッド",
 					"item": "chainmail_helmet",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-							{
-								"name": "crisis_strength",
-								"level": 1
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "crisis_strength",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "crisis_strength",
+									"level": 1.5
+								}
+							]
+						}
 					}
 				},
 				"chestplate": {
 					"display_name": "シュルームショルダー",
 					"item": "chainmail_chestplate",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-							{
-								"name": "crisis_strength",
-								"level": 1
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "crisis_strength",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "crisis_strength",
+									"level": 1.5
+								}
+							]
+						}
 					}
 				},
 				"leggings": {
 					"display_name": "シュルームニー",
 					"item": "chainmail_leggings",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-							{
-								"name": "crisis_strength",
-								"level": 1
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "crisis_strength",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "crisis_strength",
+									"level": 1.5
+								}
+							]
+						}
 					}
 				},
 				"boots": {
 					"display_name": "シュルームフット",
 					"item": "chainmail_boots",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"2": 160, "3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"2": 5, "3": 7},
 						"elemental_resistance": {
+							"2":{},
+							"3":{}
 						},
-						"skills":[
-							{
-								"name": "crisis_strength",
-								"level": 1
-							}
-						]
+						"skills":{
+							"2": [
+								{
+									"name": "crisis_strength",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "crisis_strength",
+									"level": 1.5
+								}
+							]
+						}
 					}
 				}
 			}
@@ -499,85 +696,89 @@
 			"pattern": "vex",
 			"custom_model_data": 7,
 			"levels": {
-				"1": {},
-				"2": {"materials": [{"id":"bagikeros_silver_medal", "loot_table":"item/medal/bagikeros/silver", "count":3}]},
-				"3": {"materials": [{"id":"bagikeros_gold_medal", "loot_table":"item/medal/bagikeros/gold", "count":3}]}
+				"3": {}
 			},
 			"armors":{
 				"helmet": {
 					"display_name": "バギケロヘルム",
 					"item": "chainmail_helmet",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"3": 7},
 						"elemental_resistance": {
-							"fire": 10
+							"3": {"fire": 10}
 						},
-						"skills":[
-							{
-								"name": "dust_avoiding",
-								"level": 3
-							}
-						]
+						"skills":{
+							"3": [
+								{
+									"name": "dust_avoiding",
+									"level": 3
+								}
+							]
+						}
 					}
 				},
 				"chestplate": {
 					"display_name": "バギケロアーマー",
 					"item": "chainmail_chestplate",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"3": 7},
 						"elemental_resistance": {
-							"fire": 10
+							"3": {"fire": 10}
 						},
-						"skills":[
-							{
-								"name": "dust_avoiding",
-								"level": 1
-							},
-							{
-								"name": "stamina_recovery",
-								"level": 25
-							}
-						]
+						"skills":{
+							"3": [
+								{
+									"name": "dust_avoiding",
+									"level": 1
+								},{
+									"name": "stamina_recovery",
+									"level": 25
+								}
+							]
+						}
 					}
 				},
 				"leggings": {
 					"display_name": "バギケロレギンス",
 					"item": "chainmail_leggings",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"3": 7},
 						"elemental_resistance": {
-							"fire": 10
+							"3": {"fire": 10}
 						},
-						"skills":[
-							{
-								"name": "dust_avoiding",
-								"level": 1
-							},
-							{
-								"name": "stamina_recovery",
-								"level": 25
-							}
-						]
+						"skills":{
+							"3": [
+								{
+									"name": "dust_avoiding",
+									"level": 1
+								},{
+									"name": "stamina_recovery",
+									"level": 25
+								}
+							]
+						}
 					}
 				},
 				"boots": {
 					"display_name": "バギケロブーツ",
 					"item": "chainmail_boots",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"3": 7},
 						"elemental_resistance": {
-							"fire": 10
+							"3": {"fire": 10}
 						},
-						"skills":[
-							{
-								"name": "dust_avoiding",
-								"level": 3
-							}
-						]
+						"skills":{
+							"3": [
+								{
+									"name": "dust_avoiding",
+									"level": 3
+								}
+							]
+						}
 					}
 				}
 			}
@@ -588,77 +789,83 @@
 			"parent": "iron",
 			"custom_model_data": 8,
 			"levels": {
-				"1": {},
-				"2": {"materials": [{"id":"carnara_silver_medal", "loot_table":"item/medal/carnara/silver", "count":3}]},
-				"3": {"materials": [{"id":"carnara_gold_medal", "loot_table":"item/medal/carnara/gold", "count":3}]}
+				"3": {}
 			},
 			"armors":{
 				"helmet": {
 					"display_name": "カルナヘルム",
 					"item": "chainmail_helmet",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"3": 7},
 						"elemental_resistance": {
-							"ice": 10
+							"3": {"ice": 10}
 						},
-						"skills":[
-							{
-								"name": "ice_veil",
-								"level": 10
-							}
-						]
+						"skills":{
+							"3": [
+								{
+									"name": "ice_veil",
+									"level": 10
+								}
+							]
+						}
 					}
 				},
 				"chestplate": {
 					"display_name": "カルナアーマー",
 					"item": "chainmail_chestplate",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"3": 7},
 						"elemental_resistance": {
-							"ice": 10
+							"3": {"ice": 10}
 						},
-						"skills":[
-							{
-								"name": "ice_veil",
-								"level": 10
-							}
-						]
+						"skills":{
+							"3": [
+								{
+									"name": "ice_veil",
+									"level": 10
+								}
+							]
+						}
 					}
 				},
 				"leggings": {
 					"display_name": "カルナレギンス",
 					"item": "chainmail_leggings",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"3": 7},
 						"elemental_resistance": {
-							"ice": 10
+							"3": {"ice": 10}
 						},
-						"skills":[
-							{
-								"name": "ice_veil",
-								"level": 10
-							}
-						]
+						"skills":{
+							"3": [
+								{
+									"name": "ice_veil",
+									"level": 10
+								}
+							]
+						}
 					}
 				},
 				"boots": {
 					"display_name": "カルナブーツ",
 					"item": "chainmail_boots",
-					"price": {"sell": {"1": 160, "2": 160, "3": 160}},
+					"price": {"sell": {"3": 160}},
 					"status":{
-						"armor": {"1": 3, "2": 5, "3": 7},
+						"armor": {"3": 7},
 						"elemental_resistance": {
-							"ice": 10
+							"3": {"ice": 10}
 						},
-						"skills":[
-							{
-								"name": "ice_veil",
-								"level": 10
-							}
-						]
+						"skills":{
+							"3": [
+								{
+									"name": "ice_veil",
+									"level": 10
+								}
+							]
+						}
 					}
 				}
 			}
@@ -682,14 +889,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
-							"ice": 10
+							"1": {"ice": 10},
+							"2": {"ice": 10},
+							"3": {"ice": 10}
 						},
-						"skills":[
-							{
-								"name": "recovery_up",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"2": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							]
+						}
 					}
 				},
 				"chestplate": {
@@ -699,14 +922,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
-							"ice": 10
+							"1": {"ice": 10},
+							"2": {"ice": 10},
+							"3": {"ice": 10}
 						},
-						"skills":[
-							{
-								"name": "recovery_up",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"2": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							]
+						}
 					}
 				},
 				"leggings": {
@@ -716,14 +955,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
-							"ice": 10
+							"1": {"ice": 10},
+							"2": {"ice": 10},
+							"3": {"ice": 10}
 						},
-						"skills":[
-							{
-								"name": "recovery_up",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"2": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							]
+						}
 					}
 				},
 				"boots": {
@@ -733,14 +988,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
-							"ice": 10
+							"1": {"ice": 10},
+							"2": {"ice": 10},
+							"3": {"ice": 10}
 						},
-						"skills":[
-							{
-								"name": "recovery_up",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"2": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "recovery_up",
+									"level": 1
+								}
+							]
+						}
 					}
 				}
 			}
@@ -764,14 +1035,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
-							"water": 10
+							"1": {"water": 10},
+							"2": {"water": 10},
+							"3": {"water": 10}
 						},
-						"skills":[
-							{
-								"name": "bring_it_on",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "bring_it_on",
+									"level": 0.5
+								}
+							],
+							"2": [
+								{
+									"name": "bring_it_on",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "bring_it_on",
+									"level": 1.5
+								}
+							]
+						}
 					}
 				},
 				"chestplate": {
@@ -781,14 +1068,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
-							"water": 10
+							"1": {"water": 10},
+							"2": {"water": 10},
+							"3": {"water": 10}
 						},
-						"skills":[
-							{
-								"name": "bring_it_on",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "bring_it_on",
+									"level": 0.5
+								}
+							],
+							"2": [
+								{
+									"name": "bring_it_on",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "bring_it_on",
+									"level": 1.5
+								}
+							]
+						}
 					}
 				},
 				"leggings": {
@@ -798,14 +1101,33 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
-							"water": 10
+							"1": {"water": 10},
+							"2": {"water": 10},
+							"3": {"water": 10}
 						},
-						"skills":[
-							{
-								"name": "depth_strider",
-								"level": 1
-							}
-						]
+						"skills":{
+							"1": [
+								{
+									"name": "depth_strider",
+									"level": 1
+								}
+							],
+							"2": [
+								{
+									"name": "depth_strider",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "depth_strider",
+									"level": 1
+								}
+							]
+						},
+						"enchantments":{
+							"depth_strider": 1
+						}
 					}
 				},
 				"boots": {
@@ -815,14 +1137,30 @@
 					"status":{
 						"armor": {"1": 2, "2": 4, "3": 6},
 						"elemental_resistance": {
-							"water": 10
+							"1": {"water": 10},
+							"2": {"water": 10},
+							"3": {"water": 10}
 						},
-						"skills":[
-							{
-								"name": "depth_strider",
-								"level": 1
-							}
-						],
+						"skills":{
+							"1": [
+								{
+									"name": "depth_strider",
+									"level": 1
+								}
+							],
+							"2": [
+								{
+									"name": "depth_strider",
+									"level": 1
+								}
+							],
+							"3": [
+								{
+									"name": "depth_strider",
+									"level": 1
+								}
+							]
+						},
 						"enchantments":{
 							"depth_strider": 1
 						}

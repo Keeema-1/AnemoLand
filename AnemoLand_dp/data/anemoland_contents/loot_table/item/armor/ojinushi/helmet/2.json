@@ -44,6 +44,23 @@
 								],
 								[
 									{
+										"text": "  ⏫ ",
+										"color": "aqua",
+										"italic": false
+									},
+									{
+										"text": "🔥",
+										"color": "red"
+									},
+									{
+										"translate": "anemoland.common.damaged_rate.fire"
+									},
+									{
+										"text": " -5%"
+									}
+								],
+								[
+									{
 										"text": ""
 									}
 								],
@@ -116,7 +133,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"ojinushi\",part:\"helmet\",id:\"ojinushi_helmet\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/ojinushi/helmet\",power_up:{add_level:1,materials:[{id:\"ojinushi_gold_medal\",loot_table:\"item/medal/ojinushi/gold\",count:3}]},status:{level:2,armor:{base:5},elemental_resistance:{},skills:[{id:\"avoid_distance\",level:1}]}}"
+							"tag": "{item_type:\"armor\",series:\"ojinushi\",part:\"helmet\",id:\"ojinushi_helmet\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/ojinushi/helmet\",power_up:{add_level:1,materials:[{id:\"ojinushi_gold_medal\",loot_table:\"item/medal/ojinushi/gold\",count:3}]},status:{level:2,armor:{base:5},elemental_resistance:{2: {fire: 5}, 3: {fire: 5}},skills:[{id:\"avoid_distance\",level:1}]}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

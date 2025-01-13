@@ -44,6 +44,40 @@
 								],
 								[
 									{
+										"text": "  ⏫ ",
+										"color": "aqua",
+										"italic": false
+									},
+									{
+										"text": "❄",
+										"color": "aqua"
+									},
+									{
+										"translate": "anemoland.common.damaged_rate.ice"
+									},
+									{
+										"text": " -5%"
+									}
+								],
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "<",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.common.skill"
+									},
+									{
+										"text": ">"
+									}
+								],
+								[
+									{
 										"text": ""
 									}
 								],
@@ -77,7 +111,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"leather\",part:\"chestplate\",id:\"leather_chestplate\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/leather/chestplate\",power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:3}]},status:{level:2,armor:{base:3},elemental_resistance:{},skills:[]}}"
+							"tag": "{item_type:\"armor\",series:\"leather\",part:\"chestplate\",id:\"leather_chestplate\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/leather/chestplate\",power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:3}]},status:{level:2,armor:{base:3},elemental_resistance:{1: {ice: 5}, 2: {ice: 5}, 3: {ice: 5}},skills:[]}}"
 						},
 						{
 							"function": "minecraft:set_components",
