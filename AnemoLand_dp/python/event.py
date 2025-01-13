@@ -167,10 +167,10 @@ for map_name in map_names:
 		output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.waves_len set value ' + str(max(1, len(event_data["waves"]))) + '\n')
 		output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).display_update_flag set value 1b\n')
 		output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.bonus set value {gold:0,xp:0,drop:0}\n')
+		output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.npc_level set value $(level)\n')
 		if "npc" in event_data:
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.with_npc1 set value 1b\n')
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.npc1_id set value ' + str(event_data["npc"]["npc1"]["npc_id"]) + '\n')
-			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.npc1_level set value $(level)\n')
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.npc_exist set value 0b\n')
 		else:
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.with_npc1 set value 0b\n')

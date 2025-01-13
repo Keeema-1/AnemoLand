@@ -1,0 +1,1 @@
+data modify storage anemoland:progress data.npc_list.boy1.unlock set value 1b

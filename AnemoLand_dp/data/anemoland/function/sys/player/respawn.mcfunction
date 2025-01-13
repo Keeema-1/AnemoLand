@@ -11,8 +11,6 @@
 # 死亡回数スコアをリセット
     scoreboard players reset @s death_count
 
-# function anemoland:sys/player/area/common/enter
-
 function anemoland:sys/player/music/stop
 
 execute if score @s area2 matches 9901.. run return run function anemoland:command/enter/arena_prepare

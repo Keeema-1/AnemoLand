@@ -1582,7 +1582,7 @@
 							"schedule_time_overlay": -1,
 							"schedule_time_add": 0,
 							"functions": [
-								"function anemoland:command/progress/unlock/supporter/girl2"
+								"function anemoland_contents:command/progress/unlock/supporter/sally"
 							]
 						}
 					],
@@ -1940,17 +1940,9 @@
 							"text": [
 								[
 									{"text": "助っ人に僕を選べば、今回みたいに僕が戦闘に参加するようになりますよ。"}
-								]
-							],
-							"schedule_time_overlay": -1,
-							"schedule_time_add": 0
-						},
-						{
-							"type": "text",
-							"show_name": false,
-							"text": [
+								],
 								[
-									{"text": "...できれば安全な場所でお願いしたいですけど！"}
+									{"text": "ただし、助っ人を呼べるのはクリア済みのフィールドだけです。"}
 								]
 							],
 							"schedule_time_overlay": -1,

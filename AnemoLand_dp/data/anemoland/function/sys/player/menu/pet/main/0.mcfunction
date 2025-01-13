@@ -11,14 +11,15 @@
     function anemoland:sys/player/menu/common/drop_item/7
     function anemoland:sys/player/menu/common/drop_item/8
 
-# クリック時のメニュー遷移
+# クリック処理
     execute unless data storage temp:_ data.player_data.Inventory[{Slot:9b,components:{"minecraft:custom_data":{menu:1b}}}] run return run function anemoland:sys/player/menu/pet/main/click/0
+    execute unless data storage temp:_ data.player_data.Inventory[{Slot:17b,components:{"minecraft:custom_data":{menu:1b}}}] run return run function anemoland:sys/player/menu/pet/main/click/8
 
 # フィールド・その他で分岐
     # フィールド
-        execute if score @s area2 matches 1.. run function anemoland:sys/player/menu/pet/main/0_field
+        execute if entity @s[tag=in_battle_field] run function anemoland:sys/player/menu/pet/main/0_field
     # その他
-        execute unless score @s area2 matches 1.. run function anemoland:sys/player/menu/pet/main/0_village
+        execute if entity @s[tag=!in_battle_field] run function anemoland:sys/player/menu/pet/main/0_village
 
 # メニュー用アイテムをリセット
     function anemoland:sys/player/menu/pet/main/reset

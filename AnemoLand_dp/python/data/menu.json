@@ -64,6 +64,7 @@
         "level": { "custom_model_data": 121, "transformation": {"translation":[0.5, -0.5], "scale":{"mul":[16.0,16.0],"div":[16.0,16.0]}} },
         "girl1": { "custom_model_data": 200, "path": "font/character/girl1/smile" },
         "girl1_head": { "custom_model_data": 201, "model_path": "item/custom/npc_head/girl2" },
+        "boy1_head": { "custom_model_data": 202, "model_path": "item/custom/npc_head/boy1" },
         "girl2": { "custom_model_data": 210, "path": "font/character/girl2/smile" }
     }
 }

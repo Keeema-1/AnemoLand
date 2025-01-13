@@ -1,3 +1,10 @@
+#> anemoland:sys/player/area/common/enter
+#
+# 移動時に実行される
+#
+# @within
+#    function anemoland:sys/player/area/common/*/enter
+
 effect give @s instant_health 1 20
 function anemoland:sys/player/common/adjust_food_level/0
 title @a actionbar ""

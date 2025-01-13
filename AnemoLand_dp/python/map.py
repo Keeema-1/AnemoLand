@@ -424,7 +424,10 @@ for map_data in map_database["maps"]:
 			output.append('scoreboard players set @s area1 ' + str(map_data["score"]) + '\n')
 			output.append('scoreboard players set @s area2 ' + str(field_score) + '\n')
 			output.append('tp @s ' + str(entrance[0]) + ' ' + str(entrance[1]) + ' ' + str(entrance[2]) + ' 180 30\n')
-			output.append('execute at @s run function ' + namespace_core + ':sys/player/area/common/' + field_data["type"] + '/enter\n')
+			enter_type = field_data["type"]
+			if "special_field" in field_data and field_data["special_field"] == "arena_prepare":
+				enter_type = "village"
+			output.append('execute at @s run function ' + namespace_core + ':sys/player/area/common/' + enter_type + '/enter\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -499,7 +502,7 @@ for map_data in map_database["maps"]:
 				makedir(path)
 				output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/init/remove_entity\n')
 				output.append('data modify storage temp:_ data.event set from storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event\n')
-				output.append('execute at @p run function ' + namespace_core + ':sys/player/area/common/field/summon_npc\n')
+				output.append('execute if data storage anemoland:progress data.' + map_name + '.field.' + field_id + '{cleared_once:1b} at @p run function ' + namespace_core + ':sys/player/area/common/field/summon_npc\n')
 				output.append('execute if data storage temp:_ data.event.with_npc1 run data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.npc1_exist set value 1b\n')
 				output.append('function ' + namespace_core + ':sys/player/area/common/field/set_pet_timer\n')
 				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.summon_flag set value 1b\n')
