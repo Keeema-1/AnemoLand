@@ -2,9 +2,9 @@
     execute unless score #new_entity.level temp matches 0.. run scoreboard players set #new_entity.level temp 30
     scoreboard players operation @s level = #new_entity.level temp
 # max health
-    scoreboard players set @s max_health 600
+    scoreboard players set @s max_health 500
     scoreboard players operation @s max_health *= #new_entity.level temp
-    scoreboard players add @s max_health 1000
+    scoreboard players add @s max_health 2000
 # rank による倍率
     scoreboard players set #rank_mul temp 100
     execute if score #new_entity.level temp matches 20.. run scoreboard players add #rank_mul temp 20

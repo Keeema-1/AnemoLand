@@ -1405,12 +1405,12 @@ for mob_name, mob_data in mob_database.items():
 				])
 				lore.append([
 					{"translate": "anemoland.pet.max_duration", "color": "white", "italic":False},
-					{"text": "：60"},
+					{"text": "：90"},
 					{"translate": "anemoland.common.second"}
 				])
 				lore.append([
 					{"translate": "anemoland.pet.cooltime", "color": "white", "italic":False},
-					{"text": "：120"},
+					{"text": "：90"},
 					{"translate": "anemoland.common.second"}
 				])
 

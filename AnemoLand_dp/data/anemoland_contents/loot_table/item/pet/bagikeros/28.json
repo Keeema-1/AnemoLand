@@ -30,7 +30,7 @@
 												"color": "blue"
 											},
 											{
-												"text": "2100.0"
+												"text": "1900.0"
 											}
 										],
 										[
@@ -95,7 +95,7 @@
 												"italic": false
 											},
 											{
-												"text": "：60"
+												"text": "：90"
 											},
 											{
 												"translate": "anemoland.common.second"
@@ -108,7 +108,7 @@
 												"italic": false
 											},
 											{
-												"text": "：120"
+												"text": "：90"
 											},
 											{
 												"translate": "anemoland.common.second"
@@ -121,7 +121,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"bagikeros\",display:{name:\"バギケロス\"},loot_table:\"item/pet/bagikeros\",power_up:{add_level:1,materials:[{id:\"bagikeros_silver_medal\",loot_table:\"item/medal/bagikeros/silver\",count:19}]},status:{health:{max:1780},attack:{base:28.400000000000002},armor:{base:10},level:28,level_up:{health:60,attack:0.8},xp:{value:0,required:1159,required_mul:10},gauge_consume_when_summon:300}}"
+							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"bagikeros\",display:{name:\"バギケロス\"},loot_table:\"item/pet/bagikeros\",power_up:{add_level:1,materials:[{id:\"bagikeros_silver_medal\",loot_table:\"item/medal/bagikeros/silver\",count:19}]},status:{health:{max:1600},attack:{base:28.400000000000002},armor:{base:10},level:28,level_up:{health:50,attack:0.8},xp:{value:0,required:1159,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

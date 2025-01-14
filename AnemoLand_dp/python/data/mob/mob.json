@@ -2353,7 +2353,7 @@
         "display_height": 1.0,
         "status": {
             "default_level": 30,
-            "max_health": {"base": 100, "mul": 60},
+            "max_health": {"base": 200, "mul": 50},
             "attack_damage": {"base": 6, "mul": 0.8},
             "gold": {"base": 60, "mul": 16},
             "xp": {"base": 60, "mul": 16},
@@ -2612,7 +2612,7 @@
         "display_height": 1.0,
         "status": {
             "default_level": 30,
-            "max_health": {"base": 100, "mul": 60},
+            "max_health": {"base": 200, "mul": 50},
             "attack_damage": {"base": 5, "mul": 0.8},
             "gold": {"base": 60, "mul": 14},
             "xp": {"base": 60, "mul": 14},

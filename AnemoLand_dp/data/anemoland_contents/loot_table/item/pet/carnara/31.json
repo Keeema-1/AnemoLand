@@ -30,7 +30,7 @@
 												"color": "blue"
 											},
 											{
-												"text": "2700.0"
+												"text": "2400.0"
 											}
 										],
 										[
@@ -95,7 +95,7 @@
 												"italic": false
 											},
 											{
-												"text": "：60"
+												"text": "：90"
 											},
 											{
 												"translate": "anemoland.common.second"
@@ -108,7 +108,7 @@
 												"italic": false
 											},
 											{
-												"text": "：120"
+												"text": "：90"
 											},
 											{
 												"translate": "anemoland.common.second"
@@ -121,7 +121,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"carnara\",display:{name:\"カールナーラ\"},loot_table:\"item/pet/carnara\",power_up:{add_level:1,materials:[{id:\"carnara_gold_medal\",loot_table:\"item/medal/carnara/gold\",count:12}]},status:{health:{max:1960},attack:{base:29.8},armor:{base:10},level:31,level_up:{health:60,attack:0.8},xp:{value:0,required:1760,required_mul:10},gauge_consume_when_summon:300}}"
+							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"carnara\",display:{name:\"カールナーラ\"},loot_table:\"item/pet/carnara\",power_up:{add_level:1,materials:[{id:\"carnara_gold_medal\",loot_table:\"item/medal/carnara/gold\",count:12}]},status:{health:{max:1750},attack:{base:29.8},armor:{base:10},level:31,level_up:{health:50,attack:0.8},xp:{value:0,required:1760,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

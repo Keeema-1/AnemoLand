@@ -1,0 +1,43 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:snowball",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"misc\",id:\"random_event_changer\"}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 1
+						},
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "anemoland.item.misc.random_event_changer",
+								"italic": false
+							},
+							"conditions": []
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:use_cooldown": {
+									"seconds": 1
+								},
+								"minecraft:item_model": "minecraft:clock"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

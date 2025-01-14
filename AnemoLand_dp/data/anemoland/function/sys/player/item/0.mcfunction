@@ -3,7 +3,12 @@
 
 execute if data storage temp:_ data.player_data.Inventory[{Slot:-106b}] run function anemoland:sys/player/item/offhand/0
 
-execute if score @s used.carrot_on_a_stick matches 1.. run function anemoland:sys/player/item/action/0
+# ニンジン付きの棒を右クリックした時の処理
+    execute if score @s used.carrot_on_a_stick matches 1.. run function anemoland:sys/player/item/action/0
+
+# 雪玉を投げた時の処理
+    execute if score @s used.snowball matches 1.. run function anemoland:sys/player/item/throw/0
+    execute if score @s used.ender_eye matches 1.. run function anemoland:sys/player/item/throw/0
 
 execute if score @s dropped.knowledge_book matches 1.. run function anemoland:sys/player/item/drop_menu_item
 

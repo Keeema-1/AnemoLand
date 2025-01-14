@@ -66,6 +66,9 @@
             scoreboard objectives add dropped.carrot_on_a_stick dropped:carrot_on_a_stick
             scoreboard objectives add used.carrot_on_a_stick used:carrot_on_a_stick
             scoreboard objectives add dropped.knowledge_book dropped:knowledge_book
+            scoreboard objectives add used.snowball used:snowball
+            scoreboard objectives add used.ender_eye used:ender_eye
+            
         # 死亡検知用
             scoreboard objectives add death_count deathCount
         # トリガー用
