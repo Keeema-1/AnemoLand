@@ -897,6 +897,16 @@
         "raptors": {
             "waves":[{"raptors":0}]
         },
+        "movie_king_boar": {
+            "waves":[],
+            "movie":1,
+            "movie_id": "king_boar",
+            "display_overwrite": {
+                "enemies": ["king_boar"],
+                "waves": 1,
+                "levels": [10]
+            }
+        },
         "king_boar": {
             "waves":[{"king_boar":0}],
             "level_range": [5,40]
@@ -948,6 +958,16 @@
                 ]
             }
         },
+        "movie_martellos": {
+            "waves":[],
+            "movie":1,
+            "movie_id": "martellos",
+            "display_overwrite": {
+                "enemies": ["martellos"],
+                "waves": 1,
+                "levels": [20]
+            }
+        },
         "martellos": {
             "waves":[{"martellos":0}],
             "level_range": [20,40]
@@ -987,6 +1007,16 @@
             "waves":[{"martellos_ice":0}],
             "level_range": [20,40]
         },
+        "movie_ojinushi": {
+            "waves":[],
+            "movie":1,
+            "movie_id": "ojinushi",
+            "display_overwrite": {
+                "enemies": ["ojinushi"],
+                "waves": 1,
+                "levels": [20]
+            }
+        },
         "ojinushi": {
             "waves":[{"ojinushi":0}],
             "level_range": [20,40],
@@ -1003,6 +1033,16 @@
             "waves":[{"ojinushi_double":0}],
             "level_range": [20,40]
         },
+        "movie_muscleroom": {
+            "waves":[],
+            "movie":1,
+            "movie_id": "muscleroom",
+            "display_overwrite": {
+                "enemies": ["muscleroom"],
+                "waves": 1,
+                "levels": [25]
+            }
+        },
         "muscleroom": {
             "waves":[{"muscleroom":0}],
             "level_range": [20,40]
@@ -1010,6 +1050,16 @@
         "muscleroom_double": {
             "waves":[{"muscleroom_double":0}],
             "level_range": [20,40]
+        },
+        "movie_bagikeros": {
+            "waves":[],
+            "movie":1,
+            "movie_id": "bagikeros",
+            "display_overwrite": {
+                "enemies": ["bagikeros"],
+                "waves": 1,
+                "levels": [30]
+            }
         },
         "bagikeros": {
             "waves":[{"bagikeros":0}],

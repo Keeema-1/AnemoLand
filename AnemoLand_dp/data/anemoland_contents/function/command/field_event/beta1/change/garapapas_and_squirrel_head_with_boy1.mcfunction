@@ -8,3 +8,4 @@ $data modify storage anemoland:progress data.beta1.field.$(field_id).event.with_
 $data modify storage anemoland:progress data.beta1.field.$(field_id).event.npc1_id set value 1
 $data modify storage anemoland:progress data.beta1.field.$(field_id).event.npc_exist set value 0b
 $data modify storage anemoland:progress data.beta1.field.$(field_id).event.random_event_enable set value 0b
+$data modify storage anemoland:progress data.beta1.field.$(field_id).event.is_movie set value 0b

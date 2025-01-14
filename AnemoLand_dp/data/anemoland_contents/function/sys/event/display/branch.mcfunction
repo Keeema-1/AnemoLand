@@ -20,6 +20,7 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"squirrels
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapases"} run function anemoland_contents:sys/event/display/garapases with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapases_penguin"} run function anemoland_contents:sys/event/display/garapases_penguin with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"raptors"} run function anemoland_contents:sys/event/display/raptors with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"movie_king_boar"} run function anemoland_contents:sys/event/display/movie_king_boar with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"king_boar"} run function anemoland_contents:sys/event/display/king_boar with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"king_boar_double"} run function anemoland_contents:sys/event/display/king_boar_double with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"squirrel_head"} run function anemoland_contents:sys/event/display/squirrel_head with storage temp:_ data.field_display_macro
@@ -28,6 +29,7 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_double"} run function anemoland_contents:sys/event/display/garapapas_double with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_penguin"} run function anemoland_contents:sys/event/display/garapapas_penguin with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"garapapas_and_squirrel_head_with_boy1"} run function anemoland_contents:sys/event/display/garapapas_and_squirrel_head_with_boy1 with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"movie_martellos"} run function anemoland_contents:sys/event/display/movie_martellos with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos"} run function anemoland_contents:sys/event/display/martellos with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_double"} run function anemoland_contents:sys/event/display/martellos_double with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_double_with_sally"} run function anemoland_contents:sys/event/display/martellos_double_with_sally with storage temp:_ data.field_display_macro
@@ -35,10 +37,13 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"martellos
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_mushroom"} run function anemoland_contents:sys/event/display/martellos_mushroom with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_stone"} run function anemoland_contents:sys/event/display/martellos_stone with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"martellos_ice"} run function anemoland_contents:sys/event/display/martellos_ice with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"movie_ojinushi"} run function anemoland_contents:sys/event/display/movie_ojinushi with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"ojinushi"} run function anemoland_contents:sys/event/display/ojinushi with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"ojinushi_double"} run function anemoland_contents:sys/event/display/ojinushi_double with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"movie_muscleroom"} run function anemoland_contents:sys/event/display/movie_muscleroom with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"muscleroom"} run function anemoland_contents:sys/event/display/muscleroom with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"muscleroom_double"} run function anemoland_contents:sys/event/display/muscleroom_double with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"movie_bagikeros"} run function anemoland_contents:sys/event/display/movie_bagikeros with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"bagikeros"} run function anemoland_contents:sys/event/display/bagikeros with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"bagikeros_double"} run function anemoland_contents:sys/event/display/bagikeros_double with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"carnara"} run function anemoland_contents:sys/event/display/carnara with storage temp:_ data.field_display_macro

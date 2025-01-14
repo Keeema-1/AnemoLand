@@ -176,5 +176,10 @@ for map_name in map_names:
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.with_npc1 set value 0b\n')
 		if "random_event_enable" in event_data:
 			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.random_event_enable set value ' + str(event_data["random_event_enable"]) + 'b\n')
+		if "movie" in event_data:
+			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.is_movie set value 1b\n')
+			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.movie.id set value "' + event_data["movie_id"] +'"\n')
+		else:
+			output.append('$data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.$(field_id).event.is_movie set value 0b\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)

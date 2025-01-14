@@ -20,9 +20,11 @@ data modify storage anemoland:progress data.beta1.field.24.event.waves set value
 data modify storage anemoland:progress data.beta1.field.24.event.waves_len set value 1
 data modify storage anemoland:progress data.beta1.field.34.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.34.display_name set value "forest.large"
-data modify storage anemoland:progress data.beta1.field.34.event.event_id set value king_boar
-data modify storage anemoland:progress data.beta1.field.34.event.waves set value [{'id': 'king_boar', 'level': 10}]
-data modify storage anemoland:progress data.beta1.field.34.event.waves_len set value 1
+data modify storage anemoland:progress data.beta1.field.34.event.event_id set value movie_king_boar
+data modify storage anemoland:progress data.beta1.field.34.event.waves set value []
+data modify storage anemoland:progress data.beta1.field.34.event.waves_len set value 0
+data modify storage anemoland:progress data.beta1.field.34.event.is_movie set value 1b
+data modify storage anemoland:progress data.beta1.field.34.event.movie.id set value "king_boar"
 data modify storage anemoland:progress data.beta1.field.23.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.23.display_name set value "forest.large"
 data modify storage anemoland:progress data.beta1.field.23.event.event_id set value squirrel_head
@@ -50,9 +52,11 @@ data modify storage anemoland:progress data.beta1.field.31.event.waves set value
 data modify storage anemoland:progress data.beta1.field.31.event.waves_len set value 1
 data modify storage anemoland:progress data.beta1.field.42.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.42.display_name set value "forest.large"
-data modify storage anemoland:progress data.beta1.field.42.event.event_id set value martellos
-data modify storage anemoland:progress data.beta1.field.42.event.waves set value [{'id': 'martellos', 'level': 20}]
-data modify storage anemoland:progress data.beta1.field.42.event.waves_len set value 1
+data modify storage anemoland:progress data.beta1.field.42.event.event_id set value movie_martellos
+data modify storage anemoland:progress data.beta1.field.42.event.waves set value []
+data modify storage anemoland:progress data.beta1.field.42.event.waves_len set value 0
+data modify storage anemoland:progress data.beta1.field.42.event.is_movie set value 1b
+data modify storage anemoland:progress data.beta1.field.42.event.movie.id set value "martellos"
 data modify storage anemoland:progress data.beta1.field.21.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.21.display_name set value "forest.large"
 data modify storage anemoland:progress data.beta1.field.21.event.event_id set value spiders
@@ -80,9 +84,11 @@ data modify storage anemoland:progress data.beta1.field.52.event.waves set value
 data modify storage anemoland:progress data.beta1.field.52.event.waves_len set value 1
 data modify storage anemoland:progress data.beta1.field.63.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.63.display_name set value "cherry.large"
-data modify storage anemoland:progress data.beta1.field.63.event.event_id set value ojinushi
-data modify storage anemoland:progress data.beta1.field.63.event.waves set value [{'id': 'ojinushi', 'level': 20}]
-data modify storage anemoland:progress data.beta1.field.63.event.waves_len set value 1
+data modify storage anemoland:progress data.beta1.field.63.event.event_id set value movie_ojinushi
+data modify storage anemoland:progress data.beta1.field.63.event.waves set value []
+data modify storage anemoland:progress data.beta1.field.63.event.waves_len set value 0
+data modify storage anemoland:progress data.beta1.field.63.event.is_movie set value 1b
+data modify storage anemoland:progress data.beta1.field.63.event.movie.id set value "ojinushi"
 data modify storage anemoland:progress data.beta1.field.40.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.40.display_name set value "mushroom.large"
 data modify storage anemoland:progress data.beta1.field.40.event.event_id set value walking_mushrooms
@@ -100,9 +106,11 @@ data modify storage anemoland:progress data.beta1.field.51.event.waves set value
 data modify storage anemoland:progress data.beta1.field.51.event.waves_len set value 1
 data modify storage anemoland:progress data.beta1.field.61.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.61.display_name set value "mushroom.large"
-data modify storage anemoland:progress data.beta1.field.61.event.event_id set value muscleroom
-data modify storage anemoland:progress data.beta1.field.61.event.waves set value [{'id': 'muscleroom', 'level': 25}]
-data modify storage anemoland:progress data.beta1.field.61.event.waves_len set value 1
+data modify storage anemoland:progress data.beta1.field.61.event.event_id set value movie_muscleroom
+data modify storage anemoland:progress data.beta1.field.61.event.waves set value []
+data modify storage anemoland:progress data.beta1.field.61.event.waves_len set value 0
+data modify storage anemoland:progress data.beta1.field.61.event.is_movie set value 1b
+data modify storage anemoland:progress data.beta1.field.61.event.movie.id set value "muscleroom"
 data modify storage anemoland:progress data.beta1.field.35.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.35.display_name set value "stone.large"
 data modify storage anemoland:progress data.beta1.field.35.event.event_id set value raptors
@@ -125,9 +133,11 @@ data modify storage anemoland:progress data.beta1.field.55.event.waves set value
 data modify storage anemoland:progress data.beta1.field.55.event.waves_len set value 1
 data modify storage anemoland:progress data.beta1.field.54.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.54.display_name set value "stone.large"
-data modify storage anemoland:progress data.beta1.field.54.event.event_id set value bagikeros
-data modify storage anemoland:progress data.beta1.field.54.event.waves set value [{'id': 'bagikeros', 'level': 30}]
-data modify storage anemoland:progress data.beta1.field.54.event.waves_len set value 1
+data modify storage anemoland:progress data.beta1.field.54.event.event_id set value movie_bagikeros
+data modify storage anemoland:progress data.beta1.field.54.event.waves set value []
+data modify storage anemoland:progress data.beta1.field.54.event.waves_len set value 0
+data modify storage anemoland:progress data.beta1.field.54.event.is_movie set value 1b
+data modify storage anemoland:progress data.beta1.field.54.event.movie.id set value "bagikeros"
 data modify storage anemoland:progress data.beta1.field.62.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.62.display_name set value "snowy.large"
 data modify storage anemoland:progress data.beta1.field.62.event.event_id set value squirrels

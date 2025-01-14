@@ -1,0 +1,37 @@
+{
+    "king_boar": {
+        "center": [2048.0, 0.0, 1024.0],
+        "map_id": "beta1",
+        "field_id": "34",
+        "next_event": {"id":"king_boar", "level": 10},
+        "next_talk": {"talker_id": "navigator1", "talk_id":"king_boar_first"}
+    },
+    "martellos": {
+        "center": [2048.0, 0.0, 1536.0],
+        "map_id": "beta1",
+        "field_id": "42",
+        "next_event": {"id":"martellos", "level": 20},
+        "next_talk": {"talker_id": "navigator1", "talk_id":"martellos_first"}
+    },
+    "ojinushi": {
+        "center": [2560.0, 0.0, 2560.0],
+        "map_id": "beta1",
+        "field_id": "63",
+        "next_event": {"id":"ojinushi", "level": 20},
+        "next_talk": {"talker_id": "navigator1", "talk_id":"ojinushi_first"}
+    },
+    "muscleroom": {
+        "center": [2560.0, 0.0, 3072.0],
+        "map_id": "beta1",
+        "field_id": "61",
+        "next_event": {"id":"muscleroom", "level": 25},
+        "next_talk": {"talker_id": "navigator1", "talk_id":"muscleroom_first"}
+    },
+    "bagikeros": {
+        "center": [3072.0, 0.0, 3584.0],
+        "map_id": "beta1",
+        "field_id": "54",
+        "next_event": {"id":"bagikeros", "level": 30},
+        "next_talk": {"talker_id": "navigator1", "talk_id":"bagikeros_first"}
+    }
+}

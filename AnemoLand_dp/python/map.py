@@ -317,9 +317,9 @@ for map_data in map_database["maps"]:
 				exit_start = exit["start"]
 				output.append('execute positioned ' + str(exit_start[0]) + ' ' + str(exit_start[1]) + ' ' + str(exit_start[2]) + ' if entity @s[dx=' + str(exit["aabb"][0]-1) + ',dy=2,dz=' + str(exit["aabb"][1]-1) + '] at @s run function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/return/0\n')
 			if not skip_battle_process:
-				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{summon_flag:1b} if loaded ~ ~ ~ unless entity @e[tag=enemy,tag=mob_root,distance=..64] run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/clear/0\n')
+				output.append('execute if entity @s[gamemode=!spectator] positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{summon_flag:1b} if loaded ~ ~ ~ unless entity @e[tag=enemy,tag=mob_root,distance=..64] run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/clear/0\n')
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{summon_flag:1b} if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event{wave_interval:1b} unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/summon/warn\n')
-				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{summon_flag:1b} unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event{wave_interval:1b} unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} if entity @a[distance=..' + str(distance) + ',tag=player_check,limit=1] run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/summon/0\n')
+				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{summon_flag:1b} unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event{wave_interval:1b} unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} if entity @a[distance=..' + str(distance) + ',gamemode=!spectator,tag=player_check,limit=1] run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/summon/0\n')
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/clear/tick\n')
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run function ' + namespace_core + ':sys/player/title/actionbar/field/skill_gauge/0\n')
 			if "special_field" in field_data and field_data["special_field"]  in ["arena_prepare"]:
@@ -407,6 +407,7 @@ for map_data in map_database["maps"]:
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless entity @a[distance=..128] run function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/init/0\n')
 			if not skip_battle_process:
 				output.append('execute at @s as @a[distance=..4] run function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/enter/each_participant\n')
+				output.append('execute if data storage anemoland:progress data.' + map_name + '.field.' + field_id + '.event{is_movie:1b} run function anemoland_contents:sys/movie/start with storage anemoland:progress data.' + map_name + '.field.' + field_id + '.event.movie\n')
 			else:
 				output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/enter/each_participant\n')
 			if field_data["type"] == "village":
@@ -790,15 +791,19 @@ for map_data in map_database["maps"]:
 			initial_event = field_data["default_event"]
 			if "initial_event" in field_data:
 				initial_event = field_data["initial_event"]
+			event_data = event_database["events"][str(initial_event["id"])]
 			waves_data = []
-			for wave_data in event_database["events"][str(initial_event["id"])]["waves"]:
+			for wave_data in event_data["waves"]:
 				for wave_id, wave_level in wave_data.items():
 					waves_data.append({"id":wave_id, "level": initial_event["level"]})
 			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.random_event_enable set value 0b\n')
 			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.display_name set value "' + field_data["display_name"] + '"\n')
 			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.event_id set value ' + str(initial_event["id"]) + '\n')
 			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.waves set value ' + str(waves_data) + '\n')
-			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.waves_len set value ' + str(len(event_database["events"][str(initial_event["id"])]["waves"])) + '\n')
+			output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.waves_len set value ' + str(len(event_data["waves"])) + '\n')
+			if "movie" in event_data:
+				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.is_movie set value 1b\n')
+				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_data["name"] + '.field.' + str(field_id) + '.event.movie.id set value "' + event_data["movie_id"] + '"\n')
 with open(path, 'w', encoding='utf-8') as f:
 	f.writelines(output)
 
