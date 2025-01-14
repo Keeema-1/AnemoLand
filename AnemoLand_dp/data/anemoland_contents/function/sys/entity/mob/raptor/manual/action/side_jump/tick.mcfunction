@@ -14,7 +14,9 @@
     execute if score @s action_time matches 40.. unless score #hostile_target.is_player temp matches 1 facing entity @e[type=#anemoland:mob_core,tag=hostile_target,sort=nearest,distance=..64,limit=1] feet rotated ~ 0 run tp @s ^ ^ ^ ~ ~
 
 # 移動
-    data modify storage temp:_ data.motion set value {speed:0.3}
+    execute if score @s action_time matches ..30 run data modify storage temp:_ data.motion set value {speed:0.3}
+    execute if score @s action_time matches 31..40 run data modify storage temp:_ data.motion set value {speed:0.2}
+    execute if score @s action_time matches 41.. run data modify storage temp:_ data.motion set value {speed:0.1}
     execute if score @s action_way matches 0 rotated ~-90 0 run function anemoland:sys/entity/common/motion/0
     execute if score @s action_way matches 1 rotated ~90 0 run function anemoland:sys/entity/common/motion/0
 

@@ -9,5 +9,5 @@ data modify storage anemoland:progress data.beta1.field.42.event.random_event_en
 function anemoland_contents:sys/area/beta1/field/42/clear/clear_
 data modify storage temp:_ data.event_id.event_id set from storage anemoland:progress data.beta1.field.42.event.event_id
 function anemoland_contents:sys/event/clear with storage temp:_ data.event_id
-function anemoland_contents:command/field_event/beta1/change/plain_d {field_id:42, level: 15}
+function anemoland_contents:command/field_event/beta1/change/martellos {field_id:42, level: 20}
 function anemoland_contents:sys/area/beta1/event/update/0

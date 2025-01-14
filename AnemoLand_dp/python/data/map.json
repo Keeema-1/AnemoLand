@@ -108,7 +108,7 @@
                     "display_name": "forest.large",
                     "unlock":["23","33"],
                     "initial_event": {"id": "king_boar", "level": 10},
-                    "default_event": {"id": "boars", "level": 10},
+                    "default_event": {"id": "king_boar", "level": 10},
                     "random_event": "king_boar"
                 },
                 "23": {
@@ -119,7 +119,7 @@
                     "display_name": "forest.large",
                     "unlock":["33","22"],
                     "initial_event": {"id": "squirrel_head", "level": 10},
-                    "default_event": {"id": "squirrels", "level": 10},
+                    "default_event": {"id": "squirrel_head", "level": 10},
                     "random_event": "squirrel_head"
                 },
                 "33": {
@@ -160,8 +160,8 @@
                     "display_name": "waterside.large",
                     "unlock":["21","42"],
                     "initial_event": {"id": "garapapas", "level": 15},
-                    "default_event": {"id": "waterside_c", "level": 15},
-                    "random_event": "waterside_large"
+                    "default_event": {"id": "garapapas", "level": 15},
+                    "random_event": "garapapas"
                 },
                 "42": {
                     "index":[4,2],
@@ -171,7 +171,7 @@
                     "display_name": "forest.large",
                     "unlock":["41","43"],
                     "initial_event": {"id": "martellos", "level": 20},
-                    "default_event": {"id": "plain_d", "level": 15},
+                    "default_event": {"id": "martellos", "level": 20},
                     "random_event": "martellos"
                 },
                 "21": {
@@ -231,6 +231,7 @@
                     "field_type": "cherry_A",
                     "display_name": "cherry.large",
                     "unlock":["40"],
+                    "initial_event": {"id": "ojinushi", "level": 20},
                     "default_event": {"id": "ojinushi", "level": 20},
                     "random_event": "ojinushi"
                 },
@@ -273,7 +274,7 @@
                     "display_name": "mushroom.large",
                     "unlock":["35"],
                     "initial_event": {"id": "muscleroom", "level": 25},
-                    "default_event": {"id": "plain_f", "level": 20},
+                    "default_event": {"id": "muscleroom", "level": 25},
                     "random_event": "muscleroom"
                 },
                 "35": {
@@ -325,7 +326,7 @@
                     "display_name": "stone.large",
                     "unlock":["62"],
                     "initial_event": {"id": "bagikeros", "level": 30},
-                    "default_event": {"id": "stone_a", "level": 25},
+                    "default_event": {"id": "bagikeros", "level": 30},
                     "random_event": "bagikeros"
                 },
                 "62": {
@@ -377,7 +378,7 @@
                     "display_name": "ice.large",
                     "unlock":[],
                     "initial_event": {"id": "carnara", "level": 30},
-                    "default_event": {"id": "squirrels", "level": 25},
+                    "default_event": {"id": "carnara", "level": 30},
                     "random_event": "carnara"
                 }
             }
