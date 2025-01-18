@@ -33,5 +33,19 @@
         "field_id": "54",
         "next_event": {"id":"bagikeros", "level": 30},
         "next_talk": {"talker_id": "navigator1", "talk_id":"bagikeros_first"}
+    },
+    "squirrel_head": {
+        "center": [1024.0, 0.0, 1536.0],
+        "map_id": "beta1",
+        "field_id": "23",
+        "next_event": {"id":"squirrel_head", "level": 15},
+        "next_talk": {"talker_id": "navigator1", "talk_id":"squirrel_head_first"}
+    },
+    "garapapas": {
+        "center": [2048.0, 0.0, 2048.0],
+        "map_id": "beta1",
+        "field_id": "31",
+        "next_event": {"id":"garapapas", "level": 15},
+        "next_talk": {"talker_id": "navigator1", "talk_id":"garapapas_first"}
     }
 }

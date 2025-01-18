@@ -118,7 +118,7 @@
                     "field_type": "plain_C",
                     "display_name": "forest.large",
                     "unlock":["33","22"],
-                    "initial_event": {"id": "squirrel_head", "level": 10},
+                    "initial_event": {"id": "movie_squirrel_head", "level": 10},
                     "default_event": {"id": "squirrel_head", "level": 10},
                     "random_event": "squirrel_head"
                 },
@@ -159,7 +159,7 @@
                     "field_type": "waterside_B",
                     "display_name": "waterside.large",
                     "unlock":["21","42"],
-                    "initial_event": {"id": "garapapas", "level": 15},
+                    "initial_event": {"id": "movie_garapapas", "level": 15},
                     "default_event": {"id": "garapapas", "level": 15},
                     "random_event": "garapapas"
                 },

@@ -165,7 +165,7 @@
         team modify no_collision collisionRule never
 
 # ゲームルール
-    gamerule disableRaids false
+    gamerule disableRaids true
     gamerule doFireTick false
     gamerule doInsomnia false
     gamerule doMobSpawning false

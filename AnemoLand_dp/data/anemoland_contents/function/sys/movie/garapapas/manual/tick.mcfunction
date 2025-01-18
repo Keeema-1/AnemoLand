@@ -1,0 +1,10 @@
+execute if score #movie.garapapas action0 matches 0 run function anemoland_contents:sys/movie/garapapas/manual/tick/0/0
+execute if score #movie.garapapas action0 matches 1 run function anemoland_contents:sys/movie/garapapas/manual/tick/1/0
+execute if score #movie.garapapas action0 matches 2 run function anemoland_contents:sys/movie/garapapas/manual/tick/2/0
+execute if score #movie.garapapas action0 matches 3 run function anemoland_contents:sys/movie/garapapas/manual/tick/3/0
+execute if score #movie.garapapas action0 matches 4 run function anemoland_contents:sys/movie/garapapas/manual/tick/4/0
+execute if score #movie.garapapas action0 matches 5 run function anemoland_contents:sys/movie/garapapas/manual/tick/5/0
+execute if score #movie.garapapas action0 matches 6 run function anemoland_contents:sys/movie/garapapas/manual/tick/6/0
+execute if score #movie.garapapas action0 matches 7 run function anemoland_contents:sys/movie/garapapas/manual/tick/7/0
+execute if score #movie.garapapas action0 matches 8 run function anemoland_contents:sys/movie/garapapas/manual/tick/8/0
+execute if score #movie.garapapas action0 matches 9 run function anemoland_contents:sys/movie/garapapas/manual/tick/9/0

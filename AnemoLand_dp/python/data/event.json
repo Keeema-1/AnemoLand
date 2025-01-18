@@ -915,6 +915,16 @@
             "waves":[{"king_boar_double":0}],
             "level_range": [5,40]
         },
+        "movie_squirrel_head": {
+            "waves":[],
+            "movie":1,
+            "movie_id": "squirrel_head",
+            "display_overwrite": {
+                "enemies": ["squirrel_head"],
+                "waves": 1,
+                "levels": [15]
+            }
+        },
         "squirrel_head": {
             "waves":[{"squirrel_head":0}],
             "level_range": [5,40]
@@ -922,6 +932,16 @@
         "squirrel_head_double": {
             "waves":[{"squirrel_head_double":0}],
             "level_range": [5,40]
+        },
+        "movie_garapapas": {
+            "waves":[],
+            "movie":1,
+            "movie_id": "garapapas",
+            "display_overwrite": {
+                "enemies": ["garapapas"],
+                "waves": 1,
+                "levels": [15]
+            }
         },
         "garapapas": {
             "waves":[{"garapapas":0}],
