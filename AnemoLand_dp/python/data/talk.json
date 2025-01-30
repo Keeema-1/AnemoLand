@@ -1005,6 +1005,126 @@
 						}
 					]
 				},
+				"squirrel_head_first": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "スクルスヘッド", "color": "aqua"},
+									{"text": "が出現しました！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "スクルスヘッドは大きな尻尾を振り回して攻撃を行います。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "キングボアよりも多彩な攻撃を行ってくるので、攻撃の動作を見極められるようによく観察して戦いましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "また、スクルスヘッドは部位によってダメージ効率が変化します。"}
+								],
+								[
+									{"text": "弱点を見つけて攻撃することも大切ですよ！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "しっかり準備をして、討伐に向かいましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"garapapas_first": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "ガラパパス", "color": "aqua"},
+									{"text": "が出現しました！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ガラパパスは物理攻撃に加えて、水属性の攻撃を行います。"}
+								],
+								[
+									{"text": "属性攻撃を行うモンスターに対しては、装備の属性耐性にも注意してくださいね！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "しっかり準備をして、討伐に向かいましょう！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
 				"martellos_first": {
 					"score": -1,
 					"type": "chat",
@@ -1031,31 +1151,6 @@
 							"text": [
 								[
 									{"text": "マルテロスは両腕と尻尾の木槌を振り回す攻撃が特徴的です。"},
-									{"text":"▼","color":"dark_gray"}
-								]
-							],
-							"schedule_time_overlay": -1,
-							"schedule_time_add": 0
-						},
-						{
-							"type": "text",
-							"show_name": false,
-							"text": [
-								[
-									{"text": "キングボアよりも多彩な攻撃を行ってくるので、攻撃の動作を見極められるようによく観察して戦いましょう！"},
-									{"text":"▼","color":"dark_gray"}
-								]
-							],
-							"schedule_time_overlay": -1,
-							"schedule_time_add": 0
-						},
-						{
-							"type": "text",
-							"show_name": false,
-							"text": [
-								[
-									{"text": "マルテロスのように体が大きいモンスターは、部位によってダメージ効率が異なる場合があります。"},
-									{"text": "弱点を見つけて攻撃することも大切ですよ！"},
 									{"text":"▼","color":"dark_gray"}
 								]
 							],
@@ -1144,7 +1239,19 @@
 							"show_name": false,
 							"text": [
 								[
-									{"text": "花火玉は火属性を含む攻撃なので、火属性耐性が低い装備の場合は注意しましょう！"}
+									{"text": "花火玉は火属性を含む攻撃なので、火属性耐性が低い装備の場合は注意しましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "では、検討を祈ります！"}
 								]
 							],
 							"schedule_time_overlay": -1,
@@ -1189,7 +1296,8 @@
 							"show_name": false,
 							"text": [
 								[
-									{"text": "怒り状態では隆起攻撃をしながら他の攻撃を連続して行ってくるため、特に注意が必要ですよ！"}
+									{"text": "怒り状態では隆起攻撃をしながら他の攻撃を連続して行ってくるため、特に注意が必要ですよ！"},
+									{"text":"▼","color":"dark_gray"}
 								]
 							],
 							"schedule_time_overlay": -1,
@@ -1227,7 +1335,19 @@
 							"text": [
 								[
 									{"text": "もしマッスルームの討伐が難しい場合は、Lv.25のマルテロスとオオジヌシを討伐することでもゴールドランクに昇格することが可能です。"},
-									{"text": "その場合は、ゴールドランクの装備を揃えてからリベンジしてみましょう！"}
+									{"text": "その場合は、ゴールドランクの装備を揃えてからリベンジしてみましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "では、検討を祈ります！"}
 								]
 							],
 							"schedule_time_overlay": -1,
@@ -1272,7 +1392,76 @@
 							"show_name": false,
 							"text": [
 								[
-									{"text": "その爆破は火属性を含む攻撃なので、火属性耐性が低い装備の場合は注意しましょう！"}
+									{"text": "その爆破は火属性を含む攻撃なので、火属性耐性が低い装備の場合は注意しましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "では、検討を祈ります！"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					]
+				},
+				"carnara_first": {
+					"score": -1,
+					"type": "chat",
+					"trigger": "command",
+					"important": true,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "カールナーラ", "color": "aqua"},
+									{"text": "が出現しました！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "カールナーラはその長い体を活かした攻撃と、口から出す氷属性のビームが特徴的です。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "氷属性耐性が低い装備の場合は注意しましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "では、検討を祈ります！"}
 								]
 							],
 							"schedule_time_overlay": -1,
@@ -1690,7 +1879,7 @@
 									{"text":"▼","color":"dark_gray"}
 								]
 							],
-							"schedule_time_overlay": 1,
+							"schedule_time_overlay": -1,
 							"schedule_time_add": 0
 						},
 						{
@@ -1893,6 +2082,9 @@
 								],
 								[
 									{"text": "本当に助かりました、ありがとうございます！"}
+								],
+								[
+									{"text": "ベースキャンプに戻りましょう！"}
 								]
 							],
 							"schedule_time_overlay": -1,

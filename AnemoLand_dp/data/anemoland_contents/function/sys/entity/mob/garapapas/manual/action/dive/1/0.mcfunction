@@ -3,7 +3,7 @@ tp @s ~ ~ ~ ~ ~
 # 移動
     execute if score @s action_time matches ..25 run data modify storage temp:_ data.motion set value {speed:0.2}
     execute if score @s action_time matches 26..50 run data modify storage temp:_ data.motion set value {speed:0.1}
-    execute rotated ~ 5 run function anemoland:sys/entity/common/motion/0
+    execute if score @s action_time matches ..50 rotated ~ 5 run function anemoland:sys/entity/common/motion/0
 
 execute if score @s action_time matches 10..30 run function anemoland_contents:sys/entity/mob/garapapas/attack/dive/0
 

@@ -543,14 +543,16 @@
                                 "type": "random",
                                 "weights": {
                                     "walk": 5,
-                                    "bite": 1
+                                    "bite": 1,
+                                    "water_front": 1
                                 }
                             },
                             "back": {
                                 "type": "random",
                                 "weights": {
                                     "walk": 5,
-                                    "bite": 0
+                                    "bite": 0,
+                                    "water_front": 1
                                 }
                             }
                         }
@@ -562,14 +564,16 @@
                                 "type": "random",
                                 "weights": {
                                     "walk": 0,
-                                    "bite": 2
+                                    "bite": 2,
+                                    "water_front": 1
                                 }
                             },
                             "back": {
                                 "type": "random",
                                 "weights": {
                                     "walk": 0,
-                                    "bite": 1
+                                    "bite": 1,
+                                    "water_front": 1
                                 }
                             }
                         }
