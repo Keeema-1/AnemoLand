@@ -1089,6 +1089,16 @@
             "waves":[{"bagikeros_double":0}],
             "level_range": [30,40]
         },
+        "movie_carnara": {
+            "waves":[],
+            "movie":1,
+            "movie_id": "carnara",
+            "display_overwrite": {
+                "enemies": ["carnara"],
+                "waves": 1,
+                "levels": [30]
+            }
+        },
         "carnara": {
             "waves":[{"carnara":0}],
             "level_range": [30,40]

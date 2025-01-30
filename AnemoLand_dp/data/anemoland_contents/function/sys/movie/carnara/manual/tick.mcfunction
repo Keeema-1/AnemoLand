@@ -1,0 +1,10 @@
+execute if score #movie.carnara action0 matches 0 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/0/0
+execute if score #movie.carnara action0 matches 1 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/1/0
+execute if score #movie.carnara action0 matches 2 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/2/0
+execute if score #movie.carnara action0 matches 3 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/3/0
+execute if score #movie.carnara action0 matches 4 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/4/0
+execute if score #movie.carnara action0 matches 5 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/5/0
+execute if score #movie.carnara action0 matches 6 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/6/0
+execute if score #movie.carnara action0 matches 7 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/7/0
+execute if score #movie.carnara action0 matches 8 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/8/0
+execute if score #movie.carnara action0 matches 9 positioned ~ ~ ~-32 run function anemoland_contents:sys/movie/carnara/manual/tick/9/0

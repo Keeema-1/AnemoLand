@@ -47,5 +47,12 @@
         "field_id": "31",
         "next_event": {"id":"garapapas", "level": 15},
         "next_talk": {"talker_id": "navigator1", "talk_id":"garapapas_first"}
+    },
+    "carnara": {
+        "center": [3072.0, 0.0, 4096.0],
+        "map_id": "beta1",
+        "field_id": "83",
+        "next_event": {"id":"carnara", "level": 30},
+        "next_talk": {"talker_id": "navigator1", "talk_id":"carnara_first"}
     }
 }

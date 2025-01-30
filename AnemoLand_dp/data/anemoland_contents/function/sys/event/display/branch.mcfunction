@@ -48,5 +48,6 @@ execute if data storage temp:_ data.field_display_data.event{event_id:"muscleroo
 execute if data storage temp:_ data.field_display_data.event{event_id:"movie_bagikeros"} run function anemoland_contents:sys/event/display/movie_bagikeros with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"bagikeros"} run function anemoland_contents:sys/event/display/bagikeros with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"bagikeros_double"} run function anemoland_contents:sys/event/display/bagikeros_double with storage temp:_ data.field_display_macro
+execute if data storage temp:_ data.field_display_data.event{event_id:"movie_carnara"} run function anemoland_contents:sys/event/display/movie_carnara with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"carnara"} run function anemoland_contents:sys/event/display/carnara with storage temp:_ data.field_display_macro
 execute if data storage temp:_ data.field_display_data.event{event_id:"carnara_double"} run function anemoland_contents:sys/event/display/carnara_double with storage temp:_ data.field_display_macro

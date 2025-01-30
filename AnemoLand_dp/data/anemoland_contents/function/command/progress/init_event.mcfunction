@@ -164,6 +164,8 @@ data modify storage anemoland:progress data.beta1.field.82.event.waves set value
 data modify storage anemoland:progress data.beta1.field.82.event.waves_len set value 1
 data modify storage anemoland:progress data.beta1.field.83.event.random_event_enable set value 0b
 data modify storage anemoland:progress data.beta1.field.83.display_name set value "ice.large"
-data modify storage anemoland:progress data.beta1.field.83.event.event_id set value carnara
-data modify storage anemoland:progress data.beta1.field.83.event.waves set value [{'id': 'carnara', 'level': 30}]
-data modify storage anemoland:progress data.beta1.field.83.event.waves_len set value 1
+data modify storage anemoland:progress data.beta1.field.83.event.event_id set value movie_carnara
+data modify storage anemoland:progress data.beta1.field.83.event.waves set value []
+data modify storage anemoland:progress data.beta1.field.83.event.waves_len set value 0
+data modify storage anemoland:progress data.beta1.field.83.event.is_movie set value 1b
+data modify storage anemoland:progress data.beta1.field.83.event.movie.id set value "carnara"
