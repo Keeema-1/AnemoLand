@@ -8,6 +8,8 @@
     data modify storage temp:_ data.player_data.SelectedItem set from entity @s SelectedItem
     data modify storage temp:_ data.player_data.Inventory set from entity @s Inventory
 
+execute at @e[type=marker,tag=chest_marker,distance=..8] run function anemoland:sys/player/advancement/inventory_changed/000
+
 # バンドルにメニューアイテムを入れたとき
     execute if items entity @s player.cursor bundle[bundle_contents~{id:"knowledge_book",components:{custom_data:{menu:1b}}}] run item replace entity @s player.cursor with bundle
 
