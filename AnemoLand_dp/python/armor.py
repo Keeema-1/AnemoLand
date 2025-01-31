@@ -631,8 +631,8 @@ base_path = '../data/' + namespace_core + '/function/sys/player/'
 pages_list = [
 	[{"series":"leather", "part":"helmet", "add_space": 2, "level": 1, "need_unlock": 0, "trigger": 1}, {"series":"leather", "part":"chestplate", "add_space": 1, "level": 1, "need_unlock": 0, "trigger": 2}],
 	[{"series":"leather", "part":"leggings", "add_space": 2, "level": 1, "need_unlock": 0, "trigger": 3}, {"series":"leather", "part":"boots", "add_space": 1, "level": 1, "need_unlock": 0, "trigger": 4}],
-	[{"series":"iron", "part":"helmet", "add_space": 2, "level": 1, "need_unlock": 1, "trigger": 5}, {"series":"iron", "part":"chestplate", "add_space": 1, "level": 1, "need_unlock": 1, "trigger": 6}],
-	[{"series":"iron", "part":"leggings", "add_space": 1, "level": 1, "need_unlock": 1, "trigger": 7}, {"series":"iron", "part":"boots", "add_space": 1, "level": 1, "need_unlock": 1, "trigger": 8}],
+	[{"series":"iron", "part":"helmet", "add_space": 2, "level": 1, "need_unlock": 0, "trigger": 5}, {"series":"iron", "part":"chestplate", "add_space": 1, "level": 1, "need_unlock": 0, "trigger": 6}],
+	[{"series":"iron", "part":"leggings", "add_space": 1, "level": 1, "need_unlock": 0, "trigger": 7}, {"series":"iron", "part":"boots", "add_space": 1, "level": 1, "need_unlock": 0, "trigger": 8}],
 ]
 output = []
 path = base_path + 'area/common/village/update/book_shop/armor/00.mcfunction'
@@ -655,14 +655,14 @@ for page_list in pages_list:
 					continue
 				lore = []
 				lore.append([{"text":"  Lv. " + str(page_item["level"]),"color":"yellow", "italic":False}])
-				lore.append([{"text":"\\n" + " ⏫ "},{"translate":"anemoland.common.armor"},{"text":" +" + str(armor_data["status"]["armor"][list(series_data["levels"].keys())[0]]),"color":"aqua", "italic":False}])
+				lore.append([{"text":"\\n" + " ⏫ ", "color": "aqua", "italic":False},{"translate":"anemoland.common.armor"},{"text":" +" + str(armor_data["status"]["armor"][list(series_data["levels"].keys())[0]])}])
 				if "elemental_resistance" in armor_data["status"]:
 					for element, resistance in armor_data["status"]["elemental_resistance"][level].items():
 						if resistance > 0:
-							lore.append([{"text":"\\n" + " ⏫ ","color":"aqua"},{"translate":"anemoland.common.damaged_rate." + element,"color":"aqua" },{"text": " -" + str(resistance) + "%","color":"aqua", "italic":False}])
+							lore.append([{"text":"\\n" + " ⏫ ","color":"aqua"},{"translate":"anemoland.common.damaged_rate." + element,"color":"aqua" },{"text": " -" + str(resistance) + "%","color":"aqua"}])
 						elif resistance < 0:
-							lore.append([{"text":"\\n" + " ⏬ ","color":"red"},{"translate":"anemoland.common.damaged_rate." + element,"color":"red" },{"text": " +" + str(abs(resistance)) + "%","color":"red", "italic":False}])
-				if len(armor_data["status"]["skills"]) > 0:
+							lore.append([{"text":"\\n" + " ⏬ ","color":"red"},{"translate":"anemoland.common.damaged_rate." + element,"color":"red" },{"text": " +" + str(abs(resistance)) + "%","color":"red"}])
+				if len(armor_data["status"]["skills"]["1"]) > 0:
 					lore.append([{"text":"\\n" + ""}])
 					lore.append([{"text": "\\n" + "<"},{"translate":"anemoland.common.skill"},{"text":">", "italic": False, "color":"dark_purple"}])
 					for skill in armor_data["status"]["skills"][level]:

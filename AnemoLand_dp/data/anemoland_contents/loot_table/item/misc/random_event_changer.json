@@ -21,7 +21,8 @@
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "anemoland.item.misc.random_event_changer",
+								"translate": "anemoland.item.misc.random_event_changer.name",
+								"color": "yellow",
 								"italic": false
 							},
 							"conditions": []
@@ -34,6 +35,35 @@
 								},
 								"minecraft:item_model": "minecraft:clock"
 							}
+						},
+						{
+							"function": "minecraft:sequence",
+							"functions": [
+								{
+									"function": "minecraft:set_lore",
+									"entity": "this",
+									"lore": [
+										[
+											"  ",
+											{
+												"translate": "anemoland.item.misc.random_event_changer.lore.1",
+												"with": [{"translate": "key.mouse.right"}],
+												"italic": false,
+												"color": "white"
+											}
+										],
+										[
+											"  ",
+											{
+												"translate": "anemoland.item.misc.random_event_changer.lore.2",
+												"italic": false,
+												"color": "white"
+											}
+										]
+									],
+									"mode": "append"
+								}
+							]
 						}
 					]
 				}
