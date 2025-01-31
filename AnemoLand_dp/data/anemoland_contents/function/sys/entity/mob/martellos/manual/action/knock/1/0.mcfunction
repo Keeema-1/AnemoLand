@@ -8,6 +8,7 @@
     execute if score @s action_time matches 6..10 if score @s action_way2 matches 0 run data modify storage temp:_ data.motion set value {speed:0.3}
     execute if score @s action_time matches 11..15 if score @s action_way2 matches 0 run data modify storage temp:_ data.motion set value {speed:0.1}
     execute if score @s action_time matches ..15 run function anemoland:sys/entity/common/motion/0
+    execute if score @s action_time matches 16.. run tp @s ~ ~ ~ ~ ~
 
 # プレイヤーの方に回転
     # execute if score @s action_time matches ..10 run function anemoland:sys/entity/common/rotate/to_player/front/3
