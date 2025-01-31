@@ -20,12 +20,6 @@
 					"color": "yellow",
 					"italic": false
 				}
-			],
-			[
-				{"translate":"anemoland.chest_menu.sell.sell_detail.1","color":"dark_gray","italic":false}
-			],
-			[
-				{"translate":"anemoland.chest_menu.sell.sell_detail.2","color":"dark_gray","italic":false}
 			]
 		],
 		"mode": "replace_all"

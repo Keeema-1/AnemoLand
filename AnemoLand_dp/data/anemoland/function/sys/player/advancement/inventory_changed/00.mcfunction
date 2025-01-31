@@ -8,11 +8,8 @@
     data modify storage temp:_ data.player_data.SelectedItem set from entity @s SelectedItem
     data modify storage temp:_ data.player_data.Inventory set from entity @s Inventory
 
-# 売却によるゴールド取得
-    scoreboard players set #gold_add temp 0
-    execute if data storage temp:_ data.player_data.Inventory[{id:"minecraft:gold_nugget"}].components."minecraft:custom_data".gold store result score #gold_add temp run data get storage temp:_ data.player_data.Inventory[{id:"minecraft:gold_nugget"}].components."minecraft:custom_data".gold
-    scoreboard players operation @s gold += #gold_add temp
-    clear @s gold_nugget
+# バンドルにメニューアイテムを入れたとき
+    execute if items entity @s player.cursor bundle[bundle_contents~{id:"knowledge_book",components:{custom_data:{menu:1b}}}] run item replace entity @s player.cursor with bundle
 
 # メニュー処理
     function anemoland:sys/player/menu/0
