@@ -10,11 +10,15 @@
 
 execute at @e[type=marker,tag=chest_marker,distance=..8] run function anemoland:sys/player/advancement/inventory_changed/000
 
+tag @s add player_check
+
 # バンドルにメニューアイテムを入れたとき
-    execute if items entity @s player.cursor bundle[bundle_contents~{id:"knowledge_book",components:{custom_data:{menu:1b}}}] run item replace entity @s player.cursor with bundle
+    execute if items entity @s player.cursor bundle positioned ~ ~-100 ~ summon armor_stand run function anemoland:sys/player/advancement/inventory_changed/001
 
 # メニュー処理
     function anemoland:sys/player/menu/0
 
 # 攻撃力ステータスを更新
     function anemoland:sys/player/common/update_attack_status/0
+
+tag @s remove player_check

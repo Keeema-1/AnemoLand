@@ -9,8 +9,6 @@
 #
 # @within function anemoland:sys/player/advancement/inventory_changed/00
 
-tag @s add player_check
-
 # プレイヤー別ストレージのデータを取得
     function anemoland:sys/player/common/player_storage/read
 
@@ -29,5 +27,3 @@ tag @s add player_check
     function anemoland:sys/player/common/player_storage/write
 
 scoreboard players reset #click_flag temp
-
-tag @s remove player_check
