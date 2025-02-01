@@ -4,7 +4,7 @@
 scoreboard players add @s action_time 1
 
 # centerに近づいたら水平方向の移動をやめる
-    execute at @s positioned ~ 0 ~ if entity @e[type=marker,tag=fishing_center,distance=..7,sort=nearest] at @s run return run function anemoland:sys/player/item/fishing/casting/near
+    execute at @s positioned ~ 0 ~ if entity @e[type=marker,tag=fishing_center,distance=..4,sort=nearest] at @s run return run function anemoland:sys/player/item/fishing/casting/near
 
 # 水平方向の移動
     execute if block ~ ~ ~ water at @s facing entity @e[type=marker,tag=fishing_center,distance=..32,sort=nearest] feet rotated ~ 0 run return run tp ^ ^ ^0.8
