@@ -6,14 +6,14 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:iron_leggings",
+					"name": "minecraft:ender_eye",
 					"weight": 1,
 					"functions": [
 						{
 							"function": "minecraft:set_name",
 							"entity": "this",
 							"name": {
-								"translate": "anemoland.armor.iron.leggings.name",
+								"translate": "anemoland.tool.fishing_rod.small_only.name",
 								"color": "white",
 								"italic": false
 							}
@@ -24,50 +24,39 @@
 							"lore": [
 								[
 									{
-										"text": "  Lv. 2 ",
-										"color": "yellow",
+										"text": "    ",
+										"color": "dark_gray",
 										"italic": false
 									},
 									{
-										"text": "(MAX: 3)",
-										"color": "dark_gray"
+										"translate": "anemoland.tool.fishing_rod.normal.lore.1"
 									}
 								],
 								[
 									{
-										"text": "  ⏫ ",
-										"color": "aqua",
+										"text": "    ",
+										"color": "dark_gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.common.armor"
-									},
-									{
-										"text": " +4"
+										"translate": "anemoland.tool.fishing_rod.normal.lore.2"
 									}
 								],
 								[
 									{
-										"text": ""
-									}
-								],
-								[
-									{
-										"text": "<",
+										"text": "    ",
+										"color": "dark_gray",
 										"italic": false
 									},
 									{
-										"translate": "anemoland.common.skill"
-									},
-									{
-										"text": ">"
+										"translate": "anemoland.tool.fishing_rod.normal.lore.3.small_only"
 									}
 								],
-								[
-									{
-										"text": ""
-									}
-								],
+								{
+									"text": "",
+									"italic": false,
+									"color": "dark_gray"
+								},
 								[
 									{
 										"text": "▶ ",
@@ -78,7 +67,7 @@
 										"translate": "anemoland.common.sell_price"
 									},
 									{
-										"text": ": 160G"
+										"text": " 80G"
 									}
 								]
 							],
@@ -88,17 +77,17 @@
 							"function": "minecraft:set_attributes",
 							"modifiers": [
 								{
-									"id": "leggings.armor.add.4",
-									"attribute": "minecraft:armor",
-									"amount": 0.4,
+									"id": "weapon.attack_damage.0",
+									"attribute": "minecraft:attack_damage",
+									"amount": 0,
 									"operation": "add_value",
-									"slot": "legs"
+									"slot": "mainhand"
 								}
 							]
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"armor\",series:\"iron\",part:\"leggings\",id:\"iron_leggings\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/iron/leggings\",power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{1: {}, 2: {}, 3: {}},skills:[]}}"
+							"tag": "{item_type:\"tool\",tool_type:\"fishing_rod\",fishing_rod_type:\"small_only\",sell_price:80}"
 						},
 						{
 							"function": "minecraft:set_components",
@@ -106,12 +95,12 @@
 								"minecraft:unbreakable": {
 									"show_in_tooltip": false
 								},
+								"minecraft:enchantments": {
+									"levels": {},
+									"show_in_tooltip": false
+								},
 								"minecraft:enchantment_glint_override": false,
-								"minecraft:equippable": {
-									"slot": "legs",
-									"equip_sound": "item.armor.equip_chain",
-									"model": "iron"
-								}
+                                "minecraft:item_model": "minecraft:fishing_rod"
 							}
 						},
 						{
@@ -119,12 +108,6 @@
 							"toggles": {
 								"minecraft:enchantments": false,
 								"minecraft:attribute_modifiers": false
-							}
-						},
-						{
-							"function": "minecraft:set_enchantments",
-							"enchantments": {
-								"minecraft:binding_curse": 1
 							}
 						}
 					]

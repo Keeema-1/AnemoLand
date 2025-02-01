@@ -42,6 +42,16 @@
 										"translate": "anemoland.tool.fishing_rod.normal.lore.2"
 									}
 								],
+								[
+									{
+										"text": "    ",
+										"color": "dark_gray",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.tool.fishing_rod.normal.lore.3.big_only"
+									}
+								],
 								{
 									"text": "",
 									"italic": false,

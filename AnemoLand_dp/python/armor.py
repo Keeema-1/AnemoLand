@@ -63,10 +63,7 @@ for series in armor_database["series"]:
 			# set_lore
 			function_ = {}
 			lore = []
-			if str(int(level)+1) in series["levels"]:
-				lore.append([{"text":"  Lv. " + str(level),"color":"yellow", "italic":False}])
-			else:
-				lore.append([{"text":"  Lv. " + str(level) + " (MAX)","color":"yellow", "italic":False}])
+			lore.append([{"text":"  Lv. " + str(level) + " ","color":"yellow", "italic":False},{"text":"(MAX: 3)","color":"dark_gray"}])
 			lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"translate":"anemoland.common.armor"},{"text":" +" + str(armor_value)}])
 			if "elemental_resistance" in armor_data["status"]:
 				for element, resistance in armor_data["status"]["elemental_resistance"][level].items():

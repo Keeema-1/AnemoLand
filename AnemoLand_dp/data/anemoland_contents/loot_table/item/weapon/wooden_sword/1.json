@@ -24,9 +24,13 @@
 							"lore": [
 								[
 									{
-										"text": "  Lv. 1 (MAX)",
+										"text": "  Lv. 1 ",
 										"color": "yellow",
 										"italic": false
+									},
+									{
+										"text": "(MAX：3)",
+										"color": "dark_gray"
 									}
 								],
 								[
