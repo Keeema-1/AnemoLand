@@ -1,5 +1,5 @@
-execute store result score #skill_level temp run data get storage temp:_ data.player_storage.skill_levels.recovery_up 1
-scoreboard players set #const temp 800
+execute store result score #skill_level temp run data get storage temp:_ data.player_storage.skill_levels.recovery_up 10
+scoreboard players set #const temp 80
 scoreboard players operation #skill_level temp *= #const temp
 scoreboard players set #const temp 100
 scoreboard players operation #skill_level temp /= #const temp

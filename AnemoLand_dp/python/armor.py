@@ -257,9 +257,10 @@ for skill_name, skill_data in skill_list.items():
 	path = base_path + skill_name + '.mcfunction'
 	output = []
 	makedir(path)
-	output.append('execute store result score #skill_level temp run data get storage temp:_ data.player_storage.skill_levels.' + skill_name + ' 1\n')
-	if skill_data["lore_value"]["mul"] < 1 or skill_data["lore_value"]["mul"] > 1:
-		output.append('scoreboard players set #const temp ' + str(round(skill_data["lore_value"]["mul"]*1000)) + '\n')
+	output.append('execute store result score #skill_level temp run data get storage temp:_ data.player_storage.skill_levels.' + skill_name + ' 10\n')
+	if 1:
+	# if skill_data["lore_value"]["mul"] < 1 or skill_data["lore_value"]["mul"] > 1:
+		output.append('scoreboard players set #const temp ' + str(round(skill_data["lore_value"]["mul"]*100)) + '\n')
 		output.append('scoreboard players operation #skill_level temp *= #const temp\n')
 		output.append('scoreboard players set #const temp 100\n')
 		output.append('scoreboard players operation #skill_level temp /= #const temp\n')
@@ -270,9 +271,9 @@ for skill_name, skill_data in skill_list.items():
 		output.append('scoreboard players operation #skill_level.decimal1 temp %= #const temp\n')
 		output.append('scoreboard players set #const temp ' + str(round(1/skill_data["lore_value"]["mul"]//10)) + '\n')
 		output.append('scoreboard players operation #skill_level.decimal1 temp /= #const temp\n')
-	else:
-		output.append('scoreboard players operation #skill_level.int temp = #skill_level temp\n')
-		output.append('scoreboard players set #skill_level.decimal1 temp 0\n')
+	# else:
+	# 	output.append('scoreboard players operation #skill_level.int temp = #skill_level temp\n')
+	# 	output.append('scoreboard players set #skill_level.decimal1 temp 0\n')
 	output.append('item modify entity @s inventory.0 ' + namespace_contents + ':skill/' + skill_name + '\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -295,9 +296,10 @@ for armor_set in [1, 2, 3]:
 		path = base_path + skill_name + '.mcfunction'
 		output = []
 		makedir(path)
-		output.append('execute store result score #skill_level temp run data get storage temp:_ data.player_storage.skill_levels.' + skill_name + ' 1\n')
-		if skill_data["lore_value"]["mul"] < 1 or skill_data["lore_value"]["mul"] > 1:
-			output.append('scoreboard players set #const temp ' + str(round(skill_data["lore_value"]["mul"]*1000)) + '\n')
+		output.append('execute store result score #skill_level temp run data get storage temp:_ data.player_storage.skill_levels.' + skill_name + ' 10\n')
+		if 1:
+		# if skill_data["lore_value"]["mul"] < 1 or skill_data["lore_value"]["mul"] > 1:
+			output.append('scoreboard players set #const temp ' + str(round(skill_data["lore_value"]["mul"]*100)) + '\n')
 			output.append('scoreboard players operation #skill_level temp *= #const temp\n')
 			output.append('scoreboard players set #const temp 100\n')
 			output.append('scoreboard players operation #skill_level temp /= #const temp\n')
@@ -308,9 +310,9 @@ for armor_set in [1, 2, 3]:
 			output.append('scoreboard players operation #skill_level.decimal1 temp %= #const temp\n')
 			output.append('scoreboard players set #const temp ' + str(round(1/skill_data["lore_value"]["mul"]//10)) + '\n')
 			output.append('scoreboard players operation #skill_level.decimal1 temp /= #const temp\n')
-		else:
-			output.append('scoreboard players operation #skill_level.int temp = #skill_level temp\n')
-			output.append('scoreboard players set #skill_level.decimal1 temp 0\n')
+		# else:
+		# 	output.append('scoreboard players operation #skill_level.int temp = #skill_level temp\n')
+		# 	output.append('scoreboard players set #skill_level.decimal1 temp 0\n')
 		output.append('item modify entity @s inventory.' + str(armor_set*2-1) + ' ' + namespace_contents + ':skill/' + skill_name + '\n')
 		output.append('item modify entity @s inventory.' + str(armor_set*2) + ' ' + namespace_contents + ':skill/' + skill_name + '\n')
 		with open(path, 'w', encoding='utf-8') as f:
