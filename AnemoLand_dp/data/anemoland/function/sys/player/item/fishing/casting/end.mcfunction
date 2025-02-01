@@ -1,7 +1,7 @@
 
 # execute on passengers run data modify entity @s transformation set value [0.0300f,0.0000f,0.0000f,0.0000f,0.0000f,0.0300f,0.0000f,0.0000f,0.0000f,0.0000f,8.0000f,0.0000f,0.0000f,0.0000f,0.0000f,1.0000f]
 
-execute at @e[type=marker,tag=fishing_area,distance=..32,sort=nearest] facing entity @s feet rotated ~ 0 positioned ^ ^ ^7 run tp @s ~ 0 ~
+execute at @e[type=marker,tag=fishing_center,distance=..32,sort=nearest] facing entity @s feet rotated ~ 0 positioned ^ ^ ^7 run tp @s ~ 0 ~
 
 tag @s add on_water
 

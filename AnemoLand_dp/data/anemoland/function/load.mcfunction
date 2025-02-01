@@ -28,6 +28,11 @@
     # バトルの時間計測用
         scoreboard objectives add battle_timer dummy
 
+    # vec 共通
+        scoreboard objectives add vec0 dummy
+        scoreboard objectives add vec1 dummy
+        scoreboard objectives add vec2 dummy
+
     # プレイヤー用
         # プレイヤーログイン検知用
             scoreboard objectives add exist dummy
@@ -64,6 +69,7 @@
             scoreboard objectives add skill_mode dummy
         # ドロップ・右クリック検知用
             scoreboard objectives add dropped.carrot_on_a_stick dropped:carrot_on_a_stick
+            scoreboard objectives add dropped.ender_eye dropped:ender_eye
             scoreboard objectives add used.carrot_on_a_stick used:carrot_on_a_stick
             scoreboard objectives add dropped.knowledge_book dropped:knowledge_book
             scoreboard objectives add used.snowball used:snowball

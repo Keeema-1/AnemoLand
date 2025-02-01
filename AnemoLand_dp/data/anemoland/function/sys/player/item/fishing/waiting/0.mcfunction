@@ -1,7 +1,10 @@
 
-execute unless score @s action_time matches 0.. if score @p[tag=player_check] action_time matches 4 run return run function anemoland:sys/player/item/fishing/end_as_bobber
+# 失敗
+    execute unless score @s action_time matches 0.. if entity @p[tag=player_check,tag=using_item] run return run function anemoland:sys/player/item/fishing/end_as_bobber
 
-execute if score @s action_time matches 0.. if score @p[tag=player_check] action_time matches 4 run function anemoland:sys/player/item/fishing/waiting/success/0
+# 成功
+    execute if score @s action_time matches 0.. if entity @p[tag=player_check,tag=using_item] run function anemoland:sys/player/item/fishing/waiting/success/0
+
 execute if score @s action_time matches 0.. run scoreboard players remove @s action_time 1
 execute if score @s action_time matches -1 run scoreboard players reset @s action_time
 

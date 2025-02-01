@@ -1,0 +1,54 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:leather",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "▶ ",
+										"italic": false,
+										"color": "dark_gray"
+									},
+									{
+										"translate": "anemoland.common.sell_price"
+									},
+									{
+										"text": ": 30G"
+									}
+								]
+							],
+							"mode": "append"
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"material\",id:\"medium_salmon\",sell_price:30}"
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"value": 101
+						},
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "anemoland.item.fish.salmon.medium.name",
+								"italic": false,
+								"color": "white"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

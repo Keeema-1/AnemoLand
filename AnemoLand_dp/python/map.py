@@ -324,6 +324,8 @@ for map_data in map_database["maps"]:
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared:1b} run function ' + namespace_core + ':sys/player/title/actionbar/field/skill_gauge/0\n')
 			if "special_field" in field_data and field_data["special_field"]  in ["arena_prepare"]:
 				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' run function ' + namespace_core + ':sys/player/area/common/arena_prepare/0\n')
+			if "special_field" in field_data and field_data["special_field"]  in ["explore"]:
+				output.append('execute positioned ' + str(center[0]) + ' 0.0 ' + str(center[1]) + ' run function ' + namespace_core + ':sys/player/area/common/field/explore/0\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 

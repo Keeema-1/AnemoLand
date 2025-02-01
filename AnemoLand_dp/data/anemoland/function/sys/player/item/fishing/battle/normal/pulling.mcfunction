@@ -4,4 +4,4 @@ execute if score @s level matches 2 at @s facing entity @p[tag=player_check] eye
 
 execute as @p[tag=player_check] at @s run playsound minecraft:item.spyglass.use master @s ~ ~ ~ 1 1
 
-execute unless entity @e[type=marker,tag=fishing_area,distance=..16] run return run function anemoland:sys/player/item/fishing/battle/success
+execute if entity @e[type=marker,tag=fishing_spot,distance=..8] run return run function anemoland:sys/player/item/fishing/battle/success

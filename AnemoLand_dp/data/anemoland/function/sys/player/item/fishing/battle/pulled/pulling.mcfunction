@@ -9,4 +9,4 @@ execute as @p[tag=player_check] at @s run playsound minecraft:item.spyglass.use 
 
 execute on passengers run data merge entity @s {glow_color_override:16711680,Glowing:1b}
 
-execute unless entity @e[type=marker,tag=fishing_area,distance=..16] run return run function anemoland:sys/player/item/fishing/battle/success
+execute if entity @e[type=marker,tag=fishing_spot,distance=..8] run return run function anemoland:sys/player/item/fishing/battle/success

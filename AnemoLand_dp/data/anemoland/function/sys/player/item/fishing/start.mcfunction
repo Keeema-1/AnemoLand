@@ -1,3 +1,8 @@
+#> anemoland:sys/player/item/fishing/start
+#
+# 釣り開始
+#
+# @within function anemoland:sys/player/item/fishing/0
 
 scoreboard players set @s action0 1
 scoreboard players reset @s action_time

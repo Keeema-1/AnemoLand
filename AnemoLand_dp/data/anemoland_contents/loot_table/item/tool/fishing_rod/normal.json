@@ -1,0 +1,108 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:ender_eye",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {
+								"translate": "anemoland.tool.fishing_rod.normal.name",
+								"color": "white",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "    ",
+										"color": "dark_gray",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.tool.fishing_rod.normal.lore.1"
+									}
+								],
+								[
+									{
+										"text": "    ",
+										"color": "dark_gray",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.tool.fishing_rod.normal.lore.2"
+									}
+								],
+								{
+									"text": "",
+									"italic": false,
+									"color": "dark_gray"
+								},
+								[
+									{
+										"text": "▶ ",
+										"italic": false,
+										"color": "dark_gray"
+									},
+									{
+										"translate": "anemoland.common.sell_price"
+									},
+									{
+										"text": " 80G"
+									}
+								]
+							],
+							"mode": "replace_all"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"id": "weapon.attack_damage.0",
+									"attribute": "minecraft:attack_damage",
+									"amount": 0,
+									"operation": "add_value",
+									"slot": "mainhand"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"tool\",tool_type:\"fishing_rod\",sell_price:80}"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:unbreakable": {
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantments": {
+									"levels": {},
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantment_glint_override": false,
+                                "minecraft:item_model": "minecraft:fishing_rod"
+							}
+						},
+						{
+							"function": "minecraft:toggle_tooltips",
+							"toggles": {
+								"minecraft:enchantments": false,
+								"minecraft:attribute_modifiers": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
