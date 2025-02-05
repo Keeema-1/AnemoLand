@@ -2,6 +2,7 @@
 
 # テンションゲージ
     scoreboard players add @s skill_gauge 20
+    execute if score @s attack.base matches 2.. run scoreboard players add @s skill_gauge 20
     execute if score @s skill_gauge matches ..600 run scoreboard players add @s skill_gauge 20
     execute if score @s skill_gauge matches 1000.. run scoreboard players set @s skill_gauge 1000
     # 糸の耐久度の減少

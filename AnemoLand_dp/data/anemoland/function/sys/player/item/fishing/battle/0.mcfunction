@@ -1,6 +1,9 @@
 # skill_gauge: テンションゲージ
 # health: 糸の耐久
 # spring_time: 魚の逃げ
+# attack.base: テンションゲージ増加スピード
+# armor.base: 糸の巻きにくさ
+# attack.mul: 左右のスピード
 
 execute if score @s action_time matches 0.. run scoreboard players remove @s action_time 1
 

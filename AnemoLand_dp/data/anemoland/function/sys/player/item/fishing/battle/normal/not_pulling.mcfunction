@@ -1,5 +1,6 @@
 # テンションゲージ
     scoreboard players remove @s skill_gauge 10
+    execute if score @s attack.base matches 2.. run scoreboard players remove @s skill_gauge 10
     execute if score @s skill_gauge matches 600.. run scoreboard players remove @s skill_gauge 10
     execute unless score @s skill_gauge matches 0.. run scoreboard players set @s skill_gauge 0
     execute if score @s skill_gauge matches ..100 if predicate anemoland:random_chance/0_5 run scoreboard players remove @s sprint_time 2

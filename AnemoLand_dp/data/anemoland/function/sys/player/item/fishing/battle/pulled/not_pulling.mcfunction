@@ -1,5 +1,6 @@
 # テンションゲージ
-    scoreboard players remove @s skill_gauge 2
+    execute if score @s skill_gauge matches ..498 run scoreboard players add @s skill_gauge 2
+    execute if score @s skill_gauge matches 502.. run scoreboard players remove @s skill_gauge 2
     execute if score @s skill_gauge matches 800.. run scoreboard players remove @s skill_gauge 10
     execute unless score @s skill_gauge matches 0.. run scoreboard players set @s skill_gauge 0
 
