@@ -12,8 +12,10 @@ execute store result storage temp:_ data.npc.level int 1 run scoreboard players 
 # data modify storage temp:_ data.npc.level set from storage temp:_ data.event.npc_level
 
 # boy1
+    execute if data storage temp:_ data.event{with_npc1:1b,npc1_id:1} run function anemoland_contents:command/talk/boy1/quest1_enter
     execute if data storage temp:_ data.event{with_npc1:1b,npc1_id:1} run return run function anemoland_contents:sys/entity/mob/human1/summon/boy1/player_side/level with storage temp:_ data.npc
 # sally
+    execute if data storage temp:_ data.event{with_npc1:1b,npc1_id:2} run function anemoland_contents:command/talk/sally/quest1_start
     execute if data storage temp:_ data.event{with_npc1:1b,npc1_id:2} run return run function anemoland_contents:sys/entity/mob/human1/summon/sally/player_side/level with storage temp:_ data.npc
 
 # execute store result score #team_members temp if entity @a[gamemode=adventure,distance=..64]
