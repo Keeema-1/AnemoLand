@@ -953,7 +953,8 @@
                         "command": "function anemoland:command/progress/beta1/npc/boy1/summon"
                     }
                 ]
-            }
+            },
+            "unlock": [{"type": "rank", "id": "gold"}]
         },
         "garapapas_double": {
             "waves":[{"garapapas_double":0}],
@@ -1065,7 +1066,8 @@
         },
         "muscleroom": {
             "waves":[{"muscleroom":0}],
-            "level_range": [20,40]
+            "level_range": [20,40],
+            "unlock": [{"type": "rank", "id": "gold"}]
         },
         "muscleroom_double": {
             "waves":[{"muscleroom_double":0}],

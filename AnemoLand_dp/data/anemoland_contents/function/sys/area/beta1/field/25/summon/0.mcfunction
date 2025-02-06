@@ -1,6 +1,7 @@
 function anemoland_contents:sys/area/beta1/field/25/init/remove_entity
 data modify storage temp:_ data.event set from storage anemoland:progress data.beta1.field.25.event
-execute if data storage anemoland:progress data.beta1.field.25{cleared_once:1b} at @p run function anemoland:sys/player/area/common/field/summon_npc
+execute unless data storage temp:_ data.event{with_npc1:1b} if data storage anemoland:progress data.beta1.field.25{cleared_once:1b} at @p run function anemoland:sys/player/area/common/field/summon_npc
+execute if data storage temp:_ data.event{with_npc1:1b} at @p run function anemoland:sys/player/area/common/field/summon_npc
 execute if data storage temp:_ data.event.with_npc1 run data modify storage anemoland:progress data.beta1.field.25.event.npc1_exist set value 1b
 function anemoland:sys/player/area/common/field/set_pet_timer
 data modify storage anemoland:progress data.beta1.field.25.summon_flag set value 1b

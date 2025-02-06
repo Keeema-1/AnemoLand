@@ -1117,6 +1117,32 @@
 							"show_name": false,
 							"text": [
 								[
+									{"text": "また、ガラパパスを討伐すると、実力が認められて"},
+									{"text": "シルバーランク","color":"gray"},
+									{"text": "に昇格します。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "シルバーランクに昇格すると Lv.20 - 29 のモンスターに挑戦できるようになり、武器や防具もさらに強化できるようになります。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
 									{"text": "しっかり準備をして、討伐に向かいましょう！"}
 								]
 							],
@@ -1151,32 +1177,6 @@
 							"text": [
 								[
 									{"text": "マルテロスは両腕と尻尾の木槌を振り回す攻撃が特徴的です。"},
-									{"text":"▼","color":"dark_gray"}
-								]
-							],
-							"schedule_time_overlay": -1,
-							"schedule_time_add": 0
-						},
-						{
-							"type": "text",
-							"show_name": false,
-							"text": [
-								[
-									{"text": "また、マルテロスを討伐すると、実力が認められて"},
-									{"text": "シルバーランク","color":"gray"},
-									{"text": "に昇格します。"},
-									{"text":"▼","color":"dark_gray"}
-								]
-							],
-							"schedule_time_overlay": -1,
-							"schedule_time_add": 0
-						},
-						{
-							"type": "text",
-							"show_name": false,
-							"text": [
-								[
-									{"text": "シルバーランクに昇格すると Lv.20 - 29 のモンスターに挑戦できるようになり、武器や防具もさらに強化できるようになります。"},
 									{"text":"▼","color":"dark_gray"}
 								]
 							],
