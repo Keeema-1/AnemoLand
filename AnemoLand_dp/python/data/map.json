@@ -118,6 +118,7 @@
                     "field_type": "plain_C",
                     "display_name": "forest.large",
                     "unlock":["33","22"],
+                    "unlock_area":["waterside"],
                     "initial_event": {"id": "movie_squirrel_head", "level": 10},
                     "default_event": {"id": "squirrel_head", "level": 10},
                     "random_event": "squirrel_head"
@@ -170,6 +171,7 @@
                     "field_type": "plain_C",
                     "display_name": "forest.large",
                     "unlock":["41","43"],
+                    "unlock_area":["cherry"],
                     "initial_event": {"id": "movie_martellos", "level": 20},
                     "default_event": {"id": "martellos", "level": 20},
                     "random_event": "martellos"
@@ -231,6 +233,7 @@
                     "field_type": "cherry_A",
                     "display_name": "cherry.large",
                     "unlock":["40"],
+                    "unlock_area":["mushroom"],
                     "initial_event": {"id": "movie_ojinushi", "level": 20},
                     "default_event": {"id": "ojinushi", "level": 20},
                     "random_event": "ojinushi"
@@ -273,6 +276,7 @@
                     "field_type": "mushroom_A",
                     "display_name": "mushroom.large",
                     "unlock":["35"],
+                    "unlock_area":["stone"],
                     "initial_event": {"id": "movie_muscleroom", "level": 25},
                     "default_event": {"id": "muscleroom", "level": 25},
                     "random_event": "muscleroom"
@@ -325,6 +329,7 @@
                     "field_type": "rock_A",
                     "display_name": "stone.large",
                     "unlock":["62"],
+                    "unlock_area":["寒冷地"],
                     "initial_event": {"id": "movie_bagikeros", "level": 30},
                     "default_event": {"id": "bagikeros", "level": 30},
                     "random_event": "bagikeros"

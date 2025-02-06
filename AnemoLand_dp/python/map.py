@@ -373,8 +373,11 @@ for map_data in map_database["maps"]:
 								# return_pos2 = [map_data["pos"][0]-size*8/2+4+8*field2["index"][1], map_data["pos"][1]+size*8/2-4-8*field2["index"][0]]
 								output.append('execute unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field2_id + '{cleared_once:1b} run function ' + namespace_contents + ':command/progress/unlock/field/' + map_name + '/field' + field2_id + '\n')
 				output.append('execute unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{cleared_once:1b} run function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/clear/first_clear\n')
-				output.append('execute if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{boss_flag:1b} run function ' + namespace_core + ':sys/player/area/common/field/clear_boss\n')
-				output.append('execute unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{boss_flag:1b} run function ' + namespace_core + ':sys/player/area/common/field/clear_mob\n')
+				if "special_field" in field_data and field_data["special_field"] == "arena":
+					output.append('function ' + namespace_core + ':sys/player/area/common/field/clear_boss\n')
+				else:
+					output.append('execute if data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{boss_flag:1b} run function ' + namespace_core + ':sys/player/area/common/field/clear_boss\n')
+					output.append('execute unless data storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '{boss_flag:1b} run function ' + namespace_core + ':sys/player/area/common/field/clear_mob\n')
 				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.cleared set value 1b\n')
 				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.cleared_once set value 1b\n')
 				output.append('data modify storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.random_event_enable set value 1b\n')
@@ -382,7 +385,8 @@ for map_data in map_database["maps"]:
 				output.append('data modify storage temp:_ data.event_id.event_id set from storage ' + namespace_storage + ':progress data.' + map_name + '.field.' + field_id + '.event.event_id\n')
 				output.append('function ' + namespace_contents + ':sys/event/clear with storage temp:_ data.event_id\n')
 				output.append('function ' + namespace_contents + ':command/field_event/' + map_name + '/change/' + field_data["default_event"]["id"] + ' {field_id:' + field_id + ', level: ' +  str(field_data["default_event"]["level"]) + '}\n')
-				output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/event/update/0\n')
+				if not ("special_field" in field_data and field_data["special_field"] == "arena"):
+					output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/event/update/0\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
 
@@ -390,6 +394,9 @@ for map_data in map_database["maps"]:
 				path = base_path + map_name + '/' + field_data["type"] + '/' + field_id + '/clear/first_clear.mcfunction'
 				makedir(path)
 				output.append('summon marker ' + str(return_pos[0]) + ' 0.0 ' + str(return_pos[1]) + ' {Tags:["clear_flag"]}\n')
+				if "unlock_area" in field_data:
+					for unlock_area in field_data["unlock_area"]:
+						output.append('tellraw @a [{"translate":"anemoland.general.unlock_area","color":"green","with":[{"translate":"anemoland.area.' + unlock_area + '"}]}]\n')
 				with open(path, 'w', encoding='utf-8') as f:
 					f.writelines(output)
 
