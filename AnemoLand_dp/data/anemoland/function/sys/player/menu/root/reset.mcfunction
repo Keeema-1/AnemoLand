@@ -10,13 +10,13 @@
 # 2
     item replace entity @s inventory.2 with knowledge_book[custom_data={menu:1b},custom_model_data=104,item_name='{"translate":"anemoland.menu.equipment"}']
 # 3
-    item replace entity @s inventory.3 with knowledge_book[custom_data={menu:1b},custom_model_data=52,item_name='{"text":"依頼"}',lore=['{"text":"  (仮)","color":"gray","italic":false}']]
+    item replace entity @s inventory.3 with knowledge_book[custom_data={menu:1b},custom_model_data=1,hide_tooltip={}]
 # 4
-    item replace entity @s inventory.4 with knowledge_book[custom_data={menu:1b},custom_model_data=103,item_name='{"translate":"anemoland.menu.team"}']
+    item replace entity @s inventory.4 with knowledge_book[custom_data={menu:1b},custom_model_data=1,hide_tooltip={}]
 # 5
-    item replace entity @s inventory.5 with knowledge_book[custom_data={menu:1b},custom_model_data=14,item_name='{"text":"会話"}',lore=['{"text":"  (仮)","color":"gray","italic":false}']]
+    item replace entity @s inventory.5 with knowledge_book[custom_data={menu:1b},custom_model_data=1,hide_tooltip={}]
 # 6
-    item replace entity @s inventory.6 with knowledge_book[custom_data={menu:1b},custom_model_data=28,item_name='{"text":"ニュース"}',lore=['{"text":"  (仮)","color":"gray","italic":false}']]
+    item replace entity @s inventory.6 with knowledge_book[custom_data={menu:1b},custom_model_data=1,hide_tooltip={}]
 # 7
     item replace entity @s inventory.7 with knowledge_book[custom_data={menu:1b},custom_model_data=27,item_name='{"translate":"anemoland.menu.tp"}']
 # 8
