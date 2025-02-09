@@ -954,7 +954,7 @@
                     }
                 ]
             },
-            "unlock": [{"type": "rank", "id": "gold"}]
+            "unlock": [{"type": "rank", "id": "silver"}]
         },
         "garapapas_double": {
             "waves":[{"garapapas_double":0}],

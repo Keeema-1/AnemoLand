@@ -35,3 +35,6 @@
 
 # レシピの初期化
     recipe take @s *
+
+# 設定を削除
+    data remove storage anemoland:settings data
