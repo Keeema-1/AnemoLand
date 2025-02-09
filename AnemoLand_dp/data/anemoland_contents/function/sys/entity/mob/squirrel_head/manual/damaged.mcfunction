@@ -6,3 +6,4 @@
 #
 # @within function anemoland_contents:sys/entity/mob/squirrel_head/damaged/common
 
+execute as @a[distance=..64] at @s run playsound minecraft:entity.polar_bear.hurt hostile @s ~ ~ ~ 1 1.4
