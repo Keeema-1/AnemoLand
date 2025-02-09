@@ -15,4 +15,4 @@
     execute unless data storage temp:_ data.player_data.Inventory[{Slot:17b,components:{"minecraft:custom_data":{menu:1b}}}] run return run function anemoland:sys/player/menu/tp/main/click/8
 
 # メニュー用アイテムをリセット
-    function anemoland:sys/player/menu/tp/main/update
+    function anemoland:sys/player/menu/tp/main/reset
