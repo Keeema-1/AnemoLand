@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:iron_sword"
+		},
+		"title": "討伐",
+		"description": "",
+		"show_toast": false,
+		"announce_to_chat": false
+	},
+	"parent": "anemoland:achievements/root",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

@@ -13,3 +13,6 @@ execute as @e[type=item,tag=newly_summoned,distance=..1] run data modify entity 
 tag @e[type=item,tag=newly_summoned,distance=..1] remove newly_summoned
 
 function anemoland:sys/player/item/fishing/end_as_bobber
+
+# 実績
+    advancement grant @p[tag=player_check] only anemoland:achievements/eplore/big_fish

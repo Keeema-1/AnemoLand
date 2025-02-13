@@ -23,4 +23,10 @@
 # バージョンスコアを同期
     scoreboard players operation @s version = #system version
 
+# 実績
+    advancement grant @s only anemoland:achievements/root
+    advancement grant @s only anemoland:achievements/explore
+    advancement grant @s only anemoland:achievements/pet
+    advancement grant @s only anemoland:achievements/monster
+
 tellraw @s {"text":"Welcome to AnemoLand!!","color":"green"}

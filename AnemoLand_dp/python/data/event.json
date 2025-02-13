@@ -1110,6 +1110,10 @@
                         "type": "talk",
                         "npc_id": "system",
                         "talk_id": "demo_end"
+                    },
+                    {
+                        "type": "command",
+                        "command": "advancement grant @p[tag=player_check] only anemoland:achievements/monster/beta1_all"
                     }
                 ]
             }

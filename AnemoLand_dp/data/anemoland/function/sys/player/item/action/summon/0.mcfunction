@@ -23,3 +23,6 @@ data modify storage temp:_ data.player_storage.pet.boss1.components set from sto
 scoreboard players set @s pet_boss1.timer 1800
 
 function anemoland:sys/player/common/player_storage/write
+
+# 実績
+    advancement grant @s only anemoland:achievements/pet/summon_boss

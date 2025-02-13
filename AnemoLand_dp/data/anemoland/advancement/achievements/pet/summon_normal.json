@@ -1,0 +1,16 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:carrot_on_a_stick",
+			"components": {"custom_model_data": 10010}
+		},
+		"title": "ペットを召喚する",
+		"description": ""
+	},
+	"parent": "anemoland:achievements/pet",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

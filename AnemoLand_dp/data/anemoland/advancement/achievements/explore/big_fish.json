@@ -1,0 +1,16 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:fishing_rod"
+		},
+		"title": "大物を釣り上げる",
+		"description": "",
+		"frame": "goal"
+	},
+	"parent": "anemoland:achievements/explore",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}
