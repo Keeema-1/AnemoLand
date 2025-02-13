@@ -117,7 +117,7 @@ for event_id, event_data in event_database["events"].items():
 		elif "first_clear" in event_data["triggers"]:
 			for function_ in event_data["triggers"]["first_clear"]:
 				if function_["type"] == "talk":
-					output.append('execute unless data storage ' + namespace_storage + ':progress data.event_list.' + event_id + '{cleared:1b} run function ' + namespace_core + ':command/talk/' + str(function_["npc_id"]) + '/' + function_["talk_id"] + '\n')
+					output.append('execute unless data storage ' + namespace_storage + ':progress data.event_list.' + event_id + '{cleared:1b} run function ' + namespace_contents + ':command/talk/' + str(function_["npc_id"]) + '/' + function_["talk_id"] + '\n')
 				if function_["type"] == "command":
 					output.append('execute unless data storage ' + namespace_storage + ':progress data.event_list.' + event_id + '{cleared:1b} run ' + function_["command"] + '\n')
 	output.append('data modify storage ' + namespace_storage + ':progress data.event_list.' + event_id + '.cleared set value 1b\n')

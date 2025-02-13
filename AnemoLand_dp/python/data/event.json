@@ -1103,7 +1103,16 @@
         },
         "carnara": {
             "waves":[{"carnara":0}],
-            "level_range": [30,40]
+            "level_range": [30,40],
+            "triggers": {
+                "first_clear": [
+                    {
+                        "type": "talk",
+                        "npc_id": "system",
+                        "talk_id": "demo_end"
+                    }
+                ]
+            }
         },
         "carnara_double": {
             "waves":[{"carnara_double":0}],
