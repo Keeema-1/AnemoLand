@@ -329,7 +329,7 @@
                     "field_type": "rock_A",
                     "display_name": "stone.large",
                     "unlock":["62"],
-                    "unlock_area":["寒冷地"],
+                    "unlock_area":["ice"],
                     "initial_event": {"id": "movie_bagikeros", "level": 30},
                     "default_event": {"id": "bagikeros", "level": 30},
                     "random_event": "bagikeros"
