@@ -1,0 +1,1 @@
+loot give @s loot anemoland_contents:item/weapon/garuda_sword/3
