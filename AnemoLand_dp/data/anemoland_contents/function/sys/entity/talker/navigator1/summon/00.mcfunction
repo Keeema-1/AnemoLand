@@ -11,7 +11,7 @@ tag @s add npc
 tag @s add navigator1
 tag @s add talker
 
-execute positioned ~ ~ ~ rotated ~ 0 run function animated_java:human1/summon/navigator1
+execute positioned ~ ~ ~ rotated ~ 0 run function animated_java:human1/summon {args:{variant:"navigator1",animation:"default"}}
 
 ride @e[tag=newly_summoned.aj,limit=1] mount @s
 tag @e[tag=newly_summoned.aj,limit=1] remove newly_summoned.aj

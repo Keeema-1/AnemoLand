@@ -1167,6 +1167,85 @@
 					}
 				}
 			}
+		},
+		{
+			"name": "garuda",
+			"display_name": "ガルダロン",
+			"parent": "leather",
+			"custom_model_data": 11,
+			"levels": {
+				"3": {}
+			},
+			"armors":{
+				"helmet": {
+					"display_name": "ガルダヘルム",
+					"item": "chainmail_helmet",
+					"visual_model": "helmet_visual",
+					"price": {"sell": {"3": 40}},
+					"status":{
+						"armor": {"3": 7},
+						"elemental_resistance": {
+							"3": {"thunder": 10}
+						},
+						"skills":{
+							"3": [
+							]
+						}
+					}
+				},
+				"chestplate": {
+					"display_name": "ガルダアーマー",
+					"item": "chainmail_chestplate",
+					"price": {"sell": {"3": 40}},
+					"status":{
+						"armor": {"3": 7},
+						"elemental_resistance": {
+							"3": {"thunder": 10}
+						},
+						"skills":{
+							"3": [
+							]
+						}
+					}
+				},
+				"leggings": {
+					"display_name": "ガルダレギンス",
+					"item": "chainmail_leggings",
+					"price": {"sell": {"3": 40}},
+					"status":{
+						"armor": {"3": 7},
+						"elemental_resistance": {
+							"3": {"thunder": 10}
+						},
+						"skills":{
+							"3": [
+								{
+									"name": "depth_strider",
+									"level": 1
+								}
+							]
+						},
+						"enchantments":{
+							"depth_strider": 1
+						}
+					}
+				},
+				"boots": {
+					"display_name": "ガルダブーツ",
+					"item": "chainmail_boots",
+					"price": {"sell": {"3": 40}},
+					"status":{
+						"armor": {"3": 7},
+						"elemental_resistance": {
+							"3": {"thunder": 10}
+						},
+						"skills":{
+							"3": [
+							]
+						}
+					}
+				}
+			}
 		}
 	]
 }

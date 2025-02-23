@@ -38,7 +38,7 @@ element_icon = {
 	"fire": "🔥",
 	"water": "🌊",
 	"ice": "❄",
-	"thunder": "⚡️"
+	"thunder": "⚡"
 }
 
 base_path = '../data/' + namespace_contents + '/loot_table/item/armor/'

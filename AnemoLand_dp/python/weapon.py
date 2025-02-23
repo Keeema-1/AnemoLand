@@ -27,7 +27,7 @@ element_icon = {
 	"fire": "🔥",
 	"water": "🌊",
 	"ice": "❄",
-	"thunder": "⚡️"
+	"thunder": "⚡"
 }
 
 for weapon_data in weapon_database["weapons"]:
