@@ -17,7 +17,8 @@ file_generation_flag = {
 	"carnara": True,
 	"squirrel": True,
 	"garapas": True,
-	"human1": True
+	"human1": True,
+	"garuda": True
 }
 element_color = {
 	"physical": "white",
@@ -117,7 +118,7 @@ for mob_name, mob_data in mob_database.items():
 			path = base_path + mob_name + '/animation/' + animation_id + '.mcfunction'
 			makedir(path)
 			output = []
-			output.append('execute on passengers if entity @s[tag=aj.rig_root] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/as_aj_root/' + animation_id + '\n')
+			output.append('execute on passengers if entity @s[tag=aj.global.root] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/as_aj_root/' + animation_id + '\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -139,7 +140,7 @@ for mob_name, mob_data in mob_database.items():
 			path = base_path + mob_name + '/variant/' + skin_variant_id + '.mcfunction'
 			makedir(path)
 			output = []
-			output.append('execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:' + mob_data["aj_name"] + '/variants/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + skin_variant_id + '/apply\n')
+			output.append('execute on passengers if entity @s[tag=aj.global.root] run function animated_java:' + mob_data["aj_name"] + '/variants/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + skin_variant_id + '/apply\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -192,7 +193,7 @@ for mob_name, mob_data in mob_database.items():
 	makedir(path)
 	output = []
 	output.append('tag @s add damaged\n')
-	output.append('execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:' + mob_data["aj_name"] + '/as_own_locator_entities {command:"tag @s add damaged"}\n')
+	output.append('execute on passengers if entity @s[tag=aj.global.root] run function animated_java:' + mob_data["aj_name"] + '/as_own_locator_entities {command:"tag @s add damaged"}\n')
 	output.append('damage @s 0\n')
 	if "variants" in mob_data:
 		output.append('execute if entity @s[tag=variant.default] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/variant/damaged\n')
@@ -211,7 +212,7 @@ for mob_name, mob_data in mob_database.items():
 	makedir(path)
 	output = []
 	if len(mob_data["parts"]) > 1:
-		output.append('execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:' + mob_data["aj_name"] + '/as_own_locator_entities {command:"tag @s add dead"}\n')
+		output.append('execute on passengers if entity @s[tag=aj.global.root] run function animated_java:' + mob_data["aj_name"] + '/as_own_locator_entities {command:"tag @s add dead"}\n')
 	if not ("death_loot_table_disable" in mob_data and mob_data["death_loot_table_disable"]):
 		output.append('execute if entity @s[tag=enemy] run scoreboard players operation #drop_bonus temp = @s drop_bonus\n')
 		output.append('execute if entity @s[tag=enemy] run scoreboard players operation #level temp = @s level\n')
@@ -220,7 +221,7 @@ for mob_name, mob_data in mob_database.items():
 		else:
 			output.append('execute if entity @s[tag=enemy,tag=!arena] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/drop\n')
 	if "immediate_disappear" in mob_data and mob_data["immediate_disappear"]:
-		output.append('execute on passengers if entity @s[tag=aj.rig_root] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/disappear\n')
+		output.append('execute on passengers if entity @s[tag=aj.global.root] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/disappear\n')
 	else:
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/die\n')
 	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/damaged/die/unlock\n')
@@ -267,7 +268,7 @@ for mob_name, mob_data in mob_database.items():
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
 
-	# manual/die
+	# manual/angry
 	path = base_path + mob_name + '/manual/angry.mcfunction'
 	if not os.path.isfile(path):
 		makedir(path)
@@ -279,6 +280,36 @@ for mob_name, mob_data in mob_database.items():
 		output.append('# パーティクルなど、怒り時の処理をこの下に記述\n')
 		output.append('#\n')
 		output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/state/tick\n')
+		output.append('\n')
+		with open(path, 'w', encoding='utf-8') as f:
+			f.writelines(output)
+
+	# manual/tick
+	path = base_path + mob_name + '/manual/tick.mcfunction'
+	if not os.path.isfile(path):
+		makedir(path)
+		output = []
+		output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/tick\n')
+		output.append('#\n')
+		output.append('# 常時実行される\n')
+		output.append('# このファイルは初回のみ自動生成される\n')
+		output.append('#\n')
+		output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/tick/00\n')
+		output.append('\n')
+		with open(path, 'w', encoding='utf-8') as f:
+			f.writelines(output)
+
+	# manual/attack_hit
+	path = base_path + mob_name + '/manual/attack_hit.mcfunction'
+	if not os.path.isfile(path):
+		makedir(path)
+		output = []
+		output.append('#> ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/attack_hit\n')
+		output.append('#\n')
+		output.append('# 攻撃を当てた時に実行される\n')
+		output.append('# このファイルは初回のみ自動生成される\n')
+		output.append('#\n')
+		output.append('# @within function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/**\n')
 		output.append('\n')
 		with open(path, 'w', encoding='utf-8') as f:
 			f.writelines(output)
@@ -346,6 +377,7 @@ for mob_name, mob_data in mob_database.items():
 	output.append('function ' + namespace_core + ':sys/entity/common/tick/0\n')
 	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/state/tick\n')
 	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/action/0\n')
+	output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/tick\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/tick/1\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
@@ -355,7 +387,7 @@ for mob_name, mob_data in mob_database.items():
 	makedir(path)
 	output = []
 	output.append('tag @s remove damaged\n')
-	output.append('execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:' + mob_data["aj_name"] + '/as_own_locator_entities {command:"tag @s remove damaged"}\n')
+	output.append('execute on passengers if entity @s[tag=aj.global.root] run function animated_java:' + mob_data["aj_name"] + '/as_own_locator_entities {command:"tag @s remove damaged"}\n')
 	if "variants" in mob_data:
 		output.append('execute if entity @s[tag=variant.default] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/variant/default\n')
 		for variant_id, variant_data in mob_data["variants"].items():
@@ -536,6 +568,7 @@ for mob_name, mob_data in mob_database.items():
 				for attack_part in group_data["parts"]:
 					if not attack_part == "root":
 						include_other_than_root = True
+				output.append('tag @s add attacker_root\n')
 				if include_other_than_root:
 					output.append('scoreboard players operation #entity_id temp = @s entity_id\n')
 					for attack_part in group_data["parts"]:
@@ -544,12 +577,13 @@ for mob_name, mob_data in mob_database.items():
 						output.append('execute' + (" " + group_data["predicate"] if ("predicate" in group_data and len(group_data["predicate"])) else "" ) + ' as @e[type=#' + namespace_storage + ':mob_core,tag=hitbox.' + attack_part + ',tag=' + mob_name + ',distance=..32] if score @s entity_id = #entity_id temp run tag @s add attack_part\n')
 					output.append('execute if entity @s[tag=pet] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_enemy_' + str(group_counter) + '\n')
 					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_pet_' + str(group_counter) + '\n')
-					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' as @a[dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',scores={hurt_time=-1},gamemode=adventure] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_player_' + str(group_counter) + '\n')
+					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' as @a[dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',scores={hurt_time=-1},gamemode=adventure] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' positioned as @e[type=#' + namespace_storage + ':mob_core,tag=attacker_root,distance=..32,limit=1] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_player_' + str(group_counter) + '\n')
 					output.append('tag @e[type=#' + namespace_storage + ':mob_core,tag=attack_part,distance=..32] remove attack_part\n')
 				if "root" in group_data["parts"]:
 					output.append('execute if entity @s[tag=pet] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_enemy_' + str(group_counter) + '\n')
 					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' if entity @e[type=#' + namespace_storage + ':mob_core,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_pet_' + str(group_counter) + '\n')
 					output.append('execute if entity @s[tag=enemy] rotated ~ 0 positioned ^' + str(group_data["position"][0]) + ' ^' + str(group_data["position"][1]) + ' ^' + str(group_data["position"][2]) + ' positioned ~-' + str(group_data["size"][0]/2) + ' ~-' + str(group_data["size"][1]/2) + ' ~-' + str(group_data["size"][2]/2) + ' as @a[dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',scores={hurt_time=-1},gamemode=adventure] positioned ~' + str(group_data["size"][0]/2) + ' ~' + str(group_data["size"][1]/2) + ' ~' + str(group_data["size"][2]/2) + ' run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/attack/' + attack_name + '/to_player_' + str(group_counter) + '\n')
+				output.append('tag @s remove attacker_root\n')
 				group_counter += 1
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
@@ -560,6 +594,7 @@ for mob_name, mob_data in mob_database.items():
 				path = base_path + mob_name + '/attack/' + attack_name + '/to_enemy_' + str(group_counter) + '.mcfunction'
 				makedir(path)
 				output = []
+				output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/attack_hit\n')
 				output.append('damage @e[type=#' + namespace_storage + ':mob_core,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] 10 generic_kill by @s\n')
 				output.append('execute as @e[type=#' + namespace_storage + ':mob_core,tag=enemy,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] run function ' + namespace_contents + ':sys/entity/branch/damaged_by_mob\n')
 				with open(path, 'w', encoding='utf-8') as f:
@@ -568,6 +603,7 @@ for mob_name, mob_data in mob_database.items():
 				path = base_path + mob_name + '/attack/' + attack_name + '/to_pet_' + str(group_counter) + '.mcfunction'
 				makedir(path)
 				output = []
+				output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/attack_hit\n')
 				output.append('damage @e[type=#' + namespace_storage + ':mob_core,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] 10 generic_kill by @s\n')
 				output.append('execute as @e[type=#' + namespace_storage + ':mob_core,tag=pet,tag=!damaged,dx=' + str(group_data["size"][0]-1) + ',dy=' + str(group_data["size"][1]-1) + ',dz=' + str(group_data["size"][2]-1) + ',limit=1] run function ' + namespace_contents + ':sys/entity/branch/damaged_by_mob\n')
 				with open(path, 'w', encoding='utf-8') as f:
@@ -576,6 +612,7 @@ for mob_name, mob_data in mob_database.items():
 				path = base_path + mob_name + '/attack/' + attack_name + '/to_player_' + str(group_counter) + '.mcfunction'
 				makedir(path)
 				output = []
+				output.append('execute at @s as @e[type=#anemoland:mob_core,tag=attacker_root,distance=..32,limit=1] run function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/manual/attack_hit\n')
 				if "knockback" in group_data:
 					output.append('function ' + namespace_core + ':sys/entity/common/attack_knockback/' + group_data["knockback"] + '\n')
 				output.append('function ' + namespace_core + ':sys/player/common/damage/dst/apply\n')
@@ -823,10 +860,10 @@ for mob_name, mob_data in mob_database.items():
 		output.append('attribute @s knockback_resistance base set 1.0\n')
 	output.append('function ' + namespace_core + ':sys/entity/common/summon/0\n')
 	if not ("without_aj" in mob_data and mob_data["without_aj"]):
-		output.append('execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:' + mob_data["aj_name"] + '/summon/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + 'default\n')
+		output.append('execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:' + mob_data["aj_name"] + '/summon {args:{variant:"' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + 'default",animation:"default",start_animation:true}}\n')
 		if "variants" in mob_data:
 			for variant_id, variant_data in mob_data["variants"].items():
-				output.append('execute if data storage temp:_ data.new_entity{"variant":"' + variant_id + '"} rotated ~ 0 run function animated_java:' + mob_data["aj_name"] + '/summon/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + variant_id + '\n')
+				output.append('execute if data storage temp:_ data.new_entity{"variant":"' + variant_id + '"} rotated ~ 0 run function animated_java:' + mob_data["aj_name"] + '/summon {args:{variant:"' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + variant_id + '",animation:"default",start_animation:true}}\n')
 		output.append('ride @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] mount @s\n')
 		output.append('tag @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] remove newly_summoned.aj\n')
 		output.append('function ' + namespace_contents + ':sys/entity/mob/' + mob_name + '/animation/default\n')

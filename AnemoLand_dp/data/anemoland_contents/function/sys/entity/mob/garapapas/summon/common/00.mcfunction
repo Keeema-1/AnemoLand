@@ -6,8 +6,8 @@ tag @s add garapapas
 attribute @s scale base set 3.5
 attribute @s knockback_resistance base set 1.0
 function anemoland:sys/entity/common/summon/0
-execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:garapapas/summon/default
-execute if data storage temp:_ data.new_entity{"variant":"penguin"} rotated ~ 0 run function animated_java:garapapas/summon/penguin
+execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:garapapas/summon {args:{variant:"default",animation:"default",start_animation:true}}
+execute if data storage temp:_ data.new_entity{"variant":"penguin"} rotated ~ 0 run function animated_java:garapapas/summon {args:{variant:"penguin",animation:"default",start_animation:true}}
 ride @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] mount @s
 tag @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] remove newly_summoned.aj
 function anemoland_contents:sys/entity/mob/garapapas/animation/default

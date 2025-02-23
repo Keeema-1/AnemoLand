@@ -5,9 +5,9 @@ tag @s add npc
 tag @s add human1
 attribute @s scale base set 1.0
 function anemoland:sys/entity/common/summon/0
-execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:human1/summon/default
-execute if data storage temp:_ data.new_entity{"variant":"sally"} rotated ~ 0 run function animated_java:human1/summon/sally
-execute if data storage temp:_ data.new_entity{"variant":"boy1"} rotated ~ 0 run function animated_java:human1/summon/boy1
+execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:human1/summon {args:{variant:"default",animation:"default",start_animation:true}}
+execute if data storage temp:_ data.new_entity{"variant":"sally"} rotated ~ 0 run function animated_java:human1/summon {args:{variant:"sally",animation:"default",start_animation:true}}
+execute if data storage temp:_ data.new_entity{"variant":"boy1"} rotated ~ 0 run function animated_java:human1/summon {args:{variant:"boy1",animation:"default",start_animation:true}}
 ride @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] mount @s
 tag @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] remove newly_summoned.aj
 function anemoland_contents:sys/entity/mob/human1/animation/default

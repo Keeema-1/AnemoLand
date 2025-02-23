@@ -140,7 +140,7 @@
 															"color": "aqua"
 														},
 														{
-															"text": "12",
+															"text": "9",
 															"color": "gray"
 														}
 													]
@@ -173,7 +173,7 @@
 															"color": "aqua"
 														},
 														{
-															"text": "12",
+															"text": "9",
 															"color": "gray"
 														}
 													]
@@ -206,7 +206,7 @@
 															"color": "aqua"
 														},
 														{
-															"text": "12",
+															"text": "9",
 															"color": "gray"
 														}
 													]
@@ -239,7 +239,7 @@
 															"color": "aqua"
 														},
 														{
-															"text": "12",
+															"text": "9",
 															"color": "gray"
 														}
 													]
@@ -272,7 +272,7 @@
 															"color": "aqua"
 														},
 														{
-															"text": "12",
+															"text": "9",
 															"color": "gray"
 														}
 													]
@@ -305,7 +305,7 @@
 															"color": "aqua"
 														},
 														{
-															"text": "12",
+															"text": "9",
 															"color": "gray"
 														}
 													]
@@ -354,7 +354,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"weapon\",weapon_type:\"spear\",loot_table:\"item/weapon/carnara_spear\",sell_price:400,power_up:{add_level:1,materials:[{id:\"carnara_gold_medal\",loot_table:\"item/medal/carnara/gold\",count:6}]},status:{level:2,attack:{base:3.5,mul:18},elemental_attack:{'ice': 2.0},weapon_skills:[{id:\"ice_beam\",gauge_consume:100,attack_damage:[{physical: {base: 6, mul: 2}}, {ice: {base: 6, mul: 2}}]}],skill_gauge:{get:18}}}"
+							"tag": "{item_type:\"weapon\",weapon_type:\"spear\",loot_table:\"item/weapon/carnara_spear\",sell_price:400,power_up:{add_level:1,materials:[{id:\"carnara_gold_medal\",loot_table:\"item/medal/carnara/gold\",count:6}]},status:{level:2,attack:{base:3.5,mul:18},elemental_attack:{'ice': 2.0},weapon_skills:[{id:\"ice_beam\",gauge_consume:100,attack_damage:[{physical: {base: 6, mul: 2}}, {ice: {base: 6, mul: 1.5}}]}],skill_gauge:{get:18}}}"
 						},
 						{
 							"function": "minecraft:set_custom_model_data",

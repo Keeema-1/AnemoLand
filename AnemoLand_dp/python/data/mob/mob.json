@@ -2631,5 +2631,184 @@
         "price": {
             "exchange": {"sell_required": 1, "buy_required": 5}
         }
+    },
+    "garuda": {
+        "aj_name": "garuda",
+        "display_name": "ガルダロン",
+        "type": "boss",
+        "aj_cmd_offset": 10700,
+        "custom_model_data": 1080,
+        "icon_scale": 1.4,
+        "dictionary": {
+            "recipe_prefix": "02090",
+            "number": "09",
+            "detail": [""],
+            "main_areas": [],
+            "attack_elements": ["physical","thunder"]
+        },
+        "unlock": {"armor": []},
+        "animations": {
+            "default": {},
+            "die": {},
+            "bark": {},
+            "tired": {},
+            "walk": {},
+            "pick1": {},
+            "pick1_jump": {},
+            "pick2": {},
+            "wing_left1": {},
+            "wing_left2": {},
+            "jump1": {},
+            "jump2": {},
+            "jump3": {},
+            "dash1": {},
+            "dash2": {},
+            "dash3": {},
+            "summer_salt_right1": {},
+            "summer_salt_right2": {}
+        },
+        "skin_variants": {
+            "default": {},
+            "damaged": {},
+            "default_shaking": {}
+        },
+        "actions": {
+            "stop": {
+                "score": 0
+            },
+            "bark": {
+                "score": 1,
+                "next_target": "preset/boss_default/0"
+            },
+            "get_angry": {
+                "score": 2,
+                "next_target": "preset/boss_default/0"
+            },
+            "tired": {
+                "score": 3,
+                "next_target": "preset/boss_default/0"
+            },
+            "walk": {
+                "score": 4
+            },
+            "pick": {
+                "score": 11,
+                "next_target": "preset/boss_default/0"
+            },
+            "wing_side": {
+                "score": 12,
+                "next_target": "preset/boss_default/0"
+            },
+            "jump": {
+                "score": 13,
+                "next_target": "preset/boss_default/0"
+            },
+            "pick_jump": {
+                "score": 14,
+                "next_target": "preset/boss_default/0"
+            },
+            "dash": {
+                "score": 15,
+                "next_target": "preset/boss_default/0"
+            },
+            "summer_salt_side": {
+                "score": 16,
+                "next_target": "preset/boss_default/0"
+            },
+            "shake_feather": {
+                "score": 17,
+                "next_target": "preset/boss_default/0"
+            }
+        },
+        "choices":{
+            "test": {
+                "type": "random",
+                "weights": {
+                    "pick": 1,
+                    "wing_side": 1,
+                    "jump": 1,
+                    "pick_jump": 1,
+                    "dash": 1,
+                    "summer_salt_side": 1
+                }
+            }
+        },
+        "attacks": {
+            "dash": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "tackle/middle/15",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [3,3,3],
+                        "parts":["root","head","neck","body","right_wing1","left_wing1","tail"]
+                    }
+                ]
+            },
+            "right_wing": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing/low/15",
+                        "mul": 8,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["right_wing"]
+                    }
+                ]
+            },
+            "left_wing": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing_from_back/low/20",
+                        "mul": 8,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["left_wing"]
+                    }
+                ]
+            },
+            "pick": {
+                "groups":[
+                    {
+                        "predicate": "",
+                        "knockback": "facing_from_back/middle/10",
+                        "mul": 10,
+                        "position": [0,0,0],
+                        "size": [4,4,4],
+                        "parts":["head"]
+                    }
+                ]
+            }
+        },
+        "default_action": "stop",
+        "parts":{
+            "root": {"display_name": "body", "armor_mul": 80, "hitbox_scale": 4, "elemental_damage_mul": {"fire": 110, "ice":50}},
+            "head": {"display_name": "head", "armor_mul": 160, "hitbox_scale": 2, "elemental_damage_mul": {"fire": 180, "ice":80}},
+            "neck": {"display_name": "neck", "armor_mul": 120, "hitbox_scale": 2, "elemental_damage_mul": {"fire": 150, "ice":60}},
+            "tail": {"display_name": "tail", "armor_mul": 120, "hitbox_scale": 2, "elemental_damage_mul": {"fire": 150, "ice":60}},
+            "wing": {"display_name": "wing", "armor_mul": 120, "hitbox_scale": 2.5, "elemental_damage_mul": {"fire": 150, "ice":60}}
+        },
+        "root_entity": "pig",
+        "display_height": 1.0,
+        "status": {
+            "default_level": 30,
+            "max_health": {"base": 200, "mul": 50},
+            "attack_damage": {"base": 5, "mul": 0.8},
+            "gold": {"base": 60, "mul": 14},
+            "xp": {"base": 60, "mul": 14},
+            "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.3, "keep_time_seconds": 60, "restart_damage_ratio": 0.2, "restart_interval_seconds": 60}
+        },
+        "pet":{
+            "loot_table_levels": {"min": 30, "max": 40, "step":1},
+            "xp_required_base": 50,
+            "xp_required_mul": 10,
+            "gauge_consume": 300
+        },
+        "price": {
+            "exchange": {"sell_required": 1, "buy_required": 5}
+        }
     }
 }

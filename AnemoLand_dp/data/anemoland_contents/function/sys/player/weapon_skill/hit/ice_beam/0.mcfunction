@@ -5,7 +5,7 @@
     scoreboard players reset @s action_time
 
 # モデルを召喚
-    execute positioned ~ ~1.5 ~ positioned ^ ^ ^-1 run function animated_java:ice_beam/summon/default
+    execute positioned ~ ~1.5 ~ positioned ^ ^ ^-1 run function animated_java:ice_beam/summon {args:{variant:"default",animation:"default",start_animation:true}}
 
 # パーティクルやサウンド
     execute positioned ^ ^ ^4 run particle wax_off ~ ~ ~ 1 1 1 0 1
@@ -29,7 +29,7 @@
 # メイン攻撃のステータスを取得
     execute store result score #damage.src.attack.ice.base temp run data get storage temp:_ data.weapon_skill_data.attack_damage[1].ice.base 10
     execute store result score #damage.src.attack.mul temp run data get storage temp:_ data.weapon_skill_data.attack_damage[1].ice.mul 10
-    execute if score @s ice_veil_time matches 200.. store result score #damage.src.attack.mul temp run data get storage temp:_ data.weapon_skill_data.attack_damage[0].ice.mul 12
+    execute if score @s ice_veil_time matches 200.. store result score #damage.src.attack.mul temp run data get storage temp:_ data.weapon_skill_data.attack_damage[1].ice.mul 12
 
 # メイン攻撃のヒット処理
     execute rotated ~ ~ positioned ^ ^ ^2 positioned ~-0.5 ~ ~-0.5 as @e[type=#anemoland:mob_core,tag=enemy,dx=0,dy=2,dz=0] run function anemoland_contents:sys/entity/branch/damaged_by_player

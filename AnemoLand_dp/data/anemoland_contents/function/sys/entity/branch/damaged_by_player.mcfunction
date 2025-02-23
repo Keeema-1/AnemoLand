@@ -14,3 +14,4 @@ execute if entity @s[tag=ojinushi] run function anemoland_contents:sys/entity/mo
 execute if entity @s[tag=muscleroom] run function anemoland_contents:sys/entity/mob/muscleroom/damaged/0
 execute if entity @s[tag=bagikeros] run function anemoland_contents:sys/entity/mob/bagikeros/damaged/0
 execute if entity @s[tag=carnara] run function anemoland_contents:sys/entity/mob/carnara/damaged/0
+execute if entity @s[tag=garuda] run function anemoland_contents:sys/entity/mob/garuda/damaged/0

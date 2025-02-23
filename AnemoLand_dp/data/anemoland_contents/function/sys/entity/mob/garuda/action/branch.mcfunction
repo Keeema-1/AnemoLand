@@ -1,0 +1,12 @@
+execute unless score @s action0 matches 1.. run function anemoland_contents:sys/entity/mob/garuda/action/stop/tick
+execute if score @s action0 matches 1 run function anemoland_contents:sys/entity/mob/garuda/action/bark/tick
+execute if score @s action0 matches 2 run function anemoland_contents:sys/entity/mob/garuda/action/get_angry/tick
+execute if score @s action0 matches 3 run function anemoland_contents:sys/entity/mob/garuda/action/tired/tick
+execute if score @s action0 matches 4 run function anemoland_contents:sys/entity/mob/garuda/action/walk/tick
+execute if score @s action0 matches 11 run function anemoland_contents:sys/entity/mob/garuda/action/pick/tick
+execute if score @s action0 matches 12 run function anemoland_contents:sys/entity/mob/garuda/action/wing_side/tick
+execute if score @s action0 matches 13 run function anemoland_contents:sys/entity/mob/garuda/action/jump/tick
+execute if score @s action0 matches 14 run function anemoland_contents:sys/entity/mob/garuda/action/pick_jump/tick
+execute if score @s action0 matches 15 run function anemoland_contents:sys/entity/mob/garuda/action/dash/tick
+execute if score @s action0 matches 16 run function anemoland_contents:sys/entity/mob/garuda/action/summer_salt_side/tick
+execute if score @s action0 matches 17 run function anemoland_contents:sys/entity/mob/garuda/action/shake_feather/tick

@@ -12,8 +12,7 @@ tp @s ~ ~ ~ ~ ~
     execute if score @s action_time matches 11..20 run data modify storage temp:_ data.motion set value {speed:0.4}
     execute if score @s action_time matches 21..25 run data modify storage temp:_ data.motion set value {speed:0.2}
     execute if score @s action_time matches 26..50 run data modify storage temp:_ data.motion set value {speed:0.1}
-    execute if score #hostile_target.is_player temp matches 1 rotated ~ 0 run function anemoland:sys/entity/common/motion/0
-    execute unless score #hostile_target.is_player temp matches 1 rotated ~ 0 run function anemoland:sys/entity/common/motion/0
+    function anemoland:sys/entity/common/motion/0
 
 # パーティクルやサウンド
     execute if score @s action_time matches 16..30 as @a[distance=..64] at @s run playsound entity.player.attack.sweep hostile @s ~ ~ ~ 0.7 0

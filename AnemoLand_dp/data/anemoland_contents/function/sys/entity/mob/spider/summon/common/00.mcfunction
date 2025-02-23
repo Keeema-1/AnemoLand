@@ -4,7 +4,7 @@ tag @s add mob_root
 tag @s add spider
 attribute @s scale base set 1.5
 function anemoland:sys/entity/common/summon/0
-execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:spider/summon/default
+execute if data storage temp:_ data.new_entity{"variant":"default"} rotated ~ 0 run function animated_java:spider/summon {args:{variant:"default",animation:"default",start_animation:true}}
 ride @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] mount @s
 tag @e[type=item_display,tag=newly_summoned.aj,distance=..32,limit=1] remove newly_summoned.aj
 function anemoland_contents:sys/entity/mob/spider/animation/default

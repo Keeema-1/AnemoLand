@@ -87,7 +87,7 @@
 			"lore_len": 6,
 			"attack_damage_list": [
 				{"physical": {"base": 5, "level_bonus": 1, "mul": 2}},
-				{"ice": {"base": 5, "level_bonus": 1, "mul": 2}}
+				{"ice": {"base": 5, "level_bonus": 1, "mul": 1.5}}
 			]
 		}
 	},
@@ -295,6 +295,23 @@
 				"1": {"sell_price": 400},
 				"2": {"materials": [{"id":"carnara_silver_medal", "loot_table":"item/medal/carnara/silver", "count":6}], "sell_price": 400},
 				"3": {"materials": [{"id":"carnara_gold_medal", "loot_table":"item/medal/carnara/gold", "count":6}], "sell_price": 400}
+			}
+		},
+		{
+			"name": "garuda_sword",
+			"display_name": "ガルダソード",
+			"weapon_type": "sword",
+			"custom_model_data": 4,
+			"attack_damage": 3.5,
+			"element_attack_damage": {
+				"thunder": 1.0
+			},
+			"attack_speed": 1.6,
+			"weapon_skills":[
+				{"name": "sweep_attack_2"}
+			],
+			"levels": {
+				"3": {"sell_price": 400}
 			}
 		}
 	]

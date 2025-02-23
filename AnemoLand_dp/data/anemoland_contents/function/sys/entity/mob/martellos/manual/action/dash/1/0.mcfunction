@@ -12,4 +12,6 @@ tp @s ~ ~ ~ ~ ~
 # 攻撃
     function anemoland_contents:sys/entity/mob/martellos/attack/dash/0
 
+playsound entity.player.attack.sweep hostile @a ~ ~ ~ 1 0
+
 execute if score @s action_time matches 200.. run function anemoland_contents:sys/entity/mob/martellos/manual/action/dash/2/start

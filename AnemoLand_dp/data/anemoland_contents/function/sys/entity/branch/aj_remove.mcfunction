@@ -13,3 +13,4 @@ execute if entity @s[tag=aj.ojinushi.root] run function animated_java:ojinushi/r
 execute if entity @s[tag=aj.muscleroom.root] run function animated_java:muscleroom/remove/this
 execute if entity @s[tag=aj.bagikeros.root] run function animated_java:bagikeros/remove/this
 execute if entity @s[tag=aj.carnara.root] run function animated_java:carnara/remove/this
+execute if entity @s[tag=aj.garuda.root] run function animated_java:garuda/remove/this
