@@ -1,0 +1,65 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/fire_resistance_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/water_resistance_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/ice_resistance_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/thunder_resistance_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/gauge_extension_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/initial_gauge_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/stamina_recovery_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/avoid_distance_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/recovery_up_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/sprint_charge_1",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/bring_it_on_1",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

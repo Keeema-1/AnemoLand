@@ -1256,7 +1256,7 @@
 		{
 			"name": "fire_resistance",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1269,7 +1269,8 @@
 		{
 			"name": "fire_resistance",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1282,7 +1283,7 @@
 		{
 			"name": "water_resistance",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1295,7 +1296,8 @@
 		{
 			"name": "water_resistance",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1308,7 +1310,7 @@
 		{
 			"name": "ice_resistance",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1321,7 +1323,8 @@
 		{
 			"name": "ice_resistance",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1334,7 +1337,7 @@
 		{
 			"name": "thunder_resistance",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1347,7 +1350,8 @@
 		{
 			"name": "thunder_resistance",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1360,7 +1364,7 @@
 		{
 			"name": "gauge_extension",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1377,7 +1381,8 @@
 		{
 			"name": "gauge_extension",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1394,7 +1399,7 @@
 		{
 			"name": "initial_gauge",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1411,7 +1416,8 @@
 		{
 			"name": "initial_gauge",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1428,7 +1434,7 @@
 		{
 			"name": "stamina_recovery",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1445,7 +1451,8 @@
 		{
 			"name": "stamina_recovery",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1462,7 +1469,7 @@
 		{
 			"name": "avoid_distance",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1479,7 +1486,8 @@
 		{
 			"name": "avoid_distance",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1496,7 +1504,7 @@
 		{
 			"name": "recovery_up",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1513,7 +1521,8 @@
 		{
 			"name": "recovery_up",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1530,7 +1539,7 @@
 		{
 			"name": "sprint_charge",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1547,7 +1556,8 @@
 		{
 			"name": "sprint_charge",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1564,7 +1574,7 @@
 		{
 			"name": "bring_it_on",
 			"level": 1,
-			"rare": 1,
+			"rarity": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1581,7 +1591,8 @@
 		{
 			"name": "bring_it_on",
 			"level": 2,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {
@@ -1598,7 +1609,8 @@
 		{
 			"name": "jump_attack",
 			"level": 1,
-			"rare": 2,
+			"rarity": 2,
+			"weight": 1,
 			"status":{
 				"armor": 0,
 				"elemental_resistance": {

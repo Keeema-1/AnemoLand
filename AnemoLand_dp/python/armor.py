@@ -314,7 +314,32 @@ for amulet_data in armor_database["amulets"]:
 			}]
 		}])
 	
+	with open(path, 'w', encoding='utf-8') as f:
+		json.dump(output, f, indent='\t', ensure_ascii=False)
 
+
+# お守り抽選
+base_path = '../data/' + namespace_contents + '/loot_table/item/amulet_random/'
+for rarity in range(1,3):
+	path = base_path + 'rarity' + str(rarity) + '.json'
+	makedir(path)
+
+	entries = []
+	for amulet_data in armor_database["amulets"]:
+		if amulet_data["rarity"] == rarity:
+			entries.append(
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/" + amulet_data["name"] + '_' + str(amulet_data["level"]),
+					"weight": 1
+				}
+			)
+	output = {}
+	output.update(type="minecraft:command")
+	output.update(pools=[{
+		"rolls":1,
+		"entries":entries
+		}])
 	with open(path, 'w', encoding='utf-8') as f:
 		json.dump(output, f, indent='\t', ensure_ascii=False)
 

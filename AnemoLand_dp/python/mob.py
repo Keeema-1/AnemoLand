@@ -323,6 +323,11 @@ for mob_name, mob_data in mob_database.items():
 		output.append('execute if score #level temp matches 20..29 run loot spawn ~ ~ ~ loot ' + namespace_contents + ':entity/' + mob_name + '/2\n')
 		output.append('execute if score #level temp matches 30.. run loot spawn ~ ~ ~ loot ' + namespace_contents + ':entity/' + mob_name + '/3\n')
 		if mob_data["type"] == "boss":
+			output.append('execute if score #level temp matches 20..24 if predicate anemoland:random_chance/0_3 run loot spawn ~ ~ ~ loot ' + namespace_contents + ':item/amulet_random/silver\n')
+			output.append('execute if score #level temp matches 25..29 if predicate anemoland:random_chance/0_4 run loot spawn ~ ~ ~ loot ' + namespace_contents + ':item/amulet_random/silver\n')
+			output.append('execute if score #level temp matches 30..34 if predicate anemoland:random_chance/0_3 run loot spawn ~ ~ ~ loot ' + namespace_contents + ':item/amulet_random/gold\n')
+			output.append('execute if score #level temp matches 35..39 if predicate anemoland:random_chance/0_4 run loot spawn ~ ~ ~ loot ' + namespace_contents + ':item/amulet_random/gold\n')
+			output.append('execute if score #level temp matches 40.. run loot spawn ~ ~ ~ loot ' + namespace_contents + ':item/amulet_random/gold\n')
 			output.append('data modify storage temp:_ data.UUID set from entity @s UUID\n')
 			output.append('execute as @e[type=item,tag=!drop_item_check,distance=..1] run function ' + namespace_core + ':sys/entity/common/die/drop\n')
 		with open(path, 'w', encoding='utf-8') as f:

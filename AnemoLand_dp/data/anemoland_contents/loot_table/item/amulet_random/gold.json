@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "anemoland_contents:item/amulet/water_resistance_2",
+					"weight": 1
+				}
+			]
+		}
+	]
+}
