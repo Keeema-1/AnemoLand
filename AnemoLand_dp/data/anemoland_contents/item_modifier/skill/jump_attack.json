@@ -1,0 +1,122 @@
+[
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "  ",
+					"color": "dark_purple",
+					"italic": false
+				},
+				{
+					"translate": "anemoland.skill.jump_attack.name"
+				},
+				{
+					"text": " +"
+				},
+				{
+					"score": {
+						"name": "#skill_level.int",
+						"objective": "temp"
+					}
+				},
+				{
+					"text": ".",
+					"color": "dark_purple",
+					"italic": false
+				},
+				{
+					"score": {
+						"name": "#skill_level.decimal1",
+						"objective": "temp"
+					},
+					"color": "dark_purple",
+					"italic": false
+				},
+				{
+					"text": "",
+					"color": "dark_purple",
+					"italic": false
+				}
+			]
+		],
+		"mode": "append",
+		"conditions": [
+			{
+				"condition": "minecraft:value_check",
+				"value": {
+					"type": "minecraft:score",
+					"target": {
+						"type": "minecraft:fixed",
+						"name": "#skill_level.decimal1"
+					},
+					"score": "temp"
+				},
+				"range": {
+					"min": 1
+				}
+			}
+		]
+	},
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "  ",
+					"color": "dark_purple",
+					"italic": false
+				},
+				{
+					"translate": "anemoland.skill.jump_attack.name"
+				},
+				{
+					"text": " +"
+				},
+				{
+					"score": {
+						"name": "#skill_level.int",
+						"objective": "temp"
+					}
+				},
+				{
+					"text": ""
+				}
+			]
+		],
+		"mode": "append",
+		"conditions": [
+			{
+				"condition": "minecraft:value_check",
+				"value": {
+					"type": "minecraft:score",
+					"target": {
+						"type": "minecraft:fixed",
+						"name": "#skill_level.decimal1"
+					},
+					"score": "temp"
+				},
+				"range": 0
+			}
+		]
+	},
+	{
+		"function": "minecraft:set_lore",
+		"entity": "this",
+		"lore": [
+			[
+				{
+					"text": "    "
+				},
+				{
+					"translate": "anemoland.skill.jump_attack.lore.1",
+					"italic": false,
+					"color": "gray"
+				}
+			]
+		],
+		"mode": "append"
+	}
+]

@@ -90,4 +90,4 @@ execute positioned ~ -100 ~ summon armor_stand run function anemoland:sys/player
     data modify storage temp:_ data.player_storage.skill_levels set from storage temp:_ data.skill_levels
 
 # スキル関連
-    function anemoland_contents:sys/player/skill/equipment_updated
+    function anemoland_contents:sys/player/skill/equipment_updated/0

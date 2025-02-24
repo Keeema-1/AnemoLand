@@ -9,3 +9,4 @@ execute if data storage temp:_ data.player_storage.skill_levels.dust_avoiding ru
 execute if data storage temp:_ data.player_storage.skill_levels.ice_veil run function anemoland_contents:sys/player/menu/status/skill/slot5_6/ice_veil
 execute if data storage temp:_ data.player_storage.skill_levels.depth_strider run function anemoland_contents:sys/player/menu/status/skill/slot5_6/depth_strider
 execute if data storage temp:_ data.player_storage.skill_levels.bring_it_on run function anemoland_contents:sys/player/menu/status/skill/slot5_6/bring_it_on
+execute if data storage temp:_ data.player_storage.skill_levels.jump_attack run function anemoland_contents:sys/player/menu/status/skill/slot5_6/jump_attack
