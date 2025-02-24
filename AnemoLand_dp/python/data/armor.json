@@ -43,6 +43,10 @@
 		"bring_it_on": {
 			"lore_len": 2,
 			"lore_value": {"mul": 1, "prefix": "+", "suffix": ""}
+		},
+		"jump_attack": {
+			"lore_len": 1,
+			"lore_value": {"mul": 1, "prefix": "+", "suffix": ""}
 		}
 	},
 	"series":[
@@ -1246,6 +1250,367 @@
 					}
 				}
 			}
+		}
+	],
+	"amulets":[
+		{
+			"name": "fire_resistance",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+					"fire": 10
+				},
+				"skills": []
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "fire_resistance",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+					"fire": 20
+				},
+				"skills": []
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "water_resistance",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+					"water": 10
+				},
+				"skills": []
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "water_resistance",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+					"water": 20
+				},
+				"skills": []
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "ice_resistance",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+					"ice": 10
+				},
+				"skills": []
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "ice_resistance",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+					"ice": 20
+				},
+				"skills": []
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "thunder_resistance",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+					"thunder": 10
+				},
+				"skills": []
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "thunder_resistance",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+					"thunder": 20
+				},
+				"skills": []
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "gauge_extension",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "gauge_extension",
+					"level": 50
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "gauge_extension",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "gauge_extension",
+					"level": 100
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "initial_gauge",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "initial_gauge",
+					"level": 50
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "initial_gauge",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "initial_gauge",
+					"level": 100
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "stamina_recovery",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "stamina_recovery",
+					"level": 25
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "stamina_recovery",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "stamina_recovery",
+					"level": 50
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "avoid_distance",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "avoid_distance",
+					"level": 1
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "avoid_distance",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "avoid_distance",
+					"level": 2
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "recovery_up",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "recovery_up",
+					"level": 1
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "recovery_up",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "recovery_up",
+					"level": 2
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "sprint_charge",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "sprint_charge",
+					"level": 0.5
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "sprint_charge",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "sprint_charge",
+					"level": 1
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "bring_it_on",
+			"level": 1,
+			"rare": 1,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "bring_it_on",
+					"level": 0.5
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "bring_it_on",
+			"level": 2,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "bring_it_on",
+					"level": 1
+					}
+				]
+			},
+			"price": {"sell": 50}
+		},
+		{
+			"name": "jump_attack",
+			"level": 1,
+			"rare": 2,
+			"status":{
+				"armor": 0,
+				"elemental_resistance": {
+				},
+				"skills": [
+					{
+					"name": "jump_attack",
+					"level": 0.5
+					}
+				]
+			},
+			"price": {"sell": 50}
 		}
 	]
 }

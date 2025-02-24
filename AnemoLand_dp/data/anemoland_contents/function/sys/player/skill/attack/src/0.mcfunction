@@ -24,3 +24,8 @@ function anemoland:sys/player/common/player_storage/read
     execute store result score #max_health temp run attribute @s max_health get 10
     execute if score #health temp <= #max_health temp store result score #add temp run data get storage temp:_ data.player_storage.skill_levels.crisis_strength 10
     scoreboard players operation #damage.src.attack.base temp += #add temp
+
+# jump_attack
+    scoreboard players set #add temp 0
+    execute unless predicate anemoland:is_on_ground store result score #add temp run data get storage temp:_ data.player_storage.skill_levels.jump_attack 10
+    scoreboard players operation #damage.src.attack.base temp += #add temp

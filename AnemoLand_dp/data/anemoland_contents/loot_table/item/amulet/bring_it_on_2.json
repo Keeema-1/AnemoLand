@@ -1,0 +1,132 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:diamond",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": [
+								{
+									"translate": "anemoland.amulet.name",
+									"italic": false,
+									"with": [
+										{
+											"translate": "anemoland.skill.bring_it_on.name",
+											"color": "white",
+											"italic": false
+										},
+										{
+											"text": "II"
+										}
+									]
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "<",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.common.skill"
+									},
+									{
+										"text": ">"
+									}
+								],
+								[
+									{
+										"text": "  ",
+										"italic": false
+									},
+									{
+										"translate": "anemoland.skill.bring_it_on.name"
+									},
+									{
+										"text": " +1"
+									}
+								],
+								[
+									{
+										"text": "    "
+									},
+									{
+										"translate": "anemoland.skill.bring_it_on.lore.1",
+										"italic": false,
+										"color": "gray"
+									}
+								],
+								[
+									{
+										"text": "    "
+									},
+									{
+										"translate": "anemoland.skill.bring_it_on.lore.2",
+										"italic": false,
+										"color": "gray"
+									}
+								],
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "▶ ",
+										"italic": false,
+										"color": "dark_gray"
+									},
+									{
+										"translate": "anemoland.common.sell_price"
+									},
+									{
+										"text": ": 50G"
+									}
+								]
+							],
+							"mode": "replace_all"
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"armor\",part:\"amulet\",id:\"bring_it_on_2\",sell_price:50,status:{armor:{base:0},elemental_resistance:{},skills:[{id:\"bring_it_on\",level:1}]}}"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:unbreakable": {
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "shaper_armor_trim_smithing_template"
+							}
+						},
+						{
+							"function": "minecraft:toggle_tooltips",
+							"toggles": {
+								"minecraft:enchantments": false,
+								"minecraft:attribute_modifiers": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

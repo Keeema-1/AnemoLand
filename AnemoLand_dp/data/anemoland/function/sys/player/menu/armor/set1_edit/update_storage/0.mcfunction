@@ -10,3 +10,6 @@ execute unless data storage temp:_ data.player_data.Inventory[{Slot:12b,componen
 
 execute if data storage temp:_ data.player_data.Inventory[{Slot:13b,components:{"minecraft:custom_data":{item_type:"armor","part":"boots"}}}] run data modify storage temp:_ data.player_storage.equipments.armor1.feet set from storage temp:_ data.player_data.Inventory[{Slot:13b}]
 execute unless data storage temp:_ data.player_data.Inventory[{Slot:13b,components:{"minecraft:custom_data":{item_type:"armor","part":"boots"}}}] run data modify storage temp:_ data.player_storage.equipments.armor1.feet set value {}
+
+execute if data storage temp:_ data.player_data.Inventory[{Slot:14b,components:{"minecraft:custom_data":{item_type:"armor","part":"amulet"}}}] run data modify storage temp:_ data.player_storage.equipments.armor1.amulet1 set from storage temp:_ data.player_data.Inventory[{Slot:14b}]
+execute unless data storage temp:_ data.player_data.Inventory[{Slot:14b,components:{"minecraft:custom_data":{item_type:"armor","part":"amulet"}}}] run data modify storage temp:_ data.player_storage.equipments.armor1.amulet1 set value {}

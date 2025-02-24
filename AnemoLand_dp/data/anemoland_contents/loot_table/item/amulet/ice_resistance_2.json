@@ -1,0 +1,100 @@
+{
+	"type": "minecraft:command",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:diamond",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": [
+								{
+									"translate": "anemoland.amulet.name",
+									"italic": false,
+									"with": [
+										{
+											"translate": "anemoland.skill.ice_resistance.name",
+											"color": "white",
+											"italic": false
+										},
+										{
+											"text": "II"
+										}
+									]
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								[
+									{
+										"text": "  ⏫ ",
+										"color": "aqua",
+										"italic": false
+									},
+									{
+										"text": "❄",
+										"color": "aqua"
+									},
+									{
+										"translate": "anemoland.common.damaged_rate.ice"
+									},
+									{
+										"text": " -20%"
+									}
+								],
+								[
+									{
+										"text": ""
+									}
+								],
+								[
+									{
+										"text": "▶ ",
+										"italic": false,
+										"color": "dark_gray"
+									},
+									{
+										"translate": "anemoland.common.sell_price"
+									},
+									{
+										"text": ": 50G"
+									}
+								]
+							],
+							"mode": "replace_all"
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{item_type:\"armor\",part:\"amulet\",id:\"ice_resistance_2\",sell_price:50,status:{armor:{base:0},elemental_resistance:{ice: 20},skills:[]}}"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:unbreakable": {
+									"show_in_tooltip": false
+								},
+								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "shaper_armor_trim_smithing_template"
+							}
+						},
+						{
+							"function": "minecraft:toggle_tooltips",
+							"toggles": {
+								"minecraft:enchantments": false,
+								"minecraft:attribute_modifiers": false
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

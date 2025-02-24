@@ -5,7 +5,7 @@
     execute unless data storage temp:_ data.player_data.Inventory[{Slot:11b,components:{"minecraft:custom_data":{item_type:"armor","part":"chestplate"}}}] run function anemoland:sys/player/menu/common/drop_item/2
     execute unless data storage temp:_ data.player_data.Inventory[{Slot:12b,components:{"minecraft:custom_data":{item_type:"armor","part":"leggings"}}}] run function anemoland:sys/player/menu/common/drop_item/3
     execute unless data storage temp:_ data.player_data.Inventory[{Slot:13b,components:{"minecraft:custom_data":{item_type:"armor","part":"boots"}}}] run function anemoland:sys/player/menu/common/drop_item/4
-    function anemoland:sys/player/menu/common/drop_item/5
+    execute unless data storage temp:_ data.player_data.Inventory[{Slot:14b,components:{"minecraft:custom_data":{item_type:"armor","part":"amulet1"}}}] run function anemoland:sys/player/menu/common/drop_item/5
     function anemoland:sys/player/menu/common/drop_item/6
     function anemoland:sys/player/menu/common/drop_item/7
     function anemoland:sys/player/menu/common/drop_item/8

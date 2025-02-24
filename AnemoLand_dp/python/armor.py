@@ -194,6 +194,131 @@ for series in armor_database["series"]:
 				json.dump(output, f, indent='\t', ensure_ascii=False)
 
 
+base_path = '../data/' + namespace_contents + '/loot_table/item/amulet/'
+
+for amulet_data in armor_database["amulets"]:
+	sell_price = amulet_data["price"]["sell"]
+
+	path = base_path + amulet_data["name"] + '_' + str(amulet_data["level"]) + '.json'
+	makedir(path)
+	functions = []
+
+	armor_value = 0
+	if "armor" in amulet_data["status"]:
+		armor_value = amulet_data["status"]["armor"]
+
+	# set_name
+	function_ = {}
+	# function_.update(function="minecraft:set_name",entity="this",name={"translate": "anemoland.amulet." + amulet_data["name"] + ".name","color": "white","italic": False})
+	function_.update(function="minecraft:set_name",entity="this",name=[{"translate":"anemoland.amulet.name","italic":False,"with": [{"translate":"anemoland.skill." + amulet_data["name"] + ".name","color": "white","italic": False},{"text": "" if amulet_data["level"] == 1 else 'I' * amulet_data["level"] }]}])
+	functions.append(function_)
+
+	# set_lore
+	function_ = {}
+	lore = []
+	# lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"translate":"anemoland.common.armor"},{"text":" +" + str(armor_value)}])
+	if "elemental_resistance" in amulet_data["status"]:
+		for element, resistance in amulet_data["status"]["elemental_resistance"].items():
+			if resistance > 0:
+				lore.append([{"text":"  ⏫ ","color":"aqua", "italic":False},{"text":element_icon[element],"color":element_color[element]},{"translate":"anemoland.common.damaged_rate." + element},{"text":" -" + str(resistance) + "%"}])
+			elif resistance < 0:
+				lore.append([{"text":"  ⏬ ","color":"red", "italic":False},{"text":element_icon[element],"color":element_color[element]},{"translate":"anemoland.common.damaged_rate." + element},{"text":" +" + str(abs(resistance)) + "%"}])
+	if len(amulet_data["status"]["skills"]) > 0:
+		lore.append([{"text":""}])
+		lore.append([{"text": "<", "italic": False},{"translate":"anemoland.common.skill"},{"text":">"}])
+		for skill in amulet_data["status"]["skills"]:
+			lore.append([{"text":"  ", "italic":False},{"translate":"anemoland.skill." +skill["name"] + ".name"},{"text": " " + skill_list[skill["name"]]["lore_value"]["prefix"] + str(skill["level"]*skill_list[skill["name"]]["lore_value"]["mul"]) + skill_list[skill["name"]]["lore_value"]["suffix"]}])
+			for i in range(skill_list[skill["name"]]["lore_len"]):
+				lore.append([{"text":"    "},{"translate":"anemoland.skill." + skill["name"] + ".lore." + str(i+1), "italic":False, "color": "gray"}])
+	lore.append([{"text":""}])
+	lore.append([{"text":"▶ ","italic":False,"color":"dark_gray"},{"translate":"anemoland.common.sell_price"},{"text":": " + str(sell_price) + "G"}])
+	function_.update(function="minecraft:set_lore", entity="this", lore = lore, mode = "replace_all")
+	functions.append(function_)
+
+	# set_attributes
+	# function_ = {}
+	# modifiers = []
+	# modifiers.append(
+	# 	{
+	# 		"id": "amulet.armor.add." + str(armor_value),
+	# 		"attribute": "minecraft:armor",
+	# 		"amount": round(0.1*armor_value, 2),
+	# 		"operation": "add_value",
+	# 		"slot": armor2slot[amulet_type]
+	# 	})
+	# function_.update(function="minecraft:set_attributes", modifiers = modifiers)
+	# functions.append(function_)
+
+	# custom_data
+	function_ = {}
+	skills_str = ""
+	i = 0
+	for skill in amulet_data["status"]["skills"]:
+		if i > 0:
+			skills_str += ","
+		skills_str += "{id:\"" + skill["name"] + "\",level:" + str(skill["level"]) + "}"
+		i += 1
+	function_.update(function="minecraft:set_custom_data",
+		tag = "{item_type:\"armor\",part:\"amulet\",id:\"" + amulet_data["name"] + '_' + str(amulet_data["level"]) + "\",sell_price:" + str(sell_price) + ",status:{armor:{base:" + str(armor_value) + "},elemental_resistance:" + str(amulet_data["status"]["elemental_resistance"]).replace("'", "") + ",skills:[" + skills_str + "]}}"
+		)
+	functions.append(function_)
+
+	# custom_model_data
+	# if "custom_model_data" in series:
+	# 	functions.append({"function": "minecraft:set_custom_model_data","value": series["custom_model_data"]})
+
+	# components
+	item_model = "shaper_armor_trim_smithing_template"
+	if "item_model" in amulet_data:
+		item_model = amulet_data["item_model"]
+	function_ = {
+		"function": "minecraft:set_components",
+		"components": {
+			"minecraft:unbreakable": {
+				"show_in_tooltip": False
+			},
+			"minecraft:enchantment_glint_override": False,
+			"minecraft:item_model": item_model
+		}
+	}
+	functions.append(function_)
+
+	# toggle_tooltips
+	functions.append({
+		"function": "minecraft:toggle_tooltips",
+		"toggles": {
+			"minecraft:enchantments": False,
+			"minecraft:attribute_modifiers": False
+		}
+	})
+
+	# enchantments
+	# enchantments = {}
+	# if "enchantments" in amulet_data["status"]:
+	# 	enchantments = amulet_data["status"]["enchantments"]
+	# enchantments["minecraft:binding_curse"] = 1
+	# functions.append({
+	# 	"function": "minecraft:set_enchantments",
+	# 	"enchantments": enchantments
+	# })
+
+	output = {}
+	output.update(type="minecraft:command")
+	output.update(pools=[{
+		"rolls":1,
+		"entries":[{
+			"type": "minecraft:item",
+			"name": "minecraft:diamond",
+			"weight": 1,
+			"functions":functions
+			}]
+		}])
+	
+
+	with open(path, 'w', encoding='utf-8') as f:
+		json.dump(output, f, indent='\t', ensure_ascii=False)
+
+
 base_path = '../data/' + namespace_contents + '/function/command/give/armor/'
 
 for series in armor_database["series"]:
