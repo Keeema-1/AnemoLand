@@ -1639,21 +1639,21 @@ for mob_name, mob_data in mob_database.items():
 			'1': [
 				{
 					'color': 'bronze',
-					'rolls': [5, 7],
+					'rolls': [6, 8],
 					'drop_bonus_scale': 3
 				}
 			],
 			'2': [
 				{
 					'color': 'silver',
-					'rolls': [5, 7],
+					'rolls': [6, 8],
 					'drop_bonus_scale': 3
 				}
 			],
 			'3': [
 				{
 					'color': 'gold',
-					'rolls': [5, 7],
+					'rolls': [6, 8],
 					'drop_bonus_scale': 3
 				}
 			]

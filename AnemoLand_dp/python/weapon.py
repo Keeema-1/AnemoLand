@@ -49,7 +49,14 @@ for weapon_data in weapon_database["weapons"]:
 		# set_lore
 		function_ = {}
 		lore = []
-		lore.append([{"text":"  Lv. " + str(level) + " ","color":"yellow", "italic":False},{"text":"(MAX: 3)","color":"dark_gray"}])
+		max_level = 3
+		if "3" in weapon_data["levels"]:
+			max_level = 3
+		elif "2" in weapon_data["levels"]:
+			max_level = 2
+		else:
+			max_level = 1
+		lore.append([{"text":"  Lv. " + str(level) + " ","color":"yellow", "italic":False},{"text":"(MAX: " + str(max_level) + ")","color":"dark_gray"}])
 		# lore.append({"text":"  ⏫ 攻撃力 +" + str(attack_damage_value), "italic":False, "color":"aqua"})
 		lore.append([{"text":"  ⏫ ", "italic":False, "color":"aqua"},{"translate":"anemoland.common.attack_damage"},{"text":" 🗡" + str(attack_damage_value+1)}])
 		if "element_attack_damage" in weapon_data:
