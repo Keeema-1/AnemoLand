@@ -422,6 +422,8 @@ for map_data in map_database["maps"]:
 			if field_data["type"] == "village":
 				output.append('schedule function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/update/0 10t\n')
 			# output.append('function ' + namespace_contents + ':sys/area/' + map_name + '/field/' + field_id + '/enter/0\n')
+			if "field_type" in field_data and field_data["field_type"] == "arena_prepare":
+				output.append('schedule function ' + namespace_core + ':sys/player/area/common/arena_prepare/enter 10t\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 

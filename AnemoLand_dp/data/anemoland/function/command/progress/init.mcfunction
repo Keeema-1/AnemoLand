@@ -17,6 +17,8 @@ function anemoland_contents:command/progress/init_event
 
 scoreboard players set #beta1.event_counter score 0
 
+# タイムアタック
+function anemoland_contents:sys/arena/time_attack/init
 
 execute as @a run function anemoland:sys/player/init
 function anemoland:command/talk/girl1/hello

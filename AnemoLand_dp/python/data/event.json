@@ -927,7 +927,15 @@
         },
         "squirrel_head": {
             "waves":[{"squirrel_head":0}],
-            "level_range": [5,40]
+            "level_range": [5,40],
+            "triggers": {
+                "first_clear": [
+                    {
+                        "type": "command",
+                        "command": "function anemoland:command/progress/unlock/time_attack/king_boar_and_squirrel_head"
+                    }
+                ]
+            }
         },
         "squirrel_head_double": {
             "waves":[{"squirrel_head_double":0}],
@@ -991,7 +999,15 @@
         },
         "martellos": {
             "waves":[{"martellos":0}],
-            "level_range": [20,40]
+            "level_range": [20,40],
+            "triggers": {
+                "first_clear": [
+                    {
+                        "type": "command",
+                        "command": "function anemoland:command/progress/unlock/time_attack/martellos"
+                    }
+                ]
+            }
         },
         "martellos_double": {
             "waves":[{"martellos_double":0}],
@@ -1067,7 +1083,15 @@
         "muscleroom": {
             "waves":[{"muscleroom":0}],
             "level_range": [20,40],
-            "unlock": [{"type": "rank", "id": "gold"}]
+            "unlock": [{"type": "rank", "id": "gold"}],
+            "triggers": {
+                "first_clear": [
+                    {
+                        "type": "command",
+                        "command": "function anemoland:command/progress/unlock/time_attack/muscleroom"
+                    }
+                ]
+            }
         },
         "muscleroom_double": {
             "waves":[{"muscleroom_double":0}],
@@ -1114,6 +1138,10 @@
                     {
                         "type": "command",
                         "command": "advancement grant @p[tag=player_check] only anemoland:achievements/monster/beta1_all"
+                    },
+                    {
+                        "type": "command",
+                        "command": "function anemoland:command/progress/unlock/time_attack/carnara"
                     }
                 ]
             }
