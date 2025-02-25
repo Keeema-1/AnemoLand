@@ -19,7 +19,7 @@ execute unless data storage anemoland:progress data.arena.time_attack.muscleroom
 execute if data storage anemoland:progress data.arena.time_attack.carnara{unlocked:1b} run function anemoland_contents:sys/arena/time_attack/update/carnara with storage anemoland:progress data.arena.time_attack.carnara
 execute unless data storage anemoland:progress data.arena.time_attack.carnara{unlocked:1b} run data modify storage temp:_ data.pages append value '["",{"text":"\\n\\n\\n\\n\\n\\n          未解放","color": "gray"}]'
 
-execute if data storage anemoland:progress data.arena.time_attack.garuda{unlocked:1b} run function anemoland_contents:sys/arena/time_attack/update/carnara with storage anemoland:progress data.arena.time_attack.garuda
-execute unless data storage anemoland:progress data.arena.time_attack.garuda{unlocked:1b} run data modify storage temp:_ data.pages append value '["",{"text":"\\n\\n\\n\\n\\n\\n          未解放","color": "gray"}]'
+# execute if data storage anemoland:progress data.arena.time_attack.garuda{unlocked:1b} run function anemoland_contents:sys/arena/time_attack/update/carnara with storage anemoland:progress data.arena.time_attack.garuda
+# execute unless data storage anemoland:progress data.arena.time_attack.garuda{unlocked:1b} run data modify storage temp:_ data.pages append value '["",{"text":"\\n\\n\\n\\n\\n\\n          未解放","color": "gray"}]'
 
 data modify block ~ ~ ~ Book.components."minecraft:written_book_content".pages set from storage temp:_ data.pages

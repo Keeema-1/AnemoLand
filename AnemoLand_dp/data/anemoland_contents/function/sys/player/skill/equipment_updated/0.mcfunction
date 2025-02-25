@@ -8,4 +8,3 @@ function anemoland:sys/player/common/player_storage/read
 
 execute store result score @s skill_gauge_max run data get storage temp:_ data.player_storage.skill_levels.gauge_extension 1
 scoreboard players add @s skill_gauge_max 300
-say test

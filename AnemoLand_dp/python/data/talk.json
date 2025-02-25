@@ -164,7 +164,8 @@
 								{"text": "装備について", "talk": "tutorial_equipment"},
 								{"text": "ペットについて", "talk": "tutorial_pet"},
 								{"text": "戦いを有利に進めるには", "talk": "tutorial_hint"},
-								{"text": "マルチプレイでの進め方", "talk": "tutorial_multi"}
+								{"text": "マルチプレイでの進め方", "talk": "tutorial_multi"},
+								{"text": "(シルバーランク以降) お守りについて", "talk": "tutorial_amulet"}
 							],
 							"schedule_time_overlay": -1,
 							"schedule_time_add": 0
@@ -940,6 +941,60 @@
 								]
 							],
 							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						}
+					],
+					"after": "tutorial_choices"
+				},
+				"tutorial_amulet": {
+					"score": 19,
+					"type": "chat",
+					"trigger": "command",
+					"important": false,
+					"contents": [
+						{
+							"type": "text",
+							"icon": "anemoland.character.girl1.speak",
+							"show_name": true,
+							"text": [
+								[
+									{"text": "Lv.20以上のボスモンスターを倒したとき、"},
+									{"text": "お守り","color":"aqua"},
+									{"text": "をドロップすることがあります。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": -1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "お守りは装備することで追加効果が得られる装飾品です。"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": 1,
+							"schedule_time_add": 0
+						},
+						{
+							"type": "text",
+							"show_name": false,
+							"text": [
+								[
+									{"text": "ボスモンスターのレベルが高いほど、良いお守りを高い確率で入手しやすくなります。"}
+								],
+								[
+									{"text": "特に、Lv.40のボスモンスターは100%の確率でお守りをドロップします。"}
+								],
+								[
+									{"text": "お守りを集めたい場合は、レベルの高いボスモンスターと戦うようにしましょう！"},
+									{"text":"▼","color":"dark_gray"}
+								]
+							],
+							"schedule_time_overlay": 1,
 							"schedule_time_add": 0
 						}
 					],
