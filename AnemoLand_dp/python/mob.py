@@ -888,7 +888,7 @@ for mob_name, mob_data in mob_database.items():
 		makedir(path)
 		output = []
 		if len(variant_id_list) > 1 and variant_id in mob_data["variants"] and "weapon" in mob_data["variants"][variant_id]:
-			output.append('execute as @e[type=item_display,tag=aj.' + mob_name + '.bone.weapon,distance=..8,sort=nearest,limit=1] run data modify entity @s item set value ' + mob_data["variants"][variant_id]["weapon"] + '\n')
+			output.append('execute as @e[type=item_display,tag=aj.' + mob_name + '.item_display.weapon,distance=..8,sort=nearest,limit=1] run data modify entity @s item set value ' + mob_data["variants"][variant_id]["weapon"] + '\n')
 		output.append('tag @s add variant.' + variant_id + '\n')
 		output.append('data modify entity @s CustomName set value \'{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name"}\'\n')
 		output.append('execute if data storage temp:_ data.new_entity{"summon_type":"enemy"} on passengers if entity @s[tag=display1] run data merge entity @s {text:\'[{"translate":"anemoland.mob.' + mob_name + '.' + variant_id + '.name"},{"text":" Lv."},{"score":{"objective":"temp","name":"#new_entity.level"}}]\'}\n')
