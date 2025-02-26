@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "anemoland_contents:item/amulet/fire_resistance_1",
+					"value": "anemoland_contents:item/amulet_random/rarity1",
 					"weight": 1
 				}
 			]

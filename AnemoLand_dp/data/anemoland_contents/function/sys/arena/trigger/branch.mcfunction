@@ -6,3 +6,5 @@
     execute if score @s trigger matches 40002 run function anemoland_contents:sys/arena/time_attack/take/martellos
 # マッスルーム
     execute if score @s trigger matches 40003 run function anemoland_contents:sys/arena/time_attack/take/muscleroom
+# カールナーラ
+    execute if score @s trigger matches 40004 run function anemoland_contents:sys/arena/time_attack/take/carnara

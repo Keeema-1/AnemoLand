@@ -1400,19 +1400,6 @@
 							"show_name": false,
 							"text": [
 								[
-									{"text": "もしマッスルームの討伐が難しい場合は、Lv.25のマルテロスとオオジヌシを討伐することでもゴールドランクに昇格することが可能です。"},
-									{"text": "その場合は、ゴールドランクの装備を揃えてからリベンジしてみましょう！"},
-									{"text":"▼","color":"dark_gray"}
-								]
-							],
-							"schedule_time_overlay": -1,
-							"schedule_time_add": 0
-						},
-						{
-							"type": "text",
-							"show_name": false,
-							"text": [
-								[
 									{"text": "では、健闘を祈ります！"}
 								]
 							],

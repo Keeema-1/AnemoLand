@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "anemoland_contents:item/amulet/water_resistance_2",
+					"value": "anemoland_contents:item/amulet_random/rarity2",
 					"weight": 1
 				}
 			]

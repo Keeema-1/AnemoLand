@@ -5,13 +5,13 @@ execute if score #sec_total temp > #sec_total_before temp run return 1
 
 tellraw @a {"text":"最速タイム更新!","color": "yellow"}
 
-execute if score #sec_total temp matches ..119 unless score #sec_total_before temp matches ..119 run tellraw @a {"text": "【S】ランク達成!","color": "aqua"}
-execute if score #sec_total temp matches ..119 run data modify storage anemoland:progress data.arena.time_attack.carnara.rank set value "S"
-execute if score #sec_total temp matches ..119 run data modify storage anemoland:progress data.arena.time_attack.carnara.color set value "aqua"
+execute if score #sec_total temp matches ..149 unless score #sec_total_before temp matches ..149 run tellraw @a {"text": "【S】ランク達成!","color": "aqua"}
+execute if score #sec_total temp matches ..149 run data modify storage anemoland:progress data.arena.time_attack.carnara.rank set value "S"
+execute if score #sec_total temp matches ..149 run data modify storage anemoland:progress data.arena.time_attack.carnara.color set value "aqua"
 
-execute if score #sec_total temp matches 120..179 unless score #sec_total_before temp matches ..179 run tellraw @a {"text": "【A】ランク達成!","color": "gold"}
-execute if score #sec_total temp matches 120..179 run data modify storage anemoland:progress data.arena.time_attack.carnara.rank set value "A"
-execute if score #sec_total temp matches 120..179 run data modify storage anemoland:progress data.arena.time_attack.carnara.color set value "gold"
+execute if score #sec_total temp matches 150..179 unless score #sec_total_before temp matches ..179 run tellraw @a {"text": "【A】ランク達成!","color": "gold"}
+execute if score #sec_total temp matches 150..179 run data modify storage anemoland:progress data.arena.time_attack.carnara.rank set value "A"
+execute if score #sec_total temp matches 150..179 run data modify storage anemoland:progress data.arena.time_attack.carnara.color set value "gold"
 
 execute if score #sec_total temp matches 180..239 run data modify storage anemoland:progress data.arena.time_attack.carnara.rank set value "B"
 execute if score #sec_total temp matches 180..239 run data modify storage anemoland:progress data.arena.time_attack.carnara.color set value "dark_purple"

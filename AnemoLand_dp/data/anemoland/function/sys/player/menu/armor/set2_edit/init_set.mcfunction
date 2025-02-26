@@ -11,10 +11,10 @@ execute if data storage temp:_ data.player_storage.equipments.armor2.amulet1.cou
 data modify entity @s ArmorItems set from storage temp:_ data.ArmorItems_temp
 data modify entity @s HandItems set from storage temp:_ data.HandItems_temp
 
-execute if data storage temp:_ data.player_storage.equipments.armor2.head.count run item replace entity @a[tag=player_check] inventory.1 from entity @s armor.head
-execute if data storage temp:_ data.player_storage.equipments.armor2.chest.count run item replace entity @a[tag=player_check] inventory.2 from entity @s armor.chest
-execute if data storage temp:_ data.player_storage.equipments.armor2.legs.count run item replace entity @a[tag=player_check] inventory.3 from entity @s armor.legs
-execute if data storage temp:_ data.player_storage.equipments.armor2.feet.count run item replace entity @a[tag=player_check] inventory.4 from entity @s armor.feet
-execute if data storage temp:_ data.player_storage.equipments.armor2.amulet1.count run item replace entity @a[tag=player_check] inventory.5 from entity @s weapon.mainhand
+execute if data storage temp:_ data.player_storage.equipments.armor2.head.count run item replace entity @p[tag=player_check] inventory.1 from entity @s armor.head
+execute if data storage temp:_ data.player_storage.equipments.armor2.chest.count run item replace entity @p[tag=player_check] inventory.2 from entity @s armor.chest
+execute if data storage temp:_ data.player_storage.equipments.armor2.legs.count run item replace entity @p[tag=player_check] inventory.3 from entity @s armor.legs
+execute if data storage temp:_ data.player_storage.equipments.armor2.feet.count run item replace entity @p[tag=player_check] inventory.4 from entity @s armor.feet
+execute if data storage temp:_ data.player_storage.equipments.armor2.amulet1.count run item replace entity @p[tag=player_check] inventory.5 from entity @s weapon.mainhand
 
 kill @s
