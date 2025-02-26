@@ -7,7 +7,7 @@
     execute if entity @s[tag=pet] run scoreboard players set #bullet.pet_flag temp 1
 
 # 召喚
-    execute rotated ~ 0 run function animated_java:mushroom_fang/summon/default
+    execute rotated ~ 0 run function animated_java:mushroom_fang/summon {args:{animation:"fast",start_animation:true}}
     execute as @e[type=item_display,tag=newly_summoned.aj,distance=..1] run function anemoland_contents:sys/entity/bullet/mushroom_fang/summon/skill/00
 
 # ペット用フラグのリセット
