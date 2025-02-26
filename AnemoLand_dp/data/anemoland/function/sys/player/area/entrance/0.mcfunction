@@ -6,7 +6,7 @@
 
 # スタート位置でのアクションバー表示
     execute positioned 0.0 -6.0 12.0 unless entity @s[distance=..4] run title @s actionbar ""
-    execute positioned 0.0 -6.0 12.0 if entity @s[tag=cannot_start,distance=..4] at @s run title @s actionbar {"translate":"general.please_read_first_book","color":"yellow"}
+    execute positioned 0.0 -6.0 12.0 if entity @s[tag=cannot_start,distance=..4] at @s run title @s actionbar {"translate":"anemoland.general.please_read_first_book","color":"yellow"}
     execute positioned 0.0 -6.0 12.0 if entity @s[tag=!cannot_start,distance=..4] at @s run function anemoland:sys/player/area/entrance/00
 
 # 満腹度の調整
