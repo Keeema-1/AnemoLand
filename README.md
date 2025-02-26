@@ -48,4 +48,4 @@
 
 ## 各種URL
 - 作者X (https://x.com/keeema_1)
-- フィードバック・バグ報告フォーム (https://forms.gle/CegHeFGgVCzK4VpD8)
+- フィードバック・バグ報告フォーム (https://forms.gle/HBX99obQvZC1MKHW7)
