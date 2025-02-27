@@ -278,7 +278,10 @@ for map_data in map_database["maps"]:
 		elif field_data["type"] == "village":
 			output.append('execute if entity @s[tag=' + field_data["type"] + '_' + field_id + '] as @a[tag=player_check,limit=1] run return run function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/enter/0\n')
 		else:
-			output.append('execute if entity @s[tag=' + field_data["type"] + '_' + field_id + '] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=' + str(map_data["score"]) + ',area2=' + str(field_score) + '}] run return run function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/enter/0\n')
+			if "special_field" in field_data and (field_data["special_field"] == "explore" or field_data["special_field"] == "arena_prepare" or field_data["special_field"] == "training"):
+				output.append('execute if entity @s[tag=' + field_data["type"] + '_' + field_id + '] as @a[tag=player_check,limit=1] run return run function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/enter/0\n')
+			else:
+				output.append('execute if entity @s[tag=' + field_data["type"] + '_' + field_id + '] as @a[tag=player_check,limit=1] unless entity @a[scores={area0=100,area1=' + str(map_data["score"]) + ',area2=' + str(field_score) + '}] run return run function ' + namespace_contents + ':sys/area/' + map_name + '/' + field_data["type"] + '/' + field_id + '/enter/0\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
@@ -679,8 +682,9 @@ for map_data in map_database["maps"]:
 	makedir(path)
 	for field_id, field_data in map_data["fields"].items():
 		if field_data["type"] == "field":
-			field_score = int(field_data["index"][0])*100+int(field_data["index"][1])
-			output.append('execute if entity @s[tag=field_' + field_id + '] if entity @a[scores={area0=100,area1=' + str(map_data["score"]) + ',area2=' + str(field_score) + '}] run tag @s add player_exist\n')
+			if not ("special_field" in field_data and (field_data["special_field"] == "explore" or field_data["special_field"] == "arena_prepare" or field_data["special_field"] == "training")):
+				field_score = int(field_data["index"][0])*100+int(field_data["index"][1])
+				output.append('execute if entity @s[tag=field_' + field_id + '] if entity @a[scores={area0=100,area1=' + str(map_data["score"]) + ',area2=' + str(field_score) + '}] run tag @s add player_exist\n')
 	with open(path, 'w', encoding='utf-8') as f:
 		f.writelines(output)
 
