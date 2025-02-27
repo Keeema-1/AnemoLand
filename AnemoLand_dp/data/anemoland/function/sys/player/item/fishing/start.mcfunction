@@ -14,3 +14,5 @@ summon text_display ~ ~1 ~ {Tags:["fishing_bobber","newly_summoned"],text:'"\\ue
 execute as @e[tag=newly_summoned,distance=..3] run scoreboard players operation @s player_id = #player_id temp
 
 tag @e[tag=newly_summoned,distance=..3] remove newly_summoned
+
+function anemoland:sys/player/item/fishing/kill_bobber_without_player

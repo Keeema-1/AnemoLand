@@ -10,5 +10,5 @@
     effect give @s night_vision infinite 0 true
     effect give @s resistance infinite 31 true
 
-# gamemode adventure
-# tag @s remove playing_movie
+gamemode adventure
+tag @s remove playing_movie

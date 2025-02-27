@@ -102,7 +102,7 @@ for mob_name, mob_data in data.items():
 			path = base_path + mob_name + '/animation/' + animation["name"] + '.mcfunction'
 			makedir(path)
 			output = []
-			output.append('execute on passengers if entity @s[tag=aj.rig_root] run function anemoland:sys/entity/mob/' + mob_name + '/animation/' + animation["name"] + '_\n')
+			output.append('execute on passengers if entity @s[tag=aj.global.root] run function anemoland:sys/entity/mob/' + mob_name + '/animation/' + animation["name"] + '_\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -124,7 +124,7 @@ for mob_name, mob_data in data.items():
 			path = base_path + mob_name + '/variant/' + variant["name"] + '.mcfunction'
 			makedir(path)
 			output = []
-			output.append('execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:' + mob_data["aj_name"] + '/variants/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + variant["name"] + '/apply\n')
+			output.append('execute on passengers if entity @s[tag=aj.global.root] run function animated_java:' + mob_data["aj_name"] + '/variants/' + (mob_data["variant_prefix"] if "variant_prefix" in mob_data else '') + variant["name"] + '/apply\n')
 			with open(path, 'w', encoding='utf-8') as f:
 				f.writelines(output)
 
@@ -194,7 +194,7 @@ for mob_name, mob_data in data.items():
 			output.append('execute if entity @s[tag=enemy] if score #level temp matches 20..29 run loot spawn ~ ~ ~ loot anemoland:entity/' + mob_name + '/2\n')
 			output.append('execute if entity @s[tag=enemy] if score #level temp matches 30.. run loot spawn ~ ~ ~ loot anemoland:entity/' + mob_name + '/3\n')
 	if "immediate_disappear" in mob_data and mob_data["immediate_disappear"]:
-		output.append('execute on passengers if entity @s[tag=aj.rig_root] run function anemoland:sys/entity/mob/' + mob_name + '/damaged/die/disappear\n')
+		output.append('execute on passengers if entity @s[tag=aj.global.root] run function anemoland:sys/entity/mob/' + mob_name + '/damaged/die/disappear\n')
 	else:
 		output.append('function anemoland:sys/entity/mob/' + mob_name + '/animation/die\n')
 	output.append('function anemoland:sys/entity/mob/' + mob_name + '/damaged/die/unlock\n')

@@ -19,10 +19,10 @@
 # 釣り用タイマー
     execute unless score @s action_time matches 0.. run scoreboard players remove @s action_time 1
 
+scoreboard players operation #player_id temp = @s player_id
+
 # 釣り開始
     execute unless score @s action0 matches 1.. unless score @s action_time matches 1.. if entity @s[tag=using_item] run function anemoland:sys/player/item/fishing/start
-
-scoreboard players operation #player_id temp = @s player_id
 
 # 自分の浮きを実行者として関数を実行
     execute as @e[type=text_display,tag=fishing_bobber,distance=..32] if score @s player_id = #player_id temp at @s run return run function anemoland:sys/player/item/fishing/00

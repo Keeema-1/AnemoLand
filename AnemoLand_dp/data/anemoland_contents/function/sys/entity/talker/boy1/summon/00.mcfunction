@@ -20,7 +20,7 @@ tag @s remove newly_summoned
 
 function anemoland_contents:sys/entity/mob/human1/animation/standing3
 
-# execute on passengers if entity @s[tag=aj.rig_root] run function animated_java:human1/as_own_locator_entities {command:"execute if entity @s[tag=aj.human1.bone.weapon] run data modify entity @s Item.id set value \"minecraft:iron_swork\""}
+# execute on passengers if entity @s[tag=aj.global.root] run function animated_java:human1/as_own_locator_entities {command:"execute if entity @s[tag=aj.human1.bone.weapon] run data modify entity @s Item.id set value \"minecraft:iron_swork\""}
 execute as @e[type=item_display,tag=aj.human1.item_display.weapon,distance=..8,sort=nearest,limit=1] run data modify entity @s item set value {id:"minecraft:iron_sword",count:1}
 
 tp @s ~ ~ ~ ~ ~
