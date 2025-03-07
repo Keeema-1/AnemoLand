@@ -1735,12 +1735,24 @@ for mob_name, mob_data in mob_database.items():
 			}
 			with open(path, 'w', encoding='utf-8') as f:
 				json.dump(output, f, indent='\t', ensure_ascii=False)
+
 		path = base_path + 'entity/' + mob_name + '/pet.json'
 		makedir(path)
 		output = {
 			"model": {
 				"type": "minecraft:model",
 				"model": "anemoland:item/entity/" + mob_name + "/pet"
+			}
+		}
+		with open(path, 'w', encoding='utf-8') as f:
+			json.dump(output, f, indent='\t', ensure_ascii=False)
+		
+		path = base_path + 'entity/' + mob_name + '/icon.json'
+		makedir(path)
+		output = {
+			"model": {
+				"type": "minecraft:model",
+				"model": "anemoland:item/entity/" + mob_name + "/icon"
 			}
 		}
 		with open(path, 'w', encoding='utf-8') as f:
