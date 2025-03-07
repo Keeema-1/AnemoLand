@@ -140,20 +140,17 @@
 							"tag": "{item_type:\"armor\",series:\"martellos\",part:\"helmet\",id:\"martellos_helmet\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/martellos/helmet\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{2: {fire: -10}, 3: {fire: -10}},skills:[{id:\"initial_gauge\",level:100}]}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 4
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
 									"show_in_tooltip": false
 								},
 								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:armor/martellos/helmet",
 								"minecraft:equippable": {
 									"slot": "head",
 									"equip_sound": "item.armor.equip_chain",
-									"model": "martellos"
+									"asset_id": "anemoland:martellos"
 								}
 							}
 						},

@@ -107,10 +107,11 @@
 									"show_in_tooltip": false
 								},
 								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:armor/iron/helmet",
 								"minecraft:equippable": {
 									"slot": "head",
 									"equip_sound": "item.armor.equip_chain",
-									"model": "iron"
+									"asset_id": "anemoland:iron"
 								}
 							}
 						},

@@ -123,20 +123,17 @@
 							"tag": "{item_type:\"armor\",series:\"muscleroom\",part:\"leggings\",id:\"muscleroom_leggings\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/muscleroom/leggings\",power_up:{add_level:1,materials:[{id:\"muscleroom_gold_medal\",loot_table:\"item/medal/muscleroom/gold\",count:3}]},status:{level:2,armor:{base:5},elemental_resistance:{2: {}, 3: {}},skills:[{id:\"crisis_strength\",level:1}]}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 6
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
 									"show_in_tooltip": false
 								},
 								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:armor/muscleroom/leggings",
 								"minecraft:equippable": {
 									"slot": "legs",
 									"equip_sound": "item.armor.equip_chain",
-									"model": "muscleroom"
+									"asset_id": "anemoland:muscleroom"
 								}
 							}
 						},

@@ -126,9 +126,9 @@ for series in armor_database["series"]:
 				)
 			functions.append(function_)
 
-			# custom_model_data
-			if "custom_model_data" in series:
-				functions.append({"function": "minecraft:set_custom_model_data","value": series["custom_model_data"]})
+			# # custom_model_data
+			# if "custom_model_data" in series:
+			# 	functions.append({"function": "minecraft:set_custom_model_data","value": series["custom_model_data"]})
 
 			# components
 			function_ = {
@@ -137,7 +137,8 @@ for series in armor_database["series"]:
 					"minecraft:unbreakable": {
 						"show_in_tooltip": False
 					},
-					"minecraft:enchantment_glint_override": False
+					"minecraft:enchantment_glint_override": False,
+					"minecraft:item_model": "anemoland:armor/" + series["name"] + "/" + armor_type
 				}
 			}
 			# if "material" in series:
@@ -149,7 +150,7 @@ for series in armor_database["series"]:
 			function_["components"]["minecraft:equippable"] = {
 					"slot": armor2slot[armor_type],
 					"equip_sound":"item.armor.equip_chain",
-					"model": series["name"]
+					"asset_id": "anemoland:" + series["name"]
 				}
 			if "dyed_color" in armor_data:
 				function_["components"]["minecraft:dyed_color"] = {
@@ -667,7 +668,26 @@ for material in materials:
 		with open(path, 'w', encoding='utf-8') as f:
 			json.dump(output, f, indent='\t', ensure_ascii=False)
 
+base_path = resourcepack_path + 'assets/anemoland/items/armor/'
 
+for series in armor_database["series"]:
+	for part in parts:
+		path = base_path + series["name"] + '/' + part + '.json'
+		makedir(path)
+
+		overrides = []
+
+		output = {
+			"model": {
+				"type": "minecraft:model",
+				"model": "anemoland:item/armor/" + series["name"] + "/" + part
+			}
+		}
+		with open(path, 'w', encoding='utf-8') as f:
+			json.dump(output, f, indent='\t', ensure_ascii=False)
+
+
+base_path = resourcepack_path + 'assets/minecraft/models/armor/'
 
 path = base_path + 'gray_dye.json'
 
@@ -698,10 +718,12 @@ with open(path, 'w', encoding='utf-8') as f:
 
 
 
+base_path = resourcepack_path + 'assets/anemoland/models/item/'
+
 for series in armor_database["series"]:
 	for armor_type, armor_data in series["armors"].items():
 
-		path = base_path + 'custom/armor/' + series["name"] + '/' + armor_type + '.json'
+		path = base_path + 'armor/' + series["name"] + '/' + armor_type + '.json'
 		makedir(path)
 
 		output = {

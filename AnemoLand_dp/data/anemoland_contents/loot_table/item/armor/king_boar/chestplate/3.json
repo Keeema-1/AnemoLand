@@ -123,20 +123,17 @@
 							"tag": "{item_type:\"armor\",series:\"king_boar\",part:\"chestplate\",id:\"king_boar_chestplate\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/king_boar/chestplate\",power_up:{},status:{level:3,armor:{base:6},elemental_resistance:{1: {}, 2: {}, 3: {}},skills:[{id:\"recovery_up\",level:2}]}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 3
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
 									"show_in_tooltip": false
 								},
 								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:armor/king_boar/chestplate",
 								"minecraft:equippable": {
 									"slot": "chest",
 									"equip_sound": "item.armor.equip_chain",
-									"model": "king_boar"
+									"asset_id": "anemoland:king_boar"
 								}
 							}
 						},

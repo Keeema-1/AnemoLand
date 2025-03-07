@@ -123,20 +123,17 @@
 							"tag": "{item_type:\"armor\",series:\"muscleroom\",part:\"chestplate\",id:\"muscleroom_chestplate\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/muscleroom/chestplate\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{2: {}, 3: {}},skills:[{id:\"crisis_strength\",level:1.5}]}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 6
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
 									"show_in_tooltip": false
 								},
 								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:armor/muscleroom/chestplate",
 								"minecraft:equippable": {
 									"slot": "chest",
 									"equip_sound": "item.armor.equip_chain",
-									"model": "muscleroom"
+									"asset_id": "anemoland:muscleroom"
 								}
 							}
 						},

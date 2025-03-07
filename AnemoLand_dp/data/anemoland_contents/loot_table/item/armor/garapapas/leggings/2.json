@@ -150,20 +150,17 @@
 							"tag": "{item_type:\"armor\",series:\"garapapas\",part:\"leggings\",id:\"garapapas_leggings\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/garapapas/leggings\",power_up:{add_level:1,materials:[{id:\"garapapas_gold_medal\",loot_table:\"item/medal/garapapas/gold\",count:3}]},status:{level:2,armor:{base:4},elemental_resistance:{1: {water: 10}, 2: {water: 10}, 3: {water: 10}},skills:[{id:\"depth_strider\",level:1}]}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 10
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
 									"show_in_tooltip": false
 								},
 								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:armor/garapapas/leggings",
 								"minecraft:equippable": {
 									"slot": "legs",
 									"equip_sound": "item.armor.equip_chain",
-									"model": "garapapas"
+									"asset_id": "anemoland:garapapas"
 								}
 							}
 						},

@@ -133,20 +133,17 @@
 							"tag": "{item_type:\"armor\",series:\"king_boar\",part:\"leggings\",id:\"king_boar_leggings\",visual_model_flag:0,sell_price:40,loot_table:\"item/armor/king_boar/leggings\",power_up:{add_level:1,materials:[{id:\"king_boar_silver_medal\",loot_table:\"item/medal/king_boar/silver\",count:3}]},status:{level:1,armor:{base:2},elemental_resistance:{1: {}, 2: {}, 3: {}},skills:[{id:\"sprint_charge\",level:0.5}]}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 3
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
 									"show_in_tooltip": false
 								},
 								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:armor/king_boar/leggings",
 								"minecraft:equippable": {
 									"slot": "legs",
 									"equip_sound": "item.armor.equip_chain",
-									"model": "king_boar"
+									"asset_id": "anemoland:king_boar"
 								}
 							}
 						},

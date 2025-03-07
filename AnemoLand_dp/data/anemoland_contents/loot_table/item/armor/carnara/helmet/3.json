@@ -160,20 +160,17 @@
 							"tag": "{item_type:\"armor\",series:\"carnara\",part:\"helmet\",id:\"carnara_helmet\",visual_model_flag:0,sell_price:160,loot_table:\"item/armor/carnara/helmet\",power_up:{},status:{level:3,armor:{base:7},elemental_resistance:{3: {ice: 10}},skills:[{id:\"ice_veil\",level:10}]}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 8
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
 									"show_in_tooltip": false
 								},
 								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:armor/carnara/helmet",
 								"minecraft:equippable": {
 									"slot": "head",
 									"equip_sound": "item.armor.equip_chain",
-									"model": "carnara"
+									"asset_id": "anemoland:carnara"
 								}
 							}
 						},
