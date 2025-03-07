@@ -46,8 +46,10 @@
 							"tag": "{item_type:\"material\",id:\"silver_medal\"}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 1
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:misc/common_medal/silver"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

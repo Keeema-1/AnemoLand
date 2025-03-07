@@ -1505,8 +1505,10 @@ for mob_name, mob_data in mob_database.items():
 										"tag": "{item_type:\"pet\"" + (",is_boss:1b" if mob_data["type"] == "boss" else ",is_boss:0b") + ",is_pet:1b,pet_id:\"" + mob_name + "\",display:{name:\"" + mob_data["display_name"] + "\"},loot_table:\"item/pet/" + mob_name + "\",power_up:{" + power_up_str + "},status:{health:{max:" + str(loot_table_level * mob_data["status"]["max_health"]["mul"] + mob_data["status"]["max_health"]["base"]) + "},attack:{base:" + str(loot_table_level * mob_data["status"]["attack_damage"]["mul"] + mob_data["status"]["attack_damage"]["base"]) + "},armor:{base:10},level:" + str(loot_table_level) + ",level_up:{health:" + str(mob_data["status"]["max_health"]["mul"]) + ",attack:" + str(mob_data["status"]["attack_damage"]["mul"]) + "},xp:{value:0,required:" + str(required_xp) + ",required_mul:" + str(mob_data["pet"]["xp_required_mul"]) + "}" + gauge_cunsume_str + "}}"
 									},
 									{
-										"function": "minecraft:set_custom_model_data",
-										"value": mob_data["custom_model_data"] + pet_custom_model_data_offset
+										"function": "minecraft:set_components",
+										"components": {
+											"minecraft:item_model": "anemoland:entity/" + mob_name + "/pet"
+										}
 									},
 									{
 										"function": "minecraft:set_name",
@@ -1583,8 +1585,10 @@ for mob_name, mob_data in mob_database.items():
 									"tag": "{item_type:\"material\",id:\"" + mob_name + "_" + medal_color[0] +"_medal\"}"
 								},
 								{
-									"function": "minecraft:set_custom_model_data",
-									"value": mob_data["custom_model_data"]*10 + medal_color[2]
+									"function": "minecraft:set_components",
+									"components": {
+										"minecraft:item_model": "anemoland:entity/" + mob_name + "/medal/" + medal_color[0]
+									}
 								},
 								{
 									"function": "minecraft:set_name",
@@ -1712,6 +1716,36 @@ for mob_name, mob_data in mob_database.items():
 
 resourcepack_path = common_database["resourcepack_path"]
 
+base_path = resourcepack_path + '/assets/anemoland/items/'
+
+if not os.path.isdir(base_path):
+	print('dir not exist! (' + base_path + ')')
+	exit(0)
+
+for mob_name, mob_data in mob_database.items():
+	if mob_data["type"] == "mob" or mob_data["type"] == "boss":
+		for rank in ["bronze", "silver", "gold"]:
+			path = base_path + 'entity/' + mob_name + '/medal/' + rank + '.json'
+			makedir(path)
+			output = {
+				"model": {
+					"type": "minecraft:model",
+					"model": "anemoland:item/entity/" + mob_name + "/medal/" + rank
+				}
+			}
+			with open(path, 'w', encoding='utf-8') as f:
+				json.dump(output, f, indent='\t', ensure_ascii=False)
+		path = base_path + 'entity/' + mob_name + '/pet.json'
+		makedir(path)
+		output = {
+			"model": {
+				"type": "minecraft:model",
+				"model": "anemoland:item/entity/" + mob_name + "/pet"
+			}
+		}
+		with open(path, 'w', encoding='utf-8') as f:
+			json.dump(output, f, indent='\t', ensure_ascii=False)
+
 base_path = resourcepack_path + '/assets/minecraft/models/item/'
 
 if not os.path.isdir(base_path):
@@ -1800,11 +1834,13 @@ with open(path, 'w', encoding='utf-8') as f:
 
 
 
+base_path = resourcepack_path + '/assets/anemoland/models/item/'
+
 for mob_name, mob_data in mob_database.items():
 	if mob_data["type"] == "npc" or mob_data["type"] == 'decoy':
 		continue
 
-	path = base_path + 'custom/entity/' + mob_name + '/bronze_medal.json'
+	path = base_path + 'entity/' + mob_name + '/medal/bronze.json'
 	makedir(path)
 	output = {
 		"parent": "minecraft:item/generated",
@@ -1814,7 +1850,7 @@ for mob_name, mob_data in mob_database.items():
 	}
 	with open(path, 'w', encoding='utf-8') as f:
 		json.dump(output, f, indent='\t', ensure_ascii=False)
-	path = base_path + 'custom/entity/' + mob_name + '/silver_medal.json'
+	path = base_path + 'entity/' + mob_name + '/medal/silver.json'
 	makedir(path)
 	output = {
 		"parent": "minecraft:item/generated",
@@ -1825,7 +1861,7 @@ for mob_name, mob_data in mob_database.items():
 	with open(path, 'w', encoding='utf-8') as f:
 		json.dump(output, f, indent='\t', ensure_ascii=False)
 
-	path = base_path + 'custom/entity/' + mob_name + '/gold_medal.json'
+	path = base_path + 'entity/' + mob_name + '/medal/gold.json'
 	makedir(path)
 	output = {
 		"parent": "minecraft:item/generated",
@@ -1838,7 +1874,7 @@ for mob_name, mob_data in mob_database.items():
 	with open(path, 'w', encoding='utf-8') as f:
 		json.dump(output, f, indent='\t', ensure_ascii=False)
 
-	path = base_path + 'custom/entity/' + mob_name + '/pet.json'
+	path = base_path + 'entity/' + mob_name + '/pet.json'
 	makedir(path)
 	output = {
 		"parent": "minecraft:item/generated",
@@ -1851,7 +1887,7 @@ for mob_name, mob_data in mob_database.items():
 	with open(path, 'w', encoding='utf-8') as f:
 		json.dump(output, f, indent='\t', ensure_ascii=False)
 
-	path = base_path + 'custom/entity/' + mob_name + '/icon.json'
+	path = base_path + 'entity/' + mob_name + '/icon.json'
 	makedir(path)
 	output = {
 		"credit": "Made with Blockbench",
@@ -1883,7 +1919,7 @@ for mob_name, mob_data in mob_database.items():
 		for variant_id, variant_data in mob_data["variants"].items():
 			if not "custom_model_data_add" in variant_data:
 				continue
-			path = base_path + 'custom/entity/' + mob_name + '/icon_' + variant_id + '.json'
+			path = base_path + 'entity/' + mob_name + '/icon_' + variant_id + '.json'
 			makedir(path)
 			output = {
 				"credit": "Made with Blockbench",

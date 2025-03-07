@@ -96,8 +96,10 @@
 							"tag": "{item_type:\"pet\",is_boss:0b,is_pet:1b,pet_id:\"spider\",display:{name:\"スパイダー\"},loot_table:\"item/pet/spider\",power_up:{add_level:1,materials:[{id:\"spider_silver_medal\",loot_table:\"item/medal/spider/silver\",count:18}]},status:{health:{max:84},attack:{base:14.8},armor:{base:10},level:27,level_up:{health:2,attack:0.4},xp:{value:0,required:1008,required_mul:10}}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 10050
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/spider/pet"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

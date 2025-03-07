@@ -96,8 +96,10 @@
 							"tag": "{item_type:\"pet\",is_boss:0b,is_pet:1b,pet_id:\"garapas\",display:{name:\"ガラパス\"},loot_table:\"item/pet/garapas\",power_up:{add_level:1,materials:[{id:\"garapas_bronze_medal\",loot_table:\"item/medal/garapas/bronze\",count:11}]},status:{health:{max:40},attack:{base:7.0},armor:{base:10},level:10,level_up:{health:2,attack:0.4},xp:{value:0,required:97,required_mul:10}}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 10040
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/garapas/pet"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

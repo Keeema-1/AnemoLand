@@ -164,10 +164,6 @@
 							"tag": "{item_type:\"weapon\",weapon_type:\"axe\",loot_table:\"item/weapon/iron_axe\",sell_price:240,power_up:{add_level:1,materials:[{id:\"gold_medal\",loot_table:\"item/medal/common/gold\",count:6}]},status:{level:2,attack:{base:5,mul:18},elemental_attack:{},weapon_skills:[{id:\"strong_attack_2\",gauge_consume:100,attack_damage:[{physical: {base: 6, mul: 6}}]}],skill_gauge:{get:18}}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 103
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
@@ -177,7 +173,8 @@
 									"levels": {},
 									"show_in_tooltip": false
 								},
-								"minecraft:enchantment_glint_override": false
+								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:weapon/iron_axe"
 							}
 						},
 						{

@@ -39,8 +39,10 @@
 							"tag": "{item_type:\"material\",id:\"raptor_bronze_medal\"}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 600
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/raptor/medal/bronze"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

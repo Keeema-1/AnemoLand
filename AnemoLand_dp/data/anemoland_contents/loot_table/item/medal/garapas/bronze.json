@@ -39,8 +39,10 @@
 							"tag": "{item_type:\"material\",id:\"garapas_bronze_medal\"}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 400
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/garapas/medal/bronze"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

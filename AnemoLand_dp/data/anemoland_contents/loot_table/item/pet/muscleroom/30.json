@@ -124,8 +124,10 @@
 							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"muscleroom\",display:{name:\"マッスルーム\"},loot_table:\"item/pet/muscleroom\",power_up:{add_level:1,materials:[{id:\"muscleroom_gold_medal\",loot_table:\"item/medal/muscleroom/gold\",count:11}]},status:{health:{max:1400},attack:{base:30.0},armor:{base:10},level:30,level_up:{health:40,attack:0.8},xp:{value:0,required:1531,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 11050
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/muscleroom/pet"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

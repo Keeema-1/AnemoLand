@@ -96,8 +96,10 @@
 							"tag": "{item_type:\"pet\",is_boss:0b,is_pet:1b,pet_id:\"raptor\",display:{name:\"ラプルス\"},loot_table:\"item/pet/raptor\",power_up:{add_level:1,materials:[{id:\"raptor_bronze_medal\",loot_table:\"item/medal/raptor/bronze\",count:15}]},status:{health:{max:76},attack:{base:11.600000000000001},armor:{base:10},level:14,level_up:{health:4,attack:0.4},xp:{value:0,required:167,required_mul:10}}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 10060
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/raptor/pet"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

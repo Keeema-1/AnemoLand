@@ -52,12 +52,14 @@ with open(path, 'w', encoding='utf-8') as f:
 
 
 
+base_path = resourcepack_path + 'assets/anemoland/'
+
 for icon_name, icon_data in menu_database["icons"].items():
 
 	if "model_path" in icon_data:
 		continue
 
-	path = base_path + 'custom/gui/icon/' + icon_name + '.json'
+	path = base_path + 'models/gui/icon/' + icon_name + '.json'
 	makedir(path)
 
 	if "transformation" in icon_data:
@@ -89,7 +91,6 @@ for icon_name, icon_data in menu_database["icons"].items():
 				}
 			)
 		output = {
-			"credit": "Made with Blockbench",
 			"textures": textures,
 			"elements": elements,
 			"gui_light": "front",
@@ -108,5 +109,19 @@ for icon_name, icon_data in menu_database["icons"].items():
 			"layer0": (icon_data["path"] if "path" in icon_data else ("item/custom/gui/icon/" + icon_name))
 			}
 		}
+	with open(path, 'w', encoding='utf-8') as f:
+		json.dump(output, f, indent='\t', ensure_ascii=False)
+
+
+
+	path = base_path + 'items/gui/icon/' + icon_name + '.json'
+	makedir(path)
+
+	output = {
+		"model": {
+			"type": "minecraft:model",
+			"model": 'anemoland:gui/icon/' + icon_name
+		}
+	}
 	with open(path, 'w', encoding='utf-8') as f:
 		json.dump(output, f, indent='\t', ensure_ascii=False)

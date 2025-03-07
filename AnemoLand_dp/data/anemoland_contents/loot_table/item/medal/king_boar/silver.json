@@ -39,8 +39,10 @@
 							"tag": "{item_type:\"material\",id:\"king_boar_silver_medal\"}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 10001
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/king_boar/medal/silver"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

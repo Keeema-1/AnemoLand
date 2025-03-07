@@ -124,8 +124,10 @@
 							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"bagikeros\",display:{name:\"バギケロス\"},loot_table:\"item/pet/bagikeros\",power_up:{add_level:1,materials:[{id:\"bagikeros_silver_medal\",loot_table:\"item/medal/bagikeros/silver\",count:16}]},status:{health:{max:1450},attack:{base:26.0},armor:{base:10},level:25,level_up:{health:50,attack:0.8},xp:{value:0,required:763,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 11060
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/bagikeros/pet"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

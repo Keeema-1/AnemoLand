@@ -39,8 +39,10 @@
 							"tag": "{item_type:\"material\",id:\"squirrel_head_gold_medal\"}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 10102
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/squirrel_head/medal/gold"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

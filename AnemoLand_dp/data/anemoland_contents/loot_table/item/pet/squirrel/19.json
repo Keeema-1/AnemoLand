@@ -96,8 +96,10 @@
 							"tag": "{item_type:\"pet\",is_boss:0b,is_pet:1b,pet_id:\"squirrel\",display:{name:\"スクルス\"},loot_table:\"item/pet/squirrel\",power_up:{add_level:1,materials:[{id:\"squirrel_silver_medal\",loot_table:\"item/medal/squirrel/silver\",count:10}]},status:{health:{max:58},attack:{base:10.600000000000001},armor:{base:10},level:19,level_up:{health:2,attack:0.4},xp:{value:0,required:332,required_mul:10}}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 10030
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/squirrel/pet"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

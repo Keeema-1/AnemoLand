@@ -164,7 +164,8 @@ for weapon_data in weapon_database["weapons"]:
 		functions.append(function_)
 
 		# custom_model_data
-		functions.append({"function": "minecraft:set_custom_model_data","value": weapon_data["custom_model_data"]})
+		# functions.append({"function": "minecraft:set_custom_model_data","value": weapon_data["custom_model_data"]})
+		# functions.append({"function": "minecraft:set_custom_model_data","strings":{"values": ["item/custom/weapon/" + weapon_data["weapon_type"] + "/" + weapon_data["name"]],"mode":"replace_all"}})
 
 		# components
 		functions.append({
@@ -177,7 +178,8 @@ for weapon_data in weapon_database["weapons"]:
 					"levels": weapon_types[weapon_data["weapon_type"]]["enchantments"],
 					"show_in_tooltip": False
 				},
-				"minecraft:enchantment_glint_override": False
+				"minecraft:enchantment_glint_override": False,
+				"minecraft:item_model": "anemoland:weapon/" + weapon_data["name"]
 			}
 		})
 

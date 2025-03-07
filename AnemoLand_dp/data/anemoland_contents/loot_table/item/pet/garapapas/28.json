@@ -124,8 +124,10 @@
 							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"garapapas\",display:{name:\"ガラパパス\"},loot_table:\"item/pet/garapapas\",power_up:{add_level:1,materials:[{id:\"garapapas_silver_medal\",loot_table:\"item/medal/garapapas/silver\",count:19}]},status:{health:{max:1220},attack:{base:22.400000000000002},armor:{base:10},level:28,level_up:{health:40,attack:0.8},xp:{value:0,required:1159,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 11020
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/garapapas/pet"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

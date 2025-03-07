@@ -39,8 +39,10 @@
 							"tag": "{item_type:\"material\",id:\"martellos_silver_medal\"}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 10301
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/martellos/medal/silver"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

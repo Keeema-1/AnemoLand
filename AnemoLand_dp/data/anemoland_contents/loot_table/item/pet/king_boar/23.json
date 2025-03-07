@@ -124,8 +124,10 @@
 							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"king_boar\",display:{name:\"キングボア\"},loot_table:\"item/pet/king_boar\",power_up:{add_level:1,materials:[{id:\"king_boar_silver_medal\",loot_table:\"item/medal/king_boar/silver\",count:14}]},status:{health:{max:560},attack:{base:16.400000000000002},armor:{base:10},level:23,level_up:{health:20,attack:0.8},xp:{value:0,required:578,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 11000
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "anemoland:entity/king_boar/pet"
+							}
 						},
 						{
 							"function": "minecraft:set_name",

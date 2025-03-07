@@ -237,10 +237,6 @@
 							"tag": "{item_type:\"weapon\",weapon_type:\"sword\",loot_table:\"item/weapon/garuda_sword\",sell_price:400,power_up:{},status:{level:3,attack:{base:5.5,mul:10},elemental_attack:{'thunder': 1.0},weapon_skills:[{id:\"sweep_attack_2\",gauge_consume:100,attack_damage:[{physical: {base: 7, mul: 3}}, {physical: {base: 7, mul: 1}}]}],skill_gauge:{get:10}}}"
 						},
 						{
-							"function": "minecraft:set_custom_model_data",
-							"value": 4
-						},
-						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:unbreakable": {
@@ -253,7 +249,8 @@
 									},
 									"show_in_tooltip": false
 								},
-								"minecraft:enchantment_glint_override": false
+								"minecraft:enchantment_glint_override": false,
+								"minecraft:item_model": "anemoland:weapon/garuda_sword"
 							}
 						},
 						{
