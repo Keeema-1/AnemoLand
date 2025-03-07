@@ -46,7 +46,7 @@
 												"text": " "
 											},
 											{
-												"text": "25.2"
+												"text": "28.2"
 											}
 										],
 										[
@@ -121,7 +121,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"squirrel_head\",display:{name:\"スクルスヘッド\"},loot_table:\"item/pet/squirrel_head\",power_up:{add_level:1,materials:[{id:\"squirrel_head_gold_medal\",loot_table:\"item/medal/squirrel_head/gold\",count:15}]},status:{health:{max:1120},attack:{base:25.200000000000003},armor:{base:10},level:34,level_up:{health:30,attack:0.8},xp:{value:0,required:2674,required_mul:10},gauge_consume_when_summon:300}}"
+							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"squirrel_head\",display:{name:\"スクルスヘッド\"},loot_table:\"item/pet/squirrel_head\",power_up:{add_level:1,materials:[{id:\"squirrel_head_gold_medal\",loot_table:\"item/medal/squirrel_head/gold\",count:15}]},status:{health:{max:1120},attack:{base:28.200000000000003},armor:{base:10},level:34,level_up:{health:30,attack:0.8},xp:{value:0,required:2674,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
 							"function": "minecraft:set_components",

@@ -327,7 +327,7 @@
         "status": {
             "default_level": 10,
             "max_health": {"base": 20, "mul": 2},
-            "attack_damage": {"base": 4, "mul": 0.4},
+            "attack_damage": {"base": 3, "mul": 0.4},
             "gold": {"base": 10, "mul": 1.5},
             "xp": {"base": 10, "mul": 1.5}
         },
@@ -876,7 +876,7 @@
         "status": {
             "default_level": 15,
             "max_health": {"base": 100, "mul": 20},
-            "attack_damage": {"base": -2, "mul": 0.8},
+            "attack_damage": {"base": 2, "mul": 0.6},
             "gold": {"base": 20, "mul": 6},
             "xp": {"base": 20, "mul": 6}
         },
@@ -1137,7 +1137,7 @@
         "status": {
             "default_level": 15,
             "max_health": {"base": 100, "mul": 30},
-            "attack_damage": {"base": -2, "mul": 0.8},
+            "attack_damage": {"base": 1, "mul": 0.8},
             "gold": {"base": 20, "mul": 8},
             "xp": {"base": 20, "mul": 8},
             "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}
@@ -1389,7 +1389,7 @@
         "status": {
             "default_level": 15,
             "max_health": {"base": 100, "mul": 40},
-            "attack_damage": {"base": 0, "mul": 0.8},
+            "attack_damage": {"base": 1, "mul": 0.8},
             "gold": {"base": 30, "mul": 10},
             "xp": {"base": 30, "mul": 10},
             "angry": {"attack_damage_mul": 1.25, "start_damage_ratio": 0.5, "keep_time_seconds": 60, "restart_damage_ratio": 0.5, "restart_interval_seconds": 60}

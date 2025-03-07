@@ -46,7 +46,7 @@
 												"text": " "
 											},
 											{
-												"text": "29.6"
+												"text": "30.6"
 											}
 										],
 										[
@@ -121,7 +121,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"garapapas\",display:{name:\"ガラパパス\"},loot_table:\"item/pet/garapapas\",power_up:{add_level:1,materials:[{id:\"garapapas_gold_medal\",loot_table:\"item/medal/garapapas/gold\",count:18}]},status:{health:{max:1580},attack:{base:29.6},armor:{base:10},level:37,level_up:{health:40,attack:0.8},xp:{value:0,required:4066,required_mul:10},gauge_consume_when_summon:300}}"
+							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"garapapas\",display:{name:\"ガラパパス\"},loot_table:\"item/pet/garapapas\",power_up:{add_level:1,materials:[{id:\"garapapas_gold_medal\",loot_table:\"item/medal/garapapas/gold\",count:18}]},status:{health:{max:1580},attack:{base:30.6},armor:{base:10},level:37,level_up:{health:40,attack:0.8},xp:{value:0,required:4066,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
 							"function": "minecraft:set_components",

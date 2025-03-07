@@ -22,9 +22,9 @@ scoreboard players set @s skill_mode 0
 tag @s remove fishing
 tag @s remove fishing.big
 
-# function anemoland:sys/player/common/player_storage/read
-# data remove storage temp:_ data.player_storage.pet.boss1
-# function anemoland:sys/player/common/player_storage/write
+function anemoland:sys/player/common/player_storage/read
+data remove storage temp:_ data.player_storage.pet.boss1
+function anemoland:sys/player/common/player_storage/write
 
 tag @s add skip_inventory_changed
 function anemoland:sys/player/menu/root/reset_from_other_func

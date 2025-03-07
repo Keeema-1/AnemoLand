@@ -12,7 +12,7 @@
     scoreboard players operation @s attack.base *= #new_entity.level temp
     scoreboard players set #temp temp 10
     scoreboard players operation @s attack.base /= #temp temp
-    scoreboard players add @s attack.base 4
+    scoreboard players add @s attack.base 3
     scoreboard players set @s attack.mul 10
     scoreboard players set @s attack.state_mul 100
 # armor

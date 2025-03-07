@@ -46,7 +46,7 @@
 												"text": " "
 											},
 											{
-												"text": "9.2"
+												"text": "10.4"
 											}
 										],
 										[
@@ -121,7 +121,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"king_boar\",display:{name:\"キングボア\"},loot_table:\"item/pet/king_boar\",power_up:{add_level:1,materials:[{id:\"king_boar_bronze_medal\",loot_table:\"item/medal/king_boar/bronze\",count:15}]},status:{health:{max:380},attack:{base:9.200000000000001},armor:{base:10},level:14,level_up:{health:20,attack:0.8},xp:{value:0,required:167,required_mul:10},gauge_consume_when_summon:300}}"
+							"tag": "{item_type:\"pet\",is_boss:1b,is_pet:1b,pet_id:\"king_boar\",display:{name:\"キングボア\"},loot_table:\"item/pet/king_boar\",power_up:{add_level:1,materials:[{id:\"king_boar_bronze_medal\",loot_table:\"item/medal/king_boar/bronze\",count:15}]},status:{health:{max:380},attack:{base:10.4},armor:{base:10},level:14,level_up:{health:20,attack:0.6},xp:{value:0,required:167,required_mul:10},gauge_consume_when_summon:300}}"
 						},
 						{
 							"function": "minecraft:set_components",
