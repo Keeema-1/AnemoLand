@@ -1,3 +1,3 @@
 
-summon villager ~ ~ ~ {Tags:["newly_summoned"],Passengers:[{id:"text_display",text:'""',Tags:["display1","npc","sally"]},{id:interaction,Tags:["npc","sally"]}],DeathLootTable:"empty"}
-execute as @e[type=villager,tag=newly_summoned,distance=..1,limit=1] run function anemoland_contents:sys/entity/talker/sally/summon/00
+execute rotated ~ 0 run summon villager ~ ~ ~ {Tags:["newly_summoned"],Passengers:[{id:"text_display",text:'""',Tags:["display1","npc","sally"]},{id:interaction,Tags:["npc","sally"]}],DeathLootTable:"empty"}
+execute rotated ~ 0 as @e[type=villager,tag=newly_summoned,distance=..1,limit=1] run function anemoland_contents:sys/entity/talker/sally/summon/00
