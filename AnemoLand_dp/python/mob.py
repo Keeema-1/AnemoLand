@@ -1410,7 +1410,7 @@ for mob_name, mob_data in mob_database.items():
 						"text": " "
 					},
 					{
-						"text": str(loot_table_level * mob_data["status"]["attack_damage"]["mul"] + mob_data["status"]["attack_damage"]["base"])
+						"text": str(round(loot_table_level * mob_data["status"]["attack_damage"]["mul"] + mob_data["status"]["attack_damage"]["base"],1))
 					}
 				],
 				[""]

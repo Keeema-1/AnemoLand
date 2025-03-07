@@ -34,5 +34,5 @@ execute if data storage temp:_ data.Items[{Slot:12b}].count run function anemola
 
 execute unless score #can_craft temp matches 1.. run return 1
 
-data modify storage temp:_ data.Items_after[{Slot:17b}] merge value {components:{"minecraft:custom_model_data":29,"minecraft:custom_name":'{"translate":"anemoland.chest_menu.power_up.power_up","italic":false}',"minecraft:lore":[],"minecraft:custom_data":{chest_menu:1b}}}
+data modify storage temp:_ data.Items_after[{Slot:17b}] merge value {components:{"minecraft:item_model":"anemoland:gui/icon/item_craft","minecraft:custom_name":'{"translate":"anemoland.chest_menu.power_up.power_up","italic":false}',"minecraft:lore":[],"minecraft:custom_data":{chest_menu:1b}}}
 execute unless data storage temp:_ data.Items[{Slot:17b}] run function anemoland:sys/player/area/common/village/chest_menu/power_up/craft with storage temp:_ data.power_up_data

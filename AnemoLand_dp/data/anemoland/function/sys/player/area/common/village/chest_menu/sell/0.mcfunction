@@ -15,7 +15,7 @@ data modify storage temp:_ data.Items2 set from storage temp:_ data.Items
     execute if data storage temp:_ data.Items[{Slot:26b,components:{"minecraft:custom_data":{chest_menu:1b}}}] run return 1
 
 # 売却メニューをセット
-    data modify block ~ ~ ~ Items set value [{Slot:26b,id:"knowledge_book",count:1,components:{"minecraft:custom_model_data":31,"minecraft:custom_name":'{"translate":"anemoland.chest_menu.sell.sell","italic":false}',"minecraft:custom_data":{chest_menu:1b,get_gold:1b}}}]
+    data modify block ~ ~ ~ Items set value [{Slot:26b,id:"knowledge_book",count:1,components:{"minecraft:item_model":"anemoland:gui/icon/sell","minecraft:custom_name":'{"translate":"anemoland.chest_menu.sell.sell","italic":false}',"minecraft:custom_data":{chest_menu:1b,get_gold:1b}}}]
 
 # playsound ui.button.click master @a ~ ~ ~ 1 1
 
