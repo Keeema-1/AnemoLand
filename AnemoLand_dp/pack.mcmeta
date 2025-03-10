@@ -25,21 +25,14 @@
 				"directory": "unsupported",
 				"formats": {
 					"min_inclusive": 16,
-					"max_inclusive": 56
+					"max_inclusive": 60
 				}
 			},
 			{
 				"directory": "unsupported",
 				"formats": {
-					"min_inclusive": 58,
+					"min_inclusive": 62,
 					"max_inclusive": 65535
-				}
-			},
-			{
-				"directory": "animated_java",
-				"formats": {
-					"min_inclusive": 57,
-					"max_inclusive": 60
 				}
 			}
 		]
